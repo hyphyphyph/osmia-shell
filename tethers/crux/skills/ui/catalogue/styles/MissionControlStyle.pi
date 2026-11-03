@@ -1,0 +1,51 @@
+export anchor MissionControlStyle:
+    number: 306
+    screen: OpsMonitor
+    name: Mission control
+    idea: A deep navy control room wall, a row of large countdown style clocks over a grid of numbered console panels with cyan corner brackets, nominal and caution wording and condensed caps.
+    base: dark
+    palette:
+        night: #040a14, the page and the clock faces
+        console: #0a1628, panel fill and swatches
+        tile: #0e1d33, service tiles
+        rule: #29486b, panel borders
+        ink: #dbe8f5, text
+        muted: #8fa8c4, labels and axes
+        cyan: #59d6ff, clock digits, corner brackets, the requests line, p50, Recovered and the primary button
+        amber: #ffb020, Caution, the incident panel, p95 and the open incident clock
+        green: #4be08a, Nominal, Resolved and the live indicator
+        red: #ff6b6b, the error line and Firing
+        focus: #ffffff, a white focus outline with a cyan halo
+    type:
+        Condensed labels in Bahnschrift, DIN Alternate, Roboto Condensed,
+        Arial Narrow, system-ui at 14px, and ui-monospace, SF Mono, Menlo,
+        Consolas for clocks and figures. Clocks are 44px mono at 600 with a
+        soft glow, the incident number 28px mono bold amber, panel titles
+        12px caps tracked 0.2em, status words 13px bold caps tracked 0.12em.
+    layout:
+        A header bar holds BRIGHTWORK OPS over Production control in
+        tracked caps, the apps as caps links with Ops boxed in cyan, and a
+        Telemetry live line. The description runs as a tracked caps line.
+        A row of four clock boxes follows, Station time 10.00.00, INC-0427
+        open T+03.02 in amber, Billing back T+02.06 and Last deploy
+        T+00.48, each with a note. Below sits a three column wall of
+        console panels, each square with cyan L brackets at the corners and
+        a numbered title such as Console 01 Services. Console 01 holds the
+        services as a two by two grid of tiles with a 3px status top edge
+        and billing full width, Console 02 the requests line on a 12 by 5
+        grid with a ringed peak and peak and floor readouts, Console 03 the
+        incident with an amber border, then Console 04 error rate, Console
+        05 latency and Console 06 the event log, and Console 07 the deploy
+        sequence across the full width in three columns. The wall goes to
+        two columns below 1100px and one at phone width.
+    spacing: An 8px unit. 12px gutters, 16px panel padding, 24px page padding.
+    density: Medium dense. Four clocks and seven consoles on one wide wall.
+    corners: Square panels with 14px cyan corner brackets, chamfered 8px corners on buttons.
+    borders: 1px #29486b on panels and clocks, an amber border on the incident, 3px status top edges on tiles.
+    shadows: A faint glow on the clock digits only, and a radial navy glow at the top of the page.
+    icons:
+        18px status shapes beside caps words, a ringed tick for Nominal, a
+        triangle for Caution, a circular arrow for Recovered, a bolt for
+        Firing, a tick for Resolved and a magnifier for Investigating.
+    focus: A 2px white outline offset 3px with a 6px cyan halo.
+    tone: Control room words, such as Console 04, Nominal, Caution, Event log, Deploy sequence and T plus clocks.

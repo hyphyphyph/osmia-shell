@@ -1,0 +1,70 @@
+export anchor CasinoFeltStyle:
+    number: 240
+    screen: ProjectsDashboard
+    name: Casino felt
+    idea:
+        The dashboard is laid out on a dark green felt table inside a padded
+        leather rail, with the four figures as stacked chips, the projects
+        dealt as a fanned hand of dark cards with corner indices, and the
+        fortnight drawn as chip stacks.
+    base: dark
+    palette:
+        rail: #1c120c, the page, the padded rail, the header and the style sheet
+        leather: #26180f, the activity log, fields and the style sheet panels
+        felt: #0f3d2c, the table surface at its edges
+        feltLight: #145238, the lit centre of the table, the brightest felt any text sits on
+        card: #0d2a1f, project cards and chip centres
+        gold: #e2c376, the table line, card borders, the primary button, this week chips, links and focus
+        goldInk: #1c120c, text on gold
+        ivory: #f3eedd, text, figures and last week chip outlines
+        sage: #c3cdb9, meta, labels and axis text
+        chipRed: #a8323c, the edge of the active projects chip, decoration only
+        chipBlue: #2f5d9a, the edge of the due this week chip, decoration only
+        ok: #a8f0c0, On track text and check circle
+        risk: #f6cf72, At risk text and triangle
+        bad: #ffaba0, Behind and overdue text, crossed square, clock and the overdue chip edge
+    type:
+        Two stacks. Display text uses Didot, Bodoni 72, Bodoni MT, Georgia,
+        serif, with the greeting 36px italic, section titles 26px, chip
+        figures 28px bold and card corner indices 22px bold. Text uses
+        Franklin Gothic Medium, Arial Narrow, Arial, sans-serif at 15px and
+        1.5, card names 16px at 600, labels and meta 12px caps at 600 tracked
+        0.12em.
+    layout:
+        A dark rail header holds a gold diamond mark with the Brightwork name,
+        the six nav links as caps text with a gold underline on Home, a
+        leather search field, a bell, a gold New project button and Mara
+        Okafor. Below, the table is a felt panel with 56px rounded ends, a
+        radial light in its centre, a 14px padded leather rail around it and a
+        thin gold line inset 16px from the edge. On the felt the greeting is
+        centred in italic display type with the date and a coral line reading
+        4 tasks are overdue with a clock. The four figures are poker chips in
+        a row, each a striped edge ring round a dark centre with the number,
+        and a caps label below, overdue on a coral edged chip. The projects
+        are dealt as a fanned hand of six dark cards with gold borders, each
+        tilted a few degrees, with the percent and status symbol as the top
+        left index and repeated upside down at bottom right, and the name,
+        category, status word, tasks and due date in the middle over a thin
+        gold meter. Below the table sit two panels on the rail, the chart as
+        chip stacks for each weekday, last week as ivory outlined chips and
+        this week as gold chips with counts on top, and the dealer's log of
+        activity with gold rules. Below 1100px the hand stops fanning and
+        becomes a three column grid, below 640px a two column grid, chips go
+        two by two and the panels stack.
+    spacing: An 8px unit. 40px table padding, 16px card padding, 24px between chips.
+    density: Medium low. The table is roomy and the cards are small but few.
+    corners: 56px rounded table ends, 10px cards, round chips, 6px buttons and fields.
+    borders:
+        A 14px leather rail, a 1px gold line inset in the felt, 1px gold card
+        borders with a second inner gold line.
+    shadows:
+        Cards cast 0 10px 20px of black at 45 percent onto the felt, chips
+        cast 0 4px 0 of a darker rim, and the felt has an inner vignette.
+    icons:
+        Line icons at 1.8px stroke. Status uses a check circle, a triangle
+        with a bang and a crossed square, shown as the card index symbol and
+        with the word, overdue a clock.
+    focus: A 2px gold outline offset 3px.
+    tone:
+        Light and a little playful, such as The hand, Chips this week and
+        Dealer's log, never gambling talk.

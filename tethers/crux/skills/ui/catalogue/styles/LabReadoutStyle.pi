@@ -1,0 +1,51 @@
+export anchor LabReadoutStyle:
+    number: 413
+    screen: DatabaseConsole
+    name: Lab readout
+    idea: The console is an instrument bench of hairline framed readouts, so status shows as large thin measurements, tables as coded reagents, the query as numbered protocol steps, results as filled sample vials and history as a pass or fail run log.
+    base: dark
+    palette:
+        bench: #0e1112, the page and the style sheet
+        panel: #151a1c, readout cells and swatches
+        hair: #343b3f, the 1px grid lines between cells and every rule
+        tube: #22292c, empty vial glass and the scale track
+        ink: #e9eef0, text
+        muted: #a0aaaf, tags, codes, units and crop brackets
+        acid: #d4f06a, readings, vial fill, the open table, keywords, Run assay and focus
+        onAcid: #1c2600, text on acid
+        pass: #8fe0b5, PASS
+        fail: #ffa091, FAIL and its error, on #2a1a19
+    type:
+        Neutral grotesque, Helvetica Neue, Neue Haas Grotesk Text, Arial,
+        Liberation Sans, base 14px at 1.5. Readings are 56px at 300 with
+        tabular figures, vial values 40px at 300, the mode word 30px.
+        Tags and codes use ui-monospace, IBM Plex Mono, at 11px caps with
+        0.12em tracking, protocol steps 13.5px mono.
+    layout:
+        A header with Brightwork Data in bold and assay bench in light,
+        and Specimen production-replica in mono on the right. The bench is
+        a 12 column grid of cells divided by 1px hairlines, each cell with
+        small corner crop brackets top left and bottom right and a mono tag
+        row with a code on the left and a unit on the right. Row one has
+        three readouts, R1 Mode with a padlock and Read-only replica, R2
+        Replica lag as a big acid 2 s over a ten step scale with two lit,
+        and R3 Connections as 14 active. Row two has Reagents, a ruled
+        table coding the tables T1 to T5 with tasks T2 in acid and its
+        columns as .1 to .6, beside Protocol, the SQL as seven numbered
+        steps with dotted rules and Run assay and Duplicate buttons. Row
+        three has Readings, three vials S-01 to S-03 filled to 2, 1 and 1
+        with the value and project, and a summary of 3 rows, 38 ms and
+        highest first, beside a Run log table of R-03 to R-01 with time,
+        method and a tick PASS with duration or a cross FAIL on a red tinted
+        row with the error. Below 1000px the wide cells go full width. On
+        phones every cell stacks and the run code column hides.
+    spacing: A 12 column grid with 1px gaps. 18px by 20px cell padding.
+    density: Medium. Seven readout cells in four rows.
+    corners: Square. Corner crop brackets mark each cell instead of rounding.
+    borders: Only 1px hairlines in #343b3f, dotted between protocol steps.
+    shadows: None.
+    icons:
+        Drawn instruments. Vials with tick marks, a ten step scale, a
+        padlock, a tick for PASS and a cross for FAIL beside the word.
+    focus: A 1px acid outline offset 3px with a 4px soft acid halo.
+    tone: Clinical lab words, such as Reagents, Protocol, Readings, Run assay and PASS.

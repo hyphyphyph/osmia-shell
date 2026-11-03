@@ -1,0 +1,53 @@
+export anchor EnterpriseShellStyle:
+    number: 9
+    screen: ProjectsDashboard
+    name: Enterprise shell
+    idea: A formal corporate suite, with a deep-blue shell bar, a collapsible tree nav, breadcrumbs and flat square tiles on light grey that frame the work like an official system of record.
+    base: light
+    palette:
+        shell: #0f2a52, the shell bar and the top rule of the style sheet
+        shellHover: #1d3f72, shell dividers and hover in the shell
+        canvas: #edf0f4, the page behind the tiles
+        tile: #ffffff, tiles, the tree nav and fields
+        text: #1b2430, body text and headings
+        muted: #556170, labels, meta text and chart axes
+        line: #cdd3db, tile borders, with #e4e8ed between rows
+        primary: #0b57b0, buttons, links, progress bars, this week's bars and the focus outline
+        primaryDark: #083f80, primary hover and the current nav text
+        selection: #e3edf9, the current nav item, pressed toggles and initials tiles
+        positive: #1f6e3a, the On track circle
+        attention: #8a5200, the At risk diamond, with the alert strip on #fff6e5
+        critical: #b3241b, the Behind square and the overdue figure
+    type:
+        Segoe UI first, then system-ui, -apple-system, Roboto, Helvetica
+        Neue, Arial, sans-serif. Sizes are 24px semibold for the page title,
+        15px semibold for tile titles, 14px regular body at 1.43 line height,
+        13px for table cells and meta, and 12px semibold for labels. Tree
+        group headings are 12px semibold capitals with 0.06em spacing. KPI
+        figures are 32px light weight with tabular figures.
+    layout:
+        A 48px deep-blue shell bar with an app launcher, the wordmark and a
+        product label, a white search field, notifications and the user. A
+        white tree nav 248px wide on the left holds three collapsible groups,
+        Workspace, Organisation and Administration, with counts and a
+        Collapse navigation button at the bottom. The main area has
+        breadcrumbs, a toolbar with the title Portfolio overview, the
+        greeting line and the Customise, Export and New project buttons, then
+        an amber alert strip for the overdue tasks. A row of four KPI tiles
+        follows, two with micro charts. Below, the projects table tile takes
+        two thirds and a column of the Throughput chart tile and the Recent
+        activity tile takes one third. Below 820px the tree becomes a
+        horizontal tab row under the shell, and below 560px the search drops
+        to its own row and the tiles stack.
+    spacing: An 8px unit. 8px gaps between tiles, 16px tile padding and a 24px page gutter.
+    density: Compact. 44px table rows, 36px nav rows and a 48px shell bar.
+    corners: 4px on tiles and 2px on buttons, fields, avatars and segmented controls.
+    borders: 1px #cdd3db around every tile, 1px #e4e8ed between rows and a 3px primary bar on the left of the current nav item.
+    shadows: None. Tiles are flat and separated by the grey canvas.
+    icons:
+        16px line icons with a 1.5 stroke, square caps and mitred joins.
+        Status uses filled 14px shapes beside the word, a circle with a tick,
+        a diamond with a bar and a square with a cross, and a legend under
+        the table names each shape. People show as square initials tiles.
+    focus: A 2px primary outline offset 1px, white inside the shell bar. A focused field gets a primary border plus the outline, and a focused row gets the selection fill with an inset outline.
+    tone: Formal and neutral, such as Portfolio overview, Throughput, Attention required and Review overdue tasks.

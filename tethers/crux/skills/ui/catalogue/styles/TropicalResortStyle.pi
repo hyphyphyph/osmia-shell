@@ -1,0 +1,56 @@
+export anchor TropicalResortStyle:
+    number: 28
+    screen: LandingPage
+    name: Tropical resort
+    idea: A sunny resort brochure, with palm-leaf silhouettes, turquoise sea and coral sand tones, wavy edges, a postcard and relaxed rounded type.
+    base: light
+    palette:
+        sand: #fbf1df, the page and control panels
+        shell: #fffaf1, cards, the postcard, the quote band and fields
+        lagoon: #bfe9e4, the hero horizon, the logo band and the menu button
+        sea: #0a7f86, links, accent words and the focused field border
+        deepWater: #064e57, text, headings and the footer
+        coral: #c94a2f, the primary button and the focus outline, with #a8391f for small eyebrow text
+        coralSand: #ffd9cc, the Overdue chip and the flower disc, with #ffe1c2 for the closing band
+        sun: #ffc857, sun discs and footer headings on deep water, never text on light
+        palm: #1e5a3c, leaf silhouettes and the On track chip text
+        driftwood: #5c5246, body copy, notes and tag strings
+        mango: #7a5600, At risk text on #fdecc2
+        rust: #9a3b22, Overdue text
+    type:
+        A rounded stack, ui-rounded, SF Pro Rounded, Nunito, Varela Round,
+        Quicksand, Arial Rounded MT Bold, Trebuchet MS, system-ui,
+        sans-serif. The headline is 80px extra bold at 1.06 line height
+        with its second half in sea. Section titles are 50px, the quote
+        42px, feature titles 23px, all extra bold. The lede is 20px, body
+        17px at 1.65 and chips 14px extra bold.
+    layout:
+        A top bar over the hero with a sun and waves mark, rounded nav links
+        and a coral Start free button. The hero is a sand to lagoon sky
+        gradient with a soft sun disc and faint palm leaves at the corners.
+        The left holds a small shell pill with a sun icon, the headline,
+        the lede, the buttons and the note with a wave icon. The right holds
+        a slightly tilted postcard with a dashed inner border, a stamp of an
+        island and the title Greetings from this week listing three projects
+        and status chips. A wavy edge leads into a lagoon band where the
+        logo names hang as luggage tags from a line. Three features are
+        shell cards with tall arched tops holding small beach scene
+        pictures. The quote sits on shell beside a coral flower disc with a
+        pale palm leaf. The closing band is a peach sunset with a wavy top
+        and a half sun. The footer is deep water with sun yellow headings.
+        Below 960px the hero stacks, and below 760px the nav becomes a Menu
+        disclosure.
+    spacing: An 8px unit, 96px sections, 32px between cards and 56px between hero columns.
+    density: Relaxed brochure pace. Large type, short lines, plenty of sky.
+    corners: Soft everywhere. Arched card tops of 160px, 20 to 28px card corners, 18px fields, and a leaf shaped button rounded 26px except one 8px corner.
+    borders: Almost none. A 2px dashed inner line on the postcard, 2px sand rules between rows and a dotted stamp edge.
+    shadows: Warm teal drops of 0 24px 40px minus 28px rgba(6,78,87,0.5), and a solid darker coral lip under the primary button.
+    icons:
+        Small filled scene illustrations in palette colours inside the
+        arched feature pictures, such as a window, a flag with a tick and a
+        sun chart. Status chips are soft tinted pills with a filled circle
+        tick for On track, a filled triangle with an exclamation mark for
+        At risk and a rounded square with a cross for Overdue, beside the
+        word.
+    focus: A 3px coral outline offset 3px, sun yellow on deep water. A focused field adds a sea border and a soft sea glow.
+    tone: Warm, unhurried holiday language, such as Greetings from this week and Everything your team needs to unwind.

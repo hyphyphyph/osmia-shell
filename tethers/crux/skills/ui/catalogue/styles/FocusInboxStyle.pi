@@ -1,0 +1,50 @@
+export anchor FocusInboxStyle:
+    number: 395
+    screen: EmailClient
+    name: Focus inbox
+    idea: The inbox leads with only the few messages that need you, set large in a quiet serif inside vast dark space, and lets everything else shrink to one soft line each.
+    base: dark
+    palette:
+        page: #111214, the whole page
+        well: #17181b, the two focus cards and the style sheet
+        hair: #2a2b30, thin rules and card edges
+        ink: #ede7dd, headings and the letter
+        soft: #b3aca1, snippets, labels and folder links
+        faint: #8f897f, times and small notes
+        apricot: #f2b48a, the New marker, the open card edge, the Reply button and focus
+        onApricot: #2a1608, text on apricot
+    type:
+        Two stacks. A serif, Iowan Old Style, Palatino Linotype, Palatino,
+        Georgia, for the greeting at 60px, card subjects at 30px, the open
+        subject at 40px and the letter at 26px with 1.55 leading. A sans,
+        ui-sans-serif, Avenir Next, Avenir, Segoe UI, Arial, at 16px for
+        everything else, with 13px spaced capitals for small section words.
+    layout:
+        A single centred column about 1040px wide. A quiet top line holds
+        the brand with Mail in apricot and the folders as plain text links,
+        Inbox 12 underlined in apricot, then the labels each led by a hash.
+        After 96px of space the greeting reads Two things need you, Mara,
+        with Mara in apricot, over the line Everything else in your 12 can
+        wait until after coffee. Two large rounded cards follow side by
+        side for Northpass and Priya Nair, each with a hollow ring and the
+        word New, the subject in serif, the quoted snippet and the sender
+        and time. The Northpass card has an apricot edge and says open
+        below. A section titled Can wait lists the other four messages as
+        single ruled lines with sender, subject, small notes and time.
+        Far below, the open message sits in two columns, a left column
+        with the subject and From, To and Sent pairs, and a right column
+        with the letter in large serif and round buttons for Reply,
+        Reply all and Forward, then Snooze and Archive as quiet words.
+        Below 900px the cards and the reader stack. On a phone everything
+        is one column with the list first and the message last.
+    spacing: An 8px unit used in big steps. 96px above the greeting, 72 to 120px between sections, 32px inside cards.
+    density: Very sparse. Two cards, four one line rows and one letter, nothing else.
+    corners: 24px focus cards, fully round buttons, square rows.
+    borders: 1px #2a2b30 hairlines. The open card trades its edge for apricot.
+    shadows: None at all.
+    icons:
+        Very few, thin 1.5 stroke at text size. New is a hollow ring plus
+        the word New, starred a filled star plus Starred, labels a tag
+        outline plus the name, attachments a clip plus Attachment.
+    focus: A 2px apricot outline offset 4px, and fields turn their underline apricot.
+    tone: One calm human sentence up top, then single words, such as Can wait, Open and New.

@@ -1,0 +1,47 @@
+export anchor SteampunkStyle:
+    number: 143
+    screen: ProjectsDashboard
+    name: Steampunk
+    idea: A Victorian engine room on parchment, where the week reads from brass pressure gauges, projects are riveted brass plates with copper filled glass tubes, and the fortnight scrolls out of a chart recorder.
+    base: light
+    palette:
+        parchment: #f1e6cc, the page with faint stains
+        vellum: #faf3e1, ledger, tags and status pills
+        brassLight: #e2c57a, plate highlight and rivet rings
+        brass: #b8933f, plates and bezels, never text
+        brassDeep: #6b4f16, rules, rivets and the last week line
+        copper: #9a4a24, tube fluid, primary button, this week line and focus
+        iron: #2e2a24, text, needles and the nav rail
+        umber: #5d513f, small caps labels
+        rule: #cbb98f, ledger lines
+        verdigris: #2f6b5f, the On track cog and safe arc
+        amber: #7d5200, At risk
+        oxideRed: #9a2a1c, Behind and the pressure warning
+    type:
+        Display uses Playfair Display, Didot, Bodoni 72, Baskerville,
+        Georgia at 700. Text uses Baskerville, Libre Baskerville, Hoefler
+        Text, Garamond, Georgia. Labels are small caps tracked 0.1em.
+        Greeting 42px, gauge numbers 34px with old style figures, plate
+        titles 20px, body 17px at 1.5, labels 15px small caps.
+    layout:
+        A riveted brass plate header holds a cog emblem, Patent project
+        engine over the brand, an inset vellum search, a copper pill New
+        project, a round brass bell and Chief engineer Mara Okafor, over a
+        dark iron nav rail with small caps links where the current one is a
+        brass tab. The greeting with a long form date sits over a double
+        rule, opposite a vellum Pressure warning tag. Four brass plates hold
+        round gauges with cream faces, ticks, needles set to each number on
+        a stated scale and a red zone for overdue, with the number below.
+        The six engines are brass plates in two columns, each with category,
+        name, a glass tube filled with copper to the percent, tasks, a due
+        tag and a status pill. The right column holds an Engine room ledger
+        with a red margin line and an Output recorder plate with a graph
+        paper line chart, dashed for last week and solid copper for this.
+    spacing: An 8px unit. 16 to 22px inside plates, 16 to 20px between them, 28 to 32px between sections.
+    density: Medium. Four gauges, six plates in two columns, a ruled ledger.
+    corners: 6px plates, 3 to 4px paper, full pills on buttons and status, round gauges.
+    borders: Brass bevels instead of lines, a rivet in each plate corner, double rules under the greeting, a red margin line in the ledger.
+    shadows: Bevel highlights inside plates plus a soft 0 3px 6px brown drop. Fields are inset.
+    icons: Engraved solid shapes in vellum pills with the small caps word. Cog On track, triangle with a bar At risk, hex nut with a bar Behind.
+    focus: A 3px double copper outline offset 4px with a 2px vellum ring.
+    tone: Victorian engineering labels, such as The six engines, Engine room ledger, Output recorder, Pressure warning and Chief engineer.

@@ -1,0 +1,50 @@
+export anchor DarkDenseGridStyle:
+    number: 265
+    screen: CloudFiles
+    name: Dark dense grid
+    idea: A graphite data grid with 28px rows, sortable column heads, mono figures and a key value inspector, built for scanning many files fast.
+    base: dark
+    palette:
+        base: #111317, grid body, page and style sheet
+        panel: #171a1f, sidebar, toolbar and inspector
+        head: #1d2127, column heads, the current nav row and secondary buttons
+        ink: #d9dfe7, text and the storage fill
+        muted: #949fad, meta, mono figures, column heads and icons
+        line: #2a2f37, rules between every row, cell and panel
+        track: #323844, control borders, flag outlines and meter tracks
+        amber: #e3b450, primary button, sort arrow, current markers, selected edge, checkbox and focus
+        selected: #2b2516, the selected row fill
+    type:
+        Two stacks. Text uses system-ui, Segoe UI, Roboto, Arial at 13px.
+        Figures, dates, sizes, the breadcrumb and the status bar use
+        ui-monospace, SF Mono, Cascadia Mono, Menlo, Consolas at 11 to
+        12px with tabular numbers. Column heads are 11px at 600 and panel
+        labels 10.5px caps tracked 0.1em.
+    layout:
+        A 36px near black app bar holds a small amber B square, the word
+        Brightwork and suite tabs Canvas, Drive, Code and Ops with Drive
+        current, plus Mara Okafor and a mono MO tag. A 40px toolbar holds
+        a mono breadcrumb, a Search files field with a slash key hint, an
+        amber Upload button, a New folder button and a List or Grid
+        segmented switch. A 188px sidebar lists the five places at 28px
+        rows and ends with 64.2 GB / 100 GB, a 6px bar and 64.2% used. The
+        centre is a full table with columns for row number, a checkbox,
+        Name sorted ascending, Type, Size, Modified, By and Flags. Flags
+        are outlined mono chips. The selected row is filled amber dark
+        with a checked box and an amber left edge. A 288px inspector shows
+        a small thumbnail card and a key value table, then Share, Download
+        and Get link. A 26px status bar reads 8 items, 1 selected, 1
+        uploading and storage. Below 1100px the inspector drops under the
+        grid. Below 760px everything stacks and the table scrolls sideways
+        inside its own area.
+    spacing: A 4px unit. 10px cell padding, 14px panel inset, 6px between buttons.
+    density: Dense. 28px rows, 26px controls, a 36px app bar and a 26px status bar.
+    corners: 2px on controls and flags, square panels and cells.
+    borders: 1px #2a2f37 rules between every row, column head and panel.
+    shadows: None. Inner 2px amber edges mark the current tab, nav row and selected row.
+    icons:
+        15px line icons in muted grey, amber when current. Flags pair a
+        filled star with Starred, two heads with Shared · 4 and an up
+        arrow ring with Uploading 62% beside a small bar.
+    focus: A 2px solid amber outline with a 1px offset.
+    tone: Terse and technical, such as Flags, Inspector, 1 selected and 64.2 / 100 GB.

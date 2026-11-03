@@ -1,0 +1,50 @@
+export anchor XeroxZineStyle:
+    number: 155
+    screen: ProjectsDashboard
+    name: Xerox zine
+    idea: A photocopied punk zine spread, stapled down the middle, with ransom-note cut-out letters, typewritten listings and nothing but toner black on white paper.
+    base: light
+    palette:
+        paperWhite: #ffffff, pages, cut-outs and fields
+        toner: #0d0d0d, all text, bars, solid blocks and the primary button
+        smudge: #4a4a4a, speckle and halftone texture only
+        wash: #e6e6e6, grey cut-out letters and the focus fill
+        desk: #c9c9c6, the surface under the zine and the tape strips
+        staple: #8a8f94, staples on the fold, decorative
+    type:
+        Four stacks mixed like cut-outs. Headings and numbers use Impact,
+        Haettenschweiler, Arial Narrow Bold, Franklin Gothic Heavy,
+        sans-serif, with 64px numbers, 32px section heads and 20px
+        buttons. Project names use Arial Black at 19px caps. Asides use
+        Times New Roman italic at 15 to 20px. Body and labels use Courier
+        New, Courier, Nimbus Mono PS, monospace at 16px with 1.45 line
+        height, labels 13px bold caps. The greeting is a ransom note, each
+        word on its own boxed scrap in a different stack, rotated 2 to 5
+        degrees.
+    layout:
+        A white two page spread on a speckled grey desk with a dashed fold
+        down the middle and two grey staples on it. The left page has the
+        masthead, a black rotated Brightwork block and an issue note, nav
+        as boxed typewriter tabs tilted alternately with Home inverted,
+        then search as an underline, New project, a BELL count button and
+        the name. Below come a black date strip, the ransom note greeting,
+        a black splat with a bang beside the scrawled overdue line, four
+        taped cut-out boxes in a two by two grid with the overdue one
+        inverted, and a scene report list with black time tags floated
+        right. The right page holds a numbered track listing of the six
+        projects with big 01 to 06 numerals, caps names, a status box, and
+        a meta line with a hatched bar and the facts, then the tally chart
+        with dotted halftone bars for last week and solid bars for this
+        week. Small page folios sit at the foot. Below 900px the pages
+        stack and the staples hide.
+    spacing: Loose 4px base, mostly 8, 12, 18 and 32. Pages have 36px margins like a folded A5 sheet.
+    density: Packed and lumpy. Listings are tight, cut-outs float with uneven gaps.
+    corners: Square everywhere. Scraps are rotated rather than rounded.
+    borders: Solid toner lines from 2 to 4px. Dashed lines for the fold and soft dividers.
+    shadows: Only the spread sits on the desk with a flat 6px grey offset. Speckle gradients fake copier noise.
+    icons:
+        Hand drawn feel in toner. A wobbly circled tick means On track, an
+        outline triangle with a bang means At risk, a solid black box with
+        an X means Behind, and a black splat with a bang marks overdue.
+    focus: A 3px dashed toner outline offset 4px, with a wash fill on fields and rows.
+    tone: Blunt lower case asides and shouted caps, such as scene report, track listing and deal with it today.

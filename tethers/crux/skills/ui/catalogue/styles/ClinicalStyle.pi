@@ -1,0 +1,51 @@
+export anchor ClinicalStyle:
+    number: 58
+    screen: Inbox
+    name: Clinical
+    idea: A calm records system in pale blue-green, where every fact sits under a careful small-caps label and every alert is gentle, boxed and marked by a symbol.
+    base: light
+    palette:
+        page: #eef6f5, the background
+        surface: #ffffff, panels and fields
+        band: #f6fbfa, the quoted message and row hover
+        text: #17302e, body text and field values
+        label: #4a6563, field labels and meta text
+        line: #c8dcd9, panel borders, with #e1ecea for inner lines
+        teal: #0e6763, the primary button, selection, links and focus
+        tealSoft: #d9eeeb, the selected row and active nav item
+        info: #1d5a8c text on #e8f1f9, the Unread tag and the mention symbol
+        ok: #1f6b3d text on #e6f3ea, the Done tag and the completed symbol
+        notice: #7a5100 text on #fbf3df, gentle alerts, the review symbol and the unread count
+    type:
+        Segoe UI, system-ui, -apple-system, Roboto, Helvetica Neue, Arial,
+        sans-serif. The page title is 24px semibold. The message is 17px on
+        a 1.55 line height. Rows are 15px medium, bold when unread. Meta
+        and times are 13px. Labels are 12px semibold uppercase with 0.05em
+        tracking, and panel headings 13px semibold uppercase.
+    layout:
+        A white top bar with a teal outlined pulse mark, the brand, nav for
+        Projects, Inbox and Reports, and Mara Okafor with Signed in at
+        right. The page has the Inbox title with a short description and
+        three bordered summary chips for items, unread and the reply
+        requested by Monday. Below sit two panels, five to six. The left
+        panel is titled Notifications with a segmented filter control and
+        six rows, each with a 28px symbol disc, the sentence, status tags,
+        a kind and project meta line and the time at right. The selected
+        row has a teal left bar. The right panel shows the open mention
+        with a four cell fact strip for From, Task, Project and Received, a
+        gentle note with a clock symbol, the message as a quote with a teal
+        left bar, three captioned thumbnails, a labelled reply field with
+        a hint, and Reply, Mark as done and a quiet Open task link. Below
+        960px the panels stack and the fact strip becomes two by two.
+    spacing: An 8px unit. 12 by 16px row and field padding, 24px between panels.
+    density: Medium. Two lines per notification and a four cell fact strip for the open item.
+    corners: 8px on panels, 6px on buttons, fields, alerts and thumbnails, 4px on status tags, round symbol discs.
+    borders: 1px #c8dcd9 on panels with #e1ecea inside, a 4px teal left bar on the selected row and the quote.
+    shadows: None. Structure comes from borders and labels.
+    icons:
+        16px line icons with a 1.8 stroke inside 28px tinted discs, an at
+        sign for mentions, a tick for completed, an eye in a square for a
+        review request and plain grey discs for the rest. Tags pair a dot
+        with Unread, a tick with Done and an eye with Viewing.
+    focus: A 2px teal outline offset 2px with a 5px soft teal ring. A focused field gets a teal border and the same ring.
+    tone: Careful and factual, such as Received, Your reply and Note. Priya asks for a choice by Monday.

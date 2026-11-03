@@ -1,0 +1,53 @@
+export anchor RadarStyle:
+    number: 307
+    screen: OpsMonitor
+    name: Radar
+    idea: An air traffic radar scope where services are blips on healthy, degraded and outage rings under a sweeping wedge, with flight progress strips, phosphor traces, advisories and departures beside it.
+    base: dark
+    palette:
+        scopeBlack: #020a06, the page and style sheet
+        scopeFace: #03140b, the scope centre and trace panels
+        strip: #0a1f13, service strips
+        ring: #1d5a37, rings, borders and rules
+        phosphor: #7dffb0, healthy blips, headings, the traffic trace and the primary button
+        ink: #d6ffe6, body text
+        muted: #6fc796, labels and axes
+        amber: #ffc94a, Degraded, the incident box and p95
+        sky: #8fd8ff, Recovered and p50
+        coral: #ff8a7a, the error trace and Firing
+        focus: #ffffff, a dashed white focus outline
+    type:
+        Monospace throughout, ui-monospace, SF Mono, Menlo, Consolas,
+        DejaVu Sans Mono, at 14px and 1.5. Strip names 17px bold, the
+        incident number 20px bold amber, section titles 13px bold caps
+        tracked 0.14em in phosphor, strip labels 11px caps, blip names 15px
+        bold inside the scope.
+    layout:
+        A header holds a small radar mark, BRIGHTWORK OPS, the apps as
+        plain links with Ops underlined, and Sector production window 24 h.
+        The top area pairs a 560px circular scope with a column of strips.
+        The scope has a bezel ring, three rings for healthy, degraded and
+        outage labelled along the right axis, cross hairs, degree ticks and
+        a static conic sweep wedge. Each service is its status shape used
+        as a blip, api, web and notifications on the inner ring,
+        sync-worker on the middle ring and billing on the outer ring, each
+        named with its word beside it. A caption and a shape key sit under
+        the scope. The column holds five flight strips, each with a 10px
+        coloured tab, the name, status and uptime with metric in dashed
+        cells, then the incident as an amber box. Below run three phosphor
+        trace panels for traffic, errors and latency with notes, then
+        Advisories for alerts and Departures for deploys as ruled rows.
+        Below 1000px the scope sits above the strips, and at phone width
+        only blip names show in the scope and strips wrap to two rows.
+    spacing: An 8px unit. 24px between scope, strips and traces, 6px between strips.
+    density: Medium. The scope dominates, the strips are compact.
+    corners: A circular scope, square strips, 8px trace panels, round buttons.
+    borders: 1px #1d5a37 rings and panels, dashed dividers inside strips, an amber border on the incident.
+    shadows: An 8px bezel ring around the scope and a soft phosphor glow on traces.
+    icons:
+        The status shapes are the blips themselves, a ringed tick for
+        Healthy, a triangle for Degraded and a circular arrow for
+        Recovered, and they repeat beside every status word, with a bolt
+        for Firing, a tick for Resolved and a magnifier for Investigating.
+    focus: A 2px dashed white outline offset 3px.
+    tone: Air traffic words kept plain, such as Sector, Service strips, Advisories and Departures.

@@ -1,0 +1,50 @@
+export anchor SalesGraphiteStyle:
+    number: 334
+    screen: CrmPipeline
+    name: Sales graphite
+    idea: A sober working CRM in cool graphite, with one summary strip, five even stage columns of clean deal cards and a single teal accent for progress and action.
+    base: dark
+    palette:
+        page: #15171a, the page background and the style sheet
+        column: #1c1f23, the top bar, summary strip, stage columns and activity panel
+        card: #24282d, deal cards, secondary buttons and list rows
+        line: #343941, every border, divider and meter track
+        ink: #eceef1, text and figures
+        muted: #a3aab4, labels, owners, counts and stage totals
+        teal: #6fd6c4, the primary button, current tab, target meter and focus
+        onTeal: #0c2622, text on teal
+        amber: #f3c46f, Stalled text and its warning triangle
+        sky: #9ec5ff, next step and closing text with calendar and flag
+        green: #8fdca0, Won and Closed text with a check
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial, with figures in ui-monospace, SF Mono, Menlo, Consolas. Base
+        14px at 1.5. The page title is 22px at 650, summary figures 22px
+        mono at 600 with tabular numbers, deal names 14px at 600, column
+        heads 13px at 650 and meta 12px.
+    layout:
+        A 56px top bar holds a teal square B mark with Brightwork Sales,
+        four underlined tabs with Pipeline current, then search and a teal
+        New deal button. Below sits the title Deal pipeline with a round Q4
+        chip and an All owners button on the right. One bordered summary
+        strip splits into five cells, Pipeline value, Won this quarter with
+        of 200,000 and 64 percent beside it and a thin teal meter under it,
+        Target, Win rate and Open deals. Five equal stage columns follow,
+        each with a 3px top rule that steps from grey to teal to green, a
+        head with stage name, count and total in mono. Deal cards show the
+        name and value on one line, an initials disc with the owner, and a
+        ruled status line with an icon. Recent activity sits below as one
+        panel split into three cells. Below 1100px the board goes to three
+        columns, below 760px to one, the tabs scroll, search hides and the
+        summary goes two by two with the won cell on top.
+    spacing: An 8px unit. 12px gaps between columns and cards, 12px card padding, 28px page gutter, 16px on phones.
+    density: Medium. Every deal is a card with name, value, owner and one status line.
+    corners: 8px panels and columns, 6px cards, buttons and fields, round initials and chip.
+    borders: 1px #343941 on every surface, plus the 3px stage top rule on each column.
+    shadows: A faint 0 1px 2px black under deal cards only.
+    icons:
+        Rounded line icons at 1.9 stroke, sized to the text. Calendar for
+        the next step, paper plane for sent, warning triangle for stalled,
+        flag for closing, check for won, phone and eye in the activity.
+    focus: A 2px solid teal outline offset 2px on every control and around the search field.
+    tone: Plain CRM words, such as Deal pipeline, New deal, All owners and Recent activity.

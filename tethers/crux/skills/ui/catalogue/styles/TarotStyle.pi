@@ -1,0 +1,52 @@
+export anchor TarotStyle:
+    number: 100
+    screen: ProjectsDashboard
+    name: Tarot
+    idea: The dashboard read as a gentle tarot spread on pale lavender parchment, with arched gold-lined cards, roman numerals and fine line drawings, and the fortnight drawn as two constellations.
+    base: light
+    palette:
+        lavenderParchment: #f6f2fb, the page
+        cardCream: #fffdf6, cards, panels and fields
+        nightIndigo: #2a2350, text, numerals, the primary button and week two stars
+        dusk: #4f4870, meta lines, captions and axis labels
+        goldInk: #7a5a12, small gold text, numerals on cards and week one stars
+        goldLeaf: #b8913a, frames, rules and line art, never text
+        mist: #e7def2, the progress track and the focus halo
+        sage: #2f5d46, On track
+        amber: #8a4e0b, At risk
+        garnet: #9b2335, Behind and overdue
+    type:
+        Capitals and numerals use Trajan Pro, Optima, Palatino Linotype,
+        Palatino, Georgia, serif, uppercase and tracked 0.1 to 0.3em. Text
+        uses Iowan Old Style, Palatino Linotype, Palatino, Georgia, serif.
+        The brand is 30 to 54px caps tracked 0.3em, the greeting 34 to 48px
+        italic, altar numbers 52px, section heads 15px caps tracked 0.24em
+        over a 15px italic subtitle, card names 14px caps, body 16px at 1.6
+        and numerals 12 to 15px.
+    layout:
+        The header is centred. A top row holds a pill search field, the bell,
+        an indigo pill New project with a gold inner ring, and the user in a
+        gold ringed disc. Below sit a line crest with a moon, the spaced caps
+        brand and caps nav links with a small star before the current one.
+        The greeting is centred under a gold caps line, The reading for
+        Saturday 31 October 2026, with a garnet italic warning. The four
+        totals stand as an altar of four arched windows I to IV with large
+        numerals. The spread is a row of six arched cards, each with a gold
+        frame and a second hairline frame inside, a roman numeral at the top,
+        a gold line drawing, a star, a wheel, a lantern, scales, a blossom or
+        a winged letter, and the name in caps on a rule at the base. Under
+        each card sit team and due, a thin indigo progress bead, percent and
+        tasks, and the status. Below, a constellation chart sits beside
+        Recent signs, a list marked with small gold stars. Cards go three
+        across below 1100px and two across on phones.
+    spacing: An 8px unit. 20px between cards, 40 to 64px between sections and generous margins inside frames.
+    density: Calm and sparse. Little text on each card.
+    corners: Arched tops on cards and altar windows, a 50 percent horizontal radius over 56 to 80px, with 6px base corners. Buttons and fields are pills.
+    borders: A 1px gold leaf frame with a second hairline 5px inside, like a printed card border.
+    shadows: One soft violet lift, 0 6px 20px rgba(42,35,80,0.10), on cards and panels.
+    icons:
+        Fine 1.2px gold line drawings for the cards. Status marks are solid,
+        a sun with rays for On track, a crescent moon for At risk and a
+        lightning bolt for Behind and overdue, each beside caps words.
+    focus: A 2px indigo outline offset 3px inside a 6px mist halo.
+    tone: Soft and a little ceremonial but plain, such as The reading, The spread and Recent signs.

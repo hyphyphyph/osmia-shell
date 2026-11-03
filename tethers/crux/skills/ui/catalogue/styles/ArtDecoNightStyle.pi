@@ -1,0 +1,55 @@
+export anchor ArtDecoNightStyle:
+    number: 283
+    screen: CloudFiles
+    name: Art deco night
+    idea: A black lacquer and gold night club facade, a sunburst fan crowning the title, symmetric double ruled frames with stepped corners, and files set in a tall gold ruled register.
+    base: dark
+    palette:
+        onyx: #0b0b0d, the page, corner steps and the preview ground
+        lacquer: #141418, frames and the style sheet
+        panel: #1b1b21, the page inside the preview
+        selected: #24211a, the selected row between gold rules
+        gold: #d9b45a, rules, fans, headings, the primary button with dark text #120f08, the current nav and Starred
+        darkGold: #7d6630, inner rules and fact grid lines, never text
+        champagne: #f0e3c0, text and the inner focus ring
+        muted: #b9b2a0, meta and labels
+        jade: #5cc2a8, Shared
+        copper: #e8956b, Uploading and its segments
+    type:
+        Headings, labels and figures in a geometric sans, Futura, Century
+        Gothic, Avenir Next, Josefin Sans, all at 400 weight. The folder
+        title is 46px caps tracked 0.22em, frame headings 14px gold caps
+        tracked 0.42em, table heads 11px caps tracked 0.26em. Body in Avenir
+        Next, Gill Sans, Segoe UI at 15px, file names 16px.
+    layout:
+        A symmetric facade. A sunburst of fine gold rays and arcs rises
+        from behind the centred header, clipped by its section. The header
+        has Brightwork Drive in gold, the title Website redesign, a diamond
+        rule and a caps breadcrumb with gold diamonds. A centred nav band
+        between double gold rules holds the five links, My files as a gold
+        block with dark text. Below are two framed columns, a 320px details
+        plaque on the left and the register on the right. Each frame has a
+        3px double gold border and a small stepped gold square on each
+        corner. The plaque shows Details, the preview over fan rays, the
+        name, Starred, a two by two grid of facts, full width Share,
+        Download and Get link, and a fan shaped storage gauge with six of
+        ten blades gold and 64.2 GB of 100 GB used. The register has an
+        underlined search, Upload, New folder and a List or Grid switch
+        with List gold, then a table captioned Website redesign with 8
+        entries, columns Name, Modified and Size, the size right aligned.
+        Each name has a gold diamond with the type icon and statuses below
+        in spaced caps. The selected row is a warm dark band between gold
+        rules with a gold left bar. Uploading shows eight copper segments
+        with five filled. Below 1000px the register comes first and the
+        plaque follows. Below 700px rows become stacked blocks.
+    spacing: An 8px unit. 32px between frames, 28px frame padding, 12px cells.
+    density: Medium. A three column register.
+    corners: Square frames with a stepped gold square at each corner. No rounding anywhere.
+    borders: 3px double gold round frames, double rules under table heads and round the nav, 1px dark rules between rows.
+    shadows: None. Depth comes from double rules and inset gold rings on the primary button.
+    icons:
+        1.5px line icons inside gold diamonds. Status is a spaced caps word
+        with a star for Starred, two heads for Shared, an up arrow for
+        Uploading and a checked box for Selected.
+    focus: A 2px champagne outline offset 3px, then a dark gap and a gold ring.
+    tone: Formal and spare, such as Register, Details and 8 entries.

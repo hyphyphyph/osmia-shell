@@ -1,0 +1,62 @@
+export anchor GlassHubStyle:
+    number: 374
+    screen: SmartHome
+    name: Glass hub
+    idea: Every room is a frosted dark glass tile floating over slow coloured light, and a room that is doing something glows softly in its own colour while idle rooms stay clear and still.
+    base: dark
+    palette:
+        page: #0b0d17, page ground under the light blobs
+        glass: #ffffff11, every tile, the top bar and swatch cards
+        edge: #ffffff29, 1px tile edges, 30% on buttons and fields
+        ink: #eef0fb, text and figures
+        mute: #aab0cc, labels, meta and axis text
+        warm: #ffcf7a, lights on glow, the alert and evening bars
+        mint: #7ff0c8, locked and battery
+        lilac: #c9b6ff, motion glow, the active scene and focus halo
+        rose: #ffb0a8, heating schedule glow
+        sky: #9fd4ff, daytime chart bars
+        onWarm: #2a1a00, text on the warm primary button
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Base 15px at 1.5. Big numbers are thin, the kWh figure 44px
+        and room temperatures 40px at weight 250 with the degree sign at
+        18px muted. Tile titles 15px at 600, state lines 14px muted, tags
+        12px at 650 in caps with 0.04em tracking.
+    layout:
+        The page ground is near black indigo with three large dim radial
+        light blobs, violet top left, teal right and amber bottom, clipped
+        by the stage. A full pill glass top bar holds a round B mark, the
+        name, Saturday and the time, and a moon line saying Movie scene on.
+        Below it a full width glass alert glows amber with a warning bubble,
+        the sentence and a cream to amber pill Close now button. A 12 column
+        grid follows. The left 8 columns hold five glass room tiles three
+        across, each with a round glass icon bubble, a pill state tag top
+        right, the room name, a huge thin temperature or a state word, and a
+        state line with its own icon. A tile that is doing something glows
+        in its colour, amber for lights on, rose for the heating schedule,
+        lilac for garden motion, while kitchen and the locked door stay
+        clear. The right 4 columns stack Energy today with a thin 44px
+        figure, two inner glass chips for solar and battery and a bar chart
+        whose evening bars are amber, then Scenes as four tall glass keys
+        with Movie lit lilac and marked Active with a check. Below 1060px
+        the side column drops under the rooms in two columns, below 760px
+        rooms go two across and at phone width one across with scenes two by
+        two.
+    spacing: An 8px unit. 16px gaps between tiles, 18 to 20px tile padding, 32px page gutter and 16px on phones.
+    density: Airy. Five room tiles, energy and scenes fill one wide screen.
+    corners: 22px tiles, full pills for the top bar, tags and buttons, 18px scene keys and round icon bubbles.
+    borders:
+        1px white at 16 percent on every glass surface, a tinted edge at
+        about 50 percent on a glowing tile, 30 percent white on buttons and
+        fields.
+    shadows:
+        An inset 1px white top highlight and 0 12px 32px black at 35 percent
+        on glass. Active tiles add a 36px coloured glow, and the alert a
+        40px amber glow.
+    icons:
+        Round line icons at 1.6 stroke, 20px, in 44px glass bubbles. States
+        use a bulb for on, a dash circle for off, a flame for the schedule,
+        a check for locked and a walking figure for motion, always beside a
+        word.
+    focus: A 2px white outline offset 3px with a 6px lilac halo, visible on glass and on glow.
+    tone: Short and calm, such as Energy today, Scenes, Active and Close now.

@@ -1,0 +1,97 @@
+use @piton/belay
+
+from ../lib/PitonSkillBase import PitonSkillBase
+
+export skill CruxSpecDistill extends PitonSkillBase:
+    description:
+        Distils everything a Piton specification says about one thing the
+        user names, such as a colour, a control, a rule, a behaviour, or
+        a whole skill, into one short prompt a builder agent can act on.
+    useWhen:
+        the user names a part of the product, however small, and wants a
+        distilled summary of what the specification says about it, or a
+        prompt to build, refactor, or check that part
+    prompt:
+        You answer one request: here is one thing in the product, tell
+        me what the specification says about it, distilled. The user
+        names the thing in their own words, such as the right sidebar
+        border colour, the empty state of the search results, how the
+        header behaves on a Thai page, or the develop skill. The
+        specification usually says something about it in more than one
+        place. A component states its own value, a visual language
+        defines the palette that value comes from, a scoped instruction
+        sets rules for every component in that folder, and a project
+        invariant rules out whole approaches. Over time these drift
+        apart from each other and from the code. You gather all of them
+        and distil them into one prompt, so the user can hand it to a
+        builder and bring that one thing back in line.
+
+        The user wants the distilled result, not a map of where things
+        are. Do not show them a list of anchors, files, or slice
+        targets to approve. Find, read, and distil, then give the
+        result.
+
+
+    findingTheThing:
+        Work out what the user named. Find the anchor or property that
+        defines it most directly, searching the specification source by
+        name and by content. Then search outward for three kinds of spec.
+
+        - What it depends on. The values, tokens, and anchors the target reads, embeds, extends, or references. piton slice on the target follows these for you.
+        - What governs it. Anything elsewhere that constrains the target without the target naming it, such as a palette or design token set, a visual language, a scoped instruction for the code folder the thing lives in, a parent component or layout, a project invariant, or an accessibility, localisation, or theming rule. Search for the target's name, its category, and the words those rules use, and use piton reach to see what connects to it.
+        - Where it shows up. Other anchors that state, reuse, or override the same value, including the same thing described under a different name.
+
+        Read each one with piton slice, from the project directory, so
+        you read what the compiler resolves rather than guessing at
+        inheritance. Use only what says something a builder must obey
+        for this thing. Never include something merely because it is
+        nearby, imported, or reachable. Leave out framework definitions,
+        such as Belay's own construct anchors, unless they constrain the
+        thing. Leave out text that only says how the build reaches the
+        thing, or that only mentions it in passing.
+
+        Ask one short question only when the name could mean two
+        different things and the answer changes the result, or when it
+        matches nothing. Otherwise go straight to the result.
+
+    distilling:
+        Distil means condense without losing meaning. Rewrite the
+        specification's content in fewer, plainer words, grouped by
+        topic rather than by file or anchor. Keep every requirement,
+        value, limit, default, and prohibition. Keep exact values
+        exactly, such as colours, sizes, names, counts, and quoted
+        strings. Drop repetition, rationale that does not change what
+        to do, and examples whose point is already stated.
+
+        Never add a requirement, fill a gap, resolve a contradiction, or
+        soften a rule. Keep the strength of each rule, so never and must
+        stay never and must, and should stays should. If two parts of
+        the specification disagree, say so inside the result where it
+        matters, naming both values, so the builder stops rather than
+        picks one.
+
+        Write for a builder working in the code. When the user names a
+        job, open with one line stating it. Build means implement the
+        thing where it is missing. Refactor means restructure the code
+        so it follows the specification in one clear place, without
+        changing what it does. Check means compare the code with the
+        specification and fix every difference. When the user names no
+        job, give only the distilled specification, with no task
+        framing. When the project uses Belay with a codeRoot and the
+        thing lives in code, name the code folders or files to start
+        from, and only paths that exist.
+
+        Use headings and short lists so the result is easy to scan. Do
+        not cite .pi file paths, anchor paths, or compiled output paths.
+        The result must stand on its own, so a builder with no access to
+        the specification can act on it.
+
+    output:
+        Print the result in chat inside one fenced block, using a fence
+        longer than any fence inside it, so the user can copy it whole.
+        Do not write it to a file unless the user asks. After the block,
+        add at most a few lines: contradictions you found, and anything
+        a builder would need that the specification does not say.
+
+        This skill is read-only. Never modify the specification or the
+        code, run piton build, or write generated output.

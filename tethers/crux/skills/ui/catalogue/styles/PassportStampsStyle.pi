@@ -1,0 +1,56 @@
+export anchor PassportStampsStyle:
+    number: 117
+    screen: ProjectsDashboard
+    name: Passport stamps
+    idea: The dashboard is an open passport, with a holder page for the user and contents, and a visa page where each project is an inked entry stamp whose shape and mark give its status.
+    base: light
+    palette:
+        table: #e7e5ea, the page behind the book
+        cover: #3a2a4a, the thin book edge, decorative only
+        visaPaper: #eef3ee, pages under the guilloche
+        securityTeal: #1d5f63, guilloche lines at 10 percent, microprint and section labels
+        ink: #1d2833, text and the machine readable lines
+        muted: #4a5662, field keys, times and last week
+        violetInk: #5a2a86, the primary button, the current page, this week and focus
+        greenInk: #1f6340, the round On track stamp with a tick
+        blueInk: #1f4b8f, the double framed At risk stamp with a triangle
+        redInk: #a1262c, the leaf shaped Behind stamp with a crossed square and the overdue notice
+    type:
+        Three stacks. Serif is Palatino Linotype, Book Antiqua, Palatino,
+        URW Palladio L, Georgia, serif. OCR is OCR B, OCR-B, Consolas,
+        Lucida Console, monospace. Stamp is Arial Black, Arial, sans-serif
+        in caps. Sizes are 30px serif greeting, 30 to 34px bold OCR figures,
+        14px black caps stamp titles, 15px bold OCR caps field values, 15 to
+        16px serif body and 10 to 13px OCR caps keys and labels.
+    layout:
+        A dark thin cover frames a two page spread, a narrow holder page on
+        the left and a wide visa page on the right, with shaded gutters
+        where they meet. Both pages carry a guilloche of overlapping fine
+        rings. The holder page has a microprint band, a compass rose mark
+        with the spaced caps brand, a hatched photo box with MO, Surname,
+        Given name and Date fields, the greeting and date, a tilted red
+        notice reading Overdue, 4 tasks are overdue, and the navigation as a
+        Contents list with dotted leaders and page numbers. Two machine
+        readable lines sit at its foot and folio numbers mark the corners.
+        The visa page has the underlined search, a violet pill New project
+        button, a round bell and the user, then four teal outlined boxes
+        for the figures, then six entry stamps on a loose three column grid,
+        each turned 3 to 6 degrees. A stamp holds the project name, team
+        between rules, a big percent, tasks and due date, and a status pill.
+        Its outline is the status, round with an inner ring for On track,
+        a 6px double frame for At risk and a leaf with 28px and 6px corners
+        for Behind. Below the spread a second spread holds a lollipop chart
+        of ink circles on stems, grey last week and violet this week, and
+        an Observations list. Below 820px pages stack, and below 560px the
+        stamps go one per row, alternating left and right.
+    spacing: An 8px unit. 28 to 32px page margins, 18 to 20px between stamps.
+    density: Medium and scattered. Stamps sit loosely on a grid, each turned slightly.
+    corners: Book 14px, pages 8px, summary boxes 6px. Stamp outlines follow the status shapes described above.
+    borders: 3px ink frames, 6px double for At risk, hairline teal for summary boxes and observation rules.
+    shadows: Only the gutter, an inset shade where the pages meet, and a soft drop under the book.
+    icons:
+        Solid ink marks, a tick for On track, a filled triangle for At
+        risk, a crossed filled square for Behind and a clock for overdue,
+        each beside the caps word. A compass rose emblem.
+    focus: A 2px violet outline offset 3px with a soft violet halo.
+    tone: Travel document words, such as Contents, Entries, Observations and Given name.

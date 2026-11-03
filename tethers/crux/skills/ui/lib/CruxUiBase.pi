@@ -1,0 +1,92 @@
+use @piton/belay
+
+from ../../lib/PitonSkillBase import PitonSkillBase
+
+// Shared base for the crux UI skills. It is abstract, so it never
+// compiles or is emitted on its own. It holds the rules every UI skill
+// follows for the HTML pages it saves, the gallery's large view, how
+// a saved page is shown to the user, and how the specification points
+// at saved pages. Rules that belong to one skill, such as numbered
+// mockup rounds or the style library, stay in that skill. Shared
+// guidance lives in named properties, which inherit cleanly and are
+// serialized as sections after each concrete skill's own prompt.
+export abstract anchor CruxUiBase extends PitonSkillBase:
+    savedPages:
+        Every page a UI skill saves, whether a mockup, a style sample
+        or a gallery, is a single self-contained HTML file with inline
+        CSS. Use JavaScript only for a gallery's controls or to show an
+        interaction that cannot be seen without it. Load nothing from
+        the network, so the files open offline and look the same years
+        later.
+
+        Piton reads only .pi files, so saved pages never affect piton
+        check or piton build. If the project tethers its source root as
+        a package, the pages travel with it, which is intended.
+
+        A saved page is a picture of the UI, not the implementation, so
+        never write it into the application code and never copy it
+        there. Build it from the project, not from generic
+        placeholders. Use realistic content shaped like the project's
+        real data, never lorem ipsum.
+
+    styleCatalogue:
+        The crux package ships a catalogue of over four hundred worked
+        visual styles, light and dark, as Piton source with one anchor
+        file per style, named after the style. Each file, such as
+        EditorialGuideStyle.pi, describes one style in exact values,
+        with the same properties a style library has, such as number,
+        name, idea, base, screen, palette, type, layout, spacing,
+        density, corners, borders, shadows, icons, focus and tone. The
+        files are in the catalogue/styles folder of the
+        installed crux package, usually under the project's tethers
+        folder. Find them by file name, since the package folder's name
+        can differ between projects. If they are not there, work without
+        them and do not mention it.
+
+        The catalogue is never imported into the project, so it is not
+        in the project's compiled reference tree. Search its files as
+        text. Search the name and idea lines first for words that match
+        what you need, such as dark, serif, dense, terminal or the kind
+        of screen, then open only the few style files that fit. Search
+        the other properties for an exact treatment, such as a
+        monospace type stack or square corners. Every catalogue style
+        was drawn for a sample work suite, so its content words belong
+        to that sample.
+
+        Use the catalogue as reference and inspiration, never as a
+        source to copy. Adapt what you take to the project's own
+        screens, data, design rules and language. Never import a
+        catalogue anchor into the project, and never cite a catalogue
+        style as a style in the project's specification. The project's
+        own specification and style library always win over the
+        catalogue.
+
+    largeView:
+        A gallery lets the user dive into any page it shows. Clicking a
+        card opens a large view of that page inside the gallery. The
+        large view has a width switch for wide, tablet and 375px phone
+        sizes, previous and next controls, a link that opens the page
+        file on its own, and Escape to return to the grid.
+
+    showingPages:
+        After writing a gallery, show it. Give the user its path
+        relative to the working directory, and open it with whatever
+        preview the host actually provides, such as a browser tool or
+        the system's file opener. Never assume a particular tool
+        exists. If iframes do not load from the file system in the
+        user's browser, suggest serving the folder with a simple local
+        static server and give the exact command.
+
+    referencingPages:
+        The specification points at saved pages with paths relative to
+        the project root, where piton.config.pi lives, such as
+        spec/surface/Card.mockups/round-2/3.html. Use project-root
+        paths because a Markdown link written in prose is plain text
+        that Piton never rewrites, so a relative link would break in
+        the compiled reference tree. Run piton format, piton check and
+        piton build after editing the specification.
+
+        A saved page illustrates the specification. It never replaces
+        it. Everything a page settles is also written as plain
+        requirements in the anchor. Someone who never opens the page
+        must still be able to build the UI from the specification.

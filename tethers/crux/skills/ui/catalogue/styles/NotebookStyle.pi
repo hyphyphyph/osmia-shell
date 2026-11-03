@@ -1,0 +1,55 @@
+export anchor NotebookStyle:
+    number: 11
+    screen: ProjectsDashboard
+    name: Notebook
+    idea: A personal planner on lined paper, with a red margin, taped sticky notes, highlighter marks and handwritten headings, while the numbers and names stay in a clean sans so they read at a glance.
+    base: light
+    palette:
+        desk: #e9e4d8, the surface behind the paper
+        paper: #fffdf5, the notebook page
+        rule: #c6dbf0, ruled lines every 32px
+        margin: #e07070, the margin line and link underlines
+        ink: #1f2a44, text, the primary button and this week's chart bars
+        pencil: #4f5666, meta, dates and placeholders
+        highlighter: #fff176, emphasis marks and the focus fill
+        pinkMarker: #ffc9db, the highlight on the project that is behind
+        noteYellow: #fff1a6, sticky notes
+        noteBlue: #d7ecff, sticky notes and index tabs
+        notePink: #ffdbe4, the overdue note and the activity card
+        noteGreen: #def3c9, notes and the name tag
+        greenPen: #2b6a2f, the On track tick
+        brownPen: #8a4b00, the At risk triangle
+        redPen: #b3261e, the Behind cross and the circle around the overdue count
+    type:
+        Headings, labels and status words use a hand stack, Segoe Print,
+        Bradley Hand, Comic Neue, Comic Sans MS, Chalkboard SE, cursive.
+        Data uses system-ui, -apple-system, Segoe UI, Roboto, Arial,
+        sans-serif. Sizes are a 44px hand headline, 28px hand section
+        titles, 24px hand card titles, 44px bold sans figures, 16px semibold
+        sans project names, 15px sans body and 14px meta, all set on a 32px
+        line grid.
+    layout:
+        A notebook page centred on the desk, up to 1200px, with punched
+        holes and a red margin line 80px from the left. Coloured index tabs
+        along the top edge are the nav, the current tab merges into the
+        page. The header holds the wordmark with a doodled star, an
+        underlined search, the New project button, a bell and a green name
+        tag. A handwritten greeting with a squiggle sits above the date and a
+        highlighted overdue line with a red circled 4. Four taped sticky
+        notes, each rotated a little, hold the summary. Below, the projects
+        are a to-do list on the ruled lines on the left, and on the right a
+        taped graph-paper card holds the chart and a pink card holds the
+        activity. Below 1000px the columns stack and the notes form a two by
+        two grid. Below 640px the margin moves in to 40px.
+    spacing: An 8px unit tied to a 32px line grid, with 24px between notes and 48px between columns.
+    density: Relaxed. Each project takes about three ruled lines.
+    corners: Square paper and notes. Buttons and progress bars use a wobbly hand-drawn radius, 255px 15px 225px 15px over 15px 225px 15px 255px.
+    borders: 2px ink strokes on buttons and progress bars, a 2px ink underline on fields and dashed pencil rules between activity notes.
+    shadows: A soft paper lift on notes and cards, 2px 4px 8px in warm brown at 18 percent. The primary button has a 3px highlighter offset shadow.
+    icons:
+        Doodled line strokes with round ends, about 2px. Status is a pen
+        tick, a wobbly triangle with an exclamation mark or a scribbled
+        cross, with the word in the hand font. Progress bars are hatched in
+        ink. Strips of translucent tape hold notes and cards.
+    focus: A 2px dashed ink outline offset 3px. A focused field or row gets a highlighter stroke behind it and a thicker underline.
+    tone: Personal and chatty, like notes to self, such as Morning, Mara!, do these first! and see all 6.

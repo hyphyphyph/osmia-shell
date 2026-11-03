@@ -1,0 +1,54 @@
+export anchor DispatchConsoleStyle:
+    number: 350
+    screen: TeamChat
+    name: Dispatch console
+    idea: The chat as an emergency dispatch screen, where channels wait in a prioritised call queue, messages land as timestamped log entries in ruled columns, and people are units marked available, away or offline.
+    base: dark
+    palette:
+        page: #080d14, the page, fields and the style sheet
+        panel: #0f1824, the queue, log and units panes
+        head: #16233a, pane headers, the status strip and function keys
+        grid: #253850, every rule and the 1px gaps between panes
+        ink: #e3ecf7, text
+        muted: #9fb1c7, column heads, states and CLEAR
+        cyan: #38bdf8, the open line, times, Send and focus, with text #03202f
+        p1: #ff7a7a, the P1 mention tag on #3a1218
+        p2: #ffc04d, the P2 unread tag, away and the live strip on #33260a
+        ok: #4ade80, available
+    type:
+        A sans, Inter, Segoe UI, system-ui, Roboto, Arial, at 13px with
+        tabular numbers, and a monospace, ui-monospace, JetBrains Mono,
+        DejaVu Sans Mono, Menlo, Consolas, for times, tags and headers.
+        Pane headers 11px mono bold capitals tracked 0.12em, channel names
+        14px at 650, message text 14px, the clock 16px mono.
+    layout:
+        A full width console. A status strip with a 2px cyan rule below
+        reads BRIGHTWORK CHAT DISPATCH, Console 2, Operator Mara Okafor,
+        Channel design-crit, and a large clock on the right. An amber live
+        strip below reads Live, Priya is typing, with a pulse icon. Three
+        panes, 300px queue, the log and 230px units, divided by 1px gaps
+        that show the grid colour. Call queue lists channels by priority,
+        each row with a 4px left bar and a tag, billing-war-room first with
+        a red diamond P1 tag and 1 mention for you, then mobile-release
+        with an amber triangle P2 tag and 4 unread waiting, then
+        design-crit with a solid cyan dot OPEN tag and Active on this
+        console, then general and random with outlined dash CLEAR tags and
+        Nothing waiting. The log has column heads Time, Unit, Entry and
+        Links, and ruled zebra rows with the time in cyan mono, a small
+        initials code and the name, the text, and a links column. Aiko's
+        row is selected with a cyan inset bar and its links read Thread, 3
+        replies, Thumbs up x3 and Eyes x1. The image is a bordered chip,
+        IMG and the filename, with Attachment, image in links. Units lists
+        people with a full square and AVAILABLE, a half filled square and
+        AWAY, an empty square and OFFLINE. Under the panes a New entry row
+        holds the field and F1 Attach, F2 Emoji and a cyan F12 Send key.
+        Below 1080px units move under, below 720px rows stack with the
+        time on the left.
+    spacing: A 4px unit. 8px by 12px cells, 1px gaps between panes.
+    density: High. Queue, log and units all visible at once, every row ruled.
+    corners: 2px on keys, fields and tags. Panes are square.
+    borders: 1px grid rules, a 4px left bar coloured by priority and a 2px cyan rule under the strip.
+    shadows: None. Selection is an inset 3px cyan bar.
+    icons: Shape codes before every state, diamond P1, triangle P2, dot OPEN, dash CLEAR, and full, half or empty squares for units.
+    focus: A 2px cyan outline with a 4px deep cyan halo.
+    tone: Operational shorthand, such as Call queue, 4 unread waiting, Units, New entry and F12 Send.

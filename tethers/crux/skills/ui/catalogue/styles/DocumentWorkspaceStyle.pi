@@ -1,0 +1,58 @@
+export anchor DocumentWorkspaceStyle:
+    number: 15
+    screen: ProjectsDashboard
+    name: Document workspace
+    idea: The dashboard as one calm document page, with a narrow column, a big title, callouts, toggles and properties, beside a slim grey list of pages.
+    base: light
+    palette:
+        page: #ffffff, the document
+        sidebar: #f6f5f2, the page list and the search field
+        hover: #ecebe7, the current and hovered page in the sidebar
+        text: #2a2a28, body text, titles and the progress fill
+        muted: #6b6a66, property names, column names and meta text
+        line: #e9e8e4, row rules, dividers and progress tracks
+        linkBlue: #2f5fa7, the primary button, the focus ring, links in callouts and this week's bars
+        callout: #fbf3e4 with a #ead9b5 border, the overdue callout
+        onTrack: #25613a text on #e6f1e8, the On track tag
+        atRisk: #8a5300 text on #fbeed5, the At risk tag
+        behind: #a32b1f text on #fbe4e1, the Behind tag and the overdue count
+        neutralTag: #4d5c70 text on #eef2f7, team tags
+        lastWeek: #8f8d86, last week's chart bars
+    type:
+        System sans, -apple-system, BlinkMacSystemFont, Segoe UI,
+        system-ui, Roboto, Helvetica Neue, Arial, sans-serif. Sizes are
+        40px bold for the page title, 24px bold for headings, 20px
+        semibold for toggle titles, 28px semibold for summary figures,
+        16px body at 1.6 line height, 14px for properties, tables and the
+        sidebar, and 13px for tags.
+    layout:
+        A light grey sidebar 240px wide lists the workspace name and the
+        pages with a glyph before each, and two project pages nest under
+        Projects. A slim top bar holds the breadcrumb Brightwork / Home on
+        the left and the search, the notifications bell, the New project
+        button and a round initials avatar on the right. The document is a
+        centred column at most 760px wide with a 64px line glyph, the big
+        title Home, then property rows for Signed in, Date and Needs
+        attention, a divider, a greeting sentence, a warm callout for the
+        overdue tasks, a This week heading over four figures split by thin
+        lines, and three open toggles for Projects, Tasks completed and
+        Recent activity. Projects is a database table with Name, Team,
+        Status, Progress, Tasks and Due columns and a faint New project
+        row under it. Activity is a plain bullet list. Below 860px the
+        sidebar becomes a wrapped row of page links above the page, and
+        below 560px the figures form a two by two grid and the table
+        scrolls inside its toggle.
+    spacing: An 8px unit. 48px above the title, 32px above headings, 16px callout padding and 8px table cell padding.
+    density: Calm. One narrow column with generous line height, and toggles fold detail away.
+    corners: 4px on tags, buttons, fields, callouts and sidebar rows. Avatars are round.
+    borders: 1px #e9e8e4 row rules and dividers only, plus the callout border. There are no cards.
+    shadows: None.
+    icons:
+        16px thin line glyphs with a 1.6 stroke and round caps sit before
+        every page in the sidebar, every property name and every column
+        name, and a 64px glyph of the same kind sits above the page title.
+        Toggles use a small chevron that turns down when open. Status tags
+        carry a circle tick for On track, a triangle for At risk and a
+        crossed square for Behind.
+    focus: A 2px #2f5fa7 outline offset 2px with 4px rounding. A focused field gets a #2f5fa7 border and a 1px ring of the same colour.
+    tone: Plain, personal sentence case, such as Needs attention, Recent activity and Open overdue tasks.

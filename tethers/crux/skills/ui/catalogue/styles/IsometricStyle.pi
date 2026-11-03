@@ -1,0 +1,54 @@
+export anchor IsometricStyle:
+    number: 66
+    screen: Onboarding
+    name: Isometric
+    idea: Progress is built as a staircase of isometric blocks drawn at 30 degrees, and every card, row and button is a flat shaded slab with a visible bottom face.
+    base: light
+    palette:
+        ground: #eef2f8, the page, with faint indigo grid lines at 30 and 150 degrees
+        top: #ffffff, top faces, the main slab and fields
+        side: #dfe6f1, left faces and row bottom faces
+        edge: #c3cee0, right faces and the slab bottom face
+        indigoTop: #8f9bff, the current platform top and the typed row edge
+        indigo: #4f5fe0, the Continue button, links and the focus outline
+        indigoDeep: #3a48b8, button bottom faces and the Building word
+        tealTop: #3fd0ac, the finished platform top
+        teal: #147a61, the Built and Added words
+        amber: #f2a93b, teammate figures and the brand cube
+        ink: #1d2433, headings and body
+        muted: #556074, labels, the line and dashed outlines
+        rose: #b8325f, the Typing word
+    type:
+        Avenir Next, Avenir, Century Gothic, Futura, Segoe UI, system-ui. The
+        heading is 40px bold with minus 2.5 percent tracking. The lead line
+        is 17px in muted, body is 15px at 1.55 with emails at weight 600,
+        step names are 14px bold, and labels are 11 to 12px bold caps with
+        12 to 18 percent tracking.
+    layout:
+        A plain top line with an amber cube logo and Mara Okafor beside a
+        teal cube. Below, a two column stage. The left column has a small
+        caps eyebrow, then an SVG illustration of four isometric platforms
+        on a grey base rising from front left to back right. The first is
+        teal with a red flag, the second is indigo with three small block
+        people, and the last two are white with dashed tops. Under it the
+        four steps sit in a four column row with a coloured left rule. The
+        right column is one white slab with the heading, line, invite rows,
+        the seat note, Copy invite link, then Back, Skip for now and
+        Continue. Below 960px the columns stack, and below 560px the steps
+        become a two by two grid.
+    spacing: An 8px unit. 40px slab padding, 12px between rows, 48px between illustration and slab.
+    density: Airy. Half the screen is illustration and the form holds only what the step needs.
+    corners: Nearly square at 3 to 4px. Isometric faces are true parallelograms.
+    borders: None on surfaces. Only planned things get a dashed 1.5px muted outline. The typed row has a 2px indigo inset ring.
+    shadows:
+        A solid bottom face instead of blur, 10px of #c3cee0 under the slab,
+        5px under buttons and 4px under rows. The slab also has a soft 40px
+        drop below. Buttons press down by 5px when active.
+    icons:
+        Built on a hexagon, the outline of a cube seen from its corner. An
+        outlined hexagon with a tick means done or added, a filled hexagon
+        with a play mark means building, and a dashed hexagon means planned.
+        Avatars are three tone cubes, and seats are three solid indigo cubes
+        and two dashed wireframe cubes. Line icons are 18px with a 1.8 stroke.
+    focus: A 3px solid indigo outline offset 3px. A focused field gets a white fill, an indigo underline and a 2px indigo inset ring.
+    tone: Calm builder words, such as Built, Building and Planned.

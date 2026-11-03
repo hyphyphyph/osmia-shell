@@ -1,0 +1,66 @@
+export anchor EarthyProfessionalStyle:
+    number: 221
+    screen: ProjectsDashboard
+    name: Earthy professional
+    idea: A serious, grounded workspace in olive, sand and clay, with a dark olive sidebar, serif figures set like a ledger and projects filed under their departments.
+    base: light
+    palette:
+        sand: #f1ebdf, the page
+        paper: #fbf8f1, cards, fields and the style sheet
+        olive: #33391f, the sidebar
+        oliveMid: #4b5330, the current nav item
+        olivePrimary: #4f5a26, the primary button
+        sandText: #ece4cf, text on the sidebar
+        clay: #a85a33, progress lines, this week bars and the mark, never small text
+        clayInk: #8c4423, department labels, links and the focus ring
+        clayTint: #f3e2d4, the overdue notice and the focus halo
+        ink: #2a2620, text and figures
+        ink2: #5a5244, secondary text and labels
+        line: #ddd2bb, rules and card edges
+        edge: #8f8166, field borders and the ledger double rule
+        green: #2f6b34, On track with an outlined circle and check
+        amber: #875700, At risk with an outlined triangle and bang
+        red: #a1221f, Behind with an outlined square and down arrow, and overdue
+    type:
+        Two stacks. Headings, figures and project names use Iowan Old
+        Style, Palatino Linotype, Palatino, Book Antiqua, Charter, Georgia.
+        Text and labels use Avenir Next, Segoe UI, system-ui, Roboto,
+        Arial. The greeting is 38px serif 500, ledger figures 46px serif,
+        section titles 24px serif, project names 17px serif 600, caps
+        labels 12px tracked 0.14em, body 14px sans.
+    layout:
+        A 240px dark olive sidebar runs the full height. It holds a clay
+        disc mark with the serif brand, a small Workspace caption, the six
+        nav items with thin line icons where the current one has a lighter
+        olive fill and a clay left bar, and the signed in user Mara Okafor
+        pinned at the bottom. The main area starts with a row holding a
+        wide search field at left and an olive New project button and a
+        square bell at right, over a rule. The greeting has the date as a
+        small caps eyebrow over Good day, Mara in serif, with a clay edged
+        notice at right reading 4 tasks are overdue and need attention
+        first. The KPIs are a ledger, four columns under a double rule and
+        over a single rule, split by thin vertical rules, each a large
+        serif figure, a caps label and a short note. Below are two
+        columns. The wider left is Projects by department, with clay caps
+        headings for Design, Engineering, Research and Marketing, and under
+        each a row with the serif name, the percent and tasks, the status
+        and the due date with days left, and a thin clay line for progress
+        across the row foot. The right column holds a paper card titled
+        Week over week with seven day rows of paired horizontal bars, last
+        week sand with an outline above this week clay, the two values at
+        the row end and totals below, then a recent activity card with
+        small clay diamonds on a vertical rule. Below 1100px the columns
+        stack. Below 860px the sidebar becomes a top band with the nav
+        scrolling sideways and the ledger goes two by two.
+    spacing: An 8px unit. 40px page padding and column gap, 12 to 14px row padding.
+    density: Medium. Rows read like a ledger, grouped under department labels.
+    corners: Small, 4px on cards, buttons and fields. Only the avatar is round.
+    borders: 1px line rules. A 3px double rule tops the ledger and the style sheet.
+    shadows: None. Surfaces separate by sand against paper.
+    icons:
+        18px line icons at 1.6px stroke. Status icons are 15px outlined
+        shapes, a circle with a check, a triangle with a bang and a square
+        with a down arrow. Activity uses small clay outlined diamonds on a
+        rule.
+    focus: A 2px clayInk outline offset 2px with a 5px clayTint halo, and a sand outline in the sidebar.
+    tone: Measured and formal, such as Good day, Mara, Need attention first and Week over week.

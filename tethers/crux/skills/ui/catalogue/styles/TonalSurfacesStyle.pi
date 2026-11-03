@@ -1,0 +1,50 @@
+export anchor TonalSurfacesStyle:
+    number: 19
+    screen: ProjectsDashboard
+    name: Tonal surfaces
+    idea: A modern mobile-OS app feel, where layers of tinted teal-grey surfaces replace borders and a floating action button, chips and a navigation rail do the work.
+    base: light
+    palette:
+        surface: #f6fafa, the page and the project items inside panels
+        containerLow: #edf3f4, the rail, panels and summary tiles
+        container: #e4eced, the bottom bar and the style sheet ground
+        containerHigh: #d9e4e6, the search bar, unselected chips, filled fields and progress tracks
+        onSurface: #161d1f, text
+        onVariant: #3d494c, labels, meta text and inactive icons
+        primary: #00677d, the filled button, progress fill, links, this week's bars and the focus ring
+        primaryContainer: #b8eaff with #001f28 text, the floating action button
+        secondaryContainer: #cde7ef with #0a2229 text, the active nav pill, the selected chip and the tonal button
+        onTrack: #1b6a36 on #c4eecb, the On track chip
+        atRisk: #6c5200 on #fde39f, the At risk chip
+        behind: #9b2a20 on #ffdad4, the Behind chip, the overdue tile and the overdue assist chip
+    type:
+        Roboto Flex, Roboto, system-ui, -apple-system, Segoe UI, Helvetica
+        Neue, Arial, sans-serif. Display numbers are 45px regular on a 52px
+        line, the greeting is 36px regular, section titles are 22px regular,
+        project names are 16px medium, body is 14px on a 20px line, and
+        meta and chips are 12px to 14px medium. Large text stays at regular
+        weight, never bold.
+    layout:
+        An 88px navigation rail on the left holds a square brand mark, a
+        56px floating action button for New project, and six items with an
+        icon above a 12px label. The main area has a top app bar with the
+        brand, a fully round search bar, a notifications icon button and an
+        avatar. Then the greeting with the date and a tinted overdue chip,
+        four summary tiles in a row, and a panel of projects with filter
+        chips and a two column grid of items, beside a chart panel and an
+        activity panel. Below 640px the rail hides, the search drops under
+        the app bar, an extended floating button labelled New project sits
+        at the end of the content, and a six item bottom navigation bar
+        closes the dashboard in the page flow, not fixed.
+    spacing: A 4px grid. 8px between project items, 12px between tiles, 16px panel padding and 24px page margins.
+    density: Medium. Big display numbers, 48px touch targets and two project columns.
+    corners: 16px on panels, tiles and the floating button, 12px on items and icon tiles, 8px on chips and status chips, 20px on full round buttons, 28px on the sheet top.
+    borders: None. Surfaces separate by tone alone, and filled text fields keep a 1px bottom line.
+    shadows: Only the floating action button, 0 1px 3px rgba(0,0,0,0.18) plus 0 4px 8px rgba(0,0,0,0.08).
+    icons:
+        24px solid geometric icons. The active nav icon sits in a 56 by 32
+        pill. Status chips carry a filled circle with a tick for On track,
+        a filled diamond with a bar for At risk and a filled square with a
+        dash for Behind. Chart bars are fully round pills.
+    focus: A 3px #00677d outline offset 2px. A focused filled field gets a 3px primary bottom bar instead.
+    tone: Short, friendly and plain, such as Hi, Mara, See all, and chip counts like At risk 1.

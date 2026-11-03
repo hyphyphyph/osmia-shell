@@ -1,0 +1,55 @@
+export anchor ManilaFoldersStyle:
+    number: 116
+    screen: ProjectsDashboard
+    name: Manila folders
+    idea: The dashboard is a desk file pulled from a steel drawer, with manila folders behind typed tab labels, rubber stamped dates and statuses, and paper clipped cards for the numbers.
+    base: light
+    palette:
+        floor: #e6e3dc, the page behind everything
+        drawerSteel: #c8ccc6, the header drawer front
+        manila: #ead39b, the main folder and the current tab
+        manilaDeep: #dfc282, project folders and back tabs
+        folderEdge: #cfae68, edges and stacked sheets, decorative only
+        labelWhite: #fbfaf4, typed labels, clipped cards and memos
+        ink: #2a2015, text and the primary button
+        brown: #59432a, captions and field keys
+        stampRed: #a3201a, overdue, Behind and the current tab mark
+        stampBlue: #1d3c86, the date stamp, At risk, this week bars and focus
+        stampGreen: #2a5a22, the On track stamp
+    type:
+        Three stacks. Typed is Courier New, Courier, Nimbus Mono PS,
+        Liberation Mono, monospace, for labels, figures and keys, often in
+        caps with 0.06 to 0.14em tracking. Stamp is Impact, Haettenschweiler,
+        Arial Narrow Bold, sans-serif in caps. Body is Gill Sans, Gill Sans
+        MT, Trebuchet MS, system-ui, sans-serif. Sizes are 30px bold typed
+        greeting, 34 to 40px bold typed figures, 17 to 22px stamps, 13px
+        typed caps labels, 14 to 15px sans body and 12px typed caps keys.
+    layout:
+        A steel drawer front heads the page with a brass label holder
+        showing the brand, a drawer pull, and the search, a black New
+        project button, the bell and the user in typed caps. Below it the
+        navigation is a row of manila folder tabs with typed white labels,
+        the current tab taller and joined to the main folder. The main
+        folder has two offset deeper manila sheets behind it like a stack.
+        Inside, the typed greeting and a red rubber stamp reading 4 tasks
+        overdue sit left, and a round blue Received stamp with 31 OCT 2026
+        sits right. Four white cards held by steel paper clips carry the
+        figures, each turned slightly. Six project folders follow in three
+        columns, each with its own tab at a staggered position holding the
+        typed name, a key and value list for team, tasks and due date, a big
+        typed percent, a striped tally bar and a tilted status stamp. At the
+        bottom a clipped memo holds the chart as two typed horizontal bar
+        lists, last week in ink and this week in blue with totals, and a
+        routing slip lists activity with boxed initials. Folders go two
+        across below 980px and one across below 640px.
+    spacing: An 8px unit. 48px between folder rows to leave room for tabs, 28 to 32px folder padding.
+    density: Medium. One project per folder, facts as a short key and value list.
+    corners: Folder tabs 8 to 10px on top, folders 4 to 6px except the corner under the tab, labels and buttons 2px, a round date stamp.
+    borders: 1px folder edges. Stamps have a 3px frame with an inner ring, dashed for At risk and 4px for Behind.
+    shadows: Flat offset copies of the folder in deeper manila like a stack, plus one soft drop under the main folder.
+    icons:
+        Inked stroke marks inside stamps, a tick for On track, a triangle
+        for At risk, a cross for Behind and a clock for overdue. Steel paper
+        clips are decoration.
+    focus: A 3px dashed stamp blue outline offset 3px.
+    tone: Office filing words in typed caps, such as Desk file, Routing slip and Received.

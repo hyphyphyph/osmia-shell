@@ -1,0 +1,53 @@
+export anchor RoadTripStyle:
+    number: 418
+    screen: TravelPlanner
+    name: Road trip
+    idea: The trip as a car instrument cluster at night, a budget gauge and a checklist gauge with orange needles flanking a cyan navigation screen, warning style lights for the checklist, and the itinerary read out as turn by turn route guidance.
+    base: dark
+    palette:
+        road: #06080a, the page and the style sheet
+        cluster: #0d1114, the cluster hood, the guidance panel and list rows
+        face: #12171b, gauge faces
+        rim: #2a3238, gauge rims and the cluster edge
+        line: #24303a, row rules and empty gauge arcs
+        ink: #eaf2f5, text and figures
+        muted: #9fb0b8, labels, ticks and captions
+        needle: #ff6a3d, gauge needles, the logo and the primary button
+        cyan: #5ee6ff, the nav route, gauge fill, Flight rows and focus
+        go: #6ee07a, Booked and Done lights
+        caution: #ffbf3c, Not booked, To do and the next to book line
+    type:
+        Bahnschrift, DIN Alternate, Roboto Condensed, Arial Narrow, Arial.
+        Base 16px at 1.45. Gauge figures 30px tabular, the trip title 30px
+        at 600, section titles 22px caps at 600, dates 20px at 600 tabular,
+        labels 12px caps tracked 0.12em in muted.
+    layout:
+        A top bar with an orange outlined B and Brightwork Trips in small
+        caps on the left, Japan in April centred, and the dates and Mara
+        Okafor and one guest on the right. Below sits the cluster, a wide
+        hood with an arched top and a 2px rim, shaded dark inside. Three
+        parts sit in it. On the left a round Budget gauge, a 240 degree
+        scale from 0 to 5,000 with a cyan arc filled to 3,200 and an orange
+        needle, reading 3,200 euro saved and 1,800 to go. In the middle a
+        cyan navigation screen with Next to book Train to Kyoto 6 Apr in
+        caution yellow, a route on a grid from Tokyo to Kyoto to Osaka with
+        ringed nodes and an orange position mark, and readouts Trip 14 days,
+        Outside Tokyo early April 17 degrees high and Cherry blossom likely.
+        On the right a Checklist gauge from 0 to 4 with the needle at 2.
+        Under a rule four warning lights show each check with a check circle
+        and Done or a caution triangle and To do. Below the cluster, Route
+        guidance lists six legs, each with a rounded icon tile, a big date,
+        the leg and detail and a status. Two buttons end the panel. Below
+        900px the nav screen moves above the gauges and at phone width the
+        gauges stack.
+    spacing: An 8px unit. 36px cluster padding, 16px between gauges and screen and 12px guidance rows.
+    density: Medium. Two gauges, a nav screen and four lights in the cluster, six guidance rows below.
+    corners: An arched hood with a 220 by 140px top radius, a 14px screen, 12px icon tiles, 8px lights and 10px buttons.
+    borders: A 2px rim on the hood and gauge faces and 1px rules between guidance rows.
+    shadows: Deep inset shade at the top of the hood and a soft cyan halo round gauges and focus.
+    icons:
+        2px line icons in rounded tiles. Booked and Done are a check circle,
+        Not booked and To do a caution triangle and Flight a plane, always
+        beside the word.
+    focus: A 3px cyan outline offset 3px with a cyan glow.
+    tone: Driver prompts such as Next to book, Route guidance and Outside.

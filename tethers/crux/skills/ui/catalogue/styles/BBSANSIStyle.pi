@@ -1,0 +1,53 @@
+export anchor BBSANSIStyle:
+    number: 348
+    screen: TeamChat
+    name: BBS ANSI
+    idea: A chat that behaves like a dial-up message board, drawn in sixteen colour ANSI with shade block banners, double line boxes, hotkey menus and a message reader that counts MSG 1/5.
+    base: dark
+    palette:
+        black: #000000, the page and the label cut outs on box rims
+        navy: #000055, side boxes and style sheet boxes
+        blue: #0000aa, the message reader box
+        dcyan: #00aaaa, message header bars and the current board
+        cyan: #55ffff, box rims and info text
+        yellow: #ffff55, titles, hotkey letters and the focus block
+        white: #ffffff, message text
+        grey: #aaaaaa, body text, off-line and the footer bar
+        green: #55ff55, the NEW count, ON-LINE and the Send key
+        magenta: #ff55ff, mentions and typing
+        brown: #aa5500, the hard drop shadow under the title only
+    type:
+        One monospace stack, Perfect DOS VGA 437, Px437 IBM VGA8, then
+        ui-monospace, DejaVu Sans Mono, Liberation Mono, Menlo, Consolas.
+        Base 15px at 1.35. The title is 26px bold, tracked 0.12em, yellow
+        with a 3px brown drop. Message headers are 15px bold black on
+        dark cyan.
+    layout:
+        A 1200px screen on black. A banner row of light, medium and dark
+        shade blocks in blue and cyan, then BRIGHTWORK CHAT in yellow with
+        a cyan caller line, then a row of half blocks, clipped by their row.
+        Two columns, 350px and the reader, 20px apart. Every region is a
+        navy box with a 4px double cyan rim and a yellow label cut into
+        the top edge. Message boards lists hotkeys in brackets, G, D, M, B,
+        R, the current board on a cyan band marked HERE, mobile-release
+        with 4 NEW in green and billing-war-room with @1 FOR YOU in
+        magenta. Direct lines lists people with a full block and ON-LINE,
+        a half block and AWAY, a dot and OFF-LINE. The reader box is blue
+        with a white rim, titled Reading the channel with 5 messages. Each
+        message is a framed box whose cyan header bar reads MSG n/5, FROM
+        and the name, and the time on the right. Aiko's message adds a
+        line with a triangle and 3 REPLIES, read thread, +1 thumbs up x3
+        and oo eyes x1. Priya's image is a blocky pixel preview with FILE
+        ATTACHED and the filename. Then a magenta typing line and the
+        prompt Enter text with the field and three keys, Attach, Emoji
+        and a green Send, each with its hotkey letter highlighted. A grey
+        footer bar lists the caller, board and keys. Below 780px the
+        columns stack.
+    spacing: A character grid. 10px between message frames, 20px between boxes.
+    density: Busy and full. Every region boxed and a header bar on every message.
+    corners: Square.
+    borders: 4px double cyan rims with the label cut into the top edge, 1px cyan message frames.
+    shadows: Only a hard 3px brown drop under the title text.
+    icons: Block glyphs, full block on-line, half block away, dot off-line, triangles for thread and HERE, always with words.
+    focus: A solid yellow block with black text.
+    tone: Shouty sysop labels, such as 4 NEW, @1 FOR YOU, FILE ATTACHED and Enter text.

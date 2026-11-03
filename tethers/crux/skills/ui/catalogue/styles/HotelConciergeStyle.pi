@@ -1,0 +1,56 @@
+export anchor HotelConciergeStyle:
+    number: 87
+    screen: ProjectsDashboard
+    name: Hotel concierge
+    idea: The dashboard arrives as a grand hotel's letter on cream stationery under an embossed crest, with every project hanging as a brass room-key fob in a pigeonhole rack and each fact put politely.
+    base: light
+    palette:
+        lobby: #ebe7df, the page around the sheet
+        stationery: #fdfbf6, the letter sheet
+        navy: #1d2b47, text, rules, progress bars and the primary button
+        slate: #55607a, notes, times and the last week line
+        linenLine: #d8d2c4, hairlines, never text
+        brass: #b4914d, the crest, room plates and the focus glow, never text
+        brassInk: #6d5520, eyebrows and the desk bell
+        fobBrass: #e7d5a6, the key fobs
+        pine: #2f6045, On track
+        amber: #8a5300, At risk
+        burgundy: #7a1f2f, Behind and the overdue notice
+    type:
+        Two stacks. Garamond, EB Garamond, Baskerville, Palatino Linotype,
+        Georgia, serif for everything you read, with the greeting at 44px
+        italic, room numbers 40px, the brand 30px caps tracked 0.42em,
+        folio numbers 30px, section titles 28px and body 18px with 1.55
+        line height. Gill Sans, Optima, Segoe UI, sans-serif at 600 for
+        10 to 13px caps tracked 0.2em on eyebrows, nav, floors and buttons.
+    layout:
+        A cream sheet up to 1140px with a navy top edge floats on a taupe
+        lobby. The letterhead is centred, an embossed crest with a shield,
+        a B and laurels, the spaced caps brand and an italic motto. A desk
+        row between two hairlines holds an underlined search asking How may
+        we help, the New project button, a desk bell and the guest name.
+        The nav is one centred caps line with brass dots between items. The
+        letter has a right aligned date, an italic Good morning, Mara, a
+        short polite paragraph and a burgundy notice with a clock saying 4
+        tasks are overdue, signed by the desk. Beside it a framed guest
+        folio lists the four numbers with dotted leaders. The key rack is a
+        three column grid of pigeonholes ruled in navy, each with a brass
+        room plate, a hook and a brass fob rounded at the top with the
+        room number 101 to 106, the floor named after the team, the
+        project, tasks with a thin bar, the departure date and the status.
+        Below, Messages for you shows six message slips with the sender
+        and time in a side column, and a housekeeping report shows a
+        dashed line for last week and a solid line for this week. Below
+        960px panels stack and the rack goes two across, then one.
+    spacing: An 8px unit. 56px sheet margins, 40px between letter parts and 20px inside pigeonholes.
+    density: Low to medium. A letter, a folio of four lines and six fobs.
+    corners: Square paper and rack. Key fobs are rounded 120px at the top and 28px at the foot.
+    borders: 1px navy rules with a 4px inset linen line on the folio. Thin brass plates on each pigeonhole.
+    shadows: The sheet floats on a soft 32px shadow and fobs hang with a 6px shadow. The crest has a one pixel light and dark emboss.
+    icons:
+        Fine 1.5px line icons and a desk bell for notifications. On track
+        is a filled diamond, At risk a filled triangle, Behind a filled
+        circle with a bar and overdue a clock, each in a small enamel chip
+        with the caps word.
+    focus: A 2px navy outline offset 3px with a 6px brass glow. A focused field gets a 2px underline and a warm fill.
+    tone: Courteous and formal, such as Kindly note, We would suggest, With our compliments and Departure 14 Nov.

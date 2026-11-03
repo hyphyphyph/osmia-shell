@@ -1,0 +1,49 @@
+export anchor RoundedBubblesStyle:
+    number: 346
+    screen: TeamChat
+    name: Rounded bubbles
+    idea: A friendly messenger on deep plum where every person speaks in their own softly coloured bubble, your own words glow coral on the right, and every shape is a pill or a circle.
+    base: dark
+    palette:
+        plum: #1b1530, the page and the style sheet
+        card: #261e42, the sidebar and chat cards
+        pill: #342a57, channel pills, the composer and chips
+        line: #4a3f78, chip rims
+        ink: #f4efff, text in bubbles and cards
+        muted: #bfb3e0, labels and presence words
+        coral: #ff9e7a, your own bubble, Send and the mention badge, with text #3a1206
+        sun: #ffd166, the current channel, the thread chip and focus, with text #3a2a00
+        mint: #7ef0c0, the new count badge and the online dot
+        teal: #154a4a, Priya's bubbles
+        berry: #4d2149, Aiko's bubbles
+        blue: #1e3462, Jonas's bubbles
+    type:
+        A rounded stack, ui-rounded, SF Pro Rounded, Nunito, Varela Round,
+        then system-ui, Segoe UI, Roboto. Base 15px at 1.45. Channel title
+        19px at 800, bubble names 13px at 800, sheet title 30px at 900.
+    layout:
+        Two floating cards with 28px corners on the plum page, a 260px
+        sidebar and the chat, 20px apart. The sidebar has a coral circle b
+        mark and Brightwork Chat, then channels as full pills, the current
+        one sun yellow, unread bold with a mint 4 new pill, the mention
+        with a coral @ 1 pill. Direct messages are pills with a small
+        round avatar, the name and a dot, crescent or ring with the word.
+        The chat card header has a sun yellow rounded square with a hash,
+        design-crit and Today. Messages zigzag as bubbles capped at 78
+        percent width with round initials avatars at the bottom. Each
+        other person has their own tinted bubble with a 6px tail corner.
+        Mara's bubble is coral on the right, labelled Mara Okafor (you).
+        Aiko's bubble carries reaction pills for thumbs up 3 and eyes 1
+        and a sun 3 replies pill. Priya's image sits inside her bubble as a
+        rounded preview over Image and the filename. A grey pill of three
+        dots with Priya is typing sits above a pill composer with a round
+        plus, the field, a round emoji button and a round coral send arrow.
+        Below 820px the sidebar stacks on top with wrapped pills.
+    spacing: An 8px unit. 14px between bubbles, 10px by 16px bubble padding, 20px card padding.
+    density: Relaxed. Bubbles cap at 78 percent so the feed zigzags.
+    corners: 28px cards, 22px bubbles with one 6px tail corner, pills and circles everywhere else.
+    borders: Almost none. 2px rims on reaction chips and a 2px pill coloured line under the chat header.
+    shadows: None. Colour blocks carry the depth.
+    icons: Chunky rounded line icons at 2.2 stroke inside 40px circles. Presence is a dot, crescent or ring beside the word.
+    focus: A 3px sun yellow outline offset 3px, wrapping the whole composer pill.
+    tone: Warm and casual, such as 4 new, Mara Okafor (you) and 3 replies with an arrow.

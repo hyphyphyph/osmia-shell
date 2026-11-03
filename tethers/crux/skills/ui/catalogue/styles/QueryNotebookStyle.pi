@@ -1,0 +1,55 @@
+export anchor QueryNotebookStyle:
+    number: 411
+    screen: DatabaseConsole
+    name: Query notebook
+    idea: The console is a notebook of numbered cells, so a short prose heading explains the question, the SQL cell carries its own output table, a chart cell draws the answer and the history is a log cell of earlier runs.
+    base: dark
+    palette:
+        page: #18161c, the page and the style sheet
+        rail: #1f1c24, the table rail and the status bar
+        cell: #24212a, cell bodies and secondary buttons
+        code: #1a181f, the code area and fields
+        output: #2b2732, cell output and inline code
+        line: #3a3542, every border
+        ink: #ece8f1, text
+        muted: #aaa3b5, execution counts, column types and meta
+        accent: #ffae6b, the active cell, Run cell, chart bars and keywords
+        onAccent: #2d1503, text on the accent
+        function: #9dc4ff, function names
+        string: #b9e08e, string literals
+        ok: #9fe0a8, Done and the idle kernel ring
+        bad: #ff9d96, Error, on #33202a
+    type:
+        Three families. Prose headings in serif, Charter, Bitstream
+        Charter, Sitka Text, Cambria, 28px at 600 with 16px prose. Chrome in
+        Inter, Segoe UI Variable, Segoe UI, 15px at 1.55. Code in
+        ui-monospace, JetBrains Mono, SF Mono, 14px at 1.65, and execution
+        counts in 12px mono.
+    layout:
+        A top bar with an orange pause mark, Brightwork Data, Notebook
+        overdue review and a round Kernel idle production-replica pill on
+        the right. A toolbar holds Run cell in orange, Run all and a plus
+        Cell. A 220px rail lists the tables in mono with tasks opened as a
+        disclosure showing its columns and types. The main column, about
+        940px wide, stacks cells with a 56px gutter for counts. First a
+        borderless md cell with the serif title Overdue tasks by project and
+        a sentence. Then cell 5, selected with an orange border and a 4px
+        left bar, with a sql pill and ran at 09 41 in its header, the
+        highlighted query, and an output table with index 0 to 2, project
+        and open_overdue, ending in a green tick Done and 3 rows, 38 ms.
+        Cell 6 is a chart cell with horizontal orange bars, labels on the
+        left, values at the bar ends and dashed gridlines. A log cell lists
+        the three runs with count, time, name and a tick Done or a triangle
+        Error, the error shown as a red edged block. A status bar closes
+        the screen. The style sheet is itself built from cells. Below 860px
+        the rail moves on top, and on phones the counts sit above cells.
+    spacing: An 8px unit. 14px between cells, 56px count gutter, 12 to 16px inside cells.
+    density: Medium. One column of cells.
+    corners: 12px cells, 8px buttons and fields, round kernel and language pills.
+    borders: 1px #3a3542 around every cell. The active cell gets an orange border and a 4px inset left bar.
+    shadows: None besides the inset left bar.
+    icons:
+        Few. Play, plus, a tick for Done, a triangle with a bang for Error
+        and a ring for the idle kernel, each with its word.
+    focus: A 2px orange outline offset 2px.
+    tone: Analyst notes in sentence case, such as Run cell, ran at, Done and earlier runs today.

@@ -1,0 +1,50 @@
+export anchor RetroGrooveStyle:
+    number: 286
+    screen: CodeRepository
+    name: Retro groove
+    idea: A warm brown-black conversation timeline with a three-stripe orange, mustard and aqua band, slab serif headings, chunky pill buttons with hard offset shadows and a ticket stub side column, like a seventies hi-fi brochure set in code.
+    base: dark
+    palette:
+        espresso: #1f1a16, the page background and the diff code area
+        walnut: #2b241e, timeline cards, the side tickets and the style sheet cards
+        cocoa: #3a3028, the masthead, chips, the hunk header and the disabled merge button
+        grain: #5c4c3d, borders, the timeline spine and dashed ticket tears
+        cream: #f3e6c9, text
+        sand: #cdb994, meta, line numbers and side labels
+        tangerine: #fe8a3c, the primary button, slab headings, the current tab and focus
+        mustard: #f5c046, requested changes and the middle stripe
+        aqua: #8ec9b0, links and the third stripe
+        olive: #b8cc5a, passed, approved, Open and added lines
+        brick: #f47a6c, failing and removed lines
+        shadow: #0e0b09, the hard 4px offset shadow under buttons and cards
+        addTint: #2c3220, added line rows
+        delTint: #3d2420, removed line rows
+    type:
+        Headings in a slab serif stack, Rockwell, Roboto Slab, Zilla Slab, DejaVu
+        Serif, Georgia, title 32px at 700 and section titles 20px. Body in Trebuchet
+        MS, Segoe UI, system-ui at 15px on 1.55. Ticket labels 12px caps tracked
+        0.14em. Code in Courier New, ui-monospace at 14px.
+    layout:
+        A cocoa masthead with a round B badge, the owner and repository in slab
+        type, a Private stamp and Watch 12, Star 48 and Fork 3 as small pills.
+        Directly under it a band of three 6px stripes in tangerine, mustard and aqua
+        runs the full width. Tabs follow as rounded top folders, the current one
+        tangerine. The title block sits at 1140px. Below, two columns. The left is a
+        vertical timeline with a 2px grain spine and round nodes holding icons, with
+        events for Sam Ortiz opening the request, the three changed files, the
+        checks result with e2e-android named, Jonas Weber approving, and Tomás Ruiz
+        requesting changes with the diff card and inline comment nested in his
+        event. The right is a 300px stack of ticket stubs with dashed tear lines for
+        assignees, labels, milestone, linked issue and the merge stub. Below 900px
+        the tickets move under the timeline.
+    spacing: An 8px unit. 20px card padding, 24px between timeline events, 48px timeline indent.
+    density: Medium low. A story told top to bottom, one event at a time.
+    corners: Round and chunky. 14px cards, 999px buttons, tabs and chips, round timeline nodes.
+    borders: 2px grain borders on cards and tickets, dashed 2px tear lines between ticket sections, a 2px spine.
+    shadows: Hard 4px by 4px offset shadows in near black under cards and buttons, no blur.
+    icons:
+        Line icons at 2.25px stroke inside 32px round timeline nodes and inline at
+        1.1em. Check circle for passed and approved, crossed square for failing,
+        triangle with a bang for requested changes, padlock for the blocked merge.
+    focus: A 3px tangerine outline offset 3px.
+    tone: Friendly and narrative, such as Sam Ortiz opened this pull request and Tomás Ruiz asked for changes.

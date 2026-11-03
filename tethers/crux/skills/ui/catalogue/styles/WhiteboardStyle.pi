@@ -1,0 +1,55 @@
+export anchor WhiteboardStyle:
+    number: 114
+    screen: ProjectsDashboard
+    name: Whiteboard
+    idea: The dashboard is a dry-erase board in an aluminium frame, written up in four marker colours, with magnets for navigation and faint eraser smudges left behind.
+    base: light
+    palette:
+        wall: #e4e1da, the page behind the board
+        board: #fbfcfc, the writing surface, fields and nav labels
+        aluminium: #a7aeb5, the frame and the marker tray, decorative only
+        blackMarker: #1c2024, text, drawn rules, axes and last week bars
+        blueMarker: #1d4fb3, the brand, column heads, names, this week bars, At risk and focus
+        redMarker: #bd232b, the overdue circle, Behind and the ring on the current nav label
+        greenMarker: #1c6a37, On track, the hours figure and style sheet labels
+        ghost: #5d656d, dates, captions and half erased writing
+        magnetYellow: #f1c22e, the primary button with black text
+    type:
+        Two stacks. Hand is Marker Felt, Segoe Print, Bradley Hand,
+        Chalkboard SE, Comic Sans MS, cursive, used for the greeting,
+        figures, zone titles, project names, statuses, nav and notes. Sans
+        is Segoe UI, system-ui, Helvetica Neue, Arial, sans-serif for table
+        cells and activity text. Sizes are 44px bold hand for the greeting,
+        64px bold hand summary figures, 28px bold hand zone titles, 17 to
+        19px hand names and statuses, 15px sans body and 13px sans team
+        names.
+    layout:
+        One whiteboard fills the page inside a 14px aluminium frame with a
+        marker tray along the bottom holding four marker pens and an eraser.
+        The top row has the blue brand with a starburst mark, six nav labels
+        stuck on with round coloured magnets, and on the right a dashed
+        marker search box, a yellow pill New project button, a round bell
+        with a red count and a green circled MO avatar. The greeting is
+        written large with the date tilted in the corner and an arrow
+        pointing at 4 tasks are overdue, circled in red marker. The four
+        figures are written huge in different marker colours with a double
+        underline stroke, split by curved vertical strokes. A long drawn
+        line then splits the board into a wide left zone and a narrow right
+        zone. The left zone holds a hand ruled project table with hatched
+        marker progress bars and the 14 day chart of tilted marker bars,
+        black for last week and blue for this week, with values written on
+        top. The right zone lists six activity notes with marker icons and
+        dashed dividers. Grey blurred smudges sit behind the writing. Below
+        860px the zones stack, and below 640px the figures go two by two
+        and the table scrolls inside its zone.
+    spacing: An 8px unit. 24px around the board, 20px zone padding, 10px table rows.
+    density: Medium. One board, zones split by drawn lines, nothing boxed in cards.
+    corners: Uneven hand corners such as 10px 4px 12px 5px on drawn boxes and bars. Round magnets, pill buttons and 6px on the frame.
+    borders: 3px marker strokes for the zone dividers and chart axes, 2px for drawn boxes, dashed 2px for the search box and activity rows.
+    shadows: Only physical things cast one, the magnets, the nav labels and the frame. The primary button has a 3px hard black lip.
+    icons:
+        Line icons drawn at a 2.4px stroke in the marker colour. A circled
+        tick for On track, a triangle with a mark for At risk, a crossed box
+        for Behind and a clock for overdue, always beside the word.
+    focus: A 3px blue marker outline offset 3px on every control.
+    tone: Friendly team room shorthand, such as Morning, Mara and Latest scribbles.

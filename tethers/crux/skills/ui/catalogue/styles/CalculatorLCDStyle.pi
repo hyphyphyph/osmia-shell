@@ -1,0 +1,59 @@
+export anchor CalculatorLCDStyle:
+    number: 163
+    screen: ProjectsDashboard
+    name: Calculator LCD
+    idea: A beige solar desk calculator with a printing tape, where the weekly numbers glow in seven segment digits over ghost segments, the nav is a pad of chunky keys with an orange equals key for New project, and the projects print out on paper tape.
+    base: light
+    palette:
+        desk: #f1efe9, the page
+        body: #e6e1d3, calculator plastic, with edge #c9c3b2
+        lcd: #cdd3c0, displays and the search field
+        segment: #1f231c, lit digits and LCD text
+        ghost: #bcc3ad, unlit segments, never meaning
+        bezel: #3a3833, display frames, with labels in #ece8dc
+        solar: #3b2e33, the solar cell strip
+        key: #f4f2ec, light keys, with edge #a9a493
+        darkKey: #4a4843, function keys and the pressed current page key
+        orange: #e8823a, the equals key and the focus halo, with dark text #2a1606
+        tape: #fdfcf7, printed tape and list rows
+        redInk: #a3241c, Behind and its percent, printed like a negative number
+        ink: #26241f, tape text and key legends, with muted #55524a
+    type:
+        Digits are inline SVG seven segment polygons with slanted ends,
+        skewed 6 degrees, with all unlit segments drawn in ghost, 72px in
+        the main display and 30px in the readouts. LCD and tape text use
+        OCR A Std, OCR A Extended, Courier New, Courier, monospace at 13
+        to 15px. Key legends and labels use Helvetica Neue, Helvetica,
+        Arial, sans-serif in bold 13px caps, with 10 to 11px sub legends
+        and annunciators.
+    layout:
+        A desk with the calculator on the left and the tape on the right.
+        The calculator has the brand and a small model line, a five cell
+        solar strip, then a dark bezel around the main LCD. The LCD shows
+        annunciators M, WK and an inverted E lit with MEM, GT and percent
+        unlit, the greeting and date in small mono text, a big seven
+        segment 4 with TASKS OVERDUE beside it, and an E box with the
+        overdue sentence. Four small bezelled readouts show the four
+        numbers in seven segment digits with labels under them. A Find
+        field styled as an LCD and the user line follow. The keypad is a
+        four column grid of chunky keys, six light keys for the nav with
+        short sub legends and Home pressed down in dark, dark Alerts with
+        4 new, dark Clear, a wide orange = New project key and a wide
+        Print tape key. On the right a printed tape with a zigzag torn
+        foot lists the projects with percent on the right, a facts line
+        and status, closes with a Tasks done 78 of 170 total under a heavy
+        rule, then lists activity with short times. Under the tape a
+        bezelled LCD bar graph shows 14 columns of 17 segments each, lit
+        up to the day's count, with day letters. Below 960px the tape goes
+        under the calculator and below 480px the readouts sit two by two.
+    spacing: 8 to 10px between keys, 14px between calculator zones and 40px between the calculator and the tape.
+    density: A compact device on the left and a long airy tape on the right.
+    corners: Keys 8px on top and 12px at the bottom. The body is 18 to 26px. LCD 3px. The tape has a zigzag torn foot.
+    borders: Keys have a 1px edge. Displays sit in a dark bezel. Tape rows are dotted and the total gets a 2px rule.
+    shadows: Keys stand on a 4px solid under edge and the current key is pressed down to 1px. The body has a soft drop.
+    icons:
+        A ringed dot means On track, an outline triangle with a bang means
+        At risk, a minus box in red ink means Behind, and an E error box
+        marks overdue, like a calculator error.
+    focus: A 3px ink outline offset 2px inside a 6px orange halo.
+    tone: Machine labels and arithmetic, such as Print tape, Clear, = New project and the sigma totals for each week.

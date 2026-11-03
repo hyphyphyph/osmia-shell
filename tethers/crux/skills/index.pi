@@ -1,0 +1,9 @@
+// Skills index for crux, one subfolder per skill family. Each family
+// re-exports its skills from its own index.pi. Shared abstract bases
+// live in lib/ and are never exported.
+
+// from ./arch export *
+// from ./impl export *
+
+from ./spec export *
+from ./ui export *

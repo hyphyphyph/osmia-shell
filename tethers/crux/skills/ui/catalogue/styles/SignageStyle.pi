@@ -1,0 +1,47 @@
+export anchor SignageStyle:
+    number: 22
+    screen: ProjectsDashboard
+    name: Signage
+    idea: Wayfinding signage for work, with huge high-contrast type, black and safety-yellow bands, big pictograms and numbered sections that read from across the room.
+    base: light
+    palette:
+        white: #ffffff, the page and section ground
+        black: #111111, text, rules, the top band, the primary button and this week's bars
+        safetyYellow: #ffcc00, the greeting band, the active nav item, At risk and the focus halo
+        goGreen: #00703c with white, the On track pictogram and word
+        stopRed: #c8102e with white, the Behind pictogram and word
+        midGrey: #8c8c8c, last week's chart bars only
+        lightGrey: #e6e6e6, the meter track
+        muted: #444444, placeholder text
+    type:
+        Helvetica Neue, Helvetica, Arial Nova, Arial, Liberation Sans,
+        sans-serif, heavy and mostly uppercase. Summary numbers are up to
+        128px at weight 900 with tight tracking, the greeting up to 96px
+        uppercase, section titles up to 56px uppercase, project names up to
+        40px, activity text 24px and labels 20px weight 800 uppercase with
+        0.04em tracking. Sizes scale down with clamp on phones.
+    layout:
+        Full width stacked bands, no columns. A black top band holds a
+        yellow square B mark, uppercase nav words with the current one on
+        yellow, a white search block, a square bell and the avatar. A
+        yellow band carries a black circle badge, the greeting, the date
+        with a black 4 TASKS OVERDUE tag and a big black New project
+        button. Then four giant counts split by thick black rules, with the
+        overdue count reversed to yellow on black. Numbered sections follow
+        like platform signs, 1 Projects as one full width row per project
+        with a pictogram tile, name, status word, facts and a giant
+        percent over a thick meter, 2 Tasks done with week totals beside
+        large bars, and 3 Latest as a departure board of times and events.
+        A hazard stripe ends the dashboard. Phones stack each row.
+    spacing: An 8px unit in big steps. 24px row padding, 48px section padding and a 40px page gutter.
+    density: Very low. One project per full width row and one fact per line.
+    corners: Square everywhere, except 6px on pictogram tiles and section number blocks and a full circle on the badge.
+    borders: Heavy black rules, 8px between bands, 4px between rows and cells and 3px in the style sheet tables.
+    shadows: None.
+    icons:
+        Big solid pictograms in 88px tiles, a ringed tick on green for On
+        track, a solid triangle with an exclamation mark on yellow inside a
+        black edge for At risk and a boxed cross on red for Behind. Section
+        numbers sit in 72px black squares. Arrows mark links.
+    focus: A 6px black outline with a 12px yellow halo. On the black band a 6px yellow outline.
+    tone: Extremely direct uppercase, such as 4 OVERDUE, TASKS DONE, LATEST and ALL PROJECTS with an arrow.

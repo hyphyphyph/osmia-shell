@@ -1,0 +1,46 @@
+export anchor NightLightStyle:
+    number: 376
+    screen: SmartHome
+    name: Night light
+    idea: A bedside screen in warm low amber on near black, one narrow quiet column with a large clock and old style serif text, dim enough for a dark bedroom yet every word still clears AA.
+    base: dark
+    palette:
+        page: #0c0805, page and style sheet ground
+        glow: #140d08, faint top glow behind the clock
+        rule: #2e1f14, hairline rules between rows
+        ink: #dcae80, body text, 9 to 1 on page
+        soft: #a8805c, labels, italics and notes, 5.6 to 1
+        ember: #f0a560, the clock, active scene, primary button and focus
+        onEmber: #1a0d03, text on ember
+        emberDeep: #3a2210, the alert band
+        alert: #f3b780, alert text on emberDeep
+    type:
+        Old style serif for text, Iowan Old Style, Palatino Linotype,
+        Palatino, Book Antiqua, Georgia, base 17px at 1.6. The clock is
+        112px at 400 in ember with old style figures, the bedroom line 24px,
+        room names 20px, notes 15px italic. Small labels and buttons use
+        system-ui at 12px, 600, caps with 0.18em tracking.
+    layout:
+        One quiet centred column 680px wide on a near black brown page with
+        a faint warm radial glow at the top. A small caps line names
+        Brightwork Home and Bedtime view. A huge ember clock shows the time,
+        with an italic line Saturday evening, Movie is playing. A ruled
+        Bedroom block comes first, saying 19.0 degrees and cooling for
+        sleep, with a clock line that heating steps down to 18 at bedtime. A
+        deep ember alert band follows with an exclamation mark, the garage
+        sentence and an ember pill Close now. Around the house lists the
+        other four rooms as rows with dotted leaders from the name to the
+        value and an italic note with a thin icon below. Today's energy
+        shows three figures split by thin left rules, then a dim curve of
+        dots, brighter ember dots for the evening, captioned midnight,
+        busiest at seven and now. Scenes are outlined pills with Movie in
+        ember and a small on mark. A closing italic hint explains Good
+        night. At phone width the clock drops to 84px.
+    spacing: An 8px unit with generous 40 to 48px gaps between sections and 14px row padding.
+    density: Very low. One fact per line, bedroom first.
+    corners: Square rows, a 4px alert band, full pills for buttons and scenes.
+    borders: 1px #2e1f14 rules only, and dotted #4a3322 leaders between a room and its value.
+    shadows: None. A faint radial glow behind the clock instead.
+    icons: Thin 1.3 stroke line icons at 18px, always beside a full sentence.
+    focus: A 2px dashed ember outline offset 4px, dashed so it reads apart from the solid rules.
+    tone: Hushed sentences, such as Around the house and Heating steps down to 18.

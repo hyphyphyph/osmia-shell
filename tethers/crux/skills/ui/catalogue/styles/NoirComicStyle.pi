@@ -1,0 +1,51 @@
+export anchor NoirComicStyle:
+    number: 281
+    screen: CloudFiles
+    name: Noir comic
+    idea: A dark comic page cut into angled panels with cream ink borders and black gutters, halftone shading, caption boxes and speech bubbles, and one red spot colour for what matters.
+    base: dark
+    palette:
+        gutter: #070708, the page and gutters between panels
+        panel: #1b1b1f, panels and the style sheet
+        panelTwo: #232328, file frames inside the list panel
+        black: #0b0b0c, fields, secondary buttons and text on red and cream
+        cream: #ece4d4, panel borders, speech bubbles, the current nav and the pressed switch
+        ink: #f3eee4, text on dark
+        muted: #bdb6aa, meta and labels
+        redSpot: #ff5a4a, the only colour, captions, the primary button, Starred, the selected frame and focus
+    type:
+        One stack, Trebuchet MS, Segoe UI, Tahoma. Lettering is italic 900
+        capitals with a hard black drop, 56px for the folder title, 20px
+        for the details name and 18px for panel labels. Body 15px. Captions
+        13px bold caps on red.
+    layout:
+        A comic page of panels with 14px black gutters. A wide title panel
+        with halftone dots carries a red caption box Brightwork Drive and
+        Fernhill Studio, the lettered title Website redesign, a boxed caps
+        breadcrumb and a pill Search files field. Below are three panels.
+        The Drive panel has a slightly slanted top and lists the five
+        links, the current one cream and skewed, then storage as 64.2 GB of
+        100 GB used over a halftone bar filled cream to 64 percent. The
+        files panel opens with the label 8 files, Upload, New folder and a
+        List or Grid switch with List cream, then eight small frames, one
+        per file, with icon, name and kind, size, and date and person.
+        Statuses are speech bubbles with tails. The selected frame has a
+        3px red border, a red wash and a black drop. Uploading adds a
+        halftone bar. The details panel has a slanted top, a red caption
+        brand-guide-v3.pdf is selected, the preview with halftone and a
+        light shaft, the lettered name, Starred, an oval cream speech
+        bubble holding owner, size, version and shared with, and the three
+        buttons. Below 1100px details drop under the files. Below 740px the
+        panels stack.
+    spacing: An 8px unit. 14px gutters, 16 to 18px panel padding, 8px between file frames.
+    density: Medium. Each file is its own small frame.
+    corners: Square panels with slanted edges, round speech bubbles with tails, a pill search.
+    borders: 3px cream ink round panels, 2px warm grey round file frames, 3px red round the selected frame.
+    shadows: Hard black offsets on captions, buttons, lettering and the selected frame.
+    icons:
+        2px line icons in cream. Status is a speech bubble with a word, a
+        red bubble with a star for Starred, a cream bubble with two heads
+        for Shared, a squarer cream bubble with an up arrow for Uploading
+        and a black bubble with a checked box for Selected.
+    focus: A 3px red outline offset 3px with a cream ring outside it.
+    tone: Comic captions, short and punchy, such as 8 files and brand-guide-v3.pdf is selected.

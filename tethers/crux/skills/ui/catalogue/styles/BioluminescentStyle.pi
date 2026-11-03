@@ -1,0 +1,48 @@
+export anchor BioluminescentStyle:
+    number: 270
+    screen: CloudFiles
+    name: Bioluminescent
+    idea: Files drift as rounded capsules in blue black deep water, lit only by glowing cyan rings, a depth gauge for storage and a round porthole for the selected file.
+    base: dark
+    palette:
+        deep: #020d15, page floor and gauge well
+        water: #041824, page top, search and fact cells
+        capsule: #072535, file capsules and the details panel
+        capsuleLit: #0a3448, the selected capsule and the active view
+        ink: #def7fa, text
+        muted: #93b8c2, meta and inactive rail labels
+        line: #0f3a4c, capsule and panel edges
+        cyanGlow: #3fe6ee, primary button, current ring, folder orbs, gauge, porthole rim and focus
+        foam: #a6f5e4, file icons and status words
+        cyanInk: #00262b, text on cyan
+    type:
+        One humanist stack, Seravek, Gill Sans Nova, Gill Sans, Trebuchet
+        MS, Segoe UI. Base 16px. The title is 40px at 500, the details
+        title 20px at 600, file names 16px at 600, meta 14px muted, rail
+        labels 12px.
+    layout:
+        The page is deep water, a soft lighter glow at the top and scattered
+        blurred cyan plankton dots. A 104px rail holds a ringed B mark,
+        the five places as round outlined icon rings with small labels
+        beneath, My files ring glowing cyan, and at the foot a vertical
+        depth gauge filled 64.2 percent with 64.2 GB of 100 GB. The main
+        area has the breadcrumb and a pill search, then the title with a
+        glowing Upload pill, a New folder outline pill and a List or Grid
+        pill switch. Files are 40px round capsules with a round orb icon,
+        the name with its status word, a sentence of kind, date and
+        person, and the size. Folder orbs glow cyan. The selected capsule
+        has a cyan rim and glow. A 340px rounded details panel has a small
+        glowing jellyfish drawing in its corner, a 200px round porthole
+        preview, the name, four fact cells and the three pill buttons.
+        Below 760px the rail becomes a top strip with a horizontal gauge.
+    spacing: An 8px unit. 36px main padding, 10px between capsules, 24px inside the porthole panel.
+    density: Medium. One capsule per file, about 70px tall, with a sentence of meta.
+    corners: Fully round. 40px capsules, 28px panel, 22px pill buttons and fields, circle orbs and porthole.
+    borders: 1px #0f3a4c edges, teal orb rims, cyan rims on folders, the selected capsule and the porthole.
+    shadows: Glow only, 0 0 12px cyan at 45 percent, on the primary button, current ring, selected capsule, gauge and meters.
+    icons:
+        20px line icons in foam inside round orbs. Status words in foam
+        pair a filled star with Starred, two heads with Shared with 4
+        people and an up arrow ring with Uploading 62% over a glowing bar.
+    focus: A 2px cyan outline with a 3px offset plus the cyan glow.
+    tone: Quiet and plain, such as Details and 64.2 GB of 100 GB, with the sea only in the visuals.

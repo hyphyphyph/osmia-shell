@@ -1,0 +1,59 @@
+export anchor PapelPicadoStyle:
+    number: 148
+    screen: ProjectsDashboard
+    name: Papel picado
+    idea: The dashboard hangs from strings of cut tissue paper banners, with bright paper flags carrying the totals, scalloped and pierced edges on every panel and a festive but readable layout on white.
+    base: light
+    palette:
+        tissueWhite: #fffdf8, the page and the punched holes in every flag
+        ink: #2a2340, text, outlines and the button shadow
+        muted: #5b5470, dates, labels and meta
+        pinkPaper: #ff5fa8, flags, this week bars and panel tops
+        tealPaper: #24c1c1, flags, last week bars and the bell
+        yellowPaper: #ffd23f, flags, the current tab and section tags
+        purplePaper: #9a6bf0, garland flags only, never behind text
+        orangePaper: #ff8a3d, flags and the avatar
+        greenPaper: #48c774, flags
+        magenta: #c2185b, the brand, the primary button and dashed focus
+        okGreen: #1d7a3a, On track
+        riskAmber: #8a5a00, At risk
+        overdueRed: #b4232a, Behind and overdue
+        string: #7a6f8f, the strings flags hang from
+    type:
+        Headings, labels and figures use ui-rounded, SF Pro Rounded,
+        Arial Rounded MT Bold, Nunito, Varela Round, Trebuchet MS,
+        sans-serif at weight 800. Body uses Trebuchet MS, Segoe UI,
+        Ubuntu, Verdana, sans-serif. Greeting 48px with the name in
+        magenta, flag figures 52px, section titles 28px, row titles 19px,
+        body 16px at 1.5, status pills 15px.
+    layout:
+        A garland of sixteen small flags in all six paper colours hangs
+        along the top from a curved string, each pierced with a polka dot
+        of holes, a zigzag bottom and a diamond or round cut out, tilted
+        slightly. The header bar overlaps it with a magenta zigzag
+        bottomed brand flag, pill nav with a yellow current pill, a pill
+        search, a magenta pill button with a hard ink shadow, a teal round
+        bell and an orange avatar. The hero pairs a big greeting, date and
+        an outlined red notice naming 4 overdue tasks with four large
+        flags hung on a curved string, each a pierced coloured flag with a
+        white arched card holding the figure and label, alternately
+        tilted. Projects sit in one outlined panel topped by a pierced
+        teal strip, each row with a small pierced flag showing the
+        percent, the name with category and due date, a striped paper
+        progress bar with tasks and percent, and an outlined status pill.
+        Chart and activity sit side by side in panels topped with yellow
+        and orange strips, the chart with scalloped topped bars pierced by
+        diamonds, teal last week and pink this week. Each section title
+        has three tiny flags before it. On phones the garland shortens,
+        totals go two by two and rows stack.
+    spacing: An 8px unit. 32px gutters, 48px between sections, 14 by 20px rows.
+    density: Airy and festive.
+    corners: Pills for buttons, tabs, fields and status, 18px panels, zigzag bottoms on flags and round arched tops on cards inside them.
+    borders: 2px ink outlines on panels, buttons and fields, dotted dividers between rows and a pierced coloured strip at the top of each panel.
+    shadows: Only a hard 4px ink shadow under the primary button.
+    icons:
+        Bold rounded line icons. Status uses a ticked circle for On track,
+        a triangle with an exclamation for At risk and a rounded square
+        with a down arrow for Behind, inside outlined pills with the word.
+    focus: A 3px dashed magenta outline offset 3px.
+    tone: Cheerful and short, such as Good morning, Mara! and Last week 59.

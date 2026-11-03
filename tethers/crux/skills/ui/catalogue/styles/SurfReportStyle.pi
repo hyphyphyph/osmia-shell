@@ -1,0 +1,45 @@
+export anchor SurfReportStyle:
+    number: 138
+    screen: ProjectsDashboard
+    name: Surf report
+    idea: A beach shack surf forecast where the week is a smooth swell chart, projects are breaks in a forecast table, and progress stands up as rounded waves.
+    base: light
+    palette:
+        sand: #f7eedb, the page and sheet rows
+        foam: #fffaf0, panels and text on deep sea
+        sea: #0e6973, nav, table head and the swell line
+        deep: #0b3d4a, header, headings and big numbers
+        shallow: #cdeef0, swell fill, condition tiles and focus fill
+        sun: #f7c948, primary button and sun disc, never text
+        coral: #b23a2f, the Behind flag and the overdue banner
+        coralSoft: #f6c6b8, the overdue tile and avatar
+        driftwood: #4a3a2a, body text
+        bark: #6a5644, captions and row keys
+        palm: #1f6f3c, the On track sun
+        rust: #8a5300, the At risk fin
+    type:
+        Rounded sans for headings and numbers uses Arial Rounded MT Bold,
+        Varela Round, Nunito, Trebuchet MS, Verdana. Body uses Verdana,
+        Tahoma, DejaVu Sans. Tile numbers 38px, greeting 36px, section
+        titles 22px, chart labels 13px bold, body 14px at 1.55, captions
+        11px caps tracked 0.1em.
+    layout:
+        A deep sea header holds a sun over wave logo, a pill search, a
+        yellow pill New project with a ledge, a round bell and the user,
+        over a sea nav with rounded top tabs where the current tab is sand.
+        The first row pairs a Today's report panel with a corner sun, the
+        greeting, a coral overdue banner and four rounded condition tiles,
+        with a wide swell chart panel showing a smooth filled curve with
+        dots and values for the 14 days and two total pills. The Break
+        forecast is a table with projects as columns and rows for
+        conditions, progress as rounded wave bars, tasks done and due, which
+        scrolls sideways inside its panel on small screens. Below are a
+        Beach log and a key panel explaining the three status icons.
+    spacing: An 8px unit. 20 to 24px padding in panels, 24 to 28px between sections.
+    density: Relaxed. Big rounded numbers, one forecast table, generous line height.
+    corners: Very soft. 24px panels, 16 to 18px tiles, 22px pill buttons, wave bars rounded on top.
+    borders: Mostly none. Dotted 2px sand lines between table cells and log rows.
+    shadows: Only the primary button, a 3px solid darker sun ledge below it.
+    icons: Chunky filled beach signs at 30px above the word. Rayed sun On track, fin over a wave At risk, square beach flag Behind, rounded exclamation tile for overdue.
+    focus: A 3px dashed deep sea outline offset 3px with a shallow fill, sun yellow on dark bars.
+    tone: Laid back, such as Today's report, Heads up, Break forecast, Beach log and how the week is breaking.

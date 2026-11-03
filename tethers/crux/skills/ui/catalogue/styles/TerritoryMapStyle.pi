@@ -1,0 +1,51 @@
+export anchor TerritoryMapStyle:
+    number: 339
+    screen: CrmPipeline
+    name: Territory map
+    idea: The pipeline placed on a dark abstract map of five sales regions, where each deal is a numbered pin whose shape tells its state, with a keyed deal list beside the map as the legend and text version.
+    base: dark
+    palette:
+        sea: #08121c, the page and the style sheet
+        chartSea: #0b1826, water inside the map
+        land: #13243a, region fills, stepped from #112238 to #182e47
+        panel: #0f1c2b, the map frame, fields and row hover
+        border: #2e4a68, region borders, rules and dashed dividers
+        ink: #e3ecf6, text
+        muted: #9fb6cf, region names, labels and the compass
+        amber: #ffc86b, pins, the target hatch and primary button
+        onAmber: #1d1300, pin numbers and button text
+        coral: #ff8f7a, Stalled and its triangle pin
+        mint: #8de0b5, Won and its ringed pin
+        ice: #9cd3ff, the secondary button, note icons and focus
+    type:
+        A condensed stack, Bahnschrift, DIN Alternate, Roboto Condensed,
+        Arial Narrow, Segoe UI. Base 15px. The title is 26px at 700,
+        figures 24px at 700 with tabular numbers, region names on the map
+        20px uppercase tracked .15em, deal names 15px at 700, meta 13px.
+    layout:
+        A thin top bar holds a pin icon with Brightwork Sales Territories,
+        an All stages outline button and an amber Place deal button. The
+        title Q4 pipeline by territory sits over a ruled band of five
+        figures split by dashed lines, the won figure with a hatched amber
+        bar at 64 percent. Below, a wide map frame takes about two thirds
+        of the width. It shows five invented regions, North, Harbour,
+        Central, East and South, as dark polygons with dashed contour lines
+        and a small compass, and seven numbered pins. Lumen Bakery and
+        Saltwater Freight sit in Harbour, Orbit Labs and Northpass in North,
+        Kettle and Co in Central, Fernhill Studio in East and Bluewater
+        Clinics in South. Under the map sit a shape legend and a note that
+        regions are not to scale. The right column, Deals on the map, lists
+        pins 1 to 7 with the same pin shape, the deal, region, stage, owner,
+        status and value. Field notes holds the activity below. Below 960px
+        the list drops under the map.
+    spacing: An 8px unit. 20px between map and list, 10px row padding, 24px gutter, 16px on phones.
+    density: Medium. The map carries placement and the keyed list carries the detail.
+    corners: 6px map frame, 4px buttons and fields, round pins, teardrop swatches.
+    borders: 2px region borders, 1px rules under every list row, dashed contours and summary dividers.
+    shadows: None. Pins sit on a 3px sea coloured ring so they lift off the land.
+    icons:
+        Line icons at 1.9 stroke in the chrome. On the map pin shape
+        carries state, a circle for open, a diamond for a booked date, a
+        square for sent, a triangle for stalled and a ringed circle for won.
+    focus: A 2px dashed ice outline offset 3px.
+    tone: Field and survey words, such as Territories, Place deal, Deals on the map and Field notes.

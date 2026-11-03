@@ -1,0 +1,58 @@
+export anchor CockpitAvionicsStyle:
+    number: 74
+    screen: ProjectsDashboard
+    name: Cockpit avionics
+    idea: A light-mode flight deck where every number is an instrument in a screwed-down bezel, projects are vertical tape gauges and trouble lights up as an amber caution caption.
+    base: light
+    palette:
+        deck: #dfe2dc, the page behind the panels
+        bezel: #eef0eb, raised instrument housings and nav keys
+        face: #fafbf7, dial faces, displays and fields
+        ink: #15191c, text, needles, tape fill and the primary key
+        dim: #4b534f, captions and meta
+        selectedMagenta: #a1166f, tape bugs, log times, the week marker and focus
+        green: #1b6a3a, the On track caption and normal arcs on dials
+        cautionAmber: #f0b13a, caution fills with near-black text, never text itself
+        warningRed: #b11f1a, the Behind caption with white text
+        sky: #cfe2f1, the upper half of the attitude indicator
+        ground: #e8d6b8, the lower half of the attitude indicator
+    type:
+        Two stacks. Captions use Arial Narrow, Roboto Condensed, Helvetica
+        Neue, Arial in bold caps tracked 0.14em at 11 to 12px. Readouts,
+        times and the activity log use ui-monospace, SF Mono, Menlo,
+        Consolas. The greeting is 26px bold condensed, readouts 22px bold
+        mono in a small boxed window, tape percents 20px bold mono, project
+        names 13px bold condensed and log lines 13px mono with bold magenta
+        times.
+    layout:
+        A grey glareshield bar holds the brand with a small dial mark and
+        the subtitle FLIGHT DECK, a row of square push keys for nav with a
+        green lamp strip lit on Home, a monospace scratchpad search, a black
+        New project key, an amber Notices 3 caution button and Pilot in
+        command Mara Okafor. Below, a long bezel is the message line with
+        the greeting, the date in mono caps and an amber caption reading
+        Caution 4 tasks overdue. A row of five bezels follows, four round
+        dials with a 270 degree tick arc, a coloured value arc, a needle and
+        a boxed readout for the four summary numbers, the overdue dial with
+        an amber caution band, and an attitude indicator whose horizon sits
+        nose up for the week trend 73 against 59. The lower area has a wide
+        Project systems bezel with six vertical tape gauges side by side,
+        each with its percent above, a magenta bug at the fill level, name,
+        team, tasks and due in mono, and a status caption under it. The
+        right column stacks a Climb log bar chart on a display, last week as
+        outlined bars and this week solid with a dashed magenta divider, and
+        a Datalink messages log. At 375px the dials go two by two, the
+        attitude indicator spans the row and the tapes go three across.
+    spacing: An 8px unit. 16px between bezels, 20px inside them and 10px between keys and tapes.
+    density: Medium. Few large instruments with small captions, readouts carry the weight.
+    corners: 14px on bezels, 6px on displays, 4px on keys and fields and 2px on captions.
+    borders: A 1px grey rim on bezels and displays, 1px ink on dials and tapes, dashed rows in the log, and an 8px screw drawn in each bezel corner.
+    shadows: Bezels are raised with a white top highlight, a 2px lip and a soft blur. Displays and fields are inset.
+    icons:
+        Instrument drawings only, dials with needles, tape gauges with a
+        magenta bug and an attitude ball. Status captions pair the word with
+        an open green circle for On track, a solid triangle on amber for At
+        risk and a white square on red for Behind. Behind and At risk tapes
+        also use striped fills.
+    focus: A 2px magenta outline offset 2px with a soft 5px magenta halo at 18 percent.
+    tone: Clipped checklist caps such as Caution 4 tasks overdue, Climb log, Datalink messages and 12 MIN.

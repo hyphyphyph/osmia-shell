@@ -1,0 +1,48 @@
+export anchor OrigamiStyle:
+    number: 33
+    screen: SignIn
+    name: Origami
+    idea: The sign-in form is one sheet of paper folded into three panels, with crisp creases, a dog-eared corner and light triangular facets on every surface.
+    base: light
+    palette:
+        page: #f3efe8, the background behind the sheet with large faint facet triangles
+        sheet: #fffdf9, the lit side of the paper
+        facetLight: #f8f4ee, the second half of every facet
+        facetMid: #ece5da, the middle panel turned away from the light
+        facetShade: #ddd3c3, the dog-ear and the icon triangles
+        crease: #cfc3b0, fold lines between panels
+        edge: #8a7d68, field and button edges
+        ink: #2a2620, text
+        muted: #5f574b, labels, the brand line and the divider
+        tealFold: #2b7479 with #1f5f63, the two tone primary button, links and the checked box
+        coral: #b5462c, the focus outline
+        error: #a63a22, error text and the error field edge
+        done: #2d6b3c, On track text
+    type:
+        Avenir Next, Avenir, Century Gothic, Futura, Segoe UI, system-ui,
+        sans-serif. The heading is 26px weight 500, the brand 13px weight
+        600 uppercase with 0.32em tracking, the primary button 16px weight
+        600, field text 16px, body 15px at 1.55, and labels 12px weight
+        600 uppercase with 0.14em tracking.
+    layout:
+        A centred sheet 460px wide on a page of pale facet triangles, with
+        a small folded paper crane of light triangles above it. The sheet
+        is split into three stacked panels like a tri-fold. The top panel
+        is the brightest and holds the brand, heading, sign-in buttons and
+        the or divider. The middle panel is shaded as if turned away and
+        holds the fields, checkbox row and Sign in. The bottom panel holds
+        the create account line. Two faint diagonal creases cross the whole
+        sheet and the top right corner is dog-eared. Privacy and Terms sit
+        below. At 375px the sheet fills the width.
+    spacing: An 8px base. 28px by 32px panel padding, 12px between sign-in buttons and 18px between fields.
+    density: Medium. One sheet in three panels.
+    corners: No rounding. Corners are cut on the diagonal instead, a 44px dog-ear on the sheet, 14px cuts on the primary button and small folded corners on secondary buttons.
+    borders: 1px crease lines with a white highlight below, 1px edge on fields and buttons. An error field gets a 3px bottom edge.
+    shadows: A tight 1px drop and a soft 14px drop under the whole sheet. Facets are hard half and half diagonal splits, never blurred.
+    icons:
+        Everything is a triangle. A folded crane above the sheet, triangle
+        tabs holding the letters G and M, a two tone triangle with an
+        exclamation mark for the error, a small triangle on the primary
+        button and a tick in the checked box.
+    focus: A 3px coral outline offset 3px on every control. A focused field also darkens its edge to ink.
+    tone: Neat, quiet and precise, with short plain words.

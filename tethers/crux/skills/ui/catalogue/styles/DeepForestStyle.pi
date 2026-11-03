@@ -1,0 +1,58 @@
+export anchor DeepForestStyle:
+    number: 234
+    screen: ProjectsDashboard
+    name: Deep forest
+    idea:
+        A calm woodland workspace in layered pine greens, where projects sit
+        as soft cards with growth ring meters, the week is a moss line over a
+        fern dashed line, and activity follows a winding trail.
+    base: dark
+    palette:
+        pine: #0e1d17, the page and the style sheet
+        canopy: #132820, the sidebar and the top bar
+        bark: #18322a, cards, tiles and panels
+        understory: #1f3d33, meter tracks, the current nav tile and the search field
+        line: #2f5446, card borders and dividers
+        ink: #e3efe7, text and figures
+        lichen: #a9c4b5, meta, labels, dates and day letters
+        moss: #b5cf7a, the primary button, ring meters, this week line, links and focus
+        fern: #7fb89a, the last week dashed line and trail dots
+        ok: #9adbb0, On track text and check circle
+        risk: #f0cf7a, At risk text and triangle
+        bad: #f5a596, Behind and overdue text, crossed square and clock
+    type:
+        One humanist stack, Seravek, Gill Sans Nova, Ubuntu, Calibri, DejaVu
+        Sans, sans-serif. Base 15px at 1.55. The greeting is 30px at 600, tile
+        figures 34px at 600 with tabular numbers, section titles 19px at 600,
+        card titles 16px at 600, meta 13px in lichen, and ring percentages
+        13px bold.
+    layout:
+        A 232px canopy sidebar holds a moss leaf mark with the Brightwork
+        name, the six nav links as rounded rows with Home on an understory
+        tile with a moss notch, and Mara Okafor with a round initials disc at
+        the foot. The main area has a canopy top bar with a pill search field,
+        a round bell with a count, and a moss New project pill. Below sit the
+        greeting Good morning, Mara with the date and a line reading 4 tasks
+        are overdue with a clock in coral. Four rounded bark tiles show the
+        figures with a small icon each, overdue in coral. Projects are a three
+        column grid of bark cards, each with a 56px ring meter holding the
+        percent, the name, category, a status line, tasks done and the due
+        date. Last, the chart and the activity sit side by side, the chart a
+        line chart by weekday with this week as a moss line over a soft moss
+        area and last week as a dashed fern line, the activity a vertical
+        trail with fern dots and small icons. Below 900px the sidebar becomes
+        a top band with the nav wrapping in rows, cards go to one column and
+        the chart and trail stack.
+    spacing: An 8px unit. 24px card padding, 16px gaps in grids, 32px between sections.
+    density: Airy to medium. Cards breathe, six projects fill two rows of three.
+    corners: Soft. 16px cards and tiles, pill buttons and search, round rings and dots.
+    borders:
+        1px line on cards and tiles, none on the sidebar. The current nav tile
+        has a 3px moss notch.
+    shadows: One soft deep shadow under cards, 0 8px 24px of near-black at 35 percent.
+    icons:
+        Rounded line icons at 1.8px stroke sized to the text. Status uses a
+        check circle, a triangle with a bang and a crossed square, always with
+        the word, overdue a clock.
+    focus: A 2px moss outline offset 3px with a 6px dim moss halo.
+    tone: Calm and kind, such as Good morning, Mara and A steady week on the trail.

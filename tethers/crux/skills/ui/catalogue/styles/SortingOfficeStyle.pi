@@ -1,0 +1,57 @@
+export anchor SortingOfficeStyle:
+    number: 397
+    screen: EmailClient
+    name: Sorting office
+    idea: A postal sorting room in green enamel and brass, where folders are a wall of pigeonholes filling with slips, messages are tagged dockets on a belt, and the open message is a routing form.
+    base: dark
+    palette:
+        enamel: #18201c, the page and the belt floor
+        wall: #212b26, the header, the pigeonhole wall and the style sheet
+        cubby: #0f1411, the inside of each pigeonhole and fields
+        steel: #3c4a43, frames and heavy rules
+        slip: #2a332e, dockets and the routing form
+        slipEdge: #4d5c54, docket borders and form cell lines
+        chalk: #eef0e6, text and label plates
+        dust: #aeb8ae, routing codes and meta
+        brass: #e2bd4f, folder plates, the form band, the primary button and focus
+        onBrass: #231a00, text on brass
+        redStamp: #ff8a75, the Unread stamp with its triangle
+        mint: #8fdcb4, the Encl. stamp and the Team swatch
+        sky: #9cc3ff, the Clients swatch
+    type:
+        A condensed sans, DIN Condensed, Bahnschrift Condensed, Roboto
+        Condensed, Arial Narrow, at a 15px base, with headings, senders,
+        plates and buttons in spaced capitals. The open subject is 28px at
+        700, senders 18px at 600. A mono stack, ui-monospace, Cascadia
+        Mono, Menlo, Consolas, sets the body at 15px with 1.7 leading, the
+        routing codes at 12px and the times in small boxes.
+    layout:
+        A header with a riveted brass name plate, the line Desk of Mara
+        Okafor, morning sort, and a boxed field reading Find a slip. Then a
+        full width pigeonhole wall in a steel frame, nine deep dark cubbies
+        in one row. Each holds a stack of pale slip bars showing how full
+        it is and a brass plate with the name and count, Inbox 12 and
+        Drafts 2. Inbox has a brass inner frame and a small SORTING arrow.
+        The three label cubbies use chalk plates with a coloured square.
+        Below, two columns. The left, titled Inbox belt, 6 slips shown of
+        12, lists six dockets shaped like luggage tags with a pointed left
+        end and a punched hole, each with a code from IN-01 to IN-06, the
+        sender in capitals, the time in a small box, the subject, the
+        snippet and stamps. The right column is the routing form, a brass
+        band reading Docket IN-01, open, four ruled cells for From, Office,
+        To and Sent, the subject in capitals, the body in mono, and a
+        dashed rule above square buttons with Reply in brass. Below 1100px
+        the wall wraps to five per row and the form drops under the belt.
+        On a phone the belt and form come first and the wall moves to the
+        bottom as a three by three grid.
+    spacing: An 8px unit. 24px gutters, 10px between dockets, 3px steel gaps between pigeonholes.
+    density: Medium high. Nine pigeonholes, six stamped dockets and a full form.
+    corners: Square everywhere. Dockets have a pointed tag end with a punched hole.
+    borders: 2 to 3px steel frames and rules. Label stamps are dashed.
+    shadows: Only an inset shadow at the top of each pigeonhole to make it deep.
+    icons:
+        Square capped 2px icons. Unread is a red bordered stamp with a
+        solid triangle, Starred a brass stamp with a filled star, Encl. 1 a
+        mint stamp with a clip, labels a dashed stamp with a colour square.
+    focus: A 3px brass outline offset 2px. Tag shaped dockets get a brass edge plus a 3px inset brass frame instead.
+    tone: Postal shorthand in capitals, such as Belt, Docket, Encl. 1 and Find a slip.

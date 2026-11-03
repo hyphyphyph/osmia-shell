@@ -1,0 +1,54 @@
+export anchor DarkPastelStyle:
+    number: 263
+    screen: DesignEditor
+    name: Dark pastel
+    idea: A soft charcoal workspace of rounded cards where each kind of thing has its own pastel, mint for text, lilac for frames, peach for components and sky for images, so the layer tree and the inspector read by colour and by label at once.
+    base: dark
+    palette:
+        charcoal: #232428, the page and text on every pastel
+        card: #2c2d33, the top bar, layer and inspector cards and the style sheet
+        cardRaised: #34353c, property cards, the selected layer and Present
+        sink: #1d1e22, the canvas well, fields and the tool track
+        line: #3d3e46, tree ticks and quiet rings
+        ink: #f1f0f5, text on dark
+        muted: #b8b7c4, meta and field keys
+        mint: #9fe3c6, text layers, the active tool, Saved and focus
+        lilac: #c9b6f2, frames, Share, the selected ring and the frame outline
+        peach: #f6c3a3, components, people editing and the comment pin
+        sky: #a9d4f5, images, the version and the radius card
+        butter: #f3e3a0, the Selected pill and the fill card
+        guide: #7048c8, the 32 px guide and handle rims
+    type:
+        One stack, Avenir Next, Segoe UI, system-ui, Roboto, with ui-monospace
+        for the frame size. Base 15px at 1.5. The file name is 16px 700, card
+        titles 18px 700, layer names 14px 650, values 14px 600 tabular, badges
+        and pills 12px 700, meta 12px.
+    layout:
+        A top card holds a lilac B tile, Canvas · Website redesign over Home
+        v3, a centred segmented tool track where Move is a mint pill with icon
+        and word and the other tools are icons only, then a 66% chip, three
+        pastel rounded square avatars, Present and a lilac Share. Below sit a
+        wide left and a 392px right. The left holds the canvas well with a dot
+        grid, a lilac Hero pill label, the white Hero frame with a lilac ring
+        and round handles, and three pastel status pills under it, mint Saved
+        2 minutes ago, peach 3 people editing and sky Version 41. Under the
+        canvas the layers card shows a tree, Hero across the full width with a
+        lilac Frame badge, a lilac ring and a butter Selected pill, and its
+        six children indented in two columns with badges that carry the kind
+        word, mint Text, peach Instance, sky Image and lilac Frame, Features
+        with a grey Collapsed pill. The right card is the inspector as a grid
+        of small raised cards each headed by a pastel tag, lilac Position and
+        size, butter Fill, sky Radius, mint Auto layout with Vertical, and
+        peach Export with Export Hero. Below 860px the cards stack, the tree
+        becomes one column and the tool track floats fixed at the bottom.
+    spacing: An 8px unit. 16px between cards, 18 to 20px card padding, 12px between property cards.
+    density: Comfortable, a two column layer tree and a two column grid of small property cards.
+    corners: Round and soft. 20px cards, 16px property cards, 12 to 14px fields, buttons and rows, full pills for status.
+    borders: None. Cards separate by tone and selection is a 2px inner lilac ring.
+    shadows: Only on floating things, the comment card and the mobile tool track, 0 8px 24px black at 35 percent.
+    icons:
+        Rounded line icons at 2px stroke, 18px, inside pastel badges with the
+        kind word. Selected is a circled check, Collapsed a right chevron,
+        Saved a cloud with a check, always with the word.
+    focus: A 3px mint outline offset 2px.
+    tone: Warm and plain, with kind words on badges such as Frame, Text and Instance and pills such as Saved 2 minutes ago.

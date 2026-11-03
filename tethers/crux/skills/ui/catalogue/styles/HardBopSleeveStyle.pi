@@ -1,0 +1,56 @@
+export anchor HardBopSleeveStyle:
+    number: 330
+    screen: MusicPlayer
+    name: Hard bop sleeve
+    idea: The screen is laid out like a 1950s jazz record sleeve, with a huge tight sans title, flat blocks of orange, teal and mustard on near black, controls as coloured slabs and the queue listed as Side B on the back cover.
+    base: dark
+    palette:
+        sleeveBlack: #121110, the page, the cover ground and the style sheet
+        board: #1d1b19, the back cover panel, plain slabs and list rows
+        paperWhite: #f1ebdd, the title and body text, the block beside the artist and the progress fill
+        greyPrint: #b1a998, credits, artists and small print
+        orange: #e8742c, the artist block, track numbers, the current lyric and the primary button
+        teal: #3a9e98, the album bar and the liked slab
+        mustard: #e3b23c, the pause slab, the position dot and focus
+        printBlack: #111111, text on orange, teal and mustard
+        rule: #3a3631, dividers, with dot leaders in #6b645a
+    type:
+        One stack, Helvetica Neue, Arial Nova, Arial, heavy and tight. Base
+        15px at 1.5. The title is clamp 52 to 108px at 900 in caps with
+        0.82 line height and minus 0.06em tracking. Block text is 32px at
+        900 in caps, back cover headings 28px at 900, the current lyric
+        20px at 700 in orange, and credits 11px at 700 in caps with 0.3em
+        tracking.
+    layout:
+        A sleeve and its back cover side by side. The cover sits on a six
+        column grid. Small caps credits read Brightwork Sound and Now
+        playing, then HARBOUR over LIGHTS fills five columns with three
+        descending circles in mustard, orange and teal in the sixth. An
+        orange block holds THE SALTMARSH TRIO in black beside a paper white
+        block, then a small mustard square sits beside a teal bar reading
+        LOW TIDE and From the album. A thick progress rule shows the
+        elapsed time in bold, a paper white fill to just under half with a
+        large mustard dot and the total in grey. Six slabs butt together in
+        a row, each with a heavy icon above a caps word, Shuffle Off,
+        Previous, a mustard Pause Playing, Next, Repeat Off and a teal Liked
+        On with a filled heart. A Volume line in orange shows 70%. The
+        back cover is a board panel with three sections, each with a small
+        caps credit over a heavy heading. Up next, Side B lists B1 to B5
+        in orange with caps titles, grey artists, dot leaders and bold
+        times. Lyrics, Liner notes shows the current line in bold orange
+        behind an arrow and the next line in grey. Your library, Also
+        available lists the playlists on black rows with grey counts above
+        three coloured blocks for Albums, Artists and Podcasts. Below 980px
+        the back cover moves under the cover, and below 620px the slabs go
+        three by two and the leaders drop.
+    spacing: An 8px unit. Blocks butt together with 0 to 4px gaps, 20 to 32px inside blocks and 40px around the sleeve.
+    density: Low on the cover, medium on the back cover list.
+    corners: None, apart from the round position dot and the three circles.
+    borders: None. Edges come from flat colour blocks meeting, with dotted leaders on the back cover only.
+    shadows: None. Flat print.
+    icons:
+        Heavy solid glyphs on each slab above a caps word, with the state
+        written underneath as Off, Playing or On. Liked is a filled heart.
+        The current lyric gets a bold arrow.
+    focus: A 3px mustard outline offset 3px, square.
+    tone: Sleeve credits, such as Side B, Liner notes, Also available and From the album.

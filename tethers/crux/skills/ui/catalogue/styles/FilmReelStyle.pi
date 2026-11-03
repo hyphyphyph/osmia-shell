@@ -1,0 +1,55 @@
+export anchor FilmReelStyle:
+    number: 357
+    screen: VideoEditor
+    name: Film reel
+    idea: An editing bench of real film, where every track is a strip of amber celluloid with sprocket holes, audio runs as an optical soundtrack, media sits in labelled film cans and grease pencil marks the selection and the marker.
+    base: dark
+    palette:
+        bench: #120c08, page, rack ground and the style sheet
+        darkroom: #0d0805, header, rack well and sprocket hole shade
+        cueCard: #1d140d, the cue card and swatch cells
+        celluloid: #3b2612, film strip base and the gate
+        frame: #5a3a1a, picture clips as frames on the strip
+        labelTape: #eadcc0, can labels, the header tape and play
+        ink: #ecdfca, text
+        muted: #b29f86, small typewritten asides
+        amber: #f2b25c, section titles, timecode, track ids, Export and focus
+        edgeCode: #ffd08c, clip names printed on the strip
+        greasePencil: #ffb39e, selection loop, marker cross and handwritten notes
+    type:
+        Labels and data use a typewriter stack, American Typewriter, Courier
+        Prime, Courier New. Section titles use a hand stack, Bradley Hand,
+        Segoe Print, Chalkboard SE, Comic Neue, at 22px in amber. Body is
+        system sans 14px. The timecode is typewriter 20px bold in amber, the
+        picture card typewriter up to 32px, edge codes typewriter 11px bold,
+        notes in the hand stack.
+    layout:
+        The header shows a strip of cream label tape, slightly tilted, split
+        by dashed tears into Brightwork Cut, Launch teaser, 1080p and 24
+        fps. On the right a tiny film strip of 16 empty frames reads 0%
+        rendered and no frames yet, then an amber pill Export with a reel
+        icon and a solid lip. The bench is a grid. The Gate takes the left
+        with the viewer framed by celluloid and round sprocket holes down
+        both sides, then amber timecode, round transport buttons with a
+        cream play, and reel length with the duration. The Cue card on the
+        right lists Position 960 by 540, Scale 100 percent, Opacity 100
+        percent and Cross dissolve 12 frames in typewriter rows with dashed
+        rules, and a handwritten note. Cans fill a full row, five round film
+        cans with cream tape labels giving name, duration and picture or
+        sound. The Splice rack shows each track as an amber film strip with
+        sprocket holes along both edges, picture clips as frames divided by
+        dark frame lines with a light edge, audio clips with an optical
+        soundtrack wave and the name printed as edge code. The selected
+        title frame has a dashed grease pencil loop, a cross and the
+        handwritten word selected. A grease pencil cross and dashed line
+        mark cut to logo, and a cream playhead with a down triangle reads 18
+        s. At phone width the cans and cue card hide and track labels reduce
+        to ids.
+    spacing: An 8px unit. 24px between bench areas, 8px between strips.
+    density: Medium. Gate, cue card, five cans and four strips.
+    corners: Round cans and transport buttons, 22px pill Export, 2px to 6px on strips and cards.
+    borders: Frame lines are 2px dark bars with a 2px #c08a4a edge along each frame, the cue card has dashed rules, tape has dashed tears.
+    shadows: Heavy drop shadows under cans and the gate, a 3px solid lip under Export.
+    icons: Filled transport glyphs, a reel on Export, a cross for selected and for the marker. Film cans and sprocket holes are drawn with gradients.
+    focus: A 3px amber outline offset 3px.
+    tone: Workshop talk, such as Cans, Splice rack, reel length and no frames yet.

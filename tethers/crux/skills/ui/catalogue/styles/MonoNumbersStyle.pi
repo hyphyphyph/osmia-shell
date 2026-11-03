@@ -1,0 +1,58 @@
+export anchor MonoNumbersStyle:
+    number: 207
+    screen: ProjectsDashboard
+    name: Mono numbers
+    idea: A crisp sans interface where every number, date and ID is set in a monospace, so columns align like a ledger and figures read as data.
+    base: light
+    palette:
+        white: #ffffff, the page, panels and fields
+        fog: #f4f4f6, the sidebar and table heads
+        ink: #18181f, text, the logo tile and the chart axis
+        graphite: #565667, labels, row numbers, times and axis text
+        line: #e1e1e8, borders and rules, never text
+        violet: #4b3fc4, the primary button, links, progress, the this week line and focus
+        violetTint: #eeedfb, the focus halo, the avatar and a focused row
+        pewter: #8f8fa3, the dashed last week line, never text
+        green: #17693f, On track with a ring and centre dot
+        amber: #875000, At risk with an outlined triangle
+        red: #b3202b, Behind with a filled square and down arrow and the overdue flag
+    type:
+        Words use system-ui, Segoe UI, Roboto, Helvetica Neue, Arial,
+        sans-serif. Every number, date, ID and time uses ui-monospace, SF
+        Mono, Cascadia Mono, JetBrains Mono, Menlo, Consolas, Liberation
+        Mono, monospace with tabular and slashed zero figures, zero padded
+        where it helps alignment, as in 01, 07 and 09/10. The greeting is
+        24px sans at 650, sidebar KPI values 20px mono semibold, section
+        titles 15px sans at 650, body 14px sans, table numbers 13px mono and
+        group labels 11px sans capitals tracked 0.08em.
+    layout:
+        A 248px fog sidebar on the left holds the brand with a dark B slash
+        tile, the six nav links where Home is a white tile with a hairline
+        ring, and a This week group showing the four KPIs as a white ledger
+        list with the label left and the mono value right, overdue in red.
+        The top bar holds a search field with a slash key hint, the violet
+        New project button, a bell and the user. The main column opens
+        with the greeting and mono date on the left and a red overdue flag
+        on the right. Next a full width bordered Projects table with a row
+        number, Project, Team, Done percent with a mini bar, Tasks as
+        18/25, Due as 14 Nov, Days left and Status, all numbers right
+        aligned in mono, and a mono totals footer. Below, two panels side
+        by side. The left is a line chart overlaying both weeks by weekday,
+        this week solid violet with dots and last week dashed grey with
+        squares, over a small mono table of the fourteen values and their
+        totals. The right is Recent activity as a timeline with a mono time
+        gutter such as 12m, 40m and 1h behind a vertical rule. Below 1100px
+        the panels stack. Below 820px the sidebar becomes a top block with
+        nav in a three column grid and the ledger two by two, and the table
+        scrolls inside its panel.
+    spacing: A 4px base with steps of 8, 12, 16 and 24px. Table cells have 16px side padding.
+    density: Medium high. 40px table rows with numbers in aligned columns.
+    corners: 6px on panels, buttons and fields, 4px on code chips and keys.
+    borders: 1px cool grey around every panel and between rows, with fog table heads.
+    shadows: None, apart from a 1px ring on the current nav item.
+    icons:
+        1.7px outline icons at 18px. Status uses a ring with a centre dot
+        for On track, an outlined triangle with a bang for At risk and a
+        filled rounded square with a white down arrow for Behind.
+    focus: A 2px violet outline offset 2px. Fields get a violet border and a 3px violet tint halo. Rows get the violet tint fill.
+    tone: Precise and short, such as Days left, Latest first and a sigma for totals.

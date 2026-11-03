@@ -1,0 +1,193 @@
+use @piton/belay
+
+from ./lib/CruxUiBase import CruxUiBase
+
+export skill CruxUiDevelop extends CruxUiBase:
+    description:
+        Develops one part of a user interface through a short adaptive
+        interview and rounds of saved, numbered mockup variations shown
+        on one gallery page, then records the user's pick and what it
+        settled in the Piton specification.
+    useWhen:
+        the user wants to prototype, design, or explore a screen, page,
+        component, flow, or interaction, wants to see UI options before
+        deciding, or wants to develop the UI part of a specification
+    prompt:
+        Your goal is to turn a rough idea of a UI into a specified,
+        illustrated part of the project. Work in two kinds of step. An
+        interview finds out which part of the UI to work on and how it
+        should work. Mockup rounds show options the user can see and
+        pick from. The specification and its saved mockups are the
+        result. Never write application code.
+
+        First find the project and its UI. Read the specification for
+        the parts that describe the UI, such as surfaces, pages,
+        components, flows, navigation, design rules, and shape
+        instructions, and the domain data those parts show. Note what
+        is already decided, what mockups already exist, and which
+        rounds are unfinished.
+
+        Then establish the target, the one part of the UI to work on.
+        If the user named it, use it. If not, offer a short list of
+        candidates by what they are, such as the restaurant card or
+        the search flow, never by file name, and leave room for
+        something else. Choosing the target does not count as a
+        question. If the target is too broad for one set of mockups,
+        such as the whole app, suggest a narrower part first, and let
+        the user keep the broad target if they want.
+
+    mockupFiles:
+        Mockups are saved project files, not throwaway output. Save
+        them next to the specification file they belong to, in a folder
+        named after that file with a .mockups suffix. For
+        spec/surface/Card.pi the folder is spec/surface/Card.mockups.
+        Each round gets its own subfolder, round-1, round-2 and so on.
+        Inside a round, each variation is one file named by its number,
+        1.html, 2.html, 3.html, and the round's gallery is index.html.
+        The folder also has a top-level index.html that lists every
+        round, links to each round's gallery, and marks the variation
+        picked in each round. Never overwrite or renumber an earlier
+        round. A new round is always a new folder.
+
+    referencingMockups:
+        Give the anchor that describes the UI a mockups property. In
+        it, name the mockups folder index and the picked variation of
+        the latest round, such as
+        spec/surface/Card.mockups/round-2/3.html. Add one plain
+        sentence per pick saying what it settled. Keep the property in
+        step with each new pick. Every behaviour a pick settles, such
+        as layout order, what shows when a list is empty, or what a
+        control does, is also written as plain requirements in the
+        anchor.
+
+    variations:
+        Number variations 1, 2, 3 and so on, in the order they appear
+        in the gallery. Use the same number in the file name, in the
+        gallery card, and in everything you say about it, so the user
+        can pick one by number alone.
+
+        Make the variations genuinely different. Vary what matters for
+        the open question of the round, such as layout, information
+        order, density, navigation, or how an interaction works. Never
+        make variations that differ only in colour or font size. Give
+        each one a short name and one sentence on the idea behind it.
+
+        Follow the design rules the specification already has, such as
+        palette, spacing, type, icons, tone, accessibility and language
+        rules. If the project has a style library with a chosen
+        direction, made by crux-ui-styles, build in that direction
+        unless the round is exploring the look itself. When the
+        specification sets no look for what a variation needs, or the
+        round explores the look, search the style catalogue for
+        treatments that suit the idea, rather than inventing generic
+        ones. Show the states
+        the specification cares about, such as empty, loading, error,
+        long text, a second language, or a narrow screen, when they
+        matter for the round.
+
+    gallery:
+        Each round has one gallery page, index.html in the round
+        folder, that shows every variation of the round at once. It
+        shows the round number and the question the round explores.
+        Then it shows one card per variation with the number large and
+        clear, the short name, the one-sentence idea, and a live
+        preview of the variation file in an iframe. Pressing a
+        variation's number key also opens its large view. In a later
+        round, the gallery also links back to the variation it grew
+        from.
+
+    picking:
+        The user picks a variation by telling you its number, such as
+        2, or I like 2. They may also combine, such as 2 with the
+        header from 3, ask for changes to one, ask to dive deeper into
+        one, reject all of them, or ask for a different number of
+        variations. Treat a combination or a change as the starting
+        point for the next round, not as a pick of an existing file.
+        Never pick for the user, and never treat silence as a pick.
+
+        Once a pick is made, record it. Mark it in the top-level
+        mockups index, update the mockups property in the
+        specification, and write what the pick settled as plain
+        requirements in the anchor.
+
+    interview:
+        Before your own questions, ask how many questions the user
+        wants to answer, with 5 as the default. Accepting the default,
+        any other positive number, or no questions at all is fine. This
+        choice does not count as a question. Then ask exactly one
+        question per turn, show progress such as Question 2 of 5, and
+        keep to the budget exactly. Never ask what the project or an
+        earlier answer already settles. Clarifications and examples
+        about the same question do not use up another one.
+
+        Spend the questions on what most changes the UI, chosen from
+        everything learned so far, never from a fixed list. Useful
+        areas include who uses this part and what they are trying to
+        do, what it must show and in what order of importance, what the
+        user can do and what happens when they do it, where it sits in
+        the flow and how people arrive and leave, which states matter,
+        such as empty, loading, error, or a long list, which devices
+        and screen sizes matter, and any look and feel or examples the
+        user likes or dislikes. A question may offer options or a
+        recommendation. When the user does not know, keep the point
+        open and let a mockup round explore it.
+
+        When the budget is spent, write what was learned into the
+        specification before the first round. Update the anchor that
+        describes the target, or create one where the project's
+        conventions say it belongs. Keep confirmed decisions apart
+        from open questions, and record open questions as such rather
+        than guessing. Validate with the Piton tools. Then start a
+        mockup round.
+
+    mockupRounds:
+        At the start of every round, ask how many variations to make,
+        with 3 as the default. This does not count as a question. Name
+        the question the round explores in one sentence, such as how
+        the card shows opening hours, and choose it from the open
+        questions with the biggest effect on the UI. The first round
+        usually explores the overall layout. Later rounds start from
+        the last pick and explore what it left open, or the change the
+        user asked for.
+
+        Make exactly the number of variations asked for, save them and
+        the round's gallery, update the top-level mockups index, and
+        show the gallery. Then ask the user which number they like.
+        Say they can pick one, combine parts of several, ask for
+        changes, dive deeper into one, or reject all of them.
+
+        Diving deeper into one variation starts a new round built only
+        on that variation, and the user again chooses how many
+        variations to make. Rejecting all of them starts a new round
+        that explores different directions, and you ask what was wrong
+        before making it, as a clarification that is not a question
+        from the budget.
+
+        After each pick, record it as the shared rules say, validate,
+        and say in one or two lines what the pick settled. Then offer
+        three options. Good enough ends the session. Another round
+        refines the pick or explores the next open question. More
+        questions starts a new interview with a new budget, default 5.
+        Do not move on to building the UI or to any other workflow
+        on your own.
+
+    resuming:
+        Keep enough state to resume an interrupted session without
+        storing the conversation. The specification holds the
+        decisions, the open questions and the mockups property. The
+        mockups folder holds every round and its pick. On resume, read
+        both before asking anything. A round with a gallery but no pick
+        is waiting for the user to choose, so show it again and ask.
+        Never repeat an answered question and never redo a finished
+        round.
+
+    boundaries:
+        This skill decides how one part of the UI looks and behaves and
+        records it. When the work turns into developing a feature that
+        is not mainly about the UI, recommend crux-spec-develop. When an
+        existing UI specification needs more detail without mockups,
+        recommend crux-spec-deep-dive. When the question is the overall
+        visual style of the whole application rather than one part of
+        the UI, recommend crux-ui-styles. When the user wants to build the
+        picked design, say that this skill stops at the specification
+        and its mockups.

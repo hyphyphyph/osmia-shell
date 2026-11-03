@@ -1,0 +1,50 @@
+# First Version
+
+## Where
+
+The code is in src, built with cargo. The README at the project root says how to run it. Tests are unit tests with cargo test, plus visual checks in a headless labwc on a private D-Bus.
+
+## Built
+
+- The bar on every output, driven by the config layout, with the picked mockup look.
+- Notifications with the pile, the history panel, do-not-disturb, actions, and replace by id.
+- The launcher with apps, windows, actions, commands, calculator, prefixes, and Alt+1 to Alt+4.
+- The calendar, the power menu with confirm strip, the Wi-Fi list, and the tray menu.
+- The window attention list and alert mode from notifications.
+- The control socket, the command line client, and the status query with JSON.
+- The config file with live reload, unknown key warnings, and keep-last-good on error.
+
+## Differences
+
+- Scaling uses whole numbers only. The fractional-scale protocol is not used yet.
+- App, tray, and notification icons are colored letter tiles, or the pixmap or PNG a tray app sends. The icon theme is not read, and SVG icons are not drawn.
+- The font is the bundled egui font. The system font is not read yet.
+- Volume is read with wpctl and watched with pactl subscribe. It does not talk to PipeWire directly.
+- Network state and the Wi-Fi list use nmcli. They do not talk to NetworkManager directly.
+- Brightness changes go through logind on D-Bus. The new value shows on the next 2 second sample.
+- The calculator copies with wl-copy. The shell does not own the clipboard itself.
+- The bar edge and height need a config reload to change. The bar is rebuilt when they change.
+- Software drawing relies on the fallback adapter in wgpu. It has not been tested.
+
+## Measured
+
+These numbers come from one machine with an AMD GPU, in a headless labwc, with the release build.
+
+- Memory in use is between 118 and 150 MB, and the release binary is 15 MB. The goal of 100 MB is not met on the GPU path.
+- Idle CPU is about 0.45 percent of one core (90 ms of CPU time in 20 seconds). The only timers are the 2 second sample and the 1 second clock when the format shows seconds.
+- The launcher request returns in about 4 ms, and no launcher frame took longer than 40 ms to draw in the release build. The exact time to the first visible frame was not measured, so the 50 ms goal is not confirmed.
+
+## Not Tested
+
+- Running on a real session with a real keyboard and pointer.
+- Adding and removing monitors while the shell runs.
+- Other compositors than labwc.
+- Real tray apps. A fake StatusNotifierItem was used.
+- The battery low and charging look, since the test machine was full.
+
+## Next Steps
+
+- Fractional scaling and sharp text.
+- Read the system icon theme and the system font.
+- Cut memory use, starting with what the GPU driver holds.
+- Confirm the 52 choices in ProposedDefaults, which the build already follows.

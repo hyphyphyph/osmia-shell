@@ -1,0 +1,59 @@
+export anchor FocusColumnStyle:
+    number: 178
+    screen: ProjectsDashboard
+    name: Focus column
+    idea: The whole dashboard as one calm 720px column read top to bottom in priority order, a sentence that names what matters, then numbered sections set in a bookish serif on off-white paper with ink blue accents and rules instead of boxes.
+    base: light
+    palette:
+        paper: #faf8f3, the off-white page
+        ink: #1b2433, text, section rules and the nav top rule
+        inkBlue: #1d3c78, the wordmark, links, figures, section numbers, the primary button, progress lines, this week bars and focus
+        muted: #5b5f68, meta, captions, times and the date kicker
+        rule: #d8d3c7, hairlines between rows and figures
+        lastWeek: #8a8f9c, outlines of last week bars
+        ok: #2f6b3a, On track text and check circle
+        risk: #8a4a00, At risk text and triangle
+        bad: #a3261b, Behind and overdue text, crossed square and clock
+    type:
+        Two stacks. Reading text uses Charter, Bitstream Charter, Iowan Old
+        Style, Palatino Linotype, Palatino, Georgia at 17px and 1.6. Meta,
+        nav, buttons and labels use Helvetica Neue, Segoe UI, system-ui,
+        Roboto, Arial at 13 to 15px. The greeting is 44px serif bold at
+        minus 0.02em, the lead 21px serif, section titles 22px serif bold,
+        project names 19px serif bold, figures 40px serif regular in ink
+        blue, and the date kicker and section numbers 13px sans caps tracked
+        0.08 to 0.14em.
+    layout:
+        One centred column 720px wide with 16px side padding and nothing
+        beside it. The masthead has the wordmark in ink blue, Bright bold
+        and work italic, with a round outlined bell and Mara Okafor at
+        right. Under it the six nav items run as one line of sans text links
+        between a 2px ink rule above and a hairline below, Home underlined
+        in ink blue. Then an underlined search field and a New project
+        button on one line. The greeting follows with generous space, a caps
+        date kicker, a 44px serif Good morning, Mara. and a lead sentence
+        that starts with 4 tasks are overdue in red with a clock and names
+        the behind and at risk projects. Five numbered sections follow, each
+        titled under a 2px ink rule. 01 Needs attention lists the overdue
+        tasks, Billing migration and Mobile app 2.0 with icons in the margin
+        and open task counts. 02 This week shows the four figures as large
+        serif numbers in a row split by hairlines. 03 All projects is an
+        ordered list, most urgent first, with an index number, the serif
+        name, the status at right, meta with category, tasks, due date and
+        days left, and a 2px progress line. 04 Tasks completed opens with a
+        sentence of the week totals over square outlined and solid bars. 05
+        Recent activity puts the time in a left margin column. A closing
+        line ends the page. Below 760px figures go two by two and the margin
+        times move under each entry.
+    spacing: An 8px unit with a reading rhythm. 56px above the greeting, 48px between sections, 16px row padding.
+    density: Low. One column, one thing after another, wide line height.
+    corners: Square. Only the bell, avatar and buttons at 2px or round.
+    borders: Rules only. A 2px ink rule over each section and the nav, 1px warm hairlines between rows, an underline for the search field.
+    shadows: None.
+    icons:
+        Line icons at 1.6px stroke, 18px, set in the text or in a 28px left
+        margin. Status uses a check circle for On track, a triangle for At
+        risk, a crossed square for Behind and a clock for overdue, always
+        with the word.
+    focus: A 2px ink blue outline offset 3px on every control and field.
+    tone: Written and calm, in full sentences such as Billing migration is 30% done with 28 tasks open and 20 days to go.

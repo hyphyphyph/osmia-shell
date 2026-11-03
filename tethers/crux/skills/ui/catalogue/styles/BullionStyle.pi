@@ -1,0 +1,56 @@
+export anchor BullionStyle:
+    number: 370
+    screen: FinanceBudget
+    name: Bullion
+    idea: Savings shown as real weight, gold ingots on deep burgundy velvet, balances stamped on trapezoid bars, the goal as a pyramid of ten 500 euro bars filling from the bottom, and budget lines as ingot shaped meters.
+    base: dark
+    palette:
+        velvet: #1a0910, the page and the style sheet, with faint plush glows
+        plush: #2a1019, panels, fields and rows
+        plushTwo: #3a1724, the owed card bar, the partly filled ingot and the secondary button
+        seam: #5c2a3a, panel edges and row rules
+        ink: #f6e9e0, text
+        muted: #d0b3ad, labels, dates and empty bar outlines
+        gold: #d8aa3e, ingot bodies, meters, the current nav item and the primary button
+        goldHigh: #f4d67e, ingot shine, headings, focus and money in
+        goldLow: #a87a22, the ingot shadow edge
+        onGold: #2a1600, text stamped on gold
+        rose: #ff9fa8, over budget hatching and the owed balance
+        paleGold: #e9d58a, the in reserve status
+    type:
+        Labels use Optima, Candara, Segoe UI, Gill Sans, Trebuchet MS, often in
+        caps tracked .2em or more. Figures use Rockwell, Roboto Slab, DejaVu
+        Serif, Georgia. The goal figure is 40px slab at 700 in gold high, ingot
+        figures 32px slab at 700 on gold, headings 16px caps tracked .24em at
+        700, body 17px and status 13px caps tracked .1em.
+    layout:
+        A 1180px page. The header has a gold coin seal, Brightwork Money in
+        tracked gold caps and Mara Okafor with October holdings in euros on the
+        right, ruled below by a seam, then caps nav with Overview on a gold
+        block. A centred tracked line reads October, what you hold. Three
+        trapezoid ingots follow in a row, Everyday account and Savings in
+        shining gold with dark stamped text, and the Credit card as a dark plush
+        ingot with the figure in rose and a clock with Owed, due 12 Nov. Below,
+        a wide October spending panel lists five tiers, each with the name, an
+        ingot shaped meter with slanted ends filled in gold, spent of limit and
+        a caps status under the meter, Eating out filled with rose diagonal
+        hatching. A totals line reads spent 1,870 of 1,930 and 60 still in
+        reserve. A 420px Japan trip bars panel shows a pyramid of ten trapezoid
+        bars, four, three, two and one, six solid and stamped 500, the seventh
+        two fifths gold behind a dashed outline, three dashed empties, then
+        3,200 of 5,000, what is left and the target. Deposits and withdrawals
+        runs full width below. Below 1000px panels stack, below 680px ingots
+        stack.
+    spacing: An 8px unit. 24px panel padding, 20px between ingots, 32px between panels.
+    density: Medium. Three ingots, five tiers, a ten bar pyramid and five movements.
+    corners: Trapezoid ingot cuts on balances, meters and swatches. 4px panels and 2px buttons.
+    borders: A 1px inset seam round panels and between rows, and a double gold focus ring.
+    shadows: Deep, 0 20px 40px black under panels so they sit on the velvet.
+    icons:
+        Gold bars are the main icon. Status pairs an outline circle check, ruled
+        square or triangle with words, and the over meter swaps gold for rose
+        hatching. Arrows mark deposits and withdrawals.
+    focus: A 3px double pale gold outline offset 4px.
+    tone:
+        Weighty and proud, such as What you hold, Fine, in reserve, Fully spent
+        and Over by 62.

@@ -1,0 +1,57 @@
+export anchor KawaiiStyle:
+    number: 172
+    screen: ProjectsDashboard
+    name: Kawaii
+    idea: The dashboard is a sheet of cute stickers, where pastel blobs with little faces hold the totals, every corner is round, sparkles float behind, and each status wears its own face on its own shape.
+    base: light
+    palette:
+        cream: #fff7fb, the page, chat bubbles and fields
+        strawberryMilk: #ffd6e7, a card, the current tab and the overdue pill
+        sky: #d4ecff, a card and a blob
+        mint: #ccf3e2, a card and a blob
+        lavender: #e6deff, a card, the search field and rows
+        butter: #fff1b8, a card and a blob
+        peach: #ffe0cc, a card and the avatar
+        plum: #4a2350, text, outlines and sticker shadows
+        softPlum: #6e4a72, dates and hints
+        hotPink: #c2185b, the primary button and the candy stripe
+        star: #ffd34d, sparkles and heading stars, never text
+        green: #17694a, On track
+        caramel: #8c4a00, At risk
+        cherry: #b3123f, Behind and overdue
+        grape: #5b3fd6, the dashed focus ring
+    type:
+        One rounded stack, ui-rounded, SF Pro Rounded, Hiragino Maru
+        Gothic ProN, Varela Round, Nunito, Quicksand, Arial Rounded MT
+        Bold, system-ui. Total figures are 52px at 800, the greeting 34px
+        at 800, card names and headings 20 to 22px at 800, body 15 to 16px
+        and chips 13px at 800.
+    layout:
+        A white pill header sticker holds a smiling star mark with the
+        brand, a lavender pill search, a hot pink New project button, a
+        round bell and a peach avatar. Below it the nav is a centred row of
+        pill stickers, Home in pink with a sparkle. A white cloud character
+        with blush and a sparkle speaks a speech bubble holding Good
+        morning, Mara!, the date and a pink overdue pill. Four pastel blob
+        characters, each with a different shape and mood face, hold the
+        totals, the overdue blob worried with a sweat drop. Six project
+        cards in three columns, each in its own pastel, show a department
+        chip, a status face chip, the name, a candy-striped pill bar and
+        percent, tasks and due date. Below sit a white chart sticker with
+        pill-shaped bars outlined in plum, lavender last week and pink this
+        week, with a star beside the top day, and a What's new panel of
+        chat bubbles with initial avatars. Headings carry a small star.
+        Cards go to two columns, then one, and the chart scrolls sideways
+        on phones.
+    spacing: An 8px unit. 18px gaps between stickers, 28 to 36px between sections.
+    density: Airy and playful. Big soft shapes, one idea per sticker.
+    corners: Round everything. 26 to 28px cards, full pills for buttons, fields, chips and bars, and wobbly blob radii on the totals.
+    borders: A 2.5 to 3px plum outline on every shape, like a die-cut sticker.
+    shadows: A hard plum drop of 4 to 6px straight down, with no blur.
+    icons:
+        Faces on shapes beside words. A smiling circle for On track, a
+        rounded triangle with a wobbly mouth for At risk, a rounded square
+        with a sad mouth for Behind and a star with a bang for Overdue.
+        Total blobs have happy, busy, worried and proud faces.
+    focus: A 3px dashed grape outline offset 4px.
+    tone: Cheerful and kind while facts stay exact, such as Good morning, Mara!, Uh-oh and What's new.

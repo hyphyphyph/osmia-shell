@@ -1,0 +1,62 @@
+export anchor CardMasonryStyle:
+    number: 180
+    screen: ProjectsDashboard
+    name: Card masonry
+    idea: Every piece of the dashboard is a soft paper card of its own height, dropped into masonry columns on warm beige, so busy projects get tall detailed cards and quiet ones stay a single line, with rust as the one accent.
+    base: light
+    palette:
+        beige: #f4eee4, the page
+        sidebar: #ebe2d3, the navigation column
+        paper: #fffcf7, cards, fields and the current nav item
+        ink: #2b231d, text
+        muted: #665a4f, meta, eyebrows and notes
+        line: #e3d8c7, dashed rules inside cards
+        clay: #9a8670, field edges and last week bars
+        track: #eadfce, empty bars and the ring track
+        rust: #a3441f, the primary button, fills, this week bars, focus and the overdue card
+        rustDeep: #7f3315, links, project names in activity and the current nav text
+        rustTint: #f7e4d8, the urgent note and the avatar
+        moss: #3a6a2c, On track
+        ochre: #865700, At risk
+        berry: #8e1f33, Behind
+    type:
+        Two stacks. Headings and figures use Iowan Old Style, Palatino
+        Linotype, Palatino, Book Antiqua, Georgia, serif. Text uses
+        system-ui, Segoe UI, Roboto, Helvetica Neue, Arial. KPI figures
+        44px serif bold, the greeting 30px serif bold, card titles 19px
+        serif bold, body 15px sans at 1.5, eyebrows 12px sans at 600.
+    layout:
+        A 232px beige sidebar holds a four block rust mark with the serif
+        brand and six nav links with line icons, Home as a raised paper
+        pill in rust deep. The main column has a top row with a pill search
+        field, then at right a rust pill New project button, a round bell
+        with a rust dot and a round initials avatar with Mara Okafor. Below
+        everything is a card in CSS columns, three columns of about 280px
+        at 1280px with 20px gaps, each card as tall as its content. In
+        source order the cards are the greeting card with the date eyebrow,
+        a serif greeting, a line about six projects and a rust tinted
+        urgent note with a clock, then Website redesign in full with team
+        eyebrow, status pill, bar, a facts list of due, days left and open
+        tasks and the latest comment, then a solid rust Overdue tasks card
+        with a big 4, then Mobile app 2.0 with a progress ring beside its
+        facts and two recent events, then a one line Active projects card,
+        then the Tasks completed chart card with rounded bars, then Billing
+        migration with bar and latest event, then a Due this week card, a
+        short Q4 customer survey card, the Recent activity card with
+        initial discs, a one line Onboarding emails card, an Hours logged
+        card noting about 31 hours per project, and a Spring catalogue card
+        with only its numbers and the latest event. Below 900px the sidebar
+        becomes a scrolling top strip, and below 640px the masonry is one
+        column and the search takes its own row.
+    spacing: An 8px unit. 20px card padding, 20px between cards and columns, 32px page gutter.
+    density: Medium and uneven on purpose. A card carries as much detail as its project needs.
+    corners: 16px cards, 10 to 12px fields, swatches and nav items, pills for buttons, search, status and the avatar.
+    borders: None on cards. 1px clay edges on fields and search, dashed #e3d8c7 rules inside cards.
+    shadows: Two soft warm layers on cards and the current nav item, 0 1px 2px and 0 6px 18px in brown at 6 to 7 percent.
+    icons:
+        Rounded line icons at 1.8px stroke at text size. Status sits in a
+        pale tinted pill with a filled shape and the word, a check circle
+        for On track, a triangle with a bang for At risk and a crossed
+        square for Behind.
+    focus: A 2px rust outline offset 3px, following the rounded shapes. A focused field gets a rust border as well.
+    tone: Warm and conversational, such as 4 tasks are overdue, start there.

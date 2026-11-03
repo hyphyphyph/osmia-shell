@@ -1,0 +1,57 @@
+export anchor SingleBlueStyle:
+    number: 222
+    screen: ProjectsDashboard
+    name: Single blue
+    idea: Every colour on the page is a shade of one steel blue, from a pale wash to a near navy rail, with neutral grey text, so hierarchy comes from tone and weight and status from shape.
+    base: light
+    palette:
+        b50: #f3f7fc, the page, fields and the On track chip
+        b100: #e2ebf6, the Today panel, empty segments, the chart area and the At risk chip
+        b200: #c4d5ec, borders and the focus halo, never text
+        b400: #6f97c9, field borders and outlines, never text
+        b600: #2d66ad, filled segments, the last week line and icons
+        b700: #1f5190, the primary button, current rail item, links, this week line and focus
+        b800: #163e6e, the overdue KPI row and blue labels and counts
+        b900: #0e2a4b, the rail, headings, the Behind chip and the overdue note
+        white: #ffffff, panels and cards
+        ink: #1b1f24, body text, the only colour outside the blue family besides ink2
+        ink2: #525a63, meta and secondary text
+    type:
+        One stack, SF Pro Text, Segoe UI, system-ui, Roboto, Helvetica
+        Neue, Arial. The greeting is 26px 700, KPI figures 24px 700
+        tabular, panel titles 15px 700, department labels 12px 600 caps,
+        body 14px and meta 12px.
+    layout:
+        An 88px navy rail on the left holds a blue rounded square mark
+        and the six nav items as an icon over a small label, the current
+        one on a lighter blue tile. The main area has a white header with
+        the brand in blue, a wide search, a blue New project button, a
+        bell with a navy count and the initials disc with Mara Okafor.
+        Below sits a two column board. The left 340px column is a pale
+        blue Today panel holding the greeting Hi Mara, here is your
+        Saturday with the date, a navy note reading 4 tasks are overdue,
+        the four KPIs as a stacked list of white rows with an icon and
+        label at left and the figure at right, the overdue row in dark
+        blue with white text, and then the activity feed with outlined
+        initials discs. The right column holds a white chart panel with
+        legend pills, a line chart overlaying the two weeks by weekday,
+        this week a solid line with square points and a light area fill,
+        last week a dashed line with hollow round points, all values
+        labelled, then a projects panel with a two across grid of cards,
+        each with a caps department, a status chip, the name, a progress
+        bar of twenty segments and a line with percent, tasks and due date
+        with days left. Below 1100px the board stacks. Below 760px the
+        rail becomes a sticky bottom bar of six icon tabs, cards go one
+        across and the chart scrolls sideways.
+    spacing: An 8px unit. 24px gutters and panel padding, 12px between project cards.
+    density: Medium. The left Today column carries the summary so the right holds the chart and cards.
+    corners: 16px panels, 12px cards and rail items, 10px buttons and fields, and pills for legend chips.
+    borders: 1px b200 around panels and cards, and b400 on fields and the secondary button.
+    shadows: None. Depth is tone alone, a navy rail, a pale panel and white cards on the wash.
+    icons:
+        20px line icons at 1.7 to 1.8px stroke. Status uses shape and fill
+        weight in blue, an outlined circle with a check on a pale chip, a
+        solid triangle with a bang on a mid chip, and an inverted white
+        square with a down arrow on a navy chip.
+    focus: A 2px b700 outline offset 2px plus a 6px b200 halo, and a white outline on the rail.
+    tone: Friendly and plain, such as Hi Mara, here is your Saturday and This week against last.

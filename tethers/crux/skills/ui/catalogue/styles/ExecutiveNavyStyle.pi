@@ -1,0 +1,48 @@
+export anchor ExecutiveNavyStyle:
+    number: 336
+    screen: CrmPipeline
+    name: Executive navy
+    idea: The pipeline as a formal quarterly board paper in deep navy and gold, with large serif figures between double gold rules, a numbered ledger of stages with leader lines, and notes for the board set apart.
+    base: dark
+    palette:
+        navy: #0d1628, the page and the style sheet
+        panel: #13203a, the notes panel and fields
+        rule: #2c3d5e, single rules between stages and figures
+        ink: #ece6d6, ivory text
+        muted: #a9b3c7, small caps labels, owners and remarks
+        gold: #e2c47a, figures, roman numerals, headings, primary button and focus
+        goldRule: #7a6538, double rules, dotted leaders and the secondary border
+        onGold: #1a1404, text on gold
+        coral: #f2a08f, Stalled and Attention with a triangle
+        sage: #a8d5a2, Closed with a check
+    type:
+        A serif stack, Iowan Old Style, Palatino Linotype, Palatino, Book
+        Antiqua, Georgia, with labels in Gill Sans, Optima, Candara, Segoe
+        UI. Base 16px. The title is 38px at 400, figures 40px in gold with
+        oldstyle numerals, stage names 20px, deal values 19px, section
+        heads 13px sans uppercase at 600 tracked .26em, remarks 14px italic.
+    layout:
+        A centred masthead holds a round gold outline monogram B, the house
+        name in tracked caps, the title Quarterly Pipeline Review and an
+        italic line Fourth quarter, deal pipeline, with Owners and New deal
+        set top right. Five figures sit centred in a band between double
+        gold rules and split by thin rules, the won figure with 64 percent
+        of target in italic and a thin gold bar. Below, a wide ledger titled
+        Pipeline by stage lists five stages with large italic roman numerals
+        I to V, the stage name, deal count in italic and the stage total on
+        the right. Each deal is a line with a dotted gold leader to its
+        value, and an italic line under it with the owner and a remark. A
+        320px navy panel with a 3px gold top bar holds Notes for the board
+        as a numbered list, the third flagged Attention in coral. Below
+        960px the notes drop under the ledger, below 600px figures go two
+        by two.
+    spacing: An 8px unit. 40px page gutter, 48px between ledger and notes, 18px stage padding, 16px on phones.
+    density: Low. A board paper read top to bottom, one line per deal.
+    corners: None. Square everywhere except the round monogram.
+    borders: Double gold rules round the figures and atop the sheet, single navy rules between stages, dotted gold leaders, a 3px gold bar on the notes.
+    shadows: None.
+    icons:
+        Few, fine line icons at 1.6 stroke in gold before italic remarks.
+        A coral triangle with the word for stalled, a sage check for closed.
+    focus: A 1px gold outline with a navy gap and a second gold ring.
+    tone: Formal and measured, such as Quarterly Pipeline Review, Notes for the board and Attention.

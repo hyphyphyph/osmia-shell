@@ -1,0 +1,59 @@
+export anchor DriveInStyle:
+    number: 363
+    screen: VideoEditor
+    name: Drive-in
+    idea: A night at a drive-in, where the viewer is the big screen on its posts under a starry sky, a bulb lit marquee carries the title and Export, the bin is a row of parked cars with number plates, settings read like the snack bar board and tracks become parking lanes.
+    base: dark
+    palette:
+        nightSky: #0a0f2c, sky, page and style sheet
+        horizon: #1a1f4a, the sky gradient foot
+        asphalt: #14151f, the lot under the screen
+        lane: #1b1c28, parking lanes
+        marqueeBoard: #1a1206, the marquee face behind the bulbs
+        ink: #eef0ff, text
+        moonlight: #c3c8ec, secondary text, ruler and car posts
+        bulbYellow: #ffd36b, marquee title, timecode, title clips, the marker and selection
+        neonTeal: #4ff0d2, video clips, transport rings, lot signs and focus
+        neonPink: #ff6fa8, audio clips, the ticket booth, Export and the snack bar
+        laneLine: #e0c25a, dashed lane and parking bay lines
+        screenWhite: #d7dae8, the big screen frame
+        plate: #f2ead2, number plates on the cars
+    type:
+        Marquee lettering uses a condensed display stack, Haettenschweiler,
+        Impact, Arial Narrow Bold, Oswald, in caps. Body uses a geometric
+        stack, Futura, Century Gothic, Avenir Next, Trebuchet MS, 15px at
+        1.5. The marquee title is 46px, the timecode 26px tracked 0.06em in
+        bulb yellow, lot signs 20px caps, snack board values 20px, number
+        plates mono 11px bold.
+    layout:
+        The upper band is a starry night sky. On the left a marquee sign
+        with a border of round warm bulbs reads Now showing in pink tracked
+        caps, Launch teaser in big yellow glowing letters, 1080p and 24 fps
+        with a star, and an italic a Brightwork Cut picture. Hanging beneath
+        is a ticket booth with a pink top edge, an empty render bar, Render
+        0% and reel not rolling, and a wide pink Export in marquee caps. On
+        the right stands the big screen, a white framed picture on two posts
+        with a cool glow, then the yellow timecode, round teal ringed
+        transport buttons with a teal play and running time with the
+        duration. The lower band is asphalt. Parked tonight, a teal lot
+        sign, heads a row of five parked car silhouettes in dashed yellow
+        bays, each with a cream number plate showing the file name and a
+        post label with duration and picture or sound. On the right a pink
+        neon Snack bar board lists Position 960 by 540, Scale 100 percent,
+        Opacity 100 percent and Cross dissolve 12 frames with dotted leaders
+        like prices. Parking lanes spans the full width, each track a dark
+        lane edged by dashed yellow lines, with the id in yellow marquee
+        letters, video clips outlined teal, audio pink, and the selected
+        title clip filled bulb yellow with a double border, a glow and a
+        star. A yellow diamond road sign reads cut to logo with a solid drop
+        line, and a white playhead under a faint projector beam reads 18 s.
+        At phone width the marquee stacks over the screen and the cars and
+        snack board hide.
+    spacing: An 8px unit. 40px page gutters, 28px between ground areas, 46px lanes.
+    density: Medium low. One big screen, a marquee, five cars, a menu board and four lanes.
+    corners: 14px marquee, 10px booth and board, 8px clip blocks, round transport buttons.
+    borders: A ring of bulbs round the marquee, dashed yellow lane lines, 2px neon outlines on clips.
+    shadows: Glows only. Warm round the marquee, cool round the screen, neon round Export.
+    icons: Car silhouettes for media, filled transport glyphs, a diamond road sign for the marker and a star for the selection.
+    focus: A 3px neon teal outline offset 3px.
+    tone: Playful night out, such as Now showing, Parked tonight, Snack bar board and reel not rolling.

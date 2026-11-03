@@ -1,0 +1,55 @@
+export anchor KnittingPatternStyle:
+    number: 108
+    screen: ProjectsDashboard
+    name: Knitting pattern
+    idea: The dashboard reads like a printed knitting pattern, with row counters for numbers, yarn ball bands for projects, stitch charts for progress and pattern abbreviations for status.
+    base: light
+    palette:
+        paper: #fdfcf8, the booklet page
+        table: #ece9e1, behind the page
+        charcoal: #2a2a2e, text, rules, stitch marks and the primary button
+        chartGrid: #c9c6bd, chart cells and dotted rules, decoration only
+        heatherBlue: #3d5a80, last week stitches and the focus halo
+        rose: #a23e50, this week stitches, row labels, the progress marker, Behind and overdue
+        moss: #4f6b3a, On track
+        ochre: #8a5300, At risk
+        counter: #e9e4d8, row counter bodies
+        graphite: #5c5a55, meta and abbreviations
+    type:
+        Three stacks. Titles, labels and nav use Futura, Century Gothic,
+        Avenir Next, Trebuchet MS. Text uses Charter, Bitstream Charter,
+        Sitka Text, Cambria, Georgia. Counters, facts and abbreviations use
+        ui-monospace, SF Mono, Menlo, Consolas. The title is 46px geometric
+        500, counter digits 26px mono 600, band titles 19px geometric 600,
+        section heads 13px geometric caps tracked 0.16em, body 16px serif
+        at 1.55, facts 13px mono.
+    layout:
+        A white booklet page on a beige table with a soft shadow. A runner
+        line holds a yarn ball logo, an underline search, a black Cast on a
+        project button, a round outlined bell and a round MO. The nav is
+        geometric caps over a double rule, Home bold with a rose underline.
+        The title block reads Pattern of the week with the date in rose
+        caps, Good morning, Mara, a line about six projects, and on the
+        right a boxed gauge note with a crossed box and 4 tasks are overdue.
+        A 300px left column shows Row counters, four barrel counters with
+        three white digit windows each, 006, 023, 004 in rose, and 186,
+        beside their labels, then an Abbreviations box defining ot, ar, bh,
+        od, sts and co with their glyphs. The main column lists six yarn
+        ball bands, each a white band with heathered diagonal yarn ends in
+        its own colour, the name, a status pill, a mono line of Fibre, sts
+        and co, and a 20 stitch chart row filled with V stitches to the
+        percent and marked with a rose line. Chart A is a knitting chart
+        grid with columns of V stitches, heather then rose, row numbers on
+        the right and day letters below. Instructions so far lists the six
+        activity items as Row 1 to Row 6.
+    spacing: An 8px unit with a 10px stitch cell in charts. Page margins 48px.
+    density: Medium high. Pattern like columns with small mono facts.
+    corners: Square paper and bands. Round bell and avatar, pill status tags and soft 14px counter bodies.
+    borders: 1.5px charcoal lines, a double rule under the nav and dotted grid rules between rows.
+    shadows: Only the page lifts off the table with a soft shadow. Counters have a small inset lip.
+    icons:
+        Chart key glyphs at 12px. An open ring for On track, a solid
+        triangle for At risk, a solid square for Behind and a crossed box for
+        overdue, in a pill with the word.
+    focus: A 2px charcoal outline offset 2px, a 5px paper gap and a 2px heather blue ring.
+    tone: Pattern shorthand, such as sts 18 of 25, co 14 Nov, Row 3 and Cast on a project.

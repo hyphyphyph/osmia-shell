@@ -1,0 +1,46 @@
+export anchor ThreadedMinimalStyle:
+    number: 345
+    screen: TeamChat
+    name: Threaded minimal
+    idea: A chat set like a well kept letter, where there are no avatars, boxes or bubbles, and names, times, indents and one citron underline do all of the work.
+    base: dark
+    palette:
+        page: #141311, the only surface, screen and style sheet
+        ink: #ece6da, messages, names and the current channel
+        muted: #a8a092, times, labels, the thread rule and the composer rule
+        faint: #3b3832, section rules and quiet underlines only
+        citron: #e3d27a, link underlines, Send, the mention count, the current marker and focus
+        focusWash: #25231c, the faint wash behind a focused control
+    type:
+        A book serif, Iowan Old Style, Palatino Linotype, Palatino,
+        Charter, Georgia, for messages at 17px with 1.6 leading and the
+        channel title at 40px weight 400. A system sans for metadata. Names
+        are 13px bold capitals tracked 0.08em, times 13px tabular, labels
+        11px capitals tracked 0.14em.
+    layout:
+        A centred 1120px page with two columns, a 230px index and the log,
+        64px apart, and no panels at all. The index starts with Brightwork
+        Chat in serif italic over Signed in as Mara Okafor, then Channels
+        and Direct messages as plain text lists. The current channel is
+        italic with a citron arrow before it. Unread channels are bold with
+        4 unread in small sans, the mention channel adds @ 1 mention in
+        citron. People carry the marks filled, half and empty circle with
+        the words here, away and offline. The log has the channel title,
+        a sans line reading Today, five messages, one thread, then a
+        hairline. Each message is a two column row, the time right aligned
+        in a 56px gutter, the name in capitals and the text below, at a 62
+        character measure. The thread under Aiko's message is indented
+        behind a 1px muted left rule with 3 replies in thread and Thumbs up
+        3, Eyes 1 in words. The image is an italic line, shared an image,
+        with the filename as an underlined link. The composer is Priya is
+        typing in italic, then a bare field on one rule with Attach, Emoji
+        and Send as small tracked capitals words. Below 800px the index
+        becomes inline wrapped runs above the log.
+    spacing: An 8px unit. 28px between messages, 64px between index and log, 56px top margin.
+    density: Sparse. A 62 character measure and generous leading, like reading prose.
+    corners: None anywhere.
+    borders: Only rules. A 1px muted left rule for the thread indent and a 1px rule under the composer.
+    shadows: None.
+    icons: No icons. An arrow marks the current channel, filled, half and empty circles mark presence, always with words.
+    focus: A 2px citron underline with the faint warm wash behind the control.
+    tone: Quiet and literary, such as shared an image, 3 replies in thread and Priya is typing.

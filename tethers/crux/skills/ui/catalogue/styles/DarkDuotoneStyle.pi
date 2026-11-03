@@ -1,0 +1,42 @@
+export anchor DarkDuotoneStyle:
+    number: 253
+    screen: DesignEditor
+    name: Dark duotone
+    idea: Everything is drawn in exactly two tones, deep indigo and electric orange, with hierarchy made by inverting blocks, halftone dots and circles instead of extra colours.
+    base: dark
+    palette:
+        indigo: #1b1350, the page, panels and text on orange
+        orange: #ff7a1f, all other text, lines, inverted bands, the active tool, the selected row, the frame preview and focus
+    type:
+        One geometric stack, Futura, Century Gothic, Avenir Next, Segoe UI,
+        system-ui, Arial. Body 14px at 1.45 in 600 for weight on orange.
+        The file name 26px 700, inspector values 22px 700 inside circles,
+        panel heads 13px 700 caps tracked 0.1em, and the sheet title 36px.
+    layout:
+        An orange header band with indigo text holds an indigo B disc, Home
+        v3 over Website redesign and Brightwork Canvas, three initials discs
+        alternating filled and outlined, an outlined Present and an indigo
+        Share. Below, a 72px tool rail with six 48px ringed circles, Move
+        filled orange, and ZOOM 66% set vertically at its foot. The canvas
+        has orange halftone dots fading from the top left and shows the
+        Hero frame previewed in two tones, an orange frame with indigo
+        headline, an indigo pill button and an indigo halftone screenshot
+        area, inside a dashed orange selection with ringed round handles
+        and an indigo comment bubble. A 300px side column stacks the layers
+        and the inspector, each under an inverted orange head. Layer rows
+        are pills, Hero filled orange with Selected. The inspector shows X,
+        Y, W and H as four ringed circles, then ruled rows for Fill, Auto
+        layout, Gap and Padding, Corner radius and Export. An orange status
+        band closes the screen. Below 760px the rail and side column hide
+        and the six ringed tools sit in a row under the canvas.
+    spacing: An 8px unit. 16 to 20px panel padding, 28 to 32px around the canvas.
+    density: Medium. Tool rail, canvas and one side column with layers over the inspector.
+    corners: Round. Pills and circles for tools, rows, buttons and value dials, 24px cards.
+    borders: 2px orange lines between rail, canvas and side column and on rows, a dashed 2px orange selection.
+    shadows: None. Emphasis is an inverted orange block.
+    icons:
+        20px round line icons at 2px stroke inside 48px circles. Saved uses a
+        check circle, editing two people and the version a tag, each with
+        words on the orange band.
+    focus: A 3px orange outline offset 3px with a 6px indigo gap and a 2px orange outer ring.
+    tone: Calm and graphic, such as Shown in duotone and Inspector.

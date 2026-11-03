@@ -1,0 +1,50 @@
+export anchor DominoesStyle:
+    number: 103
+    screen: ProjectsDashboard
+    name: Dominoes
+    idea: The dashboard laid out in ivory and black domino tiles, with every total spelled in pips, each project a long tile with a pip track for progress, and the fortnight stood up as a row of dominoes whose height is the day's count.
+    base: light
+    palette:
+        tableIvory: #f3eee2, the page
+        tileIvory: #fffaf0, ivory tiles, the header, panels and fields
+        tileBlack: #161513, text, outlines, black tiles, pips on ivory and the primary button
+        pipIvory: #fbf6ea, pips and text on black tiles
+        feltGrey: #4a463d, captions, meta and axis labels
+        spinnerBrass: #b08d3c, the centre spinner dot on summary tiles and the focus halo, never text
+        bone: #ddd5c3, empty pip slots and tile lips
+        green: #1f5f3e, On track
+        amber: #865100, At risk
+        red: #a3231b, Behind and overdue
+    type:
+        Avenir Next, Avenir, Montserrat, Segoe UI, sans-serif, at 700 with
+        tabular figures for numbers and headings and 400 for text. The
+        greeting is 30 to 44px, summary numbers 40px, tile percents 44px,
+        project names 18px, body 15px and caps labels 11 to 13px tracked
+        0.12 to 0.14em.
+    layout:
+        An ivory header with a 3px black base holds a small black domino
+        logo and the brand, pill nav links with the current one black, a
+        search field, the bell, a black New project pill and the user as a
+        tiny two half domino with initials. The greeting sits left with a
+        black overdue tile at right. The four totals are domino tiles that
+        spell each number in pips, 0 and 6, 2 and 3, a black 0 and 4, and a
+        three half 1, 8 and 6 tile, each above its numeral and label. The
+        projects are long tiles in two columns, a left half with the big
+        percent and a right half with name, meta, a track of ten pips filled
+        for each tenth done and the status. The Behind project is turned to
+        the black side. Below, the fortnight shows a standing domino per day,
+        two pip columns tall with one pip per task, ivory for last week and
+        black for this week, beside Line of play, a list with initial
+        dominoes. Projects go one column below 1000px.
+    spacing: An 8px unit. 16px between tiles, 16 to 24px tile padding and 40px between sections.
+    density: Medium. Two columns of long project tiles and a row of standing tiles.
+    corners: 12px on tiles and panels, 5 to 6px on small dominoes, round pips, pill buttons and nav.
+    borders: 3px black outlines with a 2px black or ivory centre line between halves.
+    shadows: Tiles sit on a bone lip, 0 4px 0 #ddd5c3, plus a soft 0 8px 16px rgba(22,21,19,0.08) on project tiles.
+    icons:
+        Solid pips and simple shapes in currentColor. A round pip for On
+        track, a diamond for At risk and a cross for Behind and overdue, each
+        in an outlined pill with the word. People are tiny dominoes with an
+        initial on each half.
+    focus: A 3px black outline offset 3px inside a 7px brass halo.
+    tone: Short and steady, such as Line of play and Ten pips per tile.

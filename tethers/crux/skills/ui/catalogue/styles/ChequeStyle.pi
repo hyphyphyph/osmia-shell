@@ -1,0 +1,58 @@
+export anchor ChequeStyle:
+    number: 122
+    screen: ProjectsDashboard
+    name: Cheque
+    idea: The dashboard is a chequebook, where counterfoils hold the numbers, the greeting is a cheque made out to Mara on a wavy security background, and projects are lines in a register.
+    base: light
+    palette:
+        desk: #e9e8e4, the page
+        chequeMint: #eef4f2, the start of the security paper gradient
+        chequeLilac: #eef0f8, the end of the security paper gradient
+        stub: #f7f8f5, counterfoils and table heads
+        navyInk: #15233a, text, rules, the current nav item and this week bars
+        muted: #4a5568, captions and labels
+        securityGreen: #2f6f62, wave lines at 13 percent, headings, meters and the last week hatch
+        signatureViolet: #43358a, the primary button, the signature and focus
+        green: #1f6a3f, the On track chip with a ticked disc
+        amber: #8a4d00, the At risk chip with a triangle
+        red: #a01d2b, the Behind chip with a crossed square and the overdue amount
+    type:
+        Three stacks. Serif is Garamond, Adobe Garamond Pro, EB Garamond,
+        Cormorant Garamond, Palatino Linotype, Georgia, serif. Bank is MICR,
+        E-13B, Lucida Sans Typewriter, Lucida Console, ui-monospace,
+        monospace, set with 0.14 to 0.24em tracking. Labels are Gill Sans,
+        Gill Sans MT, Segoe UI, system-ui, sans-serif. Sizes are 32px
+        italic serif payee, 20px italic serif amount in words, 34px
+        semibold serif stub figures, 26px bold bank amount, 18px bank line,
+        18px semibold serif project names and 11 to 15px sans labels.
+    layout:
+        A plain bank style top row has a guilloche globe mark with
+        Brightwork and Team account, sans nav links with the current one in
+        a navy block, an underlined italic search, a violet New project
+        button, the bell and the italic user name. The chequebook below is a
+        white book with four counterfoils stacked in a 270px left column,
+        each with a mono counterfoil number, the caption and a big figure,
+        split from the cheque by a dashed perforation. The cheque sits on a
+        mint to lilac gradient with fine wave lines. It has Brightwork,
+        Weekly order to the team lead, date digits on underlines, Good
+        morning beside Mara Okafor in large italic on a write on line, a
+        boxed red 4 overdue amount with a clock, the words line Four tasks
+        are overdue, settle these first, a memo line with the date, a violet
+        signature over Authorised, Brightwork, and a bank number line drawn
+        with bar glyphs. The project register is a striped table with
+        number, name and team, a hatched paid out meter with percent, tasks,
+        due date and a status chip. Below, Daily deposits shows hatched
+        green bars for last week and solid navy bars for this week, and
+        Recent transactions lists activity with times on the right. Below
+        980px the counterfoils become a two by two grid above the cheque.
+    spacing: An 8px unit. 26 to 30px cheque padding, 12px table cells and 36px before sections.
+    density: Medium. One big cheque, then a tidy register and two panels.
+    corners: Small, 3 to 4px on the book, panels, buttons and chips.
+    borders: 1.5px ink write on lines for payee, words, memo and signature, and a 2px dashed perforation between stubs and cheque.
+    shadows: A 2px flat edge and one soft drop under the chequebook.
+    icons:
+        Solid chips with an outline, a ticked disc for On track, a triangle
+        with a mark for At risk and a crossed square for Behind, plus a
+        clock for overdue. Bank line symbols are small bar glyphs.
+    focus: A 2px violet outline offset 2px with a soft violet halo.
+    tone: Banking words, such as The sum of, Counterfoil, Register and Deposits.

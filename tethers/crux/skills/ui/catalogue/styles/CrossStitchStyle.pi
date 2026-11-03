@@ -1,0 +1,54 @@
+export anchor CrossStitchStyle:
+    number: 106
+    screen: ProjectsDashboard
+    name: Cross-stitch
+    idea: The dashboard is an embroidered sampler on aida cloth, where every bar and border is counted out one cross stitch at a time on an 8px grid.
+    base: light
+    palette:
+        aida: #f7f3e8, the cloth, with an 8px grid and #e4dccb holes at each corner
+        fineLinen: #fffdf8, the count panel, the chart box, fields and the sheet
+        navyFloss: #1d2d50, text, this week crosses, numbers and the primary button
+        backstitch: #23395f, dashed rules and dividers
+        redFloss: #a3263a, the current nav, overdue, Behind and the dashed focus outline
+        greenFloss: #2e6b3a, On track and the heading motifs
+        goldFloss: #8a5a00, At risk text, with #a06d12 crosses for last week
+        hoopWood: #c99a5b, the greeting hoop ring, decoration only
+        greyFloss: #4d4a44, meta, dates and times
+    type:
+        Two stacks. Labels, numbers and nav use ui-monospace, SF Mono,
+        Menlo, Consolas, Liberation Mono. Text uses Baskerville,
+        Baskerville Old Face, Hoefler Text, Georgia. Counts are 64px mono
+        800, the greeting 32px serif bold on a 40px line, section titles
+        14px mono caps tracked 0.2em, project names 17px serif bold, body
+        16px on a 24px line, meta 12px mono.
+    layout:
+        A plain header row holds a stitched X logo, Brightwork in mono, a
+        navy bordered search box, a navy New project button, a square bell
+        with a red count and a green bordered MO square. The nav is mono
+        caps, with Home in red led by a single cross and a dashed underline,
+        and a dashed backstitch rule closes the header. The dashboard sits
+        inside a sampler frame stitched all round with a repeating red,
+        navy and green cross border. At the top a round wooden embroidery
+        hoop holds Welcome back, Hello, Mara, the date and 4 tasks are
+        overdue with a pixel X. Beside it a navy bordered panel splits into
+        2 by 2 with dashed dividers for the four counts. Projects is one
+        row per project with name and meta, a 25 cell chart bar filled with
+        cross stitches in the status colour, the percent and the status.
+        Below, two columns hold Tasks done in a linen box, where each day
+        is a single column of crosses one per task, gold then navy, and
+        Latest stitches, six activity rows each led by a red or green cross.
+        Section titles are flanked by three green crosses and a backstitch
+        line. Below 1000px the hoop centres above the counts and project
+        rows put the bar on its own line.
+    spacing: An 8px stitch unit. Every size and gap is a whole number of stitches, 8, 16, 24 and 40px.
+    density: Medium. Projects are single stitched rows, numbers sit in a 2 by 2 panel.
+    corners: Square everywhere except the round greeting hoop.
+    borders: 2px solid navy for panels, 2px dashed backstitch for rules and a 16px cross stitched border around the sampler.
+    shadows: None. The cloth is flat. The hoop has a darker wood ring inside and out.
+    icons:
+        Pixel motifs drawn on an 8 by 8 grid with crisp edges at 16px. A
+        stitched tick for On track, a stepped solid triangle for At risk, a
+        hollow square with a centre block for Behind and a pixel X for
+        overdue, always with the caps word. Crosses are an 8px SVG X tile.
+    focus: A 2px dashed red outline offset 4px with an 8px aida gap and a 2px navy ring outside it.
+    tone: Quiet needlework words, such as Latest stitches and 1 cross = 1 task.

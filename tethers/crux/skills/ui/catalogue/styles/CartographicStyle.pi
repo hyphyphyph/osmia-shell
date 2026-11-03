@@ -1,0 +1,48 @@
+export anchor CartographicStyle:
+    number: 71
+    screen: TodayMobile
+    name: Cartographic
+    idea: The day is drawn as a survey map on contour-lined paper, with tasks as stops along a dashed route, meetings as waypoints and a legend for every marker.
+    base: light
+    palette:
+        land: #f2f0e4, the page outside the map
+        surveyPaper: #fbfaf3, the map sheet, cards and the legend
+        contour: #cfd3b4, contour lines, decorative only
+        water: #d6e7ec, the lake shape, the avatar and the active nav disc
+        surveyInk: #24301f, text, frames and the compass
+        moss: #545d48, meta text and upcoming rings
+        boundary: #7d8466, card and field borders
+        routeRed: #b0331f, the route line, the overdue triangle, the add button and focus
+        pinBlue: #1e5a7a, due today pins and meeting diamonds
+        forest: #2f6b3a, the done flag and tick
+    type:
+        Serif italic Georgia, Iowan Old Style, Palatino Linotype, serif for
+        place-like names, 26px for the date, 15px for project and meeting
+        names. Humanist sans Gill Sans, Gill Sans MT, Optima, Candara,
+        Segoe UI, system-ui for everything else, with 16px semibold task
+        names, 20px semibold tabular meeting times, 13px meta, and 10 to
+        12px semibold caps labels tracked 0.24 to 0.36em.
+    layout:
+        A framed map sheet up to 400px wide centred on the land colour, with
+        a double frame. Faint contour lines, a pale lake shape and a dotted
+        survey grid fill the background. A title cartouche with a double
+        frame holds the brand, the date, 6 tasks, 2 meetings and a round
+        avatar with a dashed ring. A scale bar reading 1 day and a small
+        compass rose follow. Waypoints shows the two meetings as side by
+        side cards with a diamond, time, name and length. The route lists
+        the six tasks with a 36px marker column joined by a dashed red line
+        and a card for each stop. A legend box explains every marker, then
+        the bottom bar sits under a rule with a raised round red add button.
+    spacing: An 8px unit. 8px between stops, 10px between waypoint cards, 24px before region labels.
+    density: Medium. Each stop is two short lines.
+    corners: Square frames and cards. The avatar, badge, add button and pill buttons are round.
+    borders: 1px boundary lines on cards. The map and cartouche have double frames with a 3 to 4px gap. The overdue card gets a 2px route red border.
+    shadows: None. Depth comes from frames and the contour paper.
+    icons:
+        Map markers show status by shape, a blue teardrop pin for Due today,
+        a hollow ring for Upcoming, a green flag for Done and a red triangle
+        with an exclamation mark for Overdue. Meetings use blue diamonds.
+        Every marker also has a word beside it. Nav icons are thin 1.6
+        stroke map symbols such as a compass and a folded map.
+    focus: A 2px dashed route red outline offset 3px.
+    tone: Gentle surveyor words for headings, such as Waypoints, The route and Legend. Item text stays plain.

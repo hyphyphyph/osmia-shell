@@ -1,0 +1,57 @@
+export anchor DepartureLoungeStyle:
+    number: 415
+    screen: TravelPlanner
+    name: Departure lounge
+    idea: The trip read off an airport departures board, split flap cells in monospace on black, framed by amber wayfinding signs with square pictograms and arrows, and a row of lounge seats showing who is travelling.
+    base: dark
+    palette:
+        hall: #101114, the page, the terminal floor and the style sheet
+        board: #050505, the departures board ground and fields
+        flap: #1c1c1f, split flap cells, cut by a black middle line
+        sign: #1f2124, wayfinding sign panels
+        line: #34363b, row rules inside signs
+        amber: #ffb612, sign text, pictogram squares, times, the primary button and Not booked
+        onAmber: #1a1200, glyphs and text on amber
+        ink: #f2efe6, flap letters and body text
+        muted: #b5b0a3, sub lines and captions
+        go: #5fe08a, Booked and Done
+        sky: #8fd3ff, Flight rows and the focus ring
+    type:
+        Signs in Arial Narrow, Roboto Condensed, Helvetica Neue, Arial, bold
+        caps. The board in ui-monospace, Menlo, Consolas at 17px caps 600
+        tracked 0.06em. The board title 34px bold caps, sign titles 20px
+        bold caps in amber, column heads 13px caps tracked 0.18em, figures
+        46px monospace bold.
+    layout:
+        A black sign bar across the top with a 4px amber rule below. On the
+        left a solid amber square with a black plane and BRIGHTWORK TRIPS in
+        amber caps. On the right three wayfinding links, Departures,
+        Checklist and Weather, each with an outlined amber arrow box. The
+        main area holds the board, black inside a 10px dark grey frame. Its
+        head reads Departures over JAPAN IN APRIL with the dates in an amber
+        flap cell. A table of six rows has Date, Time, Destination, Detail
+        and Status, every cell a split flap tile with a black line through
+        its middle. Times show in amber, missing times show dotted flaps.
+        Status is a bordered box with a word. The board foot shows a row of
+        six lounge seats with two filled amber for Mara Okafor plus 1 guest,
+        and the buttons Book train to Kyoto and Find stay in Osaka. Below
+        the board four signs sit in a row, each with a 6px amber top bar and
+        an amber pictogram square. Route draws a vertical line diagram with
+        Tokyo, Kyoto and Osaka as ringed stops and the train time. Checklist
+        lists the four items. Budget shows 3,200 euro saved over twenty
+        amber segments, thirteen lit. Weather Tokyo shows 17 degrees high
+        and a pink blossom line. Below 1000px the signs go two by two and at
+        phone width one per row, while the board scrolls sideways inside its
+        frame.
+    spacing: An 8px unit. 6px gaps between flap cells, 16px between signs and 32px above the board.
+    density: Medium high. Every leg is one board row of five cells.
+    corners: Square. Signs keep only a 4px lower corner.
+    borders: A 10px dark grey board frame, a 6px amber bar on each sign and a 4px amber rule under the sign bar.
+    shadows: None, except the 1px black split line drawn through every flap cell.
+    icons:
+        Black pictograms on solid amber squares and outlined amber arrows.
+        Booked is a solid outlined box with a ticked square, Not booked a
+        dashed box with a dashed circle, Flight a plane with no box. Done is
+        a check and To do a dash.
+    focus: A 3px sky blue outline offset 3px.
+    tone: Terse airport caps such as Departures, Destination and Book train to Kyoto.

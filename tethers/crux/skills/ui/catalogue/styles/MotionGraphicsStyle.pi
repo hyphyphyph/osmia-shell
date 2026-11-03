@@ -1,0 +1,61 @@
+export anchor MotionGraphicsStyle:
+    number: 360
+    screen: VideoEditor
+    name: Motion graphics
+    idea: A motion design workspace on a blue black grid, where the inspector is a graph editor of glowing neon curves, every property owns a colour and a keyframe shape, and the timeline is a layer stack with diamond keyframes.
+    base: dark
+    palette:
+        void: #0a0c16, page ground with a 24px grid, and the style sheet
+        grid: #141831, the background grid lines
+        panel: #0d1020, panels and the header
+        graphBed: #06070f, graph editor bed, viewer surround and fields
+        edge: #262b52, panel borders and row rules
+        ink: #e4e8ff, text
+        muted: #a9b0d6, labels, axis numbers and durations
+        opacityMagenta: #ff4fd8, opacity curve and diamonds, selection, Export
+        scaleCyan: #3ff0ff, scale curve and squares, timecode, focus
+        positionYellow: #f5ff5a, position X curve and circles, the marker
+        positionGreen: #5affa0, position Y curve and triangles
+        videoLayer: #22305e, video layer bars
+        audioLayer: #173a33, audio layer bars
+    type:
+        Data uses a mono stack, ui-monospace, SF Mono, Menlo, Consolas, at
+        13px for body and values. Panel heads are system sans 11px at 700 in
+        caps tracked 0.16em with a mono aside. The timecode is mono 18px at
+        700 in cyan with a soft glow. Layer names are mono 11px, axis labels
+        mono 10px.
+    layout:
+        The page ground is blue black with a visible 24px grid. A header
+        holds a magenta curve mark, Brightwork Cut and Launch teaser,
+        1920x1080 and 24 fps in mono, a thin render bar with RENDER QUEUE 0%
+        and a hollow circle with queued, and a glowing magenta Export.
+        Below, a three column workspace of square edged panels. Project
+        lists the five files with a MOV or AUD tag, name and duration.
+        Composition shows the picture with rule of thirds lines and a cyan
+        anchor ring at the centre, then the glowing timecode, the duration
+        and three small buttons with a cyan outlined play. Graph editor
+        shows a legend, a magenta diamond for Opacity 100 percent, a cyan
+        square for Scale 100 percent, a yellow circle for Position X 960, a
+        green triangle for Position Y 540, and a hatched swatch for Cross
+        dissolve 12 f, then a graph from 14 to 20 seconds where the magenta
+        opacity curve eases from 0 to 100 across a shaded 12 frame band and
+        holds, the other properties hold as flat lines, solid, dashed and
+        dotted, each with its keyframe shape, and a white playhead at 18
+        seconds 12 frames. A full width Layers panel stacks the tracks as
+        rows with a diamond toggle, id and name, indigo or teal bars, the
+        selected title bar in magenta with a glow and two diamond keyframes,
+        a yellow down triangle cut to logo marker with a dashed line and a
+        white playhead tagged 18s. At phone width the project and graph
+        editor hide.
+    spacing: A 4px base. 10px between panels, 10px to 12px inside them, 32px layer rows.
+    density: High. Project list, composition, graph editor and layer stack in one view.
+    corners: 4px panels and buttons, 3px layer bars.
+    borders: 1px indigo panel borders over a visible 24px grid.
+    shadows: Neon glows only, on curves, the timecode, Export and the selected layer.
+    icons:
+        Keyframe shapes are the icon set. Diamond for opacity, square for
+        scale, circle for position X, triangle for position Y, a hatched
+        band for the dissolve, repeated in the legend. Transport uses small
+        filled glyphs.
+    focus: A 2px cyan outline offset 2px with a soft cyan halo.
+    tone: Technical motion terms, such as Composition, Graph editor, Layers and Render queue.

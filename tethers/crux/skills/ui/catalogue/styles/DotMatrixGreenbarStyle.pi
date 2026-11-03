@@ -1,0 +1,53 @@
+export anchor DotMatrixGreenbarStyle:
+    number: 167
+    screen: ProjectsDashboard
+    name: Dot-matrix greenbar
+    idea: The dashboard is one long dot-matrix printout on continuous greenbar paper, with tractor-feed margins, banded rows every three lines, a run header, fixed-width columns and charts drawn with asterisks.
+    base: light
+    palette:
+        desk: #eceee9, the page and the tractor holes
+        paper: #ffffff, the white bands
+        greenbar: #dcefd9, every other three-line band
+        margin: #f7f8f4, the tractor strips
+        ribbon: #23272f, all printed text
+        redRibbon: #a3231b, overdue lines and Behind
+        formGreen: #2c5e33, column heads, section heads and typed rules
+        perf: #9aa394, perforations, never text
+        focus: #1d4fb8, the dashed focus outline
+        focusFill: #fff6c9, the fill behind a focused item
+    type:
+        One stack, Courier New, Nimbus Mono PS, Liberation Mono, Courier,
+        monospace, always bold with a 0.4px side shadow for impact weight.
+        The wordmark is 26px on a 40px line, double struck and tracked
+        0.14em. Summary figures are 30px on 40px. All report text is 15px
+        on a 20px line in caps, 13px on phones. Perforation notes use 12px
+        system-ui.
+    layout:
+        A single sheet with a 36px tractor strip on each side, punched with
+        round holes every 40px and edged by dashed perforations. The body
+        is banded green and white every 60px. It opens with a run header
+        line, prepared for line, a row of equals signs, the wordmark, a
+        MENU line of bracketed numbered links with Home starred and
+        underlined, and a control line with a QUERY prompt field, a solid
+        New project button, a bracketed NOTICES button and the user name.
+        Then the greeting with the date, a red overdue line, Section 1 as
+        a four-cell summary box in dashed rules, Section 2 as a fixed-width
+        project table with number, name, department, done over total,
+        percent, a hash progress bar, due and status, and a status code
+        key. A dashed tear line with tear here leads to Section 3, a
+        preformatted asterisk histogram per day with weekly totals and a
+        double rule, beside Section 4, an activity log. It ends with END
+        OF REPORT. The table scrolls sideways on phones and the tractor
+        strips shrink to 20px.
+    spacing: A 20px line grid. Everything sits on whole lines, bands are 60px and gaps are one blank line.
+    density: Very dense, report style, with fixed-width columns and full caps.
+    corners: None. Only the tractor holes are round.
+    borders: Typed rules of equals and hyphen characters, 2px dashed lines under column heads and round the summary, dashed perforations.
+    shadows: A faint 1px shadow under the paper. Type gets a 0.4px side shadow.
+    icons:
+        ASCII only. A lowercase o in parentheses for On track, a slash bang
+        backslash wedge for At risk, an X in square brackets for Behind and
+        a bang in angle brackets for Overdue, each beside its caps word.
+        Asterisks draw chart bars and hashes draw progress.
+    focus: A 2px dashed focus blue outline offset 2px over a pale yellow fill. The solid button keeps its dark fill and gets a solid 3px outline.
+    tone: Batch-job report, such as RUN DATE, QUERY, Section 2 Project detail and END OF REPORT.

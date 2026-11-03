@@ -1,0 +1,64 @@
+export anchor DeveloperPlatformStyle:
+    number: 187
+    screen: ProjectsDashboard
+    name: Developer platform
+    idea: A light developer console in indigo, where projects read like a list of build checks, figures sit in monospace and the overdue alert looks like a failed check annotation.
+    base: light
+    palette:
+        indigo: #4338ca, the primary button, the current tab rule and icon, links and style sheet labels
+        indigo2: #4f46e5, progress segments, heat level three and the focus ring
+        indigoDeep: #312e81, the primary button border and heat level four
+        indigoSoft: #c7cbfb, heat level two
+        indigoTint: #eef0ff, heat level one, the avatar and the focused row
+        background: #ffffff, the page, boxes and fields
+        canvas: #f7f8fa, the header, box header strips and code chips
+        ink: #1f2328, text
+        muted: #5a6270, meta, monospace timestamps and labels
+        line: #dadfe6, box borders, with #eaedf1 for row lines and empty segments
+        onTrack: #17803d, On track with a circle and check
+        atRisk: #94630a, At risk with a diamond and bang
+        behind: #c62a2f, Behind with an octagon and cross, and the overdue annotation on #fdeced
+    type:
+        Two stacks. Sans is system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Mono is ui-monospace, SF Mono, Cascadia Mono, Segoe UI Mono,
+        Roboto Mono, Menlo, Consolas. The greeting is 22px sans at 650, box
+        titles 14px sans at 650, body 14px sans, figures 16px mono at 600,
+        and meta, dates, task counts and timestamps 12px mono.
+    layout:
+        A pale grey header holds a breadcrumb at left, an indigo code
+        bracket mark, Brightwork in bold, a slash and home in mono, and at
+        right a search field with a slash key hint, an indigo New project
+        button, a square bell with an indigo dot and a square MO avatar.
+        Under it the six nav items run as tabs with small icons, Home
+        carrying a 2px indigo underline. The main area has the greeting
+        Welcome back, Mara with Signed in as Mara Okafor and the date in
+        mono, then a grid of a wide column and a 340px side column. The
+        wide column has a Projects box whose grey header strip reads 6
+        active, 4 on track, 1 at risk, 1 behind, then a pink annotation row
+        with an octagon reading 4 tasks are overdue and a mono overdue 4.
+        Each project is one checks row with a status badge, the name over
+        team and mono task count, a ten segment progress bar, a mono
+        percent, and the coloured status word with a mono due date. Under
+        it an Activity box lists entries like a commit log with square
+        initial tiles, item names in grey code chips and mono times below.
+        The side column has a This week box of key and value rows split by
+        dashed lines with mono figures, the overdue figure red, and a Tasks
+        completed box drawn as a two row heat grid of fourteen cells, one
+        row per week, Sunday to Saturday, each cell holding its number,
+        with week totals 59 and 73 at the right, a green plus 14 note, an
+        outlined today cell and a Fewer to More legend. Below 1060px the
+        side boxes sit side by side under the main column. Below 720px tabs
+        wrap without icons, the button shows only its plus, side boxes
+        stack, and each check row wraps to name, bar and percent, then
+        status and due date.
+    spacing: A 4px base on an 8px rhythm. 24px gutters, 16px box padding, 10px row padding.
+    density: Medium high. One line per project like a checks list.
+    corners: 6px on boxes, buttons, fields and the avatar. 3px on heat cells and 4px on code chips.
+    borders: 1px line on every box with a grey header strip, lighter lines between rows, dashed lines between key and value rows.
+    shadows: None.
+    icons:
+        16px line icons at 1.5 stroke on tabs and tools. Status uses solid
+        16px badges with a white mark, a circle with a check, a diamond
+        with a bang and an octagon with a cross, beside the coloured word.
+    focus: A 2px indigo outline offset 2px. A focused field gets an indigo border and a 3px indigo tint ring, and a focused row takes the tint fill.
+    tone: Terse and technical, such as 6 active, 4 on track, 1 at risk, 1 behind and overdue 4 in mono.

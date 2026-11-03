@@ -1,0 +1,55 @@
+export anchor MahoganyDeskStyle:
+    number: 400
+    screen: EmailClient
+    name: Mahogany desk
+    idea: A private secretary desk in mahogany and green leather, where the open message lies on a gold tooled blotter in a fountain pen serif and the folders are leather index tabs along its right edge.
+    base: dark
+    palette:
+        mahogany: #22100d, the page
+        wood: #301713, the crest bar, index tabs, blotter corners and the style sheet
+        woodHigh: #3d1f19, the open correspondence line
+        leather: #17291f, the blotter, the current tab and fields
+        leatherEdge: #2b4636, the blotter rim
+        gold: #d5ad57, tooling lines, the Reply button, the Unread nib, roundels and focus
+        goldSoft: #9c7a35, hairlines and button edges
+        onGold: #251804, text on gold
+        vellum: #f3e9d6, text
+        dust: #cdb9a0, subjects and times on wood
+        sage: #b9cfbd, meta on leather and notes
+    type:
+        Two serif stacks. A high contrast pen serif, Bodoni 72, Didot,
+        Bodoni MT, Baskerville, Times New Roman, for the brand at 26px, the
+        open subject at 42px and the letter at 22px italic with 1.7
+        leading. A book serif, Baskerville, Baskerville Old Face, Hoefler
+        Text, Garamond, at a 16px base, senders 17px and bold when unread,
+        subjects and times in italic, labels 13px spaced caps.
+    layout:
+        A wood crest bar holds a gold ringed italic B monogram, Brightwork
+        with Mail in gold italic, The desk of Mara Okafor in italic and an
+        underlined field reading Search correspondence. Below, three parts
+        sit side by side. A 340px left column titled Correspondence, Inbox
+        lists six lines between gold hairlines, each with a gold roundel of
+        italic initials, the sender, the time in italic, the subject and
+        snippet in italic and small notes. The Northpass line is shaded and
+        its roundel filled gold. The centre is the green leather blotter,
+        with two inset gold tooling lines, triangular wood corners at top
+        left and bottom right and a deep shadow. On it sit From Dana
+        Whitfield, Northpass, to Mara Okafor with the time, the subject in
+        the pen serif, a small gold flourish, the letter in italic, a gold
+        framed section mark Clients label and square buttons, Reply filled
+        gold. Down the right edge hang leather index tabs, Folios then
+        Labels, each tab rounded only on its outer side and the current
+        Inbox tab in leather with a gold inner bar. Below 1100px the tabs
+        become a row under the desk. On a phone the list comes first, then
+        the blotter, then the tabs.
+    spacing: An 8px unit. 48 by 56px inside the blotter, 14px per correspondence line, a 32px page gutter.
+    density: Low. One elegant list, one letter and a column of tabs.
+    corners: Square, with triangular wood blotter corners. Index tabs round only their outer corners at 10px.
+    borders: 1px gold hairlines between lines and around buttons. The blotter has two inset gold tooling lines.
+    shadows: One deep shadow under the blotter and nothing else.
+    icons:
+        Fine 1.4 stroke. A pen nib plus Unread, a filled star plus Starred,
+        a clip plus Enclosure, and a section mark before every label name.
+        Senders show italic initials in gold roundels.
+    focus: A 2px gold outline offset 3px with a second fine gold ring outside it.
+    tone: Formal and courteous, such as Correspondence, Folios, Enclosure and The desk of Mara Okafor.

@@ -1,0 +1,58 @@
+export anchor AccountingLedgerStyle:
+    number: 169
+    screen: ProjectsDashboard
+    name: Accounting ledger
+    idea: The dashboard is a page of a green bookkeeping ledger, with ruled columns, black and red ink, projects kept as accounts with double-underlined totals, a tally of completed tasks and thumb-index tabs down the edge.
+    base: light
+    palette:
+        binding: #e6e2d6, the page behind the book
+        ledgerGreen: #eef5e6, the leaf
+        lineGreen: #c6dcc0, horizontal rulings every 32px, never text
+        columnGreen: #8fb98c, money column rules
+        headGreen: #2f5a33, column heads, section heads and the On track tick
+        blackInk: #1a1d1a, entries, figures and totals
+        softInk: #46503f, dates, departments and notes
+        redInk: #ad1f1a, the Behind account row and overdue figures
+        umber: #7a4a00, At risk
+        marginRed: #d77a73, the double margin rule, never text
+        tabCream: #f8f4e6, thumb-index tabs
+        focus: #1f4fbf, the focus ring
+    type:
+        Entries use Baskerville, Libre Baskerville, Baskerville Old Face,
+        Book Antiqua, Palatino, Georgia with lining tabular figures.
+        Labels use Gill Sans, Gill Sans MT, Seravek, Trebuchet MS,
+        system-ui. Total figures are 40px regular, the greeting 30px
+        italic, the book title 30px small caps tracked 0.06em in head
+        green, account names 17px, body 16px at 1.5, and column heads
+        11 to 13px sans caps tracked 0.1em.
+    layout:
+        A ledger leaf with a red double margin rule 52px in and green
+        ruled lines every 32px, with six cream thumb-index tabs standing
+        off its right edge as the nav, Home flush with the leaf. The top
+        has the title Brightwork General ledger of projects, a Folio 31
+        caption, a Find field, a black Open new project button, a bell and
+        Keeper Mara Okafor, over a double green rule. An entry line gives
+        the date in caps, the greeting in italic with a note, and a red
+        clock Overdue 4 tasks flag. A trial balance strip shows the four
+        totals right aligned in columns, each figure double underlined,
+        the overdue one in red. The project accounts table has folio,
+        account, department, Done, Left and Total money columns, percent,
+        due date and status, with Billing migration written in red and a
+        totals row single ruled above and double ruled below. Below sit a
+        tally of tasks completed, one row per day drawn in tally marks of
+        five with the count right aligned and weekly subtotals double
+        underlined, and a day journal with time, particulars and initials.
+        Below 900px the tabs move to a scrolling row above the leaf and
+        the table and tally scroll sideways.
+    spacing: An 8px unit on a 32px ruled line. Rows are 48px, sections 32px apart, an 80px left margin for the red double rule.
+    density: Medium. Tabular and orderly, figures right aligned in narrow money columns.
+    corners: Square leaf. Index tabs round 8px on their outer edge, buttons 2px.
+    borders: A double rule under the title, 2px green under column heads, 1px column rules, a single rule over and a double rule under every total.
+    shadows: Two stacked 2px page edges under the leaf. Tabs cast a 2px flat edge.
+    icons:
+        Bookkeeper marks beside words. A tick for On track, an outlined
+        triangle with a bang for At risk, a red cross wrapped in brackets
+        for Behind and a clock ring for Overdue. Tally marks in fives draw
+        the chart.
+    focus: A 2px focus blue outline offset 2px with a soft 5px blue halo.
+    tone: Counting-house language, such as Trial balance, Project accounts, Day journal, Folio and Keeper.

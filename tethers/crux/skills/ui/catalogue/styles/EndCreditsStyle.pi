@@ -1,0 +1,51 @@
+export anchor EndCreditsStyle:
+    number: 91
+    screen: ProjectsDashboard
+    name: End credits
+    idea: The dashboard rolls like film end credits on a pale screen, everything centred on one axis with italic roles on the left and spaced capital names on the right, and the week's chart mirrored across the same line.
+    base: light
+    palette:
+        screen: #f5f3ee, the page
+        tint: #ebe8e1, the focus halo
+        ink: #121212, names, rules, this week bars and the primary button
+        dim: #5a5752, roles and captions
+        smoke: #8e8a83, last week bars, never text
+        faint: #d6d2c9, axis lines and meter tracks
+        green: #2a6537, On track
+        amber: #8a5400, At risk
+        red: #9d2020, Behind and overdue
+    type:
+        Two stacks. Names use Optima, Candara, Noto Sans, Segoe UI, Arial
+        in capitals, the greeting 64px at 300 tracked 0.06em, figures 44px
+        at 300, project names 19px at 500 tracked 0.14em, block titles
+        13px tracked 0.4em, and values 15 to 16px. Roles use Hoefler Text,
+        Iowan Old Style, Georgia italic at 16 to 19px in dim grey.
+    layout:
+        Everything is centred on a single vertical axis with a 980px
+        column. The header is a title card, the brand in capitals spaced
+        0.5em, a centred nav line, then a centred underlined search, the
+        New project button, a round bell and the user in italic. The
+        opening reads Brightwork presents, a huge thin capital Good
+        morning, Mara and the italic date, then with special attention to
+        over a red clock line saying 4 tasks are overdue. Starring lists
+        the four numbers as credit pairs, the italic role right aligned to
+        the axis and the big figure left aligned. The projects appear as
+        six credit blocks in three columns, each a spaced capital name
+        over role and value pairs for Team, Progress with a thin meter,
+        Tasks, Due and Status. Recent scenes pairs each time with its
+        event across the axis. Running time is a mirrored bar chart, last
+        week growing left in grey and this week growing right in black,
+        with weekday and both dates in the middle. A closing line credits
+        the Brightwork team. Below 900px blocks go two across, then one,
+        and on a phone the scene pairs stack centred.
+    spacing: An 8px unit. 72px between credit blocks, 32px between the role and name columns and 64px between project blocks.
+    density: Sparse and slow, read top to bottom like a roll.
+    corners: Square. Swatches and the bell are the only circles.
+    borders: Almost none. A 48px rule under each block title and 1px underlines on fields.
+    shadows: None.
+    icons:
+        Thin marks only where they carry meaning. On track is a tick, At
+        risk a triangle, Behind double down chevrons and overdue a clock,
+        each beside its spaced capital word.
+    focus: A 2px ink outline offset 4px with an 8px pale tint halo.
+    tone: Credit roll phrasing, such as Brightwork presents, Starring, with special attention to and Running time.

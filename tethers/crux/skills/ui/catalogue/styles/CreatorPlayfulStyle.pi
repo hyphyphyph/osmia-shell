@@ -1,0 +1,58 @@
+export anchor CreatorPlayfulStyle:
+    number: 359
+    screen: VideoEditor
+    name: Creator playful
+    idea: A bright creator app on deep plum, with chunky rounded cards, fat candy coloured clip pills that each track owns, stickers for the selection and the marker, and big friendly sliders in place of number fields.
+    base: dark
+    palette:
+        plum: #1a1433, page and style sheet
+        card: #251d47, cards
+        raised: #2f2659, clip chips, inspector rows and list rows
+        lane: #1d163b, timeline lanes and fields
+        ink: #f6f1ff, text
+        lilac: #cfc4ec, secondary text and ruler
+        bubblegum: #ff7ac6, V2 titles, the logo and the Export start
+        sky: #6fd3ff, V1 video and video chips
+        lime: #c6f36b, A1 voiceover, audio chips and play
+        sunny: #ffd166, A2 music, counts, the marker pin and focus
+        peach: #ffb36b, the Export gradient end
+        darkOnBright: #2a0d24, text on every bright fill
+    type:
+        One rounded stack, ui-rounded, SF Pro Rounded, Nunito, Varela Round,
+        Quicksand, system-ui. Base 15px at 1.5. The project title is 26px at
+        800, card heads 20px at 800, the timecode 24px at 800, the viewer
+        title up to 38px at 800, clip pills 13px at 800 and secondary text
+        13px to 14px.
+    layout:
+        A top bar holds a tilted pink rounded square logo with a play shape
+        and a sky offset shadow, Brightwork Cut over Launch teaser, two pill
+        tags for 1080p and 24 fps, a dashed lime ring with 0% rendered and
+        ready when you are beside a short rounded bar, and a big pink to
+        peach pill Export with a solid lip. The layout is a two column grid
+        of 28px rounded cards with solid offset shadows. The viewer card on
+        the left has a rounded picture with a soft plum circle in the
+        corner, a big lime round play between two round skip buttons, and
+        the timecode with the duration below. On the right, Your clips lists
+        five rounded chips with sky video or lime audio icon tiles, then
+        Tweak the title shows Position 960 by 540 in a rounded row, chunky
+        Scale and Opacity sliders at 100 percent with big white thumbs, and
+        a Cross dissolve 12 frames row with a cross icon. A full width
+        Timeline card shows each track as a coloured badge with icon, id and
+        name, pink V2, sky V1, lime A1 and sunny A2, and clips as fat pills
+        in the track colour with dark text. The selected title pill has a
+        white ring and a tilted white sticker reading a check and Selected.
+        A sunny pin with a flag reads cut to logo with a dashed drop line,
+        and a white playhead has a round bubble reading 0 18. At phone width
+        the clips and tweak cards hide and badges show only the ids.
+    spacing: An 8px unit, generous. 20px card padding and gaps, 8px between lanes.
+    density: Low to medium. Big targets, five clip chips, two sliders.
+    corners: 28px cards, 18px rows, full pills for clips, tags and buttons.
+    borders: None. Shape and colour blocks separate things.
+    shadows: Solid offset shadows with no blur, 10px under cards and 5px to 6px under buttons.
+    icons:
+        Chunky rounded line icons at 2.2 stroke on coloured tiles. Each
+        track has its own icon, a T for titles, a camera for video, a
+        microphone for voiceover and a note for music. A check marks the
+        selection and a flag the marker.
+    focus: A 4px sunny yellow outline offset 3px.
+    tone: Friendly and casual, such as Your clips, Tweak the title and ready when you are.

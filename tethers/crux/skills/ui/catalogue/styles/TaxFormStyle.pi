@@ -1,0 +1,56 @@
+export anchor TaxFormStyle:
+    number: 121
+    screen: ProjectsDashboard
+    name: Tax form
+    idea: The dashboard is an official return, with numbered lines, dotted leaders and amount boxes, black Part bars for each section, comb boxes for the date and one status box per project.
+    base: light
+    palette:
+        desk: #eceeea, the page behind the sheet
+        paper: #ffffff, the form
+        ink: #111111, text, rules, Part bars, the primary button and this week bars
+        muted: #474747, captions, small print and last week bars
+        shade: #e2ede5, column heads, box numbers and entry fields
+        shadeInk: #1c4a31, text on the shade
+        green: #1d5c3a, the On track box with a tick
+        amber: #8a4a00, the At risk box with a triangle
+        red: #a3161a, the Behind box with a cross and the overdue line
+        highlighter: #ffe680, the focus fill
+    type:
+        Three stacks. Sans is Helvetica Neue, Helvetica, Arial, Liberation
+        Sans, sans-serif. Narrow is Helvetica Neue Condensed, Arial Narrow,
+        Liberation Sans Narrow, Roboto Condensed, Helvetica, sans-serif for
+        the form number, titles and Part labels. Mono is OCR A Std, OCR A,
+        ui-monospace, Menlo, Consolas, monospace for amounts and dates.
+        Sizes are 26px bold narrow form number, 20px bold narrow title,
+        40px outlined year, 20px bold mono amounts, 13 to 14px bold narrow
+        Part titles, 13px sans line text and 10 to 11px small print.
+    layout:
+        One white sheet on a pale desk with a vertical margin note. The
+        header is a three cell grid, Form BW-1031 on the left as the brand
+        link, the title Weekly Project Return with the week ending date in
+        the middle, and 2026 with an outlined 20 and Week 44 on the right,
+        over a 3px rule. The navigation is a row of boxed Part labels, Part
+        I Home to Part VI Settings, the current label in a black cell.
+        Identity cells hold first name, last name and the date in comb
+        boxes. Line 0 holds the search field on a shaded strip, the black
+        New project button, the bell and the user. Part I is a list of
+        numbered lines with dotted leaders and right hand amount boxes, the
+        greeting, the date, the overdue line boxed in red, then the four
+        figures. Part II is a ruled table with lettered column heads (a) to
+        (f) and a status cell with an 18px box mark and the word. Part III
+        is Schedule D, a 14 column grid with a bar inside each cell over a
+        row of values, then lines 15 and 16 with the weekly totals. Part IV
+        lists activity as numbered lines with times in a right cell. A
+        small print footer explains the marks. On a phone the header and
+        identity cells stack, amount boxes narrow and the table scrolls.
+    spacing: 4px steps. 34px line height, 6px cell padding and 14px before each Part.
+    density: Very dense. Every fact has a line number and nothing floats free.
+    corners: Square. No rounding anywhere.
+    borders: 1px ink rules, 1px grey between lines, 3px under the header and 2px above each Part bar.
+    shadows: One faint shadow so the sheet sits on the desk.
+    icons:
+        Marks inside 18px boxes, a tick for On track, a filled triangle for
+        At risk and a cross in a heavy red box for Behind, plus a clock for
+        the overdue line.
+    focus: A 2px ink outline with a highlighter yellow fill.
+    tone: Bureaucratic and exact, such as Add line 14 and Mark one status box per line.

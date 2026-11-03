@@ -1,0 +1,50 @@
+export anchor ObsidianStyle:
+    number: 271
+    screen: CloudFiles
+    name: Obsidian
+    idea: Volcanic black glass cut into chamfered slabs, with glowing lava orange cracks marking the selected file, live meters and the paths through the screen.
+    base: dark
+    palette:
+        void: #09080a, page, fact tiles and style sheet
+        glass: #141216, slab body, search and view switch
+        glassSheen: #1c191f, top left of the slab gradient and secondary buttons
+        edge: #2e2930, empty storage shards and tracks
+        ink: #f1ebe6, text
+        muted: #b3a8a3, meta, caps labels and inactive nav
+        lava: #ff7a2f, primary button, cracks, current marker, storage shards and focus
+        magma: #ffb07a, badge words and the hot end of the upload flow
+        selected: #221510, selected slab and current nav fill
+        lavaInk: #1d0900, text on lava
+    type:
+        One condensed stack, Bahnschrift, DIN Alternate, Roboto Condensed,
+        Arial Narrow, Segoe UI. Base 15px. The title is 40px at 700 in caps
+        tracked 0.04em, the details title 22px at 700, file names 15px at
+        600, meta 14px muted, buttons 13px caps at 700 and labels 12px caps
+        tracked 0.12em.
+    layout:
+        A header with a pentagon mark holding a lava zigzag, BRIGHTWORK
+        DRIVE in tracked caps and a chamfered search, underlined edge to
+        edge by a glowing jagged lava crack line. Below, three columns. A
+        220px slab nav lists the five places, My files with a lava left
+        edge, and ends with Storage shown as ten slanted shards, six lit,
+        one part lit, three dark, then 64.2 GB of 100 GB. The middle has a
+        caps breadcrumb, the caps title, chamfered Upload and New folder
+        buttons and a List or Grid chamfered switch, then caps column heads
+        and eight chamfered file slabs with name, badges, date, person and
+        size. The selected slab glows warm from the left with a lava vein
+        drawn down its edge. A 330px details slab shows a chamfered preview
+        with a crack line, the name, a Starred badge, four chamfered fact
+        tiles and the three buttons. Below 1180px details stack. Below
+        760px the nav scrolls sideways and slabs put meta under names.
+    spacing: A 4px base. 20px between slabs and columns, 6px between file slabs, 18px slab padding.
+    density: Medium dense. Each file is a 52px slab with its meta in columns.
+    corners: Chamfered. 12px cuts on the top left and bottom right of slabs, 7px on buttons, fields, badges and tiles.
+    borders: No ordinary borders. Inner 1px lines on secondary controls and badges, a 3px lava edge on the current nav item.
+    shadows: No drop shadows. Slabs carry a 135 degree glass gradient and a faint white sheen, and lava lines glow with a 2px blur.
+    icons:
+        18px line icons in muted grey, lava when current or selected.
+        Chamfered caps badges in magma pair a filled star with Starred,
+        two heads with Shared ×4 and an up arrow ring with Uploading 62%
+        over a lava gradient flow bar.
+    focus: A 2px lava outline with a 3px offset, and the chamfer drops away so the outline is whole.
+    tone: Short caps labels such as Drive, Storage and Shared ×4 over plain values.

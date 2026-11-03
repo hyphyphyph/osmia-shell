@@ -1,0 +1,57 @@
+export anchor BootcampStyle:
+    number: 393
+    screen: FitnessTracker
+    name: Bootcamp
+    idea: The day issued as a typed orders sheet on an olive clipboard, with stencilled headings, numbered orders ticked off in boxes, a duty roster for the week, and DONE or OPEN stamped beside every goal in terse capitals.
+    base: dark
+    palette:
+        olive: #20231a, the hatched page and the style sheet
+        board: #2b2f20, the clipboards
+        sheet: #33382a, the paper on each board, fields and list rows
+        rule: #565c44, dashed lines between orders
+        khaki: #e9e0bd, text, ticked boxes, table rules, the roster header and the primary button
+        muted: #c2b994, labels, order numbers, empty boxes and done plan weeks
+        drab: #8c936c, the second stripe in hatched log bars
+        stamp: #ff8a74, OPEN stamps, the top zone, today's roster header, the current plan week and sheet labels
+        go: #c7e08a, DONE stamps
+        onKhaki: #1d1f14, text on khaki, muted and stamp fills
+    type:
+        Headings use Stencil, Stencil Std, Arial Black, Impact at 900 in
+        caps tracked 0.12em, with a thin horizontal gap masked through the
+        middle like a stencil bridge, 26px on sheets and 44px for big
+        figures. Text uses Courier New, Courier, Nimbus Mono PS, ui-
+        monospace at 15px and 1.55, orders 16px bold caps, labels 12px caps
+        tracked 0.14em.
+    layout:
+        A diagonally hatched olive page. The header has Brightwork Move in
+        stencil, a typed slash line reading daily orders and the date, and a
+        boxed Today, Week and Plan switch with Today in khaki, ruled below
+        by a 3px khaki line. Each section is a clipboard with a steel clip,
+        a hard shadow and a paper sheet inside. Orders of the day has a memo
+        block for date, unit and status, then four numbered orders. Orders
+        01 to 03 are Move, Exercise and Stand, each a bold caps command, a
+        typed status line ending Carry on, a row of tick boxes with X for
+        done units, one box per 50 kcal, 5 min or 1 h, and a rotated red
+        OPEN stamp. Order 04 is the Evening run with a green DONE stamp.
+        Beside it, the After action report with Mission complete, a four
+        cell form of distance, time, average pace and average heart rate,
+        and an intensity log of hatched bars per zone, zone 3 in stamp red.
+        A full width Duty roster table has days as columns, Saturday headed
+        in stamp red with a star, and rows for load bars, km with dashed
+        REST, and duty with X RUN or STAND DOWN, then the total. Last,
+        Lights out with 7 h 12 min and deep sleep, and Campaign half
+        marathon with Week 6 of 12, twelve numbered boxes, and Next order
+        tomorrow Long run 14 km with View plan. Below 960px everything
+        stacks and the roster scrolls inside its sheet. At 375px stamps drop
+        under their order.
+    spacing: An 8px unit. 28px between boards, 22 to 24px paper padding, 14px per order.
+    density: Medium high. Orders, a report form, a roster table and two short notes.
+    corners: None. Square boards, boxes, stamps and buttons.
+    borders: 2px khaki rules on forms and tables, dashed rules between orders and double stamp borders.
+    shadows: Hard 4 to 6px offset shadows under clipboards and the primary button.
+    icons:
+        Tick boxes filled with an X for done units and empty for to go.
+        Stamps read OPEN with an empty square or DONE with a crossed square.
+        Rest days read REST with a dash and STAND DOWN. Today has a star.
+    focus: A 3px khaki outline, an olive gap and a 2px stamp coloured ring outside.
+    tone: Terse orders in capitals such as Carry on, Mission complete, Lights out and Next order.

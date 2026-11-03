@@ -1,0 +1,57 @@
+export anchor FilmFestivalStyle:
+    number: 90
+    screen: ProjectsDashboard
+    name: Film festival
+    idea: The home screen reads like a festival programme on light stock, with laurel wreaths around the week's numbers, a screening schedule grid that runs each project to its premiere, and programme codes on every film.
+    base: light
+    palette:
+        screen: #f6f3ee, the page
+        card: #ffffff, the top bar, the schedule and panels
+        ink: #161616, text, codes and done bars
+        grey: #5d5a55, notes and last week frames
+        rule: #dcd6cc, the week grid and hairlines, never text
+        film: #e4dfd6, the film strip and time still to go
+        redCarpet: #b3202a, the top bar edge, the current nav item and this week frames
+        carpetInk: #a01c25, the primary button, red text, overdue and Behind
+        laurel: #8a6d1f, wreaths, never text
+        green: #276638, On track
+        amber: #8c5200, At risk
+    type:
+        Three stacks. Condensed caps use Avenir Next Condensed, Roboto
+        Condensed, Arial Narrow, Helvetica Neue, Arial with font-stretch
+        condensed at 800 for the 76px greeting, 52px laurel numbers, 30px
+        section titles and 26px brand, and at 700 for 12 to 15px nav,
+        buttons and statuses tracked 0.08 to 0.14em. Text uses Futura,
+        Century Gothic, Avenir Next, Segoe UI at 16px with 1.5 line height
+        and 19px bold film titles. Programme codes use SF Mono, Menlo,
+        Consolas at 600 and 12px.
+    layout:
+        A white top bar with a 4px red lower edge holds a reel mark, the
+        condensed caps brand, caps nav with the current item on a red
+        block, a boxed search for the programme, the New project button, a
+        square bell and the user. The hero is centred like a poster, a red
+        caps line Brightwork presents, a huge condensed Good morning, Mara,
+        the date in spaced caps and a red ruled line with an exclamation
+        disc saying 4 tasks are overdue. The four numbers sit in a row,
+        each between two gold laurel branches with the label in tiny caps
+        under it. The screening schedule is a table with a black header
+        row. Each row has a black code chip such as DES-01, the title, team
+        and tasks, then a lane ruled by weeks from 31 Oct to 15 Jan where a
+        bar runs from today to the due date labelled Premiere, filled in
+        black to the percentage, with the status under it. The schedule
+        scrolls sideways inside its box on narrow screens. Below, a
+        festival bulletin lists activity with red mono times, and the reel
+        shows the chart as a film strip with sprocket holes and one frame
+        per day. Below 960px the bulletin and reel stack and laurels go two
+        by two.
+    spacing: An 8px unit. 56px between programme sections and 14px inside schedule rows.
+    density: Medium. A big poster top, then a tight schedule grid.
+    corners: Square everywhere, like printed programme boxes.
+    borders: 2px ink on controls and schedule bars, a 4px red edge under the top bar and 1px rules in the grid.
+    shadows: None. Flat print.
+    icons:
+        Gold laurel wreaths and a reel mark. On track is a star, At risk a
+        triangle, Behind a square and overdue an exclamation disc, all with
+        condensed caps words.
+    focus: A 3px ink outline offset 2px, then a screen coloured gap and a 2px red ring out to 9px.
+    tone: A festival announcer, such as Brightwork presents, Premiere 14 Nov, Screening schedule and The reel.

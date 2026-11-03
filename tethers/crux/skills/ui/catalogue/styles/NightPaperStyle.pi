@@ -1,0 +1,51 @@
+export anchor NightPaperStyle:
+    number: 323
+    screen: OpsMonitor
+    name: Night paper
+    idea: The monitor typeset as a short evening report on warm dark grey paper, a serif reading column with a summary headline, inline sparklines in the prose, a leader dotted service list, numbered figures, and alerts and deploys as margin notes.
+    base: dark
+    palette:
+        paper: #29251f, the page and every surface including the style sheet
+        paperShade: #322d26, a rare tint kept for hover
+        ink: #ebe2d2, text, the request line, p50 and the primary button
+        pencil: #bcb09b, captions, times and small caps labels
+        rule: #4d463c, hairlines, double rules, dot leaders and the chart grid
+        rust: #e6a873, links, the dashed p95 line, the incident label, the secondary button and focus
+        healthy: #acd6a2, Healthy and Resolved with outline circle and square
+        degraded: #ecc47c, Degraded and Investigating with outline triangle and magnifier
+        recovered: #adc9ea, Recovered with an outline diamond
+        firing: #f2a89d, Firing with an outline octagon and the error line
+    type:
+        Charter, Bitstream Charter, Iowan Old Style, Sitka Text, Cambria,
+        Georgia. Base 18px at 1.65. The headline is 40px at 400 and 1.15,
+        the lead 20px, section labels 15px small caps tracked 0.14em in
+        pencil, captions 15px italic, numbers old style.
+    layout:
+        A 1080px page with a 680px reading column and a 260px margin column
+        56px apart. A masthead with Brightwork Ops in small caps, an italic
+        Production the last twenty four hours, and the suite apps as small
+        text links joined by middots with Ops underlined in rust, all over a
+        hairline. The headline reads A steady day, one open incident on
+        sync-worker. The lead paragraph gives the traffic range with a small
+        inline sparkline and the error spike with a red sparkline, notes the
+        billing outage, and names the degraded service and INC-0427. A
+        Services section lists each service in italic with a dotted leader
+        to its status shape, word and uptime, and a smaller note line for
+        p95, queue depth or recovery. The open incident sits between double
+        rules with a rust small caps label, the ID at 26px, a sentence of
+        facts and Investigating, then Open the incident and Read the
+        runbook. Figures holds a wide Figure 1 for requests and two smaller
+        Figures 2 and 3 for error rate and latency, each with an italic
+        caption. The margin column carries Alerts and Deploys as notes with
+        italic times. Below 1000px margin notes drop under the article.
+    spacing: An 8px unit. A 680px column, a 56px gutter, a 260px margin column, and 32 to 40px between sections.
+    density: Low. One reading column where facts arrive as sentences, a short list and three figures.
+    corners: None. Only the swatches are round.
+    borders: Hairline rules above sections, a double rule around the incident and dotted leaders in the service list.
+    shadows: None. The paper is flat.
+    icons:
+        Almost none. Small outline status shapes sit inline before the
+        word, circle, triangle, diamond, octagon, square and magnifier.
+        Sparklines sit in the prose.
+    focus: A 2px dotted rust outline offset 4px with a faint warm wash.
+    tone: Plain sentences such as A steady day, one open incident on sync-worker, and Read the runbook.

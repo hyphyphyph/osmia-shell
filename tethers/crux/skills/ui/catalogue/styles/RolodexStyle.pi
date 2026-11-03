@@ -1,0 +1,52 @@
+export anchor RolodexStyle:
+    number: 341
+    screen: CrmPipeline
+    name: Rolodex
+    idea: The pipeline as a rotary card file on a dark desk, each deal a typed index card with a coloured stage tab, cards filed back to front so their top strips stay readable, and one card pulled forward open in full.
+    base: dark
+    palette:
+        desk: #141110, the page and the style sheet
+        cardStock: #2a2520, filed cards, summary and notes cards, secondary buttons
+        frontCard: #352e27, the pulled card
+        rule: #4f443a, card edges and dashed rules
+        ink: #efe4d0, typed text
+        pencil: #c2b298, labels and owners
+        dark: #1e1914, text on every tab and on the primary button
+        slateTab: #b9c7d8, Lead
+        sageTab: #a9d1b0, Qualified
+        manilaTab: #e8c27a, Proposal, the primary button, target bar and focus
+        salmonTab: #e6a58f, Negotiation
+        oliveTab: #cfe08a, Won and Closed
+        stampRed: #ff9c86, the Stalled stamp and triangle
+    type:
+        A typewriter stack, American Typewriter, Courier Prime, Courier New,
+        Courier, with tabs in Avenir Next Condensed, Arial Narrow, Roboto
+        Condensed. Base 15px. The title and open card name are 24px at 700,
+        values 15px at 700, tabs and divider labels 12px condensed uppercase
+        at 700 tracked .12em, meta 13px.
+    layout:
+        A header with Brightwork Sales in tracked caps, the title Deal card
+        file Q4, Find card and a manila New card button, over a dashed rule.
+        Three columns follow. A 170px rail of stage dividers shows coloured
+        tabs with name and count, Proposal pulled out 10px with a shadow.
+        The centre is the drum, two dark rails on its sides, a stack of six
+        filed cards and a twin knob drawing below. Cards run back to front
+        from Lumen Bakery to Bluewater Clinics, each 14px narrower than the
+        card in front, with a stage tab at a stage specific position along
+        the top, so every card shows its name, value, owner and status on
+        one strip. The front card, Saltwater Freight, is open in full with
+        Pulled for follow up, the value, a dotted fact list and a tilted
+        double ruled red Stalled stamp. A 300px side column holds a
+        Quarter summary card with dotted lines and a manila target bar,
+        and a Notes card with the activity. Below 1050px the rail becomes a
+        row of top tabs and the side cards sit under the drum.
+    spacing: An 8px unit. Cards overlap by 4px and step in 14px per card, 28px between rail, drum and side cards.
+    density: Medium. Six filed cards show one strip each and one card is open in full.
+    corners: 4px cards with a square corner under the tab, 6px tab tops, 8px divider tabs.
+    borders: 1px rule on every card, a 3px top edge in the stage colour, a red rule under side card heads, dotted rules under typed lines, a double ruled stamp.
+    shadows: Cards cast a short shadow up onto the card behind, the pulled card casts a deep 10px 24px shadow.
+    icons:
+        Line icons at 1.9 stroke inline with typed text. Stalled is a
+        tilted red stamp with a triangle and the word.
+    focus: A 3px manila outline offset 3px.
+    tone: Office file words, such as Deal card file, Find card, New card and Pulled for follow up.

@@ -1,0 +1,53 @@
+export anchor StealthStyle:
+    number: 297
+    screen: CodeRepository
+    name: Stealth
+    idea: A low glare field console in matte black olive, where chamfered panels, stencil labels and a twelve cell status board turn the pull request into a dense, readable set of orders.
+    base: dark
+    palette:
+        blackOlive: #121410, the page and style sheet ground
+        railBlack: #0e100b, the navigation rail and fields
+        olivePanel: #1b1e16, panels and the data plate
+        oliveRaised: #22261c, board cells, the current tab and counters
+        khakiInk: #d3cfb6, text
+        drab: #9c9883, labels, meta and line numbers
+        seam: #3a4030, panel edges and dividers
+        sand: #c4b47a, stencil titles, the primary button, the current tab edge and focus
+        fieldGreen: #a3c46e, passed checks, approved and added lines
+        signalAmber: #f0a65a, failing, changes requested and removed lines
+        amberShade: #2b2216, the failing cell and removed line ground
+    type:
+        A stencil face, Stencil Std, Stencil, Impact, Arial Narrow, in caps
+        for the repository at 24px tracked 0.06em, panel titles at 13px
+        tracked 0.16em and buttons. A narrow sans, Arial Narrow, Roboto
+        Condensed, for text at 15px and 1.45 and the title at 28px bold. A
+        monospace for data and labels at 11px bold caps tracked 0.12em,
+        the diff at 13px.
+    layout:
+        A 184px dark rail on the left with a sand chamfered B badge, the
+        unit name, the six tabs stacked as monospace caps with counts on
+        the right, the current tab outlined in sand with a 4px sand left
+        edge, and a foot note. The main area starts with a data plate with
+        two rivets, the repository, a Private tag and three counters. Below
+        sits a 12 column grid of chamfered panels with 14px cut corners,
+        each with a stencil title row and a hairline. Objective spans 8 and
+        holds the title, number and merge sentence with an Open tag.
+        Clearance spans 4 with both reviewers. The status board spans 7
+        with a big 11/12, then the twelve checks as a four by three grid of
+        cells with a green edge, the failing one amber with a dashed outline
+        and the word fail. Manifest spans 5 as a file table. Log spans 8
+        with the diff and the comment as an amber Memo box. Orders spans 4
+        with assignee, labels, milestone, linked issue and a striped
+        disabled Merge locked button. Below 1100px panels go full width,
+        below 760px the rail becomes a wrapping top bar.
+    spacing: An 8px unit, tight. 10px panel gaps, 14px panel padding, 4px between board cells.
+    density: High. Six panels and the full rail on one screen.
+    corners: Chamfered 14px on panels and 6px on the badge. Buttons and fields are square.
+    borders: 1px seam around every panel, a 4px sand edge on the current tab and fields, 3px coloured left edges on board cells.
+    shadows: None. Matte surfaces, low glare.
+    icons:
+        Heavy 2.2px line icons with square caps. A tick for passed, an
+        octagon cross for failing, a ringed tick for approved, a triangle
+        for changes, always with a caps word.
+    focus: A 2px dashed sand outline offset 2px.
+    tone: Terse field labels, such as Objective, Clearance, Status board, Manifest, Log, Orders and Merge locked.

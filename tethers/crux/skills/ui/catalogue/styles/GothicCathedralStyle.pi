@@ -1,0 +1,51 @@
+export anchor GothicCathedralStyle:
+    number: 278
+    screen: CloudFiles
+    name: Gothic cathedral
+    idea: A dark stone nave where every panel rises to a pointed arch, files are set like stones between mortar joints, and rose window colours mark file types and statuses.
+    base: dark
+    palette:
+        stone: #131217, the page with faint coursing lines, and fields
+        nave: #1c1a21, arched panels and the style sheet
+        vault: #24212b, the current nav, the pressed switch and gem tiles
+        joint: #36313f, mortar lines and borders
+        ink: #ece6da, text
+        muted: #b4acbd, meta and labels
+        gold: #dcab48, arch trim, headings, the primary button with dark text #1b1305, folders, Starred and focus
+        ruby: #ef6f80, PDF and video gems
+        sapphire: #88a6ff, image and document gems, Shared and storage lancets
+        emerald: #5fcf98, the spreadsheet gem and Uploading
+        amethyst: #c39af2, the archive gem, the selected row and Selected
+    type:
+        One carved serif, Iowan Old Style, Charter, Cambria, Georgia. The
+        folder title is 42px semibold capitals tracked 0.18em, panel
+        labels 13px gold capitals tracked 0.32em, file names 16px
+        semibold, body 15px at 1.55. Statuses are 13px italic.
+    layout:
+        A centred portal header with Brightwork Drive in gold, the title
+        Website redesign and a breadcrumb with cross separators. Below,
+        three bays side by side, each a dark panel whose top rises in a
+        pointed arch 76px tall with a gold inner arch line. The left bay,
+        Drive, lists the five links split by joints, the current one with
+        a gold edge, then 64.2 GB of 100 GB used over ten small lancet
+        windows with six and a bit filled sapphire. The middle bay, The
+        files, holds search, Upload, New folder and a List or Grid switch
+        with a gold underline on List, then eight rows. Each row has a
+        gabled gem tile in its type colour, the name over kind, the size,
+        and date and person with statuses below. The selected row has an
+        amethyst wash and outline. Uploading shows an emerald bar. The
+        right bay, Details, shows the preview inside a rose window of eight
+        coloured petals, the name, Starred, facts split by joints and full
+        width Share, Download and Get link. Below 1120px Details moves
+        under the others. Below 760px the bays stack.
+    spacing: An 8px unit. 24px between bays, 20px bay padding, 10px rows.
+    density: Medium. Three bays with plain rows.
+    corners: Square, except every bay rises to a pointed arch and gems have a gabled top.
+    borders: 1px mortar joints around bays and between rows, a gold inner line inside each arch.
+    shadows: None. Depth comes from the arches and coloured glass.
+    icons:
+        1.5px line icons inside gabled gems coloured by file type. Status
+        is an italic word with a star for Starred, two heads for Shared, an
+        up arrow for Uploading and a checked box for Selected.
+    focus: A 2px gold outline offset 3px with a soft gold halo.
+    tone: Quiet and ceremonial, such as The files, Drive and Details.

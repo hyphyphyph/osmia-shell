@@ -1,0 +1,54 @@
+export anchor PixelCRTGameStyle:
+    number: 292
+    screen: CodeRepository
+    name: Pixel CRT game
+    idea: The pull request is laid out like an 8-bit adventure screen, with a coin-counter HUD, a menu cursor on the tabs, notched pixel-bordered dialog boxes, a checks health bar of twelve blocks, a reviewer party with pixel portraits and the changed files as inventory slots.
+    base: dark
+    palette:
+        night: #100c24, the page and the style sheet background
+        panel: #1e1840, dialog boxes and the style sheet cards
+        slot: #2c2560, inventory slots, the hunk header, chips and the disabled merge button
+        frame: #f2f0ff, pixel borders, main text and focus
+        muted: #b9b2e6, secondary text and line numbers
+        gold: #ffd23f, counters, the menu cursor, the primary button and requested changes
+        hp: #4fe07a, health blocks, passed, approved, Open and added lines
+        hurt: #ff6464, the broken health block, failing and removed lines
+        sky: #6cb8ff, links and the linked issue
+        pink: #ff8ad8, box titles
+        ink: #100c24, text on gold, green and sky fills
+    type:
+        One monospace stack with a pixel font first, Press Start 2P, Lucida Console,
+        DejaVu Sans Mono, ui-monospace. Dialog text 15px on 1.6 in normal case so it
+        stays readable. The title 24px at 700. Box titles 16px caps tracked 0.1em in
+        pink. HUD counters 14px at 700 caps. No smoothing tricks, only crisp shapes.
+    layout:
+        A 1160px game screen on a night background. A HUD bar runs across the top
+        with a pixel B emblem, the owner and repository, a Private lock tag and
+        three coin style counters for Watch 12, Star 48 and Fork 3. Under it the six
+        tabs sit in a menu box with a gold arrow cursor beside Pull requests. The
+        main area is a two column grid of notched pixel boxes. The wide Quest box
+        holds the number 214, the title, the Open tag and the merge sentence spoken
+        by a pixel portrait of Sam Ortiz. The narrow Party box lists Jonas Weber and
+        Tomás Ruiz with pixel portraits and their verdicts. A full width HP box
+        shows the twelve checks as health blocks, the failing block cracked with an
+        x, and names e2e-android. The Inventory box shows the three files as square
+        slots with counts, the Scroll box holds the diff with the comment as a
+        speech bubble, and a Stats box lists assignees, labels, milestone and linked
+        issue above a locked Merge button. Below 900px every box takes the full
+        width.
+    spacing: A 4px pixel unit. 20px box padding, 16px between boxes, 8px inside slots.
+    density: Medium. Chunky boxes with a few items each.
+    corners: Notched pixel corners made by stepping the border, never rounded.
+    borders:
+        4px frame borders drawn as stepped box shadows so the corners are notched,
+        with a 4px dark inner line. Slots have 4px slot borders.
+    shadows: A hard 4px drop step in black under boxes and buttons, no blur.
+    icons:
+        Pixel icons drawn on an 8 by 8 grid with crisp edges at 16px, always with a
+        word. A pixel check for passed and approved, a pixel x for failing, a pixel
+        triangle with a bang for requested changes, a pixel padlock for the blocked
+        merge, a pixel eye, star and fork for the counters.
+    focus: A 4px gold outline offset 4px with stepped corners.
+    tone:
+        Playful game labels for boxes, such as Quest, Party, HP and Inventory, with
+        plain words for the content.

@@ -1,0 +1,55 @@
+export anchor NightFlightStyle:
+    number: 414
+    screen: TravelPlanner
+    name: Night flight
+    idea: The trip shown as a seatback screen in a darkened cabin, a deep violet bezel around a glowing moving map, swipeable itinerary tiles and a round icon dock, lit by a lavender and pink mood strip.
+    base: dark
+    palette:
+        cabin: #0c0a18, the page, the cabin around the screen and the style sheet
+        bezel: #050409, the rounded seatback frame
+        screen: #141127, the map ground, dock buttons and secondary buttons
+        panel: #1d1936, side panels and list rows
+        line: #34305a, hairlines, the map grid and panel edges
+        ink: #ece9ff, text and map labels
+        muted: #aaa3d6, labels, meta and HUD captions
+        mood: #b49cff, the primary button, the logo disc and icon tint
+        onMood: #1a0f3d, text on the mood fill
+        glow: #ff9ad5, the route arc, city dots, the blossom note and focus
+        booked: #8ee6b8, Booked and Done text and icon on a dark green pill
+        pending: #ffc98a, Not booked and To do text and icon on a dark amber pill
+    type:
+        One system stack, system-ui, Segoe UI, Roboto. Base 15px at 1.5. Big
+        figures 44 to 48px at weight 200 with tabular numbers, the trip
+        title 36px at 300, section titles 24px at 300, tile titles 19px at
+        500, labels 12 to 13px caps tracked 0.1em in muted.
+    layout:
+        A cabin band with a soft violet ceiling glow and a thin lavender to
+        pink light strip across the top. Centred in it a near black bezel
+        with a 32px radius holds the whole screen. A top row has a lavender
+        B disc with Brightwork Trips, the trip dates on the right and a pill
+        Share trip button. Below, a two column grid. The wide left card is
+        the moving map, a dark violet chart with a faint grid, an abstract
+        coast, three pink city dots for Tokyo, Kyoto and Osaka joined by a
+        dotted arc and a small white plane. The title Japan in April and
+        Mara Okafor and one guest float on translucent chips over the map,
+        and a HUD strip under it shows Route, Length 14 days and Stays
+        booked 2 of 3. The right column stacks Budget with a 44px 3,200 and
+        a lavender to pink glowing meter, Weather on arrival with a 48px 17
+        degrees and a pink blossom line, and Before you fly with the four
+        checks as pills. Under the grid, Itinerary is a sideways scrolling
+        rail of six tall tiles, each with an icon disc, date, title, detail
+        and a status pill. A dock of rounded icon buttons ends the screen,
+        Book train filled in lavender. Below 900px the right column drops
+        under the map, and at phone width the HUD cells stack.
+    spacing: An 8px unit. 20px bezel padding, 16px between map and panels, 12px between tiles and 40px of cabin around the bezel.
+    density: Low to medium. One large map, three side panels and one row of six tiles.
+    corners: Very soft. A 32px bezel, a 24px map, 20px panels, 18px tiles and pills for chips and buttons.
+    borders: A 1px violet line round every panel and tile, and between HUD cells.
+    shadows: A deep black drop under the bezel with a faint lavender halo. The budget meter and the ceiling strip glow.
+    icons:
+        Rounded line icons at 1.8 stroke inside round tinted discs. Booked
+        is a check circle, Not booked a dashed open circle, Done a checked
+        box, To do an empty box and Flight a plane, each beside its word in
+        a pill.
+    focus: A 3px pink outline offset 3px, also round the scrolling tile rail.
+    tone: Calm cabin announcements such as Before you fly, Weather on arrival and Itinerary.

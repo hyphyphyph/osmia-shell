@@ -1,0 +1,57 @@
+export anchor BakeryBoxStyle:
+    number: 83
+    screen: ProjectsDashboard
+    name: Bakery box
+    idea: The dashboard is a pink pastry box tied with striped tape, with projects sitting in its compartments as round cakes that fill like a pie, numbers hanging on cake tags from twine and every status on a notched tag.
+    base: light
+    palette:
+        shop: #fff6f2, the page
+        boxPink: #f9dfe6, the lid band and the box
+        deepPink: #f2bccb, tag lips, dotted rules and last week bars
+        tape: #e2789a, diagonal stripes with white on tape bands, decoration only
+        cream: #fffaf6, compartments, tags and panels
+        cocoa: #3b1f2b, text and 2 to 3px outlines
+        milkCocoa: #6a4553, secondary text
+        raspberry: #a3224d, the primary button, cake fill, this week bars, the overdue tag and focus
+        mint: #2c6a4d, the On track tag
+        caramel: #7b4a00, the At risk tag
+        cherry: #a11c1c, the Behind tag
+        twine: #b08a6e, the dashed string, decoration only
+    type:
+        Script headings use Snell Roundhand, Segoe Script, Lucida
+        Handwriting, Brush Script MT at weight 400, the greeting 50px, box
+        and panel titles 32 to 38px and the brand 30px. Everything else uses
+        Avenir Next Rounded, Nunito, Varela Round, Arial Rounded MT Bold,
+        Trebuchet MS, hanging tag figures 44px at 800, project names 18px at
+        800, tags 13px at 800, body 14 to 16px and labels 11px bold caps
+        tracked 0.16em.
+    layout:
+        A pink lid band starts with a striped tape strip and holds an oval
+        cream seal with Brightwork in raspberry script and a dashed pink
+        inner line, nav as cream pills with Home in raspberry, a round
+        search, a raspberry New project pill, a round bell with a 3 and a
+        dashed avatar ring for Mara Okafor. The greeting sits beside a large
+        tilted cake tag reading 4 tasks are overdue. A dashed twine curve
+        crosses the page with four tags hanging from it, each with a punched
+        hole, a slight tilt and a pink lip, for the summary numbers. The
+        projects sit in a pink box with a 3px outline and a striped tape
+        band down its middle, under the script title Today’s box of six, as
+        six cream compartments, each with a round cake whose raspberry
+        slice is the percent and a cream pill with the figure, the name,
+        team and tasks, Ready and the due date, and a status tag. Below
+        sit Out of the oven, a bar chart of cupcake bars with round tops,
+        pale pink last week and raspberry this week, and an Order slip with
+        a piece of tape on its corner. At 375px compartments stack and the
+        tags go two by two.
+    spacing: An 8px unit, soft. 14px between compartments and 22px box padding.
+    density: Low to medium. Six compartments with one cake each.
+    corners: Very round. 22px panels, 16px compartments, pill buttons and notched tags.
+    borders: 2 to 3px cocoa outlines everywhere, with striped tape bands across the lid, the box and the style sheet.
+    shadows: Flat coloured lips only, 3 to 6px of pink or deep raspberry under tags and buttons.
+    icons:
+        Pie cakes for progress and hanging tags for numbers. Status tags
+        have a notched end and a punched hole and pair the word with a disc
+        tick for On track, a triangle for At risk and a crossed square for
+        Behind.
+    focus: A 3px raspberry outline offset 3px with a 7px pale pink halo.
+    tone: A sweet shopkeeper, such as fresh from the oven, Today’s box of six, Out of the oven, Order slip and Ready 14 Nov.

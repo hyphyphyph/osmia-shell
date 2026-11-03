@@ -1,0 +1,8 @@
+// Architecture skills: explore, define interfaces, analyse
+// dependencies, compare tradeoffs and assess risks. They share
+// CruxArchBase in lib/.
+from ./CruxArchDependencies export *
+from ./CruxArchExplore export *
+from ./CruxArchInterfaces export *
+from ./CruxArchRisks export *
+from ./CruxArchTradeoffs export *

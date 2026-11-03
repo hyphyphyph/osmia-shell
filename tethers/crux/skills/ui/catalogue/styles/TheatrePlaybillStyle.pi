@@ -1,0 +1,49 @@
+export anchor TheatrePlaybillStyle:
+    number: 96
+    screen: ProjectsDashboard
+    name: Theatre playbill
+    idea: The dashboard as an open theatre programme, two framed pages under a crimson valance, with the team as the company, projects as scenes in Act I, the fortnight as Act II and activity written as stage directions.
+    base: light
+    palette:
+        programmeIvory: #fbf7ef, both pages, fields and the style sheet
+        foyer: #efe7da, the table behind the open programme
+        crimson: #8e1b2b, the valance, act labels, week two bars, Behind and overdue
+        houseInk: #1c1a1f, text, rules and frames
+        usherGrey: #4d4650, subtitles, roles and cues
+        brass: #7a6328, ornaments, scene numbers, inner frames and week one bars
+        lampGold: #e8c66a, the focus halo, never text
+        laurel: #2d5a3a, On track
+        amber: #83500a, At risk
+    type:
+        Titles and body use Baskerville, Baskerville Old Face, Libre
+        Baskerville, Georgia, serif. Labels use Optima, Candara, Segoe UI,
+        sans-serif in caps tracked 0.16 to 0.3em. The brand is 34px italic,
+        the greeting 44px italic, act heads 28px small caps under a 12px
+        caps act label, figures 30px italic, scene names 20px, stage
+        directions 16px italic, labels 11 to 12px.
+    layout:
+        A crimson valance holds the italic brand, an outlined search field,
+        the bell, an ivory New project button, the user in caps and a row of
+        caps nav links, and ends in a scalloped swag edge. Below sits an open
+        programme with a five to seven column split, a soft spine shadow
+        where the pages meet, and each page framed by an ink line with a
+        brass rule inside. The left page has the date kicker, the greeting,
+        an ornamental rule, the overdue notice, Tonight's figures as four
+        dotted leader lines with large italic numbers, and The company, the
+        seven people in small caps with their projects in italic. The right
+        page has Act I The projects with six scenes, each name joined to its
+        percent by a dotted leader, meta, status and a thin brass bar, an
+        ornament marked Interval, Act II The fortnight as a slim bar chart
+        topped with diamonds, and Act III From the wings with each event as
+        a stage direction starting Enter. Pages stack below 900px.
+    spacing: An 8px unit. 40px page margins, 32px between sections, everything on the page axis.
+    density: Medium. Leader dots let names and values share long lines, as in a cast list.
+    corners: Square pages and buttons. Only the valance hangs in soft scallops.
+    borders: A 1px ink frame with a 3px brass rule 8px inside it on each page. Looped ornamental rules divide sections. Dotted leaders join names to values.
+    shadows: Only the spine, a soft inner shadow where the pages meet, and a light lift under the spread.
+    icons:
+        Small solid emblems. A four pointed spark for On track, a half filled
+        moon in a ring for At risk and a falling curtain triangle for Behind
+        and overdue, each beside the caps word.
+    focus: A 2px ink outline offset 3px inside a 6px lamp gold halo. On the valance the outline is ivory.
+    tone: Front of house voice, such as Tonight's figures, The company, Interval and Enter Sam Ortiz.

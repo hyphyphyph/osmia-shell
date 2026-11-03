@@ -1,0 +1,52 @@
+export anchor HolographicStyle:
+    number: 259
+    screen: DesignEditor
+    name: Holographic
+    idea: Floating capsules and glass cards on deep black, each rimmed with a thin iridescent foil edge that shifts from cyan to lilac to pink, so the interface reads as light caught in a hologram while the content stays plain.
+    base: dark
+    palette:
+        void: #06060a, the page and canvas with two faint lilac and cyan glows
+        glass: #0e0e16, capsules, cards and the style sheet
+        glassRaised: #151522, fields, layer icon tiles and Present
+        selectedGlass: #1a1a2a, the selected layer inside its foil rim
+        line: #262636, field borders and dividers
+        ink: #f2f2fa, text
+        mist: #a9a9c2, meta, labels and status
+        foilCyan: #7ef3ff, foil start, handles, status icons and focus
+        foilLilac: #b9a4ff, foil middle, field keys and the frame outline
+        foilPink: #ff9ad5, foil warm stop
+        foilGold: #ffe39a, foil highlight stop
+        foilMint: #8affc1, foil end
+        magenta: #b0189a, the 32 px guide with white text
+    type:
+        system-ui, Segoe UI, Roboto, Helvetica Neue, Arial for text and ui-
+        monospace for values. Card titles are 20px 650 filled with the foil
+        gradient, layer names 14px 550, values 13px 500 mono, meta 12px, and
+        group labels 11px caps tracked 0.16em.
+    layout:
+        Nothing touches the edges. Three capsules float across the top, a file
+        capsule with a foil orb B mark, Canvas · Website redesign over Home
+        v3, a centred tool capsule with six round tools where Move is filled
+        with foil and dark icon then 66%, and a people capsule with three
+        pastel avatars, a foil rimmed Present and a foil filled Share. Below
+        float a 264px layers card, the frame and a 284px inspector card, each
+        glass with a 1px foil rim and 22px corners. Layers show an icon tile,
+        name and sub line, Hero inside a foil rim with a foil tile and a cyan
+        Selected. The white Hero frame has a lilac outline and round cyan
+        ringed handles. The inspector uses chips with mono keys such as X 0, W
+        1440, Gap 32, Pad 96, Fmt PNG and Scale 2x. The status is a foil
+        capsule centred at the bottom of the canvas. The foil gradient runs at
+        115 degrees through #7ef3ff, #b9a4ff, #ff9ad5, #ffe39a and #8affc1.
+        Below 860px the pieces stack with the frame and status first and the
+        tool capsule sticks to the bottom.
+    spacing: An 8px unit. 20px between floating pieces, 20px card padding, 8px between chips.
+    density: Light to medium, everything floating with black between.
+    corners: Very round. 22px cards, 14px rows, 12px chips, full capsules for bars and buttons.
+    borders: A 1px iridescent foil rim on every capsule, card, the selected row and the comment, with plain 1px lines inside.
+    shadows: Soft black 0 20px 50px under cards and a faint cyan bloom under the frame.
+    icons:
+        Round line icons at 1.5px stroke, 18px, in 30px tiles in the layer
+        list. Selected is a circled check, Collapsed a right chevron, Saved a
+        cloud with a check, always with the word.
+    focus: A 2px cyan outline offset 3px with a 6px cyan haze.
+    tone: Light and modern with short labels such as Pad, Fmt and Saved 2 minutes ago.

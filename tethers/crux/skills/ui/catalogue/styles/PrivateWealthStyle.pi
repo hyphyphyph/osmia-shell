@@ -1,0 +1,64 @@
+export anchor PrivateWealthStyle:
+    number: 364
+    screen: FinanceBudget
+    name: Private wealth
+    idea: A discreet private client statement in near black, with fine gold double rules, serif old style figures, a centred monogram and a framed goal arc, so money reads as quiet and well kept.
+    base: dark
+    palette:
+        page: #0e1013, the page and the style sheet
+        surface: #14171b, kept for hover rows
+        gold: #c9a961, every rule, meter fills, the goal arc and the primary button
+        goldText: #d9bf85, the brand, section heads, links, Fully drawn and focus
+        line: #3a352a, hairlines between rows and meter tracks
+        ink: #ece6d8, text and figures
+        muted: #a8a193, labels, dates and notes
+        within: #b0cba8, Within and money received
+        exceeded: #eba496, Exceeded, the owed card balance and overspend hatching
+        onGold: #17140c, text on the gold button
+    type:
+        Headings and figures use Iowan Old Style, Palatino Linotype, Palatino,
+        Book Antiqua, Georgia with old style numerals. Labels use system-ui,
+        Segoe UI, Roboto, Helvetica Neue, Arial. Base 15px at 1.6. The title is
+        40px at 400, centred. Holding figures are 38px serif with a small gold
+        euro sign. Section heads are 17px serif small caps tracked .16em in gold
+        text. Category names are 18px serif. Labels are 12px sans caps tracked
+        .16em.
+    layout:
+        A centred 1040px statement. The masthead is a three part row, the brand
+        in gold small caps on the left, a round gold ringed MO monogram in the
+        centre and Mara Okafor with October statement in euros on the right,
+        ruled below by a gold line with a dark hairline under it. Four tracked
+        caps nav links sit centred below, Overview underlined in gold. The
+        centred title Your October position has an italic note under it. A
+        Holdings band follows, ruled gold above and below, holding three centred
+        columns split by hairlines, Everyday account, Savings, and Credit card
+        in rose with a clock and Owed, due 12 November. Below, a wide column
+        holds the October allocations table with category, a hairline track with
+        a 3px gold fill and a white tick at the limit, spent of limit, and a
+        standing word on the right. A narrow column holds The goal in a double
+        gold frame with a thin gold semicircle arc at 64 percent, 3,200 of 5,000
+        saved, 1,800 remaining and the target date. Recent movements runs full
+        width as a ruled list with date, serif payee and the amount with an
+        arrow. A gold ruled footer closes the statement. Below 760px holdings
+        stack, the table rows become two line blocks with the bar under them and
+        the goal moves under the table.
+    spacing: An 8px unit. 32px gutter, 56px between bands, 24 to 28px inside holdings.
+    density:
+        Low. Three holdings, five allocations, five movements and one goal with
+        plenty of air.
+    corners: None, except the round monogram and round swatches.
+    borders:
+        Gold 1px rules round the holdings and under the masthead, dark gold
+        hairlines between rows, a double frame round the goal.
+    shadows: None.
+    icons:
+        Few and thin, 1em outline shapes beside words. A circle check for
+        Within, a ruled square for Fully drawn, a triangle for Exceeded by 62,
+        up and down arrows for movements and a clock for the due date. The
+        overspent track turns into rose dashes past the limit tick.
+    focus:
+        A 1px gold text outline offset 4px with a second gold ring outside a
+        page coloured gap.
+    tone:
+        Formal and discreet, such as Your October position, Holdings,
+        Allocations, Recent movements and Exceeded by 62.

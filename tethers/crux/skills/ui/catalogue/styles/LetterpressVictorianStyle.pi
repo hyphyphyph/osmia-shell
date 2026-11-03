@@ -1,0 +1,48 @@
+export anchor LetterpressVictorianStyle:
+    number: 73
+    screen: TodayMobile
+    name: Letterpress Victorian
+    idea: The day is set as a Victorian playbill in black and red ink on cream stock, with mixed wood-type headings, fleurons and double rules announcing each task like an act.
+    base: light
+    palette:
+        creamStock: #f4ecd6, the page behind the bill
+        billPaper: #faf4e2, the printed sheet and fields
+        tint: #ebdfc0, the avatar disc
+        blackInk: #1b1712, type, rules and frames
+        fadedBrown: #4f4234, meta, project lines and upcoming notices
+        vermilion: #a11d17, the second ink for fleurons, overdue, priority, the add button and focus
+    type:
+        Mixed wood type, changing per entry. Condensed display Impact,
+        Haettenschweiler, Arial Narrow Bold, sans-serif in caps for the
+        46px wordmark, 22px section heads and every third task name at
+        24px. Slab Rockwell, Clarendon, Roboto Slab, Georgia at 700 for the
+        26px date, 20px meeting hours and the next task names. Didone
+        Didot, Bodoni MT, Big Caslon, Georgia in bold italic for the other
+        task names and meeting names at 18 to 21px, and at 10 to 11px caps
+        tracked 0.2em for small labels. Body text is Bookman Old Style,
+        Palatino, Georgia at 15 to 16px italic.
+    layout:
+        A centred playbill up to 400px. A 3px black border, a cream gap and
+        a hairline make the outer frame, and an inner hairline frame has
+        red corner ornaments. Everything is centred. The header has the
+        issue line No. 306 and a ringed avatar, The in red italic over
+        BRIGHTWORK in wood type, a fleuron row, a double rule, the date in
+        slab and Featuring 6 tasks and 2 meetings in italic with the counts
+        in red. Section heads sit between twin hairlines. Meetings show a
+        boxed hour with morning or afternoon beside the name and length.
+        Each task is a centred entry with an ordinal such as The first, the
+        name, for and the project, and a notice. The bottom bar sits under a
+        double rule with a ringed red round add button.
+    spacing: An 8px unit. 10px above and below each entry, 18px before section heads.
+    density: Medium and theatrical, with large headings and ornaments between sections.
+    corners: Square. Only the avatar, badge and add button are round, each with an extra ring.
+    borders: 3px double rules, 1px rules between tasks, dotted rules between meetings, and twin hairlines beside section heads.
+    shadows: None on the screen. Buttons use a hard 3px offset ink shadow like a misregistered print.
+    icons:
+        Printer's ornaments and glyphs. Fleurons ❦ ❧ ✥ divide sections. A
+        pointing hand marks the current tab and high priority. Notices pair
+        a word with ✦ for Due today, a ring for upcoming, ✓ for Done and ✗
+        on a solid red block for Overdue. Nav icons are thin engraved line
+        drawings such as a sun for Today.
+    focus: A 2px vermilion outline offset 3px with an extra vermilion hairline ring outside.
+    tone: A playbill announcer, such as Featuring 6 tasks and 2 meetings, The first and lasting 30 min.

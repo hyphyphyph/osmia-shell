@@ -1,0 +1,62 @@
+export anchor CassetteJCardStyle:
+    number: 93
+    screen: ProjectsDashboard
+    name: Cassette J-card
+    idea: The dashboard is a home-made mixtape, with the week written on a cassette label, the projects as a hand-lettered track list on a folded J-card with tape counters and reels, and the chart as segmented recording levels.
+    base: light
+    palette:
+        desk: #eceef0, the page
+        card: #fbfaf6, the J-card, labels and panels
+        shell: #d9dce1, the cassette shell and the header
+        shellLine: #9aa0aa, shell edges and fold lines, never text
+        print: #222428, printed text and counters
+        grey: #575c66, small print and day letters
+        penBlue: #1f3a8a, handwriting, this week segments and focus
+        ruledLine: #c9d3e6, label lines, never text
+        labelRed: #c8323a, label stripes and the focus ring
+        recordRed: #ad2530, the primary button, track numbers, overdue and Behind
+        mint: #9fd8c8, a cover stripe, never text
+        lilac: #c7b8e6, a cover stripe, never text
+        peach: #f6c39b, a cover stripe, never text
+        tape: #5a4a3a, tape wound on the reels
+        green: #23663f, On track
+        amber: #8a5100, At risk
+    type:
+        Three stacks. Handwriting uses Marker Felt, Segoe Print, Bradley
+        Hand, Chalkboard SE, Comic Sans MS, cursive in pen blue for the
+        52px greeting, 40px label numbers, 22px track names, times, the
+        user and the search. Printed text uses Eurostile, Microgramma, Bank
+        Gothic, Michroma, Verdana at 15px, with 11 to 15px bold caps
+        tracked 0.2em for labels and 34px caps on the cover. Counters and
+        track numbers use SF Mono, Menlo, Consolas at 700 and 15 to 18px.
+    layout:
+        A grey deck strip holds the brand handwritten on a white tape
+        label with a red top stripe, nav as raised keys with a 3px bottom
+        edge where the current key is black and pressed down, a search
+        with handwritten placeholder, a red key with a record dot for New
+        project, a bell key and the user in pen. The top row has Side A
+        Home, a tilted handwritten Good morning, Mara, the date in caps and
+        a red boxed line with a record dot saying 4 tasks are overdue.
+        Beside it a cassette shell carries a label with a red, peach and
+        lilac stripe, the title this week's mix and the four numbers
+        handwritten over caps labels, above a tape window with two reels.
+        The J-card unfolds as a front cover with diagonal pastel stripes
+        and Projects mix vol. 6, a vertical spine with a red stripe, and a
+        wide flap with the track list. Each track has a red mono number,
+        the handwritten name, team, tasks and due date, a black three digit
+        tape counter showing the percentage, two reels whose tape has
+        wound from left to right by the percentage, and the status. Below,
+        a recording log and a levels chart where each day is a column of
+        segments, one segment per task. Below 960px the J-card panels
+        stack and the spine turns horizontal.
+    spacing: An 8px unit. 10px per track row and 32px between the cassette, the card and panels.
+    density: Medium. Each track packs a name, a counter, reels and a status into one row.
+    corners: 14px on the cassette shell, 6px on the label, 3px on keys and fields, square on the J-card.
+    borders: 1px shell grey on paper, dashed fold lines between card panels and 3px bottom edges on keys like a tape deck.
+    shadows: One soft drop under the J-card. Keys press down by losing their thick bottom edge.
+    icons:
+        Tape deck transport marks with the caps word. On track is Play, At
+        risk is Pause, Behind is Rewind and overdue is the round Record
+        dot.
+    focus: A 2px pen blue outline offset 2px, then a card coloured gap and a 2px label red ring.
+    tone: A friend's mixtape, such as this week's mix, Track list, Recording log and Rec 4 tasks are overdue.

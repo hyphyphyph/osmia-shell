@@ -1,0 +1,51 @@
+export anchor GamifiedStyle:
+    number: 21
+    screen: ProjectsDashboard
+    name: Gamified
+    idea: Productivity as a friendly game, with XP bars, level badges, a streak counter and achievement chips in bold purple, orange and green on white.
+    base: light
+    palette:
+        white: #ffffff, the page and cards
+        lilac: #f3effc, the XP track, the active tab and avatar tiles
+        lilac2: #e2d9f8, the XP track rim, last week's bars and the secondary button edge
+        line: #e4e0ef, 3px card outlines and the quest card press edge
+        purple: #6d28d9, XP fill, level badges, links and this week's bars
+        purpleDark: #4c1d95, the focus halo and chart value labels
+        green: #15803d, the go button and the top level badge, with a #0d5a2a press edge
+        orange: #c2410c, the streak number and notification count, with #8a2e08 text on #ffedd5
+        gold: #facc15 with #422006 text, the score chip and the focus ring
+        red: #b91c1c on #fee2e2, the overdue cards and the Behind tag
+        text: #1e1b2e, body text, with #565166 for muted text
+    type:
+        ui-rounded, SF Pro Rounded, Arial Rounded MT Bold, Varela Round,
+        Nunito, Trebuchet MS, system-ui, sans-serif. Weights are heavy,
+        900 for headings and numbers and 600 for body. The score is 44px,
+        the greeting 30px, section titles 22px, quest names 18px, body
+        15px, tags 13px. Buttons are 15px uppercase with 0.02em tracking.
+    layout:
+        A top bar with a hexagon lightning logo, six icon tabs, a search,
+        a bell with a count bubble and the avatar, kept on one line on wide
+        screens. Below it three columns. The left player column holds the
+        greeting card, an orange streak card with a flame and 14 day
+        streak, a red overdue card and a two by two grid of summary stats.
+        The centre quest board shows six project cards in two columns,
+        each with a hexagon level badge, an XP bar, task count and status
+        tag, plus a green New project button. The right column holds the
+        chart card and a team feed with achievement chips. Below 1240px the
+        right column moves under the others, and below 640px all is one
+        column with tabs as a three by two grid.
+    spacing: An 8px unit. 16px between quest cards, 18 to 20px card padding and 24px page gutters.
+    density: Medium. Three columns, chunky controls and every number big and bold.
+    corners: 24px on cards, 16px on buttons and rows, 14px on fields and tabs, hexagons for level badges.
+    borders: 3px solid #e4e0ef on every card, field and tab. Status tags use a 2px tinted rim.
+    shadows: No blur. Solid offset press edges, 0 5px 0 a darker shade under buttons and 0 6px 0 #e4e0ef under quest cards.
+    icons:
+        22px chunky filled icons. Level badges are 52 by 58 hexagons with
+        LV over the level, which is the tens digit of the percent done.
+        Status tags show a star for On track, a triangle with an
+        exclamation mark for At risk and a circle with a down arrow for
+        Behind. Each feed item earns a small achievement chip such as Task
+        done, Team player, Level up, New quests, Deep focus or Delivered.
+        Chart bars are rounded with the value printed on top.
+    focus: A 4px gold outline offset 2px, ringed by a 7px dark purple halo.
+    tone: Upbeat and playful but plain, such as Let’s go, Mara!, Quest board, 14 day streak and +14 on last week, with uppercase buttons.

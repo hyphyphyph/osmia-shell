@@ -1,0 +1,56 @@
+export anchor ConcertStageStyle:
+    number: 328
+    screen: MusicPlayer
+    name: Concert stage
+    idea: The player is a live stage seen from the crowd, with light beams falling from a truss, the song title lit in a spotlight, a crowd silhouette along the front and the queue taped down as a hand set list.
+    base: dark
+    palette:
+        backdrop: #0b0912, the page, the stage and the style sheet
+        floor: #15121d, the control barrier, the set list card and the passes
+        truss: #2f2a3a, the truss bar, borders and dividers
+        houseLight: #f7f3ec, titles and body text
+        haze: #b8b0c4, artists, times and labels
+        spot: #ffcf5a, the spotlight pool, the pause button, the current set list row and focus
+        onSpot: #1f1500, text on spot
+        beamViolet: #8a5cff, decorative beams only, never behind text
+        tape: #d8c48e, gaffer tape on the set list and the strap edge of each pass
+    type:
+        Titles use a condensed stack, Avenir Next Condensed, Arial Narrow,
+        Roboto Condensed, Helvetica Neue, Arial, in caps at 800. Body uses
+        Helvetica Neue and Arial at 15px. The title is clamp 52 to 104px
+        with 0.92 line height, set list titles 26px, the lyric on screen
+        32px at 600, pass names 22px, and caps labels 12px at 700 with
+        0.24em tracking.
+    layout:
+        A stage over a control barrier, with a set list column on the
+        right. The stage is about 560px tall, with a hatched truss bar and
+        six glowing lamps across the top, five light beams in warm white
+        and violet fanning down, a soft amber pool in the centre, then the
+        caps line Brightwork Sound, On stage now, the huge condensed title,
+        and the artist with Low Tide. A black crowd silhouette with some
+        raised hands runs along the bottom edge. The barrier under the
+        stage holds round outlined buttons with caps words beneath,
+        Shuffle, Prev, a larger spot yellow Pause, Next, Repeat and Liked
+        with a filled heart, then a thick progress rail with elapsed and
+        total time, and Crowd volume as ten rising bars with seven lit and
+        70%. The right column holds a slightly tilted dark card held by two
+        tape strips, titled Tonight's set, with Harbour Lights first on a
+        spot yellow band with a play arrow and Now, then the five queued
+        songs in big condensed caps with numbers and times. A black screen
+        band shows Lyrics on screen with the current line large behind a
+        play arrow and the next line smaller. Backstage shows the three
+        playlists as passes with a tape strap edge and a punched slot,
+        plus caps links for Albums, Artists and Podcasts. Below 1060px the
+        set list moves under the barrier, and below 560px everything
+        stacks.
+    spacing: An 8px unit. A tall stage, 20 to 32px section padding and 10px set list rows.
+    density: Low on the stage, medium on the set list and the passes.
+    corners: Square stage, barrier and set list, 4px passes, round transport buttons.
+    borders: The truss bar with lamps across the top, 1px truss rules elsewhere, tape strips instead of a frame on the set list.
+    shadows: None on boxes. Light does the work, an amber pool behind the title and beams at 18 to 20 percent.
+    icons:
+        Solid glyphs inside round outlined buttons with caps words below.
+        Liked is a filled heart in a spot ring with the word Liked. The set
+        list marks the current song with a play arrow and the word Now.
+    focus: A 3px spot outline offset 3px.
+    tone: Live show words, such as On stage now, Tonight's set, Lyrics on screen, Backstage and Crowd volume.

@@ -1,0 +1,51 @@
+export anchor KaraokeLyricsStyle:
+    number: 333
+    screen: MusicPlayer
+    name: Karaoke lyrics
+    idea: The lyrics take over the screen, with the current line set huge and wiped in yellow as it is sung, a bouncing ball over the next word, the next line small beneath and every other control shrunk to rounded strips at the edges.
+    base: dark
+    palette:
+        stagePlum: #140b22, the page, the lyric stage and the style sheet
+        booth: #21143a, the top strip, the control pill, ticket cards and fields
+        boothLine: #3d2c63, pill rims, the unplayed track and dividers
+        sungYellow: #ffe14d, the sung words, their underline bar, the ball, the pause button and focus
+        unsungWhite: #f6f1ff, the rest of the current line and main text
+        lilac: #bdb1d8, the next line, artists, times and labels
+        pink: #ff7ac6, the liked heart, ticket numbers and the progress fill
+        onYellow: #1e1400, text on sung yellow
+    type:
+        One rounded stack, ui-rounded, SF Pro Rounded, Arial Rounded MT
+        Bold, Nunito, system-ui, at heavy weights. Base 15px at 600. The
+        current line is clamp 38 to 92px at 900 with 1.3 line height, the
+        next line clamp 20 to 30px at 700, the strip title 17px at 800,
+        ticket titles 16px at 800, and caps labels 12px at 800 with 0.14em
+        tracking.
+    layout:
+        Lyrics first. A rounded top strip holds a yellow Sing along badge,
+        Harbour Lights, the artist and Low Tide, and Brightwork Sound on
+        the right. The middle of the screen, at least half its height, is
+        the lyric stage, with Lyrics, line 1 of 2 over the current line
+        centred and huge. And the harbour lights go is sung, in yellow with
+        a soft glow and a thick rounded yellow underline, a yellow ball sits
+        over out, and out one by one stays white. The next line follows
+        much smaller in lilac after a small caps Next. A long rounded
+        control pill holds round previous, a larger yellow pause and next,
+        a fat pink progress bar between the elapsed and total time, pills
+        for Shuffle Off, Repeat Off and Liked with a pink heart, and a
+        volume bar with 70%. Below, Up next to sing shows five rounded
+        ticket cards with a pink numbered disc, the time, the title and the
+        artist, and Your songbook lists the playlists with counts and pill
+        links for Albums, Artists and Podcasts. Below 1100px the control
+        pill stacks into rows and the songbook moves under the tickets,
+        and below 560px the line drops to 36px and tickets stack.
+    spacing: An 8px unit. 48px around the lyric stage, 12px inside pills and 16px between groups.
+    density: Very low in the middle, compact at the edges.
+    corners: Fully rounded strip, control pill, buttons and fields, 20px ticket cards and songbook.
+    borders: 2px booth line rims on pills, buttons and tickets. The sung words carry a thick rounded yellow underline.
+    shadows: Only a soft yellow glow of 24px at 40 percent behind the sung words and the ball.
+    icons:
+        Chunky solid glyphs in round buttons. A yellow ball marks the next
+        word, and sung words are underlined as well as yellow. Liked is a
+        filled pink heart with the word Liked. Toggles say Off.
+    focus: A 3px yellow outline offset 3px, following the pill shape.
+    tone: Friendly and loud, such as Sing along, Up next to sing, Your songbook and Next.

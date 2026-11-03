@@ -1,0 +1,63 @@
+export anchor DarkBentoStyle:
+    number: 231
+    screen: ProjectsDashboard
+    name: Dark bento
+    idea: An asymmetric bento of rounded tiles in different sizes and faint tints on near-black, where size carries priority, so the greeting and the overdue count are the biggest tiles and the two troubled projects outsize the healthy ones.
+    base: dark
+    palette:
+        night: #09090b, the page gaps and the style sheet
+        tile: #151518, plain tiles, fields and the nav pill
+        greetingTile: #1a1724, the violet tinted greeting and hours tiles
+        overdueTile: #2a1517, the coral tinted overdue tile
+        overdueInk: #ffb4a8, text and the huge figure on the overdue tile
+        chartTile: #0f1b1c, the teal tinted chart tile
+        okTile: #111a15, faint green project tiles
+        riskTile: #211c10, the faint amber project tile
+        badTile: #261416, the faint red project tile
+        line: #2a2a30, edges of fields and the nav pill
+        ink: #f4f4f5, text, figures, progress fill and the current nav pill
+        muted: #a1a1aa, labels and meta
+        pink: #ff8fb1, the logo, the primary button and focus
+        onPink: #2e0614, text on pink
+        teal: #4fd1c5, this week bars
+        lastWeek: #71717a, last week bars
+        ok: #86e0a5, the On track chip
+        risk: #f5cb6b, the At risk chip
+        bad: #ff9a8a, the Behind chip and the overdue line
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue. Base
+        14px. The greeting is 52px at 850 tracked minus 0.04em, the overdue
+        figure 112px at 900, the hours figure 88px, other tile figures 44px
+        at 850, project percents 30px and 64px on the largest tile, project
+        names 16px at 800, tile labels 13px at 700 in muted.
+    layout:
+        A top row holds a pink rounded B logo, a pill nav with icons and
+        labels where Home is a white pill with dark text, a pill search, a
+        pink pill New project, a round bell and a rounded MO tile named Mara
+        Okafor. The bento is a 12 column grid with 12px gutters. The first
+        two rows give six columns to the greeting tile with the date, Good
+        morning, Mara. in 52px heavy type and 4 tasks are overdue in coral,
+        three columns to the overdue tile with a 112px figure 4 and Clear
+        these first, and three columns stacked with Active projects 6 and
+        Tasks due this week 23. The third row gives nine columns to the
+        teal tinted chart tile with values over the bars and the totals, and
+        three to the hours tile with 186. The last row gives eight columns
+        to a nested project bento of four columns. Billing migration takes a
+        two by two tile, Mobile app 2.0 a wide tile, Website redesign and
+        Q4 customer survey single tiles, and Spring catalogue and Onboarding
+        emails wide tiles. Each project tile is tinted by status and holds a
+        status chip, name, category and due, a big percent, a thick white
+        track and tasks. Four columns go to What happened, the activity
+        list. Below 1180px nav labels hide and tiles reflow. Below 700px the
+        grid is two columns and the chart scrolls inside its tile.
+    spacing: An 8px unit. 12px gutters between every tile, 22px tile padding, 32px in the greeting tile.
+    density: Medium. Few words per tile and very large figures, with size showing priority.
+    corners: Big. 22px tiles, 14px logo, avatar and fields, pill nav, buttons and chips.
+    borders: None on tiles, which separate by tint and gutter. Only the nav pill and fields carry 1px #2a2a30.
+    shadows: None. Near-black gutters do the work.
+    icons:
+        Bold line icons at 2px stroke, 18px. Status chips sit on a
+        translucent black pill with a check circle, a triangle or a crossed
+        square and the word.
+    focus: A 3px pink outline offset 3px.
+    tone: Punchy and direct, such as Good morning, Mara., Clear these first and What happened.

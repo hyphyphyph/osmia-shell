@@ -1,0 +1,53 @@
+export anchor ClubLEDStyle:
+    number: 327
+    screen: MusicPlayer
+    name: Club LED
+    idea: The screen is a wall of LED modules in a black housing, with the title spelled in round lit dots on a matrix, a strip of colour blocks that pulse to the beat and square light pads for every control.
+    base: dark
+    palette:
+        housing: #060507, the page, the gaps between modules and the style sheet
+        module: #121015, module faces and unlit pads, with a fine dot texture
+        dotOff: #2a1226, unlit title dots, with unlit progress and volume dots in #241f2b
+        edge: #2d2733, module borders and unlit pad rims
+        ink: #f6eef6, text
+        haze: #ad9fb0, labels and meta
+        magenta: #ff5bd9, the title matrix, the liked pad, playlist counts and focus
+        amber: #ffb22e, the clock matrix, the current lyric and the pause pad
+        cyan: #3fe0ff, progress dots, the volume column, queue bullets and durations
+        onColour: #140510, text on lit pads
+    type:
+        A monospace stack, ui-monospace, Menlo, Consolas, for all text.
+        Base 14px at 1.5. The title and the clock are not type but a 5 by 7
+        dot matrix drawn in SVG with a 10px pitch. The current lyric is
+        clamp 18 to 26px at 700 in caps with 0.08em tracking, queue titles
+        15px at 700 in caps, and labels 12px in caps with 0.2em tracking.
+    layout:
+        A twelve column wall of modules with 4px black gaps. Module 01
+        spans eight columns with Brightwork Sound and a magenta On air lamp,
+        then HARBOUR over LIGHTS in magenta dots with every unlit dot still
+        visible, then the artist and the album in caps. Module 02, the
+        Clock, spells 2 14 in amber dots over of 4 38 and a row of 40 cyan
+        dots lit to just under half. A full width strip of twelve colour
+        blocks in magenta, amber and cyan pulses gently. The Pads module is
+        a three by two grid of square pads, SHUFFLE OFF, PREV, an amber
+        lit PAUSE PLAYING, NEXT, REPEAT OFF and a magenta lit LIKED ON. A
+        narrow Level module holds a column of ten round cyan dots with
+        seven lit from the bottom and 70%. Up next lists the five songs
+        with a ringed cyan bullet, caps titles and cyan times on dashed
+        rules. Lyrics shows the current line in glowing amber caps on a
+        dotted band behind a play arrow, with Next line and the second line
+        in small caps beneath. Crates lists the playlists with magenta
+        counts and caps chips for Albums, Artists and Podcasts. Below
+        1000px every module takes a full row and the level column turns
+        sideways. Below 560px the pulse strip shows six blocks.
+    spacing: An 8px unit. 4px black gaps between modules, 16px inside a module and 8px between pads.
+    density: Medium high. Many small modules, each with one job.
+    corners: 4px modules and pads, perfect circles for every LED dot.
+    borders: 1px edge around every module and 2px rims on pads, coloured when a pad is lit.
+    shadows: Only light. Lit pads and dots glow with 16px of their own colour at 45 percent. No drop shadows.
+    icons:
+        Solid glyphs above a caps word on each pad. State is written on the
+        pad, OFF, PLAYING or ON, and the liked pad adds a filled heart. The
+        current lyric gets a play arrow.
+    focus: A 2px magenta outline offset 3px with a matching magenta glow.
+    tone: Club caps, such as ON AIR, PADS, LEVEL, UP NEXT and CRATES.

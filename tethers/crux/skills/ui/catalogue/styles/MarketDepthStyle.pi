@@ -1,0 +1,59 @@
+export anchor MarketDepthStyle:
+    number: 367
+    screen: FinanceBudget
+    name: Market depth
+    idea: The budget read as an order book, each category a mirrored depth row with spent growing left and remaining growing right from a central limit column, balances on a ticker strip, savings as a goal ladder and transactions as a trade tape.
+    base: dark
+    palette:
+        floor: #090c12, the page and the style sheet
+        panel: #0f131b, the three desk panels, fields and rows
+        head: #151b26, panel title bars, the ticker strip and the limit column
+        grid: #232b3a, 1px gaps between panels and every row line
+        ink: #dfe6f2, text and figures
+        muted: #93a0b5, column heads, dates and side labels
+        spent: #f2b45c, spent figures and spent depth bars
+        remaining: #5fcbe3, remaining figures and bars, the primary button and focus
+        over: #ff8593, deficit hatching, the OVER tag and the owed balance
+        in: #7fe3a9, money in on the tape and filled goal levels
+    type:
+        One monospace stack, ui-monospace, JetBrains Mono, SF Mono, Menlo,
+        Consolas, Liberation Mono. Base 13px. Position figures are 18px at 700,
+        ticker figures 15px at 700, depth figures 14px at 700 in their side
+        colour, panel heads 11px caps tracked .12em at 700.
+    layout:
+        A full width trading desk. The top strip holds a BW slash MONEY mark, a
+        ticker of cells for Everyday, Savings, Credit card with a clock and DUE
+        12 NOV in red, and Oct budget left 60, then MARA OKAFOR, EUR, OCT on the
+        right. Below, three panels sit edge to edge with 1px grid gaps, 260px,
+        flexible and 330px. The left panel lists Positions and then a Goal
+        ladder for the Japan trip, ten stacked levels of 500 from 500 at the
+        bottom to 5,000 at the top, six filled green and the seventh two fifths,
+        with 3,200 of 5,000 filled and the target under it. The centre panel is
+        Budget depth with a header reading spent, limit, remaining. Each
+        category is a 52px row with a framed central cell holding the name in
+        caps and its limit. To the left an amber translucent bar grows from the
+        centre to the share of the limit spent, with the spent figure on its
+        end. To the right a cyan bar grows by the share remaining. Rent shows 0
+        and a dashed FILLED box. Eating out has a dotted red cap on the spent
+        side and a red hatched deficit bar with minus 62 and a boxed OVER tag. A
+        spread row shows 1,870 spent, 1,930 total and 60 left, then a key. The
+        right panel is the Tape with date, payee, an IN or OUT word with an
+        arrow, and amount. Below 1100px the tape drops under, below 760px all
+        stack with the book first.
+    spacing: A 4px unit. 8 to 12px cell padding, 52px depth rows and 1px gaps between panels.
+    density:
+        High. Three panels, a ticker, a five row book with totals, a ten level
+        ladder and a tape.
+    corners: Square, 2px on buttons and fields only.
+    borders:
+        1px grid lines everywhere, panels split by 1px gaps, and a framed limit
+        column in the middle of the book.
+    shadows: None.
+    icons:
+        Tiny glyphs beside capital words. A triangle with OVER in a solid box, a
+        ruled square with FILLED in a dashed box, arrows with IN and OUT and a
+        clock for due.
+    focus: A 2px cyan inset outline with a faint cyan inner wash.
+    tone:
+        Terse trading labels in capitals, such as Positions, Budget depth, Tape,
+        OVER, FILLED and 60 left.

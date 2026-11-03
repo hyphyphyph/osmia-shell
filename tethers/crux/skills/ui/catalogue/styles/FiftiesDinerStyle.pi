@@ -1,0 +1,50 @@
+export anchor FiftiesDinerStyle:
+    number: 51
+    screen: Pricing
+    name: 50s diner
+    idea: A retro American diner menu in cherry red and mint, with script headings, a checkerboard band, chrome trim and dotted price leaders that make choosing a plan feel like ordering lunch.
+    base: light
+    palette:
+        cream: #fffaf0, the page
+        vanilla: #fff3dc, the menu card and the table caption
+        cherry: #c41e3a, script titles, prices, the primary button and the table head
+        cherryShade: #8f1028, the pressed lip under red buttons
+        mint: #a8e6cf, the header band, the free months note and the title shadow
+        mintPale: #dff5ec, the featured plan, striped rows and the style sheet
+        teal: #1d6b55, small capital labels, the secondary button and tick discs
+        cocoa: #3a2e2a, body text, outlines and the checkerboard
+        cocoaSoft: #6a5a52, italic notes and captions
+        chrome: #fbfcfd to #c9d0d7 to #8e98a3 to #dfe4e9, a vertical gradient for the menu rim and the toggle track
+    type:
+        Script is Brush Script MT, Segoe Script, Snell Roundhand, Lucida
+        Handwriting, cursive, set italic. Sans is Futura, Century Gothic,
+        Avenir Next, Trebuchet MS, sans-serif. The title is 96px script
+        with a 3px mint offset shadow, section titles 52 to 56px script,
+        plan names 28px extra bold capitals, prices 40px extra bold, body
+        17px on a 1.5 line, and labels 13px bold capitals at 0.14em.
+    layout:
+        A mint header band with a red star badge logo, the brand in script
+        and pill nav links, closed by a cocoa and cream checkerboard band
+        between cherry lines. A centred hero holds the script title, a teal
+        tagline, a short line and a chrome pill toggle beside a mint 2
+        months free pill. The plans sit in one menu card with a chrome rim
+        and rounded corners. Each plan is a menu line, the name in capitals,
+        a dotted leader and the price at the right, then the billing words,
+        the features joined by red bullets and a pill button. Team is a mint
+        panel inside the menu with a red starburst reading Most popular.
+        Then a rounded white comparison card with a red head and mint
+        striped rows, questions as speech bubbles with a red Q disc, and a
+        checkerboard band above the footer. Below 720px menu lines wrap
+        and buttons drop under the features.
+    spacing: An 8px unit. 24px between menu items, 36 to 40px card padding and 72px between sections.
+    density: Medium. Plans read as stacked menu lines, not cards side by side.
+    corners: Round. 28px menu rim, 20px table card, 16px swatches, fully round pills and buttons, and speech bubbles with one sharp corner.
+    borders: 2px cocoa outlines, dotted leaders and dividers, a double cherry rule under the menu title and the checkerboard bands.
+    shadows: One soft drop under the menu, 0 10px 24px at 18 percent cocoa. A hard mint offset behind the table. Red buttons carry an inset cherryShade lip and a white then grey chrome ring.
+    icons:
+        Few and sign-like. A star badge logo, a starburst for Most
+        popular, white ticks in filled teal circles, a Q disc on each
+        question, a tick on the chosen billing option and plus and minus
+        toggles.
+    focus: A 3px dashed cherry outline offset 4px. A focused field gets a white gap and then a 2px cherry ring.
+    tone: Warm counter talk, such as Today's plans, Ask the counter and What comes on each plate.

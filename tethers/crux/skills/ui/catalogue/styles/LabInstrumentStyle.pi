@@ -1,0 +1,53 @@
+export anchor LabInstrumentStyle:
+    number: 72
+    screen: TodayMobile
+    name: Lab instrument
+    idea: The phone becomes a bench instrument with a screwed chassis, inset readouts on graph paper, tasks logged as labelled samples and meetings plotted on a time axis.
+    base: light
+    palette:
+        bench: #dfe3e1, the page around the device
+        chassis: #eef0ee, the device body and panel headers
+        graph: #f8fbf7, readout and panel paper and fields
+        gridMajor: #c5d8cb, major graph lines every 40px, decorative only
+        gridMinor: #e2ece5, minor graph lines every 8px, decorative only
+        ink: #1a2626, text, axes and readout figures
+        graphite: #4b5a59, engraved labels, units and the Queued flag
+        bezel: #8d9896, panel, sample and field edges
+        traceGreen: #0b6e4f, the add key, primary button, Done and the power light
+        probeBlue: #0e5f86, Due today, meeting blocks and focus
+        alarmRed: #b02a1e, Overdue with a cross, the hatched sample tab and the badge
+        caution: #f5c542, the High priority tag with #4a3500 text
+    type:
+        Monospace ui-monospace, SFMono-Regular, Cascadia Mono, Menlo,
+        Consolas for every value, 26px bold readout counts with small unit
+        letters, 20px bold for the date, 16px bold meeting times and 11 to
+        12px meta with units and deltas. Engineering sans DIN Alternate,
+        Bahnschrift, Segoe UI, Helvetica Neue, Arial for names and labels,
+        15px semibold task names and 9 to 11px heavy caps engraved labels
+        tracked 0.18 to 0.2em.
+    layout:
+        A device body up to 396px centred on the bench, with four corner
+        screws. An engraved plate holds a green power light, Brightwork,
+        Daily analyser and a square avatar. Below it an inset readout shows
+        Run date Monday 2 November and large Tasks 6 and Meetings 2 counts,
+        with 6 tasks, 2 meetings as a small line. Two graph-paper panels
+        follow. Scheduled runs has a time axis plot from 8 to 16 h with the
+        two meetings as blocks, then two run rows with time, name and a
+        delta length. Samples has a due date plot with error bars, a now
+        line and one marker per sample, then six sample labels each with a
+        6px coloured tab, an id such as S-01 and a project code, the name,
+        the project and due date with a day delta, and a status flag. A
+        control strip of round knob tabs and a square green add key ends
+        the device.
+    spacing: A 4px base on an 8px graph grid. 12px between panels, 8px between samples, 6 to 10px padding.
+    density: Dense but ordered. Every value carries a unit or a delta.
+    corners: 2 to 6px like softened metal. Knobs and screws are round.
+    borders: 1px bezel lines everywhere. Sample labels have a 6px tab, hatched red and white for overdue. The current knob gets a 2px ink ring and a small triangle pointer below.
+    shadows: Inset 0 1px 3px for readouts and fields, a white top highlight and a 2px hard bottom edge for the chassis and keys.
+    icons:
+        1.8 stroke line icons inside round knob discs, with a flask for
+        Projects. Status flags pair a word with a filled dot for Due today,
+        a hollow ring for Queued, a tick for Done and a cross for Overdue.
+        High priority is a yellow caution tag with a triangle.
+    focus: A 2px probe blue outline offset 2px plus a soft 5px blue halo.
+    tone: Measured and technical, such as Runs, Samples, Queued, Δt 30 min and +2 d.

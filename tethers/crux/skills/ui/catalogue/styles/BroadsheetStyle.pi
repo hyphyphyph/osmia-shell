@@ -1,0 +1,53 @@
+export anchor BroadsheetStyle:
+    number: 78
+    screen: ProjectsDashboard
+    name: Broadsheet
+    idea: The dashboard is a dense daily front page where the most urgent fact is the banner headline, each project is a story with a dateline and a jump line, and the numbers live in a ruled sidebar.
+    base: light
+    palette:
+        newsprint: #f3f0e6, the page sheet
+        table: #e3dfd3, the surround behind the sheet
+        ink: #191919, text, rules and solid bars
+        grey: #545454, bylines, cutlines and jump lines
+        hairline: #b7b2a5, column rules and dotted list rules
+        halftone: #e6e1d2, hatched photo boxes
+        red: #9b1b1b, the kicker, wire times and Behind
+        green: #2b5a2d, the On track tag
+        brown: #774a00, the At risk tag
+        highlighter: #fff6c9, the focus fill
+    type:
+        Four stacks. The nameplate uses Old English Text MT, Goudy Text MT,
+        Times New Roman at 76px. Headlines use Times New Roman, Times,
+        Liberation Serif at 700, the banner 54px, the lead story 34px,
+        second stories 22px and briefs 18px. Decks are 20px italic. Body is
+        Georgia 14px at 1.42, justified with hyphens in columns. Labels,
+        datelines and tags use Franklin Gothic, Arial Narrow, Arial at 11px
+        bold caps.
+    layout:
+        A utility strip has an underlined search, Notices (3), Mara Okafor
+        and a black New project button. The nameplate row has a boxed ear on
+        each side, This week 73 done and Outlook 4 overdue, around the big
+        Brightwork. A folio line under a 3px rule gives the date, the team
+        edition for Mara Okafor and Six projects inside. Nav is a centred
+        section index with Home inverted. The banner has the red kicker Good
+        morning, Mara, the headline Four Tasks Overdue as Billing Migration
+        Falls Behind and an italic deck. The front splits into a main area
+        and a rail divided by a 1px ink rule. The lead story is Billing
+        migration with a figures line, a drop cap and three justified
+        columns with rules, ending in a jump line. Under it Mobile app 2.0
+        runs in two columns beside Website redesign with a hatched photo
+        box showing 72 percent and a cutline, then three briefs. The rail
+        has a boxed By the numbers list, a Fig. 1 bar chart with open bars
+        last week and solid bars this week, and an In brief wire. At 375px
+        everything is one column.
+    spacing: Tight. 14px between stories and 18px gutters with a rule in each.
+    density: Very high. Three text columns in the lead and briefs in threes.
+    corners: None.
+    borders: A 3px rule under the nameplate, 1px ink between main and rail, hairline column rules, 2px boxes in the rail and dotted list rules.
+    shadows: None on the page. The sheet sits on a darker table.
+    icons:
+        No pictograms. Printer’s shapes before status tags, a disc for On
+        track, a triangle for At risk and a square for Behind. Each story
+        also has a small ruled progress bar.
+    focus: A 2px ink outline offset 2px over a pale yellow highlighter fill.
+    tone: Headline English, such as Four Tasks Overdue as Billing Migration Falls Behind, desk datelines and Continued in.

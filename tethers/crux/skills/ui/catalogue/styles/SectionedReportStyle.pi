@@ -1,0 +1,61 @@
+export anchor SectionedReportStyle:
+    number: 195
+    screen: ProjectsDashboard
+    name: Sectioned report
+    idea: The home screen reads as a numbered status report on a white sheet, with large light section numerals in the margin and a sticky contents list on the left, so the week can be read top to bottom or jumped to by section.
+    base: light
+    palette:
+        desk: #eef0f3, the page behind the sheet and the contents rail
+        sheet: #ffffff, the report sheet, the header and fields
+        ink: #16202e, text, the heavy rules and the nav band
+        muted: #4f5b6b, labels, refs and meta
+        rule: #d5dae1, row hairlines, never text
+        navy: #1f3a68, the primary button, the current nav item, the this week line and focus
+        navyTint: #e6ebf3, initials and the focused row
+        numeral: #5a6b8c, the large section numerals and the last week line
+        green: #1e6b45, On track with a check in a circle
+        amber: #8f4f00, At risk with a bang in a triangle
+        red: #a3222b, Behind with a cross in an octagon and overdue figures
+    type:
+        One sans stack, Helvetica Neue, Helvetica, Arial, Liberation Sans,
+        system-ui, with ui-monospace, SF Mono, Menlo, Consolas for refs.
+        Section numerals are 56px light at minus 0.04em, the greeting 40px
+        bold at minus 0.02em, summary figures 44px light tabular, section
+        titles 22px bold, body 15px at 1.55, refs 12px mono and table
+        labels 11px bold caps tracked 0.1em.
+    layout:
+        A white header row holds a navy square B mark with the brand, a
+        square search field, a navy New project button, a square bell with
+        a red count and an initials square with Mara Okafor. Beneath it a
+        full width ink band carries six caps nav links with Home filled
+        navy. The body is a 220px contents rail and a white report sheet on
+        the grey desk. The rail has a Contents label, a numbered list of
+        Summary, Projects, Needs attention, Throughput and Activity with a
+        3px navy edge on the current item, and a note that the report is
+        for the week ending 31 Oct and prepared for Mara Okafor. It stays
+        sticky while the sheet scrolls. The sheet opens with a caps
+        eyebrow, the greeting and a lede that starts with the red overdue
+        clause, closed by a 3px ink rule. Each section is a two column row
+        with a large light numeral under a 3px navy cap in a 72px margin,
+        and a heading under a 1px ink rule. Section 1 shows the four
+        figures in a row split by thin rules. Section 2 is a ledger table
+        with refs 2.1 to 2.6, team, status, percent with an outlined meter,
+        tasks and due, and a total row. Section 3 lists numbered findings
+        for the overdue tasks and the two troubled projects with derived
+        remaining tasks and target pace. Section 4 overlays this week as a
+        solid navy line with dots on last week as a dashed line with
+        squares, beside a totals list. Section 5 is a when, who and what
+        log. Below 1080px the contents become a horizontal tab row above
+        the sheet, and on phones numerals sit above headings and the
+        ledger scrolls inside its own frame.
+    spacing: An 8px unit. 40px above each section, 56px sheet padding and 24px between numeral and text.
+    density: Medium. Reading pace, with one idea per numbered section.
+    corners: Square everywhere.
+    borders: A 3px ink rule under the report head, a 3px navy cap over each numeral, 1px ink over each heading and ledger head, and 1px grey between rows.
+    shadows: None. The white sheet sits on the grey desk with a 1px border.
+    icons:
+        Line icons at 1.5px with square caps. Status is an outline check
+        circle, bang triangle or crossed octagon beside its word, and
+        overdue uses a clock.
+    focus: A solid 2px navy outline offset 2px with a white gap ring, and a navy tint on a focused ledger row.
+    tone: Report voice with refs, such as 3.2 Billing migration, Total and Change.

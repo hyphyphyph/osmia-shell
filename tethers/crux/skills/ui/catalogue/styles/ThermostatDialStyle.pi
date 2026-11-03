@@ -1,0 +1,54 @@
+export anchor ThermostatDialStyle:
+    number: 375
+    screen: SmartHome
+    name: Thermostat dial
+    idea: One big round thermostat dial for the living room leads the screen, the other rooms sit around it as small ring gauges, and even the day's energy is drawn as a 24 hour clock face.
+    base: dark
+    palette:
+        page: #141416, page ground
+        body: #1c1c20, room cards, cards and the dial rim
+        well: #232328, stat rows, scene discs and fields
+        line: #34343b, card borders and dial edge
+        ink: #f3f1ee, text and the dial reading
+        mute: #aeaab2, labels, meta and dial numerals
+        heat: #ff9a5c, lit dial ticks, warm rings, the active scene and primary button
+        onHeat: #2b1306, text and icons on heat
+        cool: #7cc4ff, cool rings, low hour sectors and focus
+        ok: #8fe0a8, locked ring and battery
+        warn: #ffc65c, motion ring and the garage alert
+    type:
+        A rounded stack, ui-rounded, SF Pro Rounded, Nunito, Varela Round,
+        then system-ui. Base 15px at 1.5. The dial reading is 88px at 300
+        with a 32px raised degree sign, stat figures 22px at 700, room names
+        16px at 700, meta 14px muted and chips 12px at 700.
+    layout:
+        A header row holds a small knob mark with Brightwork Home, the day
+        and time, and on the right a pill shaped alert outlined in yellow
+        with Garage door open for 2 hours and an orange pill Close now. The
+        stage below is a three column grid with a 440px round thermostat
+        dial in the centre for the living room. The dial has 81 ticks over a
+        270 degree sweep from 10 to 30 degrees, lit orange up to 21.5 with
+        an orange marker dot, numerals every 5, and a dark inner face
+        showing Living room, 21.5 and lines for 3 lights on at 40 percent
+        and TV off. Two room cards sit left and two right, each a pill ended
+        card with a 76px ring gauge, blue for kitchen at 20.0, orange for
+        bedroom at 19.0 with a heating chip, and green lock and yellow
+        walker rings for the front door and the garden. Below, a wide Energy
+        today card pairs a 24 hour clock face chart, one radial sector per
+        hour with midnight at the top, orange for hours of 0.7 kWh or more
+        and blue below, beside three stat rows for used, solar and a battery
+        bar. A Scenes card holds four 72px round discs with Movie filled
+        orange and marked On now. Below 1080px the dial goes on top with
+        rooms two by two, and at phone width everything stacks.
+    spacing: An 8px unit. 24px between the dial, the rooms and the cards, 20 to 24px card padding.
+    density: Low. One reading dominates and four rooms orbit it.
+    corners:
+        Everything round. 28px cards, full pills for chips, buttons and
+        fields, circles for gauges, discs and swatches.
+    borders: 1px #34343b on cards, 1.5px currentColor on chips and the alert.
+    shadows: None, except a 6px soft orange ring around the active scene disc.
+    icons:
+        Round line icons at 2px stroke, 18 to 26px. States pair a word with
+        a clock, check, walking figure or dash circle.
+    focus: A 3px cool blue outline offset 3px.
+    tone: Warm and short, such as On now, Energy today and Close now.

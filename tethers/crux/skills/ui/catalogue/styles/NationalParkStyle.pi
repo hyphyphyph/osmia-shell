@@ -1,0 +1,47 @@
+export anchor NationalParkStyle:
+    number: 139
+    screen: ProjectsDashboard
+    name: National park
+    idea: Routed wooden park signs on a meadow page, with projects as arrow boards on a signpost, the week as a mileage sign and status as painted trail markers.
+    base: light
+    palette:
+        meadow: #edefe0, the page
+        paper: #fbf6e6, pinned notices, markers and the sheet
+        wood: #5b3b20, every sign board and headings
+        darkWood: #3a2512, carved text shadow and board ledge
+        routedLine: #8f6a43, the inner groove and leader dots
+        carvedCream: #f6ecd2, text on wood and blazes
+        moss: #2f5a32, primary button and On track
+        fern: #dfe7cf, chart fill and totals
+        barkInk: #2b2116, body text on paper
+        caution: #e0ac2b, the caution diamond, focus ring and overdue number on wood
+        ochre: #7f5200, the At risk marker
+        rust: #9c2a1a, the Behind marker and pin
+        lightWood: #e3d3ad, nav plates
+    type:
+        Slab serif for signs uses Rockwell, Roboto Slab, Clarendon, Serifa,
+        Museo Slab, Egyptienne, Georgia, in caps tracked 0.04 to 0.08em with
+        a 2px dark carved shadow on wood. Body uses Gill Sans, Seravek,
+        Trebuchet MS, Ubuntu. Greeting 40px slab, brand 30px caps, sign
+        names 22px caps, mileage figures 30px, body 16px at 1.5, captions
+        12px caps tracked 0.14em.
+    layout:
+        A trailhead board header holds a round tree emblem, the carved
+        brand, a pinned paper notice as the search, a moss New project, a
+        round bell and the user. Nav is a row of arrow shaped light wood
+        plates, the current one dark wood. The greeting sits beside a
+        caution diamond and line, opposite a mileage sign board listing the
+        four numbers with dotted leaders. Projects hang as six arrow boards
+        on a tall post, each with the carved name and category, a cream
+        status marker, ten blazes for progress with percent and tasks, and
+        the due date. Below are a Ranger log board holding pinned paper and
+        a Trail profile board with an elevation style line chart and a flag
+        on the best day. On small screens arrow boards stack their facts.
+    spacing: An 8px unit. 12px between signs, 20 to 24px inside boards, 32px between sections.
+    density: Medium. One project per arrow board, facts read across.
+    corners: 8px boards, 4px paper and markers, arrow boards end in a pointed tip.
+    borders: A routed groove, a 2px lighter line set 5px inside each board, dashed lines on paper.
+    shadows: A 4px solid dark wood ledge under boards and 2px under pinned paper.
+    icons: Painted trail markers on cream plates. Up arrow On track, triangle with a bar At risk, crossed sticks Behind, yellow caution diamond for overdue.
+    focus: A 3px caution yellow outline offset 3px ringed by dark wood. Nav plates drop their arrow clip while focused.
+    tone: Ranger plain speech, such as Trails, Ranger log, Trail profile, Caution and the trail ahead.

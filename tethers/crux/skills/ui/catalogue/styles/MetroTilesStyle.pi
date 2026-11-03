@@ -1,0 +1,48 @@
+export anchor MetroTilesStyle:
+    number: 36
+    screen: TaskBoard
+    name: Metro tiles
+    idea: Flat solid colour tiles packed edge to edge with hairline white gaps, where big thin lowercase type does all the work and nothing has a border or a shadow.
+    base: light
+    palette:
+        page: #ffffff, the page and the 4px gaps between tiles
+        night: #1a1a1a, text, the add task button and the overdue tile
+        field: #ececec, the search field fill and the secondary button
+        muted: #5c5c5c, small labels on white
+        teal: #005f73, the to do head tile, with #0a6e84 card tiles
+        cobalt: #1e4fb4, the in progress head tile, with #2a5cc2 card tiles, and field focus
+        plum: #7b2d8e, the review head tile, with #8a3a9e card tiles, and the avatar
+        leaf: #2f6b1e, the done head tile, with #3a7a28 card tiles
+        ember: #a33a00, the at risk tile
+        sun: #ffd23f, the overdue word and date on the night tile
+    type:
+        Segoe UI Light, Segoe UI, Helvetica Neue, Noto Sans, Open Sans,
+        Arial, sans-serif. The project title is 64px weight 200, column
+        counts 72px weight 100, column names 28px weight 200, tile titles
+        22px weight 300, points 40px weight 100, facts 14px weight 400 and
+        field labels 13px weight 400. Everything is lowercase except
+        people's names.
+    layout:
+        A white top area with brightwork lowercase on the left and Mara
+        Okafor with a square plum MO tile on the right. Below it the huge
+        thin title mobile app 2.0 beside a solid ember at risk tile. A
+        pivot row of filters reads assignee, label and due as small labels
+        over big thin dropdown text, then the search tasks field and a black
+        add task tile on the right. The board runs edge to edge across the
+        full viewport in four columns with 4px white gaps. Each column has a
+        darker head tile with the name top left and a huge count bottom
+        right, then one solid tile per task with the title, big points top
+        right and one fact line at the bottom with the hash label, the
+        assignee and a calendar date. Below 1040px two columns, below 640px
+        one, with the head tile in a single row.
+    spacing: 4px gaps between tiles, 16px by 20px tile padding, a 32px page gutter above the board and none beside it.
+    density: Sparse type in big blocks. One fact line per tile, tiles at least 168px tall.
+    corners: 0 everywhere.
+    borders: None. Fields carry a 3px inset bottom bar in night so they still read as fields.
+    shadows: None. Depth comes only from a darker head tile above lighter task tiles.
+    icons:
+        Square-cap 1.5 stroke glyphs at text size, white on tiles and
+        never boxed. The overdue tile turns night with a triangle and the
+        word overdue in sun. Done tiles show a tick and the word done.
+    focus: On tiles a 3px white outline inset 9px. On white a 3px night outline offset 2px. A focused field turns white with a 3px cobalt inset ring.
+    tone: Lowercase and terse, such as add task, at risk, no due date, while people keep their capitals.

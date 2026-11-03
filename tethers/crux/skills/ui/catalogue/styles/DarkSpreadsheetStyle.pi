@@ -1,0 +1,54 @@
+export anchor DarkSpreadsheetStyle:
+    number: 322
+    screen: OpsMonitor
+    name: Dark spreadsheet
+    idea: The monitor as a dark workbook, with a formula bar, lettered columns and numbered rows holding services, the incident, alerts and deploys as ranges, conditional formatted status cells, floating chart objects and sheet tabs along the foot.
+    base: dark
+    palette:
+        app: #18191c, the page, menu bar and tabs
+        grid: #1f2125, cells, chart objects and the style sheet
+        header: #2a2c31, column letters, row numbers and chart title bars
+        cellLine: #383b42, every cell border
+        ink: #e8eaed, cell text
+        muted: #a8adb5, header rows, axis and the status bar
+        selection: #5aa2ff, the selected cell outline and fill handle, function names in the formula, the request line, the primary button and focus
+        selectionFill: #22324a, the selected cell background
+        healthy: #7ad99a, Healthy and Resolved text with circle and square on a #1d2e24 cell fill
+        degraded: #f2c45a, Degraded and Investigating with triangle and magnifier on a #33291a cell fill
+        recovered: #90c2ff, Recovered with a diamond on a #1d2a3b cell fill
+        firing: #ff8f86, Firing with an octagon on a #3a2121 cell fill, and the error line
+    type:
+        Segoe UI, Roboto, Helvetica Neue, Arial at 13px and 1.4 for cells,
+        ui-monospace, Consolas, Menlo for numbers at 12.5px tabular and for
+        the formula at 13px. Range titles 14px at 700, header rows 13px at
+        600 muted, column letters 12px at 600.
+    layout:
+        A menu bar with a green B document tile, Brightwork Ops and
+        production last 24 hours read only, and the suite apps at right. A
+        toolbar with Refresh, Filter, an Open INC-0427 button and a
+        Conditional format status note. A formula bar shows the cell
+        reference C5, an italic fx and the formula UPTIME of sync-worker
+        over 24h. The work area splits into a scrollable grid and a 380px
+        column of chart objects. The grid has letters A to G and rows 1 to
+        22. Row 1 is the range title, row 2 the header, rows 3 to 7 the five
+        services with Status, Uptime, p95 ms, Queue depth, Down and
+        Recovered. C5 is selected with a blue outline and fill handle. Rows
+        9 and 10 hold the incident, rows 12 to 15 the alerts with merged
+        Condition cells, rows 17 to 20 the deploys, rows 21 and 22 a summary
+        of peak, night low, error rate and the spike. Status cells use
+        conditional fills plus shape and word. Chart objects have title bars
+        with SERIES formulas for requests, error rate and latency. Sheet
+        tabs sit along the foot with Overview current and a green underline,
+        and a status bar shows the selection. Below 1100px charts move under
+        the grid, below 760px the grid scrolls inside its region.
+    spacing: A 4px unit. 26px rows, 8px cell padding, 12px around chart objects.
+    density: Very dense. Twenty two rows of facts plus three charts on one laptop screen.
+    corners: Square cells. 2 to 3px on buttons, chart objects and the document tile.
+    borders: 1px cell lines everywhere, 2px under header rows, a 2px blue outline on the selected cell.
+    shadows: None.
+    icons:
+        16px line icons in the toolbar. Status cells use a conditional fill
+        plus a filled circle, triangle, diamond, octagon or square, or an
+        outline magnifier, with the word.
+    focus: A 2px selection blue outline offset 1px with a soft blue halo.
+    tone: Workbook terms such as ranges, formulas, Count 5 and Min uptime 99.41%.

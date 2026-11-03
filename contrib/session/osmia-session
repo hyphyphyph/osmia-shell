@@ -1,0 +1,50 @@
+#!/bin/sh
+# Login session for osmia: the labwc compositor with the osmia shell on top.
+# A display manager (SDDM) runs this from /usr/share/wayland-sessions/osmia.desktop.
+set -eu
+
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=osmia
+export DESKTOP_SESSION=osmia
+export XDG_CURRENT_DESKTOP="Osmia:labwc:wlroots"
+
+: "${XDG_CONFIG_HOME:=$HOME/.config}"
+: "${XDG_DATA_HOME:=$HOME/.local/share}"
+: "${XDG_CACHE_HOME:=$HOME/.cache}"
+export XDG_CONFIG_HOME XDG_DATA_HOME XDG_CACHE_HOME
+
+# Where osmia lives. A display manager has a short PATH.
+PATH="/usr/local/bin:${PATH:-/usr/bin:/bin}"
+export PATH
+
+# A session bus, if the login did not give us one.
+if [ -z "${DBUS_SESSION_BUS_ADDRESS:-}" ]; then
+    if [ -z "${XDG_RUNTIME_DIR:-}" ] || ! [ -S "$XDG_RUNTIME_DIR/bus" ] || ! [ -O "$XDG_RUNTIME_DIR/bus" ]; then
+        eval "$(dbus-launch --sh-syntax --exit-with-session)" || echo "osmia-session: dbus-launch failed" >&2
+    fi
+fi
+
+# Qt programs (pcmanfm-qt, qterminal) keep the LXQt look when its theme plugin is installed.
+if [ -z "${QT_QPA_PLATFORMTHEME:-}" ] && [ -e /usr/lib/qt6/plugins/platformthemes/libqtlxqt.so ]; then
+    export QT_QPA_PLATFORMTHEME=lxqt
+fi
+
+# Programs the user manager starts later should see the same desktop name.
+# Tests set OSMIA_SESSION_TEST so they do not touch the real user manager.
+if [ -z "${OSMIA_SESSION_TEST:-}" ] && command -v systemctl >/dev/null 2>&1; then
+    systemctl --user import-environment XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XDG_SESSION_DESKTOP 2>/dev/null || true
+fi
+
+# Software cursor on virtual machines.
+if type systemd-detect-virt >/dev/null 2>&1 && systemd-detect-virt --quiet; then
+    export WLR_NO_HARDWARE_CURSORS=1
+fi
+
+# First login: copy the default compositor config. After that it is yours.
+cfg="$XDG_CONFIG_HOME/osmia/labwc"
+if [ ! -d "$cfg" ]; then
+    mkdir -p "$cfg"
+    cp -a /usr/local/share/osmia/labwc/. "$cfg"/
+fi
+
+exec labwc -C "$cfg"

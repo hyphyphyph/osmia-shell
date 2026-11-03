@@ -1,0 +1,54 @@
+export anchor PunchCardStyle:
+    number: 166
+    screen: ProjectsDashboard
+    name: Punch card
+    idea: Every panel is an 80-column punch card on manila stock, and the data is literally punched, so summary digits, finished tasks and daily counts appear as dark rectangular holes beside printed column numbers.
+    base: light
+    palette:
+        desk: #e4e9ef, the page behind the deck
+        manilaStock: #f3e7c6, every card
+        paleStock: #f7eedb, alternate cards, status boxes and rows
+        printBrown: #6a4a22, printed labels, digits and field lines
+        rule: #b49a6a, unpunched slots and hairlines, never text
+        typedInk: #1d1a14, interpreted text and the primary button
+        hole: #2b3440, punched holes as data
+        tabBlue: #cfdcea, deck divider tabs
+        green: #1f5c34, the On track ring
+        amber: #85480a, the At risk triangle
+        red: #8f1f1f, the Behind oblong and the Overdue diamond
+        focus: #1b4fae, the focus outline
+    type:
+        Typed text uses Courier New, Nimbus Mono PS, Courier, monospace.
+        Printed labels use Arial Narrow, Helvetica Neue Condensed, Roboto
+        Condensed, Liberation Sans Narrow, Arial in bold caps. Total
+        figures are 48px bold mono, the greeting 30px bold caps, card
+        titles 17px bold caps, body 14 to 15px, labels 11px narrow caps
+        tracked 0.08em and printed digits 9px narrow.
+    layout:
+        Every block is a card with its top-left corner clipped at 45
+        degrees. The header card has the spaced brand with a job card
+        caption, a Keypunch search field over faint column ticks, a black
+        Punch new project button, a bell and the operator name. Under it a
+        row of blue deck divider tabs is the nav, with Home in manila and
+        raised. The greeting card shows the greeting, date and a dashed red
+        overdue box. The summary card splits into four fields by brown
+        column lines, each with a column range label, the big typed figure
+        and a printed 0 to 9 grid where each digit of the figure is punched
+        out. Below, a wide column is the project deck, one card each, with
+        sequence number, name, department and due date typed on top, a row
+        of slots punched one per finished task, a status box at right and
+        printed column numbers 1 to 80 along the bottom. The narrow column
+        holds the chart card, 14 columns of 17 slots punched from the
+        bottom, and a stack of thin activity strips with BW sequence
+        numbers. Below 960px the columns stack.
+    spacing: An 8px unit. 10px between cards, 16 to 24px between sections, a 32px left inset that clears the clipped corner.
+    density: Dense and data-literal, with rows of tiny slots and printed digits and one big typed number per field.
+    corners: A 22px clipped top-left corner on large cards and 14px on strips, 6px rounding elsewhere, tabs rounded 8px on top.
+    borders: 2px brown field dividers, a 1px rule above the column numbers, outlined unpunched slots, 2px currentColor status boxes.
+    shadows: Only a 1px brown edge under each card, like stacked stock.
+    icons:
+        Hole shapes beside caps words. A ring for On track, a solid
+        triangle for At risk, a solid oblong for Behind and a diamond with
+        a bang for Overdue.
+    focus: A 3px focus blue outline offset 3px.
+    tone: Data-processing jargon, such as Keypunch, Operator, Punch new project and Project deck.

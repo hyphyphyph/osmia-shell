@@ -1,0 +1,50 @@
+export anchor WheatpastePosterStyle:
+    number: 156
+    screen: ProjectsDashboard
+    name: Wheatpaste poster
+    idea: A street wall of pasted posters, torn and overlapping, where each part of the dashboard is its own bill in huge condensed capitals and flat ink colours.
+    base: light
+    palette:
+        wall: #d9d3c8, the brick wall page
+        mortar: #c7c0b3, brick joint lines only
+        poster: #f7f4ec, white bills and fields
+        yellow: #f3d23a, the greeting bill, At risk tags and the active nav item
+        pink: #f4b3c2, the chart bill and one number bill
+        red: #b0161f, the primary button, due dates, the overdue bill, Behind and this week bars
+        blue: #1b3a8c, the focus outline only
+        black: #111111, type, the header strip, On track tags and last week bars
+        grey: #4d4a44, small notes
+    type:
+        Display uses Arial Narrow, Roboto Condensed, Helvetica Neue
+        Condensed, Liberation Sans Narrow, Nimbus Sans Narrow, Arial,
+        sans-serif in bold condensed caps. The greeting runs 56 to 128px
+        at 0.82 line height, numbers 92px, section heads 54px, project
+        names 26 to 40px, tags and labels 17 to 22px. Body uses Helvetica
+        Neue, Helvetica, Arial, sans-serif at 15 to 16px.
+    layout:
+        A long black strip poster across the top with a yellow wordmark,
+        nav words split by slashes with Home on a yellow block, then a
+        cream search, red New project, a yellow bell count and the name in
+        caps. Below, a twelve column wall with no gutters where bills
+        overlap by 10 to 30px and tilt half to two degrees. A huge yellow
+        bill on the left says Morning, Mara with the date above and a
+        black overdue band with a stop octagon. Four small number bills in
+        a two by two series to its right, white, pink, red and white. A
+        white gig bill lists the six projects as acts with the name huge
+        on the left, the due date in red on the right, then a tag, the
+        facts and ten square progress boxes. To the right a white flyer
+        lists activity and ends in vertical tear-off tabs with one tab
+        missing, and a pink chart bill shows flat black and red bars. Each
+        bill has one torn edge cut by a clip path. Below 1000px everything
+        stacks in one column.
+    spacing: Bills butt together with no gutter and overlap by 10 to 30px. Inside, 22 to 30px padding.
+    density: Loud and big. Few words per bill, set huge, with the facts in one small line underneath.
+    corners: Square paper with torn jagged edges on one side of each bill.
+    borders: None on bills. Thick 6px black rules head lists, 2px rules split rows, dashed lines mark tear-off tabs.
+    shadows: None. Pasted paper lies flat with faint diagonal sheen and wrinkle lines.
+    icons:
+        Solid printed shapes inside caps tags. A circle on black means On
+        track, a triangle on yellow means At risk, a square on red means
+        Behind, and a yellow stop octagon with a bang marks overdue.
+    focus: A 4px blue outline offset 3px. Inside the black header the search gets a yellow outline.
+    tone: Gig bill shouting, such as Now playing, Latest, Done daily and Morning Mara.

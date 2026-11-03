@@ -1,0 +1,57 @@
+export anchor DarkFloatingPanelsStyle:
+    number: 233
+    screen: ProjectsDashboard
+    name: Dark floating panels
+    idea: Opaque indigo panels float over a deep tinted backdrop of slow indigo and teal light, each lifted by a soft periwinkle glow edge and a long shadow, with a floating dock for navigation and a floating pill for the header.
+    base: dark
+    palette:
+        deep: #0b0d22, the backdrop base and the style sheet
+        indigoLight: #1d1a5c, the upper left backdrop glow
+        tealLight: #0b3340, the right backdrop glow
+        panel: #151a3c, every floating panel, the dock and the header pill
+        inset: #1b2148, rows inside panels, icon tiles and fields
+        line: #2c3470, meter tracks, grid lines and field edges
+        glowEdge: #5a68c8, the 1px edge on the current dock item and the secondary button
+        ink: #eef0ff, text
+        muted: #aab1d6, labels and meta
+        periwinkle: #a5b4ff, the primary button, meters, the this week line, icons and focus
+        onPeriwinkle: #10153a, text on periwinkle
+        lastWeek: #7680b0, the dashed last week line
+        ok: #7ee8b5, the On track pill
+        risk: #ffd479, the At risk pill
+        bad: #ffa3b3, the Behind pill and the overdue pill
+    type:
+        A rounded stack, ui-rounded, SF Pro Rounded, Nunito, then system-ui,
+        Segoe UI, Roboto. Base 14px at 1.5. The greeting is 40px at 700,
+        chip figures 26px at 800, panel titles 17px at 700, project names
+        14px at 700, status pills 12.5px at 700.
+    layout:
+        The whole screen is a stage with a deep navy base, two large soft
+        radial glows in indigo and teal, and two faint thin ring shapes
+        clipped by the stage. A floating vertical dock on the left holds a
+        periwinkle B tile and six icon-only links with names, Home in an
+        inset tile with a glowing edge. A long floating header pill holds
+        search, a glowing periwinkle New project pill, a round bell and a
+        gradient MO disc with Mara Okafor. The greeting sits straight on the
+        backdrop with the date, Good morning, Mara and a pill reading 4
+        tasks are overdue with a soft red ring and glow. On the right the
+        four figures float as small glowing chips. Below, two columns of
+        panels with 28px gaps. Projects, 6 in flight, holds six inset
+        rounded rows with name, category and due, a ringed status pill, and
+        a glowing periwinkle meter with percent and tasks. The right column
+        holds Tasks completed as a glowing line chart, last week dashed and
+        this week solid, and Recent activity with periwinkle icons in inset
+        tiles. Below 1100px the columns stack. Below 760px the dock becomes
+        a horizontal bar near the foot of the screen and the figures go two
+        by two.
+    spacing: An 8px unit. 28px gaps between panels so the backdrop shows, 22px panel padding, 10px between rows.
+    density: Airy. Panels are few and large, with the greeting straight on the backdrop.
+    corners: Very round. 22px panels, 28px dock, 16px rows, pill header, buttons and status.
+    borders: No hard borders. Each panel has a 1px periwinkle ring at 22 percent as part of its glow.
+    shadows: A floating glow made of 0 18px 50px deep navy at 60 percent plus a 36px periwinkle halo at 14 percent.
+    icons:
+        Round line icons at 1.8 stroke, 18px, periwinkle inside inset tiles.
+        Status is a check circle, a triangle or a crossed square in a pill
+        ringed in its colour, always with the word.
+    focus: A 2px periwinkle outline offset 3px plus a 6px soft periwinkle halo.
+    tone: Light and friendly, such as 6 in flight, Recent activity and Good morning, Mara.

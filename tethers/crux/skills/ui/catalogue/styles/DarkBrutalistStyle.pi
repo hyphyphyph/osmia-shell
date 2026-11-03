@@ -1,0 +1,46 @@
+export anchor DarkBrutalistStyle:
+    number: 251
+    screen: DesignEditor
+    name: Dark brutalist
+    idea: Raw slabs on black with thick white borders, hard lime offset shadows, typewriter text and giant numbers, so the editor feels like a poster bolted together.
+    base: dark
+    palette:
+        black: #000000, the page, buttons and the canvas
+        slab: #111111, panel fill and the canvas grid lines
+        white: #ffffff, text, 4px borders and inverted panel titles
+        grey: #bdbdbd, small labels
+        acid: #d4ff3a, slab shadows, the active tool, selected row, Share, frame border and the status band, under black text
+        hot: #ff5ce1, the comment and focus
+    type:
+        Courier New, Courier, ui-monospace for text, and Arial Black,
+        Helvetica Neue, Arial for display. Body 15px at 1.4. The file title
+        40px 900 caps, inspector values 30px 900, panel titles 20px 900
+        caps, labels and buttons 13 to 16px 700 caps, and the sheet title
+        44px 900 caps.
+    layout:
+        Slabs with 4px white borders and hard lime shadows stack on black.
+        The top row has a wide title slab with HOME V3 and WEBSITE REDESIGN
+        slash slash CANVAS, a slab of three joined initials cells, Present
+        and a lime Share. The left column stacks a three by two block of
+        76px tools, each icon over a caps word, Move filled lime with an ON
+        tag, then a ZOOM 66% bar and the layers slab with a white LAYERS
+        title and 44px rows split by 2px rules, Hero filled lime with a
+        boxed SELECTED tag. The canvas slab has a coarse 48px grid, a white
+        HERO 1440 × 820 label and the white frame with a 4px lime border,
+        lime square handles and a pink comment tilted two degrees with a
+        hard pink shadow. The inspector slab is a grid of cells with giant
+        values, X, Y, W, H, Fill, Auto layout, Gap, Padding, Corner radius
+        and Export. A lime status band with black text and 4px dividers
+        runs below. Below 1180px the inspector moves under the canvas.
+        Below 760px only the canvas, the tool block and the band remain.
+    spacing: An 8px unit. 24px between slabs, 8 to 12px inside cells.
+    density: Low to medium. 56 to 76px targets and 30px values.
+    corners: None. Every edge is square.
+    borders: 4px white on every slab and cell, 2px between layer rows and 12px over the sheet.
+    shadows: Hard 8px 8px lime on slabs and 6px white on buttons, never blurred. Pressed buttons drop their shadow.
+    icons:
+        22px line icons at 2.75px stroke with square caps above caps
+        labels. Saved uses a check circle, editing two people and the
+        version a tag, each with caps words on the lime band.
+    focus: A 4px hot pink outline offset 4px, and a pink inset on inspector cells.
+    tone: Blunt caps, such as HOME V3, ON and COLLAPSED.

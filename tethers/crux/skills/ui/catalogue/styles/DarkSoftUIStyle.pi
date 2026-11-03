@@ -1,0 +1,47 @@
+export anchor DarkSoftUIStyle:
+    number: 268
+    screen: CloudFiles
+    name: Dark soft UI
+    idea: Every panel, row and button is pressed out of one slate surface with paired light and dark shadows, the selected file sinks in, and text stays crisp with a bright focus ring.
+    base: dark
+    palette:
+        slate: #2b2e35, the one surface for page, cards, rows and style sheet
+        highlight: #3a3e48, the light top left shadow
+        shade: #1c1e23, the dark bottom right shadow
+        well: #262930, status chip fill
+        ink: #e7eaf0, text
+        muted: #b0b7c3, meta, inactive nav, labels and file icons
+        blue: #8fbaff, primary button, current icon, storage ring, upload fill and focus ring
+        blueInk: #10213d, text and icons on blue
+    type:
+        One stack, Segoe UI, system-ui, Roboto, Helvetica Neue, Arial.
+        Base 15px. The title is 30px at 650, the details title 18px at
+        600, file names 15px at 600, meta 13.5px muted, chips 12.5px at
+        600, the storage figure 22px.
+    layout:
+        Three floating areas inside 28px padding. A 240px raised card
+        holds a round B mark with Brightwork Drive, the five places with My
+        files pressed in, and a raised 150px dial whose blue ring shows
+        64.2 of 100 GB, captioned 64.2 GB of 100 GB used. The middle has the
+        breadcrumb, the title and a pressed in pill search, then a raised
+        blue Upload pill, a raised New folder pill and a pressed List or
+        Grid track with List raised. Each file is its own raised 20px
+        tile with a pressed round icon well, the name and chips, the date
+        over the person, and the size. The selected tile is pressed in
+        with its well raised and blue. A 320px raised details card has a
+        pressed preview well, the name, a Starred chip, four raised fact
+        tiles and three round raised action buttons labelled Share,
+        Download and Get link, Share filled blue. Below 1200px details move
+        under the list. Below 760px the card puts the dial beside the nav
+        and tiles stack their meta.
+    spacing: A 4px base on an 8px rhythm. 28px between cards, 16px between tiles, 22px card padding.
+    density: Roomy. Each file is a raised tile with a round well.
+    corners: 24px cards, 20px tiles, 22px pill buttons, fields and toggles, round wells and action buttons.
+    borders: None. Edges come only from light and shade.
+    shadows: Raised is 6px 6px 14px #1c1e23 with -6px -6px 14px #3a3e48. Small raised is half that. Pressed is the same pair inset, used for the selected tile, current nav, search and fields.
+    icons:
+        18px line icons, blue when current. Chips on the well colour pair
+        a filled star with Starred, two heads with Shared with 4 people
+        and an up arrow ring with Uploading 62%, with a pressed 8px track.
+    focus: A 3px solid blue outline with a 4px offset, never a shadow alone.
+    tone: Friendly and short, such as Details, Get link and 64.2 GB of 100 GB used.

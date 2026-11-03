@@ -1,0 +1,54 @@
+export anchor IndigoDyedStyle:
+    number: 255
+    screen: DesignEditor
+    name: Indigo dyed
+    idea: Panels sewn from deep indigo cloth, edged with white running stitches over a faint shibori ring pattern, with the inspector read like a woven care label and undyed cream for the one main action.
+    base: dark
+    palette:
+        deep: #0b1430, the page with faint repeating ring patterns
+        cloth: #12204a, stitched patches and the style sheet
+        patch: #1a2d63, the care label inspector
+        dyedTwice: #27428a, the selected layer and the pressed tool
+        well: #0d1838, fields and the zoom pill
+        ink: #eef2fb, text
+        faded: #a9b8dc, meta, labels and status text
+        stitch: #dfe6f5, dashed running stitch edges and status icons
+        thread: #5f74ad, quiet dashed rules, dotted leaders and field borders
+        undyed: #f4efe4, Share and the comment pin with deep indigo text
+        persimmon: #f2c46b, the focus ring only
+        madder: #c2462e, the 32 px guide with white text
+    type:
+        One humanist stack, Optima, Candara, Noto Sans, Segoe UI, system-ui.
+        Base 14px at 1.55. The sheet title is 28px 600, the file name 17px
+        600, panel titles 15px 600 beside a 13px faded context, layer names
+        14px 600, meta 12px, and care label group names 11px caps tracked
+        0.14em.
+    layout:
+        Every panel is a cloth patch with 14px corners and a dashed white
+        stitch line inset 5px. A header patch spans the top with a cream
+        square B mark, Canvas, Website redesign and Home v3, then In this file
+        with three dashed ring avatars, a dashed Present and a cream pill
+        Share. Below sit three columns with 14px gaps. A 76px tool rail patch
+        holds six round tools stacked with small key letters, Move filled with
+        the twice dyed blue and a dashed ring, then the 66% zoom pill. The
+        canvas patch is darker with a dot grid, the white Hero frame and round
+        handles, and the status line runs along its foot under a dashed rule.
+        A 320px right column holds two patches, the layers list with dashed
+        rules between rows, Hero highlighted with a dashed inner stitch and a
+        Selected tag, then the inspector as a care label, a lighter rectangle
+        where each line reads like a garment tag with a label, a dotted leader
+        and a small right aligned value, grouped into Position and size, Fill,
+        Auto layout Vertical, Corners and Export, with Export Hero below.
+        Below 860px the patches stack with the canvas first and the rail
+        becomes a sticky bottom tool bar.
+    spacing: An 8px unit. 14px between patches, 18px patch padding, 8px layer rows.
+    density: Medium. The rail, the canvas and one column of two patches.
+    corners: 14px patches with a 10px stitch inset, round tools, pill buttons and fields, 6px care label.
+    borders: A 1.5px dashed white running stitch inside each patch, dashed thread rules between rows and dotted leaders in the care label.
+    shadows: None on panels. Only the mobile tool bar casts a soft shadow.
+    icons:
+        Line icons at 1.6px stroke, 18 to 20px. Selected is a circled check,
+        Collapsed a right chevron, Saved a cloud with a check, always with the
+        word.
+    focus: A 3px persimmon outline offset 3px.
+    tone: Calm and plain, like a garment tag, with labels such as Width, Padding and Scale.

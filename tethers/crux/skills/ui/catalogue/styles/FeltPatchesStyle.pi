@@ -1,0 +1,54 @@
+export anchor FeltPatchesStyle:
+    number: 105
+    screen: ProjectsDashboard
+    name: Felt patches
+    idea: The dashboard is a craft fair table of cut felt shapes, each sewn down with a running stitch, so numbers sit in round badges and progress is a line of thread.
+    base: light
+    palette:
+        linen: #efe6d4, the page, with a faint woven crosshatch
+        creamFelt: #f8f1e2, project patches, the activity strip, the chart patch, the search and the sheet
+        tealFelt: #2f6a6b, the sidebar ribbon, thread progress and this week columns, white text
+        mustardFelt: #d9a93a, the current tab, the bell and last week columns, dark text only
+        sageFelt: #a9c3a4, the greeting pennant and the avatar, dark text
+        roseFelt: #9c3d4e, the primary button, the overdue badge and activity bullets, white text
+        bark: #2f2a24, text, stitches and the focus outline
+        twine: #5e5348, meta lines and times
+        okTint: #dfe9dc, the On track chip with #23524f text
+        riskTint: #f3e2b8, the At risk chip with #6e4d00 text
+        badTint: #f1d9dd, the Behind chip with #82283a text
+    type:
+        Two stacks. Text uses Gill Sans, Gill Sans MT, Trebuchet MS,
+        Calibri, Segoe UI. The greeting and section titles use Iowan Old
+        Style, Georgia, Times New Roman in italic 600. The greeting is 40px
+        at 1.1, badge numbers 52px serif bold, section titles 28px, patch
+        titles 19px humanist bold, body 17px at 1.5, meta 14px.
+    layout:
+        A 220px teal felt ribbon on the left holds the brand with a star
+        button logo and six nav tabs cut as cream felt with uneven corners,
+        the current one mustard with a heart. The main column starts with
+        a cream felt search pill, a rose New project button, a round
+        mustard bell and a sage MO circle. The greeting is a wide sage felt
+        pennant with a notched right end, Good morning, Mara in italic serif,
+        the date, and a small cream tag in rose that says 4 tasks are overdue
+        with a diamond. The four numbers are round stitched felt badges in
+        teal, mustard, rose and cream, two of them slightly wobbly. Below,
+        Projects on the table shows six cream patches two across, each cut
+        with different corner radii and tilted under one degree, with the
+        name, meta, a thread progress line ending in a button knot, the
+        percent in serif and a status chip. On the right, Around the table
+        is a cream felt strip of six activity rows with rose dots, then a
+        felt chart patch with 14 rounded columns outlined by a dashed stitch.
+        Below 1040px the ribbon becomes a top band with wrapped tabs. Below
+        640px badges go two by two and patches go one across.
+    spacing: An 8px unit. Patches pad 22px, gaps of 20 and 32px.
+    density: Relaxed. Two patches across with plenty of linen between.
+    corners: Uneven hand cut radii between 10 and 34px, every patch different. Badges are circles or slightly squashed circles.
+    borders: No outer border. A 2px dashed running stitch sits 7px inside every felt shape, pale on dark felt.
+    shadows: A soft 6px blur under each patch and a 2px lip, like felt resting on cloth. Felt carries a fine speckled texture.
+    icons:
+        Filled craft shapes at about 22px. A two hole button for On track,
+        a triangle with a mark for At risk, a square with a stitched cross
+        for Behind and a diamond with a mark for overdue, always with the
+        word.
+    focus: A 3px dashed bark outline offset 4px inside a soft 10px mustard halo. A focused field turns its dashed edge solid.
+    tone: Warm and handmade, such as Around the table and Good morning.

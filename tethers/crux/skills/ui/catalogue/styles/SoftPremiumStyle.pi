@@ -1,0 +1,54 @@
+export anchor SoftPremiumStyle:
+    number: 192
+    screen: ProjectsDashboard
+    name: Soft premium
+    idea: A quiet, high-end workspace on pale lavender grey, where floating 16px cards with faint gradients and soft shadows, a serif for headings and generous spacing make the dashboard feel calm and considered.
+    base: light
+    palette:
+        mist: #f2f1f7, the page, a pale lavender grey
+        pearl: #ffffff, cards, the rail and fields, fading to #faf9fe at the bottom
+        aubergine: #221f33, headings and body text
+        heather: #5a5670, meta, labels, eyebrows and axis text
+        veil: #e4e1ee, 1px card edges, ring tracks and dividers, never text
+        iris: #4f3ca8, the primary button gradient, current nav text, rings, links, this week's bars and focus
+        lilac: #ece8fa, the hero gradient start, current nav fill, KPI icon circles and last week's bars
+        blush: #f8f0f3, the hero gradient end and the overdue icon circle
+        jade: #1e6a4e, On track with a solid circle and check on a pale green pill
+        bronze: #874a0e, At risk with a solid triangle and bar on a pale amber pill
+        garnet: #a3263d, Behind and overdue, with a solid square and cross on a pale rose pill
+    type:
+        Two stacks. Headings and figures use Iowan Old Style, Palatino
+        Linotype, Palatino, Book Antiqua, Georgia, serif at weight 500.
+        Text uses Avenir Next, Avenir, Segoe UI, Helvetica Neue, system-ui,
+        sans-serif. The greeting is 40px serif, KPI figures 32px serif,
+        card titles 24px serif, project names 17px sans semibold, body
+        15px at 1.6, and eyebrows 12px semibold caps tracked 0.12em.
+    layout:
+        A floating white rail 248px wide, inset 16px with 16px corners,
+        holds a gradient rounded mark with the serif brand, six icon and
+        label nav items with Home in a lilac pill, and a user tile at the
+        bottom with Mara Okafor. The main column opens with a white pill
+        search, then a round bell and a gradient pill New project button at
+        the right. A wide hero card with a lilac to blush gradient puts the
+        caps date, the serif greeting and a white overdue pill with a
+        square symbol and Review link at left, and four translucent white
+        KPI tiles in a 2 by 2 grid at right, each with an icon in a lilac
+        circle, a serif figure and a label, the overdue tile white with a
+        garnet figure. Projects follow as six cards in three columns, each
+        with a progress ring holding the percent, a caps team eyebrow and
+        the name, three facts for tasks, due date and days left, and a
+        status pill. The last row splits 3 to 2, a chart card with rounded
+        bars for both weeks, last week lilac and this week an iris
+        gradient, and three serif totals below, beside an activity card
+        with gradient initial discs. Below 1180px project cards go two
+        across and the hero stacks. Below 860px the rail becomes a top card
+        with nav in a 3 by 2 grid. On phones cards go one across and the
+        chart scrolls inside its card.
+    spacing: An 8px unit, generous. 24 to 36px card padding, 24px gaps, 40px between rows.
+    density: Low. Six project cards, each with three facts.
+    corners: 16px cards and rail, 12px tiles, nav items and fields, pills for buttons, search and status chips.
+    borders: A 1px veil edge on every card so it holds its shape on mist.
+    shadows: Soft and layered, 0 1px 2px at 4 percent ink plus 0 12px 32px at 8 percent iris. The primary button has its own iris glow.
+    icons: 1.5px line icons at 18px, KPI icons inside 40px lilac circles. Status uses solid shapes with a white glyph.
+    focus: A 1px iris edge inside a 3px iris ring at 35 percent opacity, following the control's corners.
+    tone: Gracious and calm, such as Good to see you, Mara.

@@ -1,0 +1,51 @@
+export anchor SchemaBlueprintStyle:
+    number: 406
+    screen: DatabaseConsole
+    name: Schema blueprint
+    idea: The console is a single engineering drawing on cobalt paper, with the tables drawn as an entity diagram in pale lines, the query and result as lettered notes, history as the revision table and status in the title block.
+    base: dark
+    palette:
+        paperDeep: #0a2140, the page and field wells
+        paper: #0e2a4f, the drawing sheet and style sheet, with a 24px grid of faint blue lines
+        line: #8fb6e6, frames, entity boxes, relation lines and cell rules
+        ink: #e1edff, lettering
+        muted: #a9c4e8, labels, column types and zone numbers
+        pencil: #ffd479, the join line, the project_id row, callouts, Run, keywords and focus
+        onPencil: #2a1d00, text on pencil
+        redPencil: #ffa394, the failed revision and its error
+    type:
+        Condensed caps, Arial Narrow, Roboto Condensed, Helvetica Neue
+        Condensed, Liberation Sans Narrow, sans serif condensed. Base 14px
+        at 1.45. The drawing title is 22px bold caps with 0.16em tracking,
+        block titles 12px bold caps at 0.12em, title block labels 10px caps
+        at 0.16em. SQL and column names use ui-monospace at 12.5 to 13px.
+    layout:
+        A drawing sheet with a 2px outer frame, zone numbers 1 to 4 along
+        the top and bottom edges, and a 1px inner frame split into a wide
+        drawing area and a 340px notes column. The drawing area has the
+        spaced caps title Brightwork Data over Schema plan, public,
+        production-replica, then an SVG entity diagram. Projects, members,
+        invoices and activity are four small boxes in the corners with a
+        ruled header and PK id. Tasks sits in the middle as a larger box
+        with six dashed column rows and types right aligned. A thick yellow
+        line labelled JOIN runs from the project_id row to projects with a
+        crow foot on tasks and a double bar on projects. A thin line runs
+        from assignee_id to members. Numbered yellow circles mark due_on as
+        1 and status as 2, and a dimension line under tasks reads
+        6 COLUMNS. A legend follows. The notes column stacks Note A Query
+        with the SQL and a yellow Run query button, Note B Result as a ruled
+        table with small yellow bars and the caption measured in 38 ms,
+        Revisions History as a ruled table with ticks or a red cross, and a
+        title block grid of Drawing, Mode in yellow, Lag, Connections and
+        Sheet 1 of 1. Below 1000px the notes go under the drawing. On phones
+        the diagram scrolls sideways inside its frame.
+    spacing: A 24px drawing grid behind everything, 16px on phones. 12px by 14px block padding.
+    density: Medium. One diagram, three notes and a title block.
+    corners: Square everywhere, including buttons. Callouts are circles.
+    borders: 2px sheet frame, 1px inner frame and cell rules, dashed column rules inside the tasks box.
+    shadows: None. It is a flat print.
+    icons:
+        Drafting marks only. Crow foot for the many side, double bar for
+        one, numbered callout circles, tick and cross in the revision table.
+    focus: A 2px dashed yellow outline offset 3px.
+    tone: Drawing office labels, such as Note A, Revisions, Title block, Sheet 1 of 1.

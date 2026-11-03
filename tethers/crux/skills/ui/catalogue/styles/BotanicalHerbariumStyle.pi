@@ -1,0 +1,48 @@
+export anchor BotanicalHerbariumStyle:
+    number: 59
+    screen: Calendar
+    name: Botanical herbarium
+    idea: Each day is a pressed-plant specimen sheet taped to parchment, its events written on small inked labels in a quiet museum hand.
+    base: light
+    palette:
+        parchment: #efe8d4, the page background
+        sheet: #fbf8ee, day sheets, the index panel, labels and the masthead
+        ink: #2b2a1f, text, label borders, buttons and the selected view
+        sepia: #635639, times, meta, Latin day names and sheet footers
+        olive: #4b5626, the primary button, the today ring and the Team key
+        oliveWash: #e3e5c8, the current week row and the focused field
+        rust: #8a3b1e, Deadline labels and their pennant key
+        slate: #4d5a63, Out of office labels and their crossed square key
+        rule: #c7bb98, sheet edges and hairlines
+        pencil: #b3aa86, the decorative plant drawings only
+    type:
+        Old style serif for almost everything, Iowan Old Style, Palatino
+        Linotype, Palatino, Book Antiqua, Georgia, serif. Typewriter mono for
+        times, eyebrows and sheet numbers, Courier New, Courier, monospace.
+        Sizes are 34px regular for the week title with a 20px italic subtitle,
+        22px regular day headings, 14px italic Latin day names, 15px semibold
+        event titles, 13px mono times and 15px small caps section labels.
+    layout:
+        A thin masthead with a sprig mark, the wordmark in small caps, a text
+        nav where the current item gets an ink underline and a fleuron, and a
+        round double ring initials stamp for Mara. Below sit the eyebrow, the
+        week title and the controls on one row. The week is a flowing grid of
+        seven specimen sheets, about 210px minimum each, beside a 280px index
+        panel on the right holding the month table, the calendar checkboxes
+        and an out of office note. Each sheet has two strips of tape at the
+        top, the day name and its Latin name, the event labels stacked, a
+        faint pencil plant in the lower right and a footer reading Sheet 01
+        and Coll. Brightwork. Below 1000px the index moves under the sheets,
+        and below 640px the sheets stack in one column.
+    spacing: An 8px unit. 24px between sheets, 16 to 20px inside them, 10px between labels and 32px between areas.
+    density: Airy. Seven sheets with at most two labels each, plenty of empty paper.
+    corners: Square everywhere. Only the initials stamp and the today ring in the month are round.
+    borders: 1px ink on labels and buttons, 1px rule on sheets. Deadlines use a 3px double rust rule and out of office a dashed slate rule. The today sheet gets an inset olive double line.
+    shadows: One flat paper offset of 2px 3px with no blur in sepia at 12 percent. Translucent tan tape strips sit over the top edge.
+    icons:
+        Fine ink line icons at text size with a 1.4 stroke. A leaf marks Team,
+        a pennant marks Deadline and a crossed square marks Out of office,
+        always beside the word. Large pencil plant drawings decorate each
+        sheet and carry no meaning.
+    focus: A 2px dashed ink outline offset 3px. A focused field also gains the olive wash.
+    tone: Calm and catalogue-like, such as Collected this week, Nothing scheduled and Sheet 04.

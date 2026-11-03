@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bar popups - round 2</title>
+<style>
+:root{--bg:#121316;--card:#1b1d21;--line:#2f333a;--text:#e3e6ea;--dim:#9097a1;--accent:#f0a35e}
+@media (prefers-color-scheme: light){:root{--bg:#f4f4f2;--card:#fff;--line:#d8d9dc;--text:#1d1f23;--dim:#5d636d}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,sans-serif}
+header{padding:24px 16px 8px;max-width:1200px;margin:0 auto}
+h1{margin:0 0 4px;font-size:22px}header p{margin:0;color:var(--dim)}
+main{max-width:1200px;margin:0 auto;padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(480px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer}
+.card:hover{border-color:var(--accent)}
+.card .top{display:flex;gap:14px;align-items:center;padding:14px 16px}
+.num{font-size:44px;font-weight:700;line-height:1;color:var(--accent);min-width:40px}
+.card h2{margin:0;font-size:17px}.card p{margin:2px 0 0;color:var(--dim);font-size:14px}
+.prev{position:relative;height:120px;overflow:hidden;border-top:1px solid var(--line);background:#0b0c0e}
+.prev iframe{position:absolute;left:0;top:0;width:1280px;height:480px;border:0;transform-origin:0 0;pointer-events:none}
+#big{position:fixed;inset:0;background:var(--bg);display:none;flex-direction:column;z-index:5}
+#big.on{display:flex}
+.tools{display:flex;gap:8px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.tools button,.tools a{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:6px 12px;font:inherit;cursor:pointer;text-decoration:none}
+.tools button[aria-pressed=true]{border-color:var(--accent)}
+.tools .t{font-weight:600;margin-right:auto}
+.stage{flex:1;overflow:auto;display:flex;justify-content:center;padding:16px}
+.stage iframe{border:1px solid var(--line);background:#000;height:100%;min-height:260px}
+</style></head><body>
+<header><h1>Bar popups - round 2</h1>
+<p>Question: how should the panels that open from the bar look and attach? Grew from <a href="../round-1/4.html" style="color:var(--accent)">round 1, variation 4</a>. Press 1 to 4 for a large view. Press Esc to return.</p></header>
+<main id="grid"></main>
+<div id="big"><div class="tools"><span class="t" id="bt"></span>
+<button data-w="100%" aria-pressed="true">Wide</button><button data-w="768px" aria-pressed="false">Tablet</button><button data-w="375px" aria-pressed="false">Phone 375px</button>
+<button id="prev">Previous</button><button id="next">Next</button><a id="open" target="_blank">Open file</a><button id="close">Close (Esc)</button></div>
+<div class="stage"><iframe id="bf" title="Large view"></iframe></div></div>
+<script>
+const V=[{"n": 1, "name": "Flush dropdown", "idea": "Panels hang straight from the bar edge, square at the top, same grey as the bar. Dense 26 px rows."}, {"n": 2, "name": "Floating card", "idea": "Panels float 6 px under the bar as rounded cards with a shadow and a lighter grey. Roomy 32 px rows."}, {"n": 3, "name": "Compact list", "idea": "Flush panels with 22 px rows, thin row lines and small uppercase section labels. The densest option."}, {"n": 4, "name": "Side drawer", "idea": "Tall panels with a title, large 38 px rows and an Esc hint, built like a drawer. Easiest to hit."}];let cur=0;
+const g=document.getElementById('grid');
+V.forEach((v,i)=>{const c=document.createElement('div');c.className='card';
+c.innerHTML='<div class="top"><div class="num">'+v.n+'</div><div><h2>'+v.name+'</h2><p>'+v.idea+'</p></div></div><div class="prev"><iframe src="'+v.n+'.html" title="Variation '+v.n+'" loading="lazy"></iframe></div>';
+c.onclick=()=>openBig(i);g.appendChild(c);});
+function fit(){document.querySelectorAll('.prev').forEach(p=>{const f=p.firstElementChild;const s=p.clientWidth/1280;f.style.transform='scale('+s+')';p.style.height=(480*s)+'px';});}
+addEventListener('resize',fit);addEventListener('load',fit);fit();
+const big=document.getElementById('big'),bf=document.getElementById('bf');
+function openBig(i){cur=(i+V.length)%V.length;const v=V[cur];bf.src=v.n+'.html';document.getElementById('bt').textContent=v.n+' - '+v.name;document.getElementById('open').href=v.n+'.html';big.classList.add('on');}
+function closeBig(){big.classList.remove('on');bf.src='about:blank';}
+document.getElementById('close').onclick=closeBig;
+document.getElementById('prev').onclick=()=>openBig(cur-1);document.getElementById('next').onclick=()=>openBig(cur+1);
+document.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-w]').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');bf.style.width=b.dataset.w;});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeBig();const n=parseInt(e.key,10);if(n>=1&&n<=V.length)openBig(n-1);});
+</script></body></html>

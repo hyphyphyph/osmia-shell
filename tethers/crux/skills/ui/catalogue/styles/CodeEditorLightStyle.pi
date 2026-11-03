@@ -1,0 +1,54 @@
+export anchor CodeEditorLightStyle:
+    number: 57
+    screen: Inbox
+    name: Code editor light
+    idea: The inbox opens like files in a light code editor, with a file tree for filters, tabs for open items, numbered lines and syntax colours that tell names, verbs, titles and times apart.
+    base: light
+    palette:
+        chrome: #eceef2, the title bar, tab strip and activity bar
+        side: #f5f6f8, the file tree and the reply panel
+        editor: #ffffff, the editor panes
+        selection: #e6eefc, the open line and the active file
+        text: #24292f, default code text
+        dim: #5c6570, breadcrumbs and inactive tabs
+        function: #0a5bb5, person names, the primary button, links and focus
+        keyword: #8a2bb5, verbs and the at mention
+        string: #0f6e3a, quoted task titles and the done tag
+        number: #a14a00, times and dates
+        comment: #5f6b5a, projects and comment lines in italic
+        error: #b42318, unread tags and the unread count
+        status: #2d4b8a, the status bar with white text
+    type:
+        Code is ui-monospace, SF Mono, Cascadia Code, JetBrains Mono,
+        Menlo, Consolas, DejaVu Sans Mono, monospace at 13px on a 1.6 line
+        height. Priya's message alone is in system-ui at 15px on a 1.55
+        line height. Breadcrumbs are 12px, tags 11px bold, and panel
+        headings 11px semibold system-ui uppercase.
+    layout:
+        A window 1280px wide at most with a title bar of three grey dots,
+        the app name, a command field reading Go to task, project or person
+        and mara.okafor. Below sit a 44px activity bar of icons, a 220px
+        Explorer tree with an inbox folder holding all, mentions, assigned
+        and unread with 3 U, and the editor. The editor has tabs for
+        inbox/all and hero-image-options with an unread dot, then two split
+        panes. The left pane lists the inbox as numbered lines between a
+        header comment and an end comment, each line reading name, verb,
+        quoted title, project as a comment, time and tags. The right pane
+        shows from and task lines, the message in a pale yellow note box,
+        an attachments comment and three thumbnails with Option labels. A
+        Reply panel under both panes has a prompt field and buttons with
+        keyboard hints, and a blue status bar closes the window. Below
+        1000px the tree becomes a strip of file links and the panes stack.
+        Below 600px the activity bar turns into a top row.
+    spacing: A 4px unit. 21px code lines, 12px pane gutters, 44px line number gutter.
+    density: High. One notification per numbered line.
+    corners: 8px on the window, 4px on note boxes and thumbnails, 3px on buttons, fields and tags.
+    borders: 1px #d5d9e0 between every region, a 2px accent line on top of the active tab and at the left of the selected line.
+    shadows: Only the window, 0 8px 24px rgba(30,40,60,0.12).
+    icons:
+        16px thin line icons with a 1.6 stroke, tinted by kind, orange for
+        folders and blue for files. Tags are small outlined boxes, a dot
+        with unread, a tick with done and a triangle with open. Buttons
+        carry keyboard hints in small key boxes.
+    focus: A 1px accent outline with a soft 3 to 4px accent ring. A focused field gets an accent border and the same ring.
+    tone: Lowercase paths and code comments, such as inbox › all, // end of inbox and reply to Priya.

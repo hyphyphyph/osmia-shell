@@ -1,0 +1,52 @@
+export anchor ToyBricksStyle:
+    number: 104
+    screen: ProjectsDashboard
+    name: Toy bricks
+    idea: The dashboard is built from chunky interlocking plastic bricks on a studded baseplate, so every panel, number and progress bar snaps together in primary colours.
+    base: light
+    palette:
+        baseplate: #e9eaec, the page, tiled with #dcdee2 studs every 24px
+        brickRed: #c8191f, the current nav brick, the overdue alert and number, Behind chips, white text
+        brickBlue: #0b5cad, the top bar, progress studs and this week bars, white text
+        brickYellow: #f6c90e, the primary button, the avatar, At risk chips, last week bars and the focus halo, dark text only
+        brickGreen: #1e7a3c, the active projects brick and On track chips, white text
+        brickWhite: #fbfbf8, panels, nav bricks, the search tile and fields
+        ink: #1b1b1b, text and the focus ring
+        slate: #4a4d52, meta lines, captions and day letters
+    type:
+        Two stacks. Display uses Arial Rounded MT Bold, Nunito, Varela
+        Round, Trebuchet MS, system-ui in bold. Text uses system-ui, Segoe
+        UI, Roboto, Arial. The greeting is 40px at 1.05, summary numbers
+        56px, panel titles 24px, project names 19px, body 16px at 1.45,
+        meta 14px, chip labels 13px bold.
+    layout:
+        The page background is a grey baseplate of round studs. The header
+        is one long blue brick holding a two brick logo, a smooth white
+        search tile, a yellow New project brick, a round white bell stud
+        with a red count and a yellow MO stud with the name. Below it the
+        nav is a row of small white bricks with their own studs, and the
+        current Home brick is red and raised 6px. A wide white plate holds
+        the greeting Hi Mara, let's build, the date, and a red brick that
+        says 4 tasks are overdue with a cross. The four numbers are bricks
+        of lengths 3, 4, 3 and 4 in green, yellow, red and blue. The main
+        area has a wide white Projects plate on the left, where each project
+        row has a name, a meta line, a status chip brick and a progress
+        track filled with blue studs plus the percent. On the right a
+        Tasks completed plate shows 14 bars built as stacks of one task
+        bricks, yellow for last week and blue for this week, with a small
+        stud on top and the value above. An Activity plate lists six items
+        with round coloured initial studs. Below 960px the plates stack
+        and the numbers go two by two. Below 600px the search drops to its
+        own row.
+    spacing: A 4px unit on a 24px stud grid. Panels pad 20px, gaps of 12 and 24px.
+    density: Medium. Big bricks and clear rows, one project per row.
+    corners: 4px on every brick, round studs, round avatar and bell.
+    borders: None. Rows divide with a 3px stud grey groove.
+    shadows: Each brick has a 6px darker inset lip along its bottom and a hard 3px drop below, with no blur.
+    icons:
+        Solid filled shapes in currentColor at about 14px. A round stud for
+        On track, a triangle for At risk, a square for Behind and a thick
+        cross for overdue, always with the word. Studs are a row of round
+        bumps along the top edge of each brick in the brick colour.
+    focus: A 4px ink outline offset 3px inside a 9px yellow halo, on bricks, fields and rows alike.
+    tone: Cheerful build talk, such as Let's build and One brick is one task.

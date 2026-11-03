@@ -1,0 +1,55 @@
+export anchor WineLabelStyle:
+    number: 81
+    screen: ProjectsDashboard
+    name: Wine label
+    idea: The dashboard is an estate cellar where an engraved crest heads the page, each project is a cream wine label with its cuvée, vintage and percent complete set like strength, and status is a small seal.
+    base: light
+    palette:
+        cellar: #efe6d2, the page
+        label: #fbf6ea, labels and panels
+        burgundy: #6d1424, frames, accents, this week bars and the primary button
+        claret: #8b2b3b, a second accent for hover
+        gilt: #a88443, inner hairlines and ornaments, never text
+        ink: #2a1a17, text
+        sepia: #5d4a43, captions and italics
+        hairline: #cdbf9f, dotted rules
+        bottleGreen: #2c5934, the On track seal
+        amber: #7c5000, the At risk seal
+        red: #a01d1d, the Behind seal
+    type:
+        Display uses Didot, Bodoni 72, Bodoni MT, Big Caslon, Hoefler Text,
+        Garamond, Georgia. The house name is 46px caps tracked 0.3em, the
+        greeting 40px italic, label names 26px, percent figures 44px with
+        lining numerals and section titles 22 to 28px caps tracked 0.14em.
+        Small caps labels are 11 to 12px at 600 tracked 0.24em. Text uses
+        Hoefler Text, Garamond, Baskerville, Georgia at 16px, with italics
+        for vintages and times.
+    layout:
+        A thin utility row has an underlined Seek search, Notes iii, Cellar
+        master Mara Okafor and a burgundy New project button with an inset
+        cream line. A centred shield crest with a B sits over BRIGHTWORK in
+        wide caps and Project estate, the team cellar. Nav is centred small
+        caps between burgundy rules with gilt diamonds between items and
+        Home underlined. The greeting is an oval cartouche with an inner
+        gilt line holding the date, Good morning, Mara in italic and Four
+        tasks are overdue between diamonds. Four rounded neck collars show
+        the summary numbers. The cellar is a grid of six labels, each a
+        burgundy line, a cream gap and a double frame, with Cuvée and the
+        team, an engraved sprig, the name, Vintage 2026 and a number, the
+        percent large with complete, a ruled meter, tasks and bottled by
+        the due date, and a seal. Below sit a Harvest record bar chart with
+        engraved line-filled bars last week and solid burgundy this week,
+        and The cellar book with italic times. At 375px labels stack and
+        the cartouche becomes a rounded panel.
+    spacing: An 8px unit, generous. 26px between labels and 26 to 34px inside panels.
+    density: Low. Centred, symmetrical and lots of cream.
+    corners: Square labels. The greeting is an oval cartouche and the summary sits on rounded neck collars.
+    borders: Engraved stacks of an outer burgundy line, a cream gap and an inner gilt or double burgundy line.
+    shadows: A soft 12px shadow as if labels sit on bottles.
+    icons:
+        Engraved sprigs, a shield crest and diamond dividers. Seals pair the
+        word with a round seal holding a tick for On track, a lozenge with
+        an exclamation for At risk and a square seal with a cross for
+        Behind, each with a thin outer ring.
+    focus: A 2px burgundy outline offset 3px with a 6px burgundy halo at 15 percent.
+    tone: Courtly and calm, such as The cellar, Cuvée Design, bottled by 14 November and The cellar book.

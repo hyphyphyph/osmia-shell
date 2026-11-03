@@ -1,0 +1,51 @@
+export anchor DarkLuxuryStyle:
+    number: 296
+    screen: CodeRepository
+    name: Dark luxury
+    idea: A hushed, symmetrical page of near black and fine gold hairlines, light display serif and widely spaced capitals, where the pull request reads like an invitation card and every figure has room.
+    base: dark
+    palette:
+        noir: #0b0a08, the page and style sheet ground
+        velvet: #12100d, the card gradient top and the diff panel
+        ivory: #efe9dd, text
+        taupe: #a39b8d, spaced capital labels and meta
+        bronzeLine: #3d3528, quiet dividers and the outer card rule
+        gold: #cdae6a, hairline rules, frames, ornaments and the primary button
+        champagne: #e6cd92, gold text, figures, approved, links and focus
+        ruby: #ec8b80, failing, changes requested and removed counts
+        rubyShade: #22110f, removed diff lines
+    type:
+        A light display serif, Bodoni 72, Didot, Bodoni MT, Georgia, at
+        weight 300 for the title at 52px, the repository at 34px, figures
+        at 46px and names at 21px. A humanist sans, Optima, Candara, Gill
+        Sans, Segoe UI, for body at 16px and 1.65 and for labels at 11px
+        caps tracked 0.32em. The diff is 13px monospace at 1.85.
+    layout:
+        Everything is centred and symmetrical, up to 1160px. The header
+        stacks a gold diamond monogram, BRIGHTWORK · CODE in gold spaced
+        capitals, the repository in light serif with the name in italic
+        champagne, and a row of spaced capital meta for Private, Watch,
+        Star and Fork. A gold ornament rule with a small diamond leads to
+        the tabs, a centred row of spaced capitals with counts as gold
+        superscripts and a thin champagne underline on the current tab.
+        The pull request is a centred card with a gold hairline and a
+        second bronze rule 6px outside it. It holds Open and Pull request
+        nº 214 in spaced capitals, the title, the merge sentence, then three
+        equal columns split by hairlines for Checks with a big 11 of 12,
+        Reviewers and Labels as outlined gold tags. Below the card two
+        columns. The wide one holds Files changed with right aligned serif
+        counts and the diff in a quiet panel, where the comment is a gold
+        framed remark in italic serif. The narrow column centres assignee,
+        labels, milestone and linked issue, an ornament rule and the
+        disabled merge button. Below 960px it all stacks.
+    spacing: An 8px unit used generously. 48px card padding, 64px between bands, 28px between side facts.
+    density: Low. Few items per band with wide margins.
+    corners: Square, with rotated diamond monogram and ornaments.
+    borders: 1px gold hairlines, a bronze rule 6px outside the card, gold underlines on section headings.
+    shadows: None. A faint velvet to noir gradient inside the card.
+    icons:
+        Thin 1.2px line icons, used sparingly. A ringed tick for approved,
+        an octagon cross for failing, a triangle for changes requested, a
+        lock on the merge, each with spaced capital words.
+    focus: A 1px champagne outline offset 4px inside a soft gold halo.
+    tone: Formal and spare, such as Pull request nº 214 and Merging opens once every check has passed.

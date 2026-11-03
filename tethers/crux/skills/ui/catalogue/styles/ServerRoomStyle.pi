@@ -1,0 +1,55 @@
+export anchor ServerRoomStyle:
+    number: 412
+    screen: DatabaseConsole
+    name: Server room
+    idea: The console is two equipment racks, with tables as patch panel ports, the open table cabled to its columns, the query on a console LCD, results as LED meters, history as an event log and connections as lit power sockets.
+    base: dark
+    palette:
+        room: #0a0b0d, the page
+        frame: #24272c, the rack frames and the sheet border
+        rail: #2f3339, mounting rails with dark screw holes
+        face: #1a1d22, unit faces and the style sheet
+        lcd: #0b1418, displays, log lines and fields
+        lcdInk: #bfe9ff, display text
+        silk: #e6e8eb, silkscreen labels and text
+        muted: #a5abb5, model text, U numbers and units
+        green: #4ee08a, OK LEDs, lit meter segments, lit sockets and Run
+        onGreen: #04220f, text on green
+        amber: #ffc04d, the read-only LED, SQL keywords and focus
+        red: #ff7a72, the Fault LED and its error
+        blue: #5aa9ff, the patched tasks port, its cable and foreign key columns
+        yellow: #f5d547, the key column cable
+        grey: #8d949e, plain column cables
+    type:
+        Industrial condensed sans, DIN Alternate, Bahnschrift, Barlow Semi
+        Condensed, Roboto Condensed, Arial Narrow. Base 14px. Unit titles
+        12px bold caps at 0.16em, the app name 22px bold caps. LCDs, log and
+        values use ui-monospace, with meter values 22px bold.
+    layout:
+        A dark aisle header reads BRIGHTWORK DATA and Aisle 3, cabinet for
+        production-replica. Two racks sit side by side, each a frame with
+        rails on both sides marked with U numbers. Rack A holds a patch
+        panel unit with five jacks labelled by table, tasks lit blue with a
+        cable dropping into a blue bus, then six column strips in three
+        columns, each with a coloured cable stripe and type. Under it a
+        console unit with a blinking Ready LED shows the SQL on a dark LCD
+        with amber keywords, and raised Run and Clear hardware buttons.
+        Rack B holds a Result meters unit with an OK LED and three channels,
+        each with the project name, a four segment LED meter lit by count
+        and the value, then Rows 3, Time 38 ms and Unit open overdue. Next
+        an Event log unit with three LCD lines, a round OK LED or square
+        Fault LED, time, name and duration or error. Last a power unit with
+        sixteen sockets, fourteen lit, and LEDs for Read-only replica with
+        an amber triangle, Lag 2 s and 14 active connections. Below 980px
+        the racks stack. On phones rails slim down and the ports wrap.
+    spacing: Rack units. 6px between units, 24px rails, 12px by 16px unit padding.
+    density: High. Two racks of compact units with many small parts.
+    corners: Small. 6px racks, 3 to 4px jacks, buttons and displays, round LEDs.
+    borders: A light top and dark bottom edge on each unit face, 2px jack rims, 4px coloured cable stripes.
+    shadows: A heavy drop under the racks, a 3px hard ledge under buttons, LED glow and an inset shade in each LCD.
+    icons:
+        LED shapes carry meaning. Round for OK, square for Fault, triangle
+        for read-only, always with the word. A blinking round LED means
+        ready and stops when reduced motion is set.
+    focus: A 2px amber outline offset 2px with a soft amber halo.
+    tone: Silkscreened caps, such as Patch panel, Result meters, Event log, Fault and Run.

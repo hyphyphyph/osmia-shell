@@ -1,0 +1,53 @@
+export anchor CinemascopeStyle:
+    number: 356
+    screen: VideoEditor
+    name: Cinemascope
+    idea: The editor framed as a widescreen film, with solid black letterbox bars carrying opening titles and the export, a 2.39 to 1 picture, and the bin and inspector set below as centred end credits with dotted leaders.
+    base: dark
+    palette:
+        letterbox: #000000, the top and bottom bars and the picture itself
+        auditorium: #0e0c0a, the warm dark between the bars and the style sheet
+        seat: #16130f, swatch and control cells
+        rule: #3a3226, hairline rules framing the timeline
+        leader: #5c5243, dotted credit leaders and the render line
+        ivory: #efe6d2, text, the playhead and focus
+        parchment: #a89e8a, small caps labels and italic asides
+        clip: #8a7b5c, clip bars and outlined buttons
+        marqueeGold: #d9b56a, the title, section caps, the selected clip, marker and Export
+    type:
+        Display is a Didone stack, Didot, Bodoni 72, Bodoni MT, Hoefler
+        Text, Georgia. Body is a book serif stack, Iowan Old Style,
+        Palatino, Georgia, 15px at 1.6. Labels are system sans in caps,
+        widely tracked. The title Launch teaser is 44px caps tracked 0.32em
+        in gold, the picture card Didone italic up to 38px, the timecode
+        serif italic 18px, credit heads sans 13px caps tracked 0.42em,
+        credit roles serif italic and credit values sans 13px tracked
+        0.14em.
+    layout:
+        The page is a film. A solid black top bar centres Brightwork Cut in
+        tracked caps with an italic presents, then the gold title, then
+        1080p and 24 fps in tracked caps. Between the bars a warm near black
+        stage holds a centred picture at 2.39 to 1 on black with a faint
+        gold spill beneath, the timecode set like an italic subtitle with of
+        and the duration, and three bare transport glyphs with play inside a
+        thin gold ring. Below, The Timeline is centred in tracked gold caps
+        with an italic aside, and the tracks run as hairline rows. Clips are
+        thin 4px bars with italic names sitting above them, the selected
+        title bar gold, ringed, and followed by a star and the word
+        selected. A gold triangle marker with an italic cut to logo and a
+        dotted drop line sits at 84 seconds, and an ivory playhead with an
+        up triangle and 18. Then two centred credit columns, Featuring the
+        bin with file names and durations joined by dotted leaders, and
+        Title card with Position 960 by 540, Scale 100 percent, Opacity 100
+        percent and Cross dissolve 12 frames the same way. A solid black
+        bottom bar holds a hairline render line with Render 0% and not yet
+        begun beside a gold Export in tracked caps. At phone width the bars
+        shrink, the credits hide and the track names reduce to their ids.
+    spacing: Generous. 40px letterbox bars, 56px between acts, 64px between credit columns.
+    density: Low. One wide picture, one thin timeline, two short credit lists.
+    corners: None anywhere except the round play ring.
+    borders: Hairline rules and dotted leaders only.
+    shadows: A faint gold spill below the picture, as if from a projector.
+    icons: Very few. Filled transport glyphs, a triangle for the marker, a star for the selection. No icon boxes.
+    focus: A 2px ivory outline offset 3px.
+    tone: Cinematic and courteous, such as presents, Featuring and not yet begun.

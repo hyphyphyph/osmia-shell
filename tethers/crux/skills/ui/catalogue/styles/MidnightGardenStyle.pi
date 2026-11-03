@@ -1,0 +1,51 @@
+export anchor MidnightGardenStyle:
+    number: 272
+    screen: CloudFiles
+    name: Midnight garden
+    idea: Files hang like leaves along a drawn vine on deep night green, the selected file blooms as a moonlit flower, and its details open in an arched garden window.
+    base: dark
+    palette:
+        night: #0c1611, page and style sheet
+        bed: #12201a, leaf rows, storage bed, arch panel and search
+        bedLit: #182a21, selected row and current nav
+        vine: #3d5c48, stems, borders and line art
+        ink: #edf1e6, text
+        muted: #a9baa7, meta and inactive nav
+        leaf: #8fd0a2, primary button, file icons, leaf markers, upload and storage growth
+        moon: #f3e9c6, moon, Starred word and dashed focus
+        petal: #eeb0ca, the selected flower, the selected edge and the Shared word
+        leafInk: #0b2214, text on leaf
+    type:
+        One humanist stack, Optima, Candara, Segoe UI, Noto Sans. Base
+        15.5px. The title is italic 40px at 500, the details title italic
+        21px, file names 15.5px at 600, meta 13.5px muted and status words
+        italic 13px.
+    layout:
+        A botanical line art vine with small leaves and petal dots runs
+        across the top edge, over a leaf and moon mark with Brightwork
+        Drive in italic and a leaf cornered search. Three columns follow.
+        A 210px nav hangs the five places from a vertical stem, each with a
+        small leaf, My files with a bright leaf and a lit fill, then a bed
+        card with 64.2 GB of 100 GB used and a vine bar ending in a leaf.
+        The middle has the breadcrumb, the italic title, Upload, New folder
+        and a List or Grid switch, then a vertical vine down the left of
+        the list. Each file row hangs from it on a leaf, folders on a bud
+        and the selected file on a petal flower, and holds the name, an
+        italic status word, date over person, and size. The selected row
+        has a petal edge. A 330px arched panel holds Details, an arched
+        preview window with a crescent moon, vines and the cover, the
+        italic name, facts and the three buttons. Below 1180px the arch
+        moves under the list. Below 760px all stacks.
+    spacing: An 8px unit. 36px gutters and column gaps, 8px between leaf rows, 14 by 16px row padding.
+    density: Medium. Eight rows hang from one vine with room for the line art.
+    corners: Leaf shaped, 16px on two opposite corners and 3px on the others. The details panel is a 170px arch over 18px feet.
+    borders: 1px vine green on panels and rows, a 2px vine line down the list and the nav, a petal edge on the selected row.
+    shadows: None. Light comes from the moon, cream and petal accents.
+    icons:
+        18px line icons in leaf green. Rows hang from leaves, folders from
+        buds and the selected file from a flower. Italic status words pair
+        a filled star with Starred in moon cream, two heads with Shared
+        with 4 people in petal and an up arrow ring with Uploading, 62% in
+        leaf over a growth bar.
+    focus: A 2px dashed moon cream outline with a 3px offset.
+    tone: Gentle and plain, such as Details and 64.2 GB of 100 GB used.

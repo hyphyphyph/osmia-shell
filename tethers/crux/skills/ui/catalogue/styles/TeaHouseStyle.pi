@@ -1,0 +1,56 @@
+export anchor TeaHouseStyle:
+    number: 171
+    screen: ProjectsDashboard
+    name: Tea house
+    idea: The dashboard is laid out like a quiet tea room, where panels are tatami mats edged in dark cloth, a wooden beam carries the header, a bamboo pole divides the room and progress grows as bamboo segments in tea green and wood.
+    base: light
+    palette:
+        shoji: #f6f2e4, the page under a 160 by 96px lattice
+        lattice: #ddd1b3, lattice lines, never text
+        tatami: #e9e2c3, mat panels with a fine woven texture
+        straw: #d9cf9f, rules inside mats
+        heriCloth: #3e4a26, the dark mat edges
+        wood: #6e4a2c, the header beam and the plaque frame
+        lightWood: #b08a5e, hairlines and unfilled bamboo segments
+        ink: #2a2418, text
+        softInk: #5a4a33, meta and dates
+        teaGreen: #3f5a1f, headings, the primary button and On track
+        youngBamboo: #a3b56f, last-week stalks
+        bamboo: #4d6a28, this-week stalks and filled segments
+        roasted: #8a4a12, At risk
+        persimmon: #9b2c1e, Behind and overdue
+        focus: #2f5bb0, the focus outline
+    type:
+        Text uses Hiragino Mincho ProN, Yu Mincho, Noto Serif CJK JP, Iowan
+        Old Style, Palatino Linotype, Georgia. Labels and controls use
+        Hiragino Sans, Yu Gothic, Noto Sans CJK JP, system-ui. Total
+        figures are 52px regular mincho, the greeting 34px at 500 tracked
+        0.04em, project names 19px, body 16px at 1.7, and headings 13px
+        gothic semibold tracked 0.3em with a trailing wood hairline.
+    layout:
+        A dark wood beam header holds the widely tracked brand, a paper
+        search field, a paper New project button, an outlined bell and the
+        user name. A pale sliding-door strip below is the nav, each item
+        framed by lattice lines, Home on tatami with a dark cloth underline.
+        The room is three columns, a wide stack, a vertical bamboo pole
+        with dark nodes, and a narrow stack. The wide stack has the
+        greeting mat with the date and a wood-framed overdue plaque, four
+        square half mats for the totals with cloth on the left and right,
+        and the projects mat listing each project with name and meta, a
+        row of ten bamboo segments filled to the percent, the percent with
+        tasks done and the status. The narrow stack has vertical mats for
+        the chart and the recent activity. The chart draws each day as a
+        rounded bamboo stalk with dark nodes every three tasks, young green
+        last week and deep green this week. Below 960px the pole turns
+        horizontal and everything stacks.
+    spacing: An 8px unit with generous steps of 24 and 40px. Mats have 24 to 28px padding.
+    density: Sparse and quiet, with even rhythm and plenty of empty mat.
+    corners: Square mats and 2px controls. Only bamboo is rounded.
+    borders: 8px heri cloth on the two long sides of each mat, 1px straw rules inside, a 4px dark beam edge.
+    shadows: None. Depth comes from the woven straw texture and the bamboo gradient.
+    icons:
+        Simple natural shapes beside words. A leaf for On track, an
+        outlined triangle for At risk, a solid square for Behind and a
+        clock ring for Overdue. Line icons for search and the bell.
+    focus: A 2px focus blue outline offset 4px, white on the wood beam.
+    tone: Calm and brief, such as This week, Fourteen days and Recent.

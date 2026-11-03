@@ -1,0 +1,19 @@
+# Crux Skills
+
+## Question Owners
+
+- crux-spec-develop: turning an idea, feature request, technical question, or high-level requirement into a specification.
+- crux-spec-deep-dive: adding detail to one existing part of a specification through a focused interview.
+- crux-spec-review: what is unclear, contradictory, or problematic in the specifications.
+- crux-spec-coverage: what behaviors and scenarios we have failed to specify.
+- crux-spec-impact: what happens to the specifications if we change this.
+- crux-spec-refactor: reorganizing the specifications while preserving their meaning exactly.
+- crux-spec-distill: everything the specification says about one named thing, as one prompt.
+- crux-impl-reconcile: where the specification and the implementation disagree.
+- crux-ui-develop: which part of the UI to work on, how it should work, and which mockup variation to keep.
+- crux-ui-styles: which very different visual styles the application could take, and which direction to follow.
+- crux-arch-explore: what architectures could solve this problem.
+- crux-arch-interfaces: how components divide responsibility and what crosses each boundary.
+- crux-arch-dependencies: whether the dependency structure is healthy.
+- crux-arch-tradeoffs: which defined alternative best satisfies the project's priorities.
+- crux-arch-risks: what could make this design fail.

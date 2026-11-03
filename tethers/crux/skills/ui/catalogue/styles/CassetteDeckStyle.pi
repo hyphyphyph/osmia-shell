@@ -1,0 +1,58 @@
+export anchor CassetteDeckStyle:
+    number: 332
+    screen: MusicPlayer
+    name: Cassette deck
+    idea: The player is a front loading cassette deck, with a tape window of turning reels, a mechanical counter, two amber VU meters with needles, a row of chrome piano keys for transport and the queue typed on the cassette insert card.
+    base: dark
+    palette:
+        deck: #151517, the page, the deck body and the style sheet
+        ribbed: #1e1e21, body ribs, the insert card and the list row
+        bezel: #3a3a3f, window, meter and counter bezels, and rules
+        chrome: #c9ccd1, piano keys and toggle caps, as a gradient from #eceef0 to #a6aab0
+        keyInk: #111214, legends printed on chrome
+        legend: #e6e6ea, panel legends and text
+        legendDim: #a8a8b2, units, small print and secondary lines
+        meterAmber: #ffc56b, VU faces, the lyric memo, the playing lamp, the progress fill and focus
+        peakRed: #ff8a6a, the VU red zone above zero, marked with plus figures
+        tapeBrown: #3a2a1e, tape wound on the reels, decorative
+    type:
+        Three voices. Panel legends use Eurostile, Microgramma, Bank Gothic,
+        Arial Narrow in caps, with the title at clamp 24 to 34px at 700 and
+        0.12em tracking, and small legends at 11px at 700 with 0.2em. The
+        counter and lyric memo use ui-monospace and Menlo, the counter 28px
+        at 700. The insert card uses Courier New and Courier at 16px. Body
+        text is Helvetica Neue at 14px.
+    layout:
+        A ribbed deck beside a side column. The deck header reads
+        BRIGHTWORK SOUND and Stereo cassette deck, now playing. A tape
+        window with an inset shadow shows a dark cassette with a beige
+        label handwritten Low Tide, side A, and two white six spoke reels
+        turning in brown tape. Beside it two amber backlit VU meters, VU L
+        and VU R, with ticks from minus 20 to plus 3, a red zone and white
+        needles just below zero. Under them a four wheel mechanical counter
+        reads 0214 beside Tape counter and of 4 38, then an Output level
+        fader with a chrome cap at 70 percent over a 0 to 10 scale. Below
+        sit HARBOUR LIGHTS in wide caps with the artist and album, then a
+        black Lyric memo display in amber monospace with the current line
+        behind a chevron and the next line dimmer. A row of four touching
+        chrome piano keys follows, PREV, PLAY pressed down with a lit
+        amber lamp and the word PLAYING, PAUSE and NEXT, then three small
+        chrome toggles, Shuffle Off, Repeat Off and Liked On with a heart.
+        A thin amber progress bar with the elapsed and total time closes
+        the deck. The side column holds the insert card, a spine headed
+        Insert, up next and Side A over five typed rows with number, title,
+        artist and time, then Tape shelf, your library as three cassette
+        spines with a coloured edge and song counts, and chrome keys for
+        Albums, Artists and Podcasts. Below 1100px the side column moves
+        under the deck, and below 760px the deck stacks.
+    spacing: An 8px unit. 24px deck padding, 16 to 20px between modules and 2px seams between piano keys.
+    density: Medium. A full machine face, with the queue on a separate card.
+    corners: 6px deck and meter bezels, 12px tape window, 2px keys and fields, 4px insert card.
+    borders: 1px bezel rings around the window, meters and counter wheels, a double rule under the insert spine and 2px ribs across the body.
+    shadows: Raised chrome keys cast a hard 0 4px 0 black. The pressed key drops to 0 1px 0 and sits 3px lower. The window has an inset shadow.
+    icons:
+        Classic transport glyphs printed on each key above its word. The
+        pressed Play key shows a lit lamp and the word PLAYING. Toggles say
+        Off or On, with On in amber. The current lyric has a chevron.
+    focus: A 2px amber outline offset 3px on every key, field and card row.
+    tone: Hardware legends, such as Tape counter, Output level, Lyric memo, Insert and Tape shelf.

@@ -1,0 +1,55 @@
+export anchor BoardingPassStyle:
+    number: 69
+    screen: TodayMobile
+    name: Boarding pass
+    idea: Every meeting is a line on a departure board and every task a paper ticket with a torn-off stub, so the day reads like a travel itinerary.
+    base: light
+    palette:
+        tarmac: #e7e9ec, the page behind the tickets and the round notch cut-outs
+        ticket: #fffdf8, ticket bodies, the header pass and the nav strip
+        stub: #f3efe4, the tear-off stub on the right of each ticket
+        navyInk: #15233f, text, the header band, gate signs and the Due today stamp
+        slate: #4d5a70, field captions and the Upcoming stamp
+        perforation: #9aa3b2, dashed tear lines, decorative only
+        signalOrange: #b23c0c, the add button, the priority tag, the badge and focus
+        board: #1b2433, the departure board panel for meetings
+        flap: #f6f3e8, split-flap digit tiles on the board
+        clearedGreen: #1d6b45, the Done stamp with a tick
+        delayRed: #a8201a, the Overdue stamp with a triangle and the overdue ticket ring
+    type:
+        Two families. Condensed sans is Arial Narrow, Roboto Condensed,
+        Helvetica Neue, Arial, sans-serif, used for names, headings and
+        caps captions. Monospace is ui-monospace, SFMono-Regular, Menlo,
+        Consolas, monospace, used for codes, counts, times and field values.
+        Body falls back to system-ui. Sizes are 26px bold mono for the
+        manifest counts, 20px bold mono gate codes, 18px bold condensed caps
+        for header values, 17px bold condensed task names, 15px bold mono on
+        flap tiles, 13px bold mono field values and 10px bold condensed caps
+        captions with 0.14em tracking.
+    layout:
+        A single phone column up to 400px wide centred on the tarmac grey
+        with generous space around it. The header is a boarding pass with a
+        navy band holding a paper plane mark, the brand in spaced caps and
+        the avatar, then Passenger and Date fields and a route line reading
+        6 TSK to 2 MTG with a small plane, plus the line 6 tasks, 2
+        meetings. Each section opens with a navy gate sign, a dashed rule
+        and a two digit count. Meetings sit in a dark departure board table
+        with split-flap time digits, the name in caps and a Next or Later
+        remark. Each task is a ticket with a flight number such as BW 101,
+        the name, and Project and Due fields, joined by a dashed perforation
+        with round notches to a 92px stub showing the gate code and a status
+        stamp. The bottom bar is a ticket strip with a dashed top edge, four
+        tabs and a raised round orange add button in the middle.
+    spacing: An 8px unit. 12px between tickets, 12 to 14px ticket padding, 28px before each gate sign.
+    density: Medium. About five tickets fit on one phone screen.
+    corners: 10 to 14px on tickets, the header and the board, 2 to 3px on stamps and gate signs, round avatar and add button.
+    borders: 2px dashed perforations between ticket and stub. Stamps use 1.5 to 2px outlines. The overdue ticket gets a 2px red ring.
+    shadows: A 1px hard bottom edge in #c9ced6 plus 0 4px 10px navy at 8 percent, like paper on a desk.
+    icons:
+        2px stroke line icons with square ends at 22px in the nav. A paper
+        plane is the brand mark. Status stamps pair a word with a filled
+        dot for Due today, a hollow ring for Upcoming, a tick for Done and a
+        triangle for Overdue. The done stamp is tilted six degrees and the
+        done name is struck through.
+    focus: A 3px signal orange outline offset 2px on buttons, fields and rows.
+    tone: Travel words as short caps labels, such as Passenger, Gate, Departures and Boarding. Task names stay plain sentence case.

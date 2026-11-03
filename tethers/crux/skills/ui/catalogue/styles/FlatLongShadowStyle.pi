@@ -1,0 +1,52 @@
+export anchor FlatLongShadowStyle:
+    number: 67
+    screen: Onboarding
+    name: Flat long-shadow
+    idea: Solid bright fields and big circles, with long 45 degree shadows trailing off every icon and the headline, straight out of 2013 flat design.
+    base: light
+    palette:
+        cloud: #ecf0f1, the page, fields, role tags and secondary buttons
+        white: #ffffff, the invite panel and text on colour
+        asphalt: #2c3e50, text, the top bar and used seats
+        concrete: #5d6d7e, labels and role tag text
+        sea: #107f6e, the hero band
+        seaDeep: #0c6a5c, long shadows and status chips in the hero
+        orange: #e67e22, the current step circle and the typed row underline
+        pumpkin: #a84300, the Continue button and the Typing chip
+        sun: #f1c40f, the seat note and the focus ring
+        green: #1e8449, the Added chip
+        blue: #2a6fb0, links, the copy icon and an avatar
+        violet: #8e44ad, avatars
+    type:
+        Helvetica Neue, Segoe UI, Lato, Helvetica, Arial. The heading is 60px
+        weight 300 with the first word in 700, white on the sea band, with a
+        40 step text shadow trailing 1px at a time to the bottom right in
+        #0c6a5c. The lead line is 20px weight 300, rows are 18px, step names
+        are 17px weight 600, and chips are 13px bold caps with 8 to 14
+        percent tracking.
+    layout:
+        A slim asphalt top bar with an orange circle logo and Mara Okafor in
+        a violet circle. Then a full width sea band with Step 2 of 4 in caps,
+        the big heading, and a row of four big circles with names and status
+        chips underneath. Done is a white circle with a teal tick, the
+        current step is a larger orange circle with two people, and later
+        steps are white rings with thin numbers. Below, a centred white
+        panel 880px wide holds the line, the invite rows with 64px initial
+        circles, a full width yellow seat band, a Copy invite link circle
+        button, then Back, Skip for now and Continue. Below 820px the circles
+        form a two by two grid.
+    spacing: An 8px unit. 48px panel padding, 16px row padding, 40px between blocks.
+    density: Sparse and poster like. Big circles carry the progress.
+    corners: Square blocks and chips, 3px on buttons, and perfect circles for icons, avatars and remove buttons.
+    borders: None, except 2px cloud row dividers and a 4px orange underline on the row being typed.
+    shadows:
+        No blur anywhere. Long shadows only, a 45 degree band at 20 percent
+        black clipped inside each circle and starting at the icon, plus the
+        stepped headline shadow.
+    icons:
+        Solid white glyphs centred in flat circles, each casting a long
+        shadow to the bottom right. Status chips are solid colour blocks
+        with a white tick for Added and a white pen for Typing. Seats are
+        three filled asphalt dots and two asphalt rings.
+    focus: A 4px sun yellow outline with a 3px asphalt ring outside it.
+    tone: Short and upbeat, with status in caps, such as Done, Now, Next and Later.

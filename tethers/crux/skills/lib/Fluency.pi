@@ -1,0 +1,20 @@
+// How a crux skill gets Piton fluency. It is abstract, so it never
+// compiles or is emitted on its own. PitonSkillBase extends it, so
+// every crux skill carries this guidance once, as a section after its
+// own prompt. A skill that needs more than this, such as a different
+// failure behaviour, says so in its own prompt.
+export abstract anchor Fluency:
+    pitonFluency:
+        Fluency is read once per context. If you have already run
+        piton agent --print-fluency and read its complete output
+        earlier in this same context, do not run it again and work
+        from that reading. Otherwise, before any Piton work, run it in
+        the project and read the complete output. Treat it as the
+        authoritative reference for Piton syntax and semantics,
+        project structure, imports and exports, inheritance and
+        composition, compiler and analyzer commands, project
+        conventions, and validation. Do not invent Piton syntax,
+        commands, or conventions. Reuse the compiler and analyzer
+        wherever possible rather than developing a separate
+        interpretation of Piton semantics. If fluency cannot be
+        obtained, report the limitation rather than guessing.

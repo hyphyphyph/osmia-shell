@@ -1,0 +1,51 @@
+export anchor BoardroomWalnutStyle:
+    number: 342
+    screen: CrmPipeline
+    name: Boardroom walnut
+    idea: The pipeline laid out on a dark walnut boardroom table, each stage a stitched leather folder with a brass name plate, owners on small engraved brass plates, the figures on brass plaques and the activity as minutes on a green leather blotter.
+    base: dark
+    palette:
+        walnut: #26170f, the table top, with grain lines in #2d1c13 and #21140d
+        sheetWalnut: #1c110b, the style sheet ground
+        oxblood: #3b1d1b, open stage folders and the secondary button
+        bottleGreen: #1d2c24, the Won folder and the minutes blotter
+        stitch: #b08a5a, dashed stitching inside every folder
+        ink: #f1e3c8, text on leather and wood
+        tan: #d2b994, italic remarks and labels
+        brassLight: #e6c983, the top of every brass gradient and focus
+        brass: #c9a45c, plaques, name plates and the primary button
+        brassDark: #b8924a, the bottom of the brass gradient
+        engraved: #2a1a08, text cut into brass
+        red: #ffa08c, Stalled with a triangle
+        leaf: #b7e0a0, Closed with a check
+    type:
+        A book serif, Baskerville, Baskerville Old Face, Hoefler Text,
+        Garamond, Times New Roman, with plates in Copperplate, Copperplate
+        Gothic Light, Trajan Pro, Optima. Base 17px. The header plate is
+        24px uppercase at 600 tracked .12em, plaque figures 28px at 600,
+        deal names 18px at 600, values 22px, owner plates 11px uppercase,
+        remarks 15px italic.
+    layout:
+        The page is walnut grain drawn with fine repeating lines. A brass
+        header plate reads Brightwork Sales over Q4 Pipeline, with a
+        stitched oxblood Owners button and a brass New deal button. Five
+        brass plaques with two screw dots each show the figures in dark
+        engraved text, the won plaque with a dark bar at 64 percent. Five
+        leather folders follow, each with a tab at the top left, a dashed
+        stitch line inside and a brass name plate with the stage and count.
+        Deals are blocks with the name, a large value, a brass owner plate
+        and an italic remark, split by thin tan rules, and a Folder total
+        line closes each folder. Won is bottle green. A green blotter with
+        wooden end strips holds Minutes as a numbered list. Below 1100px
+        folders go three across, on phones one across with plaques two by
+        two.
+    spacing: An 8px unit. 18px between folders, 14px between plaques, 12px inside the stitching, 28px gutter, 16px on phones.
+    density: Low to medium. Five folders with generous wood between.
+    corners: Folders 4px at the tab corner and 12px elsewhere, 8px stitching, 2px to 4px on brass.
+    borders: Dashed 1.5px tan stitching inside folders and the blotter, thin tan rules between deals, wooden ends on the blotter.
+    shadows: Deep soft shadows under folders and blotter, an inner shade on leather, a light top bevel and a short drop on brass.
+    icons:
+        Few small line icons at 1.7 stroke beside italic remarks. A red
+        triangle with the word in bold for stalled, a leaf check for closed.
+    focus: A 3px light brass outline offset 3px.
+    tone: Formal meeting words, such as Q4 Pipeline, Folder total, Minutes and Owners.

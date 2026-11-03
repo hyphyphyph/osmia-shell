@@ -1,0 +1,41 @@
+export anchor BigAndSimpleStyle:
+    number: 45
+    screen: Settings
+    name: Big and simple
+    idea: One wide column of extra large text and huge tap targets in plain words, built for low vision and older users with AAA contrast everywhere.
+    base: light
+    palette:
+        page: #ffffff, the background everywhere
+        ink: #111111, text, row borders and ticked boxes
+        softInk: #333333, hints and the Off word
+        blue: #0a3a82, links, the primary button, the current section and the focus outline
+        blueSoft: #e6eefb, the row being focused
+        green: #0b5a2a, the On word and the saved note on #e3f3e8
+        red: #8a1010, the danger zone on #fbeaea
+    type:
+        A wide, clear sans with a large x height, Verdana, Tahoma, Segoe UI,
+        DejaVu Sans, sans-serif. Body text is 22px at 1.6 line height and
+        never goes below 20px. The page title is 44px bold, section titles
+        34px bold, group labels 26px bold, row text 22px bold and hints
+        20px regular. At phone width the body drops to 20px.
+    layout:
+        A single centred column 760px wide. A header with the brand and
+        Signed in as Mara Okafor sits above a 3px rule. The five sections
+        are a stack of full width rows, with the current one filled blue
+        and marked You are here. Then the Notifications rows, the Time and
+        language fields, the digest radios, two full width stacked buttons,
+        the saved note and the danger box. Nothing sits side by side.
+    spacing: An 8px unit. 16px between rows, 24px inside rows, 56px above each section heading.
+    density: Very low. One thing per row, about five rows per screen.
+    corners: 14px on rows, fields and buttons, 10px on tick boxes, round radio dots.
+    borders: 3px solid #222222 on every row and field, 4px on tick boxes and the danger box.
+    shadows: None.
+    icons:
+        Few and large, 32 to 44px, always next to a word. A white tick in a
+        filled black box means on and an empty box means off, with the word
+        On or Off at the end of the row. A filled dot in a ring marks the
+        chosen radio and its label is underlined. A filled green circle
+        tick shows Changes saved and a solid red triangle heads the danger
+        zone. Sections that are not current end in a plain arrow.
+    focus: A 5px #0a3a82 outline offset 4px, and the focused row turns #e6eefb.
+    tone: Plain short instructions, such as You are here and Tick a box to turn a message on.

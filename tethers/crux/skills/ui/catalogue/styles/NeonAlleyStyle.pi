@@ -1,0 +1,57 @@
+export anchor NeonAlleyStyle:
+    number: 421
+    screen: TravelPlanner
+    name: Neon alley
+    idea: The itinerary as a rainy side street of hanging neon signs, each leg a sign with a vertical date blade, booked legs lit in a glowing tube colour and unbooked legs dark with dashed unlit tubes, over a faint brick wall and slanted rain.
+    base: dark
+    palette:
+        wall: #0d0b12, the page, the alley wall and the style sheet
+        brick: #16121c, lower panels and swatch cards
+        signBox: #0a080e, sign faces, blades, fields and list rows
+        line: #2a2433, panel edges and row rules
+        ink: #f4f1ff, text
+        muted: #b4abc8, captions, dates and labels
+        pink: #ff5fb0, the Tokyo sign, the route tube, the title glow and the primary button
+        cyan: #52f3ff, the flight sign, route nodes and the secondary button
+        green: #7dff9a, the Kyoto sign, Booked and Done
+        violet: #c4a2ff, the flight home sign
+        yellow: #ffe45c, budget digits and focus
+        unlit: #6e6680, dashed unlit tubes on unbooked signs
+    type:
+        Body in Avenir Next Condensed, Arial Narrow, Roboto Condensed at
+        16px. Signs and the title in Arial Rounded MT Bold, Trebuchet MS,
+        bold. The title 96px with a coloured neon text glow, sign titles
+        26px, budget digits 40px monospace bold in yellow, blades 15px bold
+        caps set vertically, labels 14px bold caps tracked 0.24em.
+    layout:
+        A dark wall with a faint brick grid and thin slanted rain lines over
+        everything. A top row has Brightwork glowing pink and Trips plain,
+        with the dates and the party on the right. The hero title reads
+        Japan in cyan neon and in April in pink neon, with one muted line
+        explaining that lit signs are booked. Itinerary follows as six signs
+        in three columns, the middle column dropped 28px so signs hang at
+        different heights. Each sign is a narrow blade with the date set
+        vertically joined to a face with the date, an icon and title, the
+        detail and a status pill. Lit signs use their tube colour for a 2px
+        border and an outer and inner glow, the flight out cyan, Tokyo pink,
+        Kyoto green and the flight home violet. The train and Osaka are
+        unlit, a dashed grey tube and no glow, with Not booked unlit in a
+        dashed pill. A pink pill and a cyan outlined pill follow. A row of
+        four brick panels closes the screen. Route is a small neon sign with
+        a pink tube joining cyan ringed Tokyo, Kyoto and Osaka. Checklist
+        lists the checks with green glowing Done or plain To do. Budget
+        shows 3,200 of 5,000 euro in yellow digits over a glowing bar.
+        Weather shows a cyan glowing 17 degrees and a pink blossom line.
+        Below 1000px signs go two across and panels two by two, and at phone
+        width all go single.
+    spacing: An 8px unit. 22px between signs, alternate signs dropped 28px and 18px between lower panels.
+    density: Medium. Six signs in three columns, then four small panels.
+    corners: 14px sign faces joined to 12px blades, and pill status tags and buttons.
+    borders: 2px tube borders in each sign colour, dashed for unlit signs, and 1px dark edges on panels.
+    shadows: Neon glow in the tube colour outside and inside lit signs and round primary controls. No drop shadows.
+    icons:
+        2px line icons tinted in the tube colour. Booked is a check circle
+        in a solid pill, Not booked a dashed circle in a dashed pill and
+        Flight a plane. Done is a check and To do an open circle.
+    focus: A 3px yellow outline offset 3px with a yellow glow.
+    tone: Streetwise and short, such as Lit signs are booked, dark ones still need you.

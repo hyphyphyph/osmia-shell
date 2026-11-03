@@ -1,0 +1,45 @@
+export anchor RacingTelemetryStyle:
+    number: 136
+    screen: ProjectsDashboard
+    name: Racing telemetry
+    idea: A daylight timing screen where projects race in a position tower, progress reads as three sector bars, and italic slanted numbers carry the speed.
+    base: light
+    palette:
+        pitLane: #f3f4f6, the page, nav tabs and field fill
+        panel: #ffffff, panels and the header
+        tarmac: #1c1f24, text, position chips, sector fill and checkers
+        muted: #545a63, keys, gaps and axes
+        line: #d5d8dd, row rules and grid
+        raceRed: #c8102e, brand plate, primary button, this week line, Behind
+        purple: #6a1fb0, best sectors, the best day and focus
+        green: #1a7a35, On track and the Research team bar
+        amber: #8c5a00, At risk text
+        flagYellow: #f6c90e, the race control flag, never text
+    type:
+        Sans uses Helvetica Neue, Arial Black, Arial, mostly italic 800 to
+        900 caps. Numbers use DIN Alternate, Bahnschrift, Roboto Condensed,
+        Arial Narrow in italic. Mono for gaps and times uses SF Mono, Menlo,
+        Consolas. Hero numbers 48px, greeting 40px caps, panel titles 18px
+        caps, project names 16px italic, body 14px, keys 11px italic caps.
+    layout:
+        A checkered band runs across the top and again before the sheet.
+        The header has a red slanted brand plate, an underlined search, a
+        slanted red New project button, a round bell and Driver Mara
+        Okafor, then slanted nav tabs with the current one black with a red
+        base. The race row has the date, a big italic caps greeting and a
+        Race control message bar with a yellow flag cell, beside four
+        slanted number tiles with thick left bars. The Timing tower table
+        orders projects by completion from P1 to P6 with a slanted position
+        chip, a team colour bar, name and category, three sector bars,
+        tasks, percent, gap in points to the leader, due and status. The
+        right column holds a Pace line chart comparing this week solid red
+        against last week dashed by weekday, and Team radio activity. The
+        table scrolls inside its panel on small screens.
+    spacing: An 8px unit. 10px table cells, 24px between panels.
+    density: Dense in the tower, airy in the hero numbers.
+    corners: None. Shapes are parallelograms slanted minus 12 degrees instead of rounded.
+    borders: 1px light line on panels, a 3px tarmac rule under panel titles, 6px left bars on number tiles.
+    shadows: None.
+    icons: Filled circle for On track, half filled diamond for At risk, downward triangle for Behind, as position change marks beside the italic caps word.
+    focus: A 3px purple outline offset 2px.
+    tone: Pit wall shorthand in italic caps, such as Timing tower, Race control, Pace, Team radio, Leader and plus 18.

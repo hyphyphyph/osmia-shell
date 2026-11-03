@@ -1,0 +1,53 @@
+export anchor CoffeeMenuBoardStyle:
+    number: 82
+    screen: ProjectsDashboard
+    name: Coffee menu board
+    idea: The dashboard is a café menu board on kraft paper in a wooden frame, with projects as menu items priced in percent with dotted leaders, the summary in cup sizes and the overdue count as the day’s special.
+    base: light
+    palette:
+        wall: #efe7da, the page behind the board
+        wood: #6a4528, the 16px frame, with a #4a2f1a edge
+        kraft: #d8bb8d, the board surface with faint fibres
+        lightKraft: #e3caa1, last week bars
+        milk: #f7eedc, the order slip, tags, search and fields
+        espresso: #2a180b, text, outlines and the primary button
+        roast: #4f3320, script notes, dotted leaders and this week bars
+        crema: #c98b3c, foam caps on the bars, decoration only
+        green: #1e5a2a, On track on milk
+        caramel: #7a4a00, At risk on milk
+        cherry: #9e1f17, Behind, the overdue count and the special ribbon
+    type:
+        Three stacks. Slab caps use Rockwell, Rockwell Nova, Roboto Slab,
+        Courier New, Georgia at 700, the brand 30px tracked 0.12em, section
+        heads 26px tracked 0.14em, menu items 21px, prices 30px and summary
+        figures 46px. Hand lettering uses Marker Felt, Ink Free, Chalkboard
+        SE, Comic Sans MS for the 52px greeting and notes at 15 to 21px.
+        Descriptions use Gill Sans, Trebuchet MS, Segoe UI at 15px italic.
+    layout:
+        The dashboard sits on a kraft board inside a 16px wood frame with a
+        dark inner line. The header has a steaming cup mark with BRIGHTWORK
+        and today’s project menu in script, a pill search, a dark New
+        project pill, a bell with a red 3 and on shift Mara Okafor. Nav is
+        centred slab caps between two espresso rules with a coffee bean
+        between items and Home inverted. The greeting is centred script with
+        the date in slab caps and a red ribbon reading Today’s special, 4
+        tasks are overdue. Four cups of growing size show the summary
+        numbers, labelled small, medium, too hot and large, the overdue cup
+        red. On the menu lists the six projects as items with a dotted
+        leader to the percent as a price and a description line with team,
+        tasks, due and a tag. Below, Cups poured is a bar chart of rounded
+        cups, light kraft last week and dark roast with crema caps this
+        week. From the counter is a taped milk slip of Fresh orders with
+        dark time chips, then a key of the three tags. At 375px the menu
+        and counter stack.
+    spacing: An 8px unit. 10 to 12px between menu items and 34px between menu columns.
+    density: Medium. One line per item plus a description line.
+    corners: Pill buttons, fields and search, 4 to 6px on tags, swatches and the board.
+    borders: A 16px wood frame with a dark inner line, 2px espresso rules round the nav and dotted price leaders.
+    shadows: One soft shadow under the board and one under the taped order slip, which tilts slightly.
+    icons:
+        Cups in four sizes and a bean between nav items. Tags on milk pair
+        the word with a coffee bean for On track, a triangle for At risk and
+        a square for Behind.
+    focus: A 3px espresso outline offset 2px with a 6px milk halo.
+    tone: A friendly barista, such as Today’s special, On the menu, Cups poured, From the counter and Fresh orders.

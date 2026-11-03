@@ -1,0 +1,60 @@
+export anchor IlluminatedManuscriptStyle:
+    number: 144
+    screen: ProjectsDashboard
+    name: Illuminated manuscript
+    idea: The dashboard is a page of a medieval book of hours, with vellum, ruled text blocks, a gilded drop capital for the greeting, red rubrics for headings and a vine growing down the margin.
+    base: light
+    palette:
+        outerParchment: #e8d9b5, the page around the folio
+        vellum: #f8f0dc, the folio, panels and fields
+        ironGallInk: #2b1d10, body text and the chart baseline
+        sepia: #5b4630, dates, notes, labels and italic asides
+        rubric: #a3271c, rubric headings, pilcrows, overdue, Behind, this week bars and the primary button
+        lapis: #22408a, the drop capital ground, last week bars, project links and focus
+        goldLeaf: #b98a2e, frames, progress fills and the focus halo, never text
+        goldInk: #6f4f12, At risk and the small roman numerals
+        verdigris: #2e5e3b, the vine, the avatar and On track
+        ruling: #d9b9a6, ruled lines and double margins
+    type:
+        Two old style serifs. Display uses Goudy Old Style, Garamond, EB
+        Garamond, Palatino Linotype, Georgia, serif. Text uses Palatino
+        Linotype, Book Antiqua, Palatino, URW Palladio L, Georgia, serif
+        with old style numerals throughout. The drop capital is 76px bold
+        white in a 104px box, the greeting 44px, summary figures 52px,
+        rubrics 15px caps tracked 0.2em in red, entry titles 20px
+        semibold, body 17px at 1.55, notes 14 to 15px italic, labels in
+        small caps.
+    layout:
+        One folio up to 1260px on a darker parchment page. A 200px left
+        margin holds the brand with a blue boxed initial B, an italic
+        incipit, a Contents rubric and the nav as ruled lines each led by
+        a red pilcrow, with a fleuron on the current page. A green vine
+        with red and gold berries climbs the margin's right edge below the
+        nav. The text block starts with a ruled header line holding an
+        underlined italic search, a red New project button with a gold
+        inner line, a round bell and a ringed avatar with the name in
+        italic, closed by a red double rule. The greeting opens with a
+        gilded lapis drop capital G beside the rest of the words, the date
+        in italic and a red Take heed line naming the 4 overdue tasks. The
+        four totals sit in one ruled row split by double rules, each with
+        a small caps label, a large figure and a roman numeral beneath.
+        Below, a wide Register of works lists the six projects as ruled
+        entries with a large coloured initial alternating red and blue,
+        the title and italic category, a gold striped progress rule,
+        percent, tasks, due date and the status at the right. A narrower
+        column holds the chart framed as a gilded miniature and a Chronicle
+        of activity led by pilcrows. A colophon closes the page. Below
+        900px the margin becomes a top strip with the nav in a row, the
+        vine is hidden and columns stack.
+    spacing: An 8px unit. 32 to 48px text margins, 40px between columns, 14px inside each register entry.
+    density: Medium. A full text block per column, read slowly like a page.
+    corners: Square, except a worn rounded top right corner on the folio and round arched tops on chart bars and swatches.
+    borders: Red double rules under the header, a double ruling between margin and text, hairline ruling between entries and a gold frame with lapis and vellum rings around the miniature.
+    shadows: None. Frames are layered rings of gold, vellum and lapis.
+    icons:
+        Thin line icons at text size, pilcrows and fleurons as markers.
+        Status uses a green quatrefoil for On track, a gold brown triangle
+        with a mark for At risk and a red crossed square for Behind, each
+        beside the small caps word.
+    focus: A 2px lapis outline offset 2 to 3px inside a 5 to 7px translucent gold halo. A focused field gets a lapis underline and a gold glow.
+    tone: Gently archaic but clear, such as Good morrow, Mara, Take heed and The register of works.

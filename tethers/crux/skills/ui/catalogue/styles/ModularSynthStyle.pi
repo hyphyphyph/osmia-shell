@@ -1,0 +1,52 @@
+export anchor ModularSynthStyle:
+    number: 311
+    screen: OpsMonitor
+    name: Modular synth
+    idea: A rack of synth modules between metal rails, each service a module with an uptime knob, a status lamp and jacks, a patch bay of coloured cables linking the services, and hourly traffic as a step sequencer.
+    base: dark
+    palette:
+        case: #0c0d10, the page behind the rack
+        rail: #41454d, rack rails and the style sheet edge
+        module: #1b1e25, module faces
+        edge: #343a46, module borders and rules
+        ink: #eef0f4, silkscreen text and knob pointers
+        muted: #a9b0bd, small labels
+        sky: #5cc8ff, the api module, p50, Recovered, the primary button and the focus halo
+        violet: #c4a3ff, the web module and its cable
+        amber: #ffc04d, the sync-worker module, sequencer lights, Degraded and the incident gate
+        mint: #6fe0a6, the notifications module, Healthy and Resolved
+        pink: #ff8fa8, the billing module and the patch title
+        red: #ff7b7b, the error trace and Firing
+    type:
+        Condensed caps in Roboto Condensed, Arial Narrow, Helvetica Neue,
+        Arial, system-ui at 14px, values in ui-monospace, Menlo, Consolas.
+        The brand is 22px condensed at 800, uptime values 18px mono bold,
+        module titles 13px bold caps tracked 0.14em, labels 10 to 11px caps.
+    layout:
+        Metal rails with oval holes separate four rack rows. Row one holds
+        a narrow brand module with BRIGHTWORK and the apps as a lamp list,
+        Ops lit, then one module per service, each with a coloured title
+        underline, a knob whose arc shows uptime on a 99 to 100 percent
+        scale, the uptime value, a status lamp strip with shape and word,
+        the metric and In and Out jacks. Billing shows 6 min down and back
+        at 07.54. Row two holds the patch bay, five labelled jacks with
+        sagging cables from web to api, api to sync-worker, api to billing
+        and sync-worker to notifications, listed below, and the gate module
+        for the incident on an amber tinted face. Row three holds the
+        sequencer, 24 hourly columns of ten amber lights with the 14.00
+        peak lit white, and a scope module with error and latency screens.
+        Row four holds triggers for alerts and a clock module for deploys.
+        Every module has screws top and bottom. At phone width modules go
+        full width and service modules pair up.
+    spacing: A 4px gap between modules, 20px module padding top and bottom for screws, 12px sides.
+    density: Medium dense. Modules pack edge to edge in rack rows.
+    corners: 3px module faces, round knobs, jacks, lamps and screws.
+    borders: 1px #343a46 modules, a 3px coloured underline under each title.
+    shadows: A soft shadow under cables, glowing lamps and lit steps, a metal gradient on rails.
+    icons:
+        16px status shapes in lamp strips and lists, a ringed tick for
+        Healthy, a triangle for Degraded, a circular arrow for Recovered, a
+        bolt for Firing, a tick for Resolved and a magnifier for
+        Investigating. Knobs, jacks and screws are drawn decoration.
+    focus: A 3px white outline offset 2px with a sky halo.
+    tone: Synth module names, such as Patch, Gate, Sequencer, Scope, Triggers and Clock.

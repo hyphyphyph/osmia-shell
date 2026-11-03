@@ -1,0 +1,52 @@
+export anchor IndigoNightStyle:
+    number: 288
+    screen: CodeRepository
+    name: Indigo night
+    idea: A soft deep-indigo workspace with a left repository sidebar and floating 16px cards, led by a merge readiness panel that gathers the twelve check pills, the two reviewers and the locked merge button, lit only by soft blue and purple.
+    base: dark
+    palette:
+        abyss: #12132a, the page background, the sidebar and the diff code area
+        deep: #1b1d3c, cards and the style sheet cards
+        dusk: #262a55, the current sidebar item, chips, the hunk header and the disabled merge button
+        edge: #383c72, card borders and dividers
+        starlight: #eceefe, text
+        lilac: #b3b8e3, meta, labels and line numbers
+        blue: #8fb4ff, links, the primary button and focus
+        purple: #b79cff, the current sidebar bar, section icons and the hero glow
+        mint: #7ee0b0, passed, approved, Open and added lines
+        honey: #ffcf7a, requested changes
+        coral: #ff8fa3, failing and removed lines
+        addTint: #1b3036, added line rows
+        delTint: #3a2140, removed line rows
+    type:
+        One sans stack, Inter, Segoe UI Variable, Segoe UI, system-ui, Roboto, base
+        15px on 1.55. Title 30px at 650, card titles 18px at 600, sidebar items 14px
+        at 500, meta 13px. Code 13px ui-monospace on 1.65.
+    layout:
+        Two columns at full height. A 264px abyss sidebar holds the B mark and
+        Brightwork Code, the owner and repository name with a Private chip, three
+        small stat tiles for Watch 12, Star 48 and Fork 3, and the six tabs as a
+        vertical list with counts, Pull requests current with a dusk fill and a
+        purple left bar. The main column, max 1000px, starts with a hero card with a
+        soft purple glow at one corner, the number 214, the title, the Open chip and
+        merge sentence, and a ruled property row for assignees, labels, milestone
+        and linked issue. Next a merge readiness card with three blocks side by
+        side, twelve check pills with the failing one hollow and named, the two
+        reviewers as avatar rows with verdicts, and the disabled merge button with
+        its reason. Then three file cards in a row, each with its path, counts and a
+        split bar, and the diff card with the inline comment. Below 1000px the
+        sidebar becomes a top block with the tabs as a wrapping row and the
+        readiness blocks stack.
+    spacing: An 8px unit. 28px card padding, 24px between cards, 32px main padding.
+    density: Low. Big soft cards, plenty of air.
+    corners: Very soft. 16px cards, 12px stat tiles and buttons, 999px chips and check pills, round avatars.
+    borders: 1px edge borders on cards. The current sidebar item has a 3px purple left bar.
+    shadows:
+        Large soft shadows, 0 12px 32px at 45 percent black, and a blurred purple
+        glow behind the hero corner.
+    icons:
+        Rounded line icons at 1.75px stroke at 1.15em, section icons in purple.
+        Check circle for passed and approved, crossed square for failing, triangle
+        with a bang for requested changes, padlock for the blocked merge.
+    focus: A 2px blue outline offset 3px.
+    tone: Gentle and helpful, such as Merge readiness and Waiting on 1 check.

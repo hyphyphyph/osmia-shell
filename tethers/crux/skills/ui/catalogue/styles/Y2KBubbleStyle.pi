@@ -1,0 +1,52 @@
+export anchor Y2KBubbleStyle:
+    number: 26
+    screen: LandingPage
+    name: Y2K bubble
+    idea: Late-90s web optimism, with bubbly chrome-silver capsules, glossy pill buttons, iridescent pastel edges and little star sparkles.
+    base: light
+    palette:
+        haze: #eef0ff, the page base under faint pink, blue and mint glows
+        midnight: #1c1b4d, text and headings
+        dusk: #4a4880, secondary text and notes
+        gelBlue: #3a5ff0 to #1b34a8, the glossy primary pill and the window title strip
+        linkBlue: #2b45d4, links
+        chrome: #ffffff, #c9cfe0 and #8f97b3, the top bar, capsules and secondary pills as a banded silver gradient
+        iris: #ffd6f5, #d6e9ff, #d9ffef and #fff1c9, card rings and the quote bubble
+        magenta: #b0207a, small headings and the focus glow, with #e0389b for sparkles
+        jade: #0f6b45, the On track gem
+        amber: #8a4b00, the At risk gem
+        cherry: #b3123a, the Overdue gem
+    type:
+        Headings and labels use Arial Rounded MT Bold, Trebuchet MS,
+        Verdana, Tahoma, sans-serif in bold. Body uses Verdana, Tahoma,
+        Lucida Grande, sans-serif. The headline is 76px at 1.02 line height
+        with minus 0.03em tracking, a white emboss shadow, and its second
+        half in a dark violet to blue to plum gradient. Section titles are
+        46px, the quote 36px, feature titles 21px, the lede 18px, body 15px
+        at 1.65 and chips 12px.
+    layout:
+        A floating chrome capsule top bar with a glass orb logo, a sunken
+        segmented control for the nav and a glossy blue Start free pill.
+        The hero is split, with an iridescent badge, the headline, lede,
+        buttons and note on the left, and on the right a chrome device
+        bezel holding a white window with a glossy blue title strip and
+        three project rows with status gems. Star sparkles float nearby.
+        The logo strip is a centred row of soft glossy capsules. Three
+        feature cards have iridescent gradient rings, a white gloss strip
+        and a glossy colour sphere icon. The quote is an iridescent speech
+        bubble with a tail pointing down at an orb avatar. The closing band
+        is a huge chrome capsule with the line and a pill. The footer is a
+        pale silver gradient. Below 960px the hero stacks, and below 720px
+        the nav drops to a full width second row inside the capsule.
+    spacing: An 8px unit with 24 to 28px gaps and roomy 72 to 96px section padding.
+    density: Airy and toy-like. Short lines, big rounded shapes, one idea per capsule.
+    corners: Everything bubbly. Pills at 999px, cards 36px, the device bezel 40px, the quote bubble 48px.
+    borders: 1px silver #8f97b3 around chrome, 3px iridescent gradient rings around cards, 1px white highlights on top edges.
+    shadows: Soft drops of 0 16px 40px rgba(28,27,77,0.12), inner shading at the bottom, and a white gloss strip over the top half of every pill and card.
+    icons:
+        Thick round 2.4 stroke white glyphs inside glossy 84px spheres with
+        a light spot. Status gems sit in white pills, a round tick for On
+        track, a diamond with an exclamation mark for At risk and a rounded
+        square with a cross for Overdue, beside the word.
+    focus: A white 3px ring, then a 3px magenta ring and a soft magenta glow.
+    tone: Upbeat and bouncy, such as Everything bubbles up to one page and My projects.

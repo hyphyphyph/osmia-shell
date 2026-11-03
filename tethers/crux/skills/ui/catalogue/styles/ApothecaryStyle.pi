@@ -1,0 +1,57 @@
+export anchor ApothecaryStyle:
+    number: 86
+    screen: ProjectsDashboard
+    name: Apothecary
+    idea: An old pharmacy counter in black and gold on cream, where each project is a numbered bottle filled to its progress and every figure sits on a framed label with a Latin-style caption.
+    base: light
+    palette:
+        cream: #f4eedd, the page
+        label: #fbf7ea, labels, the day book, the register and fields
+        drawer: #e9dfc4, cabinet drawer fronts
+        jet: #17140f, text, the fascia, frames, bars and the primary button
+        umber: #4f4536, the shelf, the cabinet body and notes
+        goldLeaf: #b08d3c, inner frames, rules, bottle scales and the focus ring, never text
+        goldInk: #6b5114, Latin captions on cream
+        goldOnJet: #d8b968, lettering and lines on the fascia
+        tincture: #c9862b, the liquid in each bottle, never text
+        verdigris: #1f5f52, On track
+        sienna: #8a4b0e, At risk
+        carmine: #8e1b22, Behind and overdue
+    type:
+        Two stacks. Didone uses Didot, Bodoni 72, Bodoni MT, Big Caslon,
+        Georgia, serif for the 46px greeting, 48px drawer numbers, 30px
+        brand in caps tracked 0.3em, 26px section titles in caps and 18px
+        bottle names, plus 12 to 14px caps tracked 0.2em for labels, nav
+        and buttons. Book uses Hoefler Text, Baskerville, Georgia, serif at
+        17px with 1.55 line height, with 14 to 15px italic gold ink for the
+        Latin-style captions.
+    layout:
+        A black fascia with a doubled gold lower edge holds the spaced
+        caps brand, the italic line dispensary of projects, an underlined
+        search, the gold framed New project button, a round bell and the
+        user. The nav sits centred below on cream, the current item in a
+        double frame. The greeting is centred in a large oval label with
+        a doubled gold and black ring, captioned Salve, and under it a
+        tilted carmine stamp with an hourglass says 4 tasks are overdue.
+        The four numbers are drawers in an umber cabinet, each with a
+        framed label holder, a Latin caption, a big number and a brass
+        knob. The shelf is a row of six identical bottles whose amber
+        liquid rises to each percentage, with a small label showing the
+        percentage and a gold scale beside, standing on a thick umber
+        shelf. Under each bottle a framed card gives the roman numeral,
+        name, ex team caption, tasks, due date and status. Below, a day
+        book lists numbered entries and a register shows fourteen
+        horizontal measures, hatched for last week and solid black for
+        this week. Below 1000px bottles go three across and the lower
+        panels stack, and two across on a phone.
+    spacing: An 8px unit. 48px between counter sections, 16px between bottles and 8px cabinet joints.
+    density: Medium. Ordered rows of identical vessels and drawers, all centred.
+    corners: Square labels and drawers. Curves only in the oval greeting, the bottle shoulders and oval swatches.
+    borders: A 1px jet outline with a 3px gap and an inner gold hairline on every label. A double gold rule under the fascia.
+    shadows: None. Depth comes from nested frames and the umber shelf.
+    icons:
+        Thin line glyphs at text size. On track is a ring with a dot, At
+        risk an outlined triangle, Behind a solid square and overdue an
+        hourglass, each with its caps word between two hairlines.
+    focus: A 2px jet outline offset 4px, a cream gap, then a 3px gold ring. On the fascia the outline is gold on jet.
+    tone: Measured and old-fashioned with Latin-style captions, such as The shelf, Day book, Register, Opera activa and Attend first.

@@ -1,0 +1,54 @@
+export anchor DarkMemphisStyle:
+    number: 280
+    screen: CloudFiles
+    name: Dark Memphis
+    idea: Memphis squiggles, confetti and dot grids on black, chunky white outlined blocks thrown slightly off grid with hard colour offset shadows, and every nav item wearing its own geometric shape.
+    base: dark
+    palette:
+        black: #0d0d0f, the page with a dot grid, fields, status chips and text on colour
+        block: #17171b, outlined blocks and the style sheet
+        white: #ffffff, text, 2px outlines and the current nav
+        muted: #c4c4cc, meta and labels
+        pink: #ff5c93, the primary button, the PDF tile and the details shadow
+        teal: #2ee0cf, the list shadow, the image tile, Shared and storage stripes
+        yellow: #ffd60a, the selected row with black text, the pressed switch, folders, Starred and focus
+        lilac: #b99bff, the sidebar shadow and the document tile
+        orange: #ff8a3d, the video tile and Uploading
+    type:
+        Headings and figures in Arial Black. The folder title is 50px, the
+        details heading 22px, the small kicker 13px caps tracked 0.2em in
+        teal. Body in Verdana, Geneva, DejaVu Sans at 14px, file names 15px
+        bold.
+    layout:
+        A black page with a fine dot grid and scattered confetti, a pink
+        squiggle, a teal triangle, a yellow ring, a lilac square and dots,
+        clipped by the section. The grid has a header over two columns
+        and a details column on the right that spans both rows. The header
+        has Brightwork Drive, the title Website redesign, a yellow squiggle
+        underline and a breadcrumb with pink diamonds. The sidebar block
+        has a lilac offset shadow and lists the five links, each led by a
+        pure shape, a pink circle, a teal triangle, a yellow square, a
+        lilac cross and an orange ring, the current item white with black
+        text. Storage follows below a dashed rule as 64.2 GB of 100 GB used
+        and a striped teal bar. The list block has a teal offset shadow, a
+        toolbar with a pill search, Upload, New folder and a List or Grid
+        switch with List yellow, then eight rows of a shape tile in a type
+        colour, name and kind, size, and date and person with statuses.
+        The selected row is solid yellow with black text. The details
+        block is tilted about one degree, has a pink offset shadow and a
+        white zigzag edge on top, and holds the preview, name, Starred,
+        facts and the three buttons. Below 1080px details drop under the
+        list. Below 720px everything stacks.
+    spacing: An 8px unit. 28px between blocks, 14px block padding, 12px rows.
+    density: Medium. Rows are plain and the blocks around them are loud.
+    corners: Mixed on purpose. Square blocks and buttons, a pill search, file tiles cut as squares, circles, domes and leaves.
+    borders: 2px white outlines on every block, tile and control, a zigzag edge on the details block.
+    shadows: Hard offset colour blocks of 6 to 8px in lilac, teal and pink. Buttons get a 4px offset.
+    icons:
+        2.2px line icons inside filled shape tiles. Nav uses pure shapes.
+        Status chips differ in outline too, a square chip with a star for
+        Starred, a pill with two heads for Shared, a dashed chip with an up
+        arrow for Uploading and a white chip with a checked box for
+        Selected.
+    focus: A 3px yellow outline offset 4px.
+    tone: Loud and short, such as Upload, New folder and Details.

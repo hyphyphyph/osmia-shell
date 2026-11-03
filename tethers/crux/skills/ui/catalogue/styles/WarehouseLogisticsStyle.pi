@@ -1,0 +1,58 @@
+export anchor WarehouseLogisticsStyle:
+    number: 133
+    screen: ProjectsDashboard
+    name: Warehouse logistics
+    idea: The dashboard as a warehouse dispatch board, with aisle signs for navigation, numbers on hazard striped counters, each project a shipping label with a bin location, a barcode and cartons loaded, and the daily chart as a row of conveyor belts.
+    base: light
+    palette:
+        concrete: #e9e8e3, the floor, with a faint 120px grid
+        labelWhite: #ffffff, labels, panels and fields
+        black: #111111, text, 2 to 3px borders, aisle signs and barcodes
+        steel: #4f4f4b, small codes and meta
+        forkliftYellow: #f5c400, the top band, bins, the current aisle and the focus halo, never text on light
+        kraft: #c89b62, cartons and the label offset shadow, edged #8a6233
+        rule: #b9b8b0, table rules
+        onTrack: #17663a, the ticked box
+        atRisk: #8a4b00, the triangle
+        behind: #b3121b, the crossed octagon, the overdue tag and the late label shadow
+    type:
+        Labels and text use Arial Narrow, Roboto Condensed, Helvetica Neue
+        Condensed, Liberation Sans Narrow, Arial, sans-serif, with bold caps
+        for labels. Codes and numbers use OCR A Std, OCR A Extended,
+        ui-monospace, SF Mono, Menlo, Consolas, monospace. The greeting is
+        40px 700 at 1.05, counters 46px 700 mono, label names 24px 700,
+        pallet codes 13px mono tracked 0.2em, body 15px at 1.45, field
+        labels such as SHIP TO and BIN 11px mono.
+    layout:
+        A forklift yellow top band with a kraft carton logo, the caps brand
+        with DC-01 DISPATCH BOARD in mono, a boxed search, a black New
+        project button with yellow text, a square bell and a black MO badge
+        with the name, edged below by a black and yellow hazard stripe. The
+        nav is six black aisle signs hanging on short posts, each with a
+        yellow square letter A to F and the label, the current Home sign
+        yellow with a black letter. The greeting sits on a white dock door
+        panel tagged DOOR 01 with the date in mono, and a red luggage tag
+        shape says 4 TASKS ARE OVERDUE. Four counters with a hazard striped
+        top hold the numbers in mono with bin codes K-01 to K-04, the overdue
+        counter striped red and white. Outbound projects shows six shipping
+        labels three across, each with a 3px black border and a hard kraft
+        offset shadow, red for the late one. A label has a SHIP TO team cell
+        and a yellow BIN cell, the project name, a row of ten carton boxes
+        filled by tens of percent with the percent, cartons done of total
+        and the due date, a barcode with a pallet code such as BW-WR-1114,
+        and a bordered status stamp. Below, Throughput draws each day as a
+        conveyor belt with carton segments, one per task, under black week
+        headers with totals, beside a Dock log table with mono times. Below
+        1100px labels go two across and aisles three, below 600px everything
+        stacks and aisles go two across.
+    spacing: An 8px unit. 16 to 20px between counters and labels and 24px between panels.
+    density: Busy but scannable, like a dispatch board. Three labels across with codes everywhere.
+    corners: Square. The overdue tag has a cut luggage tag point.
+    borders: 3px black on labels with 3px divider rows, 2px on everything else, hazard stripes on top edges.
+    shadows: A hard 6px kraft offset under each label, red when the project is behind. No blur.
+    icons:
+        Bold filled signs at 18px inside a bordered stamp with the caps word,
+        a ticked box for ON TRACK, a triangle with a bar for AT RISK and a
+        crossed octagon for BEHIND, plus a carton logo.
+    focus: A 3px black outline offset 2px inside a 6px forklift yellow halo.
+    tone: Floor operations, such as Outbound projects, Ship to, Bin, Cartons, Throughput and Dock log.

@@ -1,0 +1,55 @@
+export anchor SplitFlapTimetableStyle:
+    number: 77
+    screen: ProjectsDashboard
+    name: Split-flap timetable
+    idea: The dashboard is a railway departures hall in light grey, where projects leave from numbered platforms, key words are set in split-flap character cells and the remarks column says whether each one is on time.
+    base: light
+    palette:
+        hall: #e9eaea, the page
+        board: #cfd3d6, board housings and the focused list row
+        frame: #858b90, the 6px housing frame and row rules
+        flap: #fbfbf8, character cells
+        ink: #141618, flap letters, buttons and sign borders
+        grey: #474d52, captions and the calling at lines
+        platformBlue: #1d3f8f, platform number squares and the current nav sign
+        noticeYellow: #ffcc33, the customer notice strip and the focus outline
+        green: #17663a, On track with a solid disc
+        amber: #8a4d00, At risk with a solid triangle
+        red: #b01c1c, Behind and the overdue count with a solid square
+    type:
+        Flap text uses ui-monospace, SF Mono, Menlo, Consolas in bold caps,
+        one letter per cell. Each cell is 0.92em wide with a 2px gap, a 2px
+        radius, a thin dark seam across the middle and a 1px grey lip below.
+        The full text is kept for screen readers and the cells are hidden
+        from them. Flap sizes are 26px for the greeting, 34px for counts,
+        17px in departure rows, 15px for arrival times and 14px in list
+        rows. Signs and body use Helvetica Neue, Helvetica, Arial, board
+        titles 18px at 800, captions 11px bold caps tracked 0.16em.
+    layout:
+        A station header holds a ring and bar roundel with Brightwork, nav
+        as six white signs each with a black number square, Home inverted
+        blue, then a FIND search with a ruled label, a black New project
+        button, a bell with 3 and Signed in Mara Okafor. A grey housing with
+        a 6px frame shows the greeting and the date in flap cells and a
+        yellow Customer notice strip with a loudspeaker saying 4 tasks are
+        overdue and to check Billing migration first. Four small housings
+        show the counts in flap cells, the overdue one in red. The
+        Departures board is a table with Due, Destination with calling at
+        and the team, a blue platform square, progress in mono with tasks
+        below, and Remarks with a shape, the status in flap cells and an
+        italic note such as running on time, expect delays or delayed. Below
+        sit an Arrivals board for activity with flap times, and a chart
+        board where each day is a column of small cells, one per task, open
+        cells last week and filled cells this week. At 375px each departure
+        becomes a stacked block and arrivals put the time above the text.
+    spacing: An 8px unit. 9 to 12px cell padding in rows and 14 to 16px between boards.
+    density: Medium high. Long boards with one row per project.
+    corners: Square signs, 4px housings and 2px flap cells.
+    borders: A 6px grey frame round each board, 2px rules between rows and 2px ink on signs and fields.
+    shadows: A flat 3px lip under each housing with no blur.
+    icons:
+        Station pictograms in solid ink, a train face, an arrow and bars.
+        Remarks use a disc for On track, a triangle for At risk and a square
+        for Behind beside the flap word.
+    focus: A 3px notice yellow outline with a 5px ink ring outside it.
+    tone: A station announcer, such as Departures, calling at Design, running on time, expect delays and Customer notice.

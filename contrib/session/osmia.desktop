@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Osmia
+Comment=A very light Wayland shell on labwc
+Exec=/usr/local/bin/osmia-session
+TryExec=/usr/local/bin/osmia-session
+Type=Application
+DesktopNames=Osmia;labwc;wlroots
+Keywords=wayland;compositor;desktop;osmia;

@@ -1,0 +1,54 @@
+export anchor DocumentaryMutedStyle:
+    number: 362
+    screen: VideoEditor
+    name: Documentary muted
+    idea: A quiet, desaturated editing page set like a documentary book, with a serif main column for picture and sequence, sources and settings as marginal notes, captions under every figure and the marker written as a footnote.
+    base: dark
+    palette:
+        ash: #1b1a18, page, picture surround and the style sheet
+        leaf: #22211e, swatch and control cells
+        rule: #3a3833, section rules and the marginal rule
+        segment: #2e2c29, clip segments
+        selected: #3d3a35, the selected clip
+        hairline: #6a665e, clip edges, the render line and text button underlines
+        ink: #e6e1d8, text, the playhead and the dagger
+        caption: #bdb6aa, captions and the dek
+        stone: #a8a196, small caps labels, track roles and durations
+        paper: #d9d2c4, the Export button, the only filled control
+    type:
+        A book serif stack, Iowan Old Style, Palatino Linotype, Palatino,
+        Georgia, for text at 17px and 1.6. Labels are system sans in small
+        caps, 13px tracked 0.2em for sections and 12px tracked 0.14em for
+        plate labels. The headline is serif 48px regular, the picture title
+        serif up to 34px, captions and clip names serif italic 15px and
+        14px, prose 17px at 1.7.
+    layout:
+        A centred book page about 1120px wide with wide margins. The header
+        sets Brightwork Cut as a small caps kicker, Launch teaser as a large
+        serif headline, and an italic dek, A sequence in 1080p at 24 frames
+        per second. On the right a hairline render line with Rendered 0
+        percent and an italic Not started, over a pale paper Export, the
+        only filled control. A hairline closes the header. The main column
+        holds the picture desaturated on near black with a caption, Plate 1,
+        The program at the timecode of the duration, holding on the title
+        card, then text buttons Back, Play and Forward with thin chevrons
+        and underlines. The sequence follows under a small caps label,
+        tracks as hairline rows with the id in sans and the role in italic,
+        clips as quiet blocks with a hairline left edge and italic names,
+        the selected title card brighter with a 3px ink edge, underlined and
+        marked selected. A dagger on the ruler at 84 drops a dotted line, a
+        thin ink playhead with a dot reads 18 s, a Plate 2 caption describes
+        the figure and a footnote reads the dagger and Marker, cut to logo,
+        at 84 seconds. A marginal column behind a hairline holds Sources, a
+        numbered list of the five files with durations, and On the title
+        card, a prose sentence giving position 960 by 540, scale 100
+        percent, opacity 100 percent and a cross dissolve of 12 frames in
+        bold. At phone width the margin hides and track roles drop.
+    spacing: Book margins. 56px around the page, 48px between sections, 56px gutter to the margin column.
+    density: Low. One picture, one sequence and two short marginal notes.
+    corners: 2px on Export only. Everything else is square or open.
+    borders: Hairline rules, a single marginal rule and underlined text buttons.
+    shadows: None.
+    icons: Barely any. Thin chevrons and a play triangle beside words, a dagger for the marker and a dot on the playhead.
+    focus: A 1px ink outline with a second hairline ring, offset 4px.
+    tone: Captioned and literary, such as Plate 1, The sequence, On the title card and Not started.

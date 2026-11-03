@@ -1,0 +1,57 @@
+export anchor MuseumPlacardStyle:
+    number: 88
+    screen: ProjectsDashboard
+    name: Museum placard
+    idea: The dashboard hangs on a vast white gallery wall, each project a framed colour field filled to its progress with a small neat wall label beside it, and every fact given an object number.
+    base: light
+    palette:
+        wall: #fbfbf9, the page
+        mat: #f6f3ec, the mats inside frames
+        ink: #141414, text, slim frames, this week stems and the primary button
+        labelGrey: #5e5e5e, captions, object numbers and quiet nav
+        hairline: #dcdbd6, room rules, never text
+        walnut: #3d2b1f, wooden frames
+        gilt: #b59a5b, gilt frames, never text
+        terracotta: #b0563a, the Design canvas
+        cobalt: #2f4f7a, the Engineering canvas
+        sage: #6f7f5a, the Research canvas
+        ochre: #c99a3a, the Marketing canvas
+        green: #276a3a, On track
+        umber: #8a5a00, At risk
+        red: #a1251b, Behind and overdue
+    type:
+        Helvetica Neue, Helvetica, Nimbus Sans, Arial, sans-serif in light
+        weights. The greeting is 72px at 200 tracked minus 0.02em, framed
+        numbers 56px at 200, label titles 16px at 600, body 13 to 17px at
+        300 with 1.5 line height, and room headings 13px caps tracked
+        0.08em. Object numbers use SF Mono, Menlo, Consolas, monospace at
+        11px in grey.
+    layout:
+        A slim header line with the bold brand, plain grey nav links with
+        the current one underlined, an underlined search, a black New
+        project button, a bare bell and the user. A title wall follows with
+        120px of air above, Gallery 1 as a caption, a huge light Good
+        morning, Mara and the date, and on the right a wall text behind a
+        thin rule with a red square saying 4 tasks are overdue. Room 1
+        hangs the four numbers as small black frames with a white mat,
+        each with a placard of object number, title and one line. Room 2
+        hangs six projects in three columns with big gaps, frames mixing
+        walnut, gilt and slim black in portrait, landscape and square
+        shapes. Each canvas is a pale field with a team colour block rising
+        from the bottom to the percentage under a thin black line. Under
+        each work a label gives the object number BW.2026.01 to 06, the
+        name, team and year in italic, tasks, percentage and due date as a
+        sentence, and the status. Room 3 lists activity with times in mono
+        and Room 4 hangs the chart as a framed print of thin stems with
+        round heads. Below 1000px works go two across, one on a phone.
+    spacing: An 8px unit in large steps. 120px between rooms, 96px between works and 64px page margins on wide screens.
+    density: Very sparse. One fact per frame, one short label per work and emptiness on purpose.
+    corners: Square everywhere.
+    borders: Thick frames of 14px walnut or gilt, or 6px black, around a 28px mat. Elsewhere only 1px hairlines.
+    shadows: A soft drop below each frame, 18px down with negative spread, as if lit from above.
+    icons:
+        Almost none. Tiny line marks with the status word, an open circle
+        for On track, an outlined triangle for At risk, a cross for Behind
+        and a solid square for overdue.
+    focus: A 1px ink outline offset 6px with a 1px grey ring further out at 11px, like a museum rope.
+    tone: Quiet curatorial captions, such as Room 2, Projects in progress and Visitors are advised to begin with these.

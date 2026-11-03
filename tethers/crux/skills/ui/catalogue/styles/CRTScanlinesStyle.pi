@@ -1,0 +1,60 @@
+export anchor CRTScanlinesStyle:
+    number: 291
+    screen: CodeRepository
+    name: CRT scanlines
+    idea: The review is broadcast like a teletext page on a curved colour CRT, set in a rounded plastic bezel with scanlines, a soft vignette and a hint of red and cyan fringing, its sections marked by solid colour bands and block mosaic graphics.
+    base: dark
+    palette:
+        bezel: #2b2925, the plastic frame around the screen
+        bezelEdge: #4a463f, the bezel highlight and the power lamp ring
+        tube: #020713, the screen and the style sheet background
+        panel: #0a1630, boxed areas inside the screen, the diff and the style sheet cards
+        white: #f2f6ff, main text
+        cyan: #4ff2ff, the page header, links, the cyan band and focus
+        yellow: #ffe94d, the title, requested changes and the yellow band
+        magenta: #ff7cf5, labels, line numbers and the magenta band
+        green: #5cff8f, passed, approved, Open and added lines
+        red: #ff6a6a, failing and removed lines
+        blueBand: #1e3cff, the blue band behind white text
+        bandInk: #020713, text on the cyan, yellow, green and magenta bands
+        scanline: #000000, the 1px dark line every 3px across the screen, drawn at 20 percent opacity
+    type:
+        A chunky monospace stack, Bedstead, MODE7, Courier New, DejaVu Sans Mono,
+        ui-monospace, set bold everywhere so the strokes stay crisp through the
+        scanlines. Base 16px on 1.5. The title is double height at 30px. Band labels
+        16px caps tracked 0.12em. The page header 14px. Headings carry a 1px red and
+        cyan fringe.
+    layout:
+        The page sits inside a CRT. A dark plastic bezel with 28px padding and a
+        power lamp frames a tube with 36px by 56px rounded corners, an inset
+        vignette and a scanline overlay. Inside, a teletext layout. A cyan header
+        line reads P214, Brightwork Code and the date and time. A block mosaic B
+        logo sits beside the owner and repository, Private, and Watch 12, Star 48
+        and Fork 3. The six tabs follow as page numbers 100 to 600 with Pull
+        requests on a yellow band. Then the double height yellow title with number
+        214, the Open marker and the merge sentence. Below, two columns. The left
+        has a green CHECKS band with a twelve block mosaic meter and the failing
+        check named, then a magenta FILES band with the three files, then a blue
+        DIFF band and the boxed hunk with the comment. The right has a yellow
+        REVIEWS band, a cyan DETAILS band with assignees, labels, milestone and
+        linked issue, and the disabled merge button with its reason. Below 900px the
+        columns stack and the bezel thins to 10px.
+    spacing: A character grid. 8px band padding, 16px between bands, 32px inside the tube.
+    density: Medium. Big chunky text in short rows, like a broadcast page.
+    corners: The bezel is 40px round and the tube 36px by 56px. Everything inside is square.
+    borders:
+        No rules inside the screen. Solid colour bands mark sections. The diff and
+        comment sit in panel boxes with a 2px cyan edge.
+    shadows:
+        A large inset vignette on the tube, a soft outer shadow under the bezel, and
+        a faint cyan glow around the tube. Headings carry 1px red and cyan offset
+        text shadows.
+    icons:
+        Line icons at 2.5px stroke at 1em, bold enough to read through scanlines,
+        always with the word. Check circle for passed and approved, crossed square
+        for failing, triangle with a bang for requested changes, padlock for the
+        blocked merge.
+    focus: A 3px cyan outline offset 2px with a 6px dark gap.
+    tone:
+        Broadcast caption voice in caps for bands, plain sentences for content, such
+        as CHECKS and 11 of 12 checks passed.

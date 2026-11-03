@@ -1,0 +1,52 @@
+export anchor BoardGameStyle:
+    number: 98
+    screen: ProjectsDashboard
+    name: Board game
+    idea: The dashboard laid out as a family board game, with a checkered track round the board, each project racing a pawn along its own lane, dice for the totals and a rule card that explains the statuses.
+    base: light
+    palette:
+        boardCream: #f7f1df, the play area, squares and fields
+        table: #e9e4d4, the page around the board
+        feltGreen: #2f6b3f, the header, the board frame and sheet labels
+        gameInk: #1f1d1a, text, outlines, lips and pips
+        pencil: #4a453d, captions and meta lines
+        redPiece: #c8452f, the Design lane and week two tiles
+        bluePiece: #1f4e9c, the Engineering lane, week one tiles and links
+        purplePiece: #7a4fa3, the Research lane
+        greenPiece: #2f7a46, the Marketing lane and On track
+        yellowPiece: #e0a91a, the primary button, the player's pawn and the focus halo, never text
+        stopRed: #a8261b, Behind and overdue
+        waitAmber: #86520a, At risk
+    type:
+        One rounded sans, Nunito, Varela Round, Arial Rounded MT Bold,
+        Trebuchet MS, system-ui, sans-serif. Headings are 800 and body 500.
+        The greeting is 28 to 40px, dice numbers 56px, card titles 22px,
+        lane names 18px, body 15px and labels 12px caps.
+    layout:
+        A felt green header holds a die logo and the brand, pill nav links
+        with the current one cream, a cream search field, the bell, a yellow
+        New project pill and the user with a yellow pawn. The page is one big
+        board, a green frame with a checkered strip of red, blue, yellow and
+        green squares at top and bottom around a cream play area. Inside, a
+        Player one kicker, the greeting Good morning, Mara. Your move., and a
+        red box for the overdue tasks. The four numbers are white dice tiles
+        with corner pips, the overdue die solid red. The main column is The
+        race to done, six lanes, each a white card with a coloured number
+        badge, name, meta, percent and status, over a track of ten squares
+        tinted to the pawn, which stands on its tenth, and a chequered flag
+        square at the end. The side column has a dashed yellow Rule card that
+        explains each status and Tiles won per day, a chart of stacked
+        squares. Below, the Turn log shows six cream cells with coloured
+        pawns. Columns stack below 1000px.
+    spacing: An 8px unit. 16px inside chips, 24px card padding and 28 to 32px between bands.
+    density: Medium. Each project is one lane of ten squares, the side column holds small cards.
+    corners: 12px on cards, 18px on dice, 6px on track squares, pill buttons and nav, round pawns.
+    borders: 3px ink outlines on cards, dice and buttons, 2px on track squares, a dashed border on the rule card.
+    shadows: A chunky 0 4px 0 ink lip under cards, dice and buttons, like moulded plastic.
+    icons:
+        Solid game shapes with ink outlines. Pawns stand for people, pips sit
+        on dice and a chequered flag marks the finish. A play arrow for On
+        track, pause bars for At risk and a rewind for Behind and overdue,
+        each in an outlined pill with the word.
+    focus: A 3px ink outline offset 3px inside a 7px yellow halo. In the header the outline is white.
+    tone: Game rules language, such as Your move, Turn log, Miss a turn and Go back.

@@ -1,0 +1,57 @@
+export anchor DiplomaStyle:
+    number: 124
+    screen: ProjectsDashboard
+    name: Diploma
+    idea: The dashboard as a formal certificate on parchment, with a double gilt frame, wax seals for the numbers, a numbered register of projects and a signature line under every activity.
+    base: light
+    palette:
+        parchment: #f3ead2, the page behind the certificate
+        sheet: #fbf5e4, the certificate, fields and the style sheet
+        ink: #2a2118, text, the 2px frame, rules and bar outlines
+        sepia: #5c4a33, meta lines, captions and nav links
+        gilt: #b8963f, frame hairlines, corner ornaments and the focus halo, never text
+        goldInk: #6b5317, roman numerals, the kicker and progress fill
+        sealWax: #ead9a2, the four summary seals
+        oxblood: #7d1f1f, the primary button, overdue, the Behind square and the big seal
+        laurel: #2e5a35, the On track round seal
+        amber: #7a4a00, the At risk diamond
+    type:
+        Text uses Palatino Linotype, Palatino, Book Antiqua, URW Palladio L,
+        Georgia, serif. Signatures use Snell Roundhand, Apple Chancery, URW
+        Chancery L, Lucida Calligraphy, cursive. The greeting is 64px italic
+        at 1.1, section titles 26px small caps tracked 0.14em and centred,
+        project names 22px italic 600, seal numbers 40px 600, body 17px at
+        1.6, meta 15px small caps, signatures 22px script.
+    layout:
+        One centred certificate up to 1200px wide with a 2px ink border, a
+        gilt double hairline inside and curled gilt ornaments in each corner.
+        The masthead has a shield mark and the spaced small caps brand on the
+        left, then an underlined italic search, an oxblood New project button
+        with an inset gold line, a round bell and a monogram seal with the
+        name. The nav is one centred row of small caps links split by gilt
+        bullets, Home bold and underlined in oxblood. A centred proclamation
+        follows with the kicker Brightwork hereby greets, the big italic
+        greeting, the date written as Saturday, the 31st of October 2026, and
+        Be it noted that 4 tasks are overdue between two rules. Four scalloped
+        wax seals hold the numbers with small caps captions, the overdue seal
+        in pink and oxblood. The Register of Projects is a list ruled with
+        triple lines, each row a roman numeral, an italic name over team and
+        due date, a dotted leader from percent to tasks above a thin framed
+        bar, and the status on the right. Below sit two columns, a framed
+        hatched bar chart titled Record of Tasks Completed, and Attestations,
+        where each activity sentence sits over a signature rule with the name
+        in script and the time in small caps. Two signature lines and a round
+        oxblood star seal close the page. Below 900px seals go two by two and
+        rows stack, below 560px the masthead centres and the sign-off stacks.
+    spacing: An 8px unit. Rows have 16px padding, seals 24px gaps and sections 48px between them.
+    density: Ceremonial and centred. One register of six rows, then a chart and six attestations side by side.
+    corners: Square everywhere. Only seals, the monogram and the bell are round.
+    borders: A 2px ink frame with gilt hairlines inside, triple ruled register ends, dotted leaders and signature rules.
+    shadows: None. Inset double lines on buttons and frames stand in for depth.
+    icons:
+        Filled seal-like status marks at 18px with the small caps word, a
+        round seal with a check for On track, a diamond with a bar for At
+        risk and a square with a cross for Behind. Tools use thin 1.4 stroke
+        line icons.
+    focus: A 2px oxblood outline offset 3px inside a 6px soft gilt halo. A focused field gets a pale gold fill and a 2px oxblood underline.
+    tone: Formal and ceremonial, such as Brightwork hereby greets and Be it noted that 4 tasks are overdue.

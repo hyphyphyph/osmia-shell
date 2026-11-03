@@ -1,0 +1,50 @@
+export anchor NinetiesRaveFlyerStyle:
+    number: 157
+    screen: ProjectsDashboard
+    name: 90s rave flyer
+    idea: A light acid-house flyer on white, with warped and stretched extra black caps, an arched logo, fluorescent blobs and stickers behind black type, and the projects billed as a line-up by room.
+    base: light
+    palette:
+        white: #ffffff, the flyer and fields
+        ink: #101010, all text, rules and the Behind chip
+        acidLime: #c8ff1a, the greeting highlight, On track chips and the focus halo
+        hotPink: #ff4fc4, the primary button, the logo outline and this week segments
+        cyan: #3ee8ff, stickers, the main room tag and last week segments
+        orange: #ff9a1f, At risk chips and the overdue sticker
+        violet: #4b10b0, the focus outline only
+        fog: #f1f1f4, spare quiet fill
+    type:
+        Display uses Arial Black, Helvetica Neue, Segoe UI Black, Verdana,
+        sans-serif in 900 caps. The logo is 96px set on an SVG arc with a
+        pink stroke. The greeting is 30 to 64px, stretched 1.35 tall and
+        skewed minus 12 degrees on a lime highlight. Numbers are 56px
+        widened 1.2. Line-up acts are 18 to 26px caps, labels 10 to 13px
+        caps tracked 0.12 to 0.5em. Body uses Verdana, DejaVu Sans,
+        Tahoma, sans-serif at 14 to 15px, dates use Lucida Console.
+    layout:
+        A ruled info line on top with pill nav links, Home inverted to
+        lime on black, a pill search, a skewed pink New project pill, a
+        cyan round bell count and the name. Soft fluorescent blobs sit
+        behind the page. A centred flyer head reads Your crew presents in
+        wide tracked caps, then the arched Brightwork logo, the warped
+        greeting, a boxed date and a tilted black band with an orange
+        warning triangle for the overdue line. Four round stickers in
+        cyan, lime, orange with a dashed edge and pink hold the numbers,
+        each rotated. Below, two columns. The line-up groups projects by
+        team under coloured room tags, Main room for Engineering, Room 2
+        for Design and Research, Terrace for Marketing, each act with its
+        due date right, a status pill, the facts and a tiny equaliser
+        meter. The right column lists Set times with times on the left
+        and a Levels chart of segmented cyan and pink bars. A ruled small
+        print strip closes the flyer. Below 900px the columns stack.
+    spacing: An 8px base. Big 34 to 48px breaks between flyer bands, tight 10px rows in lists.
+    density: A centred headline zone, then a denser two column line-up like the back of a flyer.
+    corners: Fully round pills for nav, buttons, fields and chips. Stickers are circles. Lists are square.
+    borders: Solid ink lines of 2 to 3px. Dashed 1px ink between rows. The overdue sticker has a dashed edge.
+    shadows: None. Depth comes from soft fluorescent blobs behind content at low opacity.
+    icons:
+        Solid ink glyphs inside pills. A four point sparkle means On
+        track, a lightning bolt means At risk, a slashed circle means
+        Behind, and a warning triangle marks overdue.
+    focus: A 3px violet outline offset 3px inside a 9px lime halo.
+    tone: Party flyer billing, such as Your crew presents, Line-up, Set times and Levels.

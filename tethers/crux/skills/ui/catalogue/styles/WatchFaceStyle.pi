@@ -1,0 +1,56 @@
+export anchor WatchFaceStyle:
+    number: 392
+    screen: FitnessTracker
+    name: Watch face
+    idea: The whole day laid out as a round watch face on true black, a large dial with the three rings as outer arcs and subdials for the run, ringed by smaller round complications for zones, week, sleep and plan, so nothing on the screen is square.
+    base: dark
+    palette:
+        black: #000000, the page and style sheet, true black
+        bezel: #1a1a1c, rings around every face
+        face: #0b0b0d, dial and complication faces
+        subdial: #151518, subdials, legend pills, nav discs and fields
+        track: #2a2a2f, empty ring tracks and future plan weeks
+        ink: #f4f4f6, figures and the current nav disc
+        muted: #a6a6b0, labels, ticks, rest dots and passed plan weeks
+        amber: #ffb02e, the move ring, zone 3, today, the current plan week, primary button and focus
+        mint: #5ef0c8, the exercise ring, deep sleep and the Done badge
+        violet: #b9a3ff, the stand ring and time asleep
+        onAmber: #241600, text on amber and mint
+    type:
+        One rounded stack, ui-rounded, SF Pro Rounded, Arial Rounded MT
+        Bold, Nunito, Varela Round, Segoe UI, system-ui. The dial figure is
+        84px at 700, complication figures 34px, subdial figures 26px, labels
+        12px caps tracked 0.12em, body 15px.
+    layout:
+        True black. A header with a two ring mark, Brightwork Move, and
+        Today, Week and Plan as 64px round discs with Today filled white.
+        Below, a 600px dial on the left and a two by two grid of 250px round
+        complications on the right. The dial has three thick outer arcs on
+        dark tracks, amber move outside, mint exercise, violet stand inside,
+        each ending in a small black circle, diamond or square. Inside sit
+        minute ticks, SAT 31 OCT with 31 in amber, 8.2 km evening run at
+        84px, a mint DONE badge and three dark subdials for time 42 min 16
+        s, bpm 152 and pace 5 min 9 s per km. Under the dial a legend of
+        pills with shape, name, value and goal. The complications are Heart
+        zones as a numbered donut with zone 3 thicker and 42 min in the
+        centre, This week as seven spokes from Sunday at the top, clockwise,
+        length by distance, today in amber, rest days as hollow dots and
+        23.7 km in the centre, Sleep as a violet arc of 7 h 12 min on a 12
+        hour dial with a mint inner arc for deep sleep, and the Half
+        marathon as a ring of twelve segments, five grey, the sixth amber
+        and thicker, with 6 of 12 in the centre. Each has a caps title and
+        one line beneath, the plan line reading Tomorrow long run 14 km.
+        Below 1060px the complications move under the dial. At 375px the
+        dial fills the width and complications stay two by two.
+    spacing: An 8px unit. 40px between the dial and the complications, 28px between complications.
+    density: Low to medium. One large dial with three subdials and four round complications.
+    corners: Everything is round. Faces, nav, pills, fields, swatches and list rows.
+    borders: No lines. An 8px bezel ring and a 1px outer edge around each face.
+    shadows: None. True black lets the rings glow on their own.
+    icons:
+        Ring ends carry a black circle, diamond or square to match the
+        legend shapes. Zone segments are numbered and the top zone is
+        thicker. Rest days are hollow dots. Passed plan weeks are grey, the
+        current one amber and thicker. A check marks DONE.
+    focus: A 3px amber outline offset 3px, following the round shape.
+    tone: Watch short, such as in zones, km week, asleep, plan week and DONE.

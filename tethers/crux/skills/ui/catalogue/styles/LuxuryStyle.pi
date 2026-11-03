@@ -1,0 +1,54 @@
+export anchor LuxuryStyle:
+    number: 17
+    screen: ProjectsDashboard
+    name: Luxury
+    idea: An ivory house style with thin, widely tracked capitals, a dark gold accent, hairline rules and a great deal of quiet space.
+    base: light
+    palette:
+        ivory: #faf7f0, the page
+        stone: #f3eee3, the style sheet ground
+        ink: #1e1b16, text and the primary button
+        taupe: #5e574b, capital labels and last week's dashed line
+        darkGold: #7a5c1e, the accent, progress fills, this week's line, the focus outline and At risk
+        hairline: #d9d0bd, rules between entries and sections and progress tracks
+        sage: #3d5a40, On track
+        oxblood: #8e2f22, Behind and the overdue figure and word
+    type:
+        Display face Didot, Didot LT STD, Bodoni 72, Bodoni MT, Big Caslon,
+        Libre Bodoni, Hoefler Text, Garamond, Times New Roman, serif, always
+        regular weight. The wordmark is 40px capitals with 0.42em tracking,
+        the greeting 56px italic, summary figures 72px, section titles 22px
+        capitals with 0.36em tracking and project names 24px capitals with
+        0.16em tracking. Body is Avenir Next, Avenir, Gill Sans, Helvetica
+        Neue, Segoe UI, system-ui, sans-serif at 15px regular and 1.7 line
+        height. Labels are 11px sans capitals with 0.28em tracking in taupe.
+    layout:
+        One centred column 880px wide. A slim utility row shows the date on
+        the left and an underlined search, Notices · 3 and Mara Okafor on
+        the right, over a hairline. A centred masthead holds the spaced
+        wordmark, a 40px gold rule and a centred row of spaced capital nav
+        links with a gold underline on Home. The greeting is centred with
+        much space around it, a capital date line, the italic greeting, one
+        sentence about the four overdue tasks and two buttons. Each later
+        section opens with a hairline and a centred spaced title over a
+        small caption, The Week as a two by two grid of large figures split
+        by hairlines, The Portfolio as one project per row with an italic
+        gold No. 1, the name, the percent, a capital meta line, the status
+        and a hairline progress track, The Fortnight as a thin line chart
+        over a two row table of daily values, and Correspondence as rows of
+        time beside a name and a sentence. Below 720px the wordmark
+        shrinks, rows stack and the figure grid stays two by two.
+    spacing: An 8px unit used generously. 96px between sections, 36px inside portfolio rows and 40px inside figure cells.
+    density: Very sparse. One or two elements per row.
+    corners: Square throughout. Only the palette swatches are round.
+    borders: 1px hairline rules in #d9d0bd between entries and sections, a 1px ink rule above the style sheet and a 40px gold rule under the wordmark. Progress fills are a 3px gold line on the hairline track.
+    shadows: None.
+    icons:
+        No pictograms. Status is a 12px thin outline mark beside a tracked
+        capital word, a circle for On track in sage, a lozenge for At risk
+        in gold and a struck square for Behind in oxblood. Notifications
+        are the word Notices with a count. The chart uses hollow taupe dots
+        on a dashed line for last week and solid gold dots on a solid line
+        for this week.
+    focus: A 2px dark gold outline offset 4px. A focused field gets a 2px gold underline as well.
+    tone: Courteous and composed, with titled sections such as The Week, The Portfolio, The Fortnight and Correspondence, and small numbers written as words in prose.

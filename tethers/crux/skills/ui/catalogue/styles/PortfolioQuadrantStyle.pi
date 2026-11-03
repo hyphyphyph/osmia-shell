@@ -1,0 +1,59 @@
+export anchor PortfolioQuadrantStyle:
+    number: 213
+    screen: ProjectsDashboard
+    name: Portfolio quadrant
+    idea: A portfolio review where one large scatter of percent done against days left sorts projects into four labelled quadrants, with the figures and a numbered project list set beside it like an analyst's exhibit.
+    base: light
+    palette:
+        white: #ffffff, the main canvas and cards
+        mist: #eef2f7, the sidebar
+        wash: #f6f8fb, the right half of the quadrant chart and the style sheet
+        navy: #1b2a4a, text, the primary button, split lines and heavy rules
+        slate: #4e5b70, notes, axis labels and captions
+        rule: #cfd6e0, hairlines and the chart frame, never text
+        orange: #c2410c, the single accent for overdue, the needs attention label, the current nav edge and focus
+        peach: #fdf1ea, the needs attention quadrant and a focused row
+        sage: #eef6f1, the finishing quadrant
+        green: #1d6b45, the On track circle and word
+        amber: #8b5000, the At risk triangle and word
+        red: #b42318, the Behind square and word
+    type:
+        Two stacks. Headings and figures use Charter, Bitstream Charter,
+        Iowan Old Style, Palatino Linotype, Georgia in regular weight.
+        Text uses Segoe UI, system-ui, Roboto, Helvetica Neue, Arial. The
+        greeting is 34px serif, figures 28px serif, section titles 22px
+        serif, body 15px sans, notes 13px and labels 12px bold caps
+        tracked 0.12em.
+    layout:
+        A 240px pale blue grey sidebar holds a quartered square brand mark
+        with an orange dot and Brightwork in serif, then the six nav items
+        with line icons, Home white with a 3px orange left edge, and Mara
+        Okafor signed in at the bottom. The main area starts with a top
+        row of a square search on the left, a navy New project button and
+        a bell with an orange count, over a hairline. A caps eyebrow reads
+        Portfolio review and the date above the serif greeting and a line
+        with 4 tasks are overdue in orange. The board is a large framed
+        scatter with a 300px column beside it. The scatter plots percent
+        done up against days left across, 0 to 80, split by dashed navy
+        lines at 50 percent and 30 days into Finishing in sage, Needs
+        attention in peach, Ahead, none yet, and Early days. Each project
+        is a white edged circle, triangle or square with its number and
+        name. The side column has the four figures as a ruled list with
+        serif numbers, then the numbered project list with status, team,
+        percent, tasks and due date with days left. Below, two columns
+        topped by navy rules hold a line chart comparing this week and last
+        week by weekday, solid with squares against dashed with hollow
+        circles, and a ruled activity list. Below 1100px the side column
+        moves under the chart. Below 820px the sidebar becomes a top band
+        with scrolling text tabs and the scatter scrolls sideways.
+    spacing: An 8px unit. 40px page padding, 32px between the chart and its side column, 40px before the lower row.
+    density: Medium low. One large chart leads, with figures and a keyed list beside it.
+    corners: 2px on boxes, buttons and fields. Avatars, number keys and swatches are round.
+    borders: 1px cool hairlines. A 2px navy rule tops each side block and section, and the current nav item has a 3px orange left edge.
+    shadows: None.
+    icons:
+        1.6px line icons at 18px. Status marks are a filled circle,
+        triangle and square, drawn white edged on the chart and numbered to
+        match the list.
+    focus: A 2px orange outline offset 2px. A focused field gets an orange underline.
+    tone: Measured and analytical like a portfolio review deck, such as Where each project stands.

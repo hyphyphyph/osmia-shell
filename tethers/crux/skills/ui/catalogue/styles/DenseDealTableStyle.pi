@@ -1,0 +1,50 @@
+export anchor DenseDealTableStyle:
+    number: 337
+    screen: CrmPipeline
+    name: Dense deal table
+    idea: The whole pipeline as one tight 13px table grouped by stage, with group subtotals, a sorted value column, small bracketed status tags and the summary squeezed into a single line of key figures.
+    base: dark
+    palette:
+        base: #111418, the page, table body and style sheet
+        head: #1a1f26, the header row, summary line, footer and secondary buttons
+        zebra: #151a20, even rows
+        group: #1d232b, stage group rows
+        line: #262d36, every rule and border
+        ink: #e3e7ec, text
+        muted: #9aa4b1, column heads, dates and counts
+        orange: #ff9e64, the sort arrow, percent, primary button and focus
+        red: #ff8a80, the STALLED tag, its row edge and triangle
+        sky: #7fd4ff, the DEMO and CLOSING tags
+        lilac: #cdb6ff, the SENT tag
+        green: #8be39b, the WON tag with a check
+    type:
+        system-ui, Segoe UI, Roboto, Arial, with figures and tags in
+        ui-monospace, Cascadia Mono, Menlo, Consolas. Base 13px at 1.4. The
+        title is 15px at 650, cells 13px, values 13px mono with tabular
+        numbers, column heads 11px uppercase at 600, tags 11px mono at 600.
+    layout:
+        A small breadcrumb Brightwork, Sales, Pipeline Q4 sits over the
+        title Deal pipeline. One bordered mono line lists pipeline 412,000,
+        won 128,500 of 200,000 with 64 percent in orange, target, win rate
+        31 percent and open 18, split by thin rules. A toolbar holds a
+        filter field, Group Stage and Owner All buttons, then Columns and
+        an orange Deal button. The table has columns Deal, Owner, Value,
+        Status and Date, with Value sorted high to low and an orange down
+        arrow. Group rows per stage show a down chevron, the stage, a mono
+        count and a right aligned subtotal. Rows are 30px and zebra striped,
+        owners carry a boxed mono initials tag, statuses are bracketed mono
+        tags with an icon, and the stalled row has a 3px red inset edge. A
+        footer row sums the seven shown deals. A 280px Activity panel sits
+        right with three ruled rows. Below 980px the panel drops below,
+        on phones the table scrolls inside its frame with the deal column
+        pinned.
+    spacing: A 4px unit. 30px rows, 28px group rows and controls, 10px cell padding, 20px gutter, 16px on phones.
+    density: High. Every deal, subtotal and the activity log fit on one screen.
+    corners: 3px on the table frame, fields and buttons, square cells.
+    borders: 1px #262d36 under every row, round the table and between summary figures.
+    shadows: None. A 3px red inset edge marks the stalled row.
+    icons:
+        14px line icons at 1.9 stroke. Tags sit in square brackets with a
+        triangle, calendar, flag, paper plane or check beside the word.
+    focus: A 2px orange outline drawn inside the control.
+    tone: Terse and technical, with lowercase key figures, Group Stage, Owner All and Columns.

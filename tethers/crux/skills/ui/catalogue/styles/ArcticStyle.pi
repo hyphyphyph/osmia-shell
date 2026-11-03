@@ -1,0 +1,49 @@
+export anchor ArcticStyle:
+    number: 284
+    screen: CodeRepository
+    name: Arctic
+    idea: A calm frost-toned review page in cool blue-grey, with a quiet three-card glance row over the files, the diff and a slim facts column, soft 10px corners and pale ice-blue as the only strong accent.
+    base: dark
+    palette:
+        night: #20252d, the page background and the diff code area
+        panel: #2a313b, the header band, cards, the side column and the style sheet cards
+        raised: #353e4b, the selected tab pill, hover, chips and the disabled merge button
+        line: #4a5566, every border and divider
+        snow: #e6ecf3, text
+        mist: #b0bccb, meta, labels and line numbers
+        frost: #8fc6d8, links, the current tab, the primary button and focus
+        frostInk: #14202a, text on frost
+        aurora: #a9d18e, passed, approved, added counts and added signs
+        thaw: #e8c27a, requested changes
+        rose: #ef9aa0, failing, removed counts and removed signs
+        addTint: #25372f, added line rows
+        delTint: #3a2a31, removed line rows
+    type:
+        One system sans stack, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial,
+        base 15px at 1.5. The pull request title is 28px at 600, section titles 17px
+        at 600, side labels 12px caps tracked 0.08em in mist, counts with tabular
+        numbers. Code is 13px ui-monospace at 1.6.
+    layout:
+        A centered 1160px column. A panel coloured band holds the Brightwork Code
+        mark, the owner and repository name with a Private chip, and Watch 12, Star
+        48 and Fork 3 as small outlined buttons. Under it the six tabs sit in one
+        rounded segmented pill, the current tab filled with raised and an ice blue
+        underline dot. The title with number 214 and the Open chip and merge line
+        come next. A glance row of three equal cards follows, checks with a twelve
+        segment bar, reviewers, and labels. Then two columns, a wide one with the
+        files list with small plus and minus bars and the diff card with the inline
+        comment, and a 300px facts column with assignees, labels, milestone, linked
+        issue and the merge box. Below 900px everything stacks and the glance cards
+        stack below 640px.
+    spacing: An 8px unit. 24px card padding, 16px between cards, 40px between the header and the title block.
+    density: Low to medium. Generous whitespace, one idea per card.
+    corners: Soft. 10px cards, 999px tab pill and chips, 8px buttons and fields.
+    borders: 1px line on every card and row. The diff hunk header and the comment have a 3px frost left edge.
+    shadows: None. Separation comes from the panel tint and the thin lines.
+    icons:
+        Rounded line icons at 1.6px stroke sized at 1.1em. Passed and approved use a
+        check circle, failing a crossed square, requested changes a triangle with a
+        bang, Open the pull request glyph and the blocked merge a padlock, always
+        beside the word.
+    focus: A 2px frost outline offset 2px, with a 4px dark gap so it reads on every panel.
+    tone: Calm and plain, such as 11 of 12 checks passed and Merging is blocked until all checks pass.

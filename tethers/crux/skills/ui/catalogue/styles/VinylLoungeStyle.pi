@@ -1,0 +1,53 @@
+export anchor VinylLoungeStyle:
+    number: 326
+    screen: MusicPlayer
+    name: Vinyl lounge
+    idea: A walnut turntable plinth fills half the screen with a spinning record drawn in SVG, a brass tonearm in the grooves, brass knobs for volume and a crate of record spines for the queue, all in warm serif type.
+    base: dark
+    palette:
+        lounge: #1a110b, the page and the style sheet
+        walnut: #2e1c11, the plinth, grained with walnutDark stripes
+        walnutDark: #24160d, grain stripes, cards and the crate shelf
+        groove: #121010, the record and inset wells
+        cream: #f2e6cf, text and the record label
+        parchment: #cdb795, artists, times and captions
+        brass: #d9ab5f, the tonearm, knobs, engraved labels, the liked heart and rules
+        onBrass: #26170a, glyphs and text on brass
+        sleeve: #5a3b2a, one of five muted sleeve tints on the crate spines, decorative only
+    type:
+        One serif stack, Iowan Old Style, Palatino Linotype, Palatino, Book
+        Antiqua, Georgia. Base 16px at 1.55. The title is 56px italic at
+        400, the current lyric 22px, body 16px, engraved labels 12px at 600
+        in caps with 0.2em tracking in brass, and times 14px with oldstyle
+        figures.
+    layout:
+        Two columns on a lounge brown page. On the left a walnut plinth
+        with a brass inlay line holds an engraved Brightwork Sound, Side A
+        label and 33 rpm, then the turntable drawn in SVG, a black platter
+        with fine grooves and a cream label reading Low Tide and SALTMARSH
+        TRIO, slowly turning, with a brass tonearm from a round pivot
+        resting in the outer grooves and a small pitch slider. A thin brass
+        rail shows the elapsed and total time with a cream dot. A dark
+        inset strip below holds three round brass buttons for previous, a
+        larger pause and next, two slide switches labelled Shuffle Off and
+        Repeat Off, and a brass rotary knob ringed by ticks pointing at 70
+        with the word Volume. On the right sit the engraved Now spinning,
+        the italic title, the artist with from Low Tide, and a pill
+        reading Liked with a brass heart. Then a Liner notes card with a
+        brass left edge shows the current line large behind a note sign
+        and the next line in smaller italic. The crate lists the queue as
+        record spines, each with a coloured sleeve edge, an italic brass
+        number, title, artist and time. Shelves shows the three playlists
+        as brass edged nameplates and underlined links for Albums, Artists
+        and Podcasts. Below 980px the columns stack.
+    spacing: An 8px unit used generously, 28px plinth padding and 24px between cards.
+    density: Low. The turntable takes half the screen and every list stays short.
+    corners: 12px plinth and cards, round knobs and buttons, 3px spines, 6px nameplates.
+    borders: 1px brass hairlines at half strength on nameplates and the control strip, and a 2px brass inlay inside the plinth edge.
+    shadows: A deep 0 18px 40px black under the plinth and small drop shadows under the brass buttons.
+    icons:
+        Solid glyphs engraved in dark brown on round brass buttons.
+        Toggles are slide switches with the words Off or On beside them.
+        The liked heart is filled brass beside the word Liked.
+    focus: A 2px cream outline offset 3px with a 6px brass glow.
+    tone: Lounge words, such as Now spinning, Side A, The crate, Liner notes and Shelves.

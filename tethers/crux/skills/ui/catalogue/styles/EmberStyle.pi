@@ -1,0 +1,53 @@
+export anchor EmberStyle:
+    number: 318
+    screen: OpsMonitor
+    name: Ember
+    idea: A calm fireside monitor on near black, where the day's traffic rises as a glowing ember curve, service cards warm from below, and one merged timeline of alerts, deploys and the incident reads like a log by the fire.
+    base: dark
+    palette:
+        hearth: #0c0705, the page
+        coal: #170e0a, the hero, service cards, chart cards and the style sheet
+        coalRaised: #21140e, the incident card and list rows
+        ink: #fbeee2, text
+        ash: #caa995, meta, axis and labels
+        sootLine: #3b261c, borders and grid
+        ember: #ff7a3d, glows, the dotted p95 line, the current link underline, the foot of the primary button and the focus halo
+        flame: #ffb347, the request line, p50, eyebrows, deploy marks and the focus outline
+        deepRed: #b8321a, radial glows only, at low strength behind text
+        healthy: #b8e68f, Healthy and Resolved with circle and square
+        degraded: #ffc857, Degraded and Investigating with triangle and magnifier
+        recovered: #e9c9a0, Recovered with a diamond
+        firing: #ff7466, Firing with an octagon and the error line
+    type:
+        Avenir Next, Avenir, Segoe UI, Helvetica Neue, Arial. Base 16px at
+        1.55. The hero figure is 72px at 200, the incident ID 40px at 200,
+        service uptimes 32px at 200, section titles 20px at 600, meta 13px.
+    layout:
+        A single centred 1040px column. A slim header holds a two tone
+        flame mark, Brightwork Ops, the suite apps as plain text links at
+        right with an ember underline on Ops, and a Production last 24 hours
+        pill. The hero is a large 28px rounded card with a deep red bloom
+        rising from its lower left. It reads Requests per minute, a huge
+        light 9,400 with peak at the afternoon, a calm sentence about the
+        quiet night and the current 7,700, then a full width area chart
+        whose fill fades from flame to ember to deep red, with a pill
+        marking the peak. Below, Services as five rounded cards whose
+        bottoms glow warmer for services that need attention, each with the
+        name, an outline status shape and word, a light uptime figure and
+        one fact. Then two columns, a glowing incident card with INC-0427
+        and its facts and buttons, and Since last night, one merged timeline
+        newest first of deploys, billing recovered, alerts and the incident
+        opening, each with its own shape. Last, two cards for Error rate and
+        Latency. Below 960px the two columns stack, below 760px cards go two
+        across with billing full width.
+    spacing: An 8px unit. 24px gutter, 48px between blocks, 20 to 36px inside cards.
+    density: Roomy. One hero chart, five cards, two blocks and two small charts in a 1040px column.
+    corners: Soft. 28px hero and sheet, 20 to 24px cards, 14px buttons and fields, round pills.
+    borders: 1px soot lines. The incident card has a deeper red brown border.
+    shadows: Warm glows instead of drop shadows. A low orange bloom under the hero and incident, a 6px glow on the request line.
+    icons:
+        Few. A two tone flame mark. Status as outline circle, triangle and
+        diamond on cards, filled square, octagon and diamond in the
+        timeline, an arrow on a base for deploys, always with the word.
+    focus: A 2px flame outline offset 3px plus a soft ember halo.
+    tone: Calm and warm, such as Since last night, Quiet through the night and 7,700 now.

@@ -1,0 +1,58 @@
+export anchor SubwayMapStyle:
+    number: 125
+    screen: ProjectsDashboard
+    name: Subway map
+    idea: Each project is a coloured transit line running from its start to a terminus at the due date, with station dots, a train marker at the current percent, and the navigation drawn as a line you ride.
+    base: light
+    palette:
+        platform: #f4f4ef, the page
+        white: #ffffff, panels, fields and station dots
+        ink: #111111, text, 2px borders, the primary button and the train marker
+        greyLine: #56565a, the nav line, meta text and last week in the chart
+        signYellow: #ffd23f, the service notice, time tags and avatar, never text
+        lineW: #b3261e, Website redesign and the Behind octagon
+        lineM: #1d4ed8, Mobile app 2.0, this week in the chart and focus
+        lineQ: #15803d, Q4 customer survey
+        lineB: #7e22ce, Billing migration
+        lineS: #8a5a00, Spring catalogue
+        lineO: #0f766e, Onboarding emails
+        onTrack: #15703a, the filled circle with a tick
+        atRisk: #9a4d00, the triangle with a bar
+    type:
+        One stack, Helvetica Neue, Helvetica, Arial, Segoe UI, sans-serif.
+        The greeting is 40px 800 at 1.1 with tight tracking, summary numbers
+        44px 800, section titles 22px 800, line names 18px 800, body 16px at
+        1.45, meta 14px 600 grey, time tags 14px bold monospace.
+    layout:
+        A white top bar with a dark rounded square logo showing a yellow line
+        and two stations, then a pill search, a black pill New project
+        button, a round bell and a yellow avatar. Under it the nav is a thick
+        grey line with a white station dot per item, the current Home a large
+        interchange ring with the words you are here. The greeting is a white
+        platform sign with a 16px black left edge, and a yellow service notice
+        on the right says 4 tasks are overdue. Four boards with a grey top
+        band hold the numbers, the overdue one with a red band. The Project
+        network panel lists six lines. Each row has a coloured round code
+        letter, the name over a linked rings team tag, then a 10px track in
+        the line colour, solid up to the percent and dashed beyond, white
+        station rings at 0, 25, 50 and 75 percent, a terminus bar at the
+        end, a black pill train marker showing the percent, and below it the
+        task count and Terminus with the due date. Status sits on the right.
+        Below, a chart panel draws the 14 days as a thick metro line with
+        ring stations and values, grey for last week and blue for this week,
+        joined by an interchange ring at Saturday 24, with pill labels for
+        the week totals. Recent arrivals lists activity with a coloured line
+        roundel and a yellow time tag. Below 980px status drops under the
+        name and the track goes full width, below 640px the nav line scrolls
+        sideways inside itself and boards go two by two.
+    spacing: An 8px unit. 16px between rows and boards, 24px panel gaps and 32px between sections.
+    density: Medium. One full width line per project, read left to right.
+    corners: Full rounds for stations, roundels, pills and buttons, 8px on panels, a square platform sign.
+    borders: 2px ink on every panel and control and a 16px ink edge on the greeting sign.
+    shadows: None. Contrast comes from thick lines and white station dots.
+    icons:
+        Solid transit pictograms at 20px with a white inner mark, a circle
+        with a tick for On track, a triangle with a bar for At risk and an
+        octagon with a bar for Behind. Linked rings mark team interchanges.
+    focus: A 3px blue outline offset 2px with a 6px white gap ring around it.
+    tone: Station announcements, such as Service notice, you are here, Terminus 14 Nov and Recent arrivals.

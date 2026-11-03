@@ -1,0 +1,60 @@
+export anchor CommandFirstStyle:
+    number: 176
+    screen: ProjectsDashboard
+    name: Command first
+    idea: A sparse home built around one large search and command field with keyboard hints, followed by a hairline strip of four figures and quiet unboxed lists, graphite text with a single violet accent.
+    base: light
+    palette:
+        page: #fbfbfc, the near-white page
+        paper: #ffffff, the command field, buttons and fields
+        ink: #22242a, graphite text
+        muted: #5c5f69, labels, meta, times and day letters
+        hair: #e4e5ea, hairline rules under rows and around the figure strip
+        violet: #5b3fd1, the primary button, links, progress, this week bars and focus
+        violetSoft: #efebfc, the focus halo of the command field and the initials disc
+        keycap: #f1f1f4, keyboard hint caps and the current nav pill
+        keycapLine: #d3d4dc, keycap borders
+        keycapInk: #3b3e47, keycap letters
+        lastWeek: #8a8d98, dashed outlines of last week bars
+        ok: #1f7a4d, On track text and check circle
+        risk: #925400, At risk text and triangle
+        bad: #b3261e, Behind and overdue text, crossed square and clock
+    type:
+        Two stacks. Text uses system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial at 15px and 1.55. Keycaps and sheet notes use ui-monospace, SF
+        Mono, Cascadia Mono, Menlo, Consolas at 12px. The greeting is 34px
+        at 600 with minus 0.02em tracking, the command input 17px, figures
+        26px at 600 with tabular numbers, list headings 13px at 600 in muted
+        sentence case, rows 15px and meta 13px.
+    layout:
+        A slim top line in a 1120px container with a small violet diamond
+        and the wordmark, the six nav items as quiet text pills with Home in
+        a grey pill, and a bell and Mara Okafor at right. Then a centred
+        720px hero with lots of air above it, the date in muted text, a 34px
+        greeting, a red overdue line with a Show them link, and the command
+        field, 60px tall with a 14px radius, a search icon, the placeholder
+        Search or type a command, and Ctrl K keycaps at the right end. Under
+        it three centred action buttons each carry a keycap, a violet New
+        project with N, Overdue tasks with G O and Log time with T. Next a
+        full-width strip of four figures between hairlines, each a number
+        followed by a lowercase label on one line. Below sit two unboxed
+        lists side by side, Projects at three fifths and Recent activity at
+        two fifths, each under a muted heading and hairline. Project rows
+        show name over category, a thin violet progress line with percent,
+        due date and status. Activity rows show the sentence and the time at
+        right. The chart runs full width beneath, airy bars with dashed
+        outlines last week and violet this week. A footer hint reads Press ?
+        for all keyboard shortcuts. Below 960px the lists stack, below 760px
+        figures go two by two and keycaps leave the field.
+    spacing: An 8px unit with generous gaps. 72px above the hero, 32px from greeting to field, 40px between sections, 56px between the two lists, 11px row padding.
+    density: Sparse at the top, medium in the lists. One focal control and little chrome.
+    corners: Soft. 14px on the command field, 8px on buttons and fields, 5px keycaps, 4px bar tops, round initials.
+    borders: Hairlines only, under rows and around the figure strip. No cards. The command field has a 1px grey edge.
+    shadows: One soft violet-tinted shadow under the command field. Nothing else is raised.
+    icons:
+        Thin line icons at 1.5px stroke, 18px, 22px in the field. Status
+        icons use 2px stroke, a check circle for On track, a triangle for At
+        risk, a crossed square for Behind and a clock for overdue, always
+        with the word. Keycaps carry shortcuts.
+    focus: A 2px white gap then a 2px violet ring as a box shadow, and the command field gains a violet edge and a soft violet halo.
+    tone: Calm and terse with lowercase figure labels such as tasks due this week, and command verbs such as Show them and Log time.

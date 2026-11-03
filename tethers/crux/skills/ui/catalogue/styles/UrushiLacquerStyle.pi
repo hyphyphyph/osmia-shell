@@ -1,0 +1,56 @@
+export anchor UrushiLacquerStyle:
+    number: 254
+    screen: DesignEditor
+    name: Urushi lacquer
+    idea: A design tool laid out like a set of black lacquer trays, where gold leaf hairlines frame each panel, the inspector stacks like tiered boxes and a single vermilion marks what is chosen.
+    base: dark
+    palette:
+        lacquer: #0e0b0b, the page, canvas and field wells
+        tray: #171112, the header, panels, status bar and style sheet
+        tier: #1f1617, tool tiles and the comment card
+        tierBand: #2a1210, inspector tier heading bands and the selected layer
+        ink: #f1e8d8, text
+        muted: #b3a48c, meta, layer kinds and status text
+        gold: #d6b05a, labels, numerals, handles, the frame outline, status icons and focus
+        goldLine: #6e5a35, tray rims and dividers
+        seam: #33261f, field and row borders
+        vermilion: #a3291c, Share, the pressed Move tool, the seal mark and the comment pin
+        rice: #fff4e8, text on vermilion
+        guide: #c2291a, the 32 px spacing guide with white text
+    type:
+        Titles in a book serif stack, Iowan Old Style, Palatino Linotype,
+        Palatino, Book Antiqua, Georgia. Text in system-ui, Segoe UI, Roboto,
+        Helvetica Neue, Arial. Base 14px at 1.5. The sheet title is 30px 600
+        serif, the file name 15px 600 serif, layer names 14px 600, meta 12 to
+        13px, tray and tier labels 11 to 12px caps tracked 0.14 to 0.16em in
+        gold, and layer numerals 01 to 07 in 12px italic serif gold.
+    layout:
+        Three columns of 252px, the canvas and 292px under a header row. The
+        header is one tray split in three. Left holds a round vermilion seal
+        with a gold ring and the file as Brightwork Canvas over Website
+        redesign / Home v3. The middle holds the six tools as 40px square
+        lacquer tiles with Move filled vermilion with a short gold bar under
+        it, then a 66% zoom well. Right holds three round avatars, an outlined
+        gold Present and a vermilion Share. Below, the layers tray floats 16px
+        in from the left with gold numerals, a kind icon, the name and a sub
+        line, Hero tinted red with a gold left edge and a Selected tag,
+        Features with a Collapsed tag. The canvas is plain lacquer with a
+        faint warm gloss from the top and the white Hero frame outlined in
+        gold with square gold handles. The inspector tray on the right is a
+        stack of tiers like a lidded box set, each with a dark red band
+        heading for Position and size, Fill, Auto layout with Vertical, Corner
+        radius and Export, holding italic serif keyed fields such as X 0 and W
+        1440. The status bar runs the full width with gold diamonds between
+        items. Below 860px everything stacks with the canvas first and the
+        tools become a sticky bottom tray.
+    spacing: An 8px unit. 16px gutters around trays, 18px tray padding, 10px between fields.
+    density: Medium. Seven layer rows with a sub line each and five inspector tiers.
+    corners: 10px trays, 6px tiles, fields and buttons, round seal, avatars and pin.
+    borders: 1px gold line rims on every tray, 1px seam borders on fields, a 3px gold left edge on the selected layer.
+    shadows: A deep soft shadow under trays and the frame, 0 12px 28px black at 55 percent, with a faint warm top highlight.
+    icons:
+        Line icons at 1.5px stroke, 18px. Selected uses a circled check,
+        Collapsed a right chevron, Saved a cloud with a check, people editing
+        two figures and the version a tag, always with the word.
+    focus: A 2px gold outline offset 3px.
+    tone: Quiet and formal. Caps tier names such as Position and size and Export.

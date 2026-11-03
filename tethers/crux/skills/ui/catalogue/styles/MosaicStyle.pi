@@ -1,0 +1,56 @@
+export anchor MosaicStyle:
+    number: 151
+    screen: ProjectsDashboard
+    name: Mosaic
+    idea: The dashboard is laid as a floor mosaic, where small stone tesserae set in pale grout form the totals, the progress of each project and one tile for every task completed in the chart.
+    base: light
+    palette:
+        grout: #d8d0bf, the page, gaps between tiles and panel borders
+        panel: #f7f1e4, panels, fields and the chart ground
+        creamTile: #efe6d2, background tesserae and empty progress tiles
+        sandTile: #e3d3b0, scattered background tesserae and the current tab
+        slate: #36506a, progress tiles, last week tiles, one figure and the focus outline
+        terracotta: #a4452a, the primary button and this week tiles
+        ochre: #b98326, border waves and the outer focus halo, never text
+        olive: #55662e, one figure and On track
+        basalt: #2a2723, text, outlines and one figure
+        muted: #58524a, meta and day labels
+        oxideRed: #8c2a1e, overdue and Behind
+        amber: #7a5200, At risk
+    type:
+        Headings use Cochin, Constantia, Sitka Heading, Iowan Old Style,
+        Georgia, serif in bold, panel titles in small caps. Text uses
+        system-ui, Segoe UI, Roboto, Noto Sans, sans-serif. Greeting 44px,
+        panel titles 24px, row titles 17px bold, body 16px at 1.5, meta 13
+        to 14px. The totals are never set in type, they are drawn in a 5
+        by 7 tessera font at 10px per tile.
+    layout:
+        A floor of small cream tiles in grout behind everything, up to
+        1260px. Every panel is an emblema with a 2px basalt line, a 6px
+        grout band and an inner basalt line. The header holds a nine tile
+        brand mark, small caps brand, nav with an outlined sand current
+        item, a square search, a terracotta button, a square bell and a
+        round tile cluster avatar, closed by a three row tessera band of
+        basalt and an ochre, cream and terracotta wave. The top row pairs
+        the greeting panel, with date and an outlined red notice naming 4
+        overdue tasks, with four small emblemata, each with a label, the
+        figure laid in tesserae, slate, olive, oxide red or basalt on
+        cream tiles, and a short note such as running now. Projects list
+        name, category and due date, a bar of twenty tiles where each
+        slate tile is 5 percent, percent and tasks, and the status. The
+        chart lays two tiles per row and one row per task, slate last week
+        and terracotta this week, with values above. Activity spans the
+        width in three columns led by small rotated tiles, closed by
+        another tessera band. On phones panels stack and totals go two by
+        two.
+    spacing: An 8px unit. 24px between panels, 12 by 20px rows, tiles on a 10 to 12px grid with about 1.6px grout.
+    density: Medium to dense. Many small tiles with calm text around them.
+    corners: Nearly square. Tiles 1.2px, controls 3px, the avatar is a round tile cluster.
+    borders: Emblema frames of basalt, grout and basalt, and tessera bands of basalt and ochre wave under the header and feed.
+    shadows: None. Depth comes from grout and tiles each rotated a few degrees with slightly varied size and colour.
+    icons:
+        Simple line icons for tools and tessera shapes for markers. Status
+        uses a round tile for On track, a triangular tile for At risk and
+        a square tile with a hole for Behind, beside the word.
+    focus: A 3px slate outline offset 2px inside a 6px ochre halo.
+    tone: Plain and craft minded, such as one tile per 5% and One row of tiles per task.

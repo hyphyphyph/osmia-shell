@@ -1,0 +1,44 @@
+export anchor ScandinavianStyle:
+    number: 48
+    screen: Settings
+    name: Scandinavian
+    idea: Birch and oat surfaces with muted sage and dusty blue, soft rounded type and thin calm lines, so settings feel like a quiet, airy room.
+    base: light
+    palette:
+        oat: #f4efe6, the page
+        linen: #fbf8f2, cards
+        birch: #e9dfcf, the header strip with faint wood grain lines and the off switch track
+        line: #ddd3c3, hairlines and card and field borders
+        wood: #2f2a24, text and headings
+        stone: #675e54, labels, hints and inactive tabs
+        sage: #4f6b55, the primary button, the on switch and the current tab underline
+        sageSoft: #e3ebe2, selected chips and the saved note
+        fjord: #4a6680, links and the focus ring
+        clay: #9b3b2e, the danger zone on #fdf8f6
+    type:
+        A soft rounded sans, ui-rounded, SF Pro Rounded, Nunito, Quicksand,
+        Varela Round, Segoe UI, system-ui, sans-serif. The page title is
+        34px medium with slight negative tracking. Card titles are 19px
+        semibold, body 16px regular at 1.6, hints and labels 14px in stone
+        and buttons 15px semibold. No heavy weights.
+    layout:
+        A birch header strip 72px tall with the brand left and the name and
+        a round initials avatar right. The content is 1040px wide with
+        56px above the title. Tabs are plain words on one hairline. Below,
+        a three to two grid puts the Notifications card on the left and a
+        stack on the right with the Time and language card, which holds the
+        buttons and saved note, and the Danger zone card. Under 860px
+        everything stacks and under 520px the tabs wrap.
+    spacing: An 8px unit used generously. 32px card padding and gaps, 18px row padding, 48px under the tabs.
+    density: Airy. Few rows per screen with plenty of oat around them.
+    corners: 18px cards, 12px fields, fully round buttons, chips, switches and the avatar.
+    borders: Thin 1px warm hairlines only. The current tab gets a 2px sage underline.
+    shadows: None. Depth comes from linen cards on the oat page.
+    icons:
+        Thin round line icons with a 1.4 stroke at text size. The switch
+        knob shows a check when on and a dash when off, with the word On or
+        Off beside it. Selected chips show a check, and the current tab has
+        a small filled dot before its name. Saved shows a circled check and
+        the danger zone a thin triangle.
+    focus: A 2px #4a6680 outline offset 3px.
+    tone: Soft and brief, such as What Brightwork tells you, and when.

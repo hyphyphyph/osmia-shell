@@ -1,0 +1,50 @@
+export anchor ShippingLabelsStyle:
+    number: 134
+    screen: ProjectsDashboard
+    name: Shipping labels
+    idea: Every panel is a white parcel label stuck on kraft cardboard, with thick black rules, barcodes, tracking codes and handling pictograms for status.
+    base: light
+    palette:
+        kraft: #e3d1b0, the page as cardboard
+        tape: #c9ae7f, translucent tape strips on label tops, decoration only
+        label: #ffffff, every panel, field and nav code
+        ink: #111111, text, rules, barcodes, fill bars and the primary button
+        grey: #4d4d4d, units and type notes
+        green: #1d6a33, the On track mark with two up arrows
+        amber: #8f5300, the At risk mark with a wine glass
+        red: #b8141b, the Behind mark with a crossed box, the overdue box and number
+        marker: #ffe14a, the focus halo only
+    type:
+        Two stacks. Condensed sans for nearly everything uses Arial Narrow,
+        Helvetica Neue Condensed, Roboto Condensed, Arial at weight 800 for
+        titles and numbers. Mono for codes and dates uses SF Mono, Menlo,
+        Consolas, monospace. Summary numbers 64px, greeting 44px, label
+        titles 24px, body 15px, captions 11px bold caps tracked 0.14em,
+        tracking codes 12px mono.
+    layout:
+        The header is one wide label split by 3px rules into a From cell
+        with a box logo and the brand, a search cell, and a Deliver to cell
+        with New project, a square bell and the user. Nav is a row of boxed
+        service codes numbered 01 to 06, the current one inverted black.
+        Below sit a Dispatch note label with the greeting, the date in mono
+        and a red boxed overdue warning, beside a Manifest label holding the
+        four numbers in ruled cells. Projects are six labels in three
+        columns, each with a category and status mark on top, the name, a
+        barcode and tracking code, a dashed tear grid of Done, Weight and
+        Deliver by, and a black fill bar. A Tracking history label lists
+        activity with mono times on the left. A Daily scans label holds the
+        black bar chart with values, a divider between weeks and two ruled
+        total cells. Below 1000px labels go two across and the top stacks.
+        Below 680px everything is one column and header cells stack.
+    spacing: An 8px unit. 12px inside label cells, 20 to 24px between labels.
+    density: Medium dense. Each label packs code, name, three fields and a bar.
+    corners: 4px on labels, 3px on nav codes, square buttons and fields.
+    borders: 3px solid ink around labels and between header cells, 2px dashed ink tear lines inside.
+    shadows: One hard brown shadow 2px right and 3px down, like a sticker lifting off board.
+    icons:
+        Filled handling pictograms at 20px in a 2px bordered mark with the
+        caps word. Two up arrows on a base for On track, a wine glass for At
+        risk, a crossed box for Behind, a filled warning triangle for
+        overdue. The bell is a 2px outline.
+    focus: A 3px ink outline offset 2px inside a 7px marker yellow halo.
+    tone: Courier terms in caps, such as Dispatch note, Manifest, Deliver by and Tracking history.

@@ -1,0 +1,51 @@
+export anchor PatchworkQuiltStyle:
+    number: 107
+    screen: ProjectsDashboard
+    name: Patchwork quilt
+    idea: The dashboard is one bound quilt, its blocks butted edge to edge in homey fabrics, each with a muslin centre that holds a number, a project or the chart.
+    base: light
+    palette:
+        calico: #f6efe2, the page behind the quilt
+        muslin: #fffaf0, block centres, the nav and the header strip
+        denim: #2f4f7a, the quilt binding, section strips, progress patches and the focus ring
+        barnRed: #9b2f2a, the brand label, the primary button, Behind and overdue
+        butter: #f2d58a, the stripe fabric, the bell and the current tab
+        sage: #8fae8b, half square triangles and the sprig fabric
+        fern: #1f5a33, the On track tag
+        toffee: #7a4a00, the At risk tag
+        ink: #2b2622, text and block edges
+        thread: #5a5048, meta and times
+    type:
+        Two stacks. Headings and numbers use Rockwell, Roboto Slab, Zilla
+        Slab, Georgia in bold. Text uses Avenir Next, Avenir, Segoe UI,
+        system-ui. The greeting is 38px at 1.1, numbers 52px, block titles
+        19px, section strips 22px, body 16px at 1.5, meta 14px.
+    layout:
+        The header is a muslin strip framed in denim with a barn red label
+        block holding a pieced square logo and Brightwork, then the search,
+        New project, a butter bell and a triangle pieced MO avatar. Under it
+        the nav is six equal muslin cells split by dashed quilting lines,
+        the current cell filled with butter stripe and the word in a small
+        boxed label. The quilt has a 12px denim binding with a dashed stitch
+        inside and four columns of blocks with no gaps. A wide medallion
+        block framed in red half square triangles holds Welcome home, Mara,
+        the date and a red outlined 4 tasks are overdue with an octagon.
+        Four log cabin blocks in blue gingham, butter stripe, red gingham
+        and sprig hold the numbers in muslin centres. A denim strip titles
+        Projects, then six blocks three across, each a fabric frame around
+        a muslin centre with name, meta, ten little denim patches for
+        progress, the percent and a dashed status tag. The last row pairs a
+        gingham chart block, where 14 dashed day columns hold butter stripe
+        or denim dot bars, with a sprig block for News from the sewing
+        circle. Below 980px the quilt is two columns, below 640px one.
+    spacing: An 8px unit. Fabric frames are 16 to 20px wide around each muslin centre.
+    density: Medium. Blocks touch with no gaps, like a finished quilt top.
+    corners: Square, 2px at most on controls.
+    borders: A 12px denim binding with a dashed stitch inside, 2px ink edges on centres and 1.5px dashed quilting lines.
+    shadows: None. Texture comes from fabric patterns made with gradients, gingham, dots, stripe, half square triangles and sprig.
+    icons:
+        Solid shapes with white marks at 16px. A ticked circle for On
+        track, a triangle for At risk, a square with a down arrow for
+        Behind and an octagon for overdue, inside a dashed tag with the word.
+    focus: A 3px denim outline offset 3px, a 6px muslin gap and a 3px barn red ring outside.
+    tone: Homey and kind, such as Welcome home and News from the sewing circle.

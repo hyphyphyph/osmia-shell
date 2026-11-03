@@ -1,0 +1,55 @@
+export anchor FloatingPanelsStyle:
+    number: 201
+    screen: ProjectsDashboard
+    name: Floating panels
+    idea: White panels float with soft, wide shadows over a tinted blue-grey page, steered from a collapsed icon rail, so every block reads as its own lifted surface.
+    base: light
+    palette:
+        page: #dde4ed, the tinted blue-grey page behind every panel
+        panel: #ffffff, floating panels, the rail and the top bar
+        well: #eff3f7, pill fields, chips and secondary buttons inside panels
+        hair: #e6ebf1, hairlines inside panels and chart gridlines
+        text: #1b2533, text and the brand tile
+        muted: #536071, labels, meta and idle rail icons
+        blue: #2c50c8, the current rail item, primary button, this week line, rings and focus
+        blueSoft: #e7ecfb, the this week area, the delta chip and avatars
+        lastWeek: #6f7c8e, the dashed last week line
+        ok: #1d7446, On track with a check circle
+        risk: #895300, At risk with a triangle
+        behind: #b02a2a, Behind with a crossed square and overdue
+        behindSoft: #fbeaea, the Behind chip
+    type:
+        Text uses SF Pro Text, system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica Neue, Arial, sans-serif. Figures and the greeting use
+        ui-rounded, SF Pro Rounded, Segoe UI, system-ui. The greeting is
+        28px bold, the chart total 34px bold, KPI figures 32px bold, panel
+        titles 15px at 650, body 14.5px at 1.5 and meta 13px.
+    layout:
+        A 72px wide white rail floats at the left with 20px rounded corners,
+        holding a dark B tile and six icon only links named by their
+        labels, Home as a filled blue tile, Settings pushed to the bottom.
+        To its right a floating top bar holds a wide pill search, a blue
+        pill New project button, a round bell and a pill with the initials
+        disc and name. The greeting sits straight on the tinted page with
+        the date above it, and a white floating pill with a red clock says
+        4 tasks are overdue at the right. Below, a main column and a 340px
+        side column. The main column floats a chart panel with a big 73,
+        a delta chip and a line chart over fourteen dated days, last week
+        dashed grey and this week solid blue over a soft area, then a
+        projects panel of rows with a progress ring holding the percent,
+        name with team and due date, tasks and a pill status. The side
+        column floats a This week panel with the four figures in a two by
+        two grid split by hairlines, then an activity panel. Below 1080px
+        the side panels move above the main column. Below 860px the rail
+        becomes a horizontal floating bar of icons on top.
+    spacing: An 8px unit. 20px between all panels and around the page, 20 to 22px panel padding.
+    density: Comfortable. Two working columns, about eight blocks on a wide screen.
+    corners: 18 to 20px panels, 13px rail tiles, full pills for fields, buttons and chips.
+    borders: None on panels. Only 1px #e6ebf1 hairlines inside panels between rows and KPI cells.
+    shadows: Every panel uses 0 1px 2px plus a wide 0 12px 32px, both blue-grey at 6 and 11 percent.
+    icons:
+        22px line icons alone in the rail, each named by its link label.
+        Status chips use a check circle, a triangle or a crossed square
+        with the word.
+    focus: A 3px blue outline offset 2px on every control and field.
+    tone: Light and conversational, such as This week, See all and +14 on last week.

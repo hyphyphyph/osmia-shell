@@ -1,0 +1,63 @@
+export anchor ConsultingStyle:
+    number: 186
+    screen: ProjectsDashboard
+    name: Consulting
+    idea: A formal partner's briefing on warm paper, with a serif voice, a burgundy accent, numbered sections and exhibits, all held to one narrow reading column.
+    base: light
+    palette:
+        paper: #fbfaf7, the page and the hollow last week dots
+        white: #ffffff, fields and the bell button
+        ink: #1e1b18, text, the table head rule and the 2px rule that opens each exhibit
+        stoneInk: #5b544c, labels, meta, nav, axis and last week dot outlines
+        rule: #d9d3ca, row hairlines and chart gridlines
+        burgundy: #7a1f33, the primary button, the finding rule, section numbers, the current nav, this week dots and focus
+        burgundyTint: #f4e9eb, the focused row fill
+        onTrack: #2f6b3a, On track with a filled circle
+        atRisk: #8a5a00, At risk with a half filled diamond
+        behind: #9b2c1f, Behind with a crossed square
+    type:
+        Two stacks. Headings and figures use Iowan Old Style, Palatino
+        Linotype, Palatino, Book Antiqua, Georgia, serif at 600. Body uses
+        system-ui, Segoe UI, Roboto, Helvetica Neue, Arial. The greeting is
+        40px serif at 1.15, section heads 24px serif, the finding 20px
+        serif, figures 40px serif, project names 16px serif, body 15px sans
+        at 1.6, exhibit labels and nav 12px sans caps tracked 0.12 to
+        0.14em.
+    layout:
+        A masthead up to 1080px wide has a serif Brightwork wordmark with a
+        burgundy outlined square mark at left and at right an underlined
+        search field, a square burgundy New project button, a square bell
+        and the words Signed in as Mara Okafor. Below a hairline the six
+        nav links sit centred in small spaced caps, Home burgundy and
+        underlined. Everything after is one centred 760px column like a
+        printed memo. A burgundy caps kicker Portfolio briefing sits over
+        Welcome, Mara in large serif and the date in serif italic, then a
+        pull line with a 3px burgundy left rule reading Principal finding.
+        4 tasks are overdue and require attention. Four numbered sections
+        follow, each with a small burgundy number beside a serif heading.
+        Section 1 Summary is Exhibit 1, four large serif figures in a row
+        split by vertical hairlines with labels under them, the overdue
+        figure burgundy. Section 2 Projects has a one sentence lead, then
+        Exhibit 2, a formal table of Project with team below, Complete,
+        Tasks as 18 of 25, Due and Status, with an italic note that
+        explains the status symbols. Section 3 Throughput has a lead
+        sentence and Exhibit 3, a dumbbell chart with one row per weekday
+        joining a hollow last week dot to a filled burgundy this week dot,
+        each row labelled like 12 then 15, over a 0 to 20 axis. Section 4
+        Recent activity is a list with the time in a narrow left column and
+        the entry at right with item names in serif italic, ended by a
+        centred row of three burgundy dots. Below 640px the figures go two
+        by two, the table turns into stacked blocks with inline labels, the
+        activity time moves above each entry and the chart scrolls
+        sideways.
+    spacing: An 8px unit. A 760px column, 36px between sections, 48px above the title, 12px table cells.
+    density: Medium. One column of prose, figures and tables read top to bottom.
+    corners: Square everywhere.
+    borders: Hairlines between rows, a 2px ink rule opening each exhibit, a 1px ink rule under table heads and a 3px burgundy rule on the finding.
+    shadows: None.
+    icons:
+        Very few. Thin 1.4 stroke line icons for search and the bell only.
+        Status uses 12px geometric marks with the word, a filled circle, a
+        half filled diamond and a crossed square.
+    focus: A 2px burgundy outline offset 3px. A focused row also takes the burgundy tint fill.
+    tone: Formal and measured, in full sentences, such as Principal finding and Six engagements are active.

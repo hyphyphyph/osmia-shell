@@ -1,0 +1,54 @@
+export anchor VaporwavePastelStyle:
+    number: 65
+    screen: Onboarding
+    name: Vaporwave pastel
+    idea: Retro computer windows float over a pastel sunset with a pink grid horizon, a striped sun and a marble bust, so setup feels like a dreamy 1990s desktop.
+    base: light
+    palette:
+        skyPink: #ffd6ec, the top of the sky gradient
+        hotPastel: #ff9ed2, title bar start, the Continue button and horizon grid lines
+        cyan: #bff3ff, the seat note and icon fills
+        cyanDeep: #7fe3f7, title bar end, the Copy invite link button and the focus glow
+        lavender: #e7dcff, secondary buttons, the list header and the current step
+        window: #fbf7ff, window bodies
+        bevel: #9b84c4, the dark edge of every bevel
+        ink: #2d1747, text and window frames
+        plum: #5a3d7a, meta text, labels and line art
+        mintInk: #0f6b5c, the Done and Added words
+        magentaInk: #b0186e, the Running now and Typing words and the eyebrow
+        grape: #6a2c91, progress blocks, used seats and links
+    type:
+        Tahoma, Verdana, Geneva, sans-serif for the interface at 15px with
+        1.5 line height. The heading uses Arial Black, Gadget, Verdana at
+        38px weight 900 with 6 percent tracking, and a cyan 3px and pink
+        minus 2px offset text shadow. Title bars are 13px bold. The eyebrow
+        and section labels are 12px bold caps with 35 percent tracking. A
+        decorative line of spaced katakana sits under the heading.
+    layout:
+        A full width scene with a pink to lavender to cyan sky, a striped
+        sun in the middle, a pink perspective grid floor in the lower
+        third, a simple marble bust with tinted shades bottom left and a
+        cyan palm bottom right. On top sits a slim beveled taskbar with the
+        brand and Mara Okafor. Below it two windows, a 280px setup.progress
+        window with a segmented block meter and the four steps, and a wide
+        invite_team.exe window with the eyebrow, heading, line, a list view
+        with Email, Role and Status columns, the seat note, then Copy
+        invite link left and Back, Skip for now and Continue right. Below
+        900px the windows stack and the bust shrinks.
+    spacing: An 8px unit. 24px window padding, 32px between windows, 8px list cell padding.
+    density: Medium. Invites sit in a file manager style list view with column headers.
+    corners: Square everywhere. The sun is the only circle.
+    borders:
+        A 2px ink frame on windows, buttons and fields, plus a 2px bevel
+        with white on the top left and #9b84c4 on the bottom right. Fields
+        and the list are sunken with a lavender inner shadow. The seat note
+        has a 2px dashed ink border.
+    shadows: A flat 8px 8px offset with no blur in magenta at 22 percent behind every window.
+    icons:
+        Chunky 16 to 20px glyphs with 2px ink outlines and pastel fills. A
+        ticked square marks done, a pink play triangle marks the current
+        step and dashed squares mark queued steps. Added shows a tick, and
+        Typing shows three fading bars. Window buttons are tiny beveled
+        boxes and arrows are text triangles.
+    focus: A 2px dotted ink outline offset 2px plus a 5px cyan glow ring.
+    tone: Computer speak with a wink, such as setup.progress, invite_team.exe, Running now and Queued.

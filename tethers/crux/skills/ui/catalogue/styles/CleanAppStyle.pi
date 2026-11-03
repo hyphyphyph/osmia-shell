@@ -1,0 +1,42 @@
+export anchor CleanAppStyle:
+    number: 1
+    screen: ProjectsDashboard
+    name: Clean app
+    idea: Calm white cards on a cool grey page, soft shadows and rounded pills that make the app feel light and friendly.
+    base: light
+    palette:
+        page: #f5f7fa, the page background
+        surface: #ffffff, cards, the sidebar and fields
+        text: #1b2230, body text and headings
+        muted: #5b6475, labels, dates and meta text
+        border: #e3e7ee, field borders, the sidebar edge and progress tracks
+        accent: #2563eb, links, primary buttons, progress fill and the focus ring
+        accentSoft: #e8efff, the active nav item and icon tiles
+        success: #17784a text on #e4f4eb, the On track pill
+        warning: #965800 text on #fdf0d9, the At risk pill
+        danger: #c0282d text on #fde7e8, the Behind pill and the overdue count
+    type:
+        System sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial, sans-serif. Sizes are 28px bold for the page title,
+        18px bold for section titles, 16px semibold for project names, 15px
+        regular body at 1.5 line height, 13px muted meta and 12px semibold
+        pills. Key numbers are 26px bold with tabular figures.
+    layout:
+        A white sidebar 232px wide with the brand and nav on the left. The
+        main area has a top bar with search, notifications and the New
+        project button, then the greeting, a row of four summary cards, and
+        a two to one grid of project cards beside the chart and activity
+        cards. Below 700px the sidebar becomes a sticky top bar with icon
+        nav, and everything stacks in one column.
+    spacing: An 8px unit. 16px gaps between cards, 20px card padding, 24 to 32px between sections.
+    density: Roomy. About six project cards fill a wide screen.
+    corners: 12px on cards, 8px on buttons and fields, fully round pills, progress bars and avatars.
+    borders: 1px #e3e7ee on fields and the sidebar edge only. Cards have no border.
+    shadows: Cards use 0 1px 2px plus 0 4px 12px, both rgba(16,24,40,0.06).
+    icons:
+        20px rounded line icons with a 1.8 stroke. Summary icons sit in
+        40px soft tinted tiles. Status pills carry a circle tick, a warning
+        triangle or an octagon. Team members show as coloured initial
+        avatars.
+    focus: A 3px outline in rgba(37,99,235,0.35) offset 2px. A focused field gets an accent border and a 3px soft ring.
+    tone: Friendly sentence case, such as Good morning, Mara, and View all.

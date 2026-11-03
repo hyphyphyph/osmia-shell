@@ -1,0 +1,63 @@
+export anchor ChalkboardStyle:
+    number: 239
+    screen: ProjectsDashboard
+    name: Chalkboard
+    idea:
+        The whole dashboard is written up on a slate chalkboard in a wooden
+        frame, with handwritten headings, wobbly chalk boxes, tally marks
+        beside the counts, hatched chalk bars and soft eraser smudges.
+    base: dark
+    palette:
+        slate: #27302c, the board, the page and the style sheet
+        deepSlate: #202824, the header strip and field fills
+        smudge: #323b37, the lightest eraser smudge, the peak any text sits on
+        frame: #5a3d26, the wooden frame and the chalk tray
+        chalk: #ecebe4, text, box outlines and last week bars
+        dust: #b9bdb5, meta, labels and dates
+        yellow: #f2e18c, the primary button, this week bars, progress hatching, the Home circle and focus
+        blue: #a8d4f0, links and the activity arrows
+        ok: #b9e4a7, On track text and check circle
+        risk: #f7c38a, At risk text and triangle
+        bad: #f4a9b8, Behind and overdue text, crossed square, clock and the overdue tally
+    type:
+        Two stacks. Headings and counts are handwriting, Chalkboard SE,
+        Chalkboard, Segoe Print, Bradley Hand, Comic Sans MS, cursive, with
+        the greeting 42px at 700, counts 40px, section headings 28px and box
+        titles 20px. Body text is Trebuchet MS, Segoe UI, sans-serif at 16px
+        and 1.55, meta 14px italic in dust. All chalk text carries a faint 1px
+        chalk blur.
+    layout:
+        The screen is a chalkboard inside a 14px wooden frame with a chalk
+        tray along the bottom edge holding three drawn chalk sticks. Across
+        the top the Brightwork name is written by hand, the six nav words
+        follow with a wobbly yellow circle drawn round Home, then a dashed
+        chalk search box, a chalk bell, a yellow outlined New project box and
+        Mara Okafor. The greeting Good morning, Mara! is written large with a
+        squiggle under it, then the date and a pink line reading 4 tasks are
+        overdue with a clock. Four wobbly chalk boxes hold the counts, with
+        tally marks drawn beside active projects and overdue tasks. Projects
+        is a three column grid of wobbly boxes, each with the handwritten
+        name, category, a status mark drawn in chalk with its word, a hatched
+        yellow progress bar with the percent, tasks done and due date. Below,
+        the chart is chalk columns across all fourteen days, last week as
+        plain chalk outlines and this week hatched yellow, with values on top
+        and a written note of the totals, beside the activity written as a
+        list with blue chalk arrows. Soft eraser smudges sit behind the
+        content. Below 900px the projects go to two columns and the chart and
+        list stack, below 600px everything is one column and the frame thins
+        to 6px.
+    spacing: An 8px unit. 20px box padding, 24px gaps, 40px between board sections.
+    density: Medium. Boxes are generous like a teacher's board.
+    corners: Hand drawn. Every box uses uneven elliptical corners so no two edges match.
+    borders:
+        2px chalk lines with uneven corners, dashed for the search box, a 14px
+        wooden frame round the board.
+    shadows:
+        No drop shadows. Text carries a 1px chalk blur and the board carries
+        soft white smudges at 4 to 6 percent.
+    icons:
+        Chalk line icons at 2.2px stroke with rough round ends. Status uses a
+        drawn circle with a tick, a triangle with a bang and a crossed box,
+        always with the word, overdue a clock.
+    focus: A 3px dashed yellow outline offset 4px, like a ring drawn in chalk.
+    tone: Friendly classroom, such as Good morning, Mara!, Still to do and What happened today.

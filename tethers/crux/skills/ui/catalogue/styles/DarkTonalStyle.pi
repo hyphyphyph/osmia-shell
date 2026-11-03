@@ -1,0 +1,50 @@
+export anchor DarkTonalStyle:
+    number: 245
+    screen: DesignEditor
+    name: Dark tonal
+    idea: Panels float as rounded cards separated by steps of tone instead of lines, so the editor reads as soft layered surfaces with one lavender accent.
+    base: dark
+    palette:
+        tone0: #0e1012, the page and the canvas
+        tone1: #17191d, the floating header, layers and inspector cards
+        tone2: #202328, inspector groups, the tool rail, layer tiles and status chips
+        tone3: #2a2e35, fields and secondary buttons
+        tone4: #363b44, hover and the active direction segment
+        ink: #e6e8ec, text
+        muted: #a3a9b3, labels, secondary lines and idle icons
+        lavender: #c6b8ff, the primary button, the active tool, the frame selection and focus
+        lavenderInk: #191431, text and icons on lavender
+        tint: #2c2843, the selected layer row and the frame name pill
+        saved: #7ed6a7, the Saved chip text and icon
+        pin: #ffc98a, the comment pin
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Base 13px at 1.45. Names 13px 600, muted labels 12px 600,
+        second lines in layer rows 12px muted, values with tabular numbers,
+        and the style sheet title 26px 700.
+    layout:
+        Everything floats inside an 8px gutter on tone0. A 56px header card
+        holds a lavender rounded B tile, the crumb Website redesign slash
+        Home v3, three rounded square initials tiles, a zoom chip with a
+        magnifier, Present and a lavender Share. Below sit three cards, a
+        256px layers card, the canvas and a 272px inspector card. Layer rows
+        are 10px rounded with a 26px tonal icon tile, two lines for Headline
+        and Primary button, a lavender Selected chip on Hero and a muted
+        Collapsed note on Features. A vertical tool rail floats at the left
+        edge of the canvas in tone2 with 44px tools, Move filled lavender.
+        The status sits as three chips at the bottom of the canvas. The
+        inspector stacks tone2 groups for Position and size, Fill, Auto
+        layout with a two way segment, Corner radius and Export, each with
+        34px tone3 pill fields. Below 760px the side cards hide, the rail
+        turns horizontal and floats above the status chips.
+    spacing: An 8px unit. 8px gutters between cards, 12px card padding, 6px between fields.
+    density: Medium. 34 to 44px targets and two line layer rows.
+    corners: Generous. 14px cards, 10 to 12px groups, buttons and rows, 8px fields, round handles.
+    borders: None anywhere. Every edge is a step between the five tones.
+    shadows: None on panels. Only the comment bubble lifts with 0 8px 24px black at 45 percent.
+    icons:
+        18px line icons at 1.8px stroke inside 26px tonal tiles, which turn
+        lavender on the selected row. Saved uses a check circle, editing two
+        people and the version a tag, each beside its words.
+    focus: A 2px lavender ring offset 2px, an inset 2px lavender ring on fields.
+    tone: Friendly plain labels, such as Position and size.

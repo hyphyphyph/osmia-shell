@@ -1,0 +1,58 @@
+export anchor BroadcastControlStyle:
+    number: 358
+    screen: VideoEditor
+    name: Broadcast control
+    idea: The editor as a television control room multiviewer, a black wall of tiles each named by an under monitor label with a tally box, the program tile ringed red and marked ON AIR, sources as small monitors with level meters, and the timeline as a rundown strip.
+    base: dark
+    palette:
+        wall: #000000, the monitor wall and gaps between tiles
+        tile: #08080a, tile faces and the style sheet
+        umd: #1b1b1f, under monitor label bars, header cells and list rows
+        button: #26262c, transport and secondary buttons
+        ink: #f2f2f2, text
+        muted: #a9a9b2, field names and track roles
+        tallyRed: #ff3b30, program ring, ON AIR dot and the playhead
+        exportRed: #d92a20, Export button and playhead tag behind white text
+        onAirText: #ff5c52, the ON AIR word
+        tallyGreen: #30d158, preview ring, PVW tag and play
+        readout: #7dff9a, inspector values
+        amber: #ffb000, the clock, the router badge and focus
+        cue: #ffcc4d, durations and the cut to logo marker
+    type:
+        Labels use a condensed stack, Arial Narrow, Roboto Condensed,
+        Liberation Sans Narrow, Arial, at 14px, bold and tracked 0.1em in
+        under monitor labels. Numbers use a mono stack. The clock is mono
+        40px bold in amber, readouts mono 14px in green, durations mono
+        12px. The program title card is system sans 600 up to 32px.
+    layout:
+        A router strip on top shows Brightwork Cut on an amber block, then
+        cells SHOW Launch teaser, FMT 1080p and RATE 24 fps. The wall is a
+        four column grid of black tiles with 2px gaps. Program spans two by
+        two on the left, ringed with a 3px red inset frame, and its label
+        bar reads a red disc, PGM, LAUNCH TEASER and a red ON AIR. Four
+        source tiles fill the right, SRC 1 to SRC 4, each a small monitor
+        with a simple picture or a pair of green level meters, and a label
+        bar with a flat dash tally, the file name and an amber duration. The
+        third row holds SRC 5 with the logo, a preview tile ringed green
+        with an engineering table of POSITION 960 x 540, SCALE 100 percent,
+        OPACITY 100 percent and X DISSOLVE 12 FR and a label PVW TITLE CARD
+        V2 SELECTED with a hollow green square, and a two column clock tile
+        with the amber timecode, TRT and the duration, three flat transport
+        buttons with a green play, RENDER with an empty bar and 0% STANDBY
+        with a hollow square, and a red EXPORT block. A rundown tile spans
+        the full width with track rows, clips as dark blue or dark green
+        bars with a bright left edge, the selected title clip outlined green
+        with a green PVW tag, an amber diamond CUT TO LOGO with a dotted
+        line and a red playhead with a red 18 tag. At phone width only
+        program, clock and rundown remain.
+    spacing: 2px gaps between tiles, 8px to 14px inside tiles. Nothing else.
+    density: High. Eight tiles and a rundown strip fill the wall.
+    corners: Square everywhere, except the round ON AIR tally.
+    borders: Tally rings are 3px inset frames, red for program and green for preview.
+    shadows: None. Light comes only from the tiles.
+    icons:
+        Tally shapes are the main icons. A filled disc is on air, a hollow
+        square is preview or standby, a flat dash is idle. Each sits beside
+        a word. Transport uses filled glyphs.
+    focus: A 3px amber outline offset 2px.
+    tone: Control room shorthand in capitals, such as PGM, PVW, SRC 1, TRT and STANDBY.

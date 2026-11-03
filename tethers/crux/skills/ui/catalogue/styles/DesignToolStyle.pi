@@ -1,0 +1,67 @@
+export anchor DesignToolStyle:
+    number: 188
+    screen: ProjectsDashboard
+    name: Design tool
+    idea: The dashboard laid out like a design file, white sections floating as frames on a dotted grey canvas between a compact pages panel and a properties inspector, all in tight 11px interface text.
+    base: light
+    palette:
+        canvas: #e4e4e7, the page, with #cfcfd4 dots every 16px
+        panel: #ffffff, the toolbar, floating panels and frames
+        well: #f4f4f5, filled fields, property values and segmented control tracks
+        ink: #1c1c1e, text and the black progress fills
+        muted: #5c5c63, labels, column heads and meta
+        canvasInk: #52525b, frame labels sitting on the canvas
+        line: #d4d4d8, dividers and field edges, with #e4e4e7 for table rows
+        selectionBlue: #2a5bd7, the primary button, the selection outline, this week bars, the slider and focus
+        blueTint: #e8eefc, the current page, the selected row and the selected layer
+        greyBar: #71717a, last week bars
+        onTrack: #1d7a46, On track with a filled circle
+        atRisk: #8f5600, At risk with a filled triangle
+        behind: #c0262d, Behind with a filled square and the overdue pill
+    type:
+        One stack, system-ui, apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial. Interface text in panels is 11px, headings 11px at 600.
+        Inside frames the greeting is 20px at 650, KPI figures 24px at 650
+        and minus 0.02em, and table, chart and activity text 12px.
+    layout:
+        Everything floats on a dotted grey canvas with 12px gaps. A full
+        width white toolbar with 10px corners holds a black rounded mark
+        and Brightwork, a divider, Workspace / Home, and at the right a
+        filled search well, a blue New project button, a bare bell icon and
+        a small violet avatar with Mara Okafor. Below it three columns run
+        208px, flexible and 248px. The left floating panel has Pages with
+        the six nav items as 26px rows, Home in blue tint, then Sections
+        listing Greeting, Summary, Projects with Billing migration nested
+        and selected, Tasks completed and Activity, each with a tiny hash
+        grid mark. The middle is the canvas itself, a six column grid of
+        frames, each a white board with a small hash labelled caption above
+        it in canvas ink. The Greeting frame spans four columns with Hi
+        Mara, the date and a red outlined pill with a square reading 4
+        tasks are overdue. The Summary frame is four separate small white
+        KPI boards. The Projects frame is a compact table of Name, Team,
+        Progress as a thin black bar and percent, Tasks, Due and Status,
+        with the Billing migration row selected by a blue tint and a 1.5px
+        blue outline. Then Tasks completed spans three columns as two small
+        multiple rows of seven columns, last week in grey and this week in
+        blue, with the week total at the left of each row and the day under
+        the lower row, and Activity spans three columns with coloured
+        initial discs and right aligned times. The right floating inspector
+        has Project, Tasks and History tabs, the selected name, a three way
+        status segment with Behind raised, a progress slider at 30 percent
+        with Complete 30 and Tasks 12 of 40, and Details for Team, Due, Days
+        left 20 and Remaining 28 as filled value wells. Below 1120px the
+        inspector moves under the canvas as three side by side sections.
+        Below 760px the pages panel becomes a wrapped row of page names,
+        Sections hides, frames stack, KPIs go two by two, the table
+        scrolls sideways inside its frame and the inspector stacks last.
+    spacing: A 4px base. 12px between floating panels, 20 to 28px between frames, 26px control height, 16px frame padding.
+    density: High in the panels, medium inside the frames.
+    corners: 10px floating panels, 6px buttons and fields, 5px rows, 4px frames and KPI boards, round avatars.
+    borders: Almost none. Fields are filled wells. A 1.5px blue outline marks the selection.
+    shadows: Floating panels use a 1px ring at 6 percent black plus soft 4px 12px and 12px 32px shadows. Frames carry only a 1px 2px shadow.
+    icons:
+        14px line icons at 1.3 stroke in the panels and toolbar. A tiny
+        hash grid marks each frame and section. Status uses 8px solid
+        shapes, a circle, a triangle and a square, beside the word.
+    focus: A 2px selection blue outline offset 1px. A focused field turns white with a blue border, and a focused row takes the blue tint.
+    tone: Tool like nouns and short labels, such as Pages, Sections, Selected in Projects and Days left.

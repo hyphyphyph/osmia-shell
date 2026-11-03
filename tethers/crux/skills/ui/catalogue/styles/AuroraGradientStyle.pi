@@ -1,0 +1,52 @@
+export anchor AuroraGradientStyle:
+    number: 27
+    screen: LandingPage
+    name: Aurora gradient
+    idea: A modern startup page, with soft aurora mesh glows on white, a huge tightly tracked headline, a floating glassy pill nav and a generous centred hero.
+    base: light
+    palette:
+        white: #ffffff, the page, windows and fields
+        mist: #f6f6fa, table heads and the style sheet
+        ink: #0b0d17, headlines, text and the primary pill
+        slate: #545a6e, body copy, labels and nav links
+        hairline: #e7e8ef, borders, dividers and progress tracks
+        violet: #5a3ee0, the focus ring and the start of gradient text
+        aurora: #b8a6ff, #8de3d6, #ffc7a8 and #ffb3d9, blurred glows and icon rings, never behind small text
+        green: #157347, the On track pill
+        amber: #8a5300, the At risk pill
+        red: #b42318, the Overdue pill
+    type:
+        System sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial, sans-serif, with small labels in ui-monospace, SF Mono,
+        Menlo, Consolas, monospace. The headline is 104px bold at 0.98 line
+        height with minus 0.055em tracking. Section titles are 52px bold,
+        the quote 48px semibold with its second half in a violet to teal
+        gradient, feature titles 19px, body 16px at 1.6, and eyebrows 12px
+        mono uppercase tracked 0.08em.
+    layout:
+        A sticky glassy pill nav floats centred at the top with a gradient
+        ring logo, quiet links and a small black Start free pill. Four large
+        blurred aurora blobs in violet, mint, peach and pink glow behind the
+        hero and fade to white. The hero is centred, with a small New chip,
+        the huge headline, the lede, a black pill with an arrow and the tour
+        link with a ringed play button. Below it a glass framed product
+        window shows a projects table with progress bars, avatars, due dates
+        and status pills. The logo strip is a row of grey wordmarks with
+        small glyphs. Three features sit in columns split by hairlines with
+        gradient ringed icon tiles and no cards. The quote is big and
+        centred. The closing band is a 32px rounded panel filled with a
+        soft aurora wash. The footer is minimal with mono headings. Below
+        900px the nav links move into a centred row under the bar and
+        columns stack.
+    spacing: An 8px unit with big jumps, 72 to 112px between sections and 28 to 36px around the headline.
+    density: Very airy. One centred column for the hero, text capped at 520 to 640px.
+    corners: Pills for nav and buttons, 32px on the closing panel, 22px outer and 14px inner on the product window, 12px on fields and icon tiles.
+    borders: 1px #e7e8ef hairlines, 1px white edges on glass, 1.5px aurora gradient rings on icon tiles.
+    shadows: Long soft violet tinted drops, 0 40px 80px minus 30px rgba(43,22,140,0.35) under the window, and a small violet glow under the primary pill. Glass is 55 to 62 percent white with a 10 to 16px backdrop blur.
+    icons:
+        20px thin 1.6 stroke line icons in white tiles with a gradient
+        ring. Status is a white pill with a ringed tick for On track, an
+        outlined triangle with an exclamation mark for At risk and a filled
+        square with a cross for Overdue, plus the word.
+    focus: A 2px violet outline offset 3px. A focused field gets a violet border and a 4px soft violet ring.
+    tone: Crisp and confident with short punchy lines, such as Less tracking. More finished work.

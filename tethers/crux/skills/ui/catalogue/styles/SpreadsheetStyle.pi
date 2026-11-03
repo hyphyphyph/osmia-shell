@@ -1,0 +1,53 @@
+export anchor SpreadsheetStyle:
+    number: 70
+    screen: TodayMobile
+    name: Spreadsheet
+    idea: The Today list is a live worksheet with lettered columns, numbered rows, a formula bar showing the selected cell and sheet tabs for navigation.
+    base: light
+    palette:
+        desk: #eceef1, the page around the workbook
+        cell: #ffffff, every cell and the active tab
+        gridline: #d3d7dd, 1px cell borders, decorative only
+        header: #f1f2f4, column letters, row numbers, bars and tabs, with #4a5260 text
+        text: #1c2129, cell values, with muted #555e6c for project lines
+        selectionTeal: #0b6e74, the selected cell border and handle, the active tab, the add button and focus
+        selectionFill: #e3f2f2, inside the selected cell, with #cfe6e6 on its column and row headers
+        todayFill: #fff3c4, Due today status cells with #6e4a00 text
+        overdueFill: #fde2e0, the Overdue cell with #9e1c14 text, also the High flag and badge
+        doneFill: #e1f1e4, the Done cell with #1f6130 text
+    type:
+        System sans, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial,
+        sans-serif, at 13px with 1.35 line height for cells. The title row
+        is 17px bold, task names 13px semibold, project lines 12px muted
+        and section bands 11px bold caps. Times, durations, the name box
+        and the formula use ui-monospace, Menlo, Consolas at 12px, right
+        aligned for numbers. Column letters and row numbers are 11 to 12px
+        centred.
+    layout:
+        A phone-width workbook up to 390px with a 1px grey frame, centred
+        on the desk. From the top come a title bar with a teal grid file
+        icon, Brightwork and Today.sheet, and a square teal avatar. Then a
+        toolbar with All, Due today and Overdue filter toggles, Sort and a
+        filter icon. Then a formula bar with the name box B9, an italic fx
+        and a TASK formula for the selected task. The grid has a row number
+        column and columns A, B and C, with a sliver of column D on wide
+        screens. Row 1 merges into the title Monday 2 November, row 2 holds
+        6 tasks, 2 meetings with a COUNT formula hint, then a Meetings band,
+        a header row Time, Meeting, Length and two meeting rows. A Tasks
+        band follows with header row Due, Task and project, Status, and six
+        task rows where the project wraps under the name in the same cell.
+        Cell B9 is selected. A status bar sums the selection, and sheet tabs
+        Today, Projects, Inbox and Me with a square teal add button form the
+        bottom bar.
+    spacing: A 4px unit. Cells pad 4px by 6px. Nothing has gaps, everything butts against gridlines.
+    density: High. All eight items and every header fit on one phone screen.
+    corners: Square everywhere, 2px at most on buttons, the badge and the avatar.
+    borders: 1px gridlines on every cell. The selected cell has a 2px teal border and a small square fill handle at its bottom right corner, and its column letter and row number turn teal and bold.
+    shadows: None.
+    icons:
+        Small square-ended line icons from 11 to 18px. Status cells use a
+        conditional fill plus a word and a shape, a filled dot for Due
+        today, a ring for Upcoming, a tick for Done and a triangle for
+        Overdue. High priority is a small red flag with the word High.
+    focus: A 2px teal outline drawn inside the cell or field, like a cell selection.
+    tone: Terse and literal like column headers, such as Due, Task, Status and Length.

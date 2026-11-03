@@ -1,0 +1,54 @@
+export anchor InkAndRedStyle:
+    number: 295
+    screen: CodeRepository
+    name: Ink and red
+    idea: A pull request set like the front page of a serious evening paper, warm white serif type on black ink, hairline column rules and one sharp red kept for what blocks the merge.
+    base: dark
+    palette:
+        inkBlack: #0e0d0c, the page and style sheet ground
+        pressBlack: #171614, the diff excerpt box and fields
+        warmWhite: #ede7db, text, thick section rules and the secondary button
+        greyInk: #aaa397, meta, captions and labels
+        hairline: #3b3833, column rules and row lines
+        sharpRed: #ff5245, the one accent for failing, changes requested, the primary button, the current tab bar and the focus ring
+        redWash: #2a1311, the failing alert and removed diff lines
+        redText: #ff8a80, red words set on the red wash and the needs QA label
+    type:
+        Three families. A high contrast display serif, Didot, Bodoni 72,
+        Iowan Old Style, Georgia, for the masthead, headline and big
+        figure. A book serif, Iowan Old Style, Palatino, Georgia, for body
+        text at 17px and 1.55 and the italic dek at 24px. A gothic sans,
+        Franklin Gothic Medium, Arial Narrow, Arial, for kickers and labels
+        at 12 to 13px bold caps tracked 0.16em. The headline is 64px at 700,
+        the checks figure 76px, the diff 13px monospace.
+    layout:
+        A centred newspaper page up to 1240px. An ear line names the suite,
+        the edition and the desk. The masthead reads Brightwork Code in
+        64px display serif with Code in italic, the repository in italic
+        below it, and a dateline row with Private, Watch 12, Star 48 and
+        Fork 3, closed by a double rule. The tabs are a centred row of
+        gothic caps separated by middots, the current one with a 3px red
+        underline. The lead story has a red kicker with the number and Open,
+        the title as a huge headline, the merge sentence as an italic dek
+        and a ruled byline with author, commits, files and totals. Under it
+        two columns split by a hairline. The narrow one holds The checks
+        with a giant 11 and of 12 passed, a red washed alert for the failing
+        e2e-android check, The review with the two names and verdicts, and
+        In this change as a contents list with dotted leaders to the
+        counts. The wide one holds The excerpt, the boxed diff, where the
+        comment becomes a pull quote with a red rule above and the quote in
+        26px italic display serif. A right rail under a thick white rule
+        lists assignee, labels, milestone and linked issue, then To press
+        with the dashed disabled merge button. Below 1060px the rail moves
+        under the story, below 760px the columns stack.
+    spacing: An 8px unit. 24px column gutters, 12px row padding, 28px between masthead and lead.
+    density: Medium. Big headlines and long lines, but every fact is on the page.
+    corners: None. Every edge is square.
+    borders: Hairline column rules, a 3px or 4px warm white rule over every section, a double rule under the masthead.
+    shadows: None.
+    icons:
+        Few, 2px line icons with butt caps. A tick for passed, an octagon
+        cross for failing, a ringed tick for approved, a triangle for
+        changes requested, each with its word in gothic caps.
+    focus: A 2px warm white outline offset 3px with a 5px red ring outside it.
+    tone: Headline voice, such as The checks, The review, The excerpt, In this change and To press.

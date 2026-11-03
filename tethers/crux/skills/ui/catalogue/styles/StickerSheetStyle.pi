@@ -1,0 +1,56 @@
+export anchor StickerSheetStyle:
+    number: 111
+    screen: ProjectsDashboard
+    name: Sticker sheet
+    idea: The dashboard is a sheet of glossy die-cut stickers with thick white borders on a pale backing, each number, project and chart bar its own sticker, slightly tilted as if just placed.
+    base: light
+    palette:
+        backing: #e8edf2, the page behind the sheet, with faint diagonal lines
+        sheet: #f6f8fa, the sticker sheet card
+        dieCutWhite: #ffffff, sticker borders, chips, the chart card and fields
+        yellow: #ffd23f, the current nav and a sticker fill
+        pink: #ff8fb1, this week bars and a sticker fill
+        mint: #6fd6a8, the bell and a sticker fill
+        sky: #7cc6fe, the greeting and last week bars
+        lilac: #c3a6ff, a sticker fill
+        orange: #ff9f5a, a sticker fill
+        violet: #5b3fd1, the primary button and the focus ring, white text
+        ink: #1a1a2e, all text on stickers and the progress fill
+        green: #0f7a4a, the On track chip
+        amber: #9a5b00, the At risk chip
+        red: #b3261e, the Behind chip, the overdue burst and the count badge
+    type:
+        One stack, Avenir Next, Segoe UI, system-ui, Roboto, at heavy
+        weights with tight tracking. The greeting is 44px 900 at 1.02,
+        numbers 48px 900, section titles 24px 900, sticker titles 19px 800,
+        percents 26px 900, body 15px at 1.45, chips 13px 800.
+    layout:
+        A large rounded sheet card sits on the backing with a perforated
+        strip along its top and a tiny caps line Sheet 31 Peel and plan.
+        The header is a tilted white pill sticker brand with a star, a white
+        search pill, a violet New project pill, a round mint bell sticker
+        with a red count and a round pink MO sticker. The nav is white pills,
+        the current one a yellow sticker tilted and lifted. The greeting is
+        a big sky sticker, Hey Mara!, the date and a red starburst sticker
+        with 4 tasks are overdue. Beside it the numbers are four stickers of
+        different shapes, a yellow circle, a mint rounded square, a pink
+        pill and a lilac leaf shape, each tilted. Projects are six coloured
+        rounded stickers three across with name, meta, a chunky ink progress
+        pill, the big percent and a white status chip, and the Billing
+        migration sticker has a peeling top right corner. The chart is a
+        white card where each day is a pill sticker bar with a gloss spot,
+        sky for last week and pink for this week. Just stuck on lists the
+        activity with round initial stickers. Below 1000px sections stack,
+        below 640px stickers go one across.
+    spacing: An 8px unit with wide 24 to 32px gutters so each sticker has room for its white border.
+    density: Low to medium. Big type, three stickers across.
+    corners: Round. 20 to 28px on stickers, full pills for nav, buttons and chart bars, and one circle sticker.
+    borders: A 5 to 6px white die-cut border drawn as a spread shadow. Dashed kiss-cut lines on the backing.
+    shadows: A soft 8px lift under every sticker, plus a diagonal gloss highlight across the top left of each.
+    icons:
+        Filled sticker shapes at 22px. A ticked circle for On track, a
+        rounded triangle for At risk, a rounded square with a bar for
+        Behind and a red starburst with a mark for overdue, on a white chip
+        with the word.
+    focus: A 3px violet outline offset 4px, outside the white sticker border.
+    tone: Bubbly, such as Hey Mara and Just stuck on.

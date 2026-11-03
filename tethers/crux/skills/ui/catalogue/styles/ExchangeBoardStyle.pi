@@ -1,0 +1,55 @@
+export anchor ExchangeBoardStyle:
+    number: 76
+    screen: ProjectsDashboard
+    name: Exchange board
+    idea: The dashboard reads like a light trading-floor board, with projects quoted as tickers carrying a last price, a depth bar and an up, hold or down signal, over a static ticker tape and a volume chart.
+    base: light
+    palette:
+        floor: #eceee9, the page
+        board: #ffffff, panes and table rows, zebra rows in #f7f8f5
+        grid: #c8ccc4, cell rules and pane borders
+        ink: #101820, text, depth bars and the primary button
+        slate: #4c5660, labels and hatching
+        headerNavy: #13263f, the nav bar, the table head and this week bars
+        tape: #fff3c4, the ticker band
+        lamp: #ffd84d, the current nav tab and the focus halo
+        upGreen: #11703d, On track on a #e3f3e8 chip
+        holdAmber: #8a5200, At risk on a #fbefd6 chip
+        downRed: #b4161b, Behind and overdue on a #fbe4e3 chip
+        wireBlue: #0d4f9e, links, newswire times and the focus ring
+    type:
+        Numbers and codes use ui-monospace, SF Mono, Cascadia Mono, Menlo,
+        Consolas with tabular figures. Words use Helvetica Neue, Arial
+        Narrow, Arial. Index values are 34px bold mono, the greeting 28px
+        at 800, last prices 17px at 800 mono, project names 14px bold sans,
+        cells 13px mono, table heads 11px bold mono caps on navy and chart
+        labels 12px mono.
+    layout:
+        A white top row holds a rising arrow mark, Brightwork and a boxed
+        BWX code, the date as SAT 31 OCT 2026 WEEKEND SESSION, a FIND
+        search box with a black label, a + New project button, an ALERTS
+        box with a red 3 and DESK Mara Okafor. A navy nav bar follows with
+        Home lit yellow, then a pale yellow ticker tape listing each project
+        code with its percent and signal and the week total, scrolling
+        sideways inside itself. The greeting row has the heading, the date
+        in mono and a red bordered 4 TASKS OVERDUE flash with a down
+        triangle. Four index boxes share one bordered strip with codes ACTV,
+        DUE.WK, OVRD and HRS.WK and big right-aligned values. The main grid
+        has a Project quotes table with columns Sym, Project, Sector, Last,
+        Depth, Tasks, Due and Signal, invented codes WEBR, MOB2, Q4SV,
+        BILL, SPRC and ONBE, a segmented depth bar and a signal chip. The
+        right column stacks a Volume chart with hatched bars for last week
+        and navy bars this week, a three-cell strip for 59, 73 and the
+        change, and a Newswire list. At 375px the table scrolls inside its
+        pane and the index boxes go two by two.
+    spacing: A 4px base with 8px most gaps. Cells are 9px by 10px and panes sit 14px apart.
+    density: High. Tabular rows and small mono figures.
+    corners: Square everywhere.
+    borders: 1px grid lines, a 2px ink rule under each pane title and zebra rows.
+    shadows: None. Depth comes from the navy header bands.
+    icons:
+        Market glyphs only. An up triangle for On track, a diamond for At
+        risk and a down triangle for Behind and overdue, always with the
+        word in a tinted chip.
+    focus: A 2px wire blue outline offset 1px with a 4px yellow lamp halo.
+    tone: Terse trader codes such as ACTV, DUE.WK, OVRD, Newswire, 12m and YDAY.

@@ -1,0 +1,55 @@
+export anchor ChromeStyle:
+    number: 260
+    screen: DesignEditor
+    name: Chrome
+    idea: A dark brushed steel console where every control is a pill of polished liquid chrome with a hard horizon reflection, pressed tools sink into dark wells and one ice blue light marks focus.
+    base: dark
+    palette:
+        night: #0c0d0f, the page and canvas edge
+        steel: #1a1d21, brushed bars, the side panel and the style sheet
+        steelRaised: #22262b, the comment card
+        well: #0f1114, recessed fields, the tool tray and the people tray
+        ink: #e9edf1, text on steel
+        brushedGrey: #a3acb6, labels and meta
+        chromeHigh: #f6f8fa, the chrome top highlight
+        chromeMid: #d3d8de, the chrome upper body
+        chromeHorizon: #8e959e, the hard reflection line at half height
+        onChrome: #101215, text and icons on chrome
+        ice: #6fd3ff, the pressed tool icon, status icons and focus
+        statusGlass: #0a0d0f, the status readout with #b9e9ff text
+        cobalt: #0a6fb0, the 32 px guide with white text
+    type:
+        Bahnschrift, DIN Alternate, Eurostile, Arial Narrow, system-ui for
+        text and ui-monospace for values. Base 14px. The file name is 17px
+        600, panel titles 18px 600, buttons 13px 700 caps tracked 0.06em,
+        labels 12px caps tracked 0.08em, values 13px mono and the status
+        readout 12px mono.
+    layout:
+        A brushed steel bar on top holds a chrome knob B, CANVAS · WEBSITE
+        REDESIGN over Home v3, three chrome avatar buttons in a sunken tray, a
+        sunken Present and a chrome Share ringed by a dark bezel. Below, the
+        canvas fills the left and a 320px brushed side panel the right. Inside
+        the canvas a sunken vertical tray holds six 50px round chrome tools,
+        Move pressed into a black well with an ice icon, and a sunken 66%
+        readout. The white Hero frame sits beside it with round chrome
+        handles. A status readout runs under the canvas as a dark glass bar
+        with a chrome bezel and pale blue mono text. The side panel holds
+        Layers in a sunken tray, the Hero row a chrome pill with dark text and
+        a SELECTED tag, then the Hero inspector as label rows, Position, Size,
+        Fill, Vertical, Radius and Export, each with one or two sunken pill
+        wells such as X 0, W 1440, Gap 32 and Fmt PNG, and a sunken Export
+        Hero. The chrome gradient runs top to bottom through #f6f8fa, #d3d8de
+        at 38 percent, #8e959e at 50 percent, #b9c0c8 at 72 percent,
+        and #e4e8ec at the bottom. Below 860px the panels stack and the tool
+        tray becomes a fixed horizontal tray at the bottom.
+    spacing: An 8px unit. 28px canvas padding, 18px panel padding, 8px between wells.
+    density: Medium. Big chrome tools with compact layer and property rows.
+    corners: Round everywhere. Circles for tools and handles, 17 to 19px pills for buttons and wells, 14px trays.
+    borders: 1px dark edges under a 1px white top highlight, and panels part with a black line over a faint light line.
+    shadows: Inset shadows sink wells and trays, chrome pills sit proud with a 2px drop, and Share has a double ring bezel.
+    icons:
+        Line icons at 1.9px stroke, 18px. Selected is a circled check,
+        Collapsed a right chevron, Saved a cloud with a check, always with the
+        word.
+    focus: A 2px ice blue outline offset 3px with a 12px ice glow.
+    tone: Precise and technical with caps labels such as Position, Size and Export.

@@ -1,0 +1,61 @@
+export anchor VaultStyle:
+    number: 368
+    screen: FinanceBudget
+    name: Vault
+    idea: The money app as a steel vault, riveted brushed steel plates, numbered deposit boxes with keyholes and inset readouts for balances, a combination dial for the savings goal and drawer fronts with gauges and indicator lamps for the budget.
+    base: dark
+    palette:
+        floor: #121417, the page and the style sheet
+        steel: #2a2f35, riveted plates, drawers and the dial face
+        steelLow: #22262b, sheet heading plates and the dial hub
+        edge: #4a525c, plate edges, rivet rims and bevels
+        inset: #0b0d0f, readouts, the log, gauges, fields and stamps
+        ink: #e3e7ea, text, readout figures and major dial ticks
+        etched: #a9b2bb, labels, box numbers, minor ticks and gauge fill
+        amber: #ffb84d, the dial arc and pointer, the Sealed lamp, the primary button and focus
+        greenLamp: #8fe0a0, drawers with money left and deposits
+        redLamp: #ff8c7a, the over limit drawer and the owed balance
+    type:
+        Labels use Bahnschrift, DIN Alternate, Roboto Condensed, Arial Narrow,
+        system-ui in caps. Readouts use ui-monospace, Menlo, Consolas. The plate
+        title is 20px at 700 tracked .24em with an embossed text shadow. Box
+        readouts are 22px mono, box labels 15px at 700 tracked .12em, the log
+        13px mono and section labels 12px tracked .22em.
+    layout:
+        A 1200px vault. A riveted header plate holds Brightwork Money, Vault, a
+        caps line for Mara Okafor, October, EUR, and four inset nav keys,
+        Overview outlined in amber. Then three columns, 300px, flexible and
+        320px. Deposit boxes stacks three riveted plates, BOX 01 to BOX 03, each
+        with a round keyhole and a pressed in dark readout, the card readout in
+        red with a clock and Owed, due 12 Nov. The Goal dial plate has Japan
+        trip over a large combination dial with 100 ticks, numbers every ten, an
+        amber arc to 64, a pointer at 64 and 64 PERCENT in the hub, and a three
+        cell inset readout for 3,200 saved, 5,000 target and Open by 1 Apr 27.
+        The Access log plate holds an inset list with date, payee, a DEPOSIT or
+        WITHDRAWAL tag with an arrow and amount. A wide Budget drawers plate
+        follows with five drawer fronts, each with a name, a lamp, a pull
+        handle, a segmented inset gauge, spent over limit and a stamped word.
+        Totals sit under the drawers. Below 1100px the dial goes first and full
+        width. Below 680px everything stacks and drawers go two across.
+    spacing:
+        A 4px unit. 20px between plates, 14px between boxes, 12px between
+        drawers, 20 to 28px plate padding.
+    density: Medium. Three boxes, one big dial, a five line log and five drawers.
+    corners:
+        6px plates, 4px drawers, buttons and readouts, with round rivets,
+        keyholes and swatches.
+    borders:
+        1px steel edge on every plate with a light top bevel and a dark bottom
+        bevel. Insets have no border, only an inner shadow.
+    shadows:
+        Heavy. Plates cast 0 6px 14px black, drawers and buttons sit on a hard
+        3px dark ledge and readouts are pressed in.
+    icons:
+        Hardware as icons, rivets, keyholes, handles and lamps. The lamp shape
+        changes with state, a round green lamp for money left, a square amber
+        lamp for Sealed and a red triangle for Over 62, each beside a stamped
+        word with a circle check, ruled square or triangle.
+    focus: A 3px amber outline offset 3px.
+    tone:
+        Vault words in caps, such as Deposit boxes, Goal dial, Access log,
+        Sealed, Over 62 and Open by.

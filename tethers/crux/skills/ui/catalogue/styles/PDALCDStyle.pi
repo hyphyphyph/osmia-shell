@@ -1,0 +1,54 @@
+export anchor PDALCDStyle:
+    number: 161
+    screen: ProjectsDashboard
+    name: PDA LCD
+    idea: A late 90s handheld organiser in a grey plastic case, with silkscreened app buttons beside a greenish monochrome LCD, inverted title bars, small round ended stylus buttons, pixel glyphs and dotted record lists.
+    base: light
+    palette:
+        desk: #e9e8e3, the page
+        case: #b4b8b0, the device body, with light #d3d6cf
+        caseDark: #6e726b, seams and button edges
+        silk: #2e312c, silkscreen labels and icons on the case
+        bezel: #4a4f47, the recess around the screen
+        lcd: #c4d0a8, the screen and text on inverted bars
+        lcdShade: #b3c095, the inner screen shadow and the focused field
+        pixel: #1d2616, all LCD text, bars and inverted rows
+        pixelSoft: #3a4630, times and secondary LCD text
+    type:
+        The LCD uses Lucida Console, Monaco, DejaVu Sans Mono, Courier New,
+        monospace with font smoothing off, bold 20px greeting, bold 14px
+        pane titles, bold 28px numbers at minus 0.04em, 14px body and 12
+        to 13px records and memo. The case uses Helvetica Neue, Arial,
+        sans-serif in bold 10 to 12px caps tracked 0.06 to 0.24em.
+    layout:
+        The whole dashboard lives inside one landscape organiser. The case
+        has a printed model name and a power LED on top, a column of six
+        lozenge silkscreen buttons with line icons down the left for the
+        nav, Home filled dark, and a dark bezel framing the LCD. A stylus
+        rests against the right edge. On the screen a black title bar
+        carries a Home tab, the name and the date, then a command row with
+        Find and an underline field, an inverted New project stylus button,
+        a bell count button and User Mara Okafor. The greeting reads Hello,
+        Mara. with the date and an inverted Alarm line for the overdue
+        tasks. A ruled split makes two panes. The left pane has a four cell
+        boxed summary, the overdue cell inverted, then six project records
+        with a checkbox, bold name, a code like OK on track, and a line
+        with the team, a ten cell segment meter and the facts, the second
+        record shown selected in inverse. The right pane has the activity
+        memo with short times on the right and a pixel bar graph, dithered
+        for last week and solid for this week. Five round hardware buttons
+        and an up and down rocker sit under the screen with printed
+        labels. Below 980px the panes stack. Below 680px the silkscreen
+        buttons move under the screen in a three column grid.
+    spacing: A tight 2px grid on the LCD with 5px record padding. The case uses 12 to 22px margins.
+    density: Dense like a small pixel screen scaled up. Two panes split by a 1px line.
+    corners: The case is 28px on top and 44px at the bottom. Screen 3px. Stylus buttons 8px. Silkscreen buttons are lozenges.
+    borders: 1px pixel lines and dotted 1px record separators, 2px under pane titles.
+    shadows: Moulded plastic only, a soft case drop, an inset bezel and raised round buttons. None on the LCD.
+    icons:
+        Hard edged pixel glyphs drawn with crisp edges. A round dot with
+        OK means on track, a notched triangle with RISK means at risk, a
+        crossed square with LATE means behind, and a bell marks the
+        overdue alarm. Line icons sit on the case.
+    focus: A 2px pixel outline offset 2px, then a ring of LCD green and a second 2px pixel ring.
+    tone: Terse device labels, such as Find, Alarm, Memo, 6 records and yday.

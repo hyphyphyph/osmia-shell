@@ -1,0 +1,54 @@
+export anchor NauticalStyle:
+    number: 68
+    screen: Onboarding
+    name: Nautical
+    idea: A ship's setup log in navy, white and signal red, framed in rope, with numeral pennants hoisted on a halyard as the step markers and a compass rose behind the form.
+    base: light
+    palette:
+        sailcloth: #f7f5ef, the page
+        white: #ffffff, the log card, fields and the current step
+        navy: #13294b, text, the header, table rules and secondary buttons
+        seaGrey: #4a5a72, labels, the lead line and later step words
+        signalRed: #b3121f, the Continue button, the eyebrow, the current step word and the focus outline
+        ropeLight: #e0c38f, the light strand of the rope frame
+        rope: #b8935a, the middle strand and the halyard
+        ropeDark: #7a5a2e, the dark strand, halyard rings and the frame edge
+        brass: #8a6a1f, the seat plaque border and porthole rims
+        flagBlue: #1f4f9c, pennant fills
+    type:
+        Headings use Stencil, Stencil Std, Impact, Haettenschweiler, Arial
+        Narrow Bold in caps with 8 percent tracking, 46px on the screen and
+        34px in the sheet. Body uses Gill Sans, Gill Sans MT, Calibri,
+        Trebuchet MS at 16px with 1.55 line height and the lead line at 18px
+        in sea grey. Labels, table heads, chips and buttons are 11 to 14px
+        bold caps with 14 to 24 percent tracking.
+    layout:
+        A navy header with an anchor and the brand in spaced caps, Mara
+        Okafor in a white ring, and a thin white, red, white stripe below.
+        Then a two column harbour. The left 300px mast has a caps label and
+        a vertical rope halyard with four numeral pennants hoisted on it,
+        each with the step name and a status word, the current one on a
+        white panel. The right column is a rope framed white card with a
+        faint compass rose in the top right corner, the eyebrow, the stencil
+        heading, the line, the invites as a ruled manifest table with Email,
+        Role and Status columns, a brass seat plaque, Copy invite link, then
+        Back, Skip for now and Continue. Below 900px the pennants move above
+        the card in two columns, and below 600px the table rows stack.
+    spacing: An 8px unit. 40px card padding, 12px table cells, 40px between mast and card.
+    density: Moderate. The invites read as a ruled manifest table.
+    corners: 18px on the rope frame, 10px on the card inside it, 2px on buttons and fields, and round portholes and remove buttons.
+    borders:
+        A 10px rope frame made of repeating diagonal light, middle and dark
+        strands. Tables have double 3px navy rules at top and bottom and
+        dashed 1px rows. Buttons and fields have 2px navy borders and the
+        field being typed turns red.
+    shadows: None, except a 2px dark rope edge under the frame.
+    icons:
+        International numeral pennants as step markers. One is white with a
+        red ball, two is blue with a white ball, three is red, white and
+        blue bands, and four is red with a white cross. Status icons are 2px
+        navy lines, a ringed tick for done and added, a raised triangle for
+        flying, a dashed ring for not yet and a quill for writing. Seats are
+        brass portholes, three with a person and two empty.
+    focus: A 3px signal red outline offset 3px. A focused field turns its border red.
+    tone: Crisp caps labels with a light sea flavour, such as Flying now and Writing, while the screen words stay plain.

@@ -1,0 +1,54 @@
+export anchor FrostedGlassStyle:
+    number: 8
+    screen: ProjectsDashboard
+    name: Frosted glass
+    idea: Light airy panels of frosted glass floating over a soft pastel haze, with thin white edges, light type weights and plenty of breathing room.
+    base: light
+    palette:
+        haze: #eef0fb, the page base under a linear gradient from #fdf1f6 to #eef0fb to #ecf8f5
+        roseGlow: #f9c9df, a radial blob at the top left
+        periwinkleGlow: #c4d0ff, a radial blob at the top right
+        aquaGlow: #bdeee0, a radial blob at the lower right
+        lavenderGlow: #e3d2ff, a radial blob at the lower left
+        glass: #ffffff, panels at 55 percent with a 22px blur, or 88 percent where blur is not supported
+        edge: #ffffff, 1px panel borders at 85 percent and a 1px inner top highlight
+        ink: #1f2340, text and headings
+        slate: #4a4f6e, meta text, labels and axis text
+        violet: #5b4bd6, the primary button, progress rings, this week's line and the focus ring
+        violetDeep: #4636b8, links
+        green: #0f6b4f, the On track status
+        amber: #8a4a00, the At risk status
+        raspberry: #b42347, the Behind status, its ring and the overdue fact
+    type:
+        Text in Segoe UI Variable Text, Segoe UI, system-ui, SF Pro Text,
+        Helvetica Neue, Roboto, sans-serif, and display in Segoe UI
+        Variable Display, SF Pro Display, Segoe UI, system-ui, sans-serif.
+        Sizes are a 52px weight 300 greeting, 54px weight 200 summary
+        figures with tabular numerals, 22px weight 400 section titles,
+        16px weight 500 project names, 15px body at 1.55 and 13px meta and
+        pills.
+    layout:
+        A floating glass pill top bar with the brand, search, a round
+        bell, the user and New project. A centred hero gives the date, the
+        greeting and one line on the overdue tasks, then the nav as a
+        centred glass segmented control. Four glass summary panels follow
+        in a row. Below, a grid puts the projects panel on the left, as
+        rows with a progress ring, name, meta and status pill, and stacks
+        the chart and activity panels on the right. Below 1000px the board
+        stacks and the summary becomes two by two, and below 640px the
+        search takes a full row and New project shrinks to its icon.
+    spacing: An 8px unit. 20px between panels, 24px inside panels and 56px above the greeting.
+    density: Airy. Few panels and a centred hero, about one screen for the whole dashboard.
+    corners: 24px panels, 18px rows, 32px on the style sheet, and fully round pills, buttons, nav and search.
+    borders: 1px white at 85 percent on every panel plus a 1px inner top highlight.
+    shadows: Soft and wide, 0 10px 40px in rgba(60,50,140,0.10). The violet button glows with 0 6px 20px at 35 percent.
+    icons:
+        Thin rounded line icons at 18px with a 1.4 stroke. Status pills
+        show a circle with a tick for On track, a diamond with a bang for
+        At risk and a rounded square with a down arrow for Behind.
+        Progress is a 56px ring with the percent inside. The chart is a
+        dashed grey line for last week and a solid violet line with a soft
+        area and dots for this week. Activity is a thin timeline with
+        hollow dots.
+    focus: A 2px violet outline offset 3px plus a 6px soft violet halo. A focused field gets a violet border, a 4px soft ring and a white fill.
+    tone: Calm and reassuring in sentence case, such as A calm week overall and worth a look first.

@@ -1,0 +1,54 @@
+export anchor SpectrumAnalyserStyle:
+    number: 325
+    screen: MusicPlayer
+    name: Spectrum analyser
+    idea: The bars and peak caps of a live frequency analyser run the whole layout, so every figure on the page, from progress to volume to song length, is drawn as lime and cyan level bars on black.
+    base: dark
+    palette:
+        void: #040605, the page, the analyser well and the style sheet
+        well: #0a110c, panels and readout strips
+        grid: #1b2b20, graticule lines, unlit segments and panel borders
+        phosphor: #e3f4e6, text
+        dim: #8fa897, labels, units and axis text
+        lime: #b8ff3d, analyser bars, lit progress segments, the lyric marker and focus
+        cyan: #46e6ff, peak caps, song length bars, the volume segments and the liked control
+        onLime: #0b1400, text on lime
+    type:
+        One monospace stack, ui-monospace, SFMono-Regular, Menlo, Consolas,
+        Liberation Mono. Base 14px at 1.5. The title is 40px at 700 in caps
+        with 0.02em tracking, readouts 16px at 700 in lime with tabular
+        figures, rows 14px, caps labels 12px with 0.14em tracking and axis
+        figures 11px.
+    layout:
+        A test instrument. A ruled header strip reads BRIGHTWORK SOUND in
+        lime then Analyser, with CH A+B and Now playing on the right. Under
+        it a full width analyser well 260px tall draws 32 lime bars with a
+        darker base and a cyan peak cap above each, over faint graticule
+        lines, with dB marks down the right edge. The title box sits in the
+        top left corner of the well, black with ruled edges, holding Now
+        playing, HARBOUR LIGHTS and the artist with the album dimmed. A
+        frequency scale from 31 to 16k Hz runs under the well. A transport
+        strip follows, with 02 14 in lime, a 48 segment progress bar lit
+        to just under half and 04 38, then square buttons each with an icon
+        over a short caps word, SHUF, PREV, a lime PAUSE, NEXT, RPT and a
+        cyan outlined LIKED with a filled heart. A LEVEL row shows ten
+        cyan segments with seven lit and 70%. Three ruled panels close the
+        screen. Up next lists numbered rows whose cyan bar length is the
+        song length, Src library gives each playlist a lime bar sized by
+        song count plus caps links for Albums, Artists and Podcasts, and
+        Lyrics shows the current line bold behind a lime chevron with a
+        NOW tag and the next line dim. Below 980px the queue takes a full
+        row, and below 640px the title box moves under the bars, the
+        progress shows 24 segments and everything stacks.
+    spacing: An 8px unit. 2px gaps between segments and bars, 16px panel padding and 16px between panels.
+    density: High. Readouts, scales and segment meters fill every panel like test gear.
+    corners: None. Every bar, segment, button and panel is square.
+    borders: 1px grid lines around every panel and behind the analyser. Coloured borders appear only on the liked control and on focus.
+    shadows: None, apart from a faint lime glow of 6px at 35 percent under the analyser bars.
+    icons:
+        Solid square cut transport glyphs above a four letter caps word.
+        Liked uses a filled heart and the word LIKED. The current lyric
+        line uses a chevron and a NOW tag. Bars always sit beside the
+        figure they draw.
+    focus: A 2px lime outline offset 2px plus a lime corner tick at the bottom right.
+    tone: Instrument labels in caps, such as CH A+B, LEVEL, UP NEXT and SRC LIBRARY.

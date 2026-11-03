@@ -1,0 +1,51 @@
+export anchor SQLTerminalStyle:
+    number: 405
+    screen: DatabaseConsole
+    name: SQL terminal
+    idea: The whole console is one terminal session in a tmux style frame, so the schema, the query, the result table and the history are all plain monospace text drawn with pipes and dashes.
+    base: dark
+    palette:
+        bg: #12110f, the page behind the window
+        term: #171512, the terminal window and the style sheet
+        bar: #2a251f, the status line and the focused list row
+        rule: #4a4238, the window border, pane divider and dashed list rules
+        ink: #e8e1d2, session output
+        dim: #a89f8f, the banner, comments, durations and labels
+        prompt: #d4aaff, the prompt arrow
+        path: #8fc8ff, the database name in the prompt and sheet subheads
+        hi: #f2b45c, the session tab, result header row, focus and primary button
+        onHi: #241706, text on hi
+        ok: #9ed98b, plus ok lines and the rows count
+        bad: #ff948a, x ERROR lines
+    type:
+        Monospace only, ui-monospace, SF Mono, Cascadia Mono, Menlo,
+        Consolas, DejaVu Sans Mono. 14px at 1.5 for the session, 13px below
+        600px wide. The sheet title is 18px bold in hi with a hash prefix,
+        subheads carry a double hash. The status line is 13px.
+    layout:
+        One bordered terminal window with a 24px margin. A thin title row
+        reads Brightwork Data shell on the left and production-replica
+        read-only on the right. The window splits into a wide session pane
+        and a 360px side pane with a 1px divider. The session is a single
+        pre block. A dim banner, then the prompt production-replica arrow
+        with backslash dt listing the five tables as a pipe table with
+        5 rows, backslash d tasks listing the six columns with type and key,
+        then the query typed over seven continuation prompts, the result
+        table with its header row in amber, a green 3 rows ok, Time 38 ms
+        and a blinking block cursor. The side pane shows backslash s history
+        as three dashed rows of time, plus ok or x ERROR, name and duration,
+        the error text on its own red line, a legend sentence, then a boxed
+        backslash conninfo with the three status facts. A tmux bar ends the
+        window with an amber data session tab, windows psql and history,
+        then RO read-only replica, lag 2s and 14 conns. Below 900px the
+        panes stack. Wide session lines scroll inside the pane.
+    spacing: One text line is the unit. 12px by 16px pane padding, 24px window margin, 12px on phones.
+    density: Very high. Everything is text in one scrollback.
+    corners: None. Every box is square.
+    borders: 1px #4a4238 solid around the window, title row, divider and boxes, dashed between history rows.
+    shadows: None.
+    icons:
+        No pictures. Plus for ok, x for ERROR, a greater than sign for the
+        focused row and square brackets around button labels.
+    focus: A 2px dashed amber outline offset 2px. A focused list row also gets the bar fill and an amber pointer.
+    tone: Shell talk in lower case, such as backslash dt, 3 rows, Time 38 ms, lag 2s.

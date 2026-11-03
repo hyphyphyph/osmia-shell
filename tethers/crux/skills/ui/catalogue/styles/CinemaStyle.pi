@@ -1,0 +1,53 @@
+export anchor CinemaStyle:
+    number: 277
+    screen: CloudFiles
+    name: Cinema
+    idea: A dark auditorium where the selected file plays on a glowing screen, the folder is billed on a bulb lit marquee, and every file is a torn ticket stub in the aisle.
+    base: dark
+    palette:
+        hall: #0a0809, the page, notch cut outs and status chip grounds
+        wall: #140f11, the current aisle item, search and the style sheet
+        ticket: #1d1517, file tickets
+        edge: #3e2c30, ticket outlines and the perforation
+        velvet: #4a1019, the curtain gradient behind the marquee
+        screen: #121722, the details screen surface
+        screenGlow: #c9dcff, the screen glow, screen labels and Selected
+        ink: #f6efe9, text
+        muted: #c3b4ad, meta and labels
+        bulb: #ffcf6b, marquee bulbs, the primary button with dark text #241703, Starred, file icons and focus
+        mint: #8fe3bf, Shared
+        coral: #ff9a8a, Uploading and used storage seats
+    type:
+        Marquee titles and stub figures in Impact, Haettenschweiler, Arial
+        Narrow Bold. The marquee title is 54px caps, the screen title 30px,
+        stub sizes 22px. Body in Helvetica Neue, Arial at 15px. File names
+        16px bold, labels 12px caps tracked 0.3em.
+    layout:
+        A red curtain band holds a dark marquee box framed by a ring of
+        small warm bulbs, with Brightwork Drive now showing, the title
+        Website redesign and the breadcrumb, all centred. Below, a 200px
+        aisle on the left lists the five drive links with small floor
+        lights, the current one lit gold, and storage drawn as ten seats
+        with six and a bit filled coral and 64.2 GB of 100 GB used. The
+        main column opens with the screen, a wide panel with a gently
+        curved bottom edge and a cool glow above and below. It shows
+        Details on screen, the preview, the name, Starred, a row of four
+        facts and Share, Download and Get link. Under it sit search, Upload,
+        New folder and the List or Grid switch with List in cream. Then
+        8 in this folder and eight full width tickets. Each ticket has
+        round notches cut at both ends, the type icon, name, kind, date and
+        person and statuses on the left, and after a dashed perforation a
+        stub with Size or Items and the figure. The selected ticket has a
+        gold outline and glow. Below 760px the aisle becomes a two column
+        grid and the stub drops under a horizontal perforation.
+    spacing: An 8px unit. 32px gutters, 10px between tickets, 24px screen padding.
+    density: Medium. Single line tickets with a stub for size.
+    corners: 6px tickets with round notches, 4px buttons, a screen whose bottom edge curves.
+    borders: 1px warm edge on tickets and a 2px dashed perforation before the stub.
+    shadows: A cool glow round the screen, a warm glow round the marquee and the selected ticket.
+    icons:
+        1.6px line icons in bulb gold. Status is a dark caps chip with a
+        word and a star for Starred, two heads for Shared, an up arrow for
+        Uploading and a checked box for Selected.
+    focus: A 3px bulb gold outline offset 3px.
+    tone: Showtime labels, such as now showing, on screen and 8 in this folder.

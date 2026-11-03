@@ -1,0 +1,55 @@
+export anchor SketchWireframeStyle:
+    number: 34
+    screen: TaskBoard
+    name: Sketch wireframe
+    idea: The app drawn as a pencil wireframe on dotted paper, wobbly hand-drawn boxes in greyscale with one blue pen for the things that need attention.
+    base: light
+    palette:
+        paper: #fdfdfb, the page with a 24px dot grid in #d9d9d6
+        sheet: #ffffff, boxes, cards and fields
+        tray: #f3f3f1, the column fill
+        pencil: #222222, text and every outline
+        graphite: #595959, meta text and field labels
+        smudge: #e4e4e4, hatching on Engineering labels and Done cards
+        bluePen: #1a4fd6, the Add task button, the Overdue mark, the title underline and focus
+        penWash: #e3ebff, hover, the focused row and the offset behind the primary button
+    type:
+        One handwriting stack for everything, Segoe Print, Bradley Hand,
+        Marker Felt, Chalkboard SE, Comic Sans MS, cursive. The project
+        title is 34px bold, column titles 20px bold, card titles 17px bold,
+        body 15px at 1.5 line height, meta 13px in graphite and field
+        labels 13px. Code notes in the style sheet use a monospace stack.
+    layout:
+        The whole screen sits inside a sketched browser frame with three
+        circles and a fake address bar. Inside, a crossed placeholder box
+        and Brightwork sit on the left with Mara Okafor and a circled MO on
+        the right. The title Mobile app 2.0 has a boxed At risk tag and a
+        wavy blue pen underline. A row of labelled sketched dropdowns for
+        Assignee, Label and Due, a Search tasks box and the Add task button
+        on the right. Four dashed column trays hold wobbly white cards,
+        each with the title, a label chip, the due date with a clock, a
+        dashed divider and then a circled initial avatar with the name and
+        points. Below 1040px the board has two columns, and below 640px one,
+        with the controls stacking full width.
+    spacing: An 8px unit. 16px between cards, 24px between columns, 24px screen padding.
+    density: Medium. The whole board fits one laptop screen.
+    corners:
+        No straight edges. Boxes use asymmetric elliptical radii such as
+        255px 15px 225px 15px over 15px 225px 15px 255px, with two other
+        variants alternated between cards. Avatars and count circles are
+        slightly lopsided circles.
+    borders:
+        2px pencil outlines on cards, fields and buttons, plus a faint
+        second stroke at 45 percent opacity slightly offset and roughened
+        with an SVG turbulence filter. Columns use a 2px dashed outline.
+        Card footers have a dashed divider.
+    shadows: None, except the primary button which has a blue pen offset outline 3px right and 4px down.
+    icons:
+        Hand-drawn line icons with a 2px round stroke at text size,
+        slightly uneven paths. Overdue is a triangle with an exclamation
+        mark plus the word Overdue, circled by a blue pen loop. Done is a
+        tick plus the word Done, with the title struck through and the card
+        hatched. Unassigned is a dashed circle with a question mark. The
+        logo is a crossed placeholder box.
+    focus: A 2.5px dashed blue pen outline offset 4px. A focused field turns its outline blue and gets a pale blue offset block.
+    tone: Plain sketch notes in sentence case, such as Add task, type to search, 5 pts.

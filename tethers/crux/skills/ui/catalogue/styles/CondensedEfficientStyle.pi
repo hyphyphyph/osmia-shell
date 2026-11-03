@@ -1,0 +1,56 @@
+export anchor CondensedEfficientStyle:
+    number: 205
+    screen: ProjectsDashboard
+    name: Condensed efficient
+    idea: A tight operations console where condensed uppercase headings save width, 32px rows fit everything on one screen, and a slim icon rail keeps the canvas wide.
+    base: light
+    palette:
+        page: #f2f4f5, the canvas behind panels
+        panel: #ffffff, panels, the rail, the top bar and fields
+        header: #e7ebed, panel title bars and the table footer
+        ink: #172026, text, the avatar tile and the chart baseline
+        muted: #4f5b63, column heads, times and labels
+        line: #d3d9dd, borders and row rules, never text
+        teal: #0b6466, the primary button, links, the current rail item and this week bars
+        tealTint: #e0eff0, the current rail item and a focused row
+        haze: #a9bcc0, last week bars, never text
+        green: #19663e, On track with a check
+        amber: #855000, At risk with a diamond holding a bang
+        red: #b0222a, Behind with a down triangle and the overdue alert
+    type:
+        Headings, labels, buttons, project names and KPI values use Roboto
+        Condensed, Arial Narrow, Helvetica Neue Condensed, sans-serif with
+        font-stretch condensed. Body text uses Roboto, Segoe UI, system-ui,
+        Arial, sans-serif. KPI values are 22px condensed bold, the greeting
+        18px condensed bold, project names 14px condensed bold, panel
+        titles 13px condensed bold capitals tracked 0.06em, column heads
+        and rail labels 11px condensed bold capitals, body 13px.
+    layout:
+        A 64px white icon rail on the left holds a teal B tile and six nav
+        items, each an icon over an 11px caps label, the current one with a
+        3px teal left edge and teal tint. A 48px top bar holds the caps
+        breadcrumb Brightwork slash Home, the search field, the New project
+        button, a bell with a red count of 4 and the user. Under it one
+        white strip holds the greeting, the date, a red tinted overdue
+        alert and, pushed right, the four KPIs inline as caps label then
+        big value with hairline dividers. Below, a grid of the projects
+        panel and a 340px right column. The projects panel is a zebra
+        table with Project, Team, Progress bar and percent, Tasks, Due,
+        Days left and Status, plus a totals footer. The right column
+        stacks a compact two tone bar chart with a dashed divider between
+        the weeks and three inline totals, then the activity log with a
+        caps time column. Every panel has a grey 32px caps title bar.
+        Below 1080px the right column moves under the table. Below 700px
+        the rail becomes a top strip of icons, the KPIs a two by two
+        grid, and the table scrolls inside its panel.
+    spacing: A 4px unit. Gaps of 8 and 12px, 10px cell padding.
+    density: High. 32px rows, 32px controls and a 48px top bar.
+    corners: 2px on everything.
+    borders: 1px cool grey around every panel, grey title bars and zebra rows.
+    shadows: None.
+    icons:
+        2px stroke outline icons at 16 to 18px. Status uses a square ended
+        check for On track, a filled diamond with a white bang for At risk
+        and a filled down triangle for Behind, always with the caps word.
+    focus: A 2px teal outline offset 1px. Fields get a teal border and an inset teal ring. Rows get an inset teal outline and the teal tint.
+    tone: Terse caps labels, such as Due this week, Days left and Latest 6.

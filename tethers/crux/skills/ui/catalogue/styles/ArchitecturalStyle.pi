@@ -1,0 +1,46 @@
+export anchor ArchitecturalStyle:
+    number: 42
+    screen: ProjectDetail
+    name: Architectural
+    idea: The project is laid out like a floor plan on a drawing sheet, with hairline walls between numbered rooms, grid bubbles, a dimension line timeline, a scale bar and a title block, all in lowercase geometric type.
+    base: light
+    palette:
+        white: #ffffff, the page and the rooms
+        ink: #1a1a1a, text, walls, the primary button and the scale bar
+        grey: #666666, labels, dates, assignees and grid leaders
+        hairline: #d4d4d4, row dividers inside rooms and link underlines
+        faint: #f4f4f2, the fill of a focused list row
+        markupRed: #b3261e, the blocked word and symbol only, like a redline
+    type:
+        One geometric sans, Futura, "Futura PT", "Century Gothic", "Avenir
+        Next", Avenir, "URW Gothic", "Trebuchet MS", sans-serif, with all
+        text lowercase. Weight is 300 for text and 400 for labels. Sizes are
+        44px for the title, 64px for the percent figure, 19px for the brief
+        and quote, 15px body at 1.6 line height, and 11px labels with 0.18em
+        tracking. File names are a small monospace.
+    layout:
+        A sparse top line holds the widely tracked brightwork wordmark,
+        grey nav links with the current one underlined, an underline search
+        field and the user name. The title sits left with the buttons right.
+        The plan is a four column grid of rooms drawn with shared 1px ink
+        walls. Circled grid bubbles a to d sit above the column lines and 1
+        to 3 left of the rows, joined by dashed leaders. Row 1 holds 01 brief
+        across two columns, 02 status and 03 people. Row 2 holds 04
+        milestones as a dimension line with slashed ticks, and 05 open tasks.
+        Row 3 holds 06 files, 07 discussion and a title block with project,
+        team, owner, viewer, sheet and a north arrow. A scale bar of
+        alternating black and white segments from 0 to 25 tasks marks 18 done
+        below the plan. Below 1000px the rooms go two across, and below 640px
+        the bubbles hide and the rooms stack.
+    spacing: An 8px unit. 22 to 26px room padding, 36 to 56px between major blocks and a 44px gutter for the grid markers.
+    density: Sparse with lots of white and few items per room.
+    corners: Square. Only the grid bubbles are round.
+    borders: 1px ink walls shared between rooms, 1px light grey rows inside rooms and dashed grey grid leaders.
+    shadows: None.
+    icons:
+        Tiny 11px drawn glyphs beside words, a tick for on track, a filled
+        square for done, a half filled square for in progress, a hollow
+        square for planned and a slashed circle for blocked. People show as
+        lowercase initials in square frames.
+    focus: A 1.5px ink outline offset 4px. Fields also thicken their underline to 2px.
+    tone: Lowercase nouns over sentences, numbered like drawing references, such as 05 open tasks.

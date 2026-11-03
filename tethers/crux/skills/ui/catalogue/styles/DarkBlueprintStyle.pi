@@ -1,0 +1,58 @@
+export anchor DarkBlueprintStyle:
+    number: 294
+    screen: CodeRepository
+    name: Dark blueprint
+    idea: The pull request drawn as a technical sheet, white and cyan line work on deep blueprint blue, with a parts list for files, a wiring schematic for checks and a title block for the merge facts.
+    base: dark
+    palette:
+        blueprint: #0a2a52, the page and style sheet ground under a two level grid
+        panel: #0c3263, boxes, tabs, counters and the title block
+        tint: #123c72, the current tab
+        ink: #f2f7ff, text
+        muted: #a9c4e8, captions, labels and line numbers
+        line: #7fa6d6, secondary rules and dashed leaders
+        whiteLine: #e9f2ff, the sheet frame, box outlines and main rules
+        cyan: #74e4ff, the accent, primary button, passed checks, added line markers, links and focus
+        redline: #ff9c8f, failing check, changes requested, removed line markers and review notes
+        addedRow: #0f4470, added diff line ground
+        removedRow: #3a3456, removed diff line ground
+    type:
+        A narrow technical sans, Bahnschrift, DIN Alternate, Roboto
+        Condensed, Arial Narrow, system-ui, for text and headings, and a
+        system monospace for every label and the diff. Base 15px at 1.5.
+        The pull request title is 30px at 600, the repository name 26px at
+        600, labels 11px monospace caps tracked 0.14em, the diff 13px
+        monospace at 1.7.
+    layout:
+        The whole screen sits inside a drawing sheet with a 2px white frame,
+        an inner 1px rule 8px inside it and faint zone letters A, B and C
+        along the top. The header row holds a square B mark with a dashed
+        inner square and the app name, the repository name with the
+        owner in white and the name in cyan, a boxed Private tag and three
+        joined boxed counters for Watch, Star and Fork. Below it the tabs
+        are joined outlined boxes, the current one lighter with a cyan
+        underline. The body is a main column and a 320px title block.
+        Detail A holds the title, the Open tag, the merge sentence and a
+        dimension line reading 6 commits, 3 files and the totals. Inside it
+        Detail B draws the twelve checks as nodes wired in series with the
+        seventh drawn as a dashed octagon that breaks the wire, then a three
+        column numbered list. Detail C lists the two reviewers with round
+        initial balloons. A parts list table numbers the three files with
+        added and removed counts and a totals row. Section D shows the diff
+        with the comment as Note 1, a dashed redline box joined to the line
+        by a leader with a small circle. The title block is a ruled table of
+        cells for assignee, labels, milestone, linked issue and a hatched
+        disabled merge button. Every box carries a caption tab cut into its
+        top edge. Below 1000px everything stacks.
+    spacing: An 8px unit. 24px frame padding and gaps, 20px box padding, 16px header gaps.
+    density: Medium. Several labelled details are visible at once on the sheet.
+    corners: Square everywhere. Only balloons and passed nodes are round.
+    borders: 1px white box outlines, a 2px white frame with an inner 1px rule, dashed leaders, and dashed redline borders on anything that blocks the merge.
+    shadows: None. Depth comes from line weight and the grid behind.
+    icons:
+        Line icons at 1.5px with square caps and mitred joins. A tick for
+        passed, a dashed octagon with a cross for failing, a ringed tick for
+        approved, a triangle with a bang for changes requested, a lock on
+        the disabled merge, always with the word.
+    focus: A 2px cyan outline offset 3px with a faint cyan halo.
+    tone: Drafting labels in caps, such as Detail A, Parts list, Section D, Title block and Note 1.

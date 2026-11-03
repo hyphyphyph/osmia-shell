@@ -1,0 +1,57 @@
+export anchor CashRegisterStyle:
+    number: 164
+    screen: ProjectsDashboard
+    name: Cash register
+    idea: The dashboard is a point-of-sale terminal, with green LCD windows ringing up the totals, projects as item lines on the sale screen, the menu as a block of chunky department keys and activity printed on a journal tape.
+    base: light
+    palette:
+        counter: #e9e4d8, the page behind the terminal
+        case: #f8f5ee, the terminal body and the style sheet
+        caseEdge: #a89f8c, the case border, never text
+        lcd: #cbd8bb, every display window and the search field
+        lcdInk: #1c2a12, all text and bars on the LCD
+        keyCream: #fffdf6, department keys and secondary keys
+        keyNavy: #1f3a5f, the New project key and the sale screen title bar
+        ink: #23201b, text on paper and on cream keys
+        muted: #5b5446, PLU codes, departments and small labels
+        green: #24602f, the On track code with a circle check
+        amber: #8a4f00, the At risk code with a triangle
+        voidRed: #9e2121, the Behind code with a crossed square and the notice count
+        focusBlue: #1f5fd1, the focus outline only
+    type:
+        Two stacks. LCD and receipt text use Consolas, DejaVu Sans Mono,
+        Menlo, Liberation Mono, monospace in bold caps. Keys use Arial
+        Black, Helvetica Neue, Arial in 900 weight caps. Totals are 44px
+        mono, the LCD greeting 26px mono caps, key labels 13 to 20px,
+        item lines and tape 13 to 14px mono, and small labels 11px mono
+        caps tracked 0.12em. The clerk name is 15px system-ui.
+    layout:
+        One rounded cream terminal case holds everything. Across the top a
+        pole display shows the brand at left, a wide LCD in the middle with
+        Good morning, Mara and the date plus an octagon Overdue 4 tasks
+        line, and the clerk name at right. Below are four LCD windows for
+        the totals, each with a small window number. The left column is a
+        white sale screen with a navy title bar and a table of item lines
+        with PLU, item, department, quantity done over total, percent with
+        a ticked bar, due date and a status code, ending in a subtotal row.
+        The right column is the keypad, with six department keys D1 to D6
+        for the nav, Home pressed down and tinted yellow, a PLU lookup LCD
+        search field, Notices and clerk keys and a full-width New project
+        key. Under both sits a white journal tape with a zigzag torn top
+        listing activity, beside an LCD Z report bar chart of daily tasks
+        closed. Below 960px the keypad drops under the sale screen and the
+        tape stacks above the chart. The table scrolls sideways inside its
+        screen on phones.
+    spacing: An 8px unit. 16px inside the case and between blocks, 8px between keys.
+    density: Busy and tactile like a shop counter. Many small windows, every key large enough for a thumb.
+    corners: 18px on the case, 8px on keys and LCD bezels, 4px on status codes.
+    borders: A 6px dark bezel round each LCD, 2px taupe key edges, dashed rules between item lines and tape entries, a 2px rule above the subtotal.
+    shadows: Keys stand on a hard 4px bottom ledge and the current key is pressed down to 1px. LCDs have an inset shadow. The case has a 6px ledge and a soft drop.
+    icons:
+        Solid geometric marks at text size. A circle with a check for On
+        track, a triangle with a bang for At risk, a square with a cross
+        for Behind and an octagon with a bang for Overdue, always beside a
+        caps word inside a bordered code box. Chart bars are made of
+        stacked LCD segments.
+    focus: A 3px focus blue outline offset 3px on keys, fields and rows.
+    tone: Register shorthand in caps, such as Item lines, Subtotal, PLU lookup, Journal tape and Z report.

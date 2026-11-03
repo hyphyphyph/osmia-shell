@@ -1,0 +1,62 @@
+export anchor StockCertificateStyle:
+    number: 123
+    screen: ProjectsDashboard
+    name: Stock certificate
+    idea: The dashboard is an engraved share certificate made out to Mara, with hatched borders and guilloche rosettes, share numbers in corner cartouches, projects as a schedule of holdings, and a gold seal.
+    base: light
+    palette:
+        wall: #ece6d8, the page behind the certificate
+        cream: #fbf7ea, certificate paper and cartouches
+        vellum: #f6efd9, the edge glow of the paper and fields
+        engraverSienna: #7a3b12, borders, the title, rules, the primary button, this week bars and focus
+        lightSienna: #c98a5a, dotted rules and the last week hatch, never text
+        ink: #2a1c10, body text and figures
+        muted: #5d4a36, caps labels, classes and times
+        signatureNavy: #22325a, the holder name and signature text
+        sealGold: #b08a2e, the embossed seal and the focus halo, decorative
+        green: #235c33, On track with a ticked rosette
+        amber: #8a4a00, At risk with a diamond
+        red: #9c1f1f, Behind with a crossed square and the overdue notice
+    type:
+        Three stacks. Caps is Trajan Pro, Trajan, Cinzel, Optima, Times New
+        Roman, serif, always uppercase with 0.1 to 0.3em tracking. Text is
+        Big Caslon, Caslon, Libre Caslon Text, Book Antiqua, Palatino
+        Linotype, Georgia, serif. Figures are Bodoni 72, Bodoni MT, Didot,
+        Big Caslon, Georgia, serif. Sizes are 56px engraved caps title,
+        40px italic Caslon holder name, 40px Didone cartouche figures, 18px
+        semibold Caslon project names, 15 to 18px body and 11 to 15px caps
+        labels.
+    layout:
+        A transfer agent strip above the certificate holds a rosette mark
+        with the brand in spaced caps, caps nav links divided by small
+        floral marks with the current one under a double rule, a pill
+        search, a sienna New project button with an inner light line, a
+        round bell and the italic user. The certificate has a 16px diagonal
+        hatch border, a 2px outer line and a 3px double inner frame, with a
+        guilloche rosette in each corner and a large faint rosette
+        watermark behind the centre. Four oval cartouches with double rings
+        hold the figures, active projects and due this week at the top
+        corners, overdue and hours at the lower corners of the opening. In
+        the centre sit Team holdings of, the huge sienna title, a ribbon
+        reading Certificate of progress, a line drawn rising sun vignette,
+        then This certifies that, good morning, Mara Okafor in navy italic
+        on a rule, the date line and a ruled red notice reading 4 tasks are
+        overdue. Ornamental headings with double rules introduce a Schedule
+        of holdings table with shares held, percent with a fine line bar,
+        matures and standing, then a Record of dividends chart of round
+        topped hatched bars and a Transfer ledger. At the foot two
+        signature lines, Mara Okafor as holder and 31 October 2026 as
+        dated, flank a scalloped gold seal reading BW. Below 980px the
+        cartouches sit two by two under the title.
+    spacing: An 8px unit. A 16px hatched border, 28 to 40px inner margin and 30px before each ornamental heading.
+    density: Formal and centred. One ceremonial top, then a ruled schedule and two half columns.
+    corners: Square certificate. Oval cartouches at a 40px by 24px radius, round topped bars and a round seal.
+    borders: A 16px diagonal hatch frame, a 2px outer line, a 3px double inner line, double rules under headings and table heads, and dotted row rules.
+    shadows: A soft drop under the certificate and under the seal. Everything else is flat engraving.
+    icons:
+        Solid standing marks beside caps words, a ticked rosette for On
+        track, a diamond with a mark for At risk and a crossed square for
+        Behind, plus a clock for overdue. Guilloche rosettes decorate the
+        corners and the watermark.
+    focus: A 2px sienna outline offset 3px inside a 6px gold halo.
+    tone: Ceremonial share language, such as This certifies that, Schedule of holdings, Matures and Transfer ledger.

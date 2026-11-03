@@ -1,0 +1,57 @@
+export anchor StainedGlassStyle:
+    number: 152
+    screen: ProjectsDashboard
+    name: Stained glass
+    idea: The dashboard is one leaded church window, with every panel a pane of pale jewel glass, black lead cames as the gaps between them, pointed lancets for the totals and a rose window beside the greeting.
+    base: light
+    palette:
+        stone: #ecebe6, the wall around the window
+        lead: #1b1b1f, lead cames between panes, outlines and text
+        clearGlass: #f7f5ef, neutral panes, fields and progress gaps
+        rubyGlass: #f8d9d9, Behind panes, the overdue notice, the activity heading and this week bars
+        sapphireGlass: #d8e3f7, the header and last week bars
+        emeraldGlass: #d6eedc, On track panes and the chart heading
+        amberGlass: #f8e8c2, the greeting, At risk panes and the focus halo
+        amethystGlass: #e7ddf5, the projects heading and a lancet
+        rubyDeep: #9b1c2c, Behind and overdue text
+        sapphireDeep: #1d4c8f, the primary button, the current tab and progress segments
+        emeraldDeep: #1d6a3f, On track
+        amberDeep: #7a5000, At risk
+        amethystDeep: #5b3a8c, a spare accent for links
+        muted: #4a4a52, meta and labels
+    type:
+        Headings and figures use Lucida Bright, Lucida Serif, Cambria,
+        Noto Serif, Georgia, serif in bold. Text uses Lucida Grande,
+        Lucida Sans Unicode, Lucida Sans, Segoe UI, Tahoma, sans-serif.
+        Greeting 34px, lancet figures 48px, pane titles 22px, project
+        names 17px, body 15px at 1.55.
+    layout:
+        One window up to 1240px with rounded 14px corners and a stone
+        surround. It is a twelve column grid whose black background shows
+        through 8px gaps as lead. Every pane is a pale glass tint with a
+        white highlight in its top left. A sapphire header pane holds a
+        small leaded lancet mark, the brand, outlined tabs with round tops
+        where Home is deep sapphire, a square search, a deep sapphire
+        button, a round bell and a four colour roundel avatar. An amber
+        greeting pane spans five columns with a rose window of eight petal
+        roundels beside the greeting, date and a ruby notice naming 4
+        overdue tasks. Four lancets fill seven columns, each a pointed
+        arch cap with tracery over a glass body with the figure and label.
+        Projects span eight columns as a six pane grid, each pane tinted
+        green, amber or red by status, with category, name, a ten segment
+        leaded progress strip, percent, tasks, due date and status. The
+        chart spans four columns, pointed arch bars in sapphire then ruby
+        glass with a lead bar across, and two leaded week totals. Activity
+        spans the width as three columns of panes with round initials. On
+        phones every pane spans the full width and lancets go two by two.
+    spacing: An 8px unit. The grid gap is the lead, 8px between major panes and 6px inside them, 14 to 24px padding in each pane.
+    density: Medium. A twelve column window with no empty wall between panes.
+    corners: Square panes softened to 3px, pointed arch tops on lancets and chart bars, round tops on tabs and swatches.
+    borders: Black lead everywhere, 8px between panes, 6px under pane headings, 2 to 3px around controls and inside the chart.
+    shadows: None. Each pane has a soft white highlight like light through glass.
+    icons:
+        Leaded shapes with a black outline. Status uses a roundel for On
+        track, a triangle for At risk and a diamond with a cross for
+        Behind, beside the word, with the pane tint as a second cue.
+    focus: A 3px lead outline offset 2px inside a 6px amber glass halo.
+    tone: Calm and plain, such as Each pane is tinted by its status.

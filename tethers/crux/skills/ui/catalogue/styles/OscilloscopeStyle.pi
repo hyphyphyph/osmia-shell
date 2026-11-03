@@ -1,0 +1,54 @@
+export anchor OscilloscopeStyle:
+    number: 309
+    screen: OpsMonitor
+    name: Oscilloscope
+    idea: The monitor as a bench oscilloscope, phosphor green and yellow traces on a dark graticule with on screen scale readouts, lettered deploy cursors, measurement boxes, knobs and soft keys for the services.
+    base: dark
+    palette:
+        bench: #111315, the page behind the instruments
+        body: #1c1f22, the instrument body tone and the style sheet
+        panel: #25292d, modules, the knob panel and soft keys
+        edge: #3a4046, module borders
+        silk: #dfe4e8, silkscreen text
+        muted: #a4adb6, labels and name plates
+        screen: #040806, scope screens and fields
+        graticule: #1f3a28, grid divisions, decorative
+        phosphor: #5dff8f, the CH1 requests trace and screen readouts
+        yellow: #ffe14d, the CH2 error trace, p95, Degraded, the trigger, the primary button and focus
+        cyan: #6fe3ff, p50 and Recovered
+        red: #ff8080, Firing
+    type:
+        Silkscreen in Helvetica Neue, Helvetica, Arial, system-ui at 14px,
+        and screen readouts in ui-monospace, SF Mono, Menlo, Consolas.
+        Readouts are 12px mono in trace colours, measurement values 15px
+        mono, the incident number 20px mono bold yellow, plate and module
+        titles 11px bold caps tracked 0.18em.
+    layout:
+        A slim black bar holds BRIGHTWORK OPS with Production 24 h
+        acquisition and the apps as small tabs with Ops raised. The first
+        instrument is a rounded body with a name plate, Traffic scope 2
+        channel. Its left part is the screen, a 10 by 8 division graticule
+        with centre ticks, readouts across the top for CH1 1,250 rpm per
+        div, CH2 0.5 percent per div and time 2.4 h per div, the green
+        requests trace and the yellow error trace with a trigger arrow at 2
+        percent, dashed cursors A, B and C at the deploys, channel markers
+        at left and four measurement boxes below for CH1 max, CH1 min, CH2
+        mean and CH2 max. Five soft keys under the screen hold the
+        services. Its right part is a 240px column with four knobs for the
+        scales and trigger, then a Cursors list of the deploys. A second
+        instrument, the module bay, holds a latency mini screen, the
+        incident module and a trigger log of alerts. Below 1000px the
+        column drops under the screen and modules stack, and at phone width
+        soft keys stack and on screen text hides behind the readouts.
+    spacing: An 8px unit. 20px instrument padding, 12px module padding, 24px between instruments.
+    density: Medium. One big screen with its controls, then a bay of three modules.
+    corners: 20px instrument bodies, 10px modules, 8px screens, 6px keys and fields.
+    borders: 1px #3a4046 on bodies and modules, screens inset in black.
+    shadows: Deep drop shadows under instruments, a 2px lip under keys, a glow on traces.
+    icons:
+        16px status shapes on soft keys and log rows, a ringed tick for
+        Healthy, a triangle for Degraded, a circular arrow for Recovered, a
+        bolt for Firing, a tick for Resolved and a magnifier for
+        Investigating. Knobs and cursor letters are drawn, not icons.
+    focus: A 3px yellow outline offset 2px.
+    tone: Bench instrument terms, such as CH1, per div, cursors, trigger log and acquisition.

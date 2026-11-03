@@ -1,0 +1,57 @@
+export anchor RuggedRadioStyle:
+    number: 349
+    screen: TeamChat
+    name: Rugged radio
+    idea: The chat as a rugged field handset, with a rubber housing, a channel knob and chunky rocker keys around a black screen that logs every message as an RX or TX transmission, and one safety orange for the live channel and Send.
+    base: dark
+    palette:
+        page: #111213, behind the handset and the style sheet
+        rubber: #232528, the housing and sheet cards
+        rubber2: #2e3135, inset panels and key tops
+        edge: #4a4e54, moulded rims and key edges
+        screen: #0a0b0c, the message screen and fields
+        ink: #eceae4, text
+        muted: #a9adb3, times, labels and channel numbers
+        orange: #ff8a1f, the live channel, Send, TX and focus, with text #1f0e00
+        amber: #ffb45c, panel labels, RX and typing
+        green: #7fe08a, the MSG count tag and in range bars
+        red: #ff7b6b, the CALL mention tag
+    type:
+        A condensed sans, Roboto Condensed, Arial Narrow, DejaVu Sans
+        Condensed, Liberation Sans Narrow, with font stretch condensed,
+        plus a monospace, ui-monospace, DejaVu Sans Mono, Menlo, Consolas,
+        for readouts. Base 15px. Screen title 24px at 800 in capitals,
+        names 13px at 800 capitals tracked 0.06em, message text 16px,
+        readouts and tags 11px to 12px mono bold.
+    layout:
+        The whole app is one handset, a rubber housing with 28px corners,
+        a 2px moulded edge, inset highlights and two screw heads in the top
+        corners. A top bar holds BRIGHTWORK in orange with CHAT, a mono
+        model line naming operator Mara Okafor, and two LEDs with Link up
+        and RX. Two columns, 300px of controls and the screen. The control
+        column stacks three inset panels with amber mono labels. Channel
+        selector shows a drawn knob pointing at channel 2 beside Tuned to
+        CH 2, design-crit. Channels are five rocker keys numbered CH 1 to
+        CH 5 with a hard ledge below, the current one solid orange with an
+        ON AIR tag, mobile-release with a green triangle 4 MSG tag,
+        billing-war-room with a red @ 1 CALL tag. Direct lines shows
+        signal bars, full for Priya with In range, two of three for Jonas
+        with Standby, crossed out for Aiko with Out of range. The screen is
+        a black well with an inset shadow, titled CH 2 and design-crit in
+        orange over a dashed rule. Each message is a transmission row with
+        a 4px left bar, a mono RX or TX and the time, then the name in
+        capitals and the text. Mara's row is TX with an orange bar. Aiko's
+        row adds keys for Thread, 3 replies in orange and Thumbs up 3 and
+        Eyes 1. The image is a small preview with an IMAGE tag and the
+        filename. A radio wave icon with Priya is typing ends the screen.
+        Under both columns a keypad row holds Attach and Emoji rocker
+        keys, the field in a black well and a wide orange Send key. Below
+        860px everything stacks and Send spans the row.
+    spacing: An 8px unit. 28px housing padding, 20px between panels, 10px between transmissions.
+    density: Medium. Large touch keys around a compact log.
+    corners: 28px housing, 16px panels and Send, 10px to 12px keys, round screws and LEDs.
+    borders: A 2px moulded edge on the housing, 1px edges on keys, a 4px left bar on each transmission.
+    shadows: Hard 3px to 5px ledges under keys, an inset well around the screen and a deep drop under the housing.
+    icons: Thick 2.4 stroke line icons. Presence as signal bars, full, two of three or crossed out, beside the words.
+    focus: A 3px safety orange outline offset 3px.
+    tone: Radio talk, such as ON AIR, 4 MSG, 1 CALL, In range, Standby and Out of range.

@@ -1,0 +1,50 @@
+export anchor EncyclopediaStyle:
+    number: 40
+    screen: ProjectDetail
+    name: Encyclopedia
+    idea: The project reads like a reference article, with a lead paragraph, a summary infobox on the right, a contents box, serif headings over thin rules, blue links and bracketed citations.
+    base: light
+    palette:
+        page: #f6f6f6, the area around the article and the side nav
+        sheet: #ffffff, the article body
+        text: #202122, body text and headings
+        muted: #54595d, the tagline, captions and side nav headings
+        linkBlue: #1d52a3, links, the primary button, the progress ring and the focus outline
+        rule: #a2a9b1, heading underlines and box borders
+        box: #f8f9fa, the infobox, the contents box and tables
+        band: #dde6f3, infobox group header rows
+        green: #1e6b35, the On track and Done words
+        red: #a3221b, the Blocked word
+    type:
+        Headings use a serif, "Linux Libertine", Georgia, Times, serif, at
+        28px for the title and 22px for section heads, both regular weight.
+        Body uses a system sans, -apple-system, "Segoe UI", Helvetica,
+        Arial, sans-serif, at 15px with 1.6 line height. The infobox
+        caption is 16px bold sans, infobox rows, contents and references
+        are 13px, and citation marks are 11px superscript.
+    layout:
+        A white top bar holds a line emblem, the Brightwork name with a
+        tagline, a wide search field with a Search button, and the user
+        links. Under it a 170px plain side nav lists Navigation, Design team
+        and Tools links on the grey page. The white article sheet has view
+        tabs Project and Discussion on the left, and Read, Edit and View
+        history on the right. The title sits over a thin rule with a from
+        line. The infobox floats right at 290px with a progress ring, then
+        grouped rows for Project, Dates and People. The lead paragraph holds
+        the brief, then a collapsible contents box, then sections
+        Milestones as a bordered table, Open tasks as a bullet list, Files,
+        Discussion as a quote, and References. Each section head has an
+        edit link at the right. Below 860px the side nav hides and the
+        infobox spans the full width above the text.
+    spacing: 16 to 24px article padding, 22px above section heads and 10px between paragraphs.
+    density: Medium dense reading text, with the facts compressed into the infobox.
+    corners: Square boxes. Buttons and fields have 2px corners.
+    borders: A 1px grey rule under every heading. 1px boxes round the infobox, the contents box and the table cells.
+    shadows: None.
+    icons:
+        Almost none. Status uses text marks with words, a tick for Done and
+        On track, a half circle for In progress, an open circle for Planned
+        and a slashed circle for Blocked. A simple line emblem sits beside
+        the brand.
+    focus: A 2px link blue outline offset 1px. A focused field gets a blue border with an inset ring.
+    tone: Neutral encyclopedic third person, such as Website redesign is a project of the Design team.

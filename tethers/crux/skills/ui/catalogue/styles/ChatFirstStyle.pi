@@ -1,0 +1,51 @@
+export anchor ChatFirstStyle:
+    number: 54
+    screen: Inbox
+    name: Chat-first
+    idea: The inbox reads like a messaging app, with people as round avatars, notifications as speech bubbles and a composer bar always ready for a reply.
+    base: light
+    palette:
+        page: #e9f1ee, the pale green page behind the app
+        panel: #ffffff, the app shell and message bubbles
+        bubbleIn: #f1f4f3, the composer field and quiet tiles
+        selected: #d8efe7, the open conversation in the list
+        text: #14231f, body text, names and the active filter chip
+        muted: #4f625c, previews, project names and times
+        line: #d3e0db, dividers and bubble edges
+        accent: #0b6e5f, the Reply button, outlined chips, links and the focus ring
+        unread: #b5342a, the unread dot, the Unread word and the count badge
+        mention: #4a1f78 text on #e7dcf3, the at name inside a message
+    type:
+        Segoe UI, system-ui, -apple-system, Roboto, Helvetica Neue, Arial,
+        sans-serif. The Inbox title is 24px bold. Names are 15px semibold,
+        and 15px extra bold when unread. Bubble text is 15px on a 1.45 line
+        height. Previews are 14px muted, and times, projects and badges are
+        12px.
+    layout:
+        One rounded app shell 1240px wide at most. On the left a column
+        380px wide holds the brand, Mara as a round avatar with an online
+        dot, the Inbox title, the line 3 people are waiting on you, the
+        filter chips and the conversation list. Each row has a 40px
+        initials avatar, the name and time on one line, the preview below
+        and the project with status words under it. The weekly report row
+        uses a square chart tile in place of an avatar. On the right the
+        open thread has a header with Priya, the task and project, a day
+        pill, a centred context line, Priya's message bubble with her small
+        avatar at its foot, the three option thumbnails as bubble cards,
+        the time with Unread, then outlined chips for Mark as done and Open
+        task. A composer bar at the bottom has an attach button, a round
+        reply field and a pill Reply button. Below 820px the shell loses
+        its corners and the list sits above the thread.
+    spacing: An 8px unit. 12px between bubbles and rows, 20 to 24px panel padding.
+    density: Comfortable. Six conversations fill the list with room to spare.
+    corners: 24px on the shell, 20px bubbles with a 6px tail corner at bottom left, 18px list rows, round avatars, chips, field and buttons.
+    borders: 1px #d3e0db on bubbles and dividers, 1.5px accent on the outlined chips.
+    shadows: The shell has 0 10px 30px rgba(11,60,50,0.12). Bubbles have a faint 0 1px 2px.
+    icons:
+        18px round line icons with a 2px stroke. People are initials
+        avatars in six deep colours with white letters. Unread is a red
+        dot with the word Unread, done is a tick with the word Done, the
+        open row shows an eye with Open, and Mark as done uses a double
+        tick.
+    focus: A 3px accent outline offset 2px. A focused field gets an accent border and a soft 3px accent ring.
+    tone: Conversational and warm, such as 3 people are waiting on you and Reply to Priya.

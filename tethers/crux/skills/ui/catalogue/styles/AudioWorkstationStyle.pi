@@ -1,0 +1,56 @@
+export anchor AudioWorkstationStyle:
+    number: 312
+    screen: OpsMonitor
+    name: Audio workstation
+    idea: A music workstation session, an arrangement of tracks for requests, errors, latency, deploy clips, the incident region and alert markers under a playhead, and a mixer with one channel strip, meter and fader per service.
+    base: dark
+    palette:
+        studio: #141518, the page
+        panel: #1f2024, the arrangement and mixer frames
+        header: #26272c, track headers, channel strips and title rows
+        lane: #1a1b1e, track lanes with an hour grid
+        rule: #34363c, lane and panel borders
+        ink: #ececef, text
+        muted: #a3a6ae, labels and the ruler
+        teal: #3fc1b0, the requests waveform and the primary button
+        violet: #a48bff, the latency track and deploy clips
+        amber: #ffb547, the incident region, Degraded and the master bus
+        red: #ff7070, the error track and Firing
+        green: #6bdc8b, Healthy and Resolved
+        sky: #7cc4ff, Recovered and p50
+        lcd: #b8f5a0, the time display
+        playhead: #ffd84a, the playhead and focus
+    type:
+        System sans, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial,
+        at 13px and 1.4, with ui-monospace, SF Mono, Menlo, Consolas for the
+        time display, values, clips and scribble strips. The time display
+        is 20px mono at 600 in LCD green, the incident number 20px mono
+        bold amber, channel values 15px mono, region labels 11px at 600.
+    layout:
+        A transport bar holds Brightwork Ops session, the apps as folder
+        tabs, three transport buttons, an LCD reading 07.48.00 playhead
+        billing 5xx and Production last 24 hours. The arrangement panel
+        has a 168px header column and a 960px timeline at 40px per hour
+        with an hour ruler. Tracks are Requests as a mirrored teal
+        waveform region, Error rate with the spike, Latency with p95 solid
+        and p50 dashed, Deploys as three staggered clips ending at their
+        times, Incident as an amber region from 06.58, and Alerts as
+        markers with shapes. A yellow playhead stands at 07.48. Each
+        region has a dark label chip. The mixer has five channel strips,
+        each with a status button, two meters and a fader on a 99 to 100
+        percent scale, uptime, the metric and a coloured scribble strip,
+        then a wider amber master bus strip for the incident. Markers and
+        clips lists close the screen. The timeline scrolls sideways inside
+        its panel on small screens, strips go three then two across.
+    spacing: A 4px unit. 6 to 10px padding, 12px between panels, 40px per hour.
+    density: Dense. Seven lanes and six strips on one screen.
+    corners: 6px panels, 4px regions, clips, buttons and folder tabs.
+    borders: 1px #34363c, regions carry a lighter border of their own colour, clips a 3px edge at their time.
+    shadows: Only under fader caps.
+    icons:
+        14px status shapes on channel buttons, markers and lists, a ringed
+        tick for Healthy, a triangle for Degraded, a circular arrow for
+        Recovered, a bolt for Firing, a tick for Resolved and a magnifier
+        for Investigating, plus start, play and flag transport glyphs.
+    focus: A 2px yellow outline offset 2px.
+    tone: Studio terms, such as Session, Arrangement, Clips, Markers, Mixer and Master bus.

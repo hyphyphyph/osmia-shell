@@ -1,0 +1,47 @@
+export anchor OutlineDarkStyle:
+    number: 246
+    screen: DesignEditor
+    name: Outline dark
+    idea: Every panel, control and even the canvas preview is a thin line drawing on pure black with no fills, so structure shows as wireframe and one mint line marks what is active.
+    base: dark
+    palette:
+        black: #000000, every surface
+        line: #7a7a7a, outlines of panels, boxes and controls
+        faint: #3a3a3a, inner dividers, rulers and element outlines, never text
+        ink: #ededed, text and the outline view drawing
+        muted: #a8a8a8, mono labels, key hints and type icons
+        mint: #5ef0c0, the active tool, selected row, frame outline, Share, Saved and focus
+        pink: #ff8fc8, the spacing guide and one avatar ring
+        amber: #ffc46b, the comment pin and one avatar ring
+    type:
+        System ui for text, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial, and ui-monospace for labels, values and buttons. Body 13px
+        at 1.45. Labels are 11px mono caps tracked 0.1em, buttons 12px mono
+        caps, values 13px mono, and the sheet title 24px 600.
+    layout:
+        A row of separate outlined boxes forms the top, the CANVAS mark
+        with the file path, a joined strip of six 52px tools each showing
+        its key letter under the icon with Move outlined mint, a Zoom 66%
+        box, the three ringed initials and the Present and Share buttons.
+        The canvas fills the left in its own outline with mono rulers along
+        the top and left. The frame is shown in outline view, a mint frame
+        line with square handles, element outlines in faint grey, white
+        headline text on black, an outlined button and a crossed screenshot
+        box. The right column stacks the inspector over the layers, each
+        outlined. The inspector is a ruled grid of 38px property cells for
+        X, Y, W, H, Fill, Layout, Gap, Pad, Radius and Export. Layer rows
+        are 32px, the selected row outlined mint with a Selected flag.
+        Status words sit in three outlined boxes, Saved in mint. Below
+        760px the right column hides, the brand takes a full row and an
+        outlined strip of six tools sits under the canvas.
+    spacing: 12px gutters between outlined boxes, 38px property rows, 32px layer rows, 36 to 40px around the frame.
+    density: Medium. Canvas on the left, inspector over layers on the right.
+    corners: Square everywhere. Only the avatars are round.
+    borders: 1px #7a7a7a outlines on every box and control and #3a3a3a dividers inside. Active things swap to a 1px mint outline.
+    shadows: None and no fills at all, even the canvas is drawn as outlines.
+    icons:
+        18px line icons at 1.25px stroke with square caps and mitred joins.
+        Saved uses a check circle, editing two people and the version a tag,
+        each in its own outlined box with words.
+    focus: A 1px dashed mint outline offset 3px, and a mint inset line on fields.
+    tone: Technical mono caps, such as Inspector, Outline view and Export.

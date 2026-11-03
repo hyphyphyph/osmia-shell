@@ -1,0 +1,49 @@
+export anchor ArtNouveauStyle:
+    number: 62
+    screen: Calendar
+    name: Art nouveau
+    idea: The week as seven arched gallery windows inside a gilded frame, with whiplash flourishes, a lancet side panel and soft greens and golds.
+    base: light
+    palette:
+        paleSage: #eef0e4, the page around the frame
+        ivory: #fbfaf2, the frame, windows and fields
+        forest: #23402e, text, the primary button and the today window border
+        moss: #4a634a, labels, people and day names
+        oldGold: #806217, times, the outer frame line and focus
+        gilt: #c3a250, ornaments and inner rules only
+        goldLeaf: #f3ead0, the selected view, the lancet glow and the focus halo
+        plum: #6b2d4a, Deadline entries on #f6ecf0
+        dusk: #3e5566, Out of office entries
+    type:
+        Display high contrast serif for headings, numerals and entry titles,
+        Didot, Bodoni 72, Bodoni MT, Big Caslon, Cochin, Baskerville, Georgia,
+        serif. Body in a flared humanist sans, Optima, Candara, Segoe UI, Noto
+        Sans, Gill Sans, sans-serif. Sizes are 30px for the week title with a
+        15px italic subtitle, 36px day numerals, 17px entry titles, 12px
+        uppercase day names with 0.1em tracking, 13px italic people and 12px
+        bold gold times.
+    layout:
+        The whole screen sits in an ivory frame with a double gold rule and
+        whiplash corner ornaments. A centred masthead shows the spaced
+        uppercase wordmark between two whiplash flourishes, a centred
+        uppercase nav with fleurons around the current item, and Mara at the
+        top right. The week title and controls sit between two gilt rules. A
+        230px lancet panel on the left, arched at the top, holds the month,
+        the calendar checkboxes and the away note. The week is seven tall
+        arched windows in one row, each with the day name, a large numeral, a
+        small ornament and its entries centred and divided by gilt rules. The
+        today window has a thicker forest border, a gold leaf glow and a
+        Today ribbon. Below 1240px the windows wrap, below 900px the lancet
+        moves under them, and below 640px the windows stack.
+    spacing: An 8px unit. 14px between windows, about 44px arch headroom, 12px between entries and 32px between areas.
+    density: Ceremonial. Seven tall windows and centred, generously spaced entries.
+    corners: Semi elliptical arch tops on windows and the lancet. Buttons and fields use leaf corners of 20px and 4px.
+    borders: Double rules everywhere, a 1.5px old gold line with a 1px gilt line inset 5 to 8px. Deadline entries get a plum line and an arched top, out of office a dashed dusk line.
+    shadows: None. Depth comes from inset double rules and the gold leaf gradient.
+    icons:
+        Botanical line icons at text size with a 1.5 stroke. A four petal
+        flower marks Team, a diamond marks Deadline and an arched door marks
+        Out of office, each with its word. Today in the month is a filled
+        forest seal.
+    focus: A 2px old gold outline offset 3px with a 6px gold leaf halo.
+    tone: Formal and graceful, such as The Week of the Second of November and A quiet day, nothing planned.

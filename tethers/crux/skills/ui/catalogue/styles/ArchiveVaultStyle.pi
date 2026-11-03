@@ -1,0 +1,55 @@
+export anchor ArchiveVaultStyle:
+    number: 410
+    screen: DatabaseConsole
+    name: Archive vault
+    idea: The console is a dark reading room, where tables are labelled cabinet drawers, the open drawer shows its columns as index cards, the query is a typed request slip, results are ledger entries and history is a row of stamped call slips.
+    base: dark
+    palette:
+        vault: #14100c, the page
+        wood: #2a1e15, the cabinet, the nameplate and the style sheet
+        drawer: #35281d, drawer fronts and swatch cells
+        drawerEdge: #4a3829, drawer and cabinet edges
+        card: #2b2720, index cards, the request slip and call slips
+        ledger: #1b201a, the ledger page, with rules in #3b4636
+        brass: #dbb86c, label holders, pulls, the title, keywords, Submit and focus
+        onBrass: #2a1c06, text on brass
+        cream: #f1e6cc, text
+        muted: #c4b593, labels, column types and meta
+        margin: #e8917f, the ledger margin rule
+        ok: #a9d68f, the FILED stamp
+        bad: #f19a88, the REJECTED stamp and its reason
+    type:
+        Old style serif for prose, Iowan Old Style, Palatino Linotype,
+        Palatino, Georgia, at 16px and 1.5. Typewriter for slips and cards,
+        American Typewriter, Courier Prime, Courier New. The nameplate title
+        is 26px small caps in brass, card titles 22px italic, section labels
+        13px caps at 0.18em, ledger counts 18px typewriter.
+    layout:
+        A brass framed nameplate with a double inner rule shows Brightwork
+        Data in small caps and Reading room for production-replica. Three
+        pieces of furniture follow. On the left a 290px wooden card cabinet
+        holds five drawers, each with a brass bordered label holder and a
+        round pull. The tasks drawer is pulled out with a ledge below, its
+        holder filled with brass, and six tabbed index cards inside, one per
+        column with its type. In the middle the request slip, numbered
+        0941, has the italic title Overdue tasks by project, a one line
+        plain description, the SQL typed on ruled lines, and Submit request
+        and Keep on file buttons. On the right a ledger page with a red
+        margin line titled Entries returned, Entered in 38 ms, ruled rows
+        with tally marks and counts, and a double ruled total of 3 rows
+        entered. Below, a call slip log of three cards, each with time and
+        name, two stamped FILED with a tick and the duration, the last
+        stamped REJECTED in a tilted double box with the reason. A ruled
+        brass plaque ends the screen with the three status facts. Below
+        1100px the ledger moves under the slip, and on phones everything
+        stacks.
+    spacing: An 8px unit. 24px gutters between furniture, 10px between drawers, 4px between cards.
+    density: Medium. Three pieces of furniture, then the slip log.
+    corners: Nearly square, 2 to 6px. Round drawer pulls and tabbed cards.
+    borders: 2px brass label holders, double rules on the slip edge and the ledger total, one red margin line.
+    shadows: Deep soft black shadows under the cabinet, slip and ledger, and a hard ledge under the open drawer.
+    icons:
+        Objects instead of icons. Drawer pulls, card tabs, tally marks and
+        ink stamps with a tick for FILED or a cross for REJECTED.
+    focus: A 3px double brass outline offset 3px.
+    tone: Archivist wording, such as Request slip, Submit request, Entries returned and FILED.

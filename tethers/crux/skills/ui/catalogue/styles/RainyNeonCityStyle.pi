@@ -1,0 +1,56 @@
+export anchor RainyNeonCityStyle:
+    number: 274
+    screen: CloudFiles
+    name: Rainy neon city
+    idea: A wet night street where the file list glows like shop signs on rain soaked asphalt, pink and cyan neon tubes, soft bokeh and reflections pooling under every row.
+    base: dark
+    palette:
+        night: #090c15, the page and street background
+        asphalt: #111725, the details window and the style sheet
+        wet: #1a2136, raised fields and the switch track
+        selected: #22183a, the selected row behind a pink edge
+        ink: #eef1f8, names and body text
+        mist: #a6b1c8, meta, labels, column heads and placeholders
+        line: #2b3652, dividers and borders
+        pinkNeon: #ff6bb0, the primary button with dark ink #1d0412, the wordmark glow, Starred and the selected edge
+        cyanNeon: #4fe5ec, file icons, secondary button outlines, Shared and the focus ring
+        amber: #ffc95e, folder icons and Uploading
+    type:
+        A condensed sans stack, Avenir Next Condensed, Roboto Condensed,
+        Arial Narrow, then system-ui, with font-stretch condensed. Base 15px
+        at 1.45. The wordmark is 30px bold caps tracked 0.12em with a pink
+        glow and a cyan Drive line under it. The folder title is 28px bold,
+        file names 16px semibold, column heads and labels 12px caps tracked
+        0.14em, buttons 14px bold caps.
+    layout:
+        A dark street header carries blurred bokeh discs in pink, cyan,
+        violet and amber and fine diagonal rain lines, clipped by the
+        header section. The neon wordmark sits left and the Search files
+        field right. Below are three columns. A 210px sidebar lists My
+        files, Shared with me, Recent, Starred and Trash in caps, the
+        current item lit by a pink left tube and a fading pink wash, with
+        storage below as 64.2 GB of 100 GB used, a thin cyan to pink tube
+        and 35.8 GB free. The middle column has the breadcrumb, the title
+        Website redesign, then Upload, New folder and a List or Grid switch
+        with List underlined in cyan. The list is a header row and eight
+        rows of icon, name over kind, size, date and person, and status.
+        Each row fades into a centred reflection line. The selected
+        brand-guide-v3.pdf row has a violet fill, a pink left edge and a
+        pink to cyan line. hero-motion.mp4 shows an amber progress tube. A
+        300px details window on the right glows pink and holds the preview,
+        name, Starred, owner, size, version, shared with, modified and the
+        three buttons. Below 1100px the window drops under the list. Below
+        760px everything stacks, the nav becomes two columns and rows wrap
+        into name, size, date and status lines.
+    spacing: An 8px unit. 32px gutters, 24px between columns, 12px row padding, 20px window padding.
+    density: Medium. Eight rows fit with room for the reflection lines.
+    corners: 2px everywhere so neon reads as glass tubes and signs.
+    borders: 1px dark steel lines. Rows end in a centred fading reflection line. Status chips are 1px outlines in their colour.
+    shadows: Coloured glows only, pink round the details window and primary button, cyan on focus.
+    icons:
+        Line icons at 1.6px, 22px in rows, cyan for files and amber for
+        folders. Status is an outlined caps chip with a word and a star for
+        Starred, two heads for Shared, an up arrow for Uploading and a
+        checked box for Selected.
+    focus: A 2px cyan outline offset 3px with a soft cyan halo.
+    tone: Short caps labels, such as Upload, New folder and Details.

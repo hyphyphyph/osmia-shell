@@ -1,0 +1,55 @@
+export anchor AirmailStyle:
+    number: 119
+    screen: ProjectsDashboard
+    name: Airmail
+    idea: The dashboard is an airmail envelope addressed to Mara, with red and blue chevron edges, a par avion label, postcode boxes for the numbers, and each project flying a dashed route towards its due date.
+    base: light
+    palette:
+        sky: #e8eef7, the page behind the envelope
+        envelope: #f8fafd, the main surface
+        tissueBlue: #eef3fa, aerogramme cards and rows
+        ink: #1b2433, text and postcode digits
+        muted: #4c5868, captions and the dashed part of a route still to fly
+        airmailRed: #b3202a, chevrons, the primary button, overdue, Behind and this week
+        airmailBlue: #1f3e8c, chevrons, the par avion label, the brand, the flown route, At risk and focus
+        green: #1f6a45, the On track label
+        rule: #c5d0e0, dividers and card edges
+    type:
+        Two stacks. Geometric is Futura, Century Gothic, Avenir Next,
+        Avenir, URW Gothic, Trebuchet MS, sans-serif, for labels, names,
+        digits and buttons, often caps with 0.1em tracking. Letter is
+        Georgia, Iowan Old Style, Times New Roman, serif, for the greeting
+        and body. Sizes are 34px Georgia italic greeting, 30px bold
+        geometric postcode digits, 26px bold percent, 18px bold project
+        names, 12 to 14px geometric caps labels and 15 to 17px body.
+    layout:
+        The whole dashboard sits inside a 14px border of red, white and blue
+        diagonal chevrons. The top left has a blue Par avion, By airmail
+        label and the brand in blue and red, with caps nav links under it,
+        the current one red with a small paper plane mark and an underline.
+        The top right has a dashed Postage paid box with a round blue
+        postmark reading 31 OCT 2026 and cancel lines. A ruled tools row
+        holds a pill search, a red pill New project button, a round bell and
+        the user. The letter opens with Dear Mara in italic, the date line
+        and a red urgent line, beside a To address block with a red left
+        bar. The four figures are written one digit per red or blue outlined
+        postcode box. Six aerogramme cards follow in three columns, each
+        with a chevron strip on top, the name, an italic care of team line,
+        a route from Start to the due date where a filled plane sits at the
+        percent along a dashed line, the percent flown, the task count and a
+        status label. The chart is a flight log line, last week dashed blue
+        with hollow circles and this week solid red with diamonds, values on
+        each point. Correspondence lists activity with envelope icons.
+        Cards go two across below 1000px and one across below 700px.
+    spacing: An 8px unit. 24 to 30px envelope padding, 18px between cards, 32px before sections.
+    density: Airy. A letter opening, one row of postcodes, cards with one route each.
+    corners: Square envelope and cards. Pill buttons, search and fields at 20px. Round bell and avatar.
+    borders: A 14px chevron border round the envelope, an 8px chevron strip on each card top, 2px postcode boxes and a dashed stamp box.
+    shadows: One soft blue shadow under the envelope and a 2px flat lip under cards.
+    icons:
+        A filled plane rides each route. Labels pair the caps word with a
+        filled circle for On track, a diamond on a dashed label for At risk
+        and a square on a solid red label for Behind. A clock marks overdue
+        and envelope outlines mark activity.
+    focus: A 3px blue outline offset 3px with a 6px soft red halo.
+    tone: Warm letter writing, such as Dear Mara, Projects in transit and Correspondence.

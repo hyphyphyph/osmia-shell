@@ -1,0 +1,47 @@
+export anchor PlayfulPastelStyle:
+    number: 4
+    screen: ProjectsDashboard
+    name: Playful pastel
+    idea: A friendly toy box of candy pastel blocks, chunky round corners and soft blobs that makes project work feel light and encouraging.
+    base: light
+    palette:
+        cream: #fffaf3, the page background
+        plum: #2b2645, text, headings and the current nav pill
+        dusk: #5a5470, hints, dates and meta text
+        grape: #6a3fd4, the primary button, progress fill, this week's chart bars and the focus ring
+        grapeDeep: #4b2aa3, links and the ledge under the primary button
+        mint: #c8f0dc, a summary tile and the On track pill with #1d6b47 text
+        peach: #ffd9c7, a summary tile, the chart block and the Marketing tag
+        lilac: #e3d9ff, the greeting block and the Design tag
+        butter: #fff0b8, a summary tile, the bell button and the At risk pill with #8a4b00 text
+        sky: #d3ecff, a summary tile and the Engineering tag
+        cherry: #b3243f, the Behind pill text on #ffd6dc, the overdue count and the bell badge
+        blush: #fde4ef, the background blob behind the top right corner
+    type:
+        Rounded system sans for everything, ui-rounded, SF Pro Rounded,
+        Arial Rounded MT Bold, system-ui, sans-serif. Sizes are 48px
+        extra bold for the greeting, 56px extra bold tight summary
+        numbers with tabular figures, 34px extra bold card percentages,
+        26px extra bold section titles, 20px extra bold card titles, 16px
+        regular body at 1.5 line height, 14px bold pills and 13px meta.
+    layout:
+        A top bar with the brand, search, a round bell, the user face and
+        the New project button, then the nav as a white pill strip on its
+        own row. A hero row pairs a big lilac greeting block with a two by
+        two grid of pastel summary tiles. Below, a two to one grid holds
+        six white project cards in two columns beside a peach chart block
+        and a stack of activity bubbles. A pink blob peeks in at the top
+        right. Below 1000px everything stacks, and below 640px the cards
+        go to one column and the search takes a full row.
+    spacing: An 8px unit. 16px between tiles and cards, 22 to 40px padding inside blocks, 40px between sections.
+    density: Airy. Big blocks and big numbers, about four project cards per screen.
+    corners: 20 to 48px on blocks, with one tighter 10px corner on each block so it wobbles like a blob. Buttons, fields, pills, nav and progress bars are fully round.
+    borders: None on blocks. Fields carry a 3px #eadfce border. Last week's chart bars are white with a 2px plum outline.
+    shadows: No blur. A flat 6 to 8px ledge straight down, #f1e8da under white cards and pills, #4b2aa3 under the grape button.
+    icons:
+        Line icons at 1.25em with a fat 2.4 round stroke. Status pills use
+        filled shapes with a white mark, a circle with a tick for On track,
+        a rounded triangle with a bang for At risk and a rounded square
+        with a dash for Behind. People show as pastel initial faces.
+    focus: A 4px grape outline offset 3px. A focused field gets a grape border and a 4px #d6c8ff ring.
+    tone: Warm and encouraging in sentence case, such as Hi Mara, nice work this week, need a little love and See them all.

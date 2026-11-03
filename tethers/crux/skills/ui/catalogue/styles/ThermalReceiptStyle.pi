@@ -1,0 +1,48 @@
+export anchor ThermalReceiptStyle:
+    number: 56
+    screen: Inbox
+    name: Thermal receipt
+    idea: The inbox prints out as narrow thermal receipts, with numbered line items, dot leaders, dashed tear lines, a totals block and a barcode at the foot.
+    base: light
+    palette:
+        counter: #dcdad4, the counter top behind the receipts
+        roll: #fbfbf8, the receipt paper
+        print: #232323, text, barcodes, filled tags and buttons
+        thermalGrey: #585858, meta lines, read items and labels
+        faint: #bdbdb8, tear lines and dot leaders, decoration only
+        fade: #ecece7, the open line item
+        stamp: #9c1f3c, the dashed OPEN tag
+    type:
+        One monospace stack, ui-monospace, SF Mono, Menlo, Consolas, DejaVu
+        Sans Mono, Liberation Mono, monospace. The brand is 22px extra bold
+        uppercase with 0.3em tracking. The Unread total is 16px extra bold.
+        The message is 15px on a 1.6 line height. Line item heads are 14px
+        bold uppercase, body lines 13px, and meta, tags and barcode digits
+        11 to 12px.
+    layout:
+        Receipts stand side by side on the counter, centred, with a small
+        uppercase line above naming the terminal and the operator. The
+        list receipt is 360px wide. It has a boxed BW mark, the brand, two
+        small header lines, a double rule, the Inbox heading, a two by two
+        grid of filters as [x] and [ ] boxes with the active one printed in
+        reverse, a tear line, six numbered line items, a tear line, totals
+        for Items, Read and Unread, and a barcode with digits. Each line
+        item has the number and kind, a dot leader and the time, then the
+        sentence, the project and status tags. The item receipt is 420px
+        wide with Item 01 of 06, a label and value block, the message with
+        a thick left bar, three outlined option prints, a dashed reply
+        field, full width Reply, Mark as done and Open task buttons, a
+        barcode and Answer due Monday. Both receipts have zigzag torn ends.
+        On a phone the receipts stack.
+    spacing: 4px steps. 8px line item padding, 20px paper margins and 40px between receipts.
+    density: Tight. A strip 360 to 420px wide, never wider.
+    corners: Square, with zigzag torn ends at top and bottom drawn with gradients.
+    borders: 2px dashed tear lines, 3px double rules under headers, 1px dotted lines between items, 2px solid button borders and a dashed reply field.
+    shadows: One drop shadow under each receipt, 0 6px 10px rgba(0,0,0,0.12).
+    icons:
+        Printed glyphs only. Filters use [x] and [ ]. Unread is a boxed
+        star with UNREAD, done is a reverse block with a tick and DONE, and
+        the open item has a dashed OPEN tag with an arrow. Barcodes are CSS
+        stripes with a text alternative.
+    focus: A 2px print outline offset 2px with a paper gap and a faint outer ring. A focused field turns its dashed border solid.
+    tone: Till-roll uppercase, such as ITEM 01 OF 06, UNREAD 3 and ANSWER DUE MONDAY.

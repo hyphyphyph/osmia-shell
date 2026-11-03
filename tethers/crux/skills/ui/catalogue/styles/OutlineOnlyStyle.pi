@@ -1,0 +1,50 @@
+export anchor OutlineOnlyStyle:
+    number: 202
+    screen: ProjectsDashboard
+    name: Outline only
+    idea: Every component is drawn as a crisp 1px outline in black or blue on white paper, with no fills and no shadows, so structure comes from line alone.
+    base: light
+    palette:
+        paper: #ffffff, the page, nothing is ever filled
+        black: #111111, text, every outline and the last week bars
+        gray: #585858, mono captions, axis labels and meta
+        rule: #bdbdbd, row rules inside tables and chart gridlines
+        blue: #1546c4, the current nav, primary button, overdue, Behind, this week hatch and focus
+    type:
+        Text uses Helvetica Neue, Helvetica, Arial, sans-serif. Figures,
+        captions and section titles use ui-monospace, SF Mono, Menlo,
+        Consolas, Liberation Mono, monospace. The greeting is 36px regular
+        at minus 0.02em, KPI figures 44px light, row names 15px at 600,
+        body 15px, section titles 12px mono caps at 0.1em, captions 11px
+        mono caps grey and table figures 13px mono.
+    layout:
+        A single outlined top bar is split into cells by vertical rules,
+        the outlined B mark with the brand, a wide search cell, a cell with
+        a blue outlined New project button, a square bell cell and the
+        outlined initials circle with the name. Below, a 200px left nav is
+        a ruled outlined list with icons, Home in blue with an inset blue
+        outline and an arrow. The main column starts with the date in mono
+        caps, a large light greeting and a blue clock with 4 tasks are
+        overdue and a Show overdue link. Four KPI cells share collapsed
+        1px borders in one row, the overdue cell in blue with an inset blue
+        outline. A full width outlined projects table follows, with mono
+        caps headings, name and team, an outlined progress track holding a
+        blue hatched bar, mono tasks, due date with days left and an
+        outlined status tag. The bottom row pairs a chart box, with a
+        three cell totals strip and open black bars for last week beside
+        blue hatched bars for this week on a ruled axis, and an activity
+        box drawn as a vertical line through outlined initial circles.
+        Below 960px the nav becomes a three by two ruled grid and the
+        bottom row stacks. On phones the top bar becomes three rows and
+        table rows turn into stacked cards.
+    spacing: An 8px unit. 24px page padding and gaps, 32px between main blocks and 12 to 16px inside cells.
+    density: Medium. A full width ruled table with values set in mono.
+    corners: Square everywhere. Only avatars and the timeline circles are round.
+    borders: 1px #111111 on every component with shared edges collapsed into one rule, 1px #bdbdbd between rows, and a blue inset second outline for the current or urgent item.
+    shadows: None and no fills. Progress and this week bars use a 1px blue diagonal hatch.
+    icons:
+        Line icons at 1.6 to 1.8 stroke in currentColor. Status tags use a
+        check circle, a triangle or a crossed square with the word, and
+        Behind is doubled in blue.
+    focus: A 2px blue outline offset 2px, drawn inside the cell for top bar cells and nav items.
+    tone: Terse and technical, such as Due this week, 14 d left and Show overdue.

@@ -1,0 +1,56 @@
+export anchor CoolCorporateStyle:
+    number: 190
+    screen: ProjectsDashboard
+    name: Cool corporate
+    idea: A dependable enterprise console with a strong blue masthead, a light grey shell, crisp 2px corners and every section framed as a tabbed panel, so the dashboard reads like a well-ordered set of files.
+    base: light
+    palette:
+        shell: #eef1f5, the page behind panels
+        white: #ffffff, panels, the nav tab bar, table rows and fields
+        ink: #1b2533, headings, table text and body
+        slate: #4a5768, labels, column heads, meta and axis text
+        rule: #cfd6e0, 1px panel borders and table rules, never text
+        blue: #1748b8, the masthead, primary button, current tabs, links, this week's bars and focus
+        navy: #0f3487, the search well inside the masthead and hover on blue
+        ice: #e5ecfa, the current tab fill, last week's bars and hovered rows
+        green: #17673a, On track with a solid circle and check
+        amber: #874d00, At risk with a solid triangle and bar
+        red: #b0231b, Behind, the overdue alert edge and the overdue KPI, with a solid square and cross
+    type:
+        One stack, Segoe UI, Selawik, Helvetica Neue, Arial, Liberation
+        Sans, sans-serif, in weights 400 and 600. The page title is 24px
+        semibold, KPI figures 28px semibold tabular, panel titles 15px
+        semibold, tabs and body 14px, and column heads 12px semibold caps
+        tracked 0.04em.
+    layout:
+        A full width blue masthead 56px tall holds a white outlined square
+        mark with the brand, a wide navy search well, and at right a white
+        New project button with blue text, a bell and a white initials disc
+        with Mara Okafor. Under it a white bar of six icon tabs, Home with
+        a 3px blue underline. The 1280px main area starts with a Home /
+        Overview crumb, the greeting and the date at the far right, then a
+        white alert bar with a 4px red left edge, a solid red square, the
+        overdue line and a View overdue tasks link. A single bordered KPI
+        band follows, split into four cells, each with an icon and label,
+        the figure and a note, the overdue cell topped by a 3px red rule
+        with red figure. Below, two columns at 8 to 4. The left Projects
+        panel has a tab strip of team filters with counts, then a six
+        column table of project, team, a bar with percent, tasks, due date
+        with days left and status, and a footer line with totals and the
+        next due project. The right column stacks a Tasks completed panel
+        with Daily and Weekly tabs, grouped bars per weekday, last week as
+        outlined ice and this week solid blue, and a small table of week
+        totals and change, then an Activity panel with All, Comments and
+        Files tabs and rows with initials, text and time at right. Below
+        1100px the right column moves under the table. On phones the
+        search drops to its own line, the nav tabs scroll sideways inside
+        their bar, KPIs form a 2 by 2 grid and table rows become stacked
+        cards.
+    spacing: An 8px unit. 16px panel padding, 24px between panels, 10px by 16px table cells.
+    density: Medium high. A real six column table with rows near 44px.
+    corners: 2px on everything. Avatars are round.
+    borders: 1px rule borders on every panel, table row and KPI cell. Current tabs carry a 3px blue underline.
+    shadows: None. Panels sit flat on the grey shell.
+    icons: 1.6px line icons at 18px beside nav tabs and KPI labels. Status uses solid shapes with a white glyph.
+    focus: A 2px blue ring outside a 2px white gap, drawn with box shadow. Tabs show an inset 2px blue ring.
+    tone: Neutral and precise. Short labels, caps column heads and counts inside tabs.

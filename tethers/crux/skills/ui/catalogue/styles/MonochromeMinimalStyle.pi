@@ -1,0 +1,45 @@
+export anchor MonochromeMinimalStyle:
+    number: 12
+    screen: ProjectsDashboard
+    name: Monochrome minimal
+    idea: Black, white and grey only, one weight, hairlines and a great deal of empty space, so the content itself is the only thing that carries weight.
+    base: light
+    palette:
+        white: #ffffff, the page and the secondary button
+        ink: #111111, text, the primary button, this week's chart marks and list top rules
+        grey: #595959, labels, meta text and chart axes
+        mid: #8c8c8c, last week's chart marks only
+        rule: #d4d4d4, field lines, dividers and progress tracks
+        hair: #ececec, row separators and section dividers
+        wash: #f4f4f4, the fill of a focused row
+    type:
+        One family at weight 400 only, -apple-system, Helvetica Neue,
+        Helvetica, system-ui, Segoe UI, Roboto, Arial, sans-serif. Sizes are
+        72px summary figures with tight letter spacing, a 48px headline,
+        16px names and lead text, 14px body at 1.6 line height and 12px grey
+        labels. Bold is never used, and hierarchy comes from size alone.
+    layout:
+        A 96px header line with a lowercase wordmark, 12px nav words with a
+        1px underline on the current one, an underlined search, notification
+        and user words and a black New project button. The page is a run of
+        full-width bands split by hairlines, each with a 12px label in a
+        240px left column and the content on the right. The bands are the
+        greeting, the four figures split by thin vertical rules, the
+        numbered project list, and the chart beside the activity list.
+        Content is capped at 1200px with 48px side gutters. Below 1100px the
+        label sits above its content. Below 820px the nav moves to its own
+        row, the figures form a two by two grid and each project shows its
+        progress and facts under its name.
+    spacing: An 8px unit used in large steps, 96px band padding, 48px gutters and 72px project rows.
+    density: Very low. One idea per band, and the page scrolls rather than crowds.
+    corners: None.
+    borders: 1px only, #ececec between rows, #d4d4d4 for fields and dividers and #111111 to open a list.
+    shadows: None.
+    icons:
+        No pictograms. Status is a 10px geometric mark beside its word, an
+        open circle for On track, an open triangle for At risk and a solid
+        square for Behind. Progress is a 1px track with a 3px black fill.
+        The chart is thin stems with open dots for last week and solid dots
+        for this week.
+    focus: A 1px ink outline offset 4px. A focused field gets a doubled ink underline, and a focused row gets the wash fill and a 1px ink outline.
+    tone: Quiet and plain, with full stops and few words, such as Good morning, Mara. and Everything else is moving.

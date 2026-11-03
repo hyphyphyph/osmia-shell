@@ -1,0 +1,46 @@
+export anchor AcademicPaperStyle:
+    number: 39
+    screen: ProjectDetail
+    name: Academic paper
+    idea: The project page is typeset like a journal article, with a centred title block, an abstract, numbered sections, ruled tables, a captioned figure and footnotes.
+    base: light
+    palette:
+        paper: #fdfdfb, the page
+        ink: #111111, text, rules, the primary button and the figure bar
+        grey: #555555, affiliation, dates, assignees and meta text
+        rule: #b8b8b8, the hairline rule between the two columns
+        citationRed: #8a1c1c, links, footnote marks and file names
+        shade: #f0efea, the fill of a focused list row
+    type:
+        One Computer Modern-like serif, "Latin Modern Roman", "CMU Serif",
+        "Century Schoolbook", "TeX Gyre Schola", Georgia, "Times New
+        Roman", serif. File names use "Latin Modern Mono", "Courier New",
+        monospace. Sizes are 30px regular centred for the title, 18px bold
+        numbered section heads, 16px body at 1.45 line height and justified
+        with hyphens, 15px small caps for status words, 13px captions and
+        footnotes, and 11px superscript marks.
+    layout:
+        A thin running head across the top holds Brightwork in small caps,
+        italic nav links, a search field drawn as an underline and the
+        user name, over a 0.5px rule. The article is 980px wide and centred.
+        It opens with a journal line, the title, the three members as
+        authors with the owner starred, the team as affiliation, a date and
+        status line, and two buttons. A narrow abstract holds the brief and
+        a keywords line. The body then runs in two text columns from 900px
+        with a hairline column rule. Section 1 Summary has a bar figure and
+        a facts table, 2 Milestones a ruled table, 3 Open tasks a numbered
+        list, 4 Files a bracketed reference list, and 5 Discussion a quote
+        and a reply field. Footnotes sit under a short rule at the end.
+        Below 900px the body is one column.
+    spacing: Tight book leading. 8px between paragraphs with a 1.5em first-line indent, 20px above section heads and a 36px column gap.
+    density: Dense like print. The whole screen fits in about one and a half wide screens.
+    corners: Square everywhere.
+    borders: Booktabs tables with 1.2px top and bottom rules, a 0.6px rule under the header row, and no vertical lines. Buttons and fields have a 0.8px ink border.
+    shadows: None.
+    icons:
+        No pictograms. Typographic marks sit beside every status word, a
+        tick for done and on track, a half circle for in progress, an open
+        circle for planned and a slashed circle for blocked. The progress
+        figure is a filled bar beside an outlined bar with a numbered axis.
+    focus: A 1px dashed ink outline offset 3px. A focused list row also takes the shade fill.
+    tone: Formal third person with captions, such as Four tasks remain open, and Table 2. Milestones and their state.

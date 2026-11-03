@@ -1,0 +1,52 @@
+export anchor DimModeStyle:
+    number: 228
+    screen: ProjectsDashboard
+    name: Dim mode
+    idea: A soft low-contrast slate around #22272e for long sessions, with muted colours, generous line height and one reading column that groups projects by what needs attention, while every text pair still passes AA.
+    base: dark
+    palette:
+        dim: #22272e, the page, the header and the style sheet
+        panel: #2b3139, project groups, the chart box, summary chips and fields
+        raised: #343b44, the current nav item, the secondary button and the avatar
+        line: #444c56, every border and divider and the meter tracks
+        text: #c9d1d9, body and names, held well below white
+        muted: #9aa5b1, labels, meta and axis text
+        blue: #7ea9dc, links, meters, this week bars and focus
+        button: #41618a, the primary button fill, a muted blue
+        onButton: #e6edf5, text on the primary button
+        lastWeek: #7d8794, last week bars
+        ok: #8fc49c, the On track word and icon
+        risk: #d8b46c, the At risk word and icon
+        bad: #e3958c, the Behind word and icon and the overdue line
+    type:
+        One stack, -apple-system, Segoe UI, system-ui, Roboto, Noto Sans.
+        Base 15px at 1.65. The greeting is 26px at 500, the lede 17px,
+        section titles 15px at 600, group labels 13px at 500 and meta 13px.
+        Nothing is bold beyond 600.
+    layout:
+        A 200px sidebar ruled on the right holds a small blue dot with the
+        name and six text-only nav links, Home on a raised tile. The header
+        bar holds search, a muted blue New project button, a quiet bell and
+        Mara Okafor. The content is one 760px reading column. It starts
+        with the date and Good morning, Mara, then a lede where a clock and
+        4 tasks are overdue sit in soft red, followed by Start there, then
+        the rest of the week. The four figures follow as small inline chips
+        with the number in bold, the overdue chip red. Projects by status
+        then shows three groups in order, Behind, At risk and On track, each
+        labelled with its status and a count, and each a bordered panel of
+        rows with name, category, a thin blue meter with percent, due date
+        and tasks. Tasks completed is a bordered chart box with a caption
+        naming the totals and colours. Recent activity is a ruled list with
+        times on the right. Below 760px the sidebar becomes a scrolling row
+        and search moves to its own row.
+    spacing: An 8px unit. 12px row padding, 48px between sections, a 760px column with 32px sides.
+    density: Low. One column, with projects grouped into Behind, At risk and On track.
+    corners: 6px on panels, fields, buttons and chips. Round avatar.
+    borders: 1px #444c56 around panels and between rows. No heavier rules.
+    shadows: None. Low glare matters more than depth.
+    icons:
+        Line icons at 1.6 stroke, 17px, only where they carry meaning.
+        Status is a check circle, a triangle or a crossed square with the
+        word, also used as the group heading.
+    focus: A 2px soft blue outline offset 2px.
+    tone: Calm and guiding, such as 4 tasks are overdue. Start there, then the rest of the week.

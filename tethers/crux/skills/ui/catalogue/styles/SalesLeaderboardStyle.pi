@@ -1,0 +1,52 @@
+export anchor SalesLeaderboardStyle:
+    number: 340
+    screen: CrmPipeline
+    name: Sales leaderboard
+    idea: The pipeline as a friendly sales league on deep indigo, with an owner podium ranked by open value, earned badges and streaks drawn from real deal events, a quarter quest bar toward target and the stages as levels on a quest board.
+    base: dark
+    palette:
+        indigo: #15122b, the page and the style sheet
+        card: #211c40, panels, levels and moves
+        raised: #2c2552, tokens, tiles, podium steps and secondary buttons
+        line: #3d3570, the quest bar frame and field borders
+        ink: #f4f1ff, text
+        muted: #b5addb, labels and owners
+        gold: #ffd166, rank 1, the quest bar, primary button and Mara tokens
+        silver: #cfd6e6, rank 2 and Sam tokens
+        bronze: #f0a875, rank 3 and Lena tokens
+        onGold: #211400, text on gold, silver and bronze
+        mint: #6ee7b7, Won and the team win
+        coral: #ff8fa3, Stalled and Gone quiet with a triangle
+        sky: #8ecbff, Booked and Closer badges and focus
+    type:
+        Display in Impact, Haettenschweiler, Franklin Gothic Bold, Arial
+        Black at weight 800 with no synthetic bold, body in Trebuchet MS,
+        Segoe UI, system-ui. Base 15px. The title is 36px, the won figure
+        40px, podium values 26px, section heads 22px, names 15px at 700,
+        caps labels and badges 12px at 700.
+    layout:
+        A header with a tracked caps line Brightwork Sales Deal pipeline
+        over Q4 Sales League with League in gold, and My deals and a gold
+        Log a deal button. Two panels follow. Leaderboard open value holds
+        a three step podium, Sam Ortiz second, Mara Okafor first and Lena
+        Fischer third, each with a hexagon initials avatar in a medal
+        colour, the open value, 2 open deals, pill badges and a step with
+        its rank number. Badges are Biggest deal and Demo booked for Mara,
+        Closer for Sam and a flame 3 opens for Lena. Quarter quest shows
+        Won this quarter 128,500, a striped gold bar at 64 percent, 71,500
+        to go, level 64 of 100 and three tiles for pipeline value, win rate
+        and open deals. Quest board shows five levels L1 to L5 with tokens
+        edged in the owner medal colour, Bluewater Clinics marked team win
+        in mint. Latest moves holds three cards labelled Booked, Streak 3
+        opens and Gone quiet. On phones panels stack and levels go one
+        across while the podium keeps three steps.
+    spacing: An 8px unit. 20px panel padding, 12px between levels and moves, 28px gutter, 16px on phones.
+    density: Medium. Big figures and a podium up top, compact tokens below.
+    corners: Chunky. 20px panels, 18px levels, 14px tokens, buttons and fields, hexagon avatars and pill badges.
+    borders: Few. A 5px left edge on each token in the owner medal colour, 2px badge rings and a 6px top edge on podium steps.
+    shadows: Solid offset shadows with no blur, 0 4px to 0 6px, so buttons and panels look like game pieces.
+    icons:
+        Line icons at 2 stroke. Trophy, star, hexagon and bolt head the
+        sections. A flame marks a streak, a triangle gone quiet, a check won.
+    focus: A 3px sky outline offset 3px.
+    tone: Playful but plain, such as Sales League, Quarter quest, Log a deal, 71,500 to go and Gone quiet.

@@ -1,0 +1,57 @@
+# Launcher
+
+## Purpose
+
+Let the user find an app, a window, or an action by typing.
+
+## Sources
+
+- Desktop apps
+- Commands
+- Open windows
+- Calculator
+- Quick actions
+
+## Desktop Apps
+
+Reads .desktop files from the standard application folders. Matches the typed text loosely, so small typos still find the app. Ranks apps the user opens often higher.
+
+## Commands
+
+The user can type a shell command and run it.
+
+## Open Windows
+
+Lists the windows that are open and switches to the one picked. This uses the wlroots foreign-toplevel protocol.
+
+## Calculator
+
+If the typed text is a sum, the launcher shows the answer.
+
+## Quick Actions
+
+Includes lock, suspend, and power off. Lock runs an outside locker. The shell does not draw a lock screen.
+
+## Results
+
+All sources show in one list, ranked by how well they match the typed text. A sum shows its answer first. A prefix, such as a greater-than sign for commands, limits the search to one source.
+
+## Input
+
+The launcher is driven by the keyboard first. The user types to search and moves with Up and Down, or Ctrl+N and Ctrl+P. Enter runs the picked result and Escape closes the launcher. The mouse also works. A click picks a result.
+
+## Behavior
+
+The launcher shows on the monitor that has focus. It opens when the control client asks for it. It closes after the user runs something or presses Escape. It is hidden when not in use, and then it costs nothing to keep.
+
+## Look
+
+The launcher is a floating card with the same look as the bar panels. It has 10 px rounded corners, a shadow, and the dark grey of the other cards. It is 600 px wide and sits in the upper part of the screen. The search box is at the top, with a magnifier icon, and a line under it. Each result is a compact row, 28 px tall. A row shows a small app icon, the name, a source label, and a shortcut. The letters that match the typed text are shown in the accent color. The picked row has a lighter plate and a 2 px accent edge on its left. The first four results have the shortcuts Alt+1 to Alt+4. Each runs that result at once. When the text is a sum, a Calculator chip shows in the search box. The answer shows as a large number, in the accent color, on a row of its own. The answer row says that Enter copies the answer and closes the launcher. A footer lists the keys, which are Up and Down to move, Enter to run, and Escape to close. The footer also lists the prefixes for commands, windows, and actions.
+
+## Mockups
+
+The mockups are in spec/Launcher.mockups/index.html. The picked variation of round 1, the latest, is spec/Launcher.mockups/round-1/3.html. Round 1, variation 3 settled the compact rows, the Alt+number shortcuts, the Calculator chip, and the footer.
+
+## Open Questions
+
+- Confirm the ranking, prefixes, and calculator choices in ProposedDefaults.

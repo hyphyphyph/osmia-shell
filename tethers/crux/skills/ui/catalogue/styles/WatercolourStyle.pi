@@ -1,0 +1,46 @@
+export anchor WatercolourStyle:
+    number: 60
+    screen: Calendar
+    name: Watercolour
+    idea: Events bloom as soft watercolour washes on warm paper, with handwritten headings and no hard lines, so the week feels painted rather than ruled.
+    base: light
+    palette:
+        paper: #fdfbf7, the page, with faint blue, rose and sage blooms in the corners
+        ink: #2f3640, text and event titles
+        washGrey: #545c68, meta, hour labels and day names
+        indigo: #2e4a7a, the primary button, the today ring, checkboxes and focus
+        ceruleanWash: #6ea0d2, Team events and the current nav item at 35 to 60 percent
+        sageWash: #8cb68c, longer team sessions and the month card
+        ochreWash: #e4b860, Deadline events and the brand blot
+        lilacWash: #aa96d2, Out of office events and the avatar
+        roseWash: #e28c96, the page corner bloom only
+        pencilLine: #e8e1d6, faint hour rules
+    type:
+        Handwritten headings in Segoe Print, Bradley Hand, Chalkboard SE,
+        Marker Felt, Comic Sans MS, cursive. Body in a soft humanist sans,
+        Avenir Next, Avenir, Segoe UI, Nunito, Ubuntu, system-ui, sans-serif.
+        Sizes are 36px hand for the week title, 24px hand day numbers, 20px
+        hand panel headings, 13.5px bold event titles, 15px body and 12px meta
+        with tabular figures.
+    layout:
+        A light top row with the handwritten brand on an ochre blot, a text
+        nav where the current item sits on a blue wash, and Mara on the right.
+        The title row holds the week title and the controls. A 250px left
+        column holds the month card on a sage wash, the calendar checkboxes
+        and a dotted note about Lena. The main area is a true time grid with a
+        52px hour gutter and seven day columns, an all day row, then sixteen
+        half hour rows of 44px from 09 to 17 hours. Events sit in their slots
+        and grow taller when their text needs it. Below 1100px the side column
+        moves under the week, and below 820px the grid becomes an agenda list
+        with each day heading followed by its washes.
+    spacing: An 8px unit. 6px between day columns, 44px per half hour, 28 to 32px between areas.
+    density: Relaxed. The full working day is shown and events are sized by their length.
+    corners: Irregular blob radii such as 30 40 36 44 percent, never a perfect circle or rectangle.
+    borders: None. Wash edges come from an SVG turbulence displacement filter on the wash layer only, never on text.
+    shadows: Only under the primary button and the selected view, soft and pooled below.
+    icons:
+        Hand-drawn 1.8 stroke line shapes at 13 to 18px. A circle marks Team,
+        an hourglass marks Deadline and a crescent marks Out of office, each
+        beside its word.
+    focus: A 3px indigo outline at 55 percent offset 3px with softly rounded corners. A focused field turns white with a 2px indigo ring.
+    tone: Gentle and personal, such as November, week one and A blank page today.

@@ -1,0 +1,48 @@
+export anchor AmberTerminalStyle:
+    number: 290
+    screen: CodeRepository
+    name: Amber terminal
+    idea: A full-screen amber text-mode application of double-ruled panes with titles set into their borders, an inverse selection bar, a top status line and a bottom function key bar, glowing warmly on black.
+    base: dark
+    palette:
+        black: #0c0700, the page, pane interiors and the style sheet
+        amber: #ffb000, main text, double rules, the inverse bar and focus
+        dim: #d39300, labels, line numbers, removed lines and the key bar captions
+        rule: #8a5c00, single inner dividers, never text
+        inverseInk: #0c0700, text on the amber inverse bar, pane titles and buttons
+    type:
+        One monospace stack, Fixedsys, Terminus, DejaVu Sans Mono, Lucida Console,
+        ui-monospace, Consolas, at 14px on 1.5. Pane titles 14px at 700 caps tracked
+        0.08em in inverse. The title 18px at 700. Function key bar 13px. Amber
+        glyphs carry a 5px warm glow.
+    layout:
+        A full width text-mode screen. A one line inverse status bar shows
+        Brightwork Code, the repository, Private and Watch 12, Star 48 and Fork 3.
+        Below, a grid of panes with 3px double amber borders, each with its title
+        set into the top border as an inverse tag. Row one has three panes, a 240px
+        Repository pane listing the six tabs with Pull requests on the inverse
+        selection bar and a pointer, a wide Pull request 214 pane with the title,
+        Open, the merge sentence and a key and value table for reviewers, labels,
+        assignees, milestone and linked issue, and a 300px Checks pane listing all
+        twelve checks with a mark and a word and the failing row inverted. Row two
+        has a Files pane with three rows of counts and a wide Diff pane with the
+        hunk and the boxed comment. A function key bar runs along the bottom with
+        keys as inverse numbers and captions, including F8 Merge shown locked and
+        disabled. Below 1000px the panes stack in one column and the key bar wraps.
+    spacing:
+        A character grid. 8px horizontal and 4px vertical cell padding, 12px inside
+        panes, 8px between panes.
+    density: Dense. A full screen of text, every pane visible at once on a laptop.
+    corners: Square everywhere.
+    borders:
+        3px double amber borders around panes, 1px rule dividers inside them, titles
+        cut into the top border.
+    shadows: No box shadows. Text has a 5px amber glow at 45 percent.
+    icons:
+        Line icons at 2px stroke in amber at 1em with square caps, always with the
+        word. Check circle for passed and approved, crossed square for failing,
+        triangle with a bang for requested changes, padlock for the blocked merge.
+    focus: The inverse selection bar, amber fill with black text, plus a 2px amber outline offset 2px.
+    tone:
+        Utility program voice, short caps titles and terse captions, such as CHECKS
+        11/12 and F8 Merge locked.

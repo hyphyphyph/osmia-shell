@@ -1,0 +1,49 @@
+export anchor SheetMusicStyle:
+    number: 95
+    screen: ProjectsDashboard
+    name: Sheet music
+    idea: The dashboard engraved as a page of a printed score, with five line staves under the numbers, projects as numbered movements with tempo markings, and the fortnight's tasks as notes on a staff.
+    base: light
+    palette:
+        manuscript: #fbfaf5, the score page and the style sheet
+        desk: #e9e6dc, the backdrop around the page
+        engraverBlack: #141414, notes, text, bar lines and the primary button
+        staffGrey: #8a867c, the five staff lines, never text
+        pencil: #4a463e, meta lines, captions and small numbers
+        markingRed: #7d1d2c, dynamics, numbers over notes, rehearsal bars, Behind and overdue
+        forest: #1e4d2b, On track
+        umber: #7a4a00, At risk
+        vellum: #efece2, the focus wash
+    type:
+        One serif family, Palatino Linotype, Book Antiqua, Palatino, Georgia,
+        serif. The brand is 64px bold small caps, the greeting 42px italic,
+        summary numbers 60px at 900 like a time signature, section heads
+        24px bold small caps, movement names 24px italic, markings 15 to 22px
+        bold italic, body 16px at 1.55 and captions 13 to 15px italic.
+    layout:
+        A thin top line holds the underlined search, the bell with a count
+        and New project. The page is a white score sheet with wide margins on
+        a grey desk. Its title block centres the brand in small caps over a
+        subtitle, with Allegro moderato at top left and the date and the
+        user as credits at left and right. The nav is a ruled row of links,
+        each with a boxed rehearsal letter A to F, the current one filled
+        black. The greeting is italic with a red sfz before the overdue
+        line. The four numbers sit on one staff split into four measures by
+        bar lines, each number set over five staff lines with its label
+        below. Projects are six movements numbered I to VI, each row with
+        the italic name and meta, a mini staff of ten note heads filled for
+        each tenth done, the percent, and a tempo marking with the status.
+        Below, the chart on a staff sits beside Programme notes, numbered by
+        measure. Rows fold to two lines below 960px and the chart scrolls
+        inside its box on phones.
+    spacing: An 8px unit. 14px rows, 48 to 64px between sections and 72px page margins.
+    density: Sparse. One project per line with lots of white between staves.
+    corners: Square. The only curves are note heads and the fermata.
+    borders: Hairline staff lines in fives, thin bar lines between measures, a thin and thick double bar to close a section, 1px ink rules under headings.
+    shadows: None, apart from a 1px edge under the score page.
+    icons:
+        Engraving glyphs drawn in SVG. A stemmed note for On track with a
+        tempo, a fermata for At risk with poco rit., and a hanging rest
+        block for Behind with rall. Each status also shows its word.
+    focus: A 2px black outline offset 3px with a vellum wash behind the control.
+    tone: Concert programme Italian beside plain English, such as a tempo On track, The movements and Programme notes.

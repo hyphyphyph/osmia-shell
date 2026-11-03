@@ -1,0 +1,59 @@
+export anchor BrightConfidentStyle:
+    number: 220
+    screen: ProjectsDashboard
+    name: Bright confident
+    idea: A crisp white workspace under a bold saturated blue band, with big friendly figures, rounded cards that lift off the band and one confident blue doing all the work.
+    base: light
+    palette:
+        blue: #1650f0, the band, primary buttons, this week bars, rings, links and focus
+        blueDeep: #0b2f9e, blue text on white and tint and the current nav label
+        blueTint: #e9efff, icon bubbles, department tags, ring tracks and last week fill
+        blueLine: #b9cbff, field and secondary button borders, never text
+        white: #ffffff, cards, panels and text on the band
+        page: #f6f8fc, the page below the band
+        ink: #111a2e, text and figures
+        ink2: #435069, secondary text and labels
+        line: #e1e6f0, card borders and dividers
+        green: #137a3a, On track with a solid circle and check
+        amber: #975a00, At risk with a solid triangle and bang
+        red: #c4242b, Behind with a solid square and down arrow, and overdue
+        redTint: #fdecec, the overdue bubble and the Review now pill
+    type:
+        One stack, Inter, Segoe UI Variable Display, Segoe UI, system-ui,
+        Roboto, Helvetica Neue, Arial. The greeting is 40px 800 at minus
+        0.03em, KPI figures 36px 800, section titles 22px 800, card titles
+        18px 700, body 15px, meta and labels 14px 600.
+    layout:
+        A full width saturated blue band opens the page. Its top row holds
+        a white rounded square mark with a blue check and the brand in
+        white, the six nav items as pills inside a translucent pill track
+        with the current one white and blue, then a white pill search, a
+        round translucent bell and a white initials disc. Under it the
+        hero shows Good to see you, Mara in big white type, the date with
+        a line saying 73 tasks closed this week and 14 more than last,
+        and a white pill reading 4 tasks are overdue with a clock and a
+        Review now chip. A large white New project button sits at the
+        hero's right. Four white KPI cards with 20px corners and soft
+        shadows overlap the bottom of the band, each a tinted icon bubble
+        beside a big figure and its label, the overdue one red. Below, Your
+        projects is a three by two grid of white cards, each with a
+        department tag, the name, tasks done and percent, a ring with the
+        percent at right and a footer with a solid status chip and the due
+        date with days left. Last comes a two to one row, a chart card with
+        three totals for this week, last week and the change over grouped
+        bars by weekday, last week outlined in blue on tint and this week
+        solid blue with values on top, and a team activity card with
+        initials discs. Below 980px nav scrolls on its own row, KPIs and
+        cards go two across, and on phones everything stacks in one column
+        with the chart scrolling sideways.
+    spacing: An 8px unit, generous. 20px gaps between cards, 24px card padding, 40px between sections.
+    density: Low to medium. Six project cards, big figures and plenty of air.
+    corners: Round. 20px cards, 12px buttons and fields, and pills for nav, tags, search and the overdue alert.
+    borders: 1px line on cards. 2px blueLine on fields and secondary buttons.
+    shadows: KPI cards float with a 12px offset 32px blur shadow at 10 percent ink so they lift off the band. The hero button has a deeper blue shadow.
+    icons:
+        Line icons at 2px stroke sized to their text. Status icons are 16px
+        solid shapes, a circle with a check, a triangle with a bang and a
+        square with a down arrow, beside their word.
+    focus: A 3px solid blue outline offset 3px, and white on the blue band.
+    tone: Upbeat and direct, such as Good to see you, Mara, Review now and Up 24 percent.

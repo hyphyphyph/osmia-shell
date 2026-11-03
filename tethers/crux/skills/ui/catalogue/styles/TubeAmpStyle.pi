@@ -1,0 +1,54 @@
+export anchor TubeAmpStyle:
+    number: 310
+    screen: OpsMonitor
+    name: Tube amp
+    idea: A vintage amplifier faceplate on dark tolex, a row of glowing tubes for the services, analog VU meters for traffic, errors and latency, a chart recorder, a jewel warning lamp for the incident and engraved small caps labels.
+    base: dark
+    palette:
+        tolex: #15100c, the textured page behind the amp
+        faceplate: #2a2119, the header plate, swatches and the secondary button
+        bay: #211a14, section bays
+        tag: #1a140f, tube tags, fields and the recorder
+        cream: #f3e6c8, engraved text, meter scales and p95
+        muted: #cdbb98, secondary labels
+        brass: #d6ae62, the logo, bay titles, times and the primary button
+        rule: #5a4a38, borders and dashed rules
+        amber: #ffbf5e, tube glow, the requests line, Degraded and the incident
+        mint: #9be29a, Healthy and Resolved
+        sky: #9fd4ff, Recovered and p50
+        coral: #ff8a6a, the meter red zone, the error line and Firing
+        focus: #ffe7a8, the focus outline
+    type:
+        Engraved labels in Iowan Old Style, Palatino Linotype, Palatino,
+        Georgia as small caps tracked 0.12 to 0.16em, and text in Gill Sans,
+        Optima, Trebuchet MS, system-ui at 15px. The logo is 30px italic
+        serif bold in brass, the incident number 20px serif bold amber, bay
+        titles 16px serif small caps, service names 14px mono bold.
+    layout:
+        A rounded header faceplate with brass screws holds the italic
+        Brightwork logo over Ops production 24 hours, the apps as jacks
+        that light amber for Ops, and a glowing pilot lamp marked Power on,
+        with the description below. Bays follow on the tolex. Service tubes
+        shows five drawn tubes in a row, each glowing warm, the
+        sync-worker tube dimmer with flicker marks, and under each a tag
+        with the name, status shape and word, uptime and metric. Meters
+        shows three VU meters with a cream scale, a coral red zone, a white
+        needle at the current value and a gold peak mark, for requests per
+        minute, error rate and p95 latency, each with a small caps caption
+        and a note. Chart recorder draws the four series over 24 hours on a
+        dark gridded strip with a legend. Three bays close the screen, the
+        warning lamp with an amber jewel beside the incident facts, alerts
+        and deploys. Below 980px tubes go three across and meters stack,
+        and at phone width tubes go two across.
+    spacing: An 8px unit. 20px bay padding and gaps, 16px between tubes, 24px page padding.
+    density: Roomy. Tubes and meters take most of the space.
+    corners: 16px faceplate, 12px bays, 10px meter frames, 6px tags, round jacks and pill buttons.
+    borders: A 2px dark brass edge on the faceplate, 1px #5a4a38 bays, dashed list rules.
+    shadows: A deep faceplate shadow, warm tube, lamp and jack glows, brass screw heads.
+    icons:
+        16px status shapes on tube tags and lists, a ringed tick for
+        Healthy, a triangle for Degraded, a circular arrow for Recovered, a
+        bolt for Firing, a tick for Resolved and a magnifier for
+        Investigating. Lit and unlit jacks mark the apps.
+    focus: A 3px pale gold outline offset 3px.
+    tone: Warm hardware words, such as Power on, Service tubes, Meters, Chart recorder and Warning lamp.

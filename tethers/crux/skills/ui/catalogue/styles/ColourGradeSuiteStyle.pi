@@ -1,0 +1,59 @@
+export anchor ColourGradeSuiteStyle:
+    number: 355
+    screen: VideoEditor
+    name: Colour grade suite
+    idea: A neutral eighteen percent grey grading room where scopes flank the picture, the inspector becomes a row of round wheels, and the bin is a strip of numbered thumbnails above a thin graticule timeline.
+    base: dark
+    palette:
+        roomGrey: #1f1f1f, page and style sheet, kept neutral so colour judgement stays true
+        panel: #2a2a2a, scope, viewer and wheel panels
+        well: #242424, wheel wells and thumbnail cards
+        scopeBlack: #121212, scope screens and the picture surround
+        graticule: #4c4c4c, scope grid, wheel rims and lane edges
+        ink: #e2e2e2, text
+        muted: #ababab, labels, units and notes
+        puck: #f0f0f0, wheel pucks, lit ticks, playhead and vectorscope dot
+        trace: #bff0b4, the waveform luma trace
+        neutralButton: #d4d4d4, Export, play and the selected clip, never a hue
+        focusAmber: #f2b33d, focus outline and the marker, the one warm note
+    type:
+        One system sans stack for interface text and a mono stack for
+        numbers. Base 13px at 1.45. Panel heads 11px at 600 in caps tracked
+        0.14em with a lighter aside. The timecode is mono 17px at 500, wheel
+        values mono 16px, graticule and ruler mono 9px to 10px. The title
+        card uses a serif stack, Iowan Old Style, Palatino, Georgia, at up
+        to 26px.
+    layout:
+        A slim header holds a small round hue wheel mark, Brightwork Cut, a
+        slash, Launch teaser, a mono pill reading 1080p and 24 fps, then a
+        thin render bar with Render 0% and a dashed box saying idle, and a
+        light grey Export button. The suite is a three column grid. The left
+        panel is a waveform scope on black with a 0 to 100 graticule and a
+        pale green trace, low along the floor with a cluster near 90 in the
+        middle third. The centre is the viewer with a 6px grey surround,
+        then the timecode, three round transport buttons with a light grey
+        play, and of plus the duration. The right panel is a vectorscope
+        with two rings, crosshairs and six small target squares labelled R,
+        Mg, B, Cy, G and Yl, and one white dot at the centre. A full width
+        Inspector row shows four wheels, Position as a crosshair wheel with
+        a centred puck and X 960 Y 540, Scale and Opacity as full white
+        rings reading 100 percent, and Cross dissolve as a ring of 24 ticks
+        with 12 lit reading 12 frames, each with a short note. A full width
+        Media strip shows five numbered thumbnail cards with an image or
+        bars glyph, the file name and duration with V or A. A thin Timeline
+        panel last has 18px lanes on a faint graticule, grey clips with a
+        grey edge, the selected title clip filled light grey with a diamond,
+        an amber marker triangle with a dashed line and a white playhead
+        with an up triangle and 18. At phone width only the viewer and the
+        timeline remain.
+    spacing: An 8px unit with 12px gaps between panels and 14px panel padding.
+    density: Medium high. Scopes, picture, four wheels, a thumbnail strip and a thin timeline.
+    corners: 8px panels, 6px buttons and cards, round transport buttons and wheels.
+    borders: 1px #383838 panel edges and 1px #8a8a8a clip edges. Scopes sit borderless on black.
+    shadows: A soft drop shadow under each wheel only, and a 6px grey surround on the picture.
+    icons:
+        Filled transport glyphs in round buttons. Wheels and rings show
+        state by shape, always with the written value beneath. A diamond
+        marks the selected clip, a down triangle the marker.
+    focus: A 2px amber outline offset 2px, the only warm colour on the screen.
+    tone: Technical and calm, such as Waveform luma, Puck centred and 12 of 24 ticks.

@@ -1,0 +1,58 @@
+export anchor FieldManualStyle:
+    number: 132
+    screen: ProjectsDashboard
+    name: Field manual
+    idea: The dashboard written as a light olive drab field manual, with stencil headings, numbered paragraphs, a boxed WARNING for the overdue tasks, ruled tables with hatched progress bars and figures with numbered captions.
+    base: light
+    palette:
+        paper: #e3e1cc, the page around the manual
+        page: #f5f3e6, manual pages, fields and the hatch ground
+        oliveDrab: #4b5320, the top band, table heads, the current item and this week bars
+        darkOlive: #363c17, the band edge and the bell
+        ink: #1f2113, text, 2px rules, hatching and focus
+        fadedInk: #4a4c36, captions, times and page numbers
+        khaki: #a59f78, dotted leaders, never text
+        signalYellow: #f2d24b, the primary button and the focus halo
+        onTrack: #36561f, the filled circle
+        atRisk: #7d5300, the triangle with a bar
+        behind: #9e2a1e, the crossed square, the WARNING label and the stamp
+    type:
+        Headings use Stencil, Stencil Std, Stencilia, Arial Black, Impact,
+        sans-serif. Labels use Arial Narrow, Roboto Condensed, Helvetica Neue
+        Condensed, Liberation Sans Narrow, Arial in bold caps tracked 0.06
+        to 0.16em. Text uses Century Schoolbook, New Century Schoolbook, TeX
+        Gyre Schola, Georgia, serif. The chapter title is 30px stencil,
+        strength numbers 40px stencil, paragraph heads 17px narrow caps with
+        a stencil number, the greeting 26px serif, body 15px at 1.5, times
+        12.5px narrow caps in brackets.
+    layout:
+        An olive band with a darker 6px bottom edge holds a shield logo, the
+        stencil brand with FIELD MANUAL BW 10-31 DAILY SITUATION under it, a
+        boxed caps search, a yellow New project button, a square bell and
+        the name boxed as OKAFOR, MARA. A 220px CONTENTS box on the left
+        lists the nav with chapter numbers 1-1 to 6-1 on dotted leaders,
+        Home filled olive, with a tilted red FOR TEAM USE stamp. The page on
+        the right opens with CHAPTER 1 SITUATION REPORT over a 4px rule and
+        SECTION I 31 OCT 2026. Numbered paragraphs follow. 1-1 Greeting
+        gives Good afternoon, Mara. and the date. 1-2 Priority is a boxed
+        WARNING with a red label saying 4 tasks are overdue, Clear these
+        first. 1-3 Strength is a four cell ruled box of stencil numbers,
+        the overdue cell tinted. 1-4 Operations is Table 1-1 with olive
+        heads, a serial letter, project, unit, a hatched progress bar with
+        percent, tasks, due date in caps and status. 1-5 Activity log lists
+        lettered sub paragraphs with bracketed times, beside 1-6 Tempo, a
+        boxed Figure 1-1 with hatched bars for last week and solid olive bars
+        for this week, axis ticks and bracketed week totals. A ruled foot
+        gives BW 10-31 and the page number. Below 980px the contents become
+        a grid above the page, the table scrolls inside itself.
+    spacing: An 8px unit. 20px between paragraphs, 24px page padding and 32px between side by side paragraphs.
+    density: Dense and orderly. Everything sits in numbered paragraphs on one long page.
+    corners: Square, always.
+    borders: 2px ink boxes, 1px ruled table cells, a 4px rule under the chapter title and a 3px WARNING box.
+    shadows: None.
+    icons:
+        Solid 16px symbols with the caps word, a filled circle for ON TRACK,
+        a triangle with a bar for AT RISK and a crossed square for BEHIND.
+        Hatching marks figures.
+    focus: A 3px ink outline offset 2px inside a 5px signal yellow halo.
+    tone: Orders and reports, such as Situation report, Strength, Operations, Tempo and Clear these first.

@@ -1,0 +1,45 @@
+export anchor PublicServicePlainStyle:
+    number: 46
+    screen: Settings
+    name: Public service plain
+    idea: A plain public-service form in black on white, one bold sans and a thick yellow focus, where nothing is decoration and every heading sits hard left.
+    base: light
+    palette:
+        ink: #0b0c0c, text, checkbox borders, the primary button and the header rule
+        paper: #ffffff, the page and fields
+        hint: #4f575b, hint text and captions
+        rule: #b1b4b6, thin dividers and the bar beside nested options
+        link: #1a4f8b, underlined links
+        focus: #ffdd00, the focus fill and ring, always paired with black
+        panel: #f3f2f1, the secondary button
+        success: #1a6b3c, the saved banner border, its title bar and tick
+        warning: #b3261e, the Leave workspace button
+    type:
+        One sans only, Arial, Helvetica Neue, Helvetica, Liberation Sans,
+        sans-serif. The page title is 48px bold at 1.04 line height with a
+        19px grey caption above it. Section titles are 32px bold, legends
+        24px bold, body 19px regular at 1.45 and hints 19px in grey. Buttons
+        are 19px bold.
+    layout:
+        A white header with the brand on the left and Mara Okafor on the
+        right, closed by a 10px black rule. The content is 1020px wide. A
+        one third column holds the section links as a plain list, the
+        current one bold black with a 5px black bar on its left. The two
+        thirds column holds the saved banner, the form as one long column,
+        the buttons, a thin rule and the Danger zone. Under 760px the
+        columns stack.
+    spacing: An 8px unit used as 16, 24 and 40. 16px between options, 32px between groups, 40px between columns.
+    density: Low to medium. A single long form read top to bottom.
+    corners: Square everywhere. Only radios are round.
+    borders: 2px black on fields and boxes, 10px black under the header, 1px #b1b4b6 dividers, a 5px green frame on the saved banner.
+    shadows: Only a flat 3px bottom edge on buttons, grey on the black and light buttons and dark red on the warning button.
+    icons:
+        Almost none. A thick black square tick inside 40px square boxes, a
+        filled dot inside 40px round radios, a green tick before Changes
+        saved, and a white exclamation mark in a black circle before the
+        danger warning.
+    focus:
+        Links and buttons turn #ffdd00 with black text and a 4px black bar
+        beneath. Fields get a 3px #ffdd00 outline plus a 2px black inner
+        ring. Boxes get a 4px yellow ring.
+    tone: Direct and instructional, such as Select all that apply and If you leave, you lose access to this workspace.

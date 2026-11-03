@@ -1,0 +1,56 @@
+export anchor PiggyPlayfulStyle:
+    number: 369
+    screen: FinanceBudget
+    name: Piggy playful
+    idea: A friendly rounded money app on deep plum, with a big pink piggy bank that fills like a jar for the savings goal, budgets as little glass jars with faces that fill up, and cheerful words that stay kind when a jar overflows.
+    base: dark
+    palette:
+        plumNight: #1c1630, the page and the style sheet
+        card: #28203f, cards and pockets
+        cardTwo: #352b52, chips, feed rows, empty glass and the secondary button
+        line: #4a3f6e, field borders, jar lids and payee discs
+        ink: #fbf4ff, text and the jar and piggy outlines
+        muted: #c4b8dd, labels, dates and the jar glass outline
+        pink: #ff9fcb, the piggy fill, the brand disc and the primary button
+        onPink: #3a0c24, text on pink
+        mint: #8ff0c8, jars with room to spare, money in and free money
+        sun: #ffd66e, Full up jars, coins and the focus ring
+        oops: #ff9b8a, the overflowing jar and the owed card balance
+    type:
+        A rounded stack, ui-rounded, SF Pro Rounded, Nunito, Varela Round, Arial
+        Rounded MT Bold, Segoe UI, system-ui. Base 16px at 1.5. The greeting is
+        34px at 800, the goal figure 36px at 800, card titles 21px at 800, body
+        16px at 700 and tags 13px at 800.
+    layout:
+        A 1160px page. The top row has a round pink disc with a tiny piggy, the
+        name and pill nav on the right, My month ringed in pink. Nice going,
+        Mara! leads with a line saying four jars are fine and one got a little
+        too full. A wide left column holds Your pockets, three cards with one
+        tucked corner for Everyday, Savings and Credit card in coral with a
+        clock and Pay by 12 Nov, then the October jars card with five drawn
+        glass jars in a row, each filled to its share in mint, sun or coral,
+        with eyes and a mouth. Under each jar sit the name, spent of limit and a
+        pill tag. Eating out overflows with drips and a frown. A pill below says
+        60 is still free. A 380px right column holds the Japan trip piggy, a
+        large outlined pig filled pink to 64 percent with coins inside and 64%
+        on the fill, then 3,200 of 5,000, Only 1,800 more to go and a Fly day 1
+        April 2027 chip, then What happened lately as rounded rows with plus or
+        minus discs, the salary disc in mint. Below 1000px the columns stack.
+        Below 640px pockets stack and jars go three across.
+    spacing:
+        An 8px unit. 24px gutters and card padding, 14px between pockets, 12px
+        between jars.
+    density: Low. Three pockets, five jars, one piggy and five feed rows.
+    corners:
+        Very round. 32px cards, pockets with one 8px tucked corner, 22px rows,
+        pill tags and buttons.
+    borders: None on cards. Thick 3 to 5px light outlines on the jar and piggy drawings.
+    shadows: Only a soft 4px ledge under buttons.
+    icons:
+        Drawn jars with faces, a smile for room to spare, a flat mouth for Full
+        up and a frown with overflow drips for over. Tags repeat it with a
+        circle check, ruled square or triangle beside the word.
+    focus: A 3px sunny yellow outline offset 4px with round corners.
+    tone:
+        Warm and playful, such as Nice going, Mara!, 64 to spare, Full up, Oops,
+        62 over and money in, yay.

@@ -1,0 +1,53 @@
+export anchor BlueprintStyle:
+    number: 7
+    screen: ProjectsDashboard
+    name: Blueprint
+    idea: The dashboard as an engineering drawing on pale blue drafting paper, with navy line work, monospace lettering, outlined boxes and dimension style annotations.
+    base: light
+    palette:
+        paper: #e9f2fc, the page under the grid
+        gridMinor: #d6e5f6, the 8px background grid
+        gridMajor: #bcd4ee, the 40px background grid and chart guide lines
+        wash: #f4f8fd, the fill inside every box
+        navy: #0b2a5b, text, the sheet frame, box outlines and the primary button
+        lineBlue: #1d5fa8, rules, table lines, progress fill, open chart bars and links
+        cyan: #2a9fd6, decoration only and never text
+        pencil: #3c5a80, captions, labels and meta text
+        green: #0b6146, the On track status
+        amber: #8a5300, the At risk status
+        redline: #b0213a, the Behind status, the overdue count and the overdue note
+        trace: #fff7d6, the focus fill
+    type:
+        One monospace family for everything, ui-monospace, SF Mono,
+        Cascadia Mono, Menlo, Consolas, Liberation Mono, monospace. Sizes
+        are 44px bold summary figures, a 30px bold greeting, 22px brand
+        in caps with 0.18em tracking, 13px bold caps figure titles with
+        0.14em tracking, 14px body at 1.5 and 11px caps captions with
+        0.14em tracking.
+    layout:
+        A drawing sheet capped at 1280px with a 2px navy outer frame and a
+        1px blue inner frame. At the top a title block grid lists Project
+        Brightwork, Drawing Home Overview, Drawn by Mara Okafor, the date
+        and Sheet 01 of 06. A tool row holds the search, the bell and New
+        project, then the nav as numbered sheet tabs 01 to 06. A General
+        Notes box holds the greeting as a numbered list beside a summary
+        strip whose labels sit on dimension lines with end ticks. Below,
+        FIG. 1 PROJECT SCHEDULE is a full width ruled table with refs P-01
+        to P-06 and a key. FIG. 2 THROUGHPUT and FIG. 3 ACTIVITY LOG sit
+        side by side. Every figure title is set into the top border of its
+        box. Below 1000px everything stacks, the title block becomes two
+        columns and the table scrolls inside its box.
+    spacing: An 8px unit matching the minor grid. 24px between figures and 16 to 24px inside.
+    density: Medium. 40px table rows and figures packed like a drawing sheet.
+    corners: Square. Only the initial tags and the status rings are round.
+    borders: A 2px navy sheet frame, a 1px blue inner frame, 1px navy figure boxes, 1px blue table cells and 1px dashed blue dividers.
+    shadows: None.
+    icons:
+        Outline drafting icons with a 1.5px stroke. Status is a ringed dot
+        for On track, an open triangle with a bar for At risk and a
+        crossed square for Behind, beside the word in caps. The chart uses
+        open outlined bars for last week and hatched bars for this week,
+        with dimension lines marking each week total and a leader to MAX
+        17. People show as outlined circle initials.
+    focus: A 2px dashed navy outline offset 3px with the trace fill.
+    tone: Technical drawing language with caps labels, FIG. numbers, refs such as P-04, and times written as T minus 12 min.

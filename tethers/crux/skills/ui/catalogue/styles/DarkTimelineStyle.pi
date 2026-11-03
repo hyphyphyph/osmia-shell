@@ -1,0 +1,59 @@
+export anchor DarkTimelineStyle:
+    number: 232
+    screen: ProjectsDashboard
+    name: Dark timeline
+    idea: The dashboard read as a schedule, where every project is a bar on a shared date axis from October to January with its done share filled, its due date marked and one orange today line cutting through all of them.
+    base: dark
+    palette:
+        ground: #0f1113, the page, fields and the style sheet
+        panel: #16191c, the top bar, panels and lanes
+        band: #1b1f23, the remaining part of a bar, the current tab and the secondary button
+        line: #2a2f35, panel edges, axis rules and the activity spine
+        grid: #22272c, weekly grid lines and lane dividers
+        ink: #e8eaed, text and the due diamonds
+        muted: #9ea6af, labels, dates and axis text
+        orange: #ff9f5a, the today line and tag, the date line, the current tab edge, the primary button and focus
+        onOrange: #2b1302, text on orange
+        done: #86b3ff, the done part of each bar and this week bars
+        remaining: #68737f, the bar outline for remaining time
+        lastWeek: #6e7884, last week bars
+        ok: #7fd69e, the On track word and icon
+        risk: #f2c66a, the At risk word and icon
+        bad: #ff978a, the Behind word and icon and the overdue line
+    type:
+        Segoe UI first, then system-ui, Roboto. Dates, axis labels and
+        figures in ui-monospace, Cascadia Mono, Menlo, Consolas. Base 14px.
+        The greeting is 24px at 650, figures 20px mono at 600, lane names
+        14px at 600, dates and axis labels 12px mono, the today tag 11px mono
+        at 700.
+    layout:
+        A 56px panel top bar holds an orange calendar icon with the name, a
+        segmented nav with Home raised and edged orange below, search, an
+        orange New project button, a square bell and a square MO tile with
+        Mara Okafor. Below, the date in orange mono sits over Good morning,
+        Mara and a red line reading 4 tasks are overdue, with the four
+        figures as one bordered strip on the right. The main panel is
+        Project timeline · October to January with a key for done,
+        remaining, due date and today. A 250px label column, sticky when the
+        panel scrolls, lists each project with category, tasks and status.
+        The track area spans 1 October 2026 to 20 January 2027 with month
+        labels and weekly grid lines. Each lane draws a bar from a sample
+        start date to the due date, outlined for remaining time and filled
+        blue for the done share, ends in a diamond with the percent and due
+        date, and the orange today line at 31 October crosses every lane
+        under a Today 31 Oct tag. Below sit two panels, the daily chart with
+        paired weekly bars and the totals in its header, and Recent activity
+        as a vertical spine with dots, the newest dot orange. Below 960px
+        the nav and search take their own rows and the lower panels stack.
+        Below 700px the timeline scrolls sideways inside its panel.
+    spacing: An 8px unit. 62px lanes, 16px panel padding, 16px between panels.
+    density: Medium. Six lanes on one axis, then chart and activity side by side.
+    corners: 4px panels, buttons and fields, 3px bars and the today tag.
+    borders: 1px #2a2f35 on panels and the axis, #22272c weekly grid lines. Bars have a 1.5px outline for remaining time.
+    shadows: None. The orange today line is the only thing that stands out.
+    icons:
+        Line icons at 1.8 stroke, 16px, and a diamond for each due date.
+        Status is a check circle, a triangle or a crossed square with the
+        word.
+    focus: A 2px orange outline offset 2px, also on the scrolling timeline region.
+    tone: Schedule-minded, such as Project timeline, Today 31 Oct, due 20 Nov and Newest first.

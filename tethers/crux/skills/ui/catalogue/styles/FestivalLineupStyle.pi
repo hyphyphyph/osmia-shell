@@ -1,0 +1,49 @@
+export anchor FestivalLineupStyle:
+    number: 94
+    screen: ProjectsDashboard
+    name: Festival lineup
+    idea: The dashboard printed as a music festival lineup poster, with projects billed on stage columns, headliners sized by how many tasks they carry, and set times for the team's activity.
+    base: light
+    palette:
+        cream: #fff4e3, the poster paper and the page
+        nightInk: #22102e, all text, rules and the primary button
+        smoke: #4a3a52, meta lines and day labels
+        stageTeal: #0d5c63, week one bars, On track and links
+        magenta: #b3165f, week two bars, act progress bars, stage tags and nav stars
+        sirenRed: #a3122a, Behind and overdue
+        amberInk: #8a4b00, At risk
+        sun: #f6b93b, the sunburst behind the brand and the focus glow, never text
+        lilac: #ecdcf5, the box office bar and empty progress tracks
+    type:
+        Display is a condensed heavy sans, Avenir Next Condensed, Roboto
+        Condensed, Arial Narrow, sans-serif at 800 with font-stretch
+        condensed, always uppercase. Text is system-ui, Segoe UI, Roboto,
+        sans-serif. The brand is 56 to 150px fluid caps at 0.85 line height,
+        the greeting 34 to 64px caps, summary numbers 64px, headliner names
+        48px, then 36, 28 and 22px by task count, section bills 34px, body
+        15px at 1.5 and labels 12px caps tracked 0.14em.
+    layout:
+        A slim lilac box office bar holds a Box office tag, the search field,
+        New project, the bell with a count and the user. Below it a centred
+        poster head has the date and presents line, the huge brand over pale
+        sun rays fanning from a half sun, and caps nav links split by
+        magenta stars. The greeting is centred with a red outlined warning
+        box. The four numbers sit in one band between 3px ink rules, split
+        by hairlines. The lineup has three stage columns, Engineering, Design
+        and Research, and Marketing, each with two acts centred under a 3px
+        rule, the bigger project billed larger, with meta, a magenta progress
+        bar, percent and status. Below, a bar chart called Fourteen nights
+        sits beside Set times, a list with the time in magenta caps and the
+        person in condensed caps. Stages stack below 900px and the numbers
+        go two by two on phones.
+    spacing: An 8px unit. 24px gutters between stage columns and 48 to 56px between bands.
+    density: Medium. Big type up top and tighter fine print lower down, like a poster.
+    corners: Square everywhere except the round avatar and notification count.
+    borders: 3px ink rules over each stage and around the numbers band, 1px ink rules between acts and set times.
+    shadows: None. Depth comes from the sunburst behind the brand.
+    icons:
+        Solid shapes in currentColor at text size. A filled circle for On
+        track, a filled triangle for At risk and a heavy cross for Behind and
+        overdue, always with the caps word. Stars divide the nav.
+    focus: A 3px ink outline offset 2px inside a 7px sun yellow glow.
+    tone: Festival billing in caps, such as The lineup, Fourteen nights, Set times and Tonight's warning.

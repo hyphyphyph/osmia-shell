@@ -1,0 +1,62 @@
+export anchor FluentLikeStyle:
+    number: 215
+    screen: ProjectsDashboard
+    name: Fluent-like
+    idea: A modern desktop look built from soft layers, a tinted base, a lighter content layer with one rounded corner, and white 4px cards stacked like settings rows beside a navigation pane with a small accent pill.
+    base: light
+    palette:
+        base: #eef0f3, the window base under the title bar and navigation pane
+        layer: #f9f9fa, the content layer and the style sheet
+        card: #ffffff, project rows, KPI tiles and panels
+        stroke: #e3e5e8, the layer edge, dividers and field sides
+        text: #1a1a1a, primary text and the focus ring
+        textSecondary: #5c5f64, captions, meta and chart labels
+        accent: #0a5cb0, the accent button, nav pill, field underline, progress and this week bars
+        accentTint: #e6f0fa, the project icon tiles
+        caution: #fff4ce, the overdue info bar, with its icon in #8a5300
+        onTrack: #0f7b2e, a filled circle with a white tick
+        atRisk: #9a5a00, a filled triangle with a white bang
+        behind: #c0261b, a filled octagon with a white cross and the overdue value
+    type:
+        Text uses Segoe UI Variable Text, Segoe UI, system-ui,
+        -apple-system, Roboto, Noto Sans, Helvetica Neue, Arial,
+        sans-serif, and titles use the Display cut of the same family. A
+        ramp of Title 28 on 36 semibold for the greeting, Subtitle 20 on
+        28 semibold for section heads, KPI values 28 semibold, body strong
+        14 on 20 for project names, body 14 on 20 and caption 12 on 16.
+    layout:
+        No top header band. A 48px title bar sits on the base with a back
+        button, a small gradient app mark and the name Brightwork on the
+        left, a 480px search box in the centre and the accent New project
+        button, a bell with a red dot and a round persona on the right.
+        Under it a 264px navigation pane on the base holds a hamburger
+        button and five 36px items with icons, the current one with a
+        light grey fill, bold text and a 3 by 16px accent pill at its left
+        edge, and Settings pinned at the bottom under a divider. The
+        content layer fills the rest, lighter, with a hairline edge and an
+        8px top left corner. Inside it a small date caption sits over the
+        greeting title, then a full width yellow info bar says Caution,
+        4 tasks are overdue, with an Open Tasks button at its end. Below,
+        two columns. The wide left column has a Projects subtitle with a
+        See all projects link and six white cards stacked 4px apart, each
+        a row of a 40px tinted icon tile, name over team and due date, a
+        progress block with tasks and percent over a 3px bar, the status
+        and a chevron. The 320px right column has a This week subtitle
+        over a two by two grid of KPI tiles, then a chart panel and a
+        recent activity panel with round personas and times under each
+        line. Under 1100px the columns merge with the KPI tiles first in
+        a row of four. Under 760px the pane becomes a Home disclosure
+        button that opens a menu of all six items, the search drops to its
+        own row and project cards stack their progress and status.
+    spacing: A 4px base. Cards sit 4px apart, sections 24px apart, and the layer has 28 by 40px padding.
+    density: Comfortable. 36px nav items, 32px controls and 68px project rows.
+    corners: 4px on controls, cards and tiles, 8px on the content layer and flyouts, round personas.
+    borders: Hairline strokes, with a darker bottom edge on fields and buttons in the manner of a soft bevel.
+    shadows: Cards lift with a 1px ring at 5 percent plus 0 2px 4px at 5 percent. Flyouts use 0 8px 16px at 12 percent.
+    icons:
+        16px thin line icons at stroke 1.5 for navigation and labels.
+        Status icons are filled shapes with a white mark, a circle with a
+        tick, a triangle with a bang and an octagon with a cross, beside
+        the word in plain text.
+    focus: A 2px near black outline offset 1px with a 4px white halo outside it. A focused field instead gets a 2px accent bottom border.
+    tone: Calm and plain, such as Caution, See all projects, Open Tasks and Recent activity.

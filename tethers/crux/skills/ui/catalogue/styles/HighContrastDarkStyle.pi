@@ -1,0 +1,45 @@
+export anchor HighContrastDarkStyle:
+    number: 248
+    screen: DesignEditor
+    name: High contrast dark
+    idea: Pure white on pure black with 2px white rules, literal labels under every tool and no colour at all except a bright yellow focus ring, so every part of the editor passes AAA.
+    base: dark
+    palette:
+        black: #000000, every surface and text on white
+        white: #ffffff, text, rules, the selected row, the active tool and the primary button
+        grey: #d6d6d6, disabled controls only
+        yellow: #ffe500, the focus ring only, never text or decoration
+    type:
+        One stack, Atkinson Hyperlegible, Verdana, Segoe UI, system-ui,
+        Roboto, Arial. Body 16px at 1.5. Panel titles 20px 800, names 16px
+        700, the smallest text 15px 700 and the sheet title 32px 800.
+        Nothing is smaller than 15px.
+    layout:
+        A masthead under a 2px rule holds a white B square, Website
+        redesign over Canvas, page Home v3, the words In this file with
+        three ringed initials, an outlined Present and a white Share. Below
+        runs a full width row of 88px boxed tools, each an icon over its
+        word, Move inverted white and underlined, then a Zoom 66% box. The
+        work area has three columns split by 2px white rules, a 280px
+        layers list, the canvas and a 320px inspector. Every layer row is
+        48px with its type written as a second line such as Frame, Text or
+        Component instance, Hero inverted white with a boxed Selected tag
+        and Features with a boxed Collapsed tag. The inspector is a ruled
+        definition list of 48px rows, Position, Size, Fill, Layout,
+        Spacing, Corners and Export, with white boxed inputs. The canvas
+        shows the white frame with a 3px white dashed selection offset
+        6px, black squares with white borders as handles and the comment
+        in a black box with a white border. Three status boxes sit under
+        it. Below 760px the side columns and tool row hide and a three by
+        two grid of labelled tools sits under the canvas.
+    spacing: An 8px unit. 44 to 64px targets, 16px panel padding, 24 to 32px around the frame.
+    density: Low. Labelled tools, two line layer rows and large values.
+    corners: Square. Only avatars and the comment pin are round.
+    borders: 2px white on every panel, row and control, 4px under sheet headings and 8px over the sheet.
+    shadows: None. Selection on the canvas is a 3px white dashed outline offset 6px.
+    icons:
+        Line icons at 2.25px stroke sized 1.25em, always next to a word.
+        Saved uses a check circle, editing two people and the version a
+        tag, each in its own ruled box.
+    focus: A 3px yellow outline offset 3px, the only colour on the page.
+    tone: Literal and complete, such as Hero, selected and Component instance.

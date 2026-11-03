@@ -1,0 +1,54 @@
+export anchor ObservatoryStyle:
+    number: 320
+    screen: OpsMonitor
+    name: Observatory
+    idea: A night observatory console where the last 24 hours are a round sky chart with traffic as a glowing contour and events as numbered marks on the rim, beside monospaced telescope readouts for each service.
+    base: dark
+    palette:
+        nightSky: #04060d, the page with a sparse field of tiny stars
+        console: #0a0f1e, panels and the style sheet
+        consoleRaised: #111833, list rows
+        ink: #e7ecff, text
+        muted: #9ea9c9, labels, axis and times
+        graticule: #26304d, borders, dashed rings and rules
+        instrumentCyan: #7fd4ff, the traffic contour, object names, deploy stars, p50, the current app, buttons and panel corner ticks
+        starGold: #ffd27a, the peak star, the incident ID, p95, Degraded and Investigating
+        nightRed: #ff8b8b, the error line, firing and spike marks, Firing words and focus
+        healthy: #8be0b0, Healthy and Resolved with circle and square
+        recovered: #a8ccff, Recovered with a diamond
+    type:
+        Body in ui-monospace, SF Mono, Menlo, Consolas at 14px and 1.55.
+        Titles in Futura, Century Gothic, Trebuchet MS at 600 in caps,
+        panel titles 13px tracked 0.22em, the sheet title 22px tracked
+        0.16em. The incident ID is 24px mono in gold, readings 22px mono,
+        axis and dial labels 10 to 11px mono.
+    layout:
+        A header with a thin telescope mark, BRIGHTWORK OPS in tracked
+        geometric caps over a mono line production window 24 h, and the
+        suite apps in a bordered segmented strip with Ops filled cyan. A
+        two column grid follows. Left is the 24 hour sky panel, a round
+        polar chart where time runs clockwise from 10 yesterday at the top,
+        dashed rings mark 2.5k to 10k requests per minute, and the traffic
+        contour is a translucent cyan shape widest at the afternoon peak
+        with a gold peak star. Numbered marks sit on two rims, deploy stars
+        inside and alert shapes outside, and a key plus a numbered Rim
+        events list explain them. Right is a Service readouts table with
+        Object, Status, Uptime and Reading columns in mono, then Incident
+        under watch as a definition list with INC-0427 in gold and two
+        buttons. A full width row of three strips holds Error rate, Latency
+        and an Observation log of alerts and deploys. Panels are near opaque
+        with cyan corner ticks at top left and bottom right. Below 1000px the
+        columns stack, below 760px the strips stack and the readout table
+        scrolls inside its panel.
+    spacing: An 8px unit. 24px gutter and gaps, 18 by 20px panel padding, 10px table cell padding.
+    density: Medium dense. A large dial, a five row readout table and three strips.
+    corners: 2px panels and controls. The dial and swatches are round.
+    borders: 1px graticule borders with cyan corner ticks, dashed rules between rows.
+    shadows: None. Panels sit nearly opaque over the star field.
+    icons:
+        A thin telescope mark. On the dial, four point stars for deploys,
+        squares for resolved, an octagon for firing and a triangle for the
+        error spike, each numbered. In text, filled circle, triangle,
+        diamond, octagon and square, and a magnifier, with the word.
+    focus: A 2px night red outline offset 3px with a faint red halo.
+    tone: Instrument log terms such as 24 hour sky, Service readouts, Object, Reading and Incident under watch.

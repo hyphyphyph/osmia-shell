@@ -1,0 +1,54 @@
+export anchor CardCatalogueStyle:
+    number: 43
+    screen: ProjectDetail
+    name: Card catalogue
+    idea: The project is a drawer of library index cards, each one typewritten on ruled stock with a call number, a punched hole and rubber stamps for status.
+    base: light
+    palette:
+        linen: #efe8da, the page and the punched holes
+        card: #fffdf4, index cards and fields
+        ink: #26221d, typed text and the primary button
+        faded: #5e564b, tracings and labels
+        ruledBlue: #c9daea, the ruled lines on cards, decorative only
+        redLine: #d98b80, the header rule on cards, decorative only
+        stampRed: #a3231a, the Blocked stamp
+        stampGreen: #1f5a37, the On track stamp
+        oak: #d8c3a0, the drawer front
+        brass: #b08d3c, the label holder and the drawer pull
+        guideBuff: #f3e7c4, guide cards with tabs and the focus halo
+        pencilBlue: #1b3f73, the handwritten discussion note
+    type:
+        A typewriter mono, "Courier Prime", "American Typewriter", "Courier
+        New", Courier, monospace, on a 24px line grid. Sizes are 22px bold
+        for the drawer label, 15px bold card headings ending in a full stop,
+        15px regular body, 12px bold stacked call numbers at 12px line
+        height, and 13px bold uppercase tabs and stamps with wide tracking.
+        The discussion note uses a hand font, "Bradley Hand", "Segoe Print",
+        cursive, at 18px.
+    layout:
+        A cream top bar holds BRIGHTWORK in tracked caps, nav links, a Look
+        up field and Reader Mara Okafor. Below sits a wide oak drawer front
+        with a brass label holder showing DSN 01 and the title, the Add card
+        and Edit buttons, and a brass pull. The cards follow in a grid of
+        330px minimum cards, three across on wide screens. A main entry card
+        carries the facts, a typed progress bar of X and dots, and an On
+        track stamp. A summary card carries the brief and tracings. Buff
+        guide cards with raised tabs span the full width to divide
+        Milestones, Open tasks and Discussion. Each open task gets its own
+        card. The files card is a See also list. The notes card holds the
+        pencilled quote and a reply line. Each card has a stacked call
+        number at top left, a hanging indent, a red header line, blue ruled
+        lines and a punched hole at the bottom centre. Below 600px the cards
+        stack in one column.
+    spacing: The 24px line grid set by the ruled cards. 24 to 30px between cards and an 86px hanging indent after the call number.
+    density: Medium. One fact per typed line and one task per card.
+    corners: Square cards, 3px tab tops, a 4px drawer and round punched holes.
+    borders: 1px warm grey card edges, a 2px oak brown drawer frame, and a double line border on the Blocked stamp.
+    shadows: A 1px edge line and a soft 2px drop under cards, and an inset shadow in each punched hole.
+    icons:
+        Typed brackets beside words, X for done, a slash for in progress and
+        a blank for planned. Rubber stamps carry a tick for On track and a
+        slashed circle for Blocked, tilted a few degrees. The drawer pull
+        is drawn in SVG.
+    focus: A 2px ink outline offset 3px with a 5px buff halo.
+    tone: Cataloguer shorthand ending in full stops, such as Assigned, Aiko Tanaka, and See also.

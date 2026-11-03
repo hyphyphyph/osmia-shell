@@ -1,0 +1,50 @@
+export anchor HighContrastProfessionalStyle:
+    number: 223
+    screen: ProjectsDashboard
+    name: High contrast professional
+    idea: Strict black on white with heavy 2px rules, large plain type and no colour at all except a bright yellow focus ring, built first for people who need maximum contrast and still calm enough for daily work.
+    base: light
+    palette:
+        black: #111111, text, rules, the header, primary button, this week bars and the Behind chip
+        white: #ffffff, the page, fields, text on black and last week bars
+        grey: #f2f2f2, reserved for disabled surfaces, never behind text that matters
+        mid: #4a4a4a, placeholder text only
+        yellow: #ffd60a, the focus ring, never text and never decoration
+    type:
+        One stack, Atkinson Hyperlegible, Segoe UI, system-ui, Roboto,
+        Helvetica Neue, Arial. The greeting is 36px 800, KPI figures 52px
+        800, section titles 26px 800 over a 4px rule, project names 17px
+        800 underlined, body 16px and meta 15px 700. Nothing is smaller
+        than 15px.
+    layout:
+        A black masthead holds a white square mark with a black check, the
+        brand in white, a white search field, a white New project button,
+        a square outlined bell with a count and a round outlined initials
+        disc with Mara Okafor. Under it the nav is a row of six equal
+        boxed links split by 2px black rules, the current one filled black
+        with white underlined text. The body is one 1120px column. The
+        greeting Hello, Mara sits over the date, then a box with a 3px
+        border and a 12px left bar reads 4 tasks are overdue with a clock
+        and a Show overdue tasks link. The four KPIs are one bordered box
+        split into four cells by 2px rules, each a label over a 52px
+        figure, the overdue cell inverted black. Projects is a full width
+        table with 2px row rules, columns for project and department, a
+        bordered status chip, a bordered progress bar with percent, tasks
+        done and due date with days left. Last, two columns hold the chart
+        with paired bars by weekday, last week white with a black outline
+        and this week solid black with values on top, and a numbered list
+        of recent activity with boxed numbers. Below 760px the nav becomes
+        a three by two grid of boxes, KPIs go two by two, table rows become
+        stacked blocks and the chart scrolls sideways.
+    spacing: An 8px unit. 44px minimum targets, 14px row padding, 40 to 48px between sections.
+    density: Medium low. One column for summary and table, then chart and activity side by side.
+    corners: Square everywhere. Only the avatar and the notification count are round.
+    borders: 2px black on every box, rule and row. 4px under section titles, a 12px left bar on the overdue note and 8px over the style sheet.
+    shadows: None. The only box shadow is the yellow focus ring.
+    icons:
+        Line icons at 2px stroke sized at 1.25em. Status shapes are 20px,
+        an outlined circle with a check, an outlined triangle with a bang
+        and a solid square with a down arrow in an inverted chip for
+        Behind, each with its word in a bordered chip.
+    focus: A 3px black outline with a 7px yellow ring outside it on white, and a 3px yellow outline on black.
+    tone: Direct and literal, such as Hello, Mara, 4 tasks are overdue and Show overdue tasks.

@@ -1,0 +1,58 @@
+export anchor HumanistStyle:
+    number: 208
+    screen: ProjectsDashboard
+    name: Humanist
+    idea: A warm, serious workspace set in a humanist sans, with soft ivory surfaces, clay accents, rounded but restrained shapes and plain friendly words.
+    base: light
+    palette:
+        ivory: #fbf8f4, the page, resting fields and fact tiles
+        white: #ffffff, cards, the top bar and the style sheet
+        oat: #f3ece4, the navigation band
+        cocoa: #2a2522, text
+        stone: #625a55, secondary text, dates and chart axis
+        sand: #e9dfd5, borders and dividers, never text
+        clay: #a8441f, the primary button, links, progress rings, the chart line and focus
+        blush: #f8e9e1, the focus halo and the logo disc
+        peach: #f1d9cc, the chart area fill, never text
+        sage: #3d6b55, KPI icons on #e7f0ea
+        green: #2f6a4b, On track on #e7f0ea with a circle and check
+        amber: #8a5000, At risk on #fbefd9 with a rounded triangle
+        roseRed: #a92f3a, Behind and the overdue note on #fbe9ea with a rounded square and back chevron
+    type:
+        One humanist stack, Segoe UI, Optima, Candara, Gill Sans, Noto Sans,
+        Trebuchet MS, sans-serif. Body is 15px at 1.6. The greeting is 30px
+        at 600, week totals 28px, KPI values 24px, section titles 17px at
+        600, project names 16px at 600 and meta lines 13px in stone. No
+        capitals styling anywhere.
+    layout:
+        A white top bar holds the brand with a clay sun on a blush disc, a
+        wide round search field in the middle, the clay New project
+        button, a rounded bell and the user with a lilac initials disc.
+        Under it an oat band holds the six nav links as a segmented
+        control, a pale rounded tray with Home as a raised white tab. The
+        date and greeting sit above three columns, 260px, flexible and
+        300px. The left column stacks a rose tinted note saying 4 tasks
+        are overdue with a short friendly line, then a Your week card
+        listing the four KPIs with a sage icon tile, label and value per
+        line, split by dashed rules. The middle card lists the projects,
+        each row with a clay progress ring holding the percent, the name
+        with team and task count, and on the right the status chip over
+        the due date with days to go. The right card, What the team did,
+        lists activity with pastel initials discs. A full width chart
+        card follows with title and the two week totals on the left and a
+        smooth clay line over a peach area on the right, the second week
+        softly shaded. Below 1150px the activity card drops under the
+        projects. On phones everything is one column, KPIs two by two and
+        chips move under each project name.
+    spacing: An 8px unit. 16 to 24px gaps, 20px card padding and 32px above the content.
+    density: Comfortable. 76px project rows with rings, easy to scan.
+    corners: 16px cards, 12px buttons, fields and rows, 10px tabs, a fully round search field.
+    borders: 1px warm sand on cards, with dashed dividers inside the KPI list.
+    shadows: A faint two layer shadow, 0 2px 8px at 5 percent cocoa.
+    icons:
+        Rounded 1.8px outline icons at 20px. Status uses an outlined circle
+        with a check for On track, a rounded outlined triangle with a bang
+        for At risk and a rounded outlined square with a back chevron for
+        Behind, always with the word in a tinted chip.
+    focus: A 2px clay outline offset 2px plus a 5px blush halo. Fields show the clay border and halo only.
+    tone: Warm and plain, such as Your week, What the team did and Worth a look before anything else today.

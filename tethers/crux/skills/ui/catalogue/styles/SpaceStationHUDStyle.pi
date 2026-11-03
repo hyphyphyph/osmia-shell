@@ -1,0 +1,51 @@
+export anchor SpaceStationHUDStyle:
+    number: 301
+    screen: CodeRepository
+    name: Space station HUD
+    idea: A heads up display floating over near black, with hairline cyan rules, corner brackets instead of boxes, thin type with tiny telemetry labels, and a ring of twelve check ticks around the pull request number.
+    base: dark
+    palette:
+        void: #03070b, the page and style sheet ground under a faint radial glow
+        glass: #07121a, bracketed panels at 85 percent
+        ink: #eaf7fb, text
+        haze: #8fb4c2, telemetry labels and meta
+        trace: #1f4250, hairline rules and dashed dividers
+        hudCyan: #5be7ff, brackets, ring ticks, passed, approved, added lines, the primary button and focus
+        amber: #ffcf5a, changes requested, the comment and Private
+        fault: #ff7070, the failing check and removed lines
+    type:
+        A light grotesque, Helvetica Neue, Segoe UI, system-ui, at 200 for
+        the title at 38px, the repository at 26px and readouts at 22 to
+        26px, and at 300 for text at 15px and 1.5. Telemetry labels are
+        SF Mono or a system monospace at 10.5px caps tracked 0.2em, the
+        diff 12.5px monospace at 1.75.
+    layout:
+        A top line of three parts over a hairline, a ringed B mark with a
+        dashed outer ring and the app name in spaced monospace, the
+        repository centred in thin type with an amber Private tag, and
+        Watch, Star and Fork as stacked label and number readouts split by
+        hairlines. The tabs are centred spaced monospace caps, the current
+        one cyan inside square brackets. Panels have no boxes, only four
+        16px cyan corner brackets over dark glass. The body has three
+        columns, 260px, flexible and 260px. The left holds Telemetry with
+        11 / 12, the failing line and a numbered list of all twelve checks
+        with ticks or a ringed cross at the right. The centre target panel
+        has a ring gauge with twelve tick bars around 214 and a ringed red
+        cross at seven o'clock, beside the Open label, the title, the
+        merge sentence and a commit trace of six diamonds on a line. Below
+        it the Feed panel shows the diff with 1px edge lines, and the
+        comment is a bracketed amber Transmission. The right column holds
+        Crew for reviewers, Payload with each file and a thin added and
+        removed meter, and Docking with details and a dashed disabled
+        merge. Below 1100px the centre leads, below 700px all stack.
+    spacing: An 8px unit. 24px between columns, 20px between panels, 18px inside brackets.
+    density: Medium. Three columns of readouts around a centred target panel.
+    corners: No boxes. Each panel is marked by four 16px corner brackets, with rings and diamonds as markers.
+    borders: 1px hairlines only, cyan brackets, dashed trace dividers and square brackets around the current tab.
+    shadows: None. A faint radial glow behind the top centre.
+    icons:
+        Thin 1.3px line icons. A tick for passed, an octagon cross for
+        failing, a ringed tick for approved, a triangle for changes. The
+        ring uses bars for passed and a ringed cross for failing.
+    focus: A 1px cyan outline offset 4px with an outer 1px cyan ring and a faint halo.
+    tone: Station telemetry, such as Telemetry, Payload, Feed, Transmission, T+6 commits and Docking clamps hold.

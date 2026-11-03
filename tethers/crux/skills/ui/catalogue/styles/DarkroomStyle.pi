@@ -1,0 +1,54 @@
+export anchor DarkroomStyle:
+    number: 249
+    screen: DesignEditor
+    name: Darkroom
+    idea: The editor is a photographic darkroom under a deep red safelight, with the canvas as a print in a developing tray, the inspector as exposure notes and the layers as a numbered film strip.
+    base: dark
+    palette:
+        room: #140a09, the page behind the safelight glow
+        bench: #1e100e, the top bar, the notes card, the status bar and the sheet cards
+        tray: #0d0606, the canvas tray
+        film: #0a0505, the film strip base
+        line: #4a2a25, edges and rules
+        sprocket: #3b2420, film strip holes
+        safelight: #be1e14, a radial glow at 42 percent centred on the tray
+        ink: #f4ddd6, warm text
+        muted: #c99f95, labels and type words
+        safeRed: #ff5a4c, selection, the notes heading, the active knob and the lamp
+        safeButton: #c4231a, the Share button under white text
+        amber: #ffb45e, timer readouts, frame numbers, Saved, the comment pin and focus
+        paper: #fbf7f2, the print border around the frame
+    type:
+        Avenir Next, Segoe UI, system-ui, Roboto, Arial for text, Georgia
+        for the frame headline and the sheet title, and ui-monospace for
+        readouts and labels. Body 14px at 1.45. Readouts 15 to 16px mono
+        600 in amber, labels 11 to 13px mono caps tracked 0.12 to 0.14em,
+        and the sheet title 30px Georgia 600.
+    layout:
+        A bench coloured top bar holds a glowing red lamp, Website redesign
+        and Home v3, six round enlarger knobs for the tools with Move ringed
+        red, an amber ZOOM 66% timer readout, three ringed initials, Present
+        and a red Share. Below, the canvas fills the left as a dark tray
+        with 18px corners and a red inner glow, the Hero frame inside as a
+        print with a paper border, a red selection line and red crop marks
+        at the corners, and the comment as an amber pinned note tilted one
+        degree. A 300px Exposure notes card on ruled paper sits right, with
+        amber mono readouts for X, Y, W and H, then ruled lines for Fill,
+        Auto layout, Gap, Padding, Corner radius and Export, and an Export
+        print button. Under both runs a full width film strip with sprocket
+        holes top and bottom, each layer a 168px frame numbered 1A to 7A,
+        children marked in Hero, Hero outlined red and glowing with
+        SELECTED, Features marked COLLAPSED. A mono status bar closes it.
+        Below 760px the notes and strip hide and the six knobs sit in a
+        short film strip under the canvas.
+    spacing: An 8px unit. 28 to 32px around the tray, 16px card padding, 6px between film frames.
+    density: Medium. Tray and notes side by side, the film strip across the full width below.
+    corners: Mixed. 18px tray, 4 to 6px cards and buttons, round knobs and avatars, square film frames.
+    borders: 1px #4a2a25 everywhere, red on the selected film frame, the selection and the active knob.
+    shadows: A red inner glow in the tray, a red outer glow on the selected film frame and a dark drop under the print.
+    icons:
+        18px line icons at 1.7px stroke inside round 40px knobs. Saved uses
+        a check circle in amber, editing two people and the version a tag,
+        each with its words in mono.
+    focus: A 2px amber outline offset 3px.
+    tone: Gentle darkroom words, such as Exposure notes and Export print, plain elsewhere.

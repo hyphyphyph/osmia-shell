@@ -1,0 +1,51 @@
+export anchor NeonSwimlanesStyle:
+    number: 335
+    screen: CrmPipeline
+    name: Neon swimlanes
+    idea: The pipeline as five horizontal lanes on near black, each edged by one thin neon line in its own colour, with every value shown as a glowing figure and the deals riding the lane as outlined capsules.
+    base: dark
+    palette:
+        void: #09080f, the page and the style sheet
+        lane: #100e1a, lane bodies
+        capsule: #16131f, deal capsules and fields
+        grid: #2a2540, dividers, dashed lane splits and the meter track
+        ink: #f1eefb, names and text
+        haze: #aca5c4, labels, owners and counts
+        cyan: #5ef2ff, the Lead lane, pipeline figure, primary button and focus
+        violet: #c2adff, the Qualified lane
+        magenta: #ff7ad9, the Proposal lane, win rate and secondary button
+        amber: #ffcf6b, the Negotiation lane and open deals figure
+        lime: #c4ff6b, the Won lane, won figure and target line
+        ember: #ffb36b, Stalled text, its triangle and dashed capsule
+    type:
+        A geometric stack, Avenir Next, Avenir, Futura, Century Gothic,
+        Trebuchet MS, system-ui. Base 15px. Summary figures 44px at 300
+        with a glow, lane totals 30px at 300, deal names 15px at 600, lane
+        and section labels 12px uppercase at 600 tracked .3em, meta 12px.
+    layout:
+        A thin top line holds BRIGHTWORK in cyan and Sales, with a magenta
+        outline Filter pill and a cyan New deal pill on the right. A tracked
+        label Pipeline Q4 leads a row of five large glowing figures, each
+        in its own neon colour, with a tracked label beneath, and a thin
+        lime target line with a tick at 64 percent under the won figure.
+        Five full width lanes stack below. Each lane has a 2px neon left
+        edge with a soft inner glow and a neon underline fading out to the
+        right. A 220px label cell holds the stage name in its colour, the
+        deal count and the lane total as a glowing figure, split from the
+        deals by a dashed line. Deals sit in a wrapping row as pill
+        capsules outlined at 55 percent of the lane colour, name and owner
+        on the left, the glowing value on the right, a status line under a
+        hairline. The stalled capsule has a dashed ember outline. Activity
+        follows as three items each with a neon left rule. On phones the
+        label cell sits above the deals and capsules fill the width.
+    spacing: An 8px unit. 10px between lanes, 12px between capsules, 16px lane padding, 28px gutter, 16px on phones.
+    density: Low to medium. One lane per stage with plenty of black between.
+    corners: Square lanes, pill capsules and buttons, 18px capsules on phones.
+    borders: A 2px neon left edge per lane, a fading neon underline, 1px capsule outlines and dashed splits.
+    shadows: No drop shadows. A soft colour glow on figures, lane edges and the primary button.
+    icons:
+        Thin line icons at 1.9 stroke in the text colour. Stalled pairs a
+        triangle and the word with a dashed ember outline, so it never
+        relies on colour.
+    focus: A 2px cyan outline offset 3px with a cyan halo.
+    tone: Terse uppercase labels, such as Pipeline, Activity, New deal and Filter.

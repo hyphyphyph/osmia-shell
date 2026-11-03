@@ -1,0 +1,56 @@
+export anchor AnalyticsForwardStyle:
+    number: 16
+    screen: ProjectsDashboard
+    name: Analytics forward
+    idea: Charts lead everything, with a large hero chart on top, a sparkline and a delta on every number, and progress rings for projects in deep teal and coral on white.
+    base: light
+    palette:
+        background: #ffffff, the page and cards
+        wash: #f2f7f7, the hero stat panel and the last week band in the chart
+        ink: #10292c, text and ring labels
+        muted: #4f6466, labels, axes and meta text
+        grid: #dbe5e6, card borders, gridlines and ring tracks
+        teal: #0f5f66, the chart line, the primary button, good deltas, On track and its ring
+        tealSoft: #e8f3f3, avatars and the selected row
+        coral: #c4452e, the peak marker, the focus outline, the Behind glyph and ring
+        coralText: #b23a22, bad deltas, the Behind word and the overdue chip text
+        coralSoft: #fbeae6, the overdue chip and the overdue card wash
+        amber: #9a5b00, the At risk glyph, word and ring
+    type:
+        System sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial, sans-serif, with tabular figures everywhere. The hero
+        figure is 72px light. KPI figures are 36px light. The greeting is
+        22px bold, section titles 18px bold, project names 16px bold, body
+        15px, deltas 14px bold, and eyebrow labels 12px bold capitals with
+        0.08em letter spacing.
+    layout:
+        A white top bar with a teal chart logo, the wordmark, tabs with a
+        3px teal underline on the current one, the search, the New project
+        button, the bell with a coral count and the avatar with the name.
+        A greeting row puts the greeting and date on the left and a coral
+        overdue chip on the right. The hero card comes next and spans the
+        full width, a 260px stat panel with 73 tasks completed this week,
+        the delta and three small facts beside a large area line chart of
+        all 14 days. A row of four KPI cards follows, each with an eyebrow,
+        a figure, a sparkline of eight weeks and a delta line. Projects are
+        a three by two grid of cards, each with a 72px progress ring, the
+        name, a meta line and the status. Activity is one bordered list
+        with time, initials and the sentence. Below 1100px the KPIs and
+        projects go two across, below 860px the hero stacks, and below
+        600px everything is one column and the hero chart scrolls sideways
+        inside its card with a hint under it.
+    spacing: An 8px unit. 16px gaps between cards and inside them, 24px hero padding and 40px between sections.
+    density: Medium. Every figure travels with a chart, a delta and a comparison line.
+    corners: 6px on cards, buttons, fields and chips. Avatars and rings are round.
+    borders: 1px #dbe5e6 on every card. The overdue KPI card takes a pale coral border and a coral wash fading to white.
+    shadows: None. Cards are flat and outlined.
+    icons:
+        18px line icons with a 2px round stroke for search, bell and plus.
+        Deltas use an up arrow or a flat right arrow before a signed
+        number. Status glyphs are solid shapes with a white mark, a circle
+        with a tick for On track, a diamond with a bar for At risk and a
+        down triangle for Behind, always beside the word. The hero chart
+        has white dots with teal rings and a larger coral dot labelled 17
+        peak.
+    focus: A 3px coral outline offset 2px. A focused field also turns its border teal.
+    tone: Numeric and comparative, such as +14 · +24%, vs 59 last week, +1 worse and Best day.

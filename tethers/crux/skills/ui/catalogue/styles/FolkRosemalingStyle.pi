@@ -1,0 +1,56 @@
+export anchor FolkRosemalingStyle:
+    number: 150
+    screen: ProjectsDashboard
+    name: Folk rosemaling
+    idea: The dashboard is a painted farmhouse cupboard, with the totals on drawer fronts, each project on a small painted door, and blue frames carrying red and ochre scrolls and flowers in their corners.
+    base: light
+    palette:
+        wallCream: #f3ead8, the page behind the cupboard
+        panelCream: #fcf6ea, painted panels and fields
+        cupboardBlue: #234a78, the cupboard frame, headings, figures, the current tab, last week bars and the outer focus ring
+        skyWash: #dde7f1, progress tracks, the bell and list rows
+        folkRed: #a3302a, flowers, the brand, the primary button, the overdue banner, Behind and this week bars
+        ochre: #c8892a, inner frame lines, flower centres and the focus outline, never text
+        leafGreen: #3c6a37, leaves, progress fills and On track
+        drawerWood: #e7d6b6, drawer fronts
+        ink: #2a2522, text
+        muted: #5e544a, dates and meta
+        amber: #7d5100, At risk
+    type:
+        Brand, greeting and style title use Segoe Script, Apple Chancery,
+        Brush Script MT, URW Chancery L, cursive at 34 to 46px. Headings,
+        figures, nav and buttons use Bookman Old Style, URW Bookman,
+        Cambria, Georgia, serif in bold. Body uses Candara, Segoe UI, Noto
+        Sans, Calibri, sans-serif. Drawer figures 54px, panel titles 24px
+        centred, door titles 17px, body 15 to 16px at 1.55.
+    layout:
+        One painted cupboard up to 1240px, a 16px blue frame with round
+        top corners and a darker ledge below. The header is a cream crest
+        with a wide arched top and a red inner line, holding a tulip and
+        the script brand, rounded nav with a blue current pill, a round
+        search, a red pill button with a cream inner line, a sky bell and
+        a red avatar ringed in ochre. A cream greeting panel with ochre
+        inner line and painted C scrolls with tulips in both top corners
+        centres the script greeting, date and a red pill naming 4 overdue
+        tasks. Four drawer fronts in wood colour each have a red knob on
+        the top edge, a large figure, the label and a small red flower.
+        Below, a wide panel with corner scrolls holds six painted doors in
+        three columns, white with arched tops and blue and red inner
+        lines, each with a tulip, the name, category and due date, a green
+        vine progress bar ending in a red leaf, the percent, task count
+        and status. A narrow column holds the chart, round blue then red
+        bars with ochre flame marks on a green ground line, and the
+        activity list led by small red and blue leaves. On phones
+        everything stacks to one column.
+    spacing: An 8px unit. 16px between all panels like boards in one frame, 24 to 28px inside panels.
+    density: Medium. Everything sits inside one painted cupboard.
+    corners: Soft. 10px panels, wide arched tops on the crest and doors, pills for buttons and banners.
+    borders: A 16px blue cupboard frame, ochre inner lines inset 5px in every panel, red inner lines on doors, dotted lines between feed items.
+    shadows: Only a solid darker blue ledge under the cupboard.
+    icons:
+        Painted folk shapes, C scrolls with tulips in panel corners and
+        small flowers on drawers. Status uses a heart for On track, a
+        diamond with a mark for At risk and a down pointing triangle for
+        Behind, beside the word.
+    focus: A 3px ochre outline offset 2px inside a 6px blue ring.
+    tone: Homely and kind, such as Six doors, one for each piece of work and What the team has been up to.

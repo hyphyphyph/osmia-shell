@@ -1,0 +1,59 @@
+export anchor StatusMatrixStyle:
+    number: 211
+    screen: ProjectsDashboard
+    name: Status matrix
+    idea: A planning grid of projects against weeks, where each row shows this week's status as a shaped marker, hatched weeks running to a due flag, and summary rows below, read like a spreadsheet.
+    base: light
+    palette:
+        page: #f4f5f7, the page, column heads and table footers
+        paper: #ffffff, the header, panels and the matrix body
+        ink: #101828, text, figures and the frozen column rule
+        sub: #475467, week labels, team names and times
+        grid: #d0d5dd, cell borders and panel edges, never text
+        band: #e9ecf1, the tab band and initials
+        blue: #175cd3, the primary button, the active tab, the this week outline, focus and the darkest heat cell
+        nowTint: #eaf1fd, the this week column, the lightest heat cell and a focused row
+        planBlue: #b8cdef, hatched weeks before the due date, never text
+        heatMid: #b2ccf5, heat cells of 5 to 9
+        heatHigh: #6f9ae8, heat cells of 10 to 13 with ink figures
+        green: #067647, the On track circle and word
+        rust: #8f4a00, the At risk diamond and word
+        red: #b42318, the Behind crossed square and the overdue line
+    type:
+        Two stacks. Labels and figures use ui-monospace, SF Mono, Menlo,
+        Consolas, Liberation Mono. Text uses Segoe UI, system-ui, Roboto,
+        Helvetica Neue, Arial. Heat figures are 18px mono bold, the
+        greeting 16px sans bold, project names 13px sans semibold, body
+        13px, panel labels 12px mono bold caps and week heads 11px mono.
+    layout:
+        A two tier header. The first tier is white with a six dot brand
+        mark and Brightwork in mono, a wide centred search with a slash
+        key hint, a blue New project button, a square bell with a count
+        and Mara Okafor. The second tier is a grey tab band with the six
+        nav tabs, the current one white with a blue underline. Below, one
+        white strip holds Hello, Mara, the date in mono, a crossed red
+        square with 4 tasks are overdue and four outlined chips on the
+        right for the summary figures. The main panel is the matrix, a
+        table with a frozen project column carrying name, team, tasks and
+        percent, then thirteen week columns from 18 Oct to 10 Jan. The
+        18 Oct column is last week with dots. The 25 Oct column is this
+        week, tinted and outlined in blue, holding each project's status
+        marker and word. Following weeks are hatched blue up to a pennant
+        flag cell reading the due date. A footer gives projects due per
+        week and tasks completed, 59 and 73. Below, two panels side by
+        side hold a calendar heat grid of the fourteen days with the count
+        printed in every cell and weekly totals at the row starts, and an
+        activity log table of time, person and action. The matrix scrolls
+        sideways inside its panel on small screens, the search drops to its
+        own row and the log rows stack.
+    spacing: A 4px unit. Cells are 44px tall, panel padding 10 to 14px, 16px between panels.
+    density: High. Thirteen week columns by six projects in one grid, with summary rows in the footer.
+    corners: 4px on panels, buttons, fields and heat cells. Markers are sharp except the circle.
+    borders: 1px cool grey lines on every cell. A 2px ink rule freezes the project column and a 2px blue outline marks this week.
+    shadows: None.
+    icons:
+        1.8px line icons at 16px. Status markers are a filled circle for
+        On track, a filled diamond for At risk and a square with a white
+        cross for Behind. A pennant flag marks the due week.
+    focus: A 2px blue outline offset 1px. A focused row gets the now tint.
+    tone: Terse and operational, such as This wk, Projects due and Activity log.

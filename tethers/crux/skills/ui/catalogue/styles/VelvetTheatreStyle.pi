@@ -1,0 +1,72 @@
+export anchor VelvetTheatreStyle:
+    number: 242
+    screen: ProjectsDashboard
+    name: Velvet theatre
+    idea:
+        The dashboard is staged inside a theatre, with deep red velvet
+        curtains and a scalloped pelmet framing a spotlit stage, the figures
+        printed on ticket stubs, the projects listed in a gilt programme and
+        the chart drawn as arched gilt columns.
+    base: dark
+    palette:
+        house: #120a0b, the page outside the stage and the style sheet
+        stage: #1a0e0f, the stage floor behind the content
+        spot: #2a1a17, the brightest point of the spotlight, the lightest surface text sits on
+        programme: #1f1112, the programme, chart and notices panels
+        velvet: #5a0f1a, curtains, the pelmet and ticket stubs
+        velvetDeep: #3a0910, curtain fold shadows and the current nav item
+        velvetHi: #7a1a28, curtain fold highlights, decoration only
+        gilt: #e6c372, programme rules, display type, the primary button, this week columns, links and focus
+        giltInk: #2a0d10, text on gilt
+        ink: #f5e9d6, body text and figures
+        muted: #d1b9a4, meta, labels and axis text
+        rose: #e88a9a, last week column outlines
+        ok: #a6e0a0, On track text and check circle
+        risk: #f4cf6e, At risk text and triangle
+        bad: #ff9e93, Behind and overdue text, crossed square and clock
+    type:
+        Two serif stacks. Display text uses Big Caslon, Goudy Old Style,
+        Garamond, Times New Roman, serif, with the greeting 44px, ticket
+        figures 40px, section titles 26px in small caps tracked 0.08em and
+        programme entries 22px italic. Body text uses Hoefler Text, Garamond,
+        Times New Roman, serif at 16px and 1.55, with act numbers and labels
+        14px small caps at 600.
+    layout:
+        A velvet pelmet runs across the top with a scalloped lower edge and a
+        gilt fringe line. It holds the Brightwork name centred in gilt display
+        type between two small stars, and below it the six nav links in small
+        caps with Home on a deeper velvet tab, a search field, a bell, a gilt
+        New project button and Mara Okafor at right. Under the pelmet two 88px
+        velvet curtains with vertical folds frame the stage, which has a warm
+        spotlight from above. On stage the greeting is centred in large gilt
+        type with the date and a coral line reading 4 tasks are overdue with a
+        clock. The four figures are velvet ticket stubs with notched ends and
+        a dashed tear line, each a gilt number and a small caps label, overdue
+        with a coral number. Then Tonight's programme, a programme panel with
+        a double gilt rule border, lists the six projects as Act I to Act VI
+        in two columns of centred entries, each the act number, the italic
+        name, the category, a thin gilt meter, the status with its symbol,
+        tasks done and due date, with small diamond ornaments between entries.
+        Below sit two panels, the chart as paired arched columns by weekday,
+        last week as rose outlines and this week solid gilt, and the notices
+        of activity as a call board list. Below 900px the curtains shrink to
+        16px edges, the programme becomes one column and the panels stack.
+    spacing:
+        An 8px unit. 32px programme padding, 24px between entries, 40px
+        between stage sections.
+    density: Low to medium. A staged, ceremonial layout with room to breathe.
+    corners: Square panels with arched column tops, notched ticket stubs and a scalloped pelmet.
+    borders:
+        Double gilt rules on the programme, 1px gilt rules on panels, a dashed
+        tear line on each stub.
+    shadows:
+        The curtains cast deep inner shadows on the stage and a warm spotlight
+        falls from above, nothing on the controls.
+    icons:
+        Thin line icons at 1.6px stroke in gilt. Status uses a check circle, a
+        triangle with a bang and a crossed square, always with the word,
+        overdue a clock.
+    focus: A 2px gilt outline offset 3px.
+    tone:
+        Ceremonial and playful, such as Tonight's programme, Act I and
+        Notices, without overdoing it.

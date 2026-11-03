@@ -1,0 +1,63 @@
+export anchor HackerIDEStyle:
+    number: 293
+    screen: CodeRepository
+    name: Hacker IDE
+    idea: The pull request opens inside a modern dark code editor, with an activity bar, an explorer of repository views and changed files, editor tabs, a diff with change gutters and a minimap, a details panel, a checks terminal and a status bar.
+    base: dark
+    palette:
+        editor: #0b0e13, the editor area, the diff and the terminal
+        chrome: #151a21, the title bar, activity bar, explorer, details panel and style sheet cards
+        tabRest: #1b212a, inactive editor tabs, chips, hover and the disabled merge button
+        line: #262e3a, pane dividers and rows
+        text: #d6dde8, text
+        muted: #8f9bad, meta, line numbers, section headers and inactive tabs
+        accent: #4fc1ff, the active tab top bar, the current view, links, the primary button and focus
+        statusBar: #1f6feb, the status bar background behind white text
+        green: #7ee787, passed, approved, Open, added lines and the add gutter
+        red: #ff7b72, failing, removed lines and the remove gutter
+        yellow: #e3b341, requested changes and strings
+        purple: #d2a8ff, keywords and labels
+        addTint: #12261b, added line rows
+        delTint: #2d1517, removed line rows
+    type:
+        Interface text in system-ui, Segoe UI, Ubuntu, Roboto at 13px. The overview
+        title 20px at 600. Explorer and panel headers 11px caps tracked 0.08em in
+        muted. Code and terminal in JetBrains Mono, Fira Code, Cascadia Code,
+        ui-monospace at 13px on 1.6. The status bar is 12px.
+    layout:
+        A full width editor window. A 36px title bar shows the branch, repository
+        and app name with Watch 12, Star 48 and Fork 3 at the right. Under it a grid
+        of a 48px activity bar of icon buttons, a 260px explorer, the editor and a
+        300px details panel. The explorer has a Repository section with the owner
+        and name, Private, and the six tabs as views with counts, Pull requests
+        current with an accent bar, and a Changed files tree with folders and the
+        three files and their counts. The editor has a tab strip with Pull request
+        214 and NotificationPrefs.tsx, the active tab marked by a 2px accent top
+        bar. Under the tabs a breadcrumb, an overview block with the title, Open,
+        the merge sentence, reviewers and labels, then the diff with old and new
+        gutters, a coloured change bar, syntax colours, Tomás Ruiz's comment as an
+        inline widget and a 64px minimap at the right. The details panel lists
+        assignees, labels, milestone, linked issue and the disabled merge button. A
+        bottom panel with Checks and Problems tabs prints the twelve checks as
+        terminal lines. A 24px blue status bar shows the branch, the check score and
+        the review state. Below 1100px the details panel moves under the editor,
+        below 760px everything stacks and the activity bar turns into a row.
+    spacing: A 4px unit. 22px tree rows, 35px tabs, 12px panel padding.
+    density: Dense. A full workspace with many panes, small type.
+    corners: Square panes and tabs, 4px buttons, fields and chips.
+    borders:
+        1px line dividers between every pane. A 2px accent top bar on the active tab
+        and a 2px accent left bar on the current view. 3px gutter bars for added and
+        removed lines.
+    shadows: One shadow, under the inline comment widget, 0 4px 12px black at 50 percent.
+    icons:
+        Thin line icons at 1.5px stroke, 24px in the activity bar and 16px
+        elsewhere. Check circle for passed and approved, crossed square for failing,
+        triangle with a bang for requested changes, padlock for the blocked merge,
+        always with the word.
+    focus:
+        A 1px accent outline offset negative 1px inside lists and tabs, and a 2px
+        accent outline offset 2px on buttons and fields.
+    tone:
+        Tool voice, short and exact, such as CHANGED FILES, 11/12 checks and Merge
+        blocked by 1 failing check.

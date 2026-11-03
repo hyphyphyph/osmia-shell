@@ -1,0 +1,178 @@
+use @piton/belay
+
+from ./lib/CruxUiBase import CruxUiBase
+
+export skill CruxUiStyles extends CruxUiBase:
+    description:
+        Builds and grows a library of very different visual styles for
+        an application, such as a clean dashboard, a SaaS product or a
+        technical tool. Three short questions set the directions, then
+        each style is saved as a numbered sample page, shown on one
+        gallery page, and described in the Piton specification so it
+        can guide the look of the application.
+    useWhen:
+        the user wants to explore visual styles, look and feel, themes
+        or design directions, wants to see very different styles side
+        by side, wants to add more styles to the project's style
+        library, or wants to choose a visual direction for the
+        application
+    prompt:
+        Your goal is to grow the project's style library. A style is
+        one complete visual direction for the whole application, such
+        as a clean dashboard, a SaaS product, or a technical tool. Each
+        run asks three questions, adds a small batch of new styles,
+        shows them, and records them in the specification. The library
+        keeps growing over many runs, and the specification uses it to
+        decide the look of the application. Never write application
+        code.
+
+        First find the project and its library. Read the specification
+        for what the application is, who uses it, its main screens and
+        the domain data they show, and any design rules it already
+        has, such as palette, type, spacing, icons, tone,
+        accessibility and language rules. Then look for an existing
+        style library anchor and its folder. Note which styles exist,
+        which the user favoured or rejected, and why. If there is no
+        library yet, this run creates it.
+
+    library:
+        The library has one anchor in the specification and one folder
+        of pages beside it. Put the anchor where the project's
+        conventions say design rules belong, and name it after what it
+        holds, such as VisualStyles. If the project has no convention,
+        use a design folder under the source root, such as
+        spec/design/VisualStyles.pi. The folder sits next to the anchor
+        file and is named after it with a .styles suffix, such as
+        spec/design/VisualStyles.styles.
+
+        Each style is one page in that folder, named by its number,
+        such as 1.html, 2.html and 7.html. Numbers are global and
+        permanent. A new style takes the next free number. Never
+        renumber, overwrite or delete a style, even a rejected one,
+        because the specification and later runs refer to styles by
+        number. The folder also holds index.html, the gallery of the
+        whole library.
+
+    questions:
+        Ask exactly three questions, one per turn, and show progress
+        such as Question 2 of 3. Never ask what the project or an
+        earlier answer already settles. When the project settles one of
+        the three, use that turn for the most useful open question
+        about the styles instead. Clarifications and examples about the
+        same question do not use up another one. A question may offer
+        options and a recommendation.
+
+        Question 1 is which directions to add. Offer a short list of
+        named directions that the library does not cover yet, such as
+        clean dashboard, SaaS product, technical, editorial, playful,
+        or dense enterprise, and recommend three that fit the
+        application. Search the style catalogue for directions that
+        suit the application and that the library lacks, so the list
+        goes beyond the obvious ones. The user may pick from the list, name their own,
+        or ask you to choose. Make one style per direction agreed, with
+        3 as the default and 6 as the most in one run.
+
+        Question 2 is what to lean toward and away from. Ask for
+        products, sites or moods the user likes or dislikes, and for
+        hard limits, such as light or dark, brand colours, contrast,
+        density, or a second language.
+
+        Question 3 is what each style shows. Recommend one
+        representative screen of the application, chosen from the
+        specification, such as the main list or the dashboard home, and
+        ask whether that screen fits or another would show the styles
+        better. Every style in a batch shows the same screen with the
+        same content, so the styles can be compared fairly.
+
+    stylePages:
+        Each style page shows two things. First, the chosen screen of
+        the application drawn fully in that style. Second, below it, a
+        short style sheet: the colour palette as named swatches with
+        their values, the type scale with the font stacks, spacing and
+        corner radius, and a few basic controls, such as a button, a
+        text field, a table row or a card, in their normal and focus
+        states. Use system font stacks or fonts named by the project,
+        never web fonts, since the page loads nothing from the network.
+
+        Make the styles very different from each other and from every
+        style already in the library. Vary what changes the whole feel,
+        such as palette, light or dark base, type, density, layout
+        rhythm, corners, borders, shadows, icon treatment, and tone of
+        the labels. Never make styles that differ only in accent colour
+        or font size. If a new style would come out close to an
+        existing one, change it or say so and suggest another
+        direction. Before drawing a style, read the few catalogue
+        entries closest to its direction for exact, tested values and
+        ideas that suit it, then make the style the project's own. Every style still meets basic accessibility: text
+        has enough contrast, controls have names, and meaning never
+        depends on colour alone.
+
+        Give each style a short name and one sentence on the idea
+        behind it, such as Clean dashboard: calm white panels that put
+        the numbers first.
+
+    styleGallery:
+        The gallery, index.html in the library folder, shows the whole
+        library. It shows one card per style with the number large and
+        clear, the short name, the one-sentence idea, the user's
+        verdict when there is one, and a live preview of the style page
+        in an iframe. It groups styles by the run that made them,
+        newest first, so the latest batch is at the top. It has a
+        filter to show all, favoured, unrated or rejected styles.
+        Typing a style's number and pressing Enter opens its large
+        view.
+
+    recording:
+        After saving a batch and its gallery, record it in the
+        specification before showing it. The library anchor holds a
+        property that names the gallery path, and one property per
+        style. Each style property gives its number, name, idea, page
+        path and verdict, and then describes the style in plain words
+        and exact values: palette with colour values and what each
+        colour is for, type with font stacks and sizes, spacing,
+        density, corners, borders, shadows, icons, and tone of labels.
+        A builder who never opens the page must be able to apply the
+        style from this description alone.
+
+        The anchor also holds a direction property. It says which
+        styles the user favours, which they rejected and why, and what
+        the favoured styles have in common. Keep it as an open question
+        until the user chooses. Never choose a direction for the user.
+        When the user does choose, write the direction as plain design
+        rules the rest of the specification can follow, and note which
+        style numbers it came from. Write likes, dislikes and limits
+        from question 2 here too, so later runs respect them.
+
+    reviewing:
+        Show the gallery, then ask the user what they think of the new
+        styles by number. Say they can favour or reject any number,
+        give a reason, ask for changes to one, mix two, or choose one
+        as the direction. A change or a mix becomes a new style with
+        the next free number, built from the styles it names, and the
+        old styles stay as they were. Never treat silence as a verdict.
+
+        After each answer, update the verdicts in the gallery and the
+        anchor, validate, and say in one or two lines what changed.
+        Then offer three options. Done ends the run. More styles starts
+        a new run with three new questions. Choose a direction records
+        the direction as design rules. Do not move on to designing one
+        part of the UI or building the application on your own.
+
+    resuming:
+        Keep enough state to resume without storing the conversation.
+        The library anchor holds the styles, their verdicts and the
+        direction. The folder holds every page. On a new run, read both
+        before asking anything. Never repeat a direction the library
+        already has unless the user asks for a new take on it. If a
+        batch has pages but no verdicts, show the gallery again and ask
+        about it before starting a new batch.
+
+    boundaries:
+        This skill decides the overall look of the application and
+        records it. When the user wants to design how one screen,
+        component or flow works, recommend crux-ui-develop, which
+        follows the chosen direction. When the work turns into a
+        feature that is not about the look, recommend
+        crux-spec-develop. When the user wants to apply a style to the
+        application code, say that this skill stops at the
+        specification and its style pages.

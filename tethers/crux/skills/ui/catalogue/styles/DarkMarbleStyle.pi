@@ -1,0 +1,53 @@
+export anchor DarkMarbleStyle:
+    number: 257
+    screen: DesignEditor
+    name: Dark marble
+    idea: A hushed luxury studio where the whole canvas is a slab of black marble with gold and grey veins, and the layers and inspector float on it as polished stone cards edged in a single gold line.
+    base: dark
+    palette:
+        onyx: #0c0c0d, the page, top bar and status band
+        slab: #151516, floating cards and the style sheet
+        slabLight: #1c1c1e, avatar discs
+        hairline: #2a2a2c, rules between rows and sections
+        vein: #3a3a3d, field underlines and the secondary button edge
+        ink: #efece6, text
+        stoneGrey: #a8a39a, meta, labels and status
+        champagne: #e9dcc0, Didone titles and values
+        gold: #cfae6b, card edges, Share, handles, the selected layer edge, veins and focus
+        goldWash: #252119, the selected layer row
+        roseGold: #a94e37, the 32 px guide with white text
+    type:
+        Titles and values in a Didone stack, Didot, Bodoni 72, Bodoni MT,
+        Hoefler Text, Georgia. Text in Avenir Next, Avenir, Segoe UI, system-
+        ui. Card titles are 21px 400 Didone, the file 20px, field values 17px
+        Didone with tabular lining figures, layer names 14px 500, sub lines
+        12px italic Didone, and labels 10 to 11px caps tracked 0.2 to 0.32em.
+    layout:
+        A slim onyx top bar in three parts. Left is a gold spaced caps
+        Brightwork Canvas over Website redesign and an italic Home v3. Centre
+        is the six bare tool icons with Move lit and underlined by a glowing
+        gold line, then 66% in Didone. Right holds gold ringed avatars, an
+        outlined pill Present and a gold pill Share. Below, the stage is black
+        marble with thin gold and grey vein curves drawn across it. On it
+        float three columns, a 262px layers card, the frame in the middle and
+        a 282px inspector card, both cards polished slabs with a 1px gold edge
+        and a deep shadow. The layers card lists gold kind icons with names
+        and italic sub lines, Hero washed in gold with a gold edge and a
+        Selected tag in spaced caps. The white Hero frame has a gold outline
+        and round gold ringed handles, with a status band of spaced caps under
+        it. The inspector uses italic Didone section names, Position, Fill
+        with a ringed white swatch, Auto layout with Vertical, Corner radius
+        and Export, and underline only fields with large Didone values. Below
+        860px cards stack under the frame and the tools become a fixed bottom
+        bar.
+    spacing: An 8px unit used generously. 32px between floating cards, 20px card padding, 10px layer rows.
+    density: Airy. Few lines per card with wide marble gutters.
+    corners: 2px stone cards, round handles and avatars, full pill buttons.
+    borders: One 1px gold edge at 55 percent on each card, hairline rules inside, fields as underlines only.
+    shadows: Deep and soft, 0 30px 60px black at 70 percent under cards and 0 40px 80px under the frame.
+    icons:
+        Fine line icons at 1.2px stroke, 17px, in gold. Selected is a circled
+        check, Collapsed a right chevron, Saved a cloud with a check, always
+        with the word.
+    focus: A 1px gold outline offset 3px with a 4px gold glow ring.
+    tone: Reserved and elegant, Didone titles with spaced caps labels such as Position and Export.

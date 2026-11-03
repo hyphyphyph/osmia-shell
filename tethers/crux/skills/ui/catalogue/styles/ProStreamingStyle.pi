@@ -1,0 +1,51 @@
+export anchor ProStreamingStyle:
+    number: 324
+    screen: MusicPlayer
+    name: Pro streaming
+    idea: A polished, generic dark streaming app with a big square cover art block leading the page, clean edge to edge lists, one warm coral accent and a fixed player bar along the bottom.
+    base: dark
+    palette:
+        base: #0f1012, the page, the main column and the style sheet
+        rail: #16171a, the library sidebar and the queue column
+        card: #1f2125, playlist tiles, the lyrics card, hover rows and the player bar
+        line: #2e3137, row dividers, the seek track and field borders
+        ink: #f3f4f6, titles and body text
+        muted: #a9aeb8, artists, durations, counts and labels
+        coral: #ff8463, the play button, the seek fill, the liked heart and focus
+        onCoral: #1d0a04, the icon and text on coral
+        coralSoft: #3a211b, the current lyric line wash and the selected nav item
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Base 15px at 1.5. The song title is 60px at 800 with
+        minus 0.03em tracking, the artist 20px at 600, list titles 15px at
+        600, meta 13px with tabular figures, and caps labels 11px at 700
+        with 0.12em tracking.
+    layout:
+        Three columns over a player bar. A 232px rail holds a round coral B
+        mark with Brightwork Sound, three nav links with Now playing
+        selected on the soft coral tile, a Playlists label over three rows
+        with small square art and song counts, and pill links for Albums,
+        Artists and Podcasts. The main column opens with a 280px square
+        cover of a harbour at night with a row of lights and the words LOW
+        TIDE, beside a caps Now playing label, the huge title, the artist,
+        From the album Low Tide and a pill reading Liked with a filled
+        heart. Below sits a Lyrics card with the current line on the soft
+        coral wash behind a small arrow and the next line in muted grey. A
+        320px right column lists Up next as numbered rows with title,
+        artist and duration. The full width player bar repeats a mini cover
+        and title, centres shuffle, previous, a round coral pause button,
+        next and repeat above a thin seek line with elapsed and total
+        time, and puts a volume line with 70% on the right. Below 1100px
+        the queue moves under the main column. Below 760px everything
+        stacks with the player bar first and sticky at the top.
+    spacing: An 8px unit. 24px gutters, 16px card padding, about 56px queue rows and an 88px player bar.
+    density: Medium. One hero, five queue rows and a short library, nothing crowded.
+    corners: 8px cards and cover art, 4px fields, round play button, pills and avatars.
+    borders: Almost none. Surfaces step from base to rail to card, with 1px line dividers between queue rows.
+    shadows: One deep soft shadow under the cover art, 0 24px 48px black at 50 percent, and nothing else.
+    icons:
+        Solid transport glyphs and rounded 2px line icons for the nav. The
+        liked heart is filled coral and always carries the word Liked. The
+        current lyric line has an arrow as well as the wash.
+    focus: A 2px coral outline offset 3px, round on round controls.
+    tone: Short and familiar, such as Now playing, Up next, Your library and Liked.

@@ -1,0 +1,50 @@
+export anchor Psychedelic60sStyle:
+    number: 63
+    screen: Calendar
+    name: Psychedelic 60s
+    idea: A warm concert poster of a week, with swirling orange, magenta and yellow waves, bubble lettering and an op-art medallion, while the event cards stay plain and easy to read.
+    base: light
+    palette:
+        peachPage: #fff1d6, the page
+        cream: #fffaf0, day cards, boxes and pills
+        plum: #3a1030, text, all outlines and the selected nav and view
+        duskyPlum: #6e3a5a, times and meta
+        magenta: #b0125b, the primary button and the today card shadow
+        sunshine: #ffd23f, the poster base, the Team badge and the focus halo
+        orange: #e8590c, bubble letter shadows, waves and medallion rings
+        bubblegum: #ffd0e4, the today card
+        tangerine: #ffd9b0, the current week row and the Deadline badge
+        burntOrange: #a63600, Deadline text and dashed borders
+        violet: #5b2a86, Out of office text and dotted borders
+    type:
+        Bubble display for headings and day numbers, Cooper Black, Cooper Std,
+        Arial Rounded MT Bold, Bookman Old Style, URW Bookman, Georgia, serif,
+        in plum with a 3px yellow then 6px orange offset text shadow. Body in
+        Trebuchet MS, Segoe UI, Lucida Grande, Verdana, sans-serif. Sizes are
+        64px bubble for the poster title, 44px bubble day numbers, 24px bubble
+        box headings, 18px bold day names, 16px bold event titles, 16px body
+        and 14px bold times.
+    layout:
+        A full width poster header on sunshine yellow with four stacked wavy
+        bands in light orange, orange, pink and yellow, closed by a wavy plum
+        edge. On it sit cream pill chips for the brand, the nav and Mara, the
+        big bubble title, the dates in a pill and the controls. Below, a 320px
+        left column holds a round op-art medallion of concentric orange,
+        yellow and magenta rings with the month table on a cream disc, then a
+        Tune in box with the checkboxes and a Far out box about Lena. The
+        week is two staggered columns of day cards zigzagging down either side
+        of a striped centre ribbon, each event on its own white rounded card
+        with a round badge icon. Below 1060px the side column moves above in a
+        row, and below 720px the days stack in one column beside a thin stripe.
+    spacing: An 8px unit. 24px between cards, a 40px gutter around the centre stripe and 18 to 20px card padding.
+    density: Loose and loud. Two staggered columns with roomy cards.
+    corners: Big and lopsided. Day cards alternate 48px and 16px corners, events are 20px and controls are full pills.
+    borders: Thick plum outlines, 3px on cards and controls and 2px on events. Deadline borders are dashed burnt orange, out of office dotted violet.
+    shadows: Hard offsets only, 4px plum under the primary button and 6px magenta under the today card.
+    icons:
+        Chunky filled shapes in 30px round badges. A four petal flower marks
+        Team, a lightning bolt marks Deadline and rainbow arcs mark Out of
+        office, with the word shown for deadlines and absences. Today is a
+        plum dot with a double ring.
+    focus: A 4px plum outline offset 3px with a 10px sunshine halo.
+    tone: Playful and warm, such as Groovy week ahead, Tune in, Far out and Free and easy.

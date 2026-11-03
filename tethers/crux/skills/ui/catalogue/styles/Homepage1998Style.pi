@@ -1,0 +1,58 @@
+export anchor Homepage1998Style:
+    number: 160
+    screen: ProjectsDashboard
+    name: 1998 homepage
+    idea: A hand made 1998 personal homepage, with a tiled star background, centred bevelled tables, grey outset buttons, hazard striped under construction bars and the weekly numbers on green odometer hit counters.
+    base: light
+    palette:
+        tile: #fff8dc, the tiled page background
+        star: #c9dcff, tile stars with pink #f2d0e6, never text
+        cell: #ffffff, table cells
+        cream: #ffffe0, odd rows, list rows and system labels
+        black: #000000, body text and counter cases
+        linkBlue: #0000ee, links, with visited #551a8b
+        navy: #000080, table heads and the logo
+        teal: #008080, the greeting, column heads and last week bars
+        magenta: #c000c0, this week bars
+        maroon: #800000, the overdue alert, Behind and the tagline
+        green: #006400, On track, with At risk in #8a4b00
+        hazard: #ffd700, construction stripes with black and the note
+        silver: #c0c0c0, buttons and the logo shadow
+    type:
+        The logo uses Times New Roman, Times, Liberation Serif, serif in
+        bold italic 52px with a 3px silver drop, framed by tildes. The
+        greeting uses Comic Sans MS, Comic Neue, Chalkboard SE, Trebuchet
+        MS, sans-serif in bold 32px teal. Table heads, buttons and labels
+        use Arial, Helvetica, sans-serif at 13 to 15px. Body uses Times New
+        Roman at 15 to 16px with 1.35 line height. Counters use Courier
+        New bold 22px.
+    layout:
+        One centred 800px column over a tiled star pattern. A black and
+        yellow hazard stripe tops the page, then the italic logo, a maroon
+        italic tagline, a row of grey outset nav buttons with Home pressed
+        in and marked with a pointer, and a line holding the search label
+        and inset field, Search, a yellow New project, Mail (4) and Signed
+        in Mara Okafor. Grooved rules split every section. The welcome is
+        centred, Welcome, Mara!! with the date and a double maroon box with
+        diamonds for the overdue line. A bevelled table of four cells shows
+        each number as a black odometer counter with green digits, the
+        overdue counter in red, under a note that counters reset on
+        Sunday. A bevelled projects table has a navy title row, teal
+        column heads, cream striping, linked names, a striped blue
+        progress strip, tasks, due and status. Two tables sit side by side,
+        What's New? with red NEW! labels on the first items, and a bar
+        chart built from table cells with values over each bar. A yellow
+        under construction note and a second stripe close the page. Below
+        640px the side by side tables stack, counters sit two by two and
+        the projects table scrolls inside.
+    spacing: Table cellspacing 2px and cellpadding 6 to 8px. Sections split by grooved rules with 16px around.
+    density: Everything in one centred column, stacked like a long homepage.
+    corners: All square.
+    borders: 3px outset table frames, 1px inset cells, 3px outset buttons that turn inset when current, a double 3px box for the alert.
+    shadows: None except the flat silver shadow on the logo. Bevels give depth.
+    icons:
+        Tiny solid glyphs. A tick means On track, a triangle with a bang
+        means At risk, a cross means Behind, and a diamond with a bang
+        marks overdue. Red NEW! labels flag fresh activity.
+    focus: A 2px dotted black outline offset 2px.
+    tone: Proud and excited with double exclamation marks, such as Welcome, Mara!!, What's New? and always under construction.

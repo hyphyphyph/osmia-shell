@@ -1,0 +1,50 @@
+export anchor MainframeStyle:
+    number: 407
+    screen: DatabaseConsole
+    name: Mainframe
+    idea: The console is a block mode terminal screen in seven field colours, with a command line on top, selection letters beside the tables, a message line and a row of PF keys, all in caps inside a dark grey bezel.
+    base: dark
+    palette:
+        case: #1b1d20, the page and the bezel
+        caseEdge: #2c2f34, the bezel rim and sheet border
+        screen: #030506, the screen glass and the style sheet
+        blue: #74b6ff, protected text, types and plain table names
+        turquoise: #5fe3e0, headings, field labels and PF key numbers
+        green: #66f08a, input fields, selection letters, query text and OK
+        white: #f4f4f0, data, the message line, keywords and focus
+        yellow: #ffe27a, PK and FK marks, the replica name and the RO lock
+        pink: #ff9ee0, PF key actions and the secondary button
+        red: #ff7a72, the ERR code and error text
+    type:
+        Monospace only, IBM Plex Mono, ui-monospace, SF Mono, Menlo,
+        Consolas, Courier New. Everything is 15px at 1.55 in capitals, 13px
+        on phones. The status line is 14px. A faint blue text glow sits on
+        the screen.
+    layout:
+        A rounded grey bezel with an inner ring holds a black screen. The
+        top row has BWDATA01, the centred title BRIGHTWORK DATA QUERY
+        CONSOLE and PRODUCTION-REPLICA in yellow. Next is COMMAND with an
+        arrow and a green underlined input holding RUN, and SCROLL PAGE on
+        the right. The body has a 34ch schema panel and a wide panel. The
+        schema panel shows SCHEMA PUBLIC over a dashed teal rule, an S TABLE
+        header, then the tables each with a green underscore, TASKS marked
+        X in white, and its six columns indented with types in blue and PK
+        or FK in yellow. The wide panel stacks the query in green with white
+        keywords, RESULT 3 ROWS 38 MS as a two column table, and HISTORY
+        TODAY as a table of time, RC, query and ms, with OK in green and
+        ERR between asterisks in red beside the red error text. Below sit
+        the message BWD0001I QUERY COMPLETE. 3 ROWS. 38 MS., a row of PF
+        keys from PF1 HELP to PF12 CANCEL as real buttons, and a ruled OIA
+        line with RO READ-ONLY REPLICA, LAG 2S, CONN 14 ACTIVE and a cursor
+        position. Below 900px the panels stack, and on phones the title
+        wraps to its own line.
+    spacing: Character cells. Gaps of 1 to 4ch, one blank line after each panel.
+    density: High. Four panels, a message line and seven PF keys on one screen.
+    corners: 22px bezel, 10px screen glass, square fields and buttons.
+    borders: Green 2px underlines for input fields, dashed teal rules under headings, a thin rule above the OIA line.
+    shadows: An inner bezel ring and a faint blue text glow.
+    icons:
+        None. X selects a table, OK and ERR between asterisks mark results,
+        RO in brackets marks the lock.
+    focus: A 2px white outline offset 1px with a dark blue fill behind the focused field or key.
+    tone: Operator capitals, such as COMMAND, PF5 RUN, QUERY COMPLETE and CONN 14 ACTIVE.

@@ -1,0 +1,57 @@
+export anchor TelegramStyle:
+    number: 120
+    screen: ProjectsDashboard
+    name: Telegram
+    idea: The dashboard is a telegram form, with printed brown field labels and boxes and every fact pasted on as an uppercase teletype tape strip closed with STOP.
+    base: light
+    palette:
+        counter: #dcdcd2, the page behind the form
+        formBuff: #f4ecd2, the form and the style sheet
+        formPrint: #8a2f1d, labels, rules, frames, the primary button, this week and focus
+        tape: #fffcf0, pasted strips that carry all data
+        ink: #1f1c17, teletype text
+        muted: #5c5345, STOP separators and placeholders
+        okGreen: #2b5e2b, the On track code with a dot
+        riskBrown: #7f4500, the dashed At risk code with a triangle
+        lateRed: #9b1c1c, the heavy Behind code with a square and overdue text
+        focusYellow: #fff3b8, the fill behind focused controls
+    type:
+        Three stacks. Teletype is Lucida Console, Andale Mono, DejaVu Sans
+        Mono, Liberation Mono, Monaco, monospace, always uppercase on tape.
+        Slab is Rockwell, Roboto Slab, Clarendon, Century Schoolbook, Bookman
+        Old Style, Georgia, serif for the masthead. Narrow is Arial Narrow,
+        Liberation Sans Narrow, Roboto Condensed, Arial, sans-serif for
+        printed labels. Sizes are 34px bold slab caps masthead, 30px bold
+        teletype figures, 20px teletype greeting, 13 to 15px teletype data
+        and 10 to 12px bold narrow caps labels with 0.12em tracking.
+    layout:
+        One buff form framed by a printed 2px line and a 1px line inside it.
+        The masthead has a round lightning bolt seal, the brand in brown
+        slab caps with Telegraph, team wires under it, and three boxed
+        fields on the right for No. 1031, Filed 31 OCT 26 and Day SAT, over
+        a double rule. A service row labelled Check service desired holds
+        the navigation as printed checkboxes, the current one crossed with
+        an X and underlined, and on the right a labelled Query field, a
+        brown New project button, a bell with its count and a To field with
+        the user. The Message area pastes three tape strips, the greeting,
+        the date and a red urgent strip, each ending in STOP. Four boxed
+        fields each hold one figure on tape. Project wires is a ruled grid
+        with a number column, and every cell is a tape strip, the name and
+        team joined by STOP, a text bar such as seven hashes and three
+        dashes in brackets with 72 pct, tasks, due date and a status code.
+        The chart is a tape ticker in a pre block, one line per day with
+        hashes for the count, last week in ink with its total and this week
+        in brown with its total. Incoming wires lists activity as tape
+        strips. Below 1000px each project row stacks its cells under the
+        number.
+    spacing: An 8px unit. The form inset 30px inside the double frame, 9px row padding and 28px before sections.
+    density: Dense like a form. Data in columns of printed boxes, one wire per project.
+    corners: Square everywhere. No rounding at all.
+    borders: 1px form print rules, a 3px double rule under the masthead, and a 2px plus 1px frame round the form.
+    shadows: Only the tape strips lift, with a 1px shadow like glued paper, and the form has a soft drop.
+    icons:
+        Few. A lightning bolt seal. Status codes pair the caps word with a
+        filled dot, a triangle or a square in a 1.5px, dashed or 3px frame.
+        Overdue is red tape text. Nav uses printed checkboxes.
+    focus: A 3px form print outline offset 2px over a pale yellow fill.
+    tone: Clipped wire language in caps, ending phrases with STOP, such as Good morning Mara STOP.

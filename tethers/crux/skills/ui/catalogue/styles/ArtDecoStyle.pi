@@ -1,0 +1,53 @@
+export anchor ArtDecoStyle:
+    number: 24
+    screen: LandingPage
+    name: Art deco
+    idea: A gilded 1920s poster, with cream paper, black bands, deep gold sunbursts and stepped fans, and tall condensed capitals set in strict symmetry.
+    base: light
+    palette:
+        cream: #f3ead6, the page
+        ivory: #fbf6ea, the hero arch, feature panels, fields and the style sheet
+        jet: #15120d, text, the top bar, the quote band, the footer and the primary button
+        goldLeaf: #c8a14b, rules, sunburst rays, double frames and the focus halo, never text
+        goldInk: #6e5212, gold text on cream such as eyebrows and the accent half of the headline
+        goldOnJet: #d9b660, gold text, lines and the primary button label on black
+        taupe: #5e5446, body copy, notes and captions
+        emerald: #1d5c46, the On track chip with a diamond
+        amber: #7a4e00, the At risk chip with a triangle
+        oxblood: #8c1c1c, the Overdue chip with a crossed square
+    type:
+        Two stacks. Display caps use Futura Condensed, Avenir Next
+        Condensed, Roboto Condensed, Helvetica Neue Condensed, Arial Narrow,
+        sans-serif-condensed with font-stretch condensed, always uppercase
+        and tracked 0.12 to 0.28em. Text uses Didot, Bodoni 72, Bodoni MT,
+        Big Caslon, Georgia, serif. The headline is 92px bold caps at 0.98
+        line height, section titles 44px caps, the quote 44px serif italic,
+        feature titles 22px caps, body 17px serif at 1.6, labels and nav
+        14px caps.
+    layout:
+        A black top bar with a fan mark, the spaced caps brand, caps nav
+        links and a Start free button, edged by a doubled gold line. The
+        hero is centred inside a tall ivory arch with a round top and a
+        double gold frame, over gold sunburst rays fanning up from below.
+        An eyebrow flanked by short double rules sits above the headline,
+        whose second half is gold. Under the arch a black plaque lists three
+        projects with due dates and status chips. The logo strip is one
+        centred line of caps names split by gold diamonds between double
+        rules. Three features are ivory panels with stepped ziggurat tops
+        and black roman numeral medallions. The quote is a full black band
+        with a gold fan hanging from its top edge. The closing band is a
+        double framed ivory box. The footer is black with gold caps
+        headings. Below 760px the nav folds into a Menu disclosure and
+        panels stack.
+    spacing: An 8px unit in big steps of 24, 32, 48 and 96px. Sections have 96px above and below.
+    density: Sparse and ceremonial. One idea per band, everything centred on one vertical axis.
+    corners: Square. The only curves are the large hero arch and arched swatch tops. Feature panels get stepped corners in 16px steps.
+    borders: Double gold hairlines, a 1px line, a 4 to 6px gap, then another line. Black bars carry a doubled gold edge.
+    shadows: None. Depth comes from stacked frames and black bands.
+    icons:
+        Geometric filled shapes in currentColor at text size, such as a
+        diamond play mark and a fan logo. Status chips are ivory with a
+        filled diamond for On track, a filled triangle for At risk and a
+        crossed square for Overdue, always with the caps word.
+    focus: A 2px jet outline offset 3px inside a 6px gold halo. On black a 2px gold outline. A focused field gets a gold underline and a cream fill.
+    tone: Formal and declarative in spaced capitals, such as What Brightwork does, warmed by italic serif lines.

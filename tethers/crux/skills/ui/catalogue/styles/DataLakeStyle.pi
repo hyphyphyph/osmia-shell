@@ -1,0 +1,55 @@
+export anchor DataLakeStyle:
+    number: 408
+    screen: DatabaseConsole
+    name: Data lake
+    idea: The console reads from the surface down, with each part of the screen a deeper and darker band of water, so status floats at the waterline, tables bob as buoys, results hang as plumb lines and history settles as sediment.
+    base: dark
+    palette:
+        sky: #0a2236, the top bar above the waves
+        depth0: #11506f, the surface band and the wave strip
+        depth1: #0d3d5c, the shallows band
+        depth2: #0a2e49, the mid water band
+        depth3: #071f36, the deep band
+        depth4: #041322, the lake floor, the page and the style sheet
+        glass: #0f3552, table buoys and fields
+        ink: #eef8ff, text
+        muted: #b3d6ea, depth labels, column types and meta
+        aqua: #74e4ff, band headings, plumb weights, the primary button and focus
+        onAqua: #032434, text on aqua
+        sand: #e7c98e, history times and string literals
+        ok: #8ce8b4, Done
+        bad: #ffa092, Failed and its error
+    type:
+        Humanist sans, Avenir Next, Avenir, Nunito Sans, Segoe UI. Base 15px
+        at 1.55. The app name is 20px at 600, depth figures 22px at 600,
+        band headings 13px bold caps at 0.14em, result weights 24px bold.
+        SQL and columns use ui-monospace at 13 to 14px.
+    layout:
+        A top bar with an aqua drop mark, Brightwork Data and Connected to
+        production-replica ends in a full width wave strip. Below, five
+        full width bands each have a 112px depth rail on the left with a
+        dashed edge, reading 0 m Surface, 10 m Shallows, 40 m Mid water,
+        120 m Deep and 200 m Lake floor. The surface band shows three round
+        pills, a padlock Read-only replica, a wave Lag 2 seconds and linked
+        rings 14 active connections. The shallows show tables as round
+        buoys, with tasks opened into a glowing card listing its six
+        columns down a left aqua line. Mid water holds a 20px rounded query
+        panel with lower case SQL and a bar with Cast query, Save and a note
+        that the replica is read-only. Deep shows three plumb lines from a
+        ruled waterline, each ending in an aqua drop with the count, the
+        Billing migration line twice as long, captions under each, and a
+        sentence explaining that deeper means more. The floor shows history
+        as three stacked sediment strips with sand times, the failed strip
+        reddish with a diamond cross icon and the error line. Below 720px
+        the depth rail becomes an inline label above each band.
+    spacing: An 8px unit. 24px band padding, 12px to 16px between items.
+    density: Low. One idea per band, read top to bottom.
+    corners: Round. 20px panels and buoys, full round pills and buttons, drop shaped weights, 16px sediment block.
+    borders: Thin translucent pale blue lines, the open table in solid aqua, a dashed depth rail.
+    shadows: A soft aqua glow around the open table only.
+    icons:
+        Rounded line icons at 16px. Padlock, wave and rings for status,
+        ring with tick for Done, diamond with cross for Failed, each with
+        its word.
+    focus: A 3px aqua outline offset 3px, following the round shapes.
+    tone: Calm water words, such as Cast query, Soundings, Sediment and Waterline.

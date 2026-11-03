@@ -1,0 +1,55 @@
+export anchor GrungeStyle:
+    number: 158
+    screen: ProjectsDashboard
+    name: Grunge
+    idea: A 90s grunge magazine page in muted dirt tones, with doubled misregistered type, scratched paper, panels whose ghost frames slip out of line and project rows that refuse to sit straight.
+    base: light
+    palette:
+        paper: #e7e2d7, the scratched page
+        card: #efebe2, panels and fields
+        ink: #24201b, text, rules and the primary button
+        rust: #7d3a1f, ghost frames, the overdue card, Behind and accents
+        olive: #4c522c, On track and the second type ghost
+        slate: #3f4a55, At risk, asides and the last week line
+        dust: #b8ad95, masking tape and the bang icon on ink
+        stain: #a99b78, coffee ring blooms in the page, never text
+    type:
+        Display uses Trebuchet MS, Gill Sans, Gill Sans MT, DejaVu Sans,
+        sans-serif, bold lowercase at minus 0.06em, doubled with a rust
+        ghost 3px right and an olive ghost 2px left. The greeting is 48 to
+        116px at 0.82 line height, numbers 64px, section heads 40px,
+        project names 22px. Accents use Times New Roman italic at 0.6 of
+        the line, and asides at 14 to 16px. Body, nav and labels use
+        American Typewriter, Courier New, Courier, monospace at 13 to 16px
+        in lowercase.
+    layout:
+        A masthead with a tilted lowercase brightwork logo, work in rust,
+        beside lowercase typewriter nav with a thick rust underline on
+        home, a tilted boxed search, a black new project button with a
+        rust offset, a dashed alerts button and the name in italic serif.
+        The greeting spans the width in huge lowercase with Mara. in rust
+        italic stepped in beneath, the date set vertically at the right,
+        and a black slanted strip with a double bang for the overdue line.
+        Below, a 260px column and a fluid column. The numbers stack down
+        the left in layered boxes nudged sideways by different amounts,
+        the overdue one filled rust. The projects panel is a table of
+        rows with a big name and italic team, task count and due date,
+        a scratchy bar with a ragged clip path end and a percent, and a
+        status box, with alternate rows shifted 5 to 8px. Under it, two
+        panels, lately with activity on slightly rotated paper strips
+        edged in ink, and done per day as a doubled line chart, dashed
+        slate for last week and solid ink for this week, each with an
+        offset ghost line. Every panel has a 2px rust ghost frame slipped
+        7px right and 6px up. Below 960px the columns stack and the
+        numbers sit two by two.
+    spacing: An 8px base with uneven offsets of 5 to 18px on purpose. Columns of 260px and fluid.
+    density: Medium. Big lowercase headings over dense typewriter detail.
+    corners: Square. Rough edges come from clip paths on bars and slight rotations.
+    borders: A 2px ink box with a 2px rust ghost frame offset behind it. 1px ink row rules.
+    shadows: No blur. Hard offset rust or olive slabs behind buttons and swatches. Fractal noise and faint diagonal scratches across the page.
+    icons:
+        Rough outline strokes. A wobbly ring means on track, a hollow
+        bevelled triangle in a dashed box means at risk, a heavy cross on
+        rust means behind, and a double bang marks overdue.
+    focus: A 2px ink outline offset 2px with a 4px rust slab down right and a 3px olive slab up left.
+    tone: Flat, wry and lowercase, such as lately, six give or take nothing and sorted by nothing.

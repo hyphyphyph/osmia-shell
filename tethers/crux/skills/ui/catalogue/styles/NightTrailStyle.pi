@@ -1,0 +1,61 @@
+export anchor NightTrailStyle:
+    number: 390
+    screen: FitnessTracker
+    name: Night trail
+    idea: A mountain trail at night seen by headlamp, with topographic contour lines in the dark, a warm beam lighting the run, heart zones stacked as altitude bands in a peak, the week drawn as a ridge, and goals marked by painted trail blazes.
+    base: dark
+    palette:
+        night: #090e15, the page and the style sheet
+        panel: #0f1823, cards, the hero and fields
+        topo: #1c2a3b, contour lines in the hero
+        line: #2b3d52, card edges, dashed rules and the climb path
+        ink: #eef2f5, text and figures
+        muted: #a9b7c7, labels, the ridge line, passed weeks and rest days
+        beam: #ffe3a0, headlamp light, trail progress, today, zone 3, you are here, the primary button and focus
+        blaze: #ff9a52, the move blaze, the next session sign and sheet markers
+        onBlaze: #2a1204, text on blaze and beam
+        moss: #9fd8a8, the exercise blaze and the Finished tag
+        sky: #a9c8ff, the stand blaze and the tent
+    type:
+        One stack, Avenir Next, Avenir, Nunito Sans, Segoe UI, system-ui.
+        The distance is 120px at 700 tracked minus 0.03em, hero stats 34px,
+        sleep and goal figures 22 to 36px, the headline 22px at 600, card
+        labels 13px caps tracked 0.14em, body 15px at 1.5.
+    layout:
+        A header with a peak and moon mark, Brightwork Move, Today, Week and
+        Plan with an orange underline on Today, and Saturday 31 October
+        after dark on the right. A full width hero card on dark slate with
+        contour lines drawn on the right and a warm headlamp glow from the
+        top left. It holds a headlamp glyph with Evening run in beam caps,
+        the line Out and back under the headlamp, 8.2 km at 120px and a
+        green Finished tag, and on the right Time, Avg pace and Avg heart
+        rate over a rule. Below, a twelve column grid. Trail goals takes
+        five columns, each ring a painted blaze, the name, value over goal,
+        a dotted trail with a glowing beam fill and a dot at the percent,
+        and a line with percent along and the amount to the goal. Heart rate
+        zones takes seven columns with a peak cut into five horizontal
+        bands, zone 1 at the base and zone 5 at the summit, each as thick as
+        its minutes, zone 3 lit in beam colour, beside a list of zones with
+        name and minutes. This week's ridge takes seven columns as a ridge
+        line through the daily distances with dots and figures, hollow dots
+        with rest on empty days, a flag on today and day names. A right
+        column stacks Camp sleep with a tent, 7 h 12 min and deep 1 h 34
+        min, and the Half marathon plan as a dashed climb of twelve markers,
+        filled squares for passed weeks, a lit circle with you are here at
+        week 6, hollow squares ahead and race week 12 at the top, then an
+        orange arrow sign reading Next tomorrow Long run 14 km with View
+        plan. Below 1000px cards stack. At 375px the ridge scrolls inside
+        its card.
+    spacing: An 8px unit. 20px between cards, 22 to 24px card padding, 36 to 40px in the hero.
+    density: Medium. A lit hero, then four cards that each draw one landscape.
+    corners: 20px cards, 10px controls, 4px blazes and pills for tags.
+    borders: 1px slate edges on cards and dashed rules between trail goals.
+    shadows: None under cards. Light comes from the warm beam gradient and small glows on progress.
+    icons:
+        A headlamp, a peak mark, a tent and a flag. Goals use painted
+        blazes, an orange circle for move, a green triangle for exercise and
+        a blue square for stand. Passed plan weeks are filled squares,
+        future ones hollow and the current one a lit circle. Rest days are
+        hollow dots with the word rest.
+    focus: A 2px beam coloured outline offset 3px with a soft 6px glow.
+    tone: Outdoor and quiet, such as Trail goals, This week's ridge, Camp and you are here.

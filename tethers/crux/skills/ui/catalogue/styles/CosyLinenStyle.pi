@@ -1,0 +1,54 @@
+export anchor CosyLinenStyle:
+    number: 380
+    screen: SmartHome
+    name: Cosy linen
+    idea: The home dressed like a warm den at night, dark walnut wood behind stitched linen cards, serif headings, a hanging fabric tag for the alert and an energy chart sewn in running stitches.
+    base: dark
+    palette:
+        wood: #1d140e, walnut page with a faint grain
+        shelf: #2f1f14, the header shelf and sheet top edge
+        linen: #2a231d, card cloth with a 4px weave
+        linen2: #332a22, patches, scene tabs, secondary buttons
+        stitch: #7a6650, dashed stitched borders and the chart baseline
+        ink: #f1e6d6, text
+        mute: #c6b49e, meta and labels
+        terra: #eb9a72, the alert tag, motion and the primary button
+        onTerra: #2a1206, text on terra
+        mustard: #ebc672, lights on, active scene, peak stitches and focus
+        sage: #b3cfa3, locked and battery yarn
+        rose: #e8a7a0, heating schedule
+    type:
+        Serif headings and figures, Charter, Bitstream Charter, Sitka Text,
+        Cambria, Georgia. Humanist sans text, Seravek, Gill Sans Nova, Gill
+        Sans, Trebuchet MS, Ubuntu, base 16px at 1.55. Title 26px with an
+        italic mustard Home, card titles 22px, room temperatures 30px,
+        energy figures 34px, state labels 14px at 600.
+    layout:
+        A dark walnut page with a faint vertical wood grain. A wooden shelf
+        bar across the top holds Brightwork Home with an italic mustard Home
+        and Saturday evening. Under it a hanging fabric tag cut to a point
+        on the left, with a punched hole, carries the garage alert in terra
+        on deep rust and a terra Close now. A 12 column grid follows. The
+        left 7 columns hold linen room cards two across, the living room
+        spanning both, each with a woven texture, a dashed stitch line inset
+        7px, a round stitched patch with the room icon, a serif name and
+        temperature, and a small dark label with a state icon and word
+        beside a muted line. The right 5 columns stack Energy today with
+        serif figures, a striped sage yarn battery bar and a bar chart sewn
+        in vertical running stitches, mustard for hours over 1 kWh, then
+        Scenes as fabric tabs with a round sewn button that fills mustard
+        with a check and the words On now for Movie. Below 1000px the right
+        column moves under the rooms in two columns, and at phone width
+        everything stacks.
+    spacing: An 8px unit. 24px between cards, 22 to 24px card padding.
+    density: Medium low. Five room cards, energy and scenes.
+    corners: 10px cards, 8px buttons and tabs, round patches and scene buttons, and a pointed tag for the alert.
+    borders: A 1.5px dashed stitch line in #7a6650 inset inside every card, and a solid stitch colour on buttons.
+    shadows:
+        A 2px dark ledge plus 0 10px 20px black at 40 percent, like cloth on
+        a table. The shelf casts 0 6px 12px.
+    icons:
+        Rounded 1.7 stroke icons at 20px in stitched round patches. States
+        pair a word with a bulb, dash circle, clock, lock or walker.
+    focus: A 3px mustard outline offset 3px.
+    tone: Homely and spoken, such as Saturday evening, Open for 2 hours now and Seen at half past nine.

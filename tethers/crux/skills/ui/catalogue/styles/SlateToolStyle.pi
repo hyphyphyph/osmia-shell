@@ -1,0 +1,54 @@
+export anchor SlateToolStyle:
+    number: 244
+    screen: DesignEditor
+    name: Slate tool
+    idea: Blue-grey professional tool chrome with a compact 11px UI, clear ruled panels and one working blue, built for long sessions in a design tool.
+    base: dark
+    palette:
+        well: #161a20, the page and the canvas behind a 16px dot grid in #2c333e
+        chrome: #1a1f27, the top bar, the status bar and number fields
+        panel: #222831, the layers panel and the inspector
+        line: #353d49, every panel edge and section rule
+        ink: #dbe1ea, text
+        muted: #9ba6b5, panel labels, layer type icons and field prefixes
+        accent: #2f6fde, the active tool and the Share button under white text
+        accentInk: #8fb6ff, the Selected tag, the selected row edge, tab underline and focus
+        row: #2c3a52, the selected layer row and the active direction segment
+        saved: #62d29d, the Saved text and icon
+        guide: #ff6ba6, spacing guides with dark label text
+        pin: #f2b84b, the comment pin behind dark initials
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial, with ui-monospace for zoom, sizes and number fields. Base
+        11px at 1.4. Panel heads are 11px 600 caps tracked 0.06em, the file
+        name 11px 600, values 11px mono, and the style sheet title 22px.
+    layout:
+        A classic three panel desktop tool. A 40px top bar holds a blue B
+        square, the file name over Canvas and Home v3, a recessed group of
+        six icon tools with Move filled blue, then the three overlapping
+        initials discs, a mono zoom box with a chevron, an icon Present
+        button and a blue Share button. Below, a 232px layers panel with
+        Layers and Assets tabs and 24px tree rows, the canvas in the middle
+        with a dot grid, and a 248px inspector with Design and Prototype
+        tabs. The inspector stacks ruled sections for Frame with a two by
+        two X Y W H grid, Auto layout with a Vertical and Horizontal
+        segment plus gap and padding fields, Corner radius, Fill with a
+        white swatch and Export with format, scale and an Export Hero
+        button. A 24px status bar runs along the bottom. The Hero frame
+        sits white with a blue outline, eight square handles, a blue size
+        badge below and the comment bubble in chrome colour. Below 760px
+        the side panels and top tools hide, and a bottom bar of six 44px
+        tools appears above a wrapping status bar.
+    spacing: A 4px unit. 24px rows, 28px panel heads, 8 to 10px panel padding, 40 to 48px around the frame.
+    density: Dense. Three panels and a status bar always visible with small type.
+    corners: Small. 3 to 4px on fields, buttons and the tool group, square panels, round avatars.
+    borders: 1px #353d49 between every panel and inspector section. The selected layer row adds a 2px accentInk inner left edge.
+    shadows: None on panels. Only the comment bubble floats with 0 4px 12px black at 40 percent.
+    icons:
+        16px line icons at 1.5px stroke with round caps, 14px inside panels.
+        Layer types use a hash for frames, a T for text, a nested diamond
+        for the component instance in soft violet and a picture for the
+        image. Saved uses a check circle, editing uses two people and the
+        version uses a tag, each with its words.
+    focus: A 2px #8fb6ff outline offset 1px. Number fields add a 1px inner ring in the same blue.
+    tone: Terse tool labels, such as Design, Auto layout and Export Hero.

@@ -1,0 +1,53 @@
+export anchor SewingPatternStyle:
+    number: 110
+    screen: ProjectsDashboard
+    name: Sewing pattern
+    idea: Every panel is a numbered pattern piece on tissue paper, with a dashed cutting line, an inner stitching line, notches and grain arrows, and progress drawn as a grain arrow sewn part way.
+    base: light
+    palette:
+        tissue: #f3e9d2, the page, with faint crinkle lines and pale highlights
+        lightTissue: #f8f1e0, piece fills, the search and the instruction sheet
+        printBlack: #1d1b17, text, cut and stitch lines, notches and the primary button
+        patternBlue: #1f4e8c, grain arrows, progress, this week bars, piece letters and focus
+        markingRed: #a12a2a, the overdue mark, Behind and the count badge
+        green: #2f6233, On track
+        amber: #7d4e00, At risk
+        tapeYellow: #f2d04a, the tape measure axis with dark text
+        pencil: #5b5345, meta and times
+    type:
+        Two stacks. Labels and titles use Franklin Gothic Medium, Franklin
+        Gothic, ITC Franklin Gothic, Arial at regular weight. Text uses
+        Verdana, Geneva, DejaVu Sans, Tahoma. The greeting is 40px at 1.08,
+        measurements 52px, piece titles 19px, piece letters 30px blue,
+        labels 12 to 14px caps tracked 0.14 to 0.18em, body 14px at 1.6.
+    layout:
+        A pattern envelope header shows a pattern piece logo, Brightwork
+        with Pattern no. 1031, a boxed search, a black New project button,
+        a round bell and a round MO, over a solid rule. The nav is caps, the
+        current item blue with a small triangle notch. The board is a 12
+        column cutting table of pieces, each with a 2px dashed cut line, a
+        1px solid stitch line 12px inside, black triangle notches on edges,
+        scissors on the top cut line and a circled piece number with a caps
+        note like Front Cut 1. Piece 1 has a big curved bottom right corner
+        and holds Good morning, Mara, the date, a red underlined 4 tasks are
+        overdue with a crossed circle and a grain arrow. Piece 2 holds
+        Finished measurements, four numbers each over a blue dimension line.
+        Piece 3 is the cutting layout, six smaller pieces lettered A to F
+        three across, some with one curved corner, each with name, meta, a
+        grain arrow solid to the percent and dashed after, the percent and
+        status. Piece 4 is the chart with dashed outline hatched bars for
+        last week and solid blue bars for this week standing on a yellow
+        tape measure marked 18 to 31. Piece 5 is Sewing steps, six activity
+        items with circled numbers. Below 1000px pieces go full width.
+    spacing: An 8px unit. A 12px seam allowance between the cut line and the stitch line, 28px between pieces.
+    density: Medium. Pieces of different sizes laid out on a 12 column cutting table.
+    corners: Square, with one big curved corner on some pieces, like an armhole or hem curve.
+    borders: 2px dashed outer cut line, 1px solid inner stitch line and black triangle notches on edges.
+    shadows: None. Tissue lies flat.
+    icons:
+        Pattern markings at 16px. A filled dot for On track, a filled
+        triangle for At risk, a square inside a square for Behind and a
+        crossed circle for overdue, with the caps word. Line scissors sit on
+        every cut line.
+    focus: A 2px blue outline offset 3px with a soft 6px blue tint around it.
+    tone: Pattern instructions, such as Cut 1, Finished measurements and Sewing steps.

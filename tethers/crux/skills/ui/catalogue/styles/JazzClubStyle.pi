@@ -1,0 +1,56 @@
+export anchor JazzClubStyle:
+    number: 276
+    screen: CloudFiles
+    name: Jazz club
+    idea: A late night lounge where one blue spotlight falls on a numbered set list of files, brass trim and a deep red velvet card hold the details, and titles sing in italic serif.
+    base: dark
+    palette:
+        midnight: #0a1120, the page and fields
+        navy: #121b30, search, switch, the gauge card and the style sheet
+        smoke: #1a2540, the pressed switch segment
+        spotlight: #5082dc, the spotlight cone at 42 percent alpha and the selected row tint
+        ink: #f3ecdf, warm cream text
+        muted: #b7bdcc, meta and labels
+        line: #2c3856, row rules and borders
+        brass: #d9ad5b, numerals, the primary button with dark text #1c1306, Starred, the current nav and the gauge
+        velvet: #561322, the details card
+        velvetInk: #f1dcd8, text on velvet
+        blue: #9cc8ff, Shared, Selected and focus
+        rose: #ffa8a0, Uploading and its groove
+    type:
+        Titles and file names in Palatino Linotype, Book Antiqua, Georgia.
+        The folder title is 52px italic at 400 weight, the list heading
+        26px italic, file names 19px roman. Body in Optima, Candara, Segoe
+        UI at 15px with 1.55 line height. Nav in 16px small caps, small
+        labels 12px caps tracked 0.4em in brass.
+    layout:
+        A centred stage under a blue spotlight cone falling from the top
+        centre, with faint smoke drifts, all clipped by its section. The
+        header is centred, a brass line Brightwork Drive and Fernhill
+        Studio, the italic title Website redesign, a breadcrumb with
+        floral separators, then the five drive links in one centred small
+        caps row between brass hairlines, My files underlined in brass.
+        Below, a two column stage. The left column has a pill Search
+        files, Upload, New folder and a pill List or Grid switch, then the
+        heading Tonight's files with 8 in this folder, then an ordered set
+        list. Each file gets a brass italic Roman numeral, a type icon, the
+        name, a dotted leader and the size, then a second line of kind,
+        date and person and any status. The selected row is a rounded blue
+        tinted band with a thin blue outline. Uploading adds a rose groove
+        bar. A gauge card follows with a brass half dial and 64.2 GB of
+        100 GB used. On the right a 330px velvet card with an 18px radius,
+        a brass frame and an inner hairline holds Details, the preview,
+        the italic name, Starred, small caps facts aligned right, and a
+        full width Share over Download and Get link. Below 980px the card
+        moves under the list.
+    spacing: An 8px unit. 40px between list and card, 14px row padding, 32px gutters.
+    density: Relaxed. Each file takes two lines.
+    corners: Pills for buttons, search and switch. An 18px velvet card with a 12px inner frame. The selected band is 12px.
+    borders: 1px navy rules between rows. Brass hairlines frame the nav and make the double frame on the card.
+    shadows: A long soft drop under the velvet card and a brass glow under the primary button.
+    icons:
+        1.5px line icons in brass. Status is a coloured semibold word with
+        a star for Starred, two heads for Shared, an up arrow for Uploading
+        and a checked box for Selected.
+    focus: A 2px pale blue outline offset 3px with a faint blue halo.
+    tone: Warm and a little theatrical, such as Tonight's files and 8 in this folder.

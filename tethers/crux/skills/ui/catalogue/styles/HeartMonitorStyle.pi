@@ -1,0 +1,64 @@
+export anchor HeartMonitorStyle:
+    number: 385
+    screen: FitnessTracker
+    name: Heart monitor
+    idea: The day shown on a bedside style monitor, with stacked signal channels on a fine grid, a live trace for heart rate, the week drawn as a rhythm strip of beats, and the five zone colours leading every reading.
+    base: dark
+    palette:
+        bg: #040706, the case around the screen
+        screen: #07100d, every channel, the side panel and the style sheet
+        grid: #11231c, the fine 8px grid behind signals
+        gridMaj: #1a3a2e, the 40px grid and the rhythm baseline
+        line: #244236, channel dividers and field borders
+        ink: #e6f2ec, text, readings and goal ticks
+        muted: #9db8ac, labels, units and rest days
+        trace: #43f59b, the heart trace, ring progress, rhythm strip, plan pip and primary button
+        z1: #78b6ff, zone 1 Easy and deep sleep
+        z2: #43e0a0, zone 2 Aerobic
+        z3: #ffd23f, zone 3 Tempo and the average heart rate
+        z4: #ff9c45, zone 4 Threshold
+        z5: #ff6b7a, zone 5 Max
+        onZ: #04120b, text on zone and trace fills
+    type:
+        Readings use Segoe UI, Roboto, Helvetica Neue, Arial at weight 300
+        with tabular numbers, 52px for heart rate, 44px for side parameters
+        and 40px for ring values. Channel labels and meta use ui-monospace,
+        SF Mono, Cascadia Mono, Menlo, Consolas at 12px, caps at 700 tracked
+        0.08em. Body is 14px at 1.45.
+    layout:
+        One monitor case 1260px wide with an 18px radius and an inset black
+        bezel. A status strip across the top holds Brightwork Move, Today
+        with the date, a green heartbeat glyph with Last session 42 min 16
+        s, and Today, Week and Plan as small mono tabs. Below, a main column
+        of channels beside a 300px side panel. Every channel is a row of
+        three cells, a 96px mono label cell, a signal cell on a fine green
+        grid and a 190px reading cell. The HR channel draws a repeating
+        heartbeat trace and reads 152 bpm in zone 3 yellow with a Z3 tag.
+        The Zones channel spans the signal and reading cells with one strip
+        split into five zone colours, each with its own stripe pattern and Z
+        label, and a key of Z number, name and minutes. Move, Exercise and
+        Stand channels show a glowing green fill with a ring dot at the
+        percent, a dotted remainder, a white goal tick with the percent, and
+        a reading of value over goal with open and the amount to go. The
+        bottom of the column is the week as a rhythm strip, one beat per day
+        with height by distance and the figure above, flat line and rest for
+        empty days, day names under it and today marked with a diamond,
+        headed with 23.7 km, 4 runs and 3 rest. The side panel stacks the
+        Evening run with a Done tag and four parameters, Sleep 7 h 12 min
+        with a two part bar for deep sleep, and a green outlined next
+        session box with twelve plan pips, Long run 14 km and View plan.
+        Below 1000px the side panel moves under the channels in two columns.
+        At 375px label and reading share a row above the signal, and the
+        rhythm strip scrolls inside its own area.
+    spacing: An 8px unit and an 8px signal grid. Channels sit edge to edge with 1px dividers and 12 to 16px inner padding.
+    density: High. Every reading is a channel row, all visible at once like a monitor.
+    corners: 18px on the monitor case, 8px on the next session box, 3 to 6px on tags and controls.
+    borders: 1px dark green dividers between every channel and column.
+    shadows: An inset black bezel around the screen and a soft green glow on progress fills.
+    icons:
+        A heartbeat glyph for the run. Zones carry a Z number, a name and a
+        distinct stripe pattern. Rings say open with a hollow circle. Rest
+        days are a flat line with the word rest. The average heart rate tag
+        has a triangle.
+    focus: A 2px white outline offset 2px with a 5px green halo.
+    tone: Clinical short labels such as HR, Zones, avg, open, to go and Week rhythm.

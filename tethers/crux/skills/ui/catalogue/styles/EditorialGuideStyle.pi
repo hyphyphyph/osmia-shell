@@ -1,0 +1,42 @@
+export anchor EditorialGuideStyle:
+    number: 2
+    screen: ProjectsDashboard
+    name: Editorial guide
+    idea: A printed weekly on warm paper, with serif headlines, ink rules and plain words that read the dashboard like a short report.
+    base: light
+    palette:
+        paper: #faf6ee, the page
+        ink: #1f1b16, text, rules, the primary button and this week's chart bars
+        graphite: #6b6156, labels, captions and meta text
+        hairline: #dcd2c2, thin rules between entries, progress tracks and last week's chart bars
+        oxblood: #8c2a1c, links and the Behind status
+        forest: #2e5b3a, the On track status
+        ochre: #855400, the At risk status
+        highlight: #f1eadb, the background of a focused field
+    type:
+        Serif for headings and body, Iowan Old Style, Palatino Linotype,
+        Palatino, Book Antiqua, Georgia, serif. Labels use the system sans
+        in 11px semibold capitals with 0.12em letter spacing. Sizes are a
+        44px small-caps wordmark, 40px page headline, 26px section titles,
+        22px project names, 17px body at 1.55 line height and 15px italic
+        meta. Summary figures are 52px with old-style numerals.
+    layout:
+        A centred masthead with the wordmark, a date line between ink
+        rules, and a centred row of capitalised nav links. A lead section
+        pairs the headline and an italic standfirst with four large figures
+        split by hairlines. Below it, a two to one column layout holds the
+        numbered project entries beside the chart and the activity notes.
+        Content is capped at 1180px. Below 640px the columns stack and the
+        figures form a two by two grid.
+    spacing: An 8px unit. 18px between entries, 32px section padding, 40 to 48px between columns.
+    density: Medium. Few elements, long lines and generous leading.
+    corners: None. Every edge is square, including buttons.
+    borders: A 3px double ink rule under the masthead and above the style sheet, 1px ink under section titles, 1px hairline between entries.
+    shadows: None.
+    icons:
+        No pictogram icons. Status is a capitalised word with a
+        typographic symbol, a tick for On track, an open triangle for At
+        risk and a cross for Behind. Entries are numbered with italic roman
+        numerals. Progress is a thin ink line on a hairline track.
+    focus: A 2px ink outline offset 3px. A focused field gets a 2px underline and the highlight background.
+    tone: Full sentences, a little formal, such as The week at a glance, Notes from the team and The fortnight. Small numbers are written as words in the activity notes.

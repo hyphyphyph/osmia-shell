@@ -1,0 +1,56 @@
+export anchor PoolTilesStyle:
+    number: 170
+    screen: ProjectsDashboard
+    name: Pool tiles
+    idea: The dashboard is a lap pool seen from the deck, with white grouted tiles, a stone coping header, depth-marker tiles for the totals and one swimming lane per project divided by striped lane ropes.
+    base: light
+    palette:
+        tileWhite: #f7fcfd, page tiles and fields
+        grout: #d3e6eb, the 24px grout grid and dashed dividers
+        coping: #efe9dd, the header, pool rim and lane end wall
+        poolAqua: #c4ecf2, lanes, the current nav item and rows
+        deepAqua: #9fdde8, last-week chart tiles
+        navyTile: #0b4a6f, brand tiles, the nav band, borders and T-lines
+        ink: #0d2f44, text
+        softInk: #355a6d, meta and times
+        ropeRed: #c8312b, lane rope floats and the swimmer marker
+        ropeBlue: #1b6fa8, lane rope floats, never text
+        green: #17663a, the On track buoy
+        amber: #8a4b00, the At risk flag
+        red: #b02520, the Behind block and the overdue sign
+        whistleYellow: #e0a100, the focus halo
+    type:
+        Signs use Bahnschrift, DIN Alternate, DIN Condensed, Roboto
+        Condensed, Arial Narrow, Arial in 700 caps. Text uses Arial
+        Rounded MT Bold, Nunito, Trebuchet MS, system-ui. Depth marker
+        figures are 64px stencil, the deck sign greeting 34px caps,
+        headings 18px caps tracked 0.06em, labels 13px caps, lane names
+        18px bold rounded and body 15px.
+    layout:
+        A stone coping header spells the brand in ten navy letter tiles,
+        then a pill search, a navy New project button, a bell and an avatar
+        ringed in red, edged below by a navy, white and navy tile band. A
+        navy nav band follows with dashed dividers and Home on aqua. The
+        deck row has a white sign with Good morning, Mara, the date and a
+        red bordered overdue sign, beside four depth-marker tiles, a big
+        figure over a navy label strip, the overdue tile in red. The pool
+        is an aqua basin with an 8px coping rim and a navy outline. Each of
+        six lanes has a navy lane number block, the project name and meta,
+        a black T-line with a dotted wake and a red swimmer disc at the
+        percent done, and a coping end wall with the percent and status.
+        Lanes are separated by 10px ropes striped red, white, blue and
+        white. Below sit a white board with a bar chart whose bars are
+        filled with small square tiles, deep aqua last week and navy this
+        week, and a poolside log with initial tiles. On phones the end
+        wall drops under each lane and the chart scrolls sideways.
+    spacing: An 8px unit on a 24px tile module. 24px between deck blocks, 36px above sections, 10px lane ropes.
+    density: Medium and bold. Few large signs, one lane per project.
+    corners: Tile corners of 3 to 6px, 12px buttons, a pill search, a round swimmer and avatar.
+    borders: 3px navy outlines on signs and boards, an 8px coping rim round the pool, striped lane ropes, a 4px navy end wall.
+    shadows: None. The header edge is a stacked navy, white and navy tile band.
+    icons:
+        Poolside shapes beside words. A ringed buoy circle for On track, a
+        pennant flag for At risk, a solid block with a white bar for
+        Behind and a diamond with a bang for Overdue.
+    focus: A 3px ink outline offset 2px inside a 6px whistle yellow halo.
+    tone: Lifeguard-plain signage, such as The pool, Poolside log and Hours this week.

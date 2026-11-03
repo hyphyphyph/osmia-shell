@@ -1,0 +1,58 @@
+export anchor TriageFirstStyle:
+    number: 197
+    screen: ProjectsDashboard
+    name: Triage first
+    idea: The home screen is an inbox for problems, where a red headed Needs attention list leads with overdue, behind and at risk work and offers the next action on each row, while the healthy projects follow as a quiet table and the week's numbers sit in a right rail.
+    base: light
+    palette:
+        page: #f6f7f8, the page behind the boxes
+        card: #ffffff, boxes, the tab bar and fields
+        ink: #1c2026, text
+        muted: #5a616b, hints, meta and axis text
+        line: #d9dce1, borders, never text
+        graphite: #24292f, the header, action buttons and this week bars
+        headText: #e6e9ed, text on the graphite header
+        lastWeek: #7d848f, last week bars
+        focus: #0b5cd5, the focus ring only
+        green: #1a7f45, On track with a check disc
+        amber: #8a4b00, At risk with a triangle on #fff5e0
+        red: #b42318, Behind with a chevron square and overdue with a clock on #fdf0ef
+    type:
+        One stack, Segoe UI, system-ui, Roboto, Noto Sans, Helvetica Neue,
+        Arial. The greeting is 20px bold, KPI figures 18px bold tabular,
+        triage titles 15px bold, body 14px at 1.45, facts and feed 13px, and
+        buttons and tags 12 to 13px at 600 to 700.
+    layout:
+        A graphite header bar holds a white hexagon mark with the brand, a
+        dark search field, a white New project button, an outlined bell
+        with a red count and initials with Mara Okafor. A white tab bar
+        beneath it carries the six nav links with a graphite underline on
+        Home. A one line greeting with the date says the 4 overdue tasks
+        lead the list. The body splits into a wide left column and a 340px
+        right rail. On the left, the Needs attention box has a red tinted
+        head with a triangle and a count of 3. Its rows each carry a 4px
+        red or amber left edge, a 24px solid severity glyph, a title with
+        an outlined status tag, one line of detail with a mini bar, a line
+        of facts such as days left, tasks to go and target pace, and two
+        buttons at the right, a graphite primary and an outlined secondary
+        such as Review tasks and Reassign, Open and Change date, or Open and
+        Message team. Under it an On track box with a green check and a
+        count of 4 is a quiet table of the healthy projects with progress,
+        due with days left, status and an Open button. The right rail
+        stacks a This week list of the four numbers with overdue first in
+        red, a compact 14 day bar chart with grey last week and graphite
+        this week, and the activity feed. Below 1060px the rail drops under
+        the main column in two columns, and on phones everything stacks and
+        buttons wrap under each triage row.
+    spacing: 4px and 8px steps. 12 to 16px row padding and 20px between boxes.
+    density: High. Compact 34px controls and 14px text, built for working through a list.
+    corners: 6px on boxes, buttons and fields, and 4px on tags.
+    borders: 1px grey boxes, with a 4px left edge in the severity colour on every triage row.
+    shadows: None.
+    icons:
+        Solid 24px severity glyphs lead each triage row, a clock disc for
+        overdue, a chevron square for Behind and a triangle for At risk.
+        Status tags are outlined and hold a solid check disc, triangle or
+        chevron square plus the word. Line icons at 1.8px elsewhere.
+    focus: A solid 2px blue outline offset 2px, light blue on the dark header.
+    tone: Direct and action led, such as Review tasks, Change date and No action needed.

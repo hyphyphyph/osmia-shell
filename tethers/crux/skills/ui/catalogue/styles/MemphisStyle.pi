@@ -1,0 +1,53 @@
+export anchor MemphisStyle:
+    number: 25
+    screen: LandingPage
+    name: Memphis
+    idea: A 1980s Memphis poster, with squiggles, confetti shapes and clashing pastel and primary blocks thrown into a playful, off-balance layout.
+    base: light
+    palette:
+        paper: #fff8ec, the page and fields
+        white: #ffffff, cards and the style sheet
+        ink: #121212, text, every 3px outline, stripe and dot patterns
+        bubblegum: #ff7eb6, highlight blocks, the quote disc and the Overdue chip
+        yolk: #ffd23f, the primary button, highlights and the At risk chip
+        mint: #6be3c9, blocks, underline highlights, the focused field offset and the On track chip
+        cobalt: #2442d6, squiggles, the closing band with white text and the focus outline
+        lilac: #c7b4ff, sticker labels, one feature card and focused rows
+        graphite: #4a4a4a, notes and secondary text
+    type:
+        Futura, Century Gothic, Avenir Next, Trebuchet MS, Gill Sans, URW
+        Gothic, sans-serif. The headline is 96px extra bold at 0.95 line
+        height with minus 0.04em tracking, section titles 60px extra bold,
+        the quote 54px extra bold, feature titles 24px, the lede 20px, body
+        17px at 1.55 and chips 13px extra bold.
+    layout:
+        A light top bar with a brand mark of a pink square, a yellow circle
+        and a blue squiggle, plain nav links that turn into outlined mint
+        blocks on hover, and a yellow Start free button. The hero is split
+        unevenly. The left holds a tilted lilac sticker saying Hey, small
+        teams, a headline with on one in a tilted pink block and calm page
+        underlined by a blue squiggle, an indented lede with a thick cobalt
+        left bar, and the buttons. The right is a pile of shapes, a yellow
+        dotted disc, a striped mint square and a cobalt triangle, with a
+        tilted white card listing three projects on top. Confetti such as
+        rings, zigzags and crosses floats around. The logo strip is a black
+        band with zigzag edges and names in differently shaped and tilted
+        colour chips. Three feature cards are staggered at different
+        heights, each a different colour with one big rounded corner. The
+        quote sits beside a large pink disc with a cobalt square. The
+        closing band is cobalt with a yellow circle and yellow squiggle.
+        The footer has a dot grid and shaped colour headings. Below 980px
+        everything stacks, and below 640px the nav wraps under the brand.
+    spacing: An 8px unit but placement is uneven on purpose, with 48px indents and card offsets of 24 and 72px.
+    density: Loose and busy at once. Few words, many shapes in the margins.
+    corners: Mixed on purpose. Square blocks, full circles, and single 26 to 64px rounded corners on one side only.
+    borders: 3px solid ink on every block, 2px dashed ink between list rows, zigzag edges on the logo band.
+    shadows: No blur. Each block sits on an offset patterned twin of diagonal stripes, a dot grid or a solid colour, 14 to 17px down and right.
+    icons:
+        Large 64px filled geometric glyphs with 3px ink outlines, such as a
+        target, a ticked square and a triangle with bars. Status chips use a
+        filled circle for On track on a round mint chip, a triangle for At
+        risk on a square yellow chip and a cross for Overdue on a pink chip
+        with two rounded corners, each with the word.
+    focus: A 3px dashed cobalt outline offset 4px, yellow on cobalt. A focused field also gets a solid mint offset block.
+    tone: Cheerful and chatty, such as Hey, small teams and Three things it does really well.

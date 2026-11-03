@@ -1,0 +1,58 @@
+export anchor TwoSidebarsStyle:
+    number: 177
+    screen: ProjectsDashboard
+    name: Two sidebars
+    idea: A three-column workspace with labelled navigation on the left, a centre feed of project cards with progress rings, and a pale green context panel on the right holding the week chart and an activity timeline, cool white with one green.
+    base: light
+    palette:
+        page: #f6f8fa, the cool white page behind the feed
+        paper: #ffffff, the left sidebar, project cards, top bars, chips and the chart well
+        context: #eef4f1, the right context panel
+        ink: #18232b, text
+        muted: #55636e, meta, labels, section captions and day letters
+        line: #dfe5ea, card borders and dividers
+        green: #146c43, the primary button, links, the current nav item, rings, this week bars, timeline nodes, On track and focus
+        greenSoft: #e3f2ea, the current nav item fill
+        ringTrack: #dfe8e3, the empty part of progress rings
+        lastWeek: #7f9a8b, outlines of last week bars
+        risk: #8b5000, At risk text and triangle
+        bad: #b02a1e, Behind and overdue text, crossed square, clock and the overdue chip
+    type:
+        One stack, Segoe UI, system-ui, Roboto, Helvetica Neue, Arial. Base
+        14px at 1.5. The greeting is 24px bold, project names 15px at 650,
+        the feed heading 16px bold, panel captions and nav groups 11 to 13px
+        bold caps tracked 0.08em, chip figures 16px bold, week totals 22px
+        bold, meta 13px and ring figures 11px bold.
+    layout:
+        Three full-height columns of 232px, the flexible centre and 344px.
+        The white left sidebar holds a green rounded square mark and the
+        wordmark, a Workspace caption over six icon and label nav items with
+        Home filled pale green and a count of 6 beside Projects, and a Needs
+        attention group linking Billing migration and Mobile app 2.0 with
+        their status. The centre has a white top bar with a wide search
+        field and a green New project button, then the greeting, date and
+        red overdue line, then the four figures as rounded pill chips in one
+        row, overdue in pale red with a clock. Under a Projects heading the
+        feed is six separate white cards, each with a 44px green progress
+        ring holding the percent, name over category and task count, due
+        date over days left, and the status at the right end. The pale green
+        right panel starts with a bell and Mara Okafor, then a Tasks
+        completed caption, two small white tiles with last week 59 and this
+        week 73 up 14, the fourteen-day bar chart in a white well with
+        outlined last week bars and green this week bars, and an Activity
+        timeline down a vertical line with hollow green nodes. Below 1200px
+        the right panel drops under the feed as two columns. Below 760px the
+        nav becomes a three by two grid, the bell and user sit top right,
+        and everything stacks.
+    spacing: An 8px unit. 32px centre gutters, 20px panel padding, 8px between feed cards, 12 to 16px card padding.
+    density: Medium. Three columns of context at once, roomy cards in the centre.
+    corners: Rounded. 8px cards, buttons, fields and tiles, 12px on the style sheet, pill chips, round rings and nodes.
+    borders: 1px cool grey borders on cards, chips and sidebars. The right panel uses pale green edged tiles.
+    shadows: None. Columns separate by tone, white left, cool white centre, pale green right.
+    icons:
+        Line icons at 1.8px stroke, 18px, muted in the nav and green when
+        current. Status uses a check circle for On track, a triangle for At
+        risk, a crossed square for Behind and a clock for overdue, always
+        with the word.
+    focus: A 2px green outline offset 2px on every control.
+    tone: Friendly and plain, with lowercase chip labels such as tasks due this week and short captions such as Needs attention.

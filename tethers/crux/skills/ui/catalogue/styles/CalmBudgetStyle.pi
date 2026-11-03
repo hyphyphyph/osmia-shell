@@ -1,0 +1,53 @@
+export anchor CalmBudgetStyle:
+    number: 371
+    screen: FinanceBudget
+    name: Calm budget
+    idea: A gentle single column on soft blue grey dark, large unhurried type, budgets explained in reassuring sentences with soft rounded bars, the goal as a gentle path with You are here, and no alarm colours anywhere.
+    base: dark
+    palette:
+        dusk: #1d2327, the page and the style sheet
+        soft: #252d32, account rows, the goal card, fields and list rows
+        softTwo: #2e383e, row dividers and the secondary button
+        track: #3a464d, the empty bar track and field borders
+        ink: #e9eef0, text
+        muted: #aab7bd, labels, figures beside names and explanations
+        sage: #a8d5bf, bars with room, headings, money in, the primary button and focus
+        onSage: #11291f, text on sage
+        sand: #e8c99b, the on plan bar, the due date note and the goal end marker
+        lavender: #c9b8e8, the over bar, a soft colour used instead of red
+    type:
+        Segoe UI Variable Text, Segoe UI, system-ui, -apple-system, Roboto,
+        Helvetica Neue, Arial. Base 18px at 1.7. The headline is 40px at 400 and
+        1.25, the lede 20px muted, account figures 26px tabular, category names
+        20px, explanations 16px and section labels 15px at 600 in sage.
+    layout:
+        One centred 700px column with wide space. A quiet top row has a sage dot
+        with the name in muted text and three plain links, October underlined in
+        sage. The headline reads Hello Mara. October is in good shape, and a
+        lede says 1,870 of the 1,930 planned was spent, so the month ends 60
+        under, and one budget went a little over. Where your money is lists
+        three soft rounded rows with the name on the left and a large figure on
+        the right, the card row adding a sand clock line saying Due 12 Nov is
+        easily covered. How the plan went gives each category a name, spent of
+        limit on the right, a 14px round bar and a sentence led by a bold
+        phrase, Room left, On plan or A little over. A soft card repeats 60
+        under plan. Your goal is a soft card with a gently rising curved path
+        from Start to 1 April 2027, filled sage to 64 percent with a ringed dot
+        labelled You are here, 64%, then 3,200 of 5,000 and 1,800 to go. Lately
+        is a plain divided list. A closing line says That is everything for now.
+        At 375px the same column narrows with smaller headings.
+    spacing:
+        An 8px unit. A 700px column, 64px between sections, 28px between budget
+        lines, 20 to 24px inside cards.
+    density: Very low. One column, one idea at a time, sentences before numbers.
+    corners: Soft. 20 to 24px cards, 16px buttons and rows, round bars and dots.
+    borders: Almost none. Thin dividers only between recent items.
+    shadows: None. Surfaces lift by tone.
+    icons:
+        Few and small. A circle check for room left, a ruled square for on plan
+        and a triangle for a little over, always before a bold word and a
+        sentence. The over bar is lavender, not red.
+    focus: A 2px sage outline offset 4px with a wide soft sage halo.
+    tone:
+        Reassuring and plain, such as October is in good shape, plenty of room
+        and That happens, and nothing else needs to change.

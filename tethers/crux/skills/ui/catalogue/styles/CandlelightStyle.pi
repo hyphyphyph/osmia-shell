@@ -1,0 +1,66 @@
+export anchor CandlelightStyle:
+    number: 243
+    screen: ProjectsDashboard
+    name: Candlelight
+    idea:
+        A quiet near black page lit by warm candle glows, written as one
+        narrow serif column like a letter, with the figures told in a
+        sentence, projects as entries with a flame marking their progress and
+        the fortnight drawn as a row of small candles.
+    base: dark
+    palette:
+        night: #0c0907, the page and the style sheet
+        glow: #271b10, the brightest point of any candle glow, the lightest surface text sits on
+        hairline: #3a2a1c, rules, progress hairlines and the field underline at rest
+        ink: #f0e2cc, text and figures
+        muted: #bfa88a, meta, margin times, labels and axis text
+        flame: #f2b366, the primary button, flames, this week candles, links and focus
+        flameInk: #1e1206, text on flame
+        wax: #8f7a63, last week candles
+        ok: #b4d99a, On track text and check circle
+        risk: #f2cf7a, At risk text and triangle
+        bad: #f4a088, Behind and overdue text, crossed square and clock
+    type:
+        One book serif stack, Charter, Bitstream Charter, Sitka Text, Cambria,
+        Georgia, serif, for everything. Base 18px at 1.7. The greeting is 48px
+        italic, section titles 26px italic, project names 21px, figures inside
+        the summary sentence 30px italic with old style numbers, and margin
+        times and meta 15px italic in muted. Labels are 13px small caps
+        tracked 0.12em.
+    layout:
+        One 720px column centred on a near black page, with three soft candle
+        glows behind it at the greeting, the projects and the chart. A quiet
+        top line holds the italic Brightwork name, the six nav links as italic
+        words split by middle dots with Home underlined in flame, a search
+        field that is only a hairline underline, a bell, a flame New project
+        pill and Mara Okafor. A small drawn candle with a glowing flame sits
+        above the greeting Good morning, Mara, then the date in small caps and
+        a coral line reading 4 tasks are overdue with a clock. The figures are
+        written as a sentence, You have 6 active projects and 23 tasks due
+        this week, 4 are overdue, and the team has logged 186 hours this week,
+        with each number set large in italic. The projects are six entries
+        split by hairlines, each the name with the status at right, then
+        category, tasks and due date, and a hairline with a small flame at the
+        percent and the percent beside it. The chart is a row of fourteen thin
+        candles, wax for last week and flame topped for this week, height for
+        the count and the count above, with the two week totals written
+        beneath. Activity is a journal with italic times in a left margin.
+        Below 640px the margin times move above each entry and the type steps
+        down.
+    spacing:
+        An 8px unit. 32px between entries, 72px between sections, 24px column
+        gutter on small screens.
+    density: Sparse. One column, long line height and wide gaps.
+    corners: Round pill buttons and round flames, otherwise no boxes at all.
+    borders: Hairlines only, 1px at rest between entries and under the search field.
+    shadows:
+        No box shadows. Warmth comes from radial candle glows at 9 to 12
+        percent and a soft blur round each flame.
+    icons:
+        Thin line icons at 1.5px stroke. Status uses a check circle, a
+        triangle with a bang and a crossed square, always with the word,
+        overdue a clock.
+    focus: A 2px flame outline offset 4px with a soft flame glow.
+    tone:
+        Intimate and gentle, such as Good morning, Mara, A quiet note on the
+        week and From the journal.

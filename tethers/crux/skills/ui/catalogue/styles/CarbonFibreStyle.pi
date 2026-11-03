@@ -1,0 +1,54 @@
+export anchor CarbonFibreStyle:
+    number: 298
+    screen: CodeRepository
+    name: Carbon fibre
+    idea: A pit wall timing screen on woven carbon, with heavy italic condensed type, skewed tabs, a timing tower of checks, sector bars for files and motorsport red for the one thing holding the merge.
+    base: dark
+    palette:
+        carbon: #111213, the ground under a 20px woven texture
+        weaveLight: #232326, highlight threads in the weave
+        panel: #1a1b1e, panels
+        panelHead: #232429, panel headers and pit wall cards
+        white: #f4f4f5, text, the secondary button and the focus outline
+        grey: #a7a9b0, labels, meta and the outline number
+        seam: #34363c, panel tops and dividers
+        raceRed: #c8160c, the primary button, current tab, failing position and logo
+        redLine: #ff4a3d, the header stripe, red panel tops and the focus ring
+        pinkRed: #ff8278, failing and removed text on dark red
+        greenFlag: #4fdc84, passed checks, the open state, approved and added lines
+        amber: #ffc23d, changes requested, the team radio comment and needs QA
+    type:
+        A condensed sans, Helvetica Neue, Roboto Condensed, Arial Narrow, set
+        italic at 800 to 900 in caps for the title at 40px, the repository
+        at 26px, panel titles at 14px and buttons. The pull request number
+        is a 88px italic outline figure. Body is system-ui at 14px and 1.45.
+        Data and the diff use Consolas or a system monospace at 12.5 to
+        13px with tabular figures.
+    layout:
+        The header is woven carbon with a red and white diagonal stripe at
+        the right and a 3px red rule below. It holds a skewed red B logo,
+        the repository in heavy italic, a Private pill and skewed counters,
+        then a row of skewed tabs with the current one red. The body, also
+        on carbon, has three columns. The left 240px timing tower lists
+        all twelve checks with position numbers in black tabs and PASS or
+        FAIL, the seventh row tinted red with a red edge and red position.
+        The centre holds the lead panel with the Open flag, the title and
+        the outline 214 floated right, a black gauge showing 11/12 and
+        twelve skewed segments with the failing one hatched red, and two
+        pit wall cards for the reviewers with green and amber left edges.
+        Below are Sectors, the three files as S1 to S3 with added and
+        removed bars, and Telemetry with the diff, where the comment is a
+        Team radio box with an amber edge. The right 280px Race control
+        panel lists assignee, skewed labels, milestone and linked issue and
+        a striped disabled merge button. Below 1100px race control moves
+        under, below 760px all stack.
+    spacing: An 8px unit. 16px gaps between panels, 14px panel padding, tight 6px timing rows.
+    density: High. Three columns with the full timing tower visible.
+    corners: None. Tabs, buttons, counters, labels and segments are skewed 12 to 14 degrees instead.
+    borders: A 3px seam on panel tops, red on hot panels, 4px coloured edges on pit cards and the failing row.
+    shadows: None. Depth comes from the carbon weave between panels.
+    icons:
+        Bold 2.4px line icons. A tick with PASS, an octagon cross with FAIL,
+        a ringed tick for approved, a triangle for changes requested.
+    focus: A 3px white outline with a 6px red ring outside it.
+    tone: Race words, such as Timing, Sectors, Telemetry, Pit wall, Team radio and Race control.

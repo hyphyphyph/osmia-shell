@@ -1,0 +1,47 @@
+export anchor DarkDocumentStyle:
+    number: 266
+    screen: CloudFiles
+    name: Dark document
+    idea: The folder reads like a calm written page on warm charcoal, with a slim page tree on the left and the selected file opening as a callout inside the text.
+    base: dark
+    palette:
+        charcoal: #191817, page, document and style sheet
+        tree: #1f1e1c, the page tree
+        ink: #e8e4dd, text and headings
+        muted: #a9a297, meta sentences, tree labels and icons
+        line: #34312d, dividers, dashed list rules and outlines
+        tag: #2b2926, status tags, search and the current tree page
+        callout: #24222f, the details callout
+        lavender: #b8acf6, primary button, callout edge, upload meter, current tree icon and focus
+        lavenderInk: #1b1733, text on lavender
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Base 16px at 1.7. The title is 36px at 700, section heads
+        20px at 650, file links 16px at 500 underlined, meta sentences 14px
+        muted, tags 13px, tree items 14px.
+    layout:
+        A 248px page tree holds the B mark and Brightwork Drive, a Places
+        group with the five places, a My files group with Fernhill Studio
+        open, Website redesign current and Brand assets and Wireframes
+        nested on thin guide lines, then 64.2 GB of 100 GB used with a 4px
+        bar. The right side has a slim top bar with the breadcrumb and a
+        filled Search files field. Below sits a 760px reading column with
+        a large folder icon, the title, the sentence A folder in Fernhill
+        Studio with two folders and six files, and a row of Upload, New
+        folder and a List or Grid switch. A Folders heading and a Files
+        heading each hold lines of name, a sentence such as 4.2 MB,
+        modified 27 Oct by Priya Nair, and tags. The selected file opens a
+        callout under its line with the preview, owner, version, size,
+        sharing and the three buttons. Below 860px the tree stacks on top
+        and the callout goes full width.
+    spacing: An 8px unit. 56px above the title, 36px before each section, 8px line padding, 20px callout padding.
+    density: Calm. Each file is one sentence line and the selected file opens in place.
+    corners: 6px buttons, fields and callout, 4px tags and tree items.
+    borders: 1px #34312d dividers and dashed rules between lines. The callout has a 3px lavender left edge.
+    shadows: None.
+    icons:
+        18px line icons in muted warm grey. Tags carry a filled star with
+        Starred, two heads with Shared with 4 people and an up arrow ring
+        with Uploading, 62%, plus a 4px lavender bar.
+    focus: A 2px lavender outline with a 2px offset and 4px rounding.
+    tone: Written sentences, such as A folder in Fernhill Studio with two folders and six files.

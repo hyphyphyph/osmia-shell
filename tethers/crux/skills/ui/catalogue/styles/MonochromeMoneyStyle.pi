@@ -1,0 +1,46 @@
+export anchor MonochromeMoneyStyle:
+    number: 372
+    screen: FinanceBudget
+    name: Monochrome money
+    idea: Only white on black, with the numbers doing all the work, a poster size balance, heavy and hairline weights for whole and decimal parts, white rules as the only structure, budget blocks as filled and empty squares, and the over budget row inverted to white.
+    base: dark
+    palette:
+        black: #000000, the page, every surface, the style sheet and text on the inverted row
+        white: #ffffff, all text, rules, blocks, the goal meter, the inverted over row and focus
+    type:
+        Helvetica Neue, Helvetica, Arial, Liberation Sans, system-ui. Hierarchy
+        comes only from size and weight. The everyday balance runs up to 210px
+        at 900 tracked minus .06em with decimals at 200. Savings and card
+        figures are 56px at 900, budget figures 44px at 900 with the limit at
+        22px and 200, the goal percent up to 180px, body 17px at 300 and labels
+        12px caps tracked .12em.
+    layout:
+        A 1280px poster grid of white rules. The top rule holds the name in 900,
+        plain nav with October in 900 and underlined, and Mara Okafor, EUR.
+        Every band has a 180px label column on the left. The first band is
+        Everyday account with 2,184.60 at poster size. The next band splits in
+        two by a vertical rule, Savings and Credit card with a clock and Due 12
+        Nov. The October budget band lists five rows of name, figure over limit,
+        ten blocks where each block is a tenth of the limit, filled white, half
+        filled or outlined, and a caps status on the right. Eating out is a
+        white row with black text, ten filled black blocks and four dashed
+        hatched blocks past the limit. A 3px rule sets off spent 1,870 of 1,930
+        and 60 left overall. The last band splits into the goal, 64% huge, a
+        bordered white meter and two lines of figures, and Latest with dates,
+        payees and heavy amounts, the salary larger and bold. Below 900px status
+        drops under the blocks and below 700px every band stacks.
+    spacing: An 8px unit. A 180px label column, 12 to 24px inside rows, 32px page gutter.
+    density: Medium. Few elements but each figure is huge.
+    corners: None anywhere.
+    borders:
+        1px white rules between every band and row, a 3px rule above totals and
+        the style sheet, 1.5px block outlines.
+    shadows: None.
+    icons:
+        Hardly any. Small outline circle check, ruled square and triangle before
+        capital words. Weight and inversion carry the rest, with dashed hatched
+        blocks past the limit.
+    focus: A 3px white outline offset 3px with a second thin white ring outside a black gap.
+    tone:
+        Bare numerals and short labels, such as 64 left, equals limit, plus 62
+        over and Latest.

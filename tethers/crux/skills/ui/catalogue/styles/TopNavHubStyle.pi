@@ -1,0 +1,55 @@
+export anchor TopNavHubStyle:
+    number: 175
+    screen: ProjectsDashboard
+    name: Top nav hub
+    idea: A classic hub page with a navy bar of horizontal navigation and sub-tabs on top, a full-width stone band of four large figures, and three equal ruled columns for projects, the chart and activity, on warm grey paper.
+    base: light
+    palette:
+        navy: #1d2c54, the top bar, headings, figures, panel top rules, the primary button, this week bars and focus
+        navyInk: #c9d1e6, nav links that are not current on navy
+        page: #f3f1ed, the warm grey page
+        paper: #ffffff, panels, the sub-tab bar, fields and the style sheet
+        band: #e8e4dc, the full-width figures band and initials squares
+        ink: #25262b, body text and project names
+        muted: #5e5a53, labels, notes, meta and day numbers
+        line: #d9d4cb, panel borders and row rules
+        strongLine: #858077, dividers inside the figures band, field borders and last week bar outlines
+        ok: #2d6a3e, On track text and check circle
+        risk: #8a4d00, At risk text and triangle
+        bad: #a8261e, Behind and overdue text, crossed square and clock
+    type:
+        One humanist stack, Avenir Next, Avenir, Segoe UI, Helvetica Neue,
+        Helvetica, Arial. Base 15px at 1.5. Band figures are 44px at 600
+        with tabular numbers, the greeting 30px bold navy, panel titles and
+        band labels 12 to 13px bold caps tracked 0.1em, project names 15px
+        bold, meta 13px.
+    layout:
+        Stacked full-width bands inside a 1232px container. A navy top bar
+        holds a square outline mark and the Brightwork wordmark, the six nav
+        items as horizontal tabs with a white underline on Home, then a
+        white search field, a white New project button, an outlined bell and
+        Mara Okafor at right. A white sub-tab bar beneath holds Overview, My
+        tasks, Timeline and Workload with a navy underline on Overview, and
+        the date with a calendar icon at right. The greeting sits on the
+        page with the overdue line and a Review them link. A full-width
+        stone band runs edge to edge with four figures split by vertical
+        rules, each a caps label, a 44px navy number and a short note,
+        overdue in red with a clock. Then three equal columns of white
+        panels with a 3px navy top rule. Projects lists six rows of name,
+        status, category and due, and a 6px bar. The chart panel shows
+        fourteen bars, hatched outlined last week and solid navy this week,
+        over a small table of week totals and change. Activity lists six
+        entries with square initials. Below 1040px the nav wraps under the
+        brand and activity spans two columns. Below 760px the nav becomes a
+        three by two grid, figures go two by two and panels stack.
+    spacing: An 8px unit. 24px gutters between columns, 20px figure padding, 12 to 18px row padding, 28px above the columns.
+    density: Medium. Figures are large and airy, the columns beneath are compact.
+    corners: Nearly square. 3px panels, buttons and fields, round avatar, square initials.
+    borders: 1px warm grey panel borders and row rules, a 3px navy top rule on panels, darker vertical rules in the band.
+    shadows: None. Hierarchy comes from the navy bar, the stone band and rules.
+    icons:
+        Line icons at 2px stroke, 18px. Status is text with a check circle
+        for On track, a triangle for At risk, a crossed square for Behind
+        and a clock for overdue.
+    focus: A 3px navy outline offset 2px with a white gap, white and inset on the navy bar.
+    tone: Formal and businesslike, with caps labels such as Due this week and Hours logged and plain links such as All projects.

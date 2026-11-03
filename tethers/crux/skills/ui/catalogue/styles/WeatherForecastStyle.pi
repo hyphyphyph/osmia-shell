@@ -1,0 +1,56 @@
+export anchor WeatherForecastStyle:
+    number: 75
+    screen: ProjectsDashboard
+    name: Weather forecast
+    idea: The dashboard is the evening weather map, with projects placed as towns carrying a sun, cloud or rain symbol and a big temperature-style percent, and the overdue count shown as a storm warning.
+    base: light
+    palette:
+        sky: #e6f2fb, the page, fading down from #cfe6f7 at the top
+        card: #ffffff, panels, reading tiles and town cards
+        sea: #d4e8f6, map water
+        land: #e5eed6, map land, with #d9e6c6 for hills
+        isobar: #8fb0c9, pressure lines on the map, decoration only
+        nightInk: #0f2a44, text and the bulletin time tabs
+        haze: #40607b, meta text and the cloud outline
+        studioBlue: #1757a6, panel header bars, buttons, the current nav pill, the cold front and focus
+        sunshine: #f2b51d, sun fill, always outlined in #6a4800
+        fairGreen: #1c6a36, the On track word
+        overcastAmber: #7f4f00, the At risk word
+        stormRed: #ad2219, the Behind word, the warning edge, the low pressure L and the overdue count
+    type:
+        One rounded broadcast sans, Avenir Next, Segoe UI, Helvetica Neue,
+        Arial. The greeting is 40px at 800 with tight tracking, reading
+        numbers 46px at 800, town percents 36px at 800 with a 15px percent
+        sign raised like a degree, panel headers 17px at 800 in white on
+        blue, body 16px, meta 12px at 600 and status words 12px at 800 in
+        caps.
+    layout:
+        A channel bar holds a sun logo with Brightwork and Project outlook,
+        nav as pills in a translucent white capsule with Home filled blue,
+        then a round search, a New project pill, a round bell with a red
+        count and a sun-yellow avatar for Mara Okafor. The presenter strip
+        pairs the big greeting and date with a white Storm warning card that
+        has a red left edge, a red triangle with a lightning bolt and 4
+        tasks are overdue. Four reading tiles follow with a weather glyph
+        and a big number each. The main row has a wide Project map panel, a
+        sea and land map with isobars, a red L and a blue H and cold and
+        warm fronts, with six white town cards placed over it, each with a
+        glyph, the big percent, name, a status word with a weather phrase
+        and a meta line, and a legend strip below. Beside it Latest
+        bulletins are lower-third bands with a dark time tab. A full-width
+        14-day record line chart follows, last week dashed grey, this week
+        solid red with a shaded area and the value over every point, and
+        tags for 59, 73 and the peak. At 375px the town cards stack as a
+        list over the map and the chart scrolls inside its panel.
+    spacing: An 8px unit. 12 to 20px between tiles and panels and 14 to 18px inside.
+    density: Low to medium. Big readings with compact town cards on the map.
+    corners: Round and soft, 18px panels, 14 to 16px tiles and town cards, pills for nav and buttons.
+    borders: Almost none. A blue header bar tops each panel and the warning has an 8px red left edge.
+    shadows: Soft 0 6px 18px shadows in navy at 8 percent under panels, a little stronger under town cards.
+    icons:
+        Forecast glyphs drawn with dark outlines. A sun with rays for On
+        track, a cloud over a sun for At risk, a dark cloud with rain for
+        Behind and a red triangle with a bolt for overdue, each beside its
+        word.
+    focus: A 3px studio blue outline offset 2px.
+    tone: A friendly presenter, such as Storm warning, conditions now, sunny, clouding over and heavy rain.

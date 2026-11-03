@@ -1,0 +1,53 @@
+export anchor MidnightNavyStyle:
+    number: 225
+    screen: ProjectsDashboard
+    name: Midnight navy
+    idea: Deep blue-black surfaces cut by crisp 1px hairlines, cool ice text and one ice cyan accent, laid out as a precise ruled instrument with a top nav and thin light figures.
+    base: dark
+    palette:
+        night: #070d1c, the page, the table ground and the style sheet
+        panel: #0c1529, the masthead and swatch cells
+        hairline: #1e2d4d, row rules, cell dividers and grid lines
+        rule: #2e4370, section rules, the masthead edge and outlined controls
+        ice: #dde8ff, text and figures
+        frost: #93a6c9, labels, meta and axis text
+        cyan: #8fd3ff, the primary button, the current tab, progress ticks, the this week line and focus
+        onCyan: #03172a, text on the cyan button
+        focusHalo: #13284a, a 4px halo outside the focus outline
+        lastWeek: #6c7fa6, the dashed last week line and empty ticks
+        ok: #6ee7b7, the On track word and check circle
+        risk: #fcd34d, the At risk word and triangle
+        bad: #fca5a5, Behind, the overdue box and the overdue figure
+    type:
+        Segoe UI first, then system-ui, Roboto, Helvetica Neue and Arial,
+        with ui-monospace for times and dates. Base 14px. The greeting is
+        30px at 300 with the name at 600, the four figures 40px at 200 with
+        tabular numbers, section and column labels 11px caps tracked 0.14em,
+        and status words 12px caps at 700 tracked 0.1em.
+    layout:
+        A full-width masthead on the panel tone holds an outlined cyan B
+        square, the name, six text tabs with a 2px cyan underline on Home,
+        then search, New project, a square bell and an outlined initials
+        square with Mara Okafor. The body is one 1240px column. The date
+        sits as a small caps label over Good morning, Mara, and on the right
+        a red outlined box reads 4 tasks are overdue with a clock. The four
+        figures are one strip ruled above and below and split by vertical
+        hairlines, the overdue figure red. Projects is a full-width hairline
+        table with columns for project, team, a ten-tick progress meter with
+        percent, tasks, due and a status word in caps. Below, two columns
+        hold Throughput, a line chart with last week dashed with round dots
+        and this week solid cyan with square dots, and an Activity log whose
+        times sit in a mono column on the left. Below 900px the tabs move
+        to their own scrolling row. Below 700px a search field sits above
+        the greeting, the figures go two by two and table rows stack.
+    spacing: An 8px unit. 12px cell padding, 40 to 48px between sections, 24px gutters.
+    density: Medium. Everything is one ruled column, then chart and log side by side.
+    corners: 2px on buttons and fields. Everything else is square.
+    borders: 1px hairlines everywhere, #1e2d4d between rows and cells and #2e4370 above and below each section.
+    shadows: None. Depth comes only from hairlines and the panel tone of the masthead.
+    icons:
+        Square-capped line icons at 1.5 stroke, 16px. Progress is ten small
+        outlined ticks, filled cyan for each tenth done. Status is a check
+        circle, a triangle or a crossed square beside the word in caps.
+    focus: A 1px cyan outline offset 2px plus a 4px deep blue halo.
+    tone: Precise and instrument-like, such as Throughput, Activity log and Projects · 6 active.

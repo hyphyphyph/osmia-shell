@@ -1,0 +1,55 @@
+export anchor FriendlyMailStyle:
+    number: 403
+    screen: EmailClient
+    name: Friendly mail
+    idea: A cheerful, chunky mail client on soft plum with rounded everything, a pastel colour for every person and label, and the open message shown as a friendly speech bubble.
+    base: dark
+    palette:
+        plum: #19162b, the page and secondary buttons
+        card: #25213d, the list panel, the reader and the style sheet
+        cardHigh: #2f2a4d, the open row, the current folder and the speech bubble
+        edge: #3d3760, borders and ghost chips
+        text: #f5f2ff, text
+        soft: #bdb6dc, snippets and times
+        mint: #7ee0b5, the Reply button, Archive and Team
+        peach: #ffb38a, Invoices and the Starred folder tile
+        sky: #8cc8ff, Clients and Sent
+        lilac: #c9a7ff, the open row ring and sheet heading pills
+        sun: #ffd76a, the New sticker, the inbox count and focus
+        pink: #ff9ec7, the Write a note button and Drafts
+        onPastel: #1b1530, text and icons on every pastel
+    type:
+        One rounded stack, ui-rounded, SF Pro Rounded, Nunito, Quicksand,
+        Varela Round, Segoe UI, system-ui, at a 15px base. The open subject
+        is 30px at 800, the list heading 22px at 800, the bubble 17px at
+        1.6, unread rows 800, chips 12px at 800.
+    layout:
+        A light header with a tilted sunny B blob and Brightwork Mail in
+        heavy type, a wide pill search reading Find a message, a friend or
+        a file, and Hi, Mara! with a round sun avatar. Below, three parts
+        with 20px gaps. The left column starts with a big pink Write a note
+        button with a solid shadow, then Your mail and Labels as rounded
+        rows, each with a pastel icon tile, counts in pills, Inbox current
+        with a sun count. The middle is a rounded card titled Inbox with 2
+        new ones for you, listing six rows with squircle initial avatars in
+        a pastel per sender, the sender, time, subject, snippet and chips.
+        The open Northpass row has a lilac ring. The right card shows New
+        and Clients chips, the subject, a sender row with a big DW
+        squircle, from Northpass, to Mara Okafor and the time, then the
+        message in a speech bubble with one sharp corner, chunky pill
+        buttons with Reply in mint, and a cheerful line saying one more new
+        one remains. Below 1100px the reader spans under the list. On a
+        phone the folders become a sideways scrolling row of pills, then
+        the list, then the reader.
+    spacing: An 8px unit. 20px between panels, 12px row padding, 28 to 32px inside the reader.
+    density: Comfortable. Six chunky rows with avatars and chips.
+    corners: Very round. 24 to 28px panels, 18px rows, 14 to 18px avatars, pill buttons and chips, and a bubble with one sharp corner.
+    borders: 2px edge on fields and secondary buttons. The open row gets a 2px lilac ring.
+    shadows: Solid 4 to 6px darker drops under the pink and mint buttons, like toy keys.
+    icons:
+        Bold 2.2 stroke rounded icons in pastel tiles. New is a sparkle
+        plus the word, Starred a filled star plus the word, files a clip
+        plus 1 file. Each label pairs a colour with its own icon, a heart
+        for Clients, a coin for Invoices and two people for Team.
+    focus: A 3px sunny yellow outline offset 3px.
+    tone: Warm and chatty, such as Hi, Mara!, Write a note, 2 new ones for you and all caught up.

@@ -1,0 +1,63 @@
+export anchor EsportsBroadcastStyle:
+    number: 315
+    screen: OpsMonitor
+    name: Esports broadcast
+    idea: The monitor as a live broadcast overlay, with a LIVE bug, a slanted scoreboard where each service is a team with its own colour and its uptime as the score, a big stage chart with a lower third for the incident, and tickers of alerts and deploys.
+    base: dark
+    palette:
+        arena: #090c18, the page under a soft navy spotlight gradient at the top
+        stage: #11162a, the chart stage, desk cards and the style sheet
+        bar: #1a2142, scoreboard blocks, tickers and the title bar
+        barRaised: #232b52, the current app tab and the lower third action area
+        ink: #ffffff, text, and section tags drawn as white blocks with dark text
+        muted: #b0b8db, labels, times and axis ticks
+        line: #2d3663, card borders, rules and grid lines
+        live: #d6193a, the LIVE bug and the incident key in the lower third, with white text
+        highlight: #ffe066, the request line, the peak pin, the primary button, ticker labels and focus
+        teamApi: #4da3ff, api team tag and score underline
+        teamWeb: #ff9d3c, web team tag and score underline
+        teamSync: #2fd8c4, sync-worker team tag, score underline and the p50 line
+        teamNotif: #b893ff, notifications team tag, score underline and the p95 line
+        teamBilling: #ffd84a, billing team tag and score underline
+        healthy: #6ee7a0, Healthy and Resolved with filled circle and square
+        degraded: #ffcf4a, Degraded and Investigating with triangle and magnifier
+        recovered: #86cfff, Recovered with a filled diamond
+        firing: #ff8593, Firing with a filled octagon and the error line
+    type:
+        Segoe UI, Helvetica Neue, Roboto, Arial, mostly italic at 800 to
+        900. Base 15px at 1.45. Scores are 28px italic 900 with tabular
+        numbers and a smaller percent sign, the lower third title 20px
+        italic 900, section tags 13px italic 900 caps tracked 0.14em, small
+        caps meta 12px at 800.
+    layout:
+        A broadcast top bar made of skewed blocks, a red LIVE bug with a
+        white dot, then a navy title block with Brightwork Ops and
+        Production last 24 hours, and the suite apps at right with a yellow
+        underline on Ops. A white skewed tag reads Scoreboard uptime above a
+        row of five parallelogram team blocks skewed 14 degrees with upright
+        text. Each block has a team colour three letter tag such as API or
+        SYN, the service name, the uptime as a large italic score, and a
+        footer with the status word and shape and one fact, and a 4px team
+        colour underline. billing shows 6 MIN DOWN as its score. Below sits
+        the arena, a wide stage with a Requests per minute tag, a peak
+        readout, a yellow area line chart with a 9,400 pin, and across its
+        foot a lower third with a red INCIDENT key, a pale caption panel
+        holding INC-0427 sync-worker queue backlog with severity, opened,
+        owner and Investigating, and an Open incident button. Beside the
+        stage a 320px caster desk holds Error rate and Latency cards with
+        coloured top edges. At the foot, two ticker rows with yellow Alerts
+        and Deploys labels list items in segments. Below 1100px the desk
+        moves under the stage, below 760px blocks lose their skew and stack
+        and tickers become lists.
+    spacing: An 8px unit. 24px gutter, 16px between stage and desk, 10px between scoreboard blocks, 16px ticker segment padding.
+    density: Medium. Five big scores on top, one big stage, two desk cards and two ticker rows.
+    corners: None. Blocks are parallelograms skewed 14 degrees and the primary button is a clipped slant.
+    borders: A 4px team colour underline per score block, 4px colour tops on desk cards, a 2px highlight rule over each ticker.
+    shadows: None. Depth comes from a navy spotlight gradient behind everything.
+    icons:
+        Filled status shapes beside the word, a circle for Healthy, a
+        triangle for Degraded, a diamond for Recovered, an octagon for
+        Firing, a square for Resolved and a magnifier for Investigating.
+        Teams are three letter codes, deploys use an upload arrow.
+    focus: A 3px highlight yellow outline offset 3px. Slanted buttons drop their clip while focused so the ring shows.
+    tone: Broadcast captions in italic caps such as LIVE, Scoreboard uptime, INCIDENT and Peak 9,400.

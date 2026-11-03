@@ -1,0 +1,55 @@
+export anchor TrackLanesStyle:
+    number: 386
+    screen: FitnessTracker
+    name: Track lanes
+    idea: Every measure runs as a lane on a night running track, with painted lane numbers at the start, white lane lines, a chequered finish at the goal and a runner chevron marking how far today has got.
+    base: dark
+    palette:
+        infield: #0e1612, the page, the board text ground and the style sheet
+        stand: #1d2a23, the header and the results board
+        track: #3c1b15, every lane group, fields and list rows
+        covered: #c8634a, the stripe for the part of a lane already run
+        laneLine: #efe5da, lane lines, painted numbers, the finish chequer and today's number tile
+        ink: #fbf4ec, text and results
+        muted: #e3c4b5, units and rest labels on the track
+        infieldMuted: #a9bfb2, labels on the infield and the board
+        amber: #ffb84d, the runner chevron, Finished tag, primary button, links and focus
+        onAmber: #2a1206, text on amber and on lane line
+    type:
+        Arial Narrow, Roboto Condensed, Helvetica Neue, Arial for numbers,
+        labels and headings, bold. Board figures are 40px, painted lane
+        numbers 36px or 26px in small groups, results 26px, section titles
+        22px caps tracked 0.06em, lane names 13px caps. Text uses Helvetica
+        Neue, Arial, system-ui at 15px.
+    layout:
+        A dark green stand header with a small track oval mark and
+        Brightwork Move, a pill switch of Today, Week and Plan with Today
+        filled cream, and the date on the right, ruled below by a 4px cream
+        line. The main area has two columns. Every lane group is a dark red
+        rubber band with 3px cream lines above and below, square on the
+        right and rounded like a track bend on the left. Each lane has a
+        painted number cell closed by a 4px start line, the lane name in
+        small caps, a thin covered stripe ending in an amber chevron, a
+        chequered finish strip at the goal, and the result with its unit on
+        the right. The left column holds Today's rings as lanes 1 to 3 and
+        This week as lanes 1 to 7, one per day, with today's number on a
+        cream tile, rest days as a dashed lane and the word rest, and a 0 to
+        10 km scale below. The right column holds the Evening run as a
+        results board with a cream frame, a Finished flag tag and four
+        figures in a two by two grid, then Heart rate zones as five smaller
+        lanes, then the Half marathon plan as two lanes for week 6 of 12 and
+        tomorrow's 14 km long run, then Sleep as one lane with a moon number
+        showing the deep share. Below 960px the columns stack. At 375px lane
+        groups run to the right edge of the screen.
+    spacing: An 8px unit. 28px between sections, lanes 58px tall or 46px in small groups, a 32px page gutter.
+    density: Medium. Seventeen lanes carry every figure, read left to right like a race.
+    corners: Lane groups are square on the right and rounded like a bend on the left. Pills for buttons, nav and tags. 6px on the board.
+    borders: 2px cream lane lines between lanes, 3px lines above and below each group, a 4px start line after the lane numbers.
+    shadows: None. Painted lines only.
+    icons:
+        A runner chevron at the end of the covered stripe, a chequered
+        finish at the goal, a flag on Finished, a dashed lane and the word
+        rest for empty days, a moon for sleep and an arrow for the next
+        session.
+    focus: A 3px amber outline offset 3px.
+    tone: Race words such as Lane, Finished, Finish line is the goal, Longest lane and rest.

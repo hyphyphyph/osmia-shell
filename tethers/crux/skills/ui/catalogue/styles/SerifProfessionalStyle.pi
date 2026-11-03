@@ -1,0 +1,55 @@
+export anchor SerifProfessionalStyle:
+    number: 204
+    screen: ProjectsDashboard
+    name: Serif professional
+    idea: A calm report-like workspace where a modern serif carries headings and every figure, a plain sans carries the interface, and ruled lines replace cards.
+    base: light
+    palette:
+        paper: #fbfaf7, the page background
+        surface: #ffffff, the masthead, fields and swatch cards
+        ink: #1f2430, text, heavy rules and progress fills
+        muted: #5a5f6b, labels, meta lines and captions
+        rule: #dcd8cf, hairlines between rows, never text
+        navy: #23407a, the primary button, links, focus and this week bars
+        mist: #b9c3d6, last week bars, never text
+        pine: #1e6b47, On track with a filled circle
+        ochre: #8a5300, At risk with a filled triangle
+        brick: #a3262a, Behind with a crossed square and the overdue count
+    type:
+        Two stacks. Headings, project names and every figure use Charter,
+        Bitstream Charter, Sitka Text, Cambria, Georgia, serif with lining
+        tabular numerals. The interface uses system-ui, Segoe UI, Roboto,
+        Helvetica Neue, Arial, sans-serif. KPI figures are 44px serif
+        regular, the greeting 40px serif regular, the lede 19px serif in
+        muted ink, section titles 22px serif semibold, project names 18px
+        serif semibold, body 15px sans, meta 13px sans and the dateline 13px
+        sans capitals tracked 0.08em.
+    layout:
+        A white masthead holds the serif brand, a search field, the New
+        project button, a square bell and the user, with the six nav links
+        as a text row underneath where Home has a 2px ink underline. The
+        content is one centred column up to 1200px. A caps dateline, the
+        serif greeting and a serif lede naming the 4 overdue tasks in brick
+        open the page. The four KPIs sit in one ruled row with a 2px ink
+        rule above, a hairline below and hairline dividers, no boxes, each
+        with a small label, a big serif figure and a note. Below, two
+        columns at about 1.75 to 1. The left holds Projects as a ruled
+        list, each row with the serif name and team and task count, a thin
+        ink progress bar with its percent, and the status word with its
+        due date. The right holds Tasks completed with three serif totals
+        and a two tone bar chart, then Recent activity as a ruled list with
+        task names in serif italics. Below 900px the columns stack and the
+        KPIs become two by two. On phones the search drops to its own row
+        and each project row puts its progress bar under the name.
+    spacing: An 8px unit. Rows have 16px padding, columns 24 to 48px gaps, sections 40 to 48px apart.
+    density: Medium. Roomy rows of about 72px, read top to bottom like a report.
+    corners: 4px on buttons and fields only. Lists and figures have no boxes.
+    borders: A 2px ink rule opens the figures and the style sheet, a 1px ink rule sits under each section title, and 1px warm hairlines divide rows.
+    shadows: None.
+    icons:
+        Thin 1.6px outline icons at 18px for search, bell and plus. Status
+        marks are solid shapes in the status colour beside the word, a
+        circle for On track, a triangle for At risk and a square with a
+        white cross for Behind.
+    focus: A 2px navy outline offset 3px. Fields get a navy border plus a 1px navy ring. A focused list row gets a 2px navy outline.
+    tone: Measured full sentences, such as Good morning, Mara and Everything else is moving.

@@ -1,0 +1,55 @@
+export anchor BentoTilesStyle:
+    number: 13
+    screen: ProjectsDashboard
+    name: Bento tiles
+    idea: A modern product page, where the dashboard is a bento grid of softly tinted tiles in different sizes, with big rounded corners and large heavy numbers that make the key facts land first.
+    base: light
+    palette:
+        page: #f6f5f2, the page, inner chips, fields and the nav track
+        tile: #ffffff, the header bar and plain tiles
+        lilac: #efeaff, the hero tile
+        mint: #e2f6ec, the active projects tile
+        sky: #e4efff, the due this week tile
+        sun: #fff5d4, the hours tile
+        peach: #ffede1, the user avatar and accents
+        text: #17161c, text and the dark hero button
+        muted: #57546a, tile titles and meta text
+        line: #e6e3ec, progress ring tracks and activity chip borders
+        violet: #5b3fd9, the primary button, this week's bars, progress rings and the focus ring
+        violetDark: #4529b8, the hero figure, links and primary hover
+        violetSoft: #9283d8, last week's bars
+        green: #17663f, the On track check
+        amber: #8a4a00, the At risk diamond
+        red: #b4232a, the Behind cross and the notification badge
+    type:
+        System sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial, sans-serif. Sizes are a 168px black weight hero figure,
+        64px black weight tile figures, a 32px extra bold greeting, 16px
+        extra bold project names, 15px regular body, 15px bold muted tile
+        titles and 13px extra bold status words. Large type is set tight,
+        from minus 0.03em to minus 0.06em.
+    layout:
+        A white header bar with 24px corners holds the wordmark with a four
+        colour square logo, the nav as a segmented pill track, a search pill,
+        the New project button, a notifications square and the avatar. Below
+        it a four column bento grid with 16px gaps. A two by two lilac hero
+        tile holds the greeting, the date, a giant 4 with tasks are overdue
+        and a dark Review overdue tasks button. Mint, sky and sun tiles hold
+        active projects, due this week and hours. A tall white chart tile
+        on the right spans three rows and shows horizontal bars per day. A
+        wide projects tile shows six chips in two columns, each with a
+        progress ring, and a wide activity tile shows six chips in three
+        columns. Below 1180px the grid has two columns, and below 860px the
+        tiles stack in reading order with the small figure tiles in pairs.
+    spacing: An 8px unit. 16px between tiles, 24px tile padding and 8px between inner chips.
+    density: Medium. A few big tiles, each fact with room of its own.
+    corners: 24px on tiles and the header bar, 18px on inner chips, 16px on buttons and fields, 14px on avatars and fully round chart bars.
+    borders: None on tiles. Only activity chips carry a 1px #e6e3ec border.
+    shadows: None, apart from a faint 1px lift on the current nav pill.
+    icons:
+        Rounded line icons with a 2.2 stroke, sized to the text, set in 40px
+        frosted white squares on the figure tiles. Status is a bold check, a
+        hollow diamond or a cross beside a bold word, with a key under the
+        projects. Progress is a 52px ring with the percentage inside.
+    focus: A 3px violet outline offset 3px. A focused field turns white with a violet border and a 4px soft violet halo.
+    tone: Confident and short, such as Good morning, Mara, All 6 projects and See everything.

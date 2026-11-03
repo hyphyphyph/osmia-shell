@@ -1,0 +1,60 @@
+export anchor VinylSleeveStyle:
+    number: 92
+    screen: ProjectsDashboard
+    name: Vinyl sleeve
+    idea: The home screen is a 70s record sleeve with the greeting as the album title, the fortnight pressed into a pale vinyl disc as groove wedges, and the projects listed as tracks on side A and side B.
+    base: light
+    palette:
+        shop: #efebe3, the page
+        sleeve: #f8f4ea, the sleeve front, the sleeve back and panels
+        paleVinyl: #e9e4d8, the record
+        groove: #cfc7b7, grooves and dashed rules, never text
+        ink: #1a1a1a, text, buttons and playheads
+        brown: #594f44, notes and day letters
+        tangerine: #e0662b, the sleeve stripe and record label, never small text
+        tangerineInk: #a8420f, track numbers and overdue
+        mustard: #e8b931, the sleeve stripe and the hype sticker
+        teal: #1f6f73, the sleeve stripe, this week wedges and focus
+        dust: #857b6c, last week wedges
+        green: #24663a, On track
+        amber: #8a5000, At risk
+        red: #a3271c, Behind
+    type:
+        Three stacks. Display uses Arial Black, Helvetica Neue at 900,
+        Avenir Next, Arial in lowercase tracked minus 0.04em for the 64px
+        album title, 56px figures, 26px brand and 22px side headings. Text
+        uses Avenir Next, Avenir, Segoe UI, Noto Sans at 16px with 1.5
+        line height, 19px bold track titles and 11px bold caps tracked
+        0.16em for small labels. Track numbers and percentages use SF
+        Mono, Menlo, Consolas at 700 and 13 to 18px.
+    layout:
+        A header with a small record mark and the lowercase brand, pill
+        nav with the current item filled black, a pill search, a black
+        pill New project button, a round bell and a teal avatar with the
+        user. The stage puts a square sleeve on the left and the record on
+        the right, the record tucked a little behind the sleeve edge. The
+        sleeve front has Brightwork records and a catalogue number, the
+        lowercase album title good morning, mara, Released Saturday 31
+        October 2026, three skewed stripes of tangerine, mustard and teal
+        across the bottom and a mustard starburst sticker saying 4 tasks
+        are overdue. The record is a pale disc with grooves and an orange
+        label, holding fourteen wedges played clockwise from the top,
+        last week in dust on the right half and this week in teal on the
+        left, with counts at the tips and day letters around the label.
+        The sleeve back lists the four numbers in a row over a heavy rule,
+        then side A with tracks A1 to A3 and side B with B1 to B3. Each
+        track has its number, title, percentage, team, tasks, due date, a
+        playhead line with a ring at the percentage and the status. Liner
+        notes list activity in two columns. Below 960px the record sits
+        under the sleeve and the sides stack.
+    spacing: An 8px unit. 40px sleeve padding, 14px per track and 40px between sides.
+    density: Medium. One huge cover, then a compact back with six tracks.
+    corners: Square sleeves. Everything you press is a full pill, and the record, label, swatches and avatar are circles.
+    borders: 2px ink on controls, 3px ink rules on the sleeve back and dashed groove lines between tracks.
+    shadows: The sleeve lifts with a long soft 40px shadow. No other shadows.
+    icons:
+        Solid simple shapes. On track is a disc, At risk a triangle,
+        Behind a square and overdue a starburst like a hype sticker, each
+        with its word.
+    focus: A 3px teal outline offset 3px that follows the pill shape.
+    tone: Record shop chatter with lowercase headings, such as side a, liner notes, Released Saturday and tracks A1 to B3.

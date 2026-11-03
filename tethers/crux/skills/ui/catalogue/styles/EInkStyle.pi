@@ -1,0 +1,49 @@
+export anchor EInkStyle:
+    number: 165
+    screen: ProjectsDashboard
+    name: E-ink
+    idea: The dashboard reads like an open e-reader, with grey electronic paper, crisp black serif type and no colour at all, set as a two-page spread with chapter tabs and page-turn controls.
+    base: light
+    palette:
+        desk: #d9d8d3, the page behind the device
+        bezel: #f4f4f1, the device frame and field fills
+        ePaper: #e8e7e1, the screen and the style sheet
+        ink: #111111, type, rules, solid bars and every status
+        softInk: #4a4a47, meta, running heads and folios
+        rule: #9a9993, hairlines and borders, never text
+        tint: #cfcec8, highlights, the gutter shade and meter ticks
+    type:
+        Text uses Charter, Bitstream Charter, Sitka Text, Cambria, Georgia,
+        serif. The greeting is 40px regular, total figures 34px tabular,
+        project names 21px, body 18px at 1.6 and meta 15px italic. Small
+        caps style labels and the status bar use system-ui at 12 to 14px,
+        section heads 13px caps tracked 0.2em between em dashes, and
+        status words 13px bold caps.
+    layout:
+        A light rounded device frame holds a flat e-paper screen. A thin
+        status bar carries the brand, a pill search field, a black New
+        project button, a round bell and an initials disc with Mara Okafor.
+        Below it the nav is a row of numbered chapter tabs, 1 Home to 6
+        Settings, with the current one underlined in black. The body is a
+        book spread split by a soft grey gutter. The left page has a
+        running head, the greeting and date in italic, the overdue line
+        between two thick rules, a two by two table of the four totals and
+        the six projects as numbered entries with status at right, meta in
+        italic and a thin ticked meter. The right page has the chart and
+        Recent highlights with grey marker highlights on task names. Each
+        page ends in a folio number. A page-turn bar at the bottom shows
+        previous Settings, Home 1 of 6 with six dots, and next Projects.
+        Below 900px the spread becomes one page and the search wraps under
+        the brand.
+    spacing: An 8px unit. Book margins of 40 to 56px, 14px between entries, 32px before section heads.
+    density: Calm and bookish, with long lines of prose and one column per page.
+    corners: Square pages. Only the 22px device frame, the search pill, avatar and bell are round.
+    borders: 1px ink under the status bar and above the page-turn bar, 2px ink rules round the overdue line, grey hairlines between entries, dotted rules between highlights.
+    shadows: None. A soft grey gradient down the gutter is the only depth.
+    icons:
+        Black only. A filled circle for On track, a hollow triangle for At
+        risk, a filled square for Behind and a crossed box for Overdue,
+        each beside its word. In the chart last week is diagonally hatched
+        and this week is solid black.
+    focus: A 3px ink outline offset 3px with a paper gap and a second 2px ink ring outside.
+    tone: A book's voice, such as Chapter one, Recent highlights and Home 1 of 6.

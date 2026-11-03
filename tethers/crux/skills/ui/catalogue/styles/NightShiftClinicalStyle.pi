@@ -1,0 +1,65 @@
+export anchor NightShiftClinicalStyle:
+    number: 238
+    screen: ProjectsDashboard
+    name: Night shift clinical
+    idea:
+        A calm dark teal shift board made for reading at 3 in the morning,
+        with large legible type, figures shown as quiet readouts down a
+        station column, projects as roomy bed style cards, a soft monitor
+        trace for the fortnight and handover notes for activity.
+    base: dark
+    palette:
+        ward: #0b1a1d, the page and the style sheet
+        station: #0f2226, the header, the tab bar and the station column
+        card: #13292d, project cards, readouts and panels
+        raised: #1a3439, bar tracks, the current tab, the search field and note times
+        line: #2a4a50, borders and dividers
+        ink: #dcebe9, text and figures, softened from white to cut glare
+        muted: #9dbcb9, labels, meta and axis text
+        teal: #6fd3c6, the primary button, bars, this week trace, the current tab edge and focus
+        tealInk: #062a27, text on teal
+        dimTrace: #5f8f8b, the last week trace
+        notice: #262718, the gentle overdue notice background
+        ok: #86d9a8, On track text and check circle
+        risk: #efc98a, At risk text, triangle and the notice edge
+        bad: #f2a7a0, Behind and overdue text, crossed square and clock
+    type:
+        One highly legible stack, Atkinson Hyperlegible, Verdana, Segoe UI,
+        sans-serif, with Cascadia Mono, Consolas, ui-monospace for note times.
+        Base 17px at 1.6 and nothing smaller than 15px. The greeting is 30px
+        at 700, readouts 36px at 700 with tabular numbers, card titles 20px at
+        700, field labels 15px at 700 in muted.
+    layout:
+        A station header holds a rounded teal mark, the Brightwork name, a
+        wide search field, a bell, a teal New project button and Mara Okafor
+        with a round initials disc. Under it a tab bar of six large tabs, each
+        an icon above its word, Home current on a raised fill with a 3px teal
+        top edge. The body has two columns. The 320px station column on the
+        left holds the greeting Hello, Mara, the date, a gentle notice card
+        with a muted amber left edge reading 4 tasks are overdue with a clock
+        and a View tasks link, then the four figures as readout rows, a muted
+        label at left and a 36px figure at right, divided by lines. The wide
+        right column holds the six projects as two columns of roomy cards,
+        each with the name, category, a status badge, a 14px rounded bar with
+        the percent at its end, and two labelled fields for tasks and due
+        date. Below sit the chart as a monitor style trace across all fourteen
+        days on a faint grid, with the week split by a gap, last week dim and
+        this week bright teal with dots and values, and the handover notes,
+        each with a mono time on a raised block, the event and its project.
+        Below 900px the station column moves above the cards, below 600px the
+        tabs become a three by two grid and cards go to one column.
+    spacing:
+        An 8px unit. 24px card padding, 20px row padding in readouts, 24px
+        gaps, 48px minimum targets.
+    density: Low. Large type and roomy cards so nothing is misread when tired.
+    corners: Gentle. 12px cards, 10px buttons and fields, round bars and badges.
+    borders:
+        1px line on cards and readout dividers. The notice has a 4px muted
+        amber left edge and the current tab a 3px teal top edge.
+    shadows: None. Glare is the enemy, so depth is a small step in teal greys.
+    icons:
+        Rounded line icons at 2px stroke, 20px in tabs, sized to text
+        elsewhere. Status uses a check circle, a triangle with a bang and a
+        crossed square, always with the word, overdue a clock.
+    focus: A 3px teal outline offset 3px, thick enough to find at a glance.
+    tone: Gentle and clear, such as Hello, Mara, Handover notes and 4 tasks are overdue.

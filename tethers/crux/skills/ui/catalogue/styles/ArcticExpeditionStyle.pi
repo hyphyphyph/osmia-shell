@@ -1,0 +1,55 @@
+export anchor ArcticExpeditionStyle:
+    number: 423
+    screen: TravelPlanner
+    name: Arctic expedition
+    idea: The trip kept as a polar expedition log, a dark graph paper logbook with an orange margin line where each leg is a dated entry, beside a contoured route sheet with camp triangles, a weather observation table, a taped kit list and a provisions fund drawn as ration blocks.
+    base: dark
+    palette:
+        polarNight: #0a1118, the page and the style sheet
+        logPage: #101b25, the logbook and note cards
+        grid: #18283a, graph paper lines on the logbook
+        line: #24394c, card edges and dashed table rules
+        ink: #e6f1f8, text
+        muted: #9fb5c6, labels, captions and flight entries
+        ice: #a8dcff, headings, the route, camps, the booked entry rule and the primary button
+        onIce: #06202f, text on ice
+        frost: #d6f0ff, the focus ring
+        signal: #ff9a5c, the margin line, Not booked and To do
+        secured: #8fe3c0, Booked and Done
+    type:
+        Notes in system-ui, Segoe UI, Roboto at 15px. Log heads, labels and
+        stamps in ui-monospace, SFMono-Regular, Menlo at 12px bold caps
+        tracked 0.12 to 0.16em in ice. The log title 44px at 700, entry
+        titles 20px at 700, the fund figure 32px tabular.
+    layout:
+        A thin header band in monospace caps with a star and BRIGHTWORK
+        TRIPS in ice on the left and Expedition log No. 01 on the right.
+        Below, two columns. The left is the logbook, a dark page ruled as
+        24px graph paper with an orange margin line near its left edge. It
+        opens with Field notes for, Japan in April in bold, and Leader Mara
+        Okafor, Party 2 with one guest and Window 1 to 14 April 2027. Log
+        entries follows, six boxed entries right of the margin, each with a
+        diamond bullet on the margin, a monospace head such as Day 1 or Days
+        6 to 10 with the date, a title, a note and a status stamp. Booked
+        entries have a solid ice left rule and solid diamond, unbooked a
+        dashed orange rule and hollow diamond, flights grey. Two buttons
+        follow. The right column holds a route sheet tilted slightly with a
+        shadow, contour lines, a grid, a north arrow and a dashed ice route
+        between three camp triangles for Tokyo, Kyoto and Osaka. Then three
+        taped note cards. Conditions observed is a table of Station Tokyo,
+        Period Early April, Highs around 17 degrees and a blossom note. Kit
+        list shows the four checks. Provisions fund shows 3,200 euro of
+        5,000 laid in over five ration blocks of 1,000, three full, one a
+        fifth full, one dashed empty. Below 960px the columns stack.
+    spacing: An 8px unit on a 24px graph grid. 14px between log entries, 20px between note cards and 28px between columns.
+    density: Medium. Six entries in the log and four note cards beside it.
+    corners: Nearly square at 2px. The route sheet tilts by 0.6 degrees and tape strips by 3.
+    borders: 1px slate edges and a 3px left rule on every entry, solid ice when booked and dashed signal orange when not. Dashed rules in tables.
+    shadows: Only under the tilted route sheet. Pale tape strips hold the cards.
+    icons:
+        Field marks. Booked is a solid flag, Not booked a dashed empty
+        square and Flight a plane. Entry bullets are diamonds, hollow when
+        unbooked. Camps are triangles. Done is a ticked box and To do an
+        empty box.
+    focus: A 2px frost outline offset 2px with a soft ice halo.
+    tone: Plain expedition speech such as Log entries, Conditions observed, Kit list and Provisions fund.

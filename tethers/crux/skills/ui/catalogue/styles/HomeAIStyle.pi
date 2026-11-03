@@ -1,0 +1,49 @@
+export anchor HomeAIStyle:
+    number: 379
+    screen: SmartHome
+    name: Home AI
+    idea: The home speaks as a calm intelligence, a softly lit orb and one spoken line lead the screen, and the rooms, energy and scenes sit below as quiet notes the assistant is keeping an eye on.
+    base: dark
+    palette:
+        page: #07060f, page ground
+        deep: #0e0c1c, note panels and swatch cards
+        veil: #151229, secondary buttons and fields
+        line: #2a2548, panel edges and row rules
+        ink: #ecebfa, text and the spoken line
+        mute: #a7a3c7, labels and meta
+        cyan: #9ee7ff, orb core, speaking status, lights on, focus
+        lilac: #c7a8ff, energy curve, motion, active scene
+        coral: #ffb3a1, the alert words in the spoken line, heating
+        mint: #9df0cf, locked and battery
+        onCyan: #061a24, text on the cyan to lilac primary button
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial, at light weights. Base 16px at 350. The spoken line is 30px
+        at 300 and 1.4, figures 52px at 200, note ledes 19px at 300, meta
+        14px muted, labels 12px at 600 caps with 0.22em tracking.
+    layout:
+        A violet black page with a soft radial haze behind the top. A thin
+        caps line shows Brightwork Home and the day and time. The hero is
+        centred, a 220px glowing orb with a pale core, cyan to violet body
+        and two tilted orbit rings, then a cyan Speaking label with a mic,
+        then one spoken sentence greeting the evening, saying Movie is on,
+        with the garage sentence in coral and the question Shall I close it.
+        A thin cyan waveform line runs under it, then a cyan to lilac pill
+        Close now and a dark pill Leave it open. Below, three tall note
+        panels with 32px corners sit side by side. Rooms has the lede Five
+        places I am watching and five ruled rows with a coloured state icon,
+        the room, a muted note and the value or state word. Energy has the
+        lede A quiet day until the evening, a huge thin figure, solar and
+        battery in cyan and mint, and a lilac filled curve with the peak
+        dotted. Scenes has Ask me, or tap one, and four pill rows each with
+        a voice hint, Movie edged lilac and marked Running with a check.
+        Below 980px the third panel spans two columns, and at phone width
+        the orb shrinks to 160px and panels stack.
+    spacing: An 8px unit, very open. 56px between the hero and the notes, 24px panel padding.
+    density: Low. One sentence leads and three short note panels follow.
+    corners: 32px panels and full pills for every button, field and scene.
+    borders: 1px #2a2548 on panels and rows, lilac on the active scene.
+    shadows: None. Light comes from the orb glow and the radial haze behind it.
+    icons: Thin 1.4 stroke line icons at 18px, coloured per state and always with words. A mic marks speaking.
+    focus: A 2px cyan outline offset 4px.
+    tone: First person and gentle, such as Five places I am watching and Shall I close it.

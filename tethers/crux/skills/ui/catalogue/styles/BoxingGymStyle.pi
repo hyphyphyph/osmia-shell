@@ -1,0 +1,61 @@
+export anchor BoxingGymStyle:
+    number: 387
+    screen: FitnessTracker
+    name: Boxing gym
+    idea: A gritty gym wall at night, with a red digit round timer for the workout, rings counted as rounds of timer lights, heart zones scored in tally marks, and every heading torn from a strip of cream athletic tape.
+    base: dark
+    palette:
+        wall: #191817, the speckled concrete page and the style sheet
+        panel: #24221f, rounds, scorecard, recovery and plan cards
+        housing: #0b0a0a, the timer box and text fields
+        chalk: #2a2f2b, the week chalkboard
+        tape: #e8dfca, torn tape headings and the secondary button
+        onTape: #1e1a14, text on tape
+        ink: #f2ede4, text and tally marks
+        muted: #b9b1a5, labels, units and done plan weeks
+        red: #ff5a4f, the top zone, the current plan week, the primary button and the nav underline
+        led: #ff4436, timer digits and lit round lights
+        ledOff: #3a1512, unlit digit ghosts and unlit lights
+        chalkInk: #e9ece6, chalk figures and bars
+        chalkMuted: #b4bcb4, chalk day names and circled rest
+        line: #3d3a35, dashed rules and card edges
+    type:
+        Headings use Rockwell, Rockwell Nova, Roboto Slab, DejaVu Serif,
+        Georgia, bold caps tracked 0.08em, 16 to 20px on tape and 36px in
+        the style sheet. The timer uses ui-monospace bold at 148px with a
+        red glow, other digits 22 to 44px. Text uses Trebuchet MS, Segoe UI,
+        system-ui at 15px. The chalkboard uses Segoe Print, Bradley Hand,
+        Comic Neue at 14 to 24px.
+    layout:
+        A speckled concrete page. The header has Brightwork Move on a torn
+        tape strip, Today, Week and Plan in slab caps with a red underline
+        on Today, and the date on the right. A full width row pairs a steel
+        timer box and the rounds card. The timer box has a 10px bezel, two
+        bolts, an Evening run tape label and a Final bell done tag with a
+        bell, then 42 min 16 s in red digits over unlit ghost digits, then
+        distance, average pace and average heart rate in three columns. The
+        rounds card shows Move, Exercise and Stand as Round 1 to 3, each
+        with its value over goal, a row of round timer lights where one
+        light is 50 kcal, 5 min or 1 h, lit for done, half lit for part and
+        dark for to go, and a line with percent and amount left. Below, a
+        chalkboard in a 12px wood frame shows the week with chalk hatched
+        bars, the figure above each, rest days circled, a star on today and
+        a chalk total line. Beside it a scorecard table lists zones with
+        name, tally marks in groups of five and minutes, the zone 3 row
+        tinted red. Last, a Recovery card with 7 h 12 min, a sentence on
+        deep sleep and a hatched red deep share bar, and the Half marathon
+        plan card with Week 6 of 12, twelve numbered squares with five
+        filled, the sixth red and six hollow, and Next session tomorrow Long
+        run 14 km with View plan. Each card has its tape heading overhanging
+        the top edge. Below 980px everything stacks.
+    spacing: An 8px unit. A 32px page gutter and 28 to 36px between pieces so tape headings have room to overhang.
+    density: Medium. A big timer, three rounds of lights, a chalkboard, a scorecard and two small cards.
+    corners: Mostly square, 3 to 6px on the timer and controls, round lights and torn tape ends.
+    borders: A 10px steel bezel on the timer, a 12px wood frame on the chalkboard and 2px dashed rules inside cards.
+    shadows: Hard 4 to 10px drop shadows under the timer and buttons and a red glow on lit digits and lights.
+    icons:
+        A bell for the finished run. Lights are filled for done, half filled
+        for part and dark for to go. Tally marks count minutes. Rest days
+        are circled in chalk and today has a star.
+    focus: A 3px dashed tape coloured outline offset 4px.
+    tone: Gym talk such as Today's rounds, Final bell, Zone scorecard, Recovery and rest.

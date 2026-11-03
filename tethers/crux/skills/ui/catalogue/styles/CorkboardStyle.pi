@@ -1,0 +1,58 @@
+export anchor CorkboardStyle:
+    number: 113
+    screen: ProjectsDashboard
+    name: Corkboard
+    idea: The dashboard is a framed corkboard where index cards, sticky notes and paper slips are held up with push pins, and the project cards hang from a sagging red yarn strung pin to pin.
+    base: light
+    palette:
+        wall: #efe9df, around the board and behind the header
+        cork: #d9b98a, the board, speckled with #b8935e, #c9a571 and #e8cfa6
+        frameWood: #a87d4c, the 16px board frame
+        indexCard: #fffdf6, cards, slips, fields and the sheet
+        ruledBlue: #a9c4e0, card lines, decoration only
+        marginRed: #e08a86, the card header line, decoration only
+        stickyYellow: #fff1a8, the overdue note, the avatar and the current nav tab
+        maskingTape: #efe3c2, section labels
+        redYarn: #b3262e, the string between pins and this week bars
+        ink: #2b2118, text and marker lines
+        blueBiro: #1d5fa8, progress hatching and the focus ring
+        redPen: #a8201a, the primary button, overdue and Behind
+        greenPen: #236b3a, On track
+        amberPen: #8a4f00, At risk
+    type:
+        Three stacks. Headings and numbers use Marker Felt, Chalkboard SE,
+        Comic Sans MS, Comic Neue, Trebuchet MS in bold. Card text uses
+        American Typewriter, Courier Prime, Courier New, Courier. Controls
+        use system-ui, Segoe UI, Roboto, Arial. The greeting is 38px marker
+        at 1.15, card numbers 50px, card titles 21px on 26px, section labels
+        20px, card text 14 to 15px on a 24px ruling.
+    layout:
+        A wall header holds a small corkboard logo, a card coloured search,
+        a red New project button with a hard ink drop, a bell and a yellow
+        MO circle. The board has a 16px wood frame with an inset shadow.
+        Along its top, six white paper nav tabs each hang from a coloured
+        pin, the current one yellow and tilted with a red marker underline.
+        The first row pairs a pinned card with a red top edge holding Hi
+        Mara, the date and a line about the board, plus a taped yellow
+        sticky note in red marker with a burst saying 4 tasks are overdue,
+        with four small pinned cards for the numbers, tilted alternately.
+        A masking tape label marks Projects, then six ruled index cards three
+        across, each pinned and tilted, joined pin to pin by a sagging red
+        yarn, with the marker name, typed Team, Tasks and Due rows, a marker
+        drawn bar hatched in blue to the percent, the percent and status. The
+        last row has a graph paper card pinned twice with hatched last week
+        bars and red this week bars, and Latest notes as six pinned paper
+        slips tilted left and right. Below 1040px cards go two across, below
+        640px one, and the yarn drops straight down behind the cards.
+    spacing: An 8px unit with 24px card ruling. 40px gaps between cards leave room for pins and yarn.
+    density: Medium. Cards three across, slips stacked in a column.
+    corners: Square paper. Controls 6px, marker bars slightly uneven.
+    borders: A 16px wooden frame around the cork, 1.5 to 2px ink lines on controls and marker bars.
+    shadows: Soft drops under every paper, a hard pin shadow and an inset shadow inside the frame.
+    icons:
+        Solid filled shapes with white marks at 18px. A ticked circle for On
+        track, a triangle for At risk, a crossed square for Behind and a
+        burst for overdue, with the typed word. Push pins in red, blue, green
+        and yellow are decoration.
+    focus: A 3px blue outline offset 3px inside a 6px card coloured halo.
+    tone: Office board notes, such as Pinned up for the team and Latest notes.

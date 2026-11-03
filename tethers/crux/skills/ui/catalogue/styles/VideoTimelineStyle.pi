@@ -1,0 +1,56 @@
+export anchor VideoTimelineStyle:
+    number: 313
+    screen: OpsMonitor
+    name: Video timeline
+    idea: A video editor where services sit in a bin as clips, a program monitor shows the frame at the 07.48 playhead, an inspector holds the incident, and a multi track timeline lays out the 24 hours as video and audio tracks with markers.
+    base: dark
+    palette:
+        suite: #16151c, the page
+        pane: #211f29, panes
+        paneHead: #2a2834, pane titles, track headers and the ruler
+        well: #0f0e14, track wells, bin tiles and fields
+        rule: #3a3746, borders and rules
+        ink: #ecebf3, text
+        muted: #aba7bd, labels and timecodes
+        video: #5865d8, video clips, the requests filmstrip, the primary button and the focus halo
+        audio: #2e8a5a, audio clips under #7ff0b0 waveforms
+        playhead: #ff5c7a, the playhead, the timecode readout and the current app underline
+        amber: #ffbe55, the incident clip, Degraded and Investigating
+        green: #74e0a0, Healthy and Resolved
+        sky: #86c8ff, Recovered
+        rose: #ff7f8f, the error trace and Firing
+    type:
+        Segoe UI, system-ui, Roboto, Helvetica Neue, Arial at 13px and
+        1.45, with ui-monospace, SF Mono, Menlo, Consolas for timecode,
+        service names and track tags. The monitor title card is up to 30px
+        bold, the incident number 20px mono bold amber, the timecode
+        readout 18px mono in the playhead colour, track tags 11px mono bold.
+    layout:
+        A black bar holds Brightwork Ops, the apps as workspace links with
+        a playhead coloured underline on Ops, and Sequence Production last
+        24 hours. Three panes follow. The bin shows the services as clip
+        tiles, each a 16 by 9 thumbnail with a large status shape and the
+        uptime as a duration badge, then the name, word and metric. The
+        program monitor shows the frame at the playhead, safe area guides,
+        a timecode overlay and a title card reading billing 5xx rate above
+        2 percent with the error spike, then playback buttons and a note
+        that billing recovered six minutes later. The inspector holds the
+        incident as property rows. The full width timeline has a markers
+        row with alert flags, a timecode ruler, V3 Incident as an amber
+        clip from 06.58, V2 Deploys as three staggered clips, V1 Requests
+        as a filmstrip of 24 frames with bar heights, and A1 to A3 as audio
+        waveforms for error rate, p95 and p50, with a playhead line at
+        07.48. Markers and an edit list close the screen. The monitor moves
+        first below 1100px and the timeline scrolls inside itself on phones.
+    spacing: An 8px unit. 8px gutters between panes, 6 to 10px pane padding, 44px per hour.
+    density: Dense. Three panes over an eight row timeline.
+    corners: 4px panes, tiles and buttons, 3px clips and markers.
+    borders: 1px #3a3746, clips carry a lighter border of their colour, a dashed safe area in the monitor.
+    shadows: None. Wells sit darker than panes.
+    icons:
+        Large status shapes as bin thumbnails and 14px shapes on markers,
+        chips and lists, a ringed tick for Healthy, a triangle for
+        Degraded, a circular arrow for Recovered, a bolt for Firing, a tick
+        for Resolved and a magnifier for Investigating.
+    focus: A 2px white outline offset 2px with a video blue halo.
+    tone: Editing words, such as Bin, Program, Inspector, In point, Markers and Edit list.

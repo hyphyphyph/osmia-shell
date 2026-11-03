@@ -1,0 +1,58 @@
+export anchor CircuitBoardStyle:
+    number: 126
+    screen: ProjectsDashboard
+    name: Circuit board
+    idea: The dashboard laid out as a light green circuit board, with numbers on chips, projects as dashed component footprints carrying LED bar graphs, activity as test points on a trace, and the chart built from stacked copper pads.
+    base: light
+    palette:
+        solderMask: #e4efe0, the board, with a #d3e4cd 32px grid
+        componentBody: #f7faf4, fields, footprints and the style sheet
+        silkscreen: #163521, main text and outlines
+        silkMuted: #3c5c45, designators, meta and dashed courtyards
+        trace: #9cc396, 4px traces and section rules, never text
+        copper: #b8732f, pads, vias and mounting rings
+        tinnedPad: #d39a5c, chart pads and the primary switch
+        chip: #26302a, chip bodies, the nav pin header and the LED bar housing
+        ledGreen: #7fe08e, lit LED segments on dark only
+        onTrack: #1d7337, the ring LED
+        atRisk: #8f4f00, the triangle LED
+        behind: #b42318, the square LED, overdue and the alarm chip edge
+    type:
+        One monospace stack, ui-monospace, SF Mono, Cascadia Mono, Roboto
+        Mono, Menlo, Consolas, monospace. The greeting is 34px 700, chip
+        values 40px 700, section labels 15px 700 caps tracked 0.14em,
+        project names 16px 700, body 14px at 1.5, designators and meta 12px
+        caps tracked 0.1em.
+    layout:
+        One board up to 1280px with 14px corners, a 32px faint grid and
+        copper ringed mounting holes in each corner. The header has a chip
+        logo, the spaced caps brand with PCB-01 REV 2026.10 under it, a slot
+        search, a tactile switch New project button with a round black cap, a
+        round black buzzer for notifications and a U0 chip tag with the name.
+        The nav is a dark pin header labelled J1, each link a pad and label,
+        the current Home a lit copper pad. Horizontal traces with two vias
+        divide sections. The greeting sits in silkscreen text with the date
+        in spaced caps, and a boxed LED reads D1, 4 tasks are overdue. Four
+        dark DIP chips labelled U1 to U4 hold the numbers, with grey pin legs
+        above and below, the overdue chip edged in red. Projects are six
+        dashed footprints labelled R1 to R6 in two columns, each with the
+        name and team, a ten segment LED bar lit by tens of percent, the
+        percent, tasks and due date, and a boxed status LED. Beside them,
+        activity runs down a green trace as test points TP1 to TP6 with a
+        copper pad, a dark tag, the sentence and the time. The chart is a
+        panel of stacked copper pads, one pad per task, with values above,
+        dates below and LAST WK = 59 and THIS WK = 73 over the two halves.
+        Below 1000px chips go two by two and columns stack, below 640px the
+        board loses its frame and footprints go single file.
+    spacing: An 8px unit on a 32px board grid. 16px between footprints, 24px between chips, traces between sections.
+    density: Medium dense, like a populated board, with two columns of modules beside a test point rail.
+    corners: 14px on the board, 6px footprints, 2 to 4px chips and controls, round pads and holes.
+    borders: 1.5px silkscreen lines, dashed courtyards round modules and 4px trace rules.
+    shadows: Only a glow on lit LED segments and the board edge ring. Nothing floats.
+    icons:
+        Solid 16px LEDs with a hole punched in, a ring for On track, a
+        triangle with a bar for At risk and a square with a square hole for
+        Behind, always with the caps word in a bordered tag. Pads, vias and
+        pins are ornament.
+    focus: A 2px dashed silkscreen outline offset 3px with a 6px soft copper halo.
+    tone: Terse engineering labels in caps, such as U1, R3, TP2, D1 and LAST WK = 59.

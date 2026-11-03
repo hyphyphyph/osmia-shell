@@ -1,0 +1,56 @@
+export anchor IconRailMasterDetailStyle:
+    number: 174
+    screen: ProjectsDashboard
+    name: Icon rail master-detail
+    idea: A three-pane work surface where a slim dark icon rail, a white list pane with the greeting, figures and projects, and a wide detail pane for the selected project sit side by side, quiet slate with one blue.
+    base: light
+    palette:
+        rail: #1e2733, the 64px icon rail
+        railInk: #b8c4d2, rail icons that are not current
+        railCurrent: #34425a, the current rail item behind a white icon and a white edge bar
+        canvas: #f4f6f8, the detail pane background and the search field
+        surface: #ffffff, the list pane, cards, the top bar and the style sheet
+        ink: #1c2430, text
+        muted: #5a6576, meta, labels, dates and day letters
+        line: #dde2e8, every border and divider
+        accent: #3451a8, the primary button, links, the selected row edge, meters, this week bars and focus
+        selected: #eaf0fb, the selected project row
+        lastWeek: #8794a8, outlines of last week bars
+        ok: #1a7048, On track text and icon on a pale green chip
+        risk: #8f5200, At risk text and icon on a pale amber chip
+        bad: #b42318, Behind and overdue text and icon on a pale red chip
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Base 14px at 1.45. The detail title is 26px at 650 weight,
+        the greeting 20px, figures 20 to 22px with tabular numbers, card
+        titles 15px, meta 12 to 13px, and pane labels 12px caps tracked
+        0.06em.
+    layout:
+        Three columns at full height. A 64px dark slate rail holds a white
+        square B mark, six icon-only links with tooltips and accessible
+        names, Home current with a lighter tile and a white edge bar, and
+        the initials disc at the foot. Next a 336px white list pane holds
+        the greeting, the date and a pale red overdue line, then the four
+        figures as a two by two ruled grid, then a Projects label and six
+        full-width rows with name, status chip, category and due date, and a
+        thin meter with percent and task counts. Mobile app 2.0 is selected
+        with a pale blue fill and a blue left edge. The detail pane fills
+        the rest. Its white top bar has search, New project, a bell and Mara
+        Okafor. Below sit a breadcrumb, the project title with its At risk
+        chip, meta with days left, an Edit project button, underlined tabs,
+        a ruled four-cell facts strip, and then the team chart and the team
+        activity side by side in bordered cards, activity for this project
+        tagged. Below 1180px the cards stack. Below 760px the rail becomes a
+        sticky top bar of icons and the panes stack.
+    spacing: An 8px unit. 20px pane padding, 24px detail padding, 12px row padding, 20px between detail blocks.
+    density: Medium to dense. Three panes visible at once, compact rows, small type.
+    corners: Small. 6px panes and cards, 4px buttons, fields and chips, round initials.
+    borders: 1px light slate lines between panes, rows and fact cells. The selected row has a 3px blue left edge.
+    shadows: None. Separation comes from borders and the dark rail.
+    icons:
+        Line icons at 1.75px stroke, 22px in the rail, 18px elsewhere.
+        Status uses a check circle for On track, a triangle with a bang for
+        At risk, a crossed square for Behind and a clock for overdue, always
+        with the word.
+    focus: A 2px blue outline offset 2px, white on the dark rail.
+    tone: Plain and neutral, such as Tasks completed, all projects and Team activity.

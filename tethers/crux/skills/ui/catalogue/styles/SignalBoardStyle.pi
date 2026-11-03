@@ -1,0 +1,52 @@
+export anchor SignalBoardStyle:
+    number: 343
+    screen: CrmPipeline
+    name: Signal board
+    idea: The pipeline as a black departures board, one terse uppercase row per deal on split flap tiles, each led by a signal lamp whose shape and word give its state, with the key figures spelled out tile by tile above.
+    base: dark
+    palette:
+        night: #050607, the page, cell gaps and the style sheet
+        board: #0c0e10, board frames
+        tile: #16191c, the lower half of every flap tile and row
+        tileTop: #1d2125, the upper half of every flap tile
+        seam: #000000, the split line across each tile
+        line: #2a2f35, board frames and the secondary border
+        amber: #ffd23f, figures, values, the header bar, primary button and focus
+        onAmber: #1a1400, text on the header bar
+        ink: #f2f2ea, deal names and Open lamps
+        muted: #a5abb3, column heads, stage and owner
+        green: #6ff09a, the Final call play lamp and Landed check lamp
+        sky: #7fd0ff, the Booked diamond lamp
+        red: #ff7a66, the Stalled triangle lamp and row underline
+    type:
+        One mono stack, ui-monospace, SF Mono, Menlo, Consolas, all caps
+        with wide tracking. Base 15px. Figure tiles 22px at 800, the header
+        20px at 800 tracked .18em, rows 15px at 800 tracked .08em, column
+        heads 11px at 600 tracked .2em, legend 12px.
+    layout:
+        An amber header bar holds Brightwork Sales, Pipeline Q4 and a dark
+        Add deal button. Under it a board strip spells Pipeline, Won Q4,
+        Target, Win rate and Open deals one character per flap tile in
+        amber, with commas narrow and tile free. The main board, Deals 7 on
+        board, is a table with columns Signal, Deal, Stage, Value, Owner
+        and Remark. Every cell is a flap tile with a black seam across its
+        middle and 2px black gaps between cells. Signals read Open with a
+        hollow circle for the two leads, Booked with a diamond for
+        Northpass, Sent with a square for Kettle and Co, Stalled with a
+        triangle and a red underline for Saltwater Freight, Final call with
+        a play shape for Fernhill Studio and Landed with a check for
+        Bluewater Clinics. Remarks read Demo 04 Nov, Sent 28 Oct, No reply
+        12 days, Closing 07 Nov and Closed 22 Oct. A signal key follows,
+        then a Notices board with three rows tagged Call, Opened and Quiet,
+        and a Filter board button. On phones each row becomes a block with
+        the signal on top, deal and value, stage and owner, then the remark.
+    spacing: A 4px unit. 4px between rows, 2px seams between cells, 16px board padding, 24px gutter, 16px on phones.
+    density: High and even. Seven deal rows read as one board, every cell one terse value.
+    corners: 2px. The board is square.
+    borders: 1px frames on boards, 2px black gaps between cells, a 3px red underline on the stalled row.
+    shadows: None. The black tile seam gives the flap its depth.
+    icons:
+        Solid signal lamps lead every row, a hollow circle, diamond,
+        square, triangle, play shape or check, each with its word.
+    focus: A 3px amber outline offset 2px.
+    tone: Departure board shorthand, such as Booked, Final call, Landed, No reply 12 days and Notices.

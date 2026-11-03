@@ -1,0 +1,61 @@
+export anchor TimelineFirstStyle:
+    number: 181
+    screen: ProjectsDashboard
+    name: Timeline first
+    idea: A blue-grey planning view where the projects are the hero as bars on a September to January date axis, cut by a today line at 31 October, with a slim KPI band above and the chart and activity below.
+    base: light
+    palette:
+        page: #f1f4f7, the page
+        band: #e3e9ef, the header band
+        surface: #ffffff, the timeline, panels and fields
+        past: #e9eef3, the shaded time before today and row rules
+        ink: #1a2632, text, the today line and its label
+        muted: #4c5d6e, labels, dates and axis months
+        line: #d3dce5, borders and dashed month lines
+        steel: #2f5d86, the primary button, this week bars, the avatar and focus
+        steelDeep: #244a6c, links and the current nav text
+        steelSoft: #7a8fa6, last week bars, KPI rules and field edges
+        greenBar: #cfe3d6, On track bars, with #22683e for the word and shape
+        amberBar: #f0dfc2, At risk bars, with #875200 for the word and shape
+        redBar: #f2d2cd, Behind bars, with #ad2a1f for the word, shape and overdue
+    type:
+        One stack, Avenir Next, Segoe UI, Helvetica Neue, system-ui,
+        Roboto, Arial. KPI figures 28px at 600, the greeting 24px at 650,
+        panel titles 16px at 650, project names 14px at 650, axis months
+        and the column label 12px at 650, notes 12 to 13px.
+    layout:
+        A blue-grey band spans the top. Its first row has a three bar
+        stepped mark with the brand at left, the six nav links centred as
+        text with Home in a white tab, and a bell, a square steel avatar and
+        Mara Okafor at right. Its second row has the greeting with the date
+        and a red clock with 4 tasks are overdue at left, and the search
+        field and a steel New project button at right. Below the band four
+        KPIs sit in one row without boxes, each a figure over its label
+        behind a 3px left rule, the overdue rule and figure in red. The
+        timeline panel follows across the full width. Its axis row has a
+        250px Project column label then the months Sep 2026, Oct, Nov, Dec
+        and Jan 2027 placed by date, with a dark Today 31 Oct tag. Each of
+        the six rows, sorted by days left, has a label cell with name, team,
+        percent, tasks and the status word with shape, and a lane where the
+        time before today is shaded, dashed month lines run down, a solid
+        dark today line cuts through, and a status tinted bar runs from
+        today to the due date, ending in the filled status shape with the
+        due date and days left beneath. A footnote names the nearest and
+        furthest due dates. Below, two panels side by side, Tasks completed
+        as seven weekday pairs of bars, last week beside this week, and
+        Activity as rows of time then sentence. Below 1000px the nav wraps
+        to its own row and the lower panels stack. Below 720px each project
+        label sits above its lane, the axis keeps all five months at phone
+        width and the KPIs become two by two.
+    spacing: An 8px unit. 20px panel padding, 72px timeline rows, 20px between panels, 32px page gutter.
+    density: Medium. One project per lane, read left to right through time.
+    corners: 8px panels, 6px controls, tabs and avatar, 4px bars.
+    borders: 1px #d3dce5 panels, dashed month lines, a 2px ink today line, 3px left rules on KPIs.
+    shadows: One faint 0 1px 2px at 5 percent ink on the timeline panel only.
+    icons:
+        Line icons at 1.8px stroke at text size. Filled status shapes mark
+        each bar end and the label cell, a check circle for On track, a
+        triangle with a bang for At risk and a crossed square for Behind,
+        plus a clock ring for overdue.
+    focus: A 2px steel outline offset 2px with a 5px pale steel halo.
+    tone: Calm planning language built on dates and days left, such as 20 Nov, 20 d.

@@ -1,0 +1,62 @@
+export anchor NightMetroStyle:
+    number: 316
+    screen: OpsMonitor
+    name: Night metro
+    idea: The monitor drawn as a night transit map, where each service is a coloured line running across the last 24 hours, deploys and alerts are stations on it, and trouble shows as dashed track and an amber disruption sign.
+    base: dark
+    palette:
+        night: #0b1016, the page
+        platform: #131a23, panels and the style sheet
+        platformRaised: #1b2430, line pills and list rows
+        mapWell: #0e141c, the slightly lighter well behind the map
+        ink: #f1f5f9, text, the current app pill and the primary button
+        muted: #a7b3c4, meta, axis times and the legend
+        rail: #2c3746, borders, dashed rules and the hour grid on the map
+        lineApi: #4fb3ff, the api line, the header roundel and the request chart
+        lineWeb: #ff8a3d, the web line and the p95 line
+        lineSync: #3ddc9c, the sync-worker line
+        lineNotif: #c792ff, the notifications line and the p50 line
+        lineBilling: #ffd23f, the billing line
+        healthy: #5ee39a, Healthy and Resolved with circle and square
+        degraded: #ffc94d, Degraded and Investigating with triangle and magnifier, and notice times
+        recovered: #7cc4ff, Recovered with a diamond, and links
+        firing: #ff7b84, Firing octagon stations and the error line
+        signAmber: #ffc94d, the disruption band with dark text
+    type:
+        Helvetica Neue, Helvetica, Segoe UI, Arial, signage style. Base 15px
+        at 1.5. The incident ID is 28px at 800, the station name 20px at
+        700, panel titles 17px at 700, notice times 14px at 700 with tabular
+        numbers in amber, map labels 11px at 600.
+    layout:
+        A near black station sign header with a roundel mark, a ring with
+        a bar through it reading OPS, the Brightwork Ops name and Production
+        network last 24 hours, and the suite apps as outlined pills with a
+        white filled pill for Ops. Below, a full width Service lines panel
+        holds the map in a scrollable well. Down the left, five lettered
+        bullets A, W, S, N, B with the service name and its status shape,
+        word and uptime. Five thick horizontal lines run from 10 yesterday
+        to now across an hour grid. Deploys are white circle stations,
+        resolved alerts white squares, the firing queue alert a red
+        octagon. sync-worker turns to dashed track from the firing alert to
+        now, billing has a short break with a dotted white gap and a down 6
+        min note. A legend explains clear track, dashed track, break,
+        deploy, resolved and firing. Next comes a row of three, an amber
+        Service disruption severity 2 sign with INC-0427 and its facts and
+        pill buttons, a Service notices board for alerts, and a Timetable
+        changes board for deploys, each item with a lettered line pill. A
+        final row of three panels holds Requests per minute, Error rate and
+        Latency, each with a lettered bullet, a big figure and a thick round
+        capped line chart. Below 980px rows stack, below 760px the map
+        scrolls sideways inside its well.
+    spacing: An 8px unit. 24px page gutter, 20px panel padding and gaps, 60px between map lines.
+    density: Medium. One wide map, then two rows of three panels.
+    corners: 14px panels, full pills for buttons, fields, list rows and app tabs, round line bullets.
+    borders: 1px rail borders on panels and dashed rules between notices. Map lines are 10px thick with round caps.
+    shadows: None. The map sits on a slightly lighter well.
+    icons:
+        Lettered line bullets A, W, S, N, B. Map stations are a white
+        circle for deploys, a white square for resolved and a red octagon
+        for firing. Status words pair with a filled circle, triangle,
+        diamond, octagon, square or a magnifier.
+    focus: A 3px white outline offset 2px with a 6px blue halo.
+    tone: Transit signage such as Service lines, Service disruption, Service notices and Timetable changes, with plain facts after.

@@ -1,0 +1,60 @@
+export anchor PeriodicTableStyle:
+    number: 127
+    screen: ProjectsDashboard
+    name: Periodic table
+    idea: Every number and project becomes an element tile with a number, a two-letter symbol and a mass, arranged in the classic table shape with the greeting in the gap and the chart and activity as detached series rows below.
+    base: light
+    palette:
+        page: #fafaf7, the page
+        ink: #1a1a1a, text, 1.5px tile borders, the primary button and the current nav cell
+        muted: #4d4d4d, masses, meta and captions
+        summary: #e3e0f3, the four number tiles
+        design: #ffd8b0, design family tiles
+        engineering: #c7dcf7, engineering family tiles
+        research: #cdeccd, research family tiles
+        marketing: #f3cde6, marketing family tiles
+        alarm: #f9c8c3, the overdue tile and alert
+        lastWeekFill: #a9c46b, day tile fill on #eef2e2 for last week
+        thisWeekFill: #7fb0e8, day tile fill on #eaf1fa for this week
+        onTrack: #17663a, the filled circle
+        atRisk: #8a4b00, the filled triangle
+        behind: #a3201a, the heavy cross
+        focus: #5b3fd1, the 3px focus outline
+    type:
+        Symbols and values use Helvetica Neue, Arial Black, Arial, sans-serif
+        at 800. Text uses Avenir Next, Segoe UI, system-ui, Roboto, Arial,
+        sans-serif. The greeting is 40px 700 at 1.1, symbols 40 to 44px,
+        values 32px, names 14px 700, body 15px at 1.45, meta and atomic
+        numbers 12px, series labels 13px caps.
+    layout:
+        A header with a Bw element tile as the logo, the brand with the line
+        The periodic table of your week, then a square search, a black New
+        project button, a square bell and an Mo tile avatar. The nav is a
+        row of six ruled cells numbered 1 to 6, Home filled black. The main
+        table is an eight column grid with 6px gutters. Rows one and two hold
+        the number tiles at the far left and right, Ap 6, Dw 23, Ot 4 in the
+        alarm colour and Hl 186, with the greeting, date and an alert chip
+        for 4 tasks are overdue filling the gap between them on faint ruled
+        lines. Row three holds the six project tiles numbered 7 to 12, each
+        in its team colour with the percent as mass in the top right, a big
+        symbol such as Wr or Bm, the name, team, tasks and due date, a thin
+        black progress bar and a white bordered status chip. A dashed Key
+        tile explains the tile anatomy and the colour families. Below, two
+        series rows with a thick rule label on the left. The chart is
+        fourteen day tiles filled from the bottom to each value, green for
+        last week and blue for this week, with week totals under them.
+        Reactions shows activity as tiles with an initials symbol. Below
+        1000px the table becomes four columns with the greeting on top and
+        projects two per row, and day tiles wrap to two rows of seven.
+    spacing: 6px gutters between tiles like a printed chart, 8px tile padding and 28px between the table and each series row.
+    density: A dense grid of equal cells. Eight columns wide, four below 1000px.
+    corners: Square on every tile, field and button.
+    borders: 1.5px ink round every cell, dashed for the key, a 3px rule above series labels.
+    shadows: None. Colour families and borders do all the grouping.
+    icons:
+        Tiny solid status glyphs at 14px in a white chip with the word, a
+        filled circle for On track, a filled triangle for At risk and a
+        heavy cross for Behind. Two-letter symbols stand in for icons
+        elsewhere.
+    focus: A 3px violet outline offset 2px.
+    tone: Chemistry class labels such as Key, Reactions and The periodic table of your week, plain values otherwise.

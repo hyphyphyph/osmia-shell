@@ -1,0 +1,45 @@
+export anchor SkiTrailMapStyle:
+    number: 137
+    screen: ProjectsDashboard
+    name: Ski trail map
+    idea: The dashboard opens on a painted mountain where each project is a numbered run, and status uses the trail sign shapes, green circle, blue square and black diamond.
+    base: light
+    palette:
+        sky: #e4f1fa, the page top and totals
+        snow: #ffffff, panels and the mountain face
+        shade: #c9def0, shadow faces, dividers and last week bars
+        night: #12233a, text, borders and the ridge line
+        slate: #47596e, captions and meta
+        pine: #1f5135, board headers, trees and the avatar
+        greenRun: #15803d, the On track circle and word
+        blueRun: #1d4ed8, the At risk square, this week bars
+        blackRun: #111111, the Behind diamond and word
+        liftRed: #b4232a, primary button, lift line and overdue
+        patrolAmber: #f59e0b, the focus halo only
+    type:
+        Geometric sans for headings and numbers uses Futura, Century Gothic,
+        Avenir Next, Trebuchet MS. Body uses Avenir Next, Segoe UI,
+        Trebuchet MS, system-ui. Numbers 46px bold, greeting 36px, board
+        titles 18px caps, run names 17px bold, body 15px at 1.5, captions
+        11px caps tracked 0.14em.
+    layout:
+        The header has a peak logo, a pill search, a red pill New project,
+        a round bell and an avatar with the name, then pill nav with the
+        current item dark. The greeting sits left with a red outlined
+        overdue pill right. A wide framed trail map follows, an inline
+        mountain with trees, a dashed red lift line and six coloured runs,
+        each marked by its trail sign holding the run number, names shown
+        beside runs on wide screens, and a legend strip below. Four
+        outlined tiles with dark caps headers hold the numbers, overdue in
+        red. A Trail report board lists runs with number, sign, name,
+        category, tasks, a striped groomed bar and status with due date.
+        The right column has a Snow report bar chart and Mountain news.
+        Below 720px names hide and the map scrolls inside its frame.
+    spacing: An 8px unit. 12 to 16px inside boards, 24px between them.
+    density: Open. A big map first, then a calm board with one row per run.
+    corners: 16px boards, 12 to 14px tiles, full pills for buttons, search and nav.
+    borders: 2px night outline on map, boards and tiles, 1px shade dividers inside.
+    shadows: None. Depth lives in the mountain shading.
+    icons: Trail signs with a white edge. Green circle On track, blue square At risk, black diamond Behind, red octagon with a white bar for overdue, always with the word.
+    focus: A 3px night outline offset 2px inside a 7px amber halo.
+    tone: Resort friendly, such as Trail report, Snow report, Mountain news, runs open and groomed.

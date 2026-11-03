@@ -1,0 +1,51 @@
+export anchor NOCWallStyle:
+    number: 321
+    screen: OpsMonitor
+    name: NOC wall
+    idea: A network operations video wall where every block is a square cornered screen split by black bezels, with huge status words, giant figures and thick chart lines that can be read from across the room.
+    base: dark
+    palette:
+        bezel: #000000, the page and the 4px gaps between screens
+        screen: #13161b, every tile and the style sheet
+        screenRaised: #1c2027, the title strip, swatch tiles and list rows
+        ink: #ffffff, names, figures and IDs
+        muted: #b7bfcb, tile titles, notes and axis
+        rule: #2c323c, the neutral band, grid lines and row rules
+        signalBlue: #38bdf8, the request line, p50, the current app, the primary button, the deploys band and the focus ring
+        healthy: #4ade80, the Healthy band, word and circle, and Resolved with a square
+        degraded: #fbbf24, the Degraded band, word and triangle, the incident band, p95 and Investigating
+        recovered: #7cb8ff, the Recovered band, word and diamond
+        firing: #ff7a7a, Firing with an octagon, the error and alerts bands and the error line
+    type:
+        Segoe UI, Roboto, Helvetica Neue, Arial at 600 to 800. Base 16px at
+        1.35. The incident ID is 60px at 800, service figures scale from 40
+        to 52px at 800 with tabular numbers, status words scale from 22 to
+        34px at 800 in caps, service names 30px at 800, notes 20px, tile
+        titles 18px caps tracked 0.08em.
+    layout:
+        A full bleed six column wall with 4px black bezels and no outer
+        margin. A raised title strip holds BRIGHTWORK OPS, PRODUCTION LAST
+        24 H and the suite apps as flat blocks with Ops in signal blue. A
+        row of five service screens follows, each with a 10px status band on
+        top in green, amber or blue, the name, a huge status shape and word,
+        a giant uptime figure and one fact, billing showing 6 MIN DOWN. Then
+        a four column Requests per minute screen with a 44px peak figure and
+        a 6px line chart, beside a two column incident screen with an amber
+        band, a 60px INC-0427, the title, status, opened, owner and large
+        buttons. Then Error rate and Latency screens with big figures and
+        5px lines, and an Alerts screen with a red band. A full width
+        Deploys screen with a blue band lists the three deploys with 32px
+        times. Below 1180px services go three across and charts widen,
+        below 760px every screen stacks in one column.
+    spacing: 4px bezels between every screen, 18 to 20px tile padding, no outer margin beyond one bezel.
+    density: Low in items and high in size. Every tile holds one idea at wall scale.
+    corners: None anywhere, like display panels.
+    borders: A 10px status band across the top of each tile in green, amber, blue or red, and 2px rules inside lists.
+    shadows: None. Black bezels separate screens.
+    icons:
+        Filled status shapes at about 1.3 times the status word, a circle
+        for Healthy, a triangle for Degraded, a diamond for Recovered, an
+        octagon for Firing, a square for Resolved and a magnifier for
+        Investigating. Chart lines are 5 to 6px.
+    focus: An inset 4px white ring plus an 8px signal blue inner ring, drawn inside tiles so bezels never hide it.
+    tone: Short caps labels for distance, such as INCIDENT SEVERITY 2, PEAK and MS P95.

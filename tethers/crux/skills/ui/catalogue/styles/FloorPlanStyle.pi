@@ -1,0 +1,58 @@
+export anchor FloorPlanStyle:
+    number: 377
+    screen: SmartHome
+    name: Floor plan
+    idea: The home is drawn as a dark blueprint floor plan, each room filled by its state with its own hatch or dot pattern and glyph, framed by a drawing title block, a room schedule and a plotted load graph.
+    base: dark
+    palette:
+        page: #0a1a2f, blueprint ground
+        grid: #12294a, 24px paper grid
+        panel: #0d2038, idle rooms, fields, secondary buttons
+        line: #8fb8e8, walls, frame, section heads
+        faint: #2a4a74, table rules and dashed scene boxes
+        ink: #e3eeff, text, plot line, primary button
+        mute: #9fb6d6, labels and axis text
+        onLine: #06152a, text on the ink button
+        lit: #ffd27a, lights on bands, active scene, focus ring
+        heat: #ff9f7a, heating hatch
+        move: #c3b2ff, motion dots and rings
+        safe: #7fe3b4, locked door
+        alarm: #ff8f8f, open garage cross hatch and alert
+    type:
+        Monospace for everything, ui-monospace, SF Mono, Cascadia Mono,
+        Roboto Mono, Menlo, base 14px at 1.5. Headings use a condensed
+        stack, Arial Narrow, Roboto Condensed, Helvetica Neue, at 700 in
+        caps with 0.12 to 0.14em tracking. Plan room labels 15px at 700
+        caps, table text 12px, figures 20px at 600.
+    layout:
+        A navy blueprint page with a 24px paper grid holds one drawing sheet
+        framed by a 2px pale blue border and a thin outer offset line. A
+        title bar names Brightwork Home and Level 0 plan view with the day
+        and time. A red and maroon striped alert strip reads Alert G1 with
+        the garage sentence and an ink coloured Close now. The body splits
+        into the plan and a 340px side column. The plan is an SVG floor plan
+        with 4px walls, door swing arcs and a dimension line. Each room is
+        filled by state with its own pattern and glyph, warm diagonal bands
+        and bulbs for the lit living room, a plain fill and dash circle for
+        the dark kitchen, a fine hatch and flame for the bedroom schedule, a
+        red cross hatch and triangle for the garage with its door drawn
+        swung open, and a violet dot field with rings for garden motion
+        around the house. The front door sits in the hall with a green lock.
+        Room labels sit on dark plates. A key legend under the plan names
+        every pattern. The side column holds a title block table, an energy
+        block with three ruled figure cells and a plotted step line on a
+        grid with the peak circled, and scenes as dashed boxes with Movie
+        solid yellow and checked. A full room schedule table with refs R1 to
+        G1 spans the bottom. Below 1000px the side column drops under the
+        plan, and at phone width the plan keeps a 600px minimum inside its
+        own sideways scroll.
+    spacing: An 8px unit on a 24px grid. 12 to 16px cell padding.
+    density: High. Plan, title block, plot, scenes and a full schedule table in one sheet.
+    corners: Square everywhere. No radius.
+    borders: A 2px drawing frame with a 1px outer offset line, 1px faint cell rules in #2a4a74 and 4px walls.
+    shadows: None. Depth comes from hatch and dot fills only.
+    icons:
+        Square capped line glyphs at 1.5 stroke in plan rooms and table
+        cells. Each state pairs a fill pattern with a glyph and a word.
+    focus: A 2px ink outline plus a yellow ring outside a dark gap.
+    tone: Drawing office caps with refs, such as R1, G1, Alert G1 and Title block.

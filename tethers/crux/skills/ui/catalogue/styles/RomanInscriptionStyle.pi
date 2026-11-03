@@ -1,0 +1,54 @@
+export anchor RomanInscriptionStyle:
+    number: 145
+    screen: ProjectsDashboard
+    name: Roman inscription
+    idea: The dashboard is a marble temple front, with the brand carved in a pediment, the four totals on fluted columns and each project cut into an inscribed tablet with dovetail handles.
+    base: light
+    palette:
+        marble: #f4f2ec, the page, with faint grey veining from a noise texture
+        vein: #dedad0, veins and the column dividing the chart weeks
+        tablet: #ebe7dd, tablets, slabs, the architrave and fields
+        cutStone: #2f2b25, carved lettering and body text
+        slate: #57514a, secondary text, nav links and last week bars
+        porphyry: #7a2626, the primary button, overdue, Behind and focus
+        bronze: #73541a, progress fills, this week bars, roman numerals, the avatar medal and At risk
+        laurel: #3d5a33, the wreath and On track
+        groove: #c9c2b2, frames, mouldings and grooves, never text
+    type:
+        Inscriptional capitals in Optima, Optima Nova, Candara, Trajan
+        Pro, Palatino Linotype, serif, always uppercase and tracked 0.14
+        to 0.42em, carved with a white highlight below and a faint dark
+        line above. Text uses Palatino Linotype, Book Antiqua, Palatino,
+        Georgia, serif. The pediment brand is 30px tracked 0.42em, the
+        greeting 56px, column figures 54px, tablet titles 17px, labels 12
+        to 14px, body 16px at 1.55, subtitles italic.
+    layout:
+        Centred on one axis up to 1240px. A shallow triangular pediment
+        spans the top with BRIGHTWORK carved in it. Under it an
+        architrave band carries the caps nav split by interpuncts with a
+        red underline on Home, then an inset search, the porphyry New
+        project button, a square bell and a bronze medal avatar with the
+        name. The greeting is centred, a laurel wreath over SALVE, MARA,
+        the date in spaced caps and a tabula ansata plaque with 4 TASKS
+        ARE OVERDUE in porphyry. A colonnade of four fluted columns, each
+        with a capital with round volutes, a white plaque holding the
+        figure and its roman numeral, the label below and a base with a
+        cast shadow. Projects are six tablets in three columns, each with
+        dovetail handles at both sides, a double inner frame, the category
+        above the carved title, a carved groove progress bar with a bronze
+        fill, three facts and the status under a rule. Below, two framed
+        slabs, the chart with bars inset like carving and the weeks split
+        by a stone column, and Acta diurna, the activity log with caps
+        names and caps times. On phones the columns go two by two and the
+        tablets stack.
+    spacing: An 8px unit. 24px between columns, 28 by 60px between tablets to leave room for handles, 48px between bands.
+    density: Sparse and monumental.
+    corners: Square stone. Tablets have dovetail handles on both sides and capitals have round volutes.
+    borders: Mouldings as inner frames, a 1px groove line, an 8px gap and another groove. Double rules under the architrave.
+    shadows: Inset shadows for carved text, grooves and fields, and a soft cast shadow under column bases.
+    icons:
+        Plain line icons for tools. Status uses Roman interpuncts, a round
+        dot for On track, a triangle for At risk and a square for Behind,
+        beside the spaced caps word.
+    focus: A 2px porphyry outline offset 3px.
+    tone: Inscriptional and brief, such as Salve, Mara and Acta diurna, with plain English for the facts.

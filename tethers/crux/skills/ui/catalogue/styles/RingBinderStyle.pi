@@ -1,0 +1,63 @@
+export anchor RingBinderStyle:
+    number: 115
+    screen: ProjectsDashboard
+    name: Ring binder
+    idea: The dashboard is the first sheet in a team ring binder, with coloured index tabs for navigation, punched holes and every panel slipped into a clear sheet protector.
+    base: light
+    palette:
+        desk: #e1e4e7, the page and the punched holes
+        coverNavy: #22375a, the binder spine, decorative only
+        sheet: #ffffff, paper, the current tab and fields
+        sleeve: #d6e6f5, sheet protector tint at 28 percent with a diagonal gloss
+        ink: #1f2328, text and heavy rules
+        muted: #545b63, captions, codes and the last week line
+        officeBlue: #1d4f91, the primary button, meters, this week line and focus
+        green: #1f6b3a, the On track sticker with a dot
+        amber: #8a5300, the At risk sticker with a triangle
+        red: #b42318, the Behind sticker with a square and overdue text
+        tabYellow: #f6d55c, an index tab and summary tab
+        tabBlue: #9cc3ef, an index tab and summary tab
+        tabGreen: #a6d9a8, an index tab and summary tab
+        tabPink: #f3a6b8, an index tab and summary tab
+        tabOrange: #f7b77a, an index tab
+        tabLilac: #c9b6ec, an index tab
+        graphGrid: #d7e6f2, 16px squares behind the chart
+    type:
+        Three stacks. Head is Franklin Gothic Medium, Franklin Gothic, ITC
+        Franklin Gothic, Arial Narrow, Arial, sans-serif. Body is Verdana,
+        DejaVu Sans, Geneva, sans-serif. Mono is ui-monospace, Menlo,
+        Consolas, monospace for codes, dates and counts. Sizes are 30px
+        head greeting, 40px head summary figures, 22px head section title,
+        19px head sleeve titles, 15px head tab labels, 13px Verdana body
+        and 11 to 12px mono.
+    layout:
+        An open binder in three columns. On the left a navy spine carries a
+        vertical brand label and three metal rings that reach into the
+        sheet. In the middle a white sheet has three punched holes down a
+        72px left margin with a dashed guide line. On the right six
+        coloured index tabs stick out of the sheet edge as the navigation,
+        the current Home tab white and pulled forward with a blue dot. The
+        sheet header reads Section 1, Home with a mono line Brightwork team
+        binder, sheet 1 of 6, then the search, a blue New project button,
+        the bell and the user, over a 2px ink rule. The greeting and date
+        sit on one line with a red overdue line under them. Four white
+        divider cards each carry a small coloured tab on top with the
+        figure inside. The projects table sits inside a sheet protector
+        with a thumb notch at the top. Below, two protectors side by side
+        hold a graph paper sheet with a week on week line chart, last week
+        dashed grey with hollow squares and this week solid blue with dots,
+        and a printed activity log with mono times. Below 760px the spine
+        turns into a top band with rings along its lower edge, tabs move
+        above it as a wrapping row of top tabs, and the holes run across the
+        top of the sheet.
+    spacing: An 8px unit. 22px between sleeves, an 18px sleeve inset and a 72px left gutter for the holes.
+    density: Office dense. Small Verdana, 10px table rows, everything filed on one sheet.
+    corners: Square paper. Tabs round 10px on the outer edge, summary tabs 6px on top, controls 4px.
+    borders: A 1px blue grey sleeve edge with a semicircle thumb notch, 1px rules and a 2px ink header rule.
+    shadows: A soft paper shadow under the sheet and tabs, inset shadows in the punched holes and a faint diagonal gloss across sleeves.
+    icons:
+        Filled sticker shapes in round outlined pills, a dot for On track,
+        a triangle for At risk and a square for Behind, plus a clock for
+        overdue. Other icons are 2px line icons.
+    focus: A 3px office blue outline offset 2px with a 6px white halo.
+    tone: Filing language, such as Section 1, sheet 1 of 6 and Activity log.

@@ -1,0 +1,56 @@
+export anchor PageTabsStyle:
+    number: 200
+    screen: ProjectsDashboard
+    name: Page tabs
+    idea: A white workspace organised by page tabs, Overview, Projects and Activity, with segmented controls for views, a single stat strip and compact teal-accented cards.
+    base: light
+    palette:
+        page: #ffffff, the workspace and cards
+        subtle: #f6f7f8, the search field and the style sheet
+        segment: #eceef1, the segmented control track and tab counts
+        line: #dfe2e6, card borders, the stat strip and the tab rule
+        text: #1c1f24, body text and the current nav item
+        muted: #5d646e, labels, idle tabs and meta
+        teal: #0e6b63, the current tab, primary button, this week bars and focus
+        tealSoft: #e2f1ef, avatars and the current tab count
+        lastWeek: #7b9894, last week bars
+        ok: #1b7543, On track outlined tag with a check circle
+        risk: #885200, At risk outlined tag with a triangle
+        behind: #b3261e, Behind tag with a crossed square and the overdue figure
+        behindSoft: #fbe9e7, the overdue chip
+    type:
+        One stack, Segoe UI Variable Text, Segoe UI, system-ui, -apple-system,
+        Roboto, Helvetica Neue, Arial, sans-serif. The
+        greeting is 24px at 650, stat values 28px at 650 tabular, card
+        titles 15px at 650, tabs 14px with the current one at 650, body
+        14px at 1.5, segments 12.5px and bar values 11px.
+    layout:
+        A 56px white app bar with a bottom rule holds a teal round B mark
+        and the brand, six nav links with Home underlined in dark text, a
+        grey search field with a slash key hint, a teal New project button,
+        a bell and the initials disc with the name. Under it the page head
+        shows a small Home crumb, the greeting, the date and a pale red
+        overdue chip with a clock. A tab row follows with Overview current
+        in teal with a teal underline, then Projects and Activity each with
+        a count pill. The Overview content starts with one bordered stat
+        strip split into four cells by vertical rules, each an icon label
+        and a value with a short grey note, overdue in red. Next a two to
+        one row puts a chart card on the left, with a Daily and Weekly
+        segmented control, week totals and fourteen bars with values on
+        top and a rule between the weeks, beside a dense activity card
+        with times right aligned. Last comes a projects card with a Cards
+        and List segmented control and a three by two grid of small
+        bordered project cards. Below 1100px the nav moves to a second row,
+        the cards go two across and the chart row stacks. On phones the
+        strip is two by two and the cards stack.
+    spacing: An 8px unit. 24px gutters and gaps, 16 to 20px card padding and 12px between project cards.
+    density: Compact. 14px body, 34px controls and a value printed on every bar.
+    corners: 8px cards and the stat strip, 6px buttons and fields, 7px segment track and 4px tags.
+    borders: 1px #dfe2e6 on every card. The stat strip is one bordered box split by vertical rules. Status tags are outlined in their own colour.
+    shadows: Only the selected segment gets 0 1px 2px. Cards are flat.
+    icons:
+        18px line icons at 1.8 stroke on stat labels and the bar. Status
+        tags use a check circle, a triangle or a crossed square with the
+        word.
+    focus: A 2px teal outline offset 2px. A segment shows its focus on the inner pill.
+    tone: Short labels, such as Overview, Recent activity, Daily and Weekly.

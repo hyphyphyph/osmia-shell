@@ -1,0 +1,57 @@
+export anchor CandyDarkStyle:
+    number: 279
+    screen: CloudFiles
+    name: Candy dark
+    idea: Chunky candy pieces on a dark plum tray, fat rounded file cards with bright sweet coloured blobs, gummy pill tabs and buttons that sit up on a little 3D ledge.
+    base: dark
+    palette:
+        plum: #1f1024, the page, fields and fact tiles
+        tray: #2c1533, the top bar, file cards, details and the style sheet
+        chew: #3b1d44, size chips, secondary buttons and the jelly frame
+        ink: #fff4fb, text
+        muted: #dcc6e2, meta and labels
+        darkPlum: #2a0f2f, text and icons on every candy fill
+        bubblegum: #ff7ac6, the primary button, the PDF blob, the selected border, Selected and storage stripes
+        lime: #b9f56c, the current tab and sheet headings
+        sky: #72d6ff, the pressed switch, links, the image blob and Shared
+        lemon: #ffe36b, folder blobs, Starred and the focus ring
+        tangerine: #ffa45c, the archive blob and Uploading
+        grape: #c3a0ff, the document blob
+    type:
+        One rounded stack, ui-rounded, SF Pro Rounded, Nunito, Varela Round,
+        Arial Rounded MT Bold, in heavy weights. The folder title is 40px at
+        800, the details name 22px, file names 17px at 800, meta 13px at
+        600, buttons 15px at 800, status pills 13px at 800.
+    layout:
+        A rounded top bar on the tray holds a pink candy B tile with Drive,
+        pill tabs for My files, Shared with me, Recent, Starred and Trash
+        with My files in lime on a green ledge, and a pill Search files
+        field. Below sit the breadcrumb in sky links, the title Website
+        redesign, and on the right Upload, New folder and a List or Grid
+        switch with List in sky. The board has two columns. The list is
+        eight chunky cards with 24px corners, each with a 56px candy blob
+        for the type, lemon circles for folders, bubblegum for the PDF,
+        sky for the image, lime for the sheet, grape for the document,
+        tangerine for the archive and a domed bubblegum blob for the video.
+        Next come the name, kind, date and person, candy status pills and a
+        size chip on the right. The selected card has a 3px bubblegum
+        border. Uploading adds a candy striped tangerine bar. A 330px
+        details panel with 32px corners holds a wobbly jelly frame around
+        the preview, the name, Starred, four fact tiles, Share, Download
+        and Get link, and a storage tile with a striped bubblegum bar and
+        64.2 GB of 100 GB used. A few sprinkles lie on the tray. Below
+        1040px details drop under the list. Below 700px the size chip moves
+        under the name.
+    spacing: An 8px unit. 12px between cards, 16 to 20px card padding, 24px between list and details.
+    density: Roomy and chunky. Big blobs and 17px names.
+    corners: Very round. 24px cards, 28 to 32px bars and panels, pills for every control, a wobbly jelly frame.
+    borders: Mostly none. 3px bubblegum on the selected card and 3px chew rings on fields.
+    shadows: Solid 4px ledges under buttons and the current tab, inset highlights and shades on blobs.
+    icons:
+        2.2px rounded line icons in dark plum on candy blobs. Status is a
+        candy pill with dark text, a lemon pill with a star for Starred, a
+        sky pill with two heads for Shared, a tangerine pill with an up
+        arrow for Uploading and a bubblegum pill with a checked box for
+        Selected.
+    focus: A 3px lemon outline offset 3px.
+    tone: Friendly and short, such as Drive, Details and Upload.

@@ -1,0 +1,54 @@
+export anchor NewswireStyle:
+    number: 398
+    screen: EmailClient
+    name: Newswire
+    idea: The inbox reads as a wire service feed on a perforated dark paper strip, with every message filed under a timestamp, a priority code and an uppercase slug, and the open message set as wire copy.
+    base: dark
+    palette:
+        room: #121316, the page, the desks column and buttons
+        strip: #1c1d21, the feed paper and the style sheet
+        strip2: #23252a, the item on screen
+        perf: #0a0b0d, the sprocket holes
+        rule: #3a3c43, dashed and double rules
+        type: #ecebe6, text, the ticker band and the primary button
+        grey: #a9a8a2, slugs, ledes and labels
+        flash: #ff6d5e, the NEW priority block and the WIRE tag
+        onFlash: #1d0400, text on flash
+        highlight: #f5d547, the current desk, the STARRED box and focus
+        onHighlight: #1d1800, text on highlight
+    type:
+        A mono stack, IBM Plex Mono, SF Mono, ui-monospace, Menlo, Consolas,
+        at a 14px base for slug lines, copy and labels. Headlines use a
+        gothic stack, Franklin Gothic Medium, Arial Narrow, Helvetica Neue,
+        Arial, with the masthead 30px caps, the story headline 38px at 700
+        and feed headlines 20px, bold when unread. The copy is 16px at 1.75.
+        Slug lines are 12px caps.
+    layout:
+        A cream ticker band runs across the top with a red WIRE tag and the
+        three newest items in one line. A masthead reads Brightwork Mail
+        Wire over a double rule, with Desk of Mara Okafor, morning file and
+        an underlined search led by a slash. Three columns follow. The
+        left, DESKS, lists the folders in caps with Inbox 12 on a yellow
+        bar led by a caret, then BEATS for the labels. The middle is the
+        feed on a slightly lighter strip with a column of round sprocket
+        holes down its left edge. Each item has a slug line with the time
+        in bold, a priority code, an uppercase slug such as NORTHPASS-DEMO
+        and the beat, then the headline as sender and subject, then an
+        optional lede led by a dash. Items are split by dashed rules. The
+        open item is shaded, ruled in yellow and marked ON SCREEN. The
+        right column is the story, a slugbar, the big headline, FROM, TO
+        and FILED pairs, the copy behind a grey left rule, an end mark of
+        dashes around 30, and a joined strip of buttons each with its key,
+        Reply in cream. Below 1100px the story drops under the feed. On a
+        phone the feed comes first, then the story, then the desks.
+    spacing: A 4px base. 10 to 12px item padding, 20 to 24px column padding, a 44px left gutter for the sprocket strip.
+    density: High. Three columns of text with a slug line above every headline.
+    corners: Square. Nothing is rounded but the sprocket holes.
+    borders: 1px dashed rules between items, 3px double rules under the masthead and above the sheet, a 2px solid rule over the story.
+    shadows: None.
+    icons:
+        Typographic only. A filled square plus NEW in a red block, an
+        asterisk plus STARRED in a yellow box, plus one ATTACHED, a caret on
+        the current desk, and an end mark under the copy.
+    focus: A 2px yellow outline offset 2px.
+    tone: Wire desk shorthand in capitals, such as DESKS, BEATS, FILED, ROUTINE and YDAY.

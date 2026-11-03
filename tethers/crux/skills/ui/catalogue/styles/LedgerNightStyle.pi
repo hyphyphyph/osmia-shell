@@ -1,0 +1,56 @@
+export anchor LedgerNightStyle:
+    number: 366
+    screen: FinanceBudget
+    name: Ledger night
+    idea: The month kept as a bound ledger at night, a two page spread on green black with ruled lines and green column rules, monospace figures in pale ink, red ink in brackets for anything overdrawn or owed, and double underlined totals.
+    base: dark
+    palette:
+        desk: #08120d, the page behind the book and the style sheet
+        leaf: #0d1c15, ledger pages, fields and rows
+        rule: #24402f, the outer edge of the book
+        column: #3b6a4f, ruled lines, column rules, double rules and field underlines
+        paleInk: #e4ecd3, text, figures, totals and the primary button
+        fadedInk: #a7b9a0, dates, folios, column heads and notes
+        redInk: #ff9d91, bracketed overspend, owed and money out, the OVER stamp
+        greenInk: #9ed9a8, money in, within marks and saved cells
+    type:
+        Particulars and headings use Georgia, Times New Roman, Cambria in
+        italic. Figures, heads and dates use ui-monospace, Cascadia Mono, SF
+        Mono, Menlo, Consolas. The title is 30px italic serif, section heads
+        20px italic with an 11px mono caps note, particulars 16px italic,
+        figures 14px mono tabular and column heads 11px mono caps tracked .1em.
+    layout:
+        A 1240px book. The title row has Brightwork Money then Ledger in italic,
+        a mono caps line with Mara Okafor, October and euros, and mono nav links
+        on the right, closed by a double green rule. Below sits one spread of
+        two equal leaves split by a double gutter rule, each leaf ruled every
+        32px with a folio line on top. The left leaf holds Accounts as a three
+        column table, the card balance in red brackets with a clock and due 12
+        Nov, then the Budget ledger with columns Category, Allowed, Spent,
+        Remains and Mark, a totals row with a rule above and a double underline,
+        and an italic note explaining the brackets. Eating out shows (62) in red
+        and a tilted red boxed OVER 62 stamp. The right leaf holds the Journal
+        with Date, Particulars, Fo., Out and In, payments as red bracketed
+        figures in Out and the salary in green in In, with totals for five
+        entries. Under it the Sinking fund for the Japan trip is a five by two
+        grid of 500 euro cells, six filled green, one two fifths filled, three
+        empty, beside Saved, Target, To go and Due. Below 900px the leaves
+        stack. At 375px the folio column hides and cells tighten so every column
+        fits.
+    spacing: A 32px ruled line drives every row. 24px leaf padding and two equal leaves.
+    density:
+        High and tabular. Three accounts, five budget lines with totals, five
+        journal entries with totals and a ten cell fund.
+    corners: None.
+    borders:
+        Green column rules between every column, a 2px rule under heads, double
+        rules for the gutter and title, a rule and double underline on totals.
+    shadows: None.
+    icons:
+        Very few small outline marks beside words. A circle check with within, a
+        ruled square with closed, a triangle inside the tilted red OVER 62 stamp
+        and a clock on the due date. Brackets mark negatives.
+    focus: A 2px dashed pale ink outline with a slightly lighter green wash.
+    tone:
+        Bookkeeping words, such as Accounts, Budget ledger, Journal,
+        Particulars, Remains, Sinking fund and OVER 62.

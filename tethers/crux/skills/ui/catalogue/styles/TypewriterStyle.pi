@@ -1,0 +1,49 @@
+export anchor TypewriterStyle:
+    number: 55
+    screen: Inbox
+    name: Typewriter
+    idea: Every notification is a typed paper slip in an in-tray, and the open item is a memo with carbon-blue type, index-tab filters and finished work struck through.
+    base: light
+    palette:
+        desk: #e7e1d3, the page behind the paper
+        paper: #fffdf6, the memo, the tray and unread slips
+        slip: #f7f1e1, read slips and inactive tabs
+        onionskin: #eef2f7, the open slip and the sheet behind the memo
+        ink: #1d1c1a, typed text, rules and the key buttons
+        faded: #555046, slip headers, times and Re lines
+        carbon: #24408e, the memo body, reply text, links and focus
+        ribbonRed: #a1221b, unread marks, the unread slip edge and the count
+        rule: #cfc6b2, paper and tab edges
+        ruleBlue: #c4d0e6, the ruled lines of the reply field
+    type:
+        One typewriter stack, Courier New, Courier, Nimbus Mono PS,
+        Liberation Mono, monospace. The brand is 28px bold uppercase with
+        wide tracking. Memorandum is 22px bold uppercase with 0.35em
+        tracking. The memo body is 17px in carbon blue on a 1.75 line
+        height. Slip text is 15px on a 1.6 line height, and headers and
+        times are 12px uppercase.
+    layout:
+        A masthead with the brand, the subtitle Inter-office memoranda, and
+        Desk of Mara Okafor with the date at right, over a double rule.
+        Below sit two columns, five to six. On the left, index tabs for
+        All, Mentions, Assigned and Unread (3) hang over a paper in-tray
+        titled In-tray with a key line, then six stacked slips each tilted
+        a fraction of a degree. Each slip has a header line of status marks
+        and the time, the typed sentence, and a Re line with the project.
+        On the right the open item is a memo with a paper clip, a centred
+        Memorandum heading, To, From, Date and Re lines, a dashed rule, the
+        message, Encl. 3 prints as three slightly tilted photo prints with
+        captions, a ruled reply field and three key buttons. Below 860px
+        the memo stacks under the tray.
+    spacing: An 8px unit. 12px between slips, 36 to 40px memo margins, 32px between columns.
+    density: Medium. Each slip is three short typed lines.
+    corners: Square everywhere. Slips and prints tilt a fraction of a degree.
+    borders: 1px #cfc6b2 paper edges, a 4px ribbon red left edge on unread slips, 2px ink on key buttons, a double ink rule under headings and dashed rules inside the memo.
+    shadows: Flat offset shadows with no blur, 3px 3px rgba(60,50,30,0.12) on paper and 2px 2px ink under the keys.
+    icons:
+        No drawn icons apart from the paper clip. Status is typed in
+        brackets, with [*] unread in ribbon red, [/] done in ink with the
+        task name struck through, [ ] read, and two arrows with on the desk
+        for the open slip.
+    focus: A 2px dashed carbon outline offset 3px. A focused reply field gets the same dashed outline around its ruled lines.
+    tone: Office formal and terse, such as In-tray, Memorandum, Re, Encl. 3 prints and cc. Website redesign file.

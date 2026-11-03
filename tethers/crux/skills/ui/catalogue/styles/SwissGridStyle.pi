@@ -1,0 +1,44 @@
+export anchor SwissGridStyle:
+    number: 5
+    screen: ProjectsDashboard
+    name: Swiss grid
+    idea: A strict twelve column grid in black Helvetica on white, where huge flush left numbers, rules and alignment carry everything and one signal red marks what needs action.
+    base: light
+    palette:
+        white: #ffffff, the only background
+        black: #000000, text, rules, numbers, the primary button and this week's bars
+        grey: #595959, meta text, dates and axis labels
+        midGrey: #8a8a8a, last week's chart bars only, never text
+        hairline: #c8c8c8, row rules and progress tracks
+        signalRed: #d0021b, the overdue fact, the Behind status, the peak day and the focus ring
+    type:
+        Helvetica Neue, Helvetica, Arial, Nimbus Sans, Liberation Sans,
+        sans-serif, in weights 400 and 700 only. Summary figures are 128px
+        bold at 0.9 line height with minus 0.05em tracking, the greeting
+        is 72px bold with tight tracking, section titles are 28px bold,
+        project names 17px bold, body 15px at 1.45 and labels 13px bold in
+        lowercase.
+    layout:
+        A twelve column grid with 24px gutters, 40px margins and a 1320px
+        cap. The head row puts the lowercase wordmark with a small red
+        square in columns 1 to 3, text nav in 4 to 9 and notifications in
+        10 to 12. A 2px rule opens a second row with an underlined search,
+        the user name and the black New project button. The greeting sits
+        in columns 4 to 12 with the date in 1 to 3. Four huge figures span
+        three columns each under a 2px rule. Every section after that puts
+        its title and a short note in columns 1 to 3 and content in 4 to
+        12, with a ruled projects table, then a thin bar chart beside an
+        activity list. Below 720px all columns stack and the figures form
+        a two by two grid.
+    spacing: An 8px unit. 72px between sections, 14px row padding, 24px gutters.
+    density: Medium. Few elements, very large figures and generous white space.
+    corners: None. Every edge is square.
+    borders: No boxes at all. A 2px black rule opens each block and table head, 1px #c8c8c8 rules separate rows, and an 8px black rule opens the style sheet.
+    shadows: None.
+    icons:
+        No pictograms. Status is a 10px solid geometric mark beside the
+        word, a circle for On track, a triangle for At risk and a square
+        for Behind, with Behind set in bold red. Progress is a 2px track
+        with a 4px black fill and the percent beside it.
+    focus: A 2px signal red outline offset 2px. A focused field gets a 2px red underline.
+    tone: Plain and factual, lowercase labels such as tasks due this week, sentence case headings and no exclamation marks.

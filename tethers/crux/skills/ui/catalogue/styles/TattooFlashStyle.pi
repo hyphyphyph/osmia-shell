@@ -1,0 +1,53 @@
+export anchor TattooFlashStyle:
+    number: 154
+    screen: ProjectsDashboard
+    name: Tattoo flash
+    idea: A traditional tattoo flash sheet on warm paper, where every project is a bold outlined design with a ribbon banner, numbers sit in arched badges and swallows, stars and daggers carry the meaning.
+    base: light
+    palette:
+        paper: #f3e9d2, the page behind the sheet
+        sheet: #fbf5e6, panels, badges, the header and the greeting banner
+        ink: #141210, all text and every heavy outline
+        flashRed: #a8201a, the primary button, ribbons, this week bars, the overdue badge and Behind
+        leafGreen: #2b5e33, ribbons and the On track word
+        sailorBlue: #1d4470, ribbons, swallows and eye motifs
+        mustard: #e3b23c, stars, meter stripes, banner tails and the focus halo, never text
+        tobacco: #5a4632, notes, team names, times and the At risk word
+        skin: #efc9a4, the avatar disc only
+    type:
+        Three stacks. Labels, numbers and titles use Rockwell, Clarendon,
+        Roboto Slab, Courier New, Georgia, serif in heavy weights, mostly
+        uppercase. The greeting uses Brush Script MT, Segoe Script, Snell
+        Roundhand, cursive at 46px. Body uses Georgia, Times New Roman,
+        serif at 17px with 1.5 line height. Badge numbers are 58px 900,
+        section titles 26px caps, ribbon names 15px caps, labels 13 to
+        14px caps tracked 0.06 to 0.2em.
+    layout:
+        A boxed header with a swallow and red outlined brand, centred
+        outlined nav chips with a star on Home, then search, New project,
+        a round bell with a red count and the avatar. The greeting is
+        centred, a spaced caps date above a script line set inside an
+        outlined banner with mustard tails and a swallow on each side,
+        then an outlined box with a crossed square saying 4 tasks are
+        overdue. Four badges with arched tops hold the numbers, each with
+        a black caps label strip, the overdue badge filled red. Below, a
+        two to one grid. The projects panel is a dotted flash sheet of
+        six cards in three columns, each with a flash motif drawing such
+        as a rose, ship, eye, anchor, swallow or banded heart, a red,
+        green or blue ribbon with forked tails carrying the name, the team
+        in italic, a striped pill meter, the facts line and a status chip.
+        The side column holds the activity list with a swallow before each
+        row and dashed dividers, then the chart panel with outlined bars,
+        cream for last week and red for this week. Below 980px the grid
+        stacks and cards drop to two columns, then one below 440px.
+    spacing: A 4px base in steps of 8, 12, 16, 24 and 32. The sheet has a 24px gutter and 20px panel padding.
+    density: Medium. Each design is a self-contained motif with name, team, meter, facts and status.
+    corners: Small 3 to 8px radii. Badges have arched tops. Ribbons have forked tails.
+    borders: Heavy ink outlines, 4px on panels and badges, 3px on cards and buttons, 2px on chips, nav and fields.
+    shadows: Only a hard 3px ink offset under buttons. Panels carry a faint 12px dot stipple.
+    icons:
+        Flash motifs with thick ink outlines and flat fills. A filled star
+        means On track, a dagger means At risk, a red box with a white
+        cross means Behind and overdue, and swallows mark activity rows.
+    focus: A 3px ink outline offset 3px inside a 7px mustard halo.
+    tone: Warm and proud, with short caps labels and a script greeting, such as Latest work and six designs on the sheet.

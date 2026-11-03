@@ -1,0 +1,47 @@
+export anchor DenseListingStyle:
+    number: 3
+    screen: ProjectsDashboard
+    name: Dense listing
+    idea: A compact work tool, with tables, mono figures and terse labels that fit the whole picture on one screen.
+    base: light
+    palette:
+        background: #ffffff, tables and the page
+        panel: #f3f5f7, the toolbar
+        paneHead: #e8ecf0, the title bar of each pane
+        menuBar: #20262d, the top menu bar, with #e9edf1 and #c7cfd7 text
+        text: #11161b, body text and this week's chart bars
+        muted: #4a5561, column headers, meta text and last week's bars
+        line: #cfd5dc, grid lines between panes and under headers, with #e3e7eb between rows
+        accent: #0b6b57, links, the primary button and the OK status
+        risk: #875200, the RISK status
+        late: #b3261e, the LATE status and the overdue count
+        select: #fff4c2, the selected row and the focus fill
+        focusRing: #e0a800, the 2px focus outline and the active tab marker is #f2c94c
+    type:
+        System sans for words, system-ui, -apple-system, Segoe UI, Roboto,
+        sans-serif, at 13px body, 12px secondary text and 11px semibold
+        capitals for headers. Figures, dates, codes and user handles use
+        ui-monospace, SF Mono, Menlo, Consolas, Liberation Mono, monospace,
+        with tabular figures. Summary figures are 18px semibold mono.
+    layout:
+        A 36px dark menu bar with a mono wordmark, tabs, a quick search
+        with a slash shortcut hint, and the user handle. A grey toolbar
+        holds the title, the date, an update time, Export and New project.
+        A strip of five summary cells runs edge to edge. Below it, the
+        projects table fills the left pane, and a 360px right pane holds a
+        compact bar chart and an activity log table. Below 1000px the panes
+        stack. Below 640px the table drops the Team, Tasks and Owners
+        columns and the summary strip becomes two columns.
+    spacing: A 4px unit. 8px cell padding and 12px pane padding.
+    density: High. 28px table rows, about 20 rows visible on a laptop.
+    corners: 2px on buttons, fields and status badges. Everything else is square.
+    borders: 1px grid lines everywhere, in #cfd5dc between panes and under headers and #e3e7eb between rows. Even rows get a #fafbfc band.
+    shadows: None.
+    icons:
+        12px square-cap line icons, only inside buttons. Status is an
+        outlined mono badge with a shape glyph and a code word, a filled
+        circle with OK, a triangle with RISK and a square with LATE. A key
+        under the table spells out each code. Owners show as lowercase mono
+        initials.
+    focus: A 2px #e0a800 outline with the #fff4c2 fill. The primary button keeps its fill and takes the outline offset 1px.
+    tone: Terse and technical, with abbreviations such as Due 7d, Hrs/wk and Done/wk, codes in capitals, and arrows for links.

@@ -1,0 +1,50 @@
+export anchor FunnelFirstStyle:
+    number: 338
+    screen: CrmPipeline
+    name: Funnel first
+    idea: A large stepped funnel in pale sea greens leads the screen, each band naming its stage, count and value, with a round target gauge beside it and the deals laid out in soft rounded stage trays underneath.
+    base: dark
+    palette:
+        deep: #0b1514, the page and the style sheet
+        surface: #12201f, the funnel panel, cards and activity
+        tray: #172927, stage trays, mini figures and secondary buttons
+        line: #26403d, the gauge track and field borders
+        ink: #e6f2ef, text
+        muted: #9db8b2, labels and owners
+        foam: #a7f0de, the Lead band
+        sea: #86e3d0, the Qualified band, primary button and icons
+        lagoon: #66d2be, the Proposal band
+        teal: #47bba8, the Negotiation band
+        sand: #f6d58a, the Won spout, target gauge, Closed pill and focus
+        darkText: #06201b, text on every band and on the primary button
+        coral: #ffb08a, the Stalled pill, dashed, with a triangle
+    type:
+        A rounded stack, ui-rounded, SF Pro Rounded, Nunito, Varela Round,
+        Segoe UI, system-ui. Base 15px. Headings 26px at 800, the gauge
+        figure 28px at 800, band labels 17px at 800 with values 20px at
+        800, card values 20px at 800, labels 12px at 600.
+    layout:
+        A small header with a rounded B tile, Brightwork Sales over Deal
+        pipeline, a Q4 pill and an Add deal pill. A wide rounded panel holds
+        Pipeline funnel Q4. On the left five centred bands narrow from full
+        width to 44 percent, each a trapezoid with slanted sides, pale
+        green to teal, the last a sand spout with rounded bottom corners
+        for Won. Each band reads stage, deal count and listed value in dark
+        text, and a caption says width shows stage order. On the right a
+        ring gauge shows 64 percent beside Won this quarter 128,500 of
+        200,000 target, over three small rounded tiles for pipeline value,
+        win rate and open deals. Deals by stage follows as five rounded
+        trays with a coloured dot matching the band, holding cards with
+        name, a large value, owner and a status pill. Latest holds the
+        activity. Below 1050px the gauge sits under the funnel and trays go
+        two across, on phones one across and bands wrap their text.
+    spacing: An 8px unit. 32px panel padding, 14px between trays, 10px between cards, 6px between bands.
+    density: Low at the top where the funnel fills the width, medium in the trays below.
+    corners: Very round. 28px hero, 22px trays, 16px cards, pill buttons and status pills.
+    borders: Almost none. Surfaces step in tone, and a dashed coral outline marks stalled.
+    shadows: None.
+    icons:
+        Rounded line icons at 2 stroke. Each pill pairs its word with a
+        calendar, paper plane, flag, check or triangle.
+    focus: A 3px sand outline offset 3px.
+    tone: Friendly and short, such as Pipeline funnel, Deals by stage, Latest and Add deal.

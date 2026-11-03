@@ -1,0 +1,55 @@
+export anchor StarshipBridgeStyle:
+    number: 300
+    screen: CodeRepository
+    name: Starship bridge
+    idea: The pull request as a ship's bridge, with an arched header, a curved main viewscreen for the diff, two bevelled side consoles in orange and blue, and a check gauge that shows which system is down.
+    base: dark
+    palette:
+        deepSpace: #060a16, the page and style sheet ground under a navy glow at the top
+        console: #0e1630, console bodies, chips and rows
+        consoleLight: #152044, console gradient tops and the comment
+        bezel: #26355e, bezels, rims and dividers
+        viewscreen: #040713, the diff screen, stations and fields
+        ink: #e9eefb, text
+        steel: #a3b2d3, labels and meta
+        bridgeOrange: #ff9f45, headings, the current tab, the primary button, changes requested and the arch rule
+        signalBlue: #62b3ff, data, passed, approved, added lines, the open state and focus
+        alert: #ff7d88, the failing system and removed lines
+        alertShade: #2c1324, the failing row and removed line ground
+    type:
+        A rounded geometric sans, Avenir Next, Segoe UI, Ubuntu, Trebuchet
+        MS, for text at 15px and 1.5. Its condensed cut, Avenir Next
+        Condensed, Segoe UI Semibold, Ubuntu Condensed, at 600 for the
+        title and repository at 30 to 32px and console titles at 13px caps
+        tracked 0.18em in orange. Labels are 11px caps tracked 0.18em, the
+        diff 13px monospace.
+    layout:
+        The header is an arch, a dark navy band whose bottom edge curves
+        down in a wide ellipse with a 2px orange rule. It holds a round B
+        badge and the app name, pill counters on the right, the repository
+        centred with an orange Private pill, and a centred row of pill tabs
+        with the current one filled orange. The body has three columns,
+        280px, flexible and 280px. The left console sweeps its top right
+        corner in an 80px curve and holds Systems, a half ring gauge of
+        twelve segments, blue for passed and a dashed red segment with a
+        cross for e2e-android, the caption 11 of 12, the failing line and
+        all checks in two columns. The centre viewscreen has an elliptical
+        top edge, an inner rim and a faint blue glow, with the Open pill,
+        the title and number and the merge sentence centred above the file
+        bar and the diff. The comment is an orange rimmed Hail bubble. The
+        right console mirrors the curve and holds Crew, two rounded reviewer
+        cards with ringed initials, then assignee, labels, milestone,
+        linked issue and a dashed disabled merge button. A Helm strip runs
+        across the bottom with a curved lower edge and three file stations.
+        Below 1100px the viewscreen leads, below 700px all stack.
+    spacing: An 8px unit. 20px between consoles, 20px console padding, 28px under the arch.
+    density: Medium. A centred viewscreen flanked by two consoles and a helm strip below.
+    corners: Curved. Elliptical arch, viewscreen and helm edges, consoles with one sweeping 80px corner, pill tabs and buttons, 14px stations.
+    borders: 2px navy bezel rims, a 2px orange rule under the arch and around the comment.
+    shadows: Deep drop shadows under consoles, inset rims and a faint blue glow inside the viewscreen.
+    icons:
+        1.9px rounded line icons. A tick for passed, an octagon cross for
+        failing, a ringed tick for approved, a triangle for changes, and
+        gauge segments with a cross for the failing check.
+    focus: A 3px signal blue outline offset 3px.
+    tone: Calm bridge words, such as Systems, Crew, Helm, Station, Hail and Standing by until all checks pass.

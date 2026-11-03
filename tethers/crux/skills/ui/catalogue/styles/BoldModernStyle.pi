@@ -1,0 +1,52 @@
+export anchor BoldModernStyle:
+    number: 191
+    screen: ProjectsDashboard
+    name: Bold modern
+    idea: A confident, editorial dashboard of black heavy headings and oversized numbers on white, where generous whitespace replaces boxes and a single dark lime accent marks progress, the current page and the primary action.
+    base: light
+    palette:
+        white: #ffffff, the page and fields
+        chalk: #f4f4f0, the style sheet band
+        black: #0d0d0d, headings, figures, body, the 4px section rules and the secondary button outline
+        graphite: #5a5a55, meta, labels, axis text and last week's outlined bars
+        hairline: #deded8, 1px row dividers and the empty progress line, never text
+        lime: #456300, the one accent, the primary button, current nav bar, progress fills, this week's bars, the brand full stop and focus
+        limeWash: #f1f6df, the focused search and field fill
+        signal: #b42318, Behind, the overdue figure and its rule, with a solid square and cross
+        rust: #8a4b00, At risk with a solid triangle and bar
+    type:
+        One grotesque stack, Helvetica Neue, Inter, Arial Nova, Arial,
+        Liberation Sans, sans-serif, in weights 400, 700 and 800 with tight
+        negative tracking on large sizes. The greeting is 96px extra bold
+        at minus 0.045em, KPI figures 104px extra bold, section titles
+        40px extra bold, project names 24px bold, row percents 56px extra
+        bold, body 16px at 1.5, and labels 13px bold caps tracked 0.08em.
+    layout:
+        No sidebar and no cards. A slim white header holds the bold
+        wordmark with a lime full stop, six plain bold word links with Home
+        in black over a 4px lime bar, an underlined search field, a lime
+        pill New project button, a round outlined bell and a black initials
+        disc with Mara Okafor. The hero is a small caps date, a huge Hi,
+        Mara. headline and a 28px overdue line with a red square and a See
+        them link. Four giant figures follow in a row, each under a 4px
+        black rule with a caps label below, the overdue figure red under a
+        red rule with a square symbol. Projects run full width under a 4px
+        rule with the title at left and totals at right, as numbered rows
+        01 to 06 with a big name, a meta line of team, tasks, due date and
+        days left, the status word, a giant percent at the far right and a
+        4px progress line beneath. The last band splits 7 to 5, a Tasks
+        completed block with a giant 73, the change against 59, and 14 bars
+        dated 18 to 31, last week outlined graphite and this week solid
+        lime, beside an Activity list with caps times in a left column.
+        Below 1100px the last band stacks. On phones the nav wraps under
+        the wordmark, figures form a 2 by 2 grid at 64px, project rows put
+        status and percent on a second line, and the chart scrolls sideways
+        inside its block.
+    spacing: An 8px unit with big jumps of 24, 48, 80 and 120px. 80px above each section, 24px between project rows.
+    density: Low. Few, very large elements, with whitespace doing the grouping.
+    corners: Square for rules, bars and fields. Buttons, the bell and avatars are pills or circles.
+    borders: 4px black rules above sections and figures, 1px hairlines between activity rows. No boxes.
+    shadows: None.
+    icons: Almost none. Solid status shapes at 16px and 2px line icons for search, bell and plus.
+    focus: A 3px lime outline offset 3px. Fields get a 3px lime underline and a lime wash.
+    tone: Short and direct with full stops, such as Hi, Mara. and 4 tasks are overdue.

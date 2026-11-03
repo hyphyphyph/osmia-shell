@@ -1,0 +1,54 @@
+export anchor DarkMeshGradientStyle:
+    number: 261
+    screen: DesignEditor
+    name: Dark mesh gradient
+    idea: Soft blurred glows of violet, teal and coral drift behind smoked glass panels, with the tools in a floating dock at the bottom of the canvas and the file status as quiet chips in the top bar.
+    base: dark
+    palette:
+        night: #0d0c14, the page under the glows
+        smoke: #141220, glass panels at 78 percent with a 24px blur
+        smokeSolid: #1a1830, the comment card
+        field: #121022, inputs inside glass
+        ink: #f4f2ff, text
+        lavenderGrey: #c0bcd8, meta, labels and chips
+        glowViolet: #6b4cff, a mesh glow and the selected row tint
+        glowTeal: #00b3a4, a mesh glow and the selected row tint
+        glowCoral: #ff7a59, a mesh glow
+        violet: #8d78ff, frame icons, the frame outline and the focus halo
+        teal: #3fd8c6, text icons and the Saved chip icon
+        coral: #ff9a7a, instance icons and the version chip icon
+        action: #4f35d6, Share and the active tool as a gradient to #2f5fd0 with white text
+        guideViolet: #6d3df5, the 32 px guide with white text
+    type:
+        A rounded stack, SF Pro Rounded, Nunito, Segoe UI Variable Text, Segoe
+        UI, system-ui, with ui-monospace for values. Base 14px at 1.5. The
+        file name is 15px 700, panel titles 15px 700, layer names 14px 650,
+        values 13px mono, chips 12.5px and group labels 12px 700.
+    layout:
+        Four large blurred radial glows sit behind everything, violet top
+        left, teal top right, coral bottom centre and blue bottom left. All
+        panels are smoked glass with a 1px faint white rim and 20px corners. A
+        full width top bar holds a gradient B tile, Canvas · Website redesign
+        over Home v3, three status chips in the middle for Saved 2 minutes
+        ago, 3 people editing and Version 41 with teal, violet and coral
+        icons, then pastel avatars, Present and a gradient Share. Below sit a
+        250px layers panel, the canvas and a 290px inspector. Layers show 32px
+        icon tiles coloured by kind, the name and a sub line, Hero tinted
+        violet to teal with a Selected tag. The white Hero frame floats with a
+        violet outline and glow, and the tools sit in a glass dock centred at
+        the bottom of the canvas with Move filled by the action gradient and
+        66% after a divider. The inspector groups each property set in a
+        lighter block, Position and size, Fill, Auto layout with Vertical,
+        Corner radius and Export. Below 860px the panels stack and the dock is
+        fixed at the bottom.
+    spacing: An 8px unit. 16px around and between glass panels, 12px inside panels, 8px between blocks.
+    density: Comfortable, with icon tiles beside each layer and grouped property blocks.
+    corners: Soft. 20px panels, 14px rows, blocks and buttons, 10px fields, 22px dock.
+    borders: A 1px white rim at 12 percent on glass and none inside, where blocks are lighter tints.
+    shadows: Soft black 0 20px 50px under glass and a violet glow under the active tool, Share and the frame.
+    icons:
+        Rounded line icons at 1.7px stroke, 18px, coloured by layer kind in
+        32px tiles. Selected is a circled check, Collapsed a right chevron,
+        Saved a cloud with a check, always with the word.
+    focus: A 2px white outline offset 2px with a 5px violet halo.
+    tone: Friendly and light, with chips such as Saved 2 minutes ago and short labels such as Pad.

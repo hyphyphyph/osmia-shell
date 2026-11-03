@@ -1,0 +1,55 @@
+export anchor DarkWorkshopStyle:
+    number: 256
+    screen: DesignEditor
+    name: Dark workshop
+    idea: A woodworker's bench at night, with tools hung on a steel pegboard, layers kept in labelled walnut drawers, an engraved steel plate screwed on for the inspector and a brass rule along the foot.
+    base: dark
+    palette:
+        walnut: #1e140e, the page with a faint wood grain
+        plank: #2b1d14, the header and the style sheet
+        drawer: #34241a, layer drawer fronts
+        steel: #3a3f45, tool tiles and the pegboard
+        plate: #262a2f, the engraved inspector plate and the comment card
+        pit: #15171a, recessed fields and etched tags
+        ink: #ece6da, text
+        sawdust: #b9ab98, meta and layer kinds
+        etch: #c3c9cf, engraved steel labels and ruler numbers
+        brass: #c9a256, the pressed tool, Share, handles and the open drawer edge
+        brassPlate: #b8924a, the nameplate and the status rule with walnut text
+        rust: #b83a0b, the 32 px guide with white text
+        lamp: #ffd27a, the focus ring only
+    type:
+        Three stacks. Labels use Futura, Century Gothic, Trebuchet MS in caps
+        tracked 0.1 to 0.16em with an engraved double text shadow. Text uses
+        system-ui, Segoe UI, Roboto. Values and meta use ui-monospace, SF
+        Mono, Menlo, Consolas. The nameplate title is 15px 700, layer names
+        13px 600, values 13px mono, meta 11px mono and etched labels 10 to
+        12px.
+    layout:
+        A walnut header plank holds an outlined BW stamp, a brass nameplate
+        reading Canvas Website redesign over Home v3, square avatars, a steel
+        Present and a brass Share. Below sit a 216px left column, the canvas
+        and a 300px plate. The left column starts with a steel pegboard of peg
+        holes holding six labelled steel tool tiles in two columns, each hung
+        from a hole, Move in brass, and a black zoom readout. Under it the
+        layers are drawers, raised walnut fronts with a brass kind icon, name,
+        mono sub line and pull, the Hero drawer lit with a brass edge and a
+        Selected tag. The canvas is a dark recessed bench with a steel ruler
+        along its top marked 0 to 1200 and the white Hero frame outlined in
+        brass with square brass handles. The inspector is a brushed steel
+        plate with four screws, etched group names and recessed fields keyed
+        in brass such as W 1440 and Pad 96, ending in Export Hero. A brass
+        rule with tick marks runs the full width as the status bar. Below
+        860px the canvas comes first, drawers and plate stack, and the
+        pegboard becomes a sticky bottom strip of seven tiles.
+    spacing: An 8px unit. 16px between bench pieces, 8px between tools and drawers, 20px plate padding.
+    density: Medium. Labelled tools, seven drawers and a five group plate.
+    corners: Nearly square, 3 to 4px everywhere, round only on screws and peg holes.
+    borders: 1px near black edges on every piece. A 4px brass inner edge marks the open drawer.
+    shadows: Hard 2px drop ledges under tools, drawers and buttons, inset shadows sinking fields, and an inner vignette in the bench.
+    icons:
+        Square cap line icons at 2px stroke, 18px. Selected is a circled
+        check, Collapsed a right chevron, Saved a cloud with a check, always
+        with the word.
+    focus: A 2px lamp yellow outline offset 2px with a soft 5px halo.
+    tone: Stamped and terse caps such as Tools, Pad, Scale and Export Hero.

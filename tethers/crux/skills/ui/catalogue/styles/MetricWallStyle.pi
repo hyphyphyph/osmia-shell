@@ -1,0 +1,57 @@
+export anchor MetricWallStyle:
+    number: 183
+    screen: ProjectsDashboard
+    name: Metric wall
+    idea: A navy monochrome scoreboard, where eight large figures, four given and four derived, fill a two by four wall of ruled cells under a navy band, and the projects and activity follow as compact ruled lists.
+    base: light
+    palette:
+        navy: #13294b, the band, text, figures, status shapes, the overdue cell and focus
+        navy2: #22416f, the search field on the band
+        mid: #4a5d7c, labels, notes and field edges
+        soft: #7f93b2, last week bars and the search edge, never text
+        line: #c6d0df, wall cell rules and list rules
+        pale: #e4e9f2, progress tracks
+        wash: #f3f5f9, derived cells and the style sheet
+        onNavy: #c9d5e8, secondary text on navy
+        white: #ffffff, the page and given cells
+    type:
+        One stack, SF Pro Display, Segoe UI Variable Display, Segoe UI,
+        system-ui, Roboto, Helvetica Neue, Arial, with tabular figures.
+        Wall figures 64px at 250 weight with minus 0.03em tracking and
+        units at 28px, the greeting 30px light with the name at 650, row
+        names 14px at 650, notes 13px, labels 11px bold caps tracked 0.12
+        to 0.14em.
+    layout:
+        A 60px navy band holds a four square mark with the brand in spaced
+        caps, six text nav links with a white underline under Home, and at
+        right a navy search field, a white New project button, a bell with
+        a white dot and an outlined initials square with Mara Okafor. Below
+        on white the greeting sits at left in light type, and the date with
+        an underlined clock and 4 tasks are overdue sits at right. The wall
+        is a four by two grid of square cells ruled in thin lines under a
+        2px navy top rule. The first row holds the given figures, Active
+        projects 6 with the status mix 4, 1 and 1, Tasks due this week 23,
+        Overdue tasks 4 as the one inverted navy cell tagged Act first, and
+        Hours logged this week 186 h. The second row holds derived figures
+        on a pale wash, each tagged Derived, Completed this week 73 with
+        14 mini bars, Week over week up 24 percent, Overall progress 46
+        percent with 78 of 170 tasks, and Hours per project 31 h. Below,
+        two columns split two to one. Projects is a ruled table sorted by
+        days left with name and team, status, a thin bar and percent,
+        tasks, due and days left. Activity is a ruled list with caps times
+        above each sentence. Section heads are small caps over a 2px navy
+        rule. Below 1100px the wall is two by four and the lists stack.
+        Below 820px the search and nav wrap into rows in the band and the
+        table scrolls inside its section.
+    spacing: An 8px unit. 20 by 24px cell padding, 40px page gutter, 40px between the wall and the lists.
+    density: Low on the wall with eight figures only, then dense ruled lists.
+    corners: Square everywhere.
+    borders: 2px navy top rules on the wall and section heads, 1px #c6d0df cell and row rules, outlined tags.
+    shadows: None.
+    icons:
+        Line icons at text size in the band. Status shapes are filled navy,
+        a check circle for On track, a triangle with a bang for At risk and
+        a crossed square for Behind, and the word is plain for On track,
+        italic for At risk and underlined for Behind.
+    focus: A 3px navy outline offset 2px, white on the band.
+    tone: Terse caps labels with plain notes that say how a derived figure was made.

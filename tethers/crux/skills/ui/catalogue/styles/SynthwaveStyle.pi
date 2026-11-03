@@ -1,0 +1,55 @@
+export anchor SynthwaveStyle:
+    number: 262
+    screen: DesignEditor
+    name: Synthwave
+    idea: A retro future night drive, where the frame floats over a striped sunset sun and a cyan perspective grid, neon magenta and cyan outlines trace the panels, and the inspector runs as a single property strip under the horizon.
+    base: dark
+    palette:
+        night: #0d0221, the page and the top of the sky
+        panel: #170a33, the header, layers, the property strip and the style sheet
+        deep: #0a0119, fields, tools and the status readout
+        selected: #2c0e4a, the selected layer behind a magenta line
+        line: #3a1f6e, idle outlines and underlines
+        ink: #f6eaff, text
+        haze: #c4b3e6, meta and labels
+        neonMagenta: #ff4fd8, the layers outline, Share, the selected row and field keys
+        neonCyan: #3ff0ff, the active tool, the grid floor, the frame outline, handles and focus
+        sunGold: #ffb347, the sun top and the version readout
+        sunPink: #ff2e88, the sun bottom and the logo
+        guide: #c0157f, the 32 px guide with white text
+    type:
+        Titles in Arial Black, Segoe UI Black, Helvetica Neue at 900 italic in
+        caps. Text in system-ui, Segoe UI, Roboto. Readouts, tools and keys in
+        ui-monospace. The file name is 18px italic caps, panel titles 16px
+        italic caps with a neon glow, layer names 14px 650, values 14px mono,
+        readouts 12px mono and group labels 11px 700 mono caps tracked 0.1em.
+    layout:
+        A header panel with a magenta bottom line holds a skewed sunset
+        gradient BW logo, CANVAS · WEBSITE REDESIGN in cyan mono over HOME V3,
+        a row of six outlined tool buttons with mono names, Move glowing cyan,
+        a magenta 66%, outlined square avatars in magenta, cyan and gold, a
+        cyan outlined Present and a solid magenta Share. Below sit a 268px
+        left column and a wide right. The left is a magenta neon panel with
+        the layers, cyan kind icons, names and mono sub lines, Hero outlined
+        in magenta with a Selected tag, and at its foot a status readout
+        listing Saved 2 minutes ago in cyan, 3 people editing in magenta and
+        Version 41 in gold. The right holds the stage, a sky gradient with a
+        large striped gold to pink sun and a cyan grid floor in perspective,
+        with the white Hero frame centred over it at up to 600px, a glowing
+        cyan outline and diamond handles. Under the stage a cyan neon property
+        strip lays out five cells in one row, Position / size, Fill, Auto
+        layout Vertical, Radius and Export with Export Hero, each with magenta
+        keys and underlined mono values. Below 860px the stage comes first,
+        the strip wraps to two columns and the tools become a fixed bottom
+        bar.
+    spacing: An 8px unit. 16px between panels, 48px around the frame on the stage, 10px between strip cells.
+    density: Medium, with layers and the readout on the left and all properties in one strip.
+    corners: Tight. 6px panels, 4px controls and rows, diamonds for handles.
+    borders: 1.5px neon outlines, magenta around layers, cyan around properties and dim violet for idle controls.
+    shadows: Neon glows only, 10 to 24px in the line colour, never a dark drop shadow.
+    icons:
+        Line icons at 1.8px stroke, 18px, in cyan. Selected is a circled
+        check, Collapsed a right chevron, Saved a cloud with a check, always
+        with the word.
+    focus: A 2px cyan outline offset 3px with a cyan glow.
+    tone: Arcade cabinet, with italic caps titles and mono caps readouts such as Position / size.

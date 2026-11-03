@@ -1,0 +1,59 @@
+export anchor FieldGuideStyle:
+    number: 130
+    screen: ProjectsDashboard
+    name: Field guide
+    idea: The dashboard as a pocket naturalist's guide, with thumb index tabs for navigation, each project written up as a species account with a plate drawing, field marks and a range map to its due date, and the chart drawn as a seasonal abundance band.
+    base: light
+    palette:
+        desk: #dcd8c6, behind the book
+        page: #faf7ee, the guide's pages
+        ink: #232a22, text, line drawings and rules
+        pencil: #55594d, captions, times and map labels
+        rule: #cfc8b0, thin rules between accounts, never text
+        moss: #3c6b3f, the primary button and the kicker
+        rangeOchre: #c99a3c, range map shading on #ebe6d3
+        abundance: #5d7f4c, last week in the band, with #2f5d73 for this week
+        plateWashes: #f0d9b5 design, #cfdcea engineering, #d6e6c9 research, #ecd0cf marketing
+        onTrack: #2c6a33, the dot
+        atRisk: #8a4f00, the triangle
+        behind: #9b2f2a, the diamond and overdue
+    type:
+        Names and labels use Franklin Gothic Medium, Franklin Gothic, ITC
+        Franklin Gothic, Arial Narrow, Arial, sans-serif. Text uses Iowan Old
+        Style, Charter, Bitstream Charter, Georgia, serif. The greeting is
+        42px 700 sans at 1.08, section titles 22px 700 sans, species names
+        19px 700 sans, team lines 16px italic serif, body 15 to 16px serif
+        at 1.5, run-in labels such as Field marks in bold sans, times 12.5px
+        caps sans.
+    layout:
+        A book spread up to 1240px on the desk colour, its fore edge rounded
+        14px with stacked page edges below, and six coloured thumb index tabs
+        standing off the right edge with vertical labels, the current Home
+        tab wider with a heavy outline. A ruled running head has a round bird
+        mark, the brand with A field guide to the team's projects, a search,
+        a moss New project button, a square bell and the avatar with the
+        name. The intro has the kicker Today in the field, the greeting, the
+        italic date and a pink bar with a diamond saying Look out first for
+        4 tasks that are overdue, beside a boxed Quick identification key
+        with four small pictures and the numbers. Species accounts fill two
+        thirds in two columns. Each account has a round wash plate with a
+        line drawing for the team, a pen nib, a gear, a magnifier or a
+        megaphone, and a black plate number, then the name, the team in
+        italic, Field marks with percent and tasks, Status, and Range from
+        now to the due date over a small Nov Dec Jan map shaded up to a dot
+        on the due date. Recent sightings fills the last third. Seasonal
+        abundance draws the 14 days as one horizontal band whose thickness
+        follows each value, green then blue, with values, day letters and
+        dates. Below 900px the tabs become a row of tabs under the header
+        and everything stacks.
+    spacing: An 8px unit. 16px between accounts, 32 to 40px between columns and 24px section padding.
+    density: Bookish and fairly dense. Two columns of accounts beside a sightings column.
+    corners: 3px on controls, round plates and avatars, and the book rounds 14px on its fore edge.
+    borders: 1px ink under the running head, 1px pale rules between accounts and one boxed key.
+    shadows: Stacked page edges under the spread and one soft drop. Accounts have none.
+    icons:
+        Hand drawn line pictures at 2.4 stroke on soft round washes, and
+        tiny solid status marks at 14px with the word, a dot for On track, a
+        triangle for At risk and a diamond for Behind.
+    focus: A 3px slate blue outline offset 2px.
+    tone: Naturalist's notes, such as Field marks, Range, Look out first for and Recent sightings.

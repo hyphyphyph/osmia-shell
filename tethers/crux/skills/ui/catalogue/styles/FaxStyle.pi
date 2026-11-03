@@ -1,0 +1,50 @@
+export anchor FaxStyle:
+    number: 168
+    screen: ProjectsDashboard
+    name: Fax
+    idea: The dashboard arrives as a faxed cover sheet, with a transmission line across the top, a boxed To and From form, heavy black toner on slightly grainy paper, halftone bars and rubber-stamped statuses.
+    base: light
+    palette:
+        tray: #e3e1da, the page behind the sheet
+        thermalSheet: #f5f4ef, the paper, under a 14 percent noise grain
+        toner: #141414, all text, rules, stamps and buttons
+        greyToner: #4a4a46, departments and placeholders
+        scanStreak: #d8d6cf, faint vertical streaks, never text
+        halftone: #8a8a85, how dotted fills read at a distance
+        focus: #1748b0, the focus outline and the only colour
+    type:
+        Three stacks. Headings and the FAX mark use Arial Black, Helvetica
+        Neue, Arial at 900. Body and form values use Helvetica Neue,
+        Helvetica, Arial, Liberation Sans. The header line and log columns
+        use Lucida Console, Courier New, Liberation Mono. The FAX mark is
+        64px, the title 30px caps, total figures 52px heavy, form values
+        16px bold, body 15px, form keys 12px bold caps tracked 0.08em and
+        the header line 12px mono. Text has a 0.7px blur bleed.
+    layout:
+        One sheet tilted 0.35 degrees with grain and two faint vertical
+        scan streaks. A mono transmission line runs across the top with
+        the date and time, FROM BRIGHTWORK, TO MARA OKAFOR and P.01 of 01.
+        The cover has a reversed black FAX block, the title Brightwork
+        cover sheet and the signed-in name, over a 6px black bar. A boxed
+        form follows with To, From, Date and Pages in two columns, Re
+        holding the greeting and the overdue line, Route holding the nav
+        as checkboxes with Home crossed, and Look up holding the search,
+        New project and Notices. Then four boxed totals with the overdue
+        box double framed, a black-headed project table with halftone
+        progress bars and stamped statuses, and two columns with a framed
+        bar chart, dotted last week and solid this week, beside an activity
+        report table with number, time, activity and an OK result column.
+        A mono footer closes the sheet. Below 860px the tilt is removed,
+        the form becomes one column and the table scrolls sideways.
+    spacing: An 8px unit. 10px cell padding, 12px between boxes, 28px above section heads.
+    density: Medium-dense office form, with boxed fields and tables edge to edge.
+    corners: Square everywhere. Only the On track stamp is a full pill.
+    borders: 2px toner boxes, a 6px bar under the cover, a 6px double frame on the overdue figure, dotted log rules.
+    shadows: One soft shadow under the sheet. Text bleeds with a 0.7px blur.
+    icons:
+        Rubber stamps tilted 2 degrees. A pill stamp with a ringed check
+        for On track, a dashed stamp with a triangle for At risk, a solid
+        black stamp with a crossed box for Behind, and a filled circle with
+        a bang for Overdue.
+    focus: A 3px focus blue outline offset 2px.
+    tone: Office paperwork, such as Re, Route, Look up, Activity report and P.01 of 01.

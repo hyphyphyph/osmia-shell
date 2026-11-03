@@ -1,0 +1,51 @@
+export anchor RetroDesktopStyle:
+    number: 10
+    screen: ProjectsDashboard
+    name: Retro desktop
+    idea: A 1990s desktop, with silver bevelled windows on a teal backdrop, where each part of the dashboard opens as its own window with a title bar, sunken fields and pixel-crisp edges.
+    base: light
+    palette:
+        desktop: #008080, the backdrop behind the windows, with white icon labels
+        face: #c0c0c0, windows, buttons and the taskbar
+        highlight: #ffffff, the top-left bevel edge and sunken field fills
+        light: #dfdfdf, the inner light bevel edge
+        shadow: #808080, the inner dark bevel edge and inactive title bars
+        dark: #0a0a0a, the outer dark bevel edge
+        text: #000000, all body text, with #3a3a3a for meta
+        navy: #000080, the active title bar, the selected row, progress blocks and links
+        titleEnd: #1084d0, the right end of the title bar gradient
+        okGreen: #006400, the On track tick
+        caution: #ffd800, the At risk triangle with a black outline
+        stopRed: #b00000, the Behind square and the overdue readout
+        monitor: #00ff00 on #000000, this week's chart bars, with #00a800 for last week and #005a00 grid lines
+    type:
+        Tahoma, MS Sans Serif, Microsoft Sans Serif, Segoe UI, Geneva,
+        Verdana, sans-serif, with font smoothing off. Body is 12px at 1.35
+        line height, title bars 12px bold, the greeting 14px bold, meta 11px
+        and summary readouts 22px bold in right-aligned sunken boxes. Chart
+        axes use Courier New at 9px.
+    layout:
+        A teal desktop with a column of six 32px desktop icons on the left
+        as the nav, the current one with its label on navy. Beside it sit
+        the windows on a grid with 16px gaps. A full-width Brightwork - Home
+        window has a menu row, a toolbar with Find, New project...,
+        notifications and the user, a message area with a warning icon,
+        the greeting and the overdue line, and four group boxes with the
+        summary readouts. Below it, a Projects folder window titled C drive Projects, a list view with
+        raised column headers and a status bar sits beside a Task Monitor
+        chart window and an Event Log window. A taskbar with Start, open
+        window buttons and a clock tray closes the desktop. Below 1000px the
+        windows stack, and below 640px the icons form a row across the top.
+    spacing: A 4px unit. 8px window padding and 16px gaps between windows.
+    density: Compact. 12px text, about 22px list rows and 23px buttons.
+    corners: None anywhere. Every edge is square and pixel aligned.
+    borders: Two-pixel bevels built from four inset lines. Raised for windows and buttons, sunken for fields, lists and readouts, and etched for group boxes.
+    shadows: None outside the bevels. Depth comes only from light and dark edges.
+    icons:
+        16px and 32px pixel icons with black outlines and flat fills, drawn
+        with crisp edges. Each title bar ends in minimise, maximise and close
+        buttons with pixel glyphs. Status is a green tick, a yellow triangle
+        with an exclamation mark or a red square with a white cross, always
+        with the word. Progress is a sunken bar of navy blocks.
+    focus: A 1px dotted black outline inset 4px inside the control. A selected row is navy with white text and a dotted white outline when focused.
+    tone: System dialog speak, such as Find, New project..., 6 object(s), Event Log and a Projects folder title.

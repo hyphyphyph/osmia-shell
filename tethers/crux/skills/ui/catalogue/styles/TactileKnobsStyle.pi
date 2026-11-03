@@ -1,0 +1,59 @@
+export anchor TactileKnobsStyle:
+    number: 381
+    screen: SmartHome
+    name: Tactile knobs
+    idea: The home as a wall of brushed metal faceplates, each room a screwed module with real looking rotary knobs, toggle switches, lit lamps and amber readouts, and scenes are chunky push buttons that stay pressed in.
+    base: dark
+    palette:
+        page: #161719, rack ground with fine brushed lines
+        plate: #24262a, faceplates, from #2b2e33 at top to #202226
+        plate2: #2c2f34, list rows and knob caps
+        edge: #0c0d0e, plate edges and button outlines
+        hi: #3d4148, top bevel highlight
+        ink: #eceae4, text and switch labels
+        mute: #aeb0b4, engraved labels and meta
+        lcd: #0b0a06, readout windows and the LED matrix
+        amber: #ffb84a, readouts, lit ticks, pointers, pressed scene, focus, primary
+        onAmber: #2a1700, text on amber
+        lamp: #ff6a4d, warning lamp, motion lamp, top matrix cells
+        green: #7fe08a, locked lamp and key
+    type:
+        Condensed labels, Bahnschrift, DIN Alternate, Roboto Condensed,
+        Arial Narrow, base 15px. Engraved plate labels 13px at 700 caps with
+        0.2em tracking and a dark top text shadow. Readouts use ui-
+        monospace, SF Mono, Menlo at 26px, 600 in amber inside black
+        windows. Unit labels 12px caps 0.14em.
+    layout:
+        A brushed dark metal rack with fine horizontal lines holds a 6
+        column panel of screwed faceplates, each with two corner screws, a
+        top bevel and a raised shadow. A header plate names Brightwork Home
+        and Main panel with an amber readout of the day and time. A warning
+        plate has a glowing red lamp with a triangle, Garage door open, 2
+        hours, and a raised amber Close now. The living room plate holds an
+        amber temperature readout, a knurled rotary dimmer at 40 percent
+        with lit amber ticks and pointer, a toggle switch up with a round
+        amber lamp for 3 lights on, and a toggle down with a dark lamp for
+        TV off. The kitchen plate has its readout and a toggle down for
+        lights off. The bedroom plate has a thermostat knob at 19 and a
+        readout showing the switch to 18. The front door plate has a key
+        switch turned to lock with a square green lamp and Locked. The
+        garden plate shows the last event time and a triangle red lamp for
+        Motion. Scenes are four chunky push buttons, Movie sunk 3px with an
+        inner shadow, amber text and a down arrow In. A full width energy
+        plate shows readouts for used and solar, a small battery knob at 64
+        percent and an LED matrix of 24 columns, each lit cell 0.2 kWh,
+        amber with red top cells. Below 1060px plates regroup, and at phone
+        width they stack.
+    spacing: An 8px unit. 12px between plates, 20 to 22px plate padding.
+    density: Medium. Each room shows its physical controls rather than a summary.
+    corners: 6px plates and buttons, 3px readouts, round knobs and screws.
+    borders: A 1px near black plate edge with a 1px #3d4148 top bevel highlight.
+    shadows:
+        Raised plates use 0 3px 6px black, buttons sit on a 3 to 4px dark
+        ledge, and a pressed button sinks 3px with an inner shadow.
+    icons:
+        Line icons at 2px stroke on push buttons. States use lamp shapes, a
+        round amber lamp for on, a square green lamp for locked and a
+        triangle red lamp for motion, each beside a word.
+    focus: A 3px amber outline offset 3px.
+    tone: Engraved caps nouns, such as MAIN PANEL, DIM 40%, HEAT SCHEDULE and IN.

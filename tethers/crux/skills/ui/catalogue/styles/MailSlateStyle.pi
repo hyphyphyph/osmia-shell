@@ -1,0 +1,53 @@
+export anchor MailSlateStyle:
+    number: 394
+    screen: EmailClient
+    name: Mail slate
+    idea: A sober, professional three pane mail client in cool slate greys with one teal accent, where rules and steps of lightness do the organising and nothing decorates the work.
+    base: dark
+    palette:
+        page: #171c22, the page, the message list and fields
+        pane: #1f252d, the top bar, the folder column and the style sheet
+        raised: #29313b, the open row and secondary buttons
+        line: #343e4b, every rule and border
+        ink: #e4e8ee, text
+        muted: #9ba7b6, snippets, times and meta
+        teal: #4fc1b0, the primary button, the unread dot, the open row bar and focus
+        onTeal: #06221e, text on teal
+        tealSoft: #1d3936, the current folder
+        tealText: #7fd8ca, the current folder label and unread times
+        star: #e9c46a, the filled star beside the word Starred
+        clients: #8db6ff, the Clients label diamond
+        invoices: #f2a970, the Invoices label diamond
+        team: #c7a0f2, the Team label diamond
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Base 14px at 1.45. The open subject is 22px at 650, the list
+        heading 16px at 650, the message body 15px at 1.65, unread senders
+        and subjects 700, snippets 13px muted, folder group headings 11px
+        caps at 650 with wide tracking.
+    layout:
+        A full width 52px top bar holds a teal square B mark with the name,
+        a long search field, a teal Compose button and Mara Okafor with an
+        initials disc. Below sit three panes. A 220px folder column lists
+        Inbox 12, Starred, Snoozed, Sent, Drafts 2 and Archive with line
+        icons, then the three labels each with a small rotated coloured
+        square. A 360px list shows six messages as ruled rows with sender
+        and time on top, subject, snippet and a meta line for label chips,
+        the attachment and the star. The Northpass row is open, raised and
+        marked by a teal inset bar on its left. The reader starts with a
+        toolbar of Reply in teal, then Reply all, Forward, a divider,
+        Snooze and Archive, then the subject, a Clients chip, a sender row
+        with a round DW disc and the time, and the short body. Below 1100px
+        the reader drops under the list. Below 760px the folders become a
+        sideways scrolling strip above the list, and the reader follows.
+    spacing: A 4px base, mostly 8 and 16. Rows pad 12 by 16px, the reader gutter is 28px.
+    density: Medium. Six messages with snippets fill the list and the reader shows the whole note.
+    corners: 6px buttons, fields and folder items, 4px chips, round avatars.
+    borders: 1px #343e4b between panes and under every row. No cards.
+    shadows: None. The open row has an inset 3px teal bar on its left edge.
+    icons:
+        16px line icons at 1.7 stroke. Unread is a teal dot plus bold text,
+        starred a filled gold star plus the word, a label a rotated square
+        plus the name, the attachment a clip plus 1 attachment.
+    focus: A 2px teal outline offset 2px on every control and around the whole search field.
+    tone: Plain nouns and verbs, such as Inbox, Mailboxes, Reply all and 1 attachment.

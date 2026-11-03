@@ -1,0 +1,50 @@
+export anchor OrganicWellnessStyle:
+    number: 20
+    screen: ProjectsDashboard
+    name: Organic wellness
+    idea: A calm wellness-app mood in sage, cream and terracotta, with soft blob shapes, generous rounded cards, leaf-shaped progress and gentle reassuring words.
+    base: light
+    palette:
+        cream: #f8f3e8, the page
+        card: #fffbf3, cards, the nav pill, search and round buttons
+        oat: #efe6d4, the leaf progress track and the style sheet ground
+        sageTint: #dfe8d6, the On track pill, the soft button, a summary pebble and last week's chart area
+        sage: #9db59a, decorative blobs and link underlines only
+        sageDeep: #3f5e45, headings, numbers, the primary button, progress fill and the chart line
+        terracotta: #96421f, the overdue phrase, the Behind status and the focus ring
+        terracottaTint: #f3dccf, the Behind pill and the overdue pebble
+        ochre: #7a5410 on #f4e4c1, the At risk pill
+        text: #2e3a30, body text
+        muted: #5a6559, meta text and captions
+    type:
+        Gill Sans, Gill Sans MT, Seravek, Optima, Candara, Trebuchet MS,
+        sans-serif, at regular weight for headings. The greeting is 46px on
+        a 1.1 line, summary numbers are 44px, section titles 28px, project
+        names 21px, the calm lead line 20px, body 17px on a 1.6 line and
+        meta 15px. Pills and buttons are 14px to 16px semibold.
+    layout:
+        No sidebar. A centred column capped at 1200px. The header holds a
+        leaf brand mark in a blob, a floating pill of six nav links, a
+        round search, a round bell and an organic avatar. A hero splits
+        into the greeting, date, a calm sentence and a Start a new project
+        button on the left, and four summary numbers set in irregular
+        pebble shapes in a two by two grid on the right. Large pale sage
+        and terracotta blobs drift behind it. Below, six project cards sit
+        in three columns, then a wide chart card beside an activity card.
+        Below 1000px the hero stacks and projects go to two columns, and
+        below 640px everything is one column with the nav as a three by
+        two grid.
+    spacing: An 8px unit used generously. 24px card gaps, 28 to 32px card padding and 56px between sections.
+    density: Low. Three project cards per row, large type and plenty of cream around everything.
+    corners: 32px on cards, 40px on large panels, 64px on the sheet top, fully round pills and buttons, and irregular percentage radii on the pebbles and avatars.
+    borders: None on cards. Fields use a soft 1.5px inset line in #cbbfa6.
+    shadows: One warm soft shadow, 0 10px 30px rgba(92,72,40,0.08).
+    icons:
+        22px thin rounded line icons with a 1.6 stroke. Status pills use
+        solid shapes, a leaf for On track, a soft rounded triangle for At
+        risk and a soft rounded square for Behind. Progress is a leaf, a
+        16px bar with two opposite round corners. The chart is a smooth
+        curved area, pale for last week and deeper sage for this week, with
+        the peak marked.
+    focus: A 3px terracotta outline offset 3px. A focused field gets a 2px sage deep inner ring and turns white.
+    tone: Calm and reassuring, such as A steady week, could use a little care today, projects growing and Moments from the team.

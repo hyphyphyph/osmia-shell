@@ -1,0 +1,57 @@
+export anchor BlockPrintStyle:
+    number: 149
+    screen: ProjectsDashboard
+    name: Block print
+    idea: The dashboard is a hand block printed cloth, with an indigo border of repeated motifs, madder red stripes between printed panels, stamped figures with slightly rough edges and progress counted in printed dots.
+    base: light
+    palette:
+        cotton: #f4eee2, the printed field, fields and swatch cards
+        unbleached: #e8dcc6, the page behind the cloth
+        indigo: #1f3a6b, the border ground, headings, figures, progress dots, the current tab and last week hatching
+        indigoWash: #dfe5ef, alternate project rows and the bell
+        madder: #9e2f24, stripes, the primary button, overdue, Behind, this week bars and focus
+        madderWash: #f3ddd4, the overdue notice
+        turmeric: #c99a2e, small motif accents, never text
+        ink: #1d1d26, body text
+        muted: #544f5f, meta and labels
+        leafGreen: #35582a, On track
+        ochre: #7a5300, At risk
+    type:
+        Labels, headings and figures use Futura, Futura PT, Century
+        Gothic, URW Gothic, Avenir Next, sans-serif. Text uses Charter,
+        Bitstream Charter, Sitka Text, Cambria, Noto Serif, Georgia,
+        serif. Greeting 44px with the name in italic indigo, stamped
+        figures 60px bold, panel titles 22px tracked 0.06em, row titles
+        18px semibold serif, categories 13px caps, body 15 to 16px at
+        1.55.
+    layout:
+        The whole dashboard is one cloth up to 1280px. A 36px border of
+        cotton butas and dots on indigo wraps a cotton field printed with
+        faint indigo and madder six petal flowers over a fine weave. The
+        header has a buta mark with the brand, plain nav with a solid
+        indigo current item, a square search, a madder button with a 2px
+        indigo offset, a square bell and a round avatar, then a madder
+        stripe of cotton diamonds runs edge to edge. The greeting sits
+        left with the date in spaced sans, and a madder wash notice with a
+        thick left edge names 4 overdue tasks on the right. The four
+        totals are one ruled band split by dashed lines, each a large
+        stamped figure beside its label. Below, the field splits into two
+        panels by a vertical madder stripe, projects on the left as rows
+        with alternating indigo wash, the category, title, status and a
+        row of ten printed dots where each filled dot is a tenth of the
+        work, then percent, tasks and due date. On the right the chart,
+        hatched indigo bars last week and solid madder this week with a
+        rough edge, two outlined totals, a stripe, then activity led by
+        small madder flower stamps. On phones the stripe turns
+        horizontal, totals go two by two and rows stack.
+    spacing: An 8px unit. A 36px printed border, 28 to 32px inside the field, 14px row padding.
+    density: Medium. Panels sit edge to edge like blocks on one cloth, split by stripes rather than gaps.
+    corners: Square, only dots and the avatar are round.
+    borders: A wide repeat border of indigo butas, 12px madder stripes with cotton diamonds between panels, dashed indigo lines between figures.
+    shadows: None, except a 2px indigo offset under the primary button like a misaligned second block.
+    icons:
+        Stamped shapes passed through a slight roughening filter. Status
+        uses a six petal flower for On track, a triangle for At risk and a
+        square with an inner square for Behind, beside the word.
+    focus: A 3px madder outline offset 2 to 3px.
+    tone: Quiet workshop voice, such as one printed dot for every tenth of the work.

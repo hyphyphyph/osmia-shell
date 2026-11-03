@@ -1,0 +1,56 @@
+export anchor ScrapbookCollageStyle:
+    number: 35
+    screen: TaskBoard
+    name: Scrapbook collage
+    idea: The board as a scrapbook spread, with torn paper scraps, washi tape, label-maker strips and rubber stamps pasted onto a kraft board.
+    base: light
+    palette:
+        board: #d9c4a0, the page with faint fibre stripes
+        kraft: #c9a877, the To do scrap
+        cream: #fffcf2, lined paper, notes and the style sheet
+        tissuePink: #f7d9dc, the In progress scrap and one cut title letter block
+        graph: #f4f9f1, the Review scrap with a #cfe3c8 16px grid
+        newsprint: #ece8de, the Done scrap
+        sticky: #fbeea0, sticky note cards
+        manila: #f2e0ad, the filter tags
+        ink: #2a211a, text and count chips
+        pencil: #5a4a3b, small caps labels
+        labelTape: #1c1c1c, the brand strip and the Add task button, with white text
+        stampRed: #b3261e, the At risk and Overdue stamps
+        stampGreen: #2d6a2d, the Done stamp
+        navy: #1f3a6b, focus
+        tape: #faf4d6, washi tape strips at 72 percent opacity
+    type:
+        Georgia, Times New Roman, serif bold for headings and card titles,
+        and Courier New, Courier, American Typewriter, monospace for body
+        and labels. The title is cut letters at 34 to 40px, one word each in
+        serif, typewriter and serif italic. Column titles are 22px serif
+        bold, card titles 17px serif bold, body 14px typewriter, field
+        labels 11 to 12px uppercase with 0.08em tracking. The brand is 16px
+        bold uppercase typewriter with 0.18em tracking.
+    layout:
+        A brand label-maker strip top left, tilted, and a small white
+        polaroid tag with MO and Mara Okafor top right. The title Mobile app
+        2.0 is three cut paper blocks beside a tilted red At risk stamp.
+        Filters are manila luggage tags with a punched hole, a lined paper
+        search strip with a red margin, and the black Add task strip at the
+        right. Four torn-edged scraps of different paper hold the columns,
+        each tilted under a degree with washi tape on top. Cards are index
+        cards, sticky notes, receipts with zigzag bottoms and torn notes,
+        each tilted about 1.3 degrees, with a dashed round points sticker
+        and a two column list of Label, Who and Due. Below 1040px two
+        columns, below 640px one.
+    spacing: An 8px unit. 24px between notes, 24px between scraps, 24px padding inside scraps.
+    density: Loose. Paper needs room to tilt and overlap.
+    corners:
+        Square paper with torn, zigzag or receipt edges cut by clip-path.
+        The filter tags have a pointed left end. Only the points sticker
+        and the Done stamp are round.
+    borders: None on paper. Stamps have 3px outlines in their ink. Fields use a 2px dashed underline.
+    shadows: Paste shadows, a drop-shadow of 1px 2px 1.5px in rgba of 40,25,5 at 0.35, with scraps tilted between minus 1.4 and 1.2 degrees.
+    icons:
+        Bold 2.2 stroke line icons at text size, mostly inside stamps.
+        Overdue and At risk are a triangle in a red rectangular stamp. Done
+        is a tick in a green oval stamp. Comments use a speech box.
+    focus: A 3px navy outline offset 3px. A focused field gets a solid navy underline and a pale blue fill.
+    tone: Crafty and short, with typewriter labels such as Who, Due and Notes.

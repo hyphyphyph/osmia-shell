@@ -1,0 +1,51 @@
+export anchor SoftUIStyle:
+    number: 173
+    screen: ProjectsDashboard
+    name: Soft UI
+    idea: The dashboard is moulded from one pale grey surface, where panels, knobs and buttons are extruded by paired light and dark shadows and wells and grooves are pressed in, yet text keeps full AA contrast and focus is a solid indigo ring.
+    base: light
+    palette:
+        base: #e4e8ef, the single surface everything is moulded from
+        highlight: #ffffff, the top-left shadow, never text
+        lowlight: #b6bfcc, the bottom-right shadow, never text
+        lift: #eef1f6, knob dishes and outlined last-week bars
+        ink: #263040, text
+        softInk: #4d5868, meta, labels and last-week bar outlines
+        indigo: #3346c2, the primary button, fills, the current nav and focus
+        green: #1d6b45, On track
+        amber: #8a4b00, At risk
+        red: #b4232c, Behind and the overdue ring and text
+    type:
+        One stack, system-ui, Segoe UI Variable, Segoe UI, SF Pro Display,
+        Roboto, Helvetica Neue, Arial. Knob figures are 34px bold, the
+        greeting 32px bold at minus 0.01em, project names and headings 16
+        to 17px bold, body 14 to 15px, and meta and chips 13px at 600 to
+        700.
+    layout:
+        A raised sidebar holds the brand with a small indigo dot in a
+        raised disc and six raised nav pills with line icons, Home pressed
+        in and indigo. The main column starts with a pressed pill search,
+        a raised indigo New project button, a raised round bell and a
+        pressed initials disc with Mara Okafor. A raised greeting panel
+        has the greeting and date at left and a pressed red Overdue pill
+        at right. Four raised tiles each hold a knob, a pressed ring with
+        a raised dish and the figure, over a label, the overdue knob ringed
+        in red with a clock. Projects are raised rows with name and meta,
+        a pressed groove filled indigo to the percent with a raised round
+        thumb, the percent and a pressed status chip. Below sit a raised
+        chart panel with a pressed trough of raised pill bars, outlined
+        light last week and indigo this week, and a raised activity panel
+        with pressed initial discs. Below 1000px the sidebar becomes a
+        three by two grid of pills on top, and rows wrap on phones.
+    spacing: An 8px unit. 16 to 20px between raised items so shadows can breathe, 28px between sections.
+    density: Low to medium. Few, large soft objects.
+    corners: Very round. 20 to 28px panels, 14px buttons and nav, circles for knobs and icon buttons, pills for fields and chips.
+    borders: None. Edges come only from shadow pairs, except a 1.5px soft ink outline on last-week bars.
+    shadows: Raised uses 7px 7px 14px lowlight with minus 7px minus 7px 14px highlight, small raised uses 4px, and pressed wells use the same pair inset. The current nav item is pressed in.
+    icons:
+        Line icons at 1.7px for nav. Status icons are solid, a check
+        circle for On track, a triangle with a bang for At risk, a rounded
+        crossed square for Behind and a clock ring for Overdue, inside
+        pressed chips with their word.
+    focus: A solid 3px indigo outline offset 3px on every control, never a shadow change alone.
+    tone: Plain and neutral, such as Projects, 6 active and Activity.

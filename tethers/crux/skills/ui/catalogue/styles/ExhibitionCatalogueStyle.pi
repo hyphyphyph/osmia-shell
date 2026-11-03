@@ -1,0 +1,57 @@
+export anchor ExhibitionCatalogueStyle:
+    number: 89
+    screen: ProjectsDashboard
+    name: Exhibition catalogue
+    idea: The dashboard is bound as an art catalogue of open spreads, with numbered plates for each project, catalogue entries on the facing page and wide calm margins that pair a book serif with a clean sans.
+    base: light
+    palette:
+        table: #e7e5df, the surface behind the book
+        page: #ffffff, every spread and the colophon
+        plateGround: #f3efe7, plate backgrounds
+        ink: #1b1b1b, text, rules and plate frames
+        captionGrey: #616161, running heads, captions and folios
+        rule: #d9d6cf, hairlines, never text
+        vermilionInk: #a8321f, the primary button, the drop cap, overdue, Behind and focus
+        vermilion: #c2412b, the Design plate and the this week fill
+        prussian: #24476b, Engineering plates
+        olive: #6d7436, the Research plate
+        rose: #c98a8a, Marketing plates
+        green: #2c6a3f, On track
+        ochre: #8a5600, At risk
+    type:
+        Two stacks. The serif is Charter, Bitstream Charter, Sitka Text,
+        Cambria, Iowan Old Style, Georgia, serif for the 54px greeting,
+        32px page titles, 22px entry titles and 17px body with 1.6 line
+        height, with italic ledes and dates. The sans is Avenir Next,
+        Avenir, Segoe UI, Helvetica Neue, Arial at 300 for 64px figures
+        tracked minus 0.03em, 13px plate captions, and 11px caps tracked
+        0.14em for running heads, labels and statuses.
+    layout:
+        A slim header row on the grey table holds the brand with the italic
+        line catalogue of the week, plain nav links with the current one
+        underlined in vermilion, a boxed search, the New project button, a
+        square bell and the user. Below sit three open book spreads, each a
+        white two page sheet with a shaded gutter down the middle, 72px
+        outer and 88px inner margins, a running head over a hairline on
+        each page and a folio number at the foot. Spread one has the
+        greeting with a vermilion drop cap essay and a diamond line saying
+        4 tasks are overdue, facing The week in figures as a two by two
+        table of light sans numbers with italic notes. Spread two has six
+        plates in a two column grid, each a framed ground filled from the
+        left to the percentage in the team colour with a black dot at the
+        edge and a caption such as Plate 1, facing the catalogue with Cat.
+        1 to 6 entries giving name, team, plate, due date, tasks and
+        status. Spread three has a chronology on a ruled timeline facing
+        Plate 7, a stepped line chart. Below 980px each spread becomes one
+        column with its pages stacked.
+    spacing: An 8px unit. 72px outer and 88px inner page margins, 48px under running heads and 36px between plates.
+    density: Low. One subject per page, generous white space and long calm lines.
+    corners: Square throughout.
+    borders: 1px hairlines under running heads and between entries, and a 1px ink frame inside each plate.
+    shadows: Each spread lifts off the table with a soft 40px shadow and a shaded gutter down its middle.
+    icons:
+        Small solid shapes with the caps word. On track is a filled
+        circle, At risk a filled triangle, Behind a flat bar and overdue a
+        diamond.
+    focus: A 2px vermilion ink outline offset 3px. A focused field turns its border vermilion.
+    tone: Curatorial and measured, such as Plates, Catalogue, Chronology, Cat. 4 and shown in plates 1 to 6.

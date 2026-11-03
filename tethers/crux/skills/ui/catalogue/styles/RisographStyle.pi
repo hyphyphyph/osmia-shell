@@ -1,0 +1,50 @@
+export anchor RisographStyle:
+    number: 53
+    screen: Pricing
+    name: Risograph
+    idea: A two-ink risograph zine in fluorescent pink and blue, where the inks overprint into violet, every heading sits slightly off register and a fine grain covers the paper.
+    base: light
+    palette:
+        paper: #f4f1ea, the page and the Free plan card
+        fluoroPink: #ff48b0, ink for shapes, offset heading copies, halftone dots and hard shadows, never small text
+        pinkInk: #b0125f, small pink words, arrows and not included crosses
+        pinkTint: #ffc2e2, the Team card, the Team column and the current nav
+        risoBlue: #0078bf, large headings and blue shapes
+        blueInk: #3255a4, the primary button, links and included dots
+        deepOverprint: #1a2a6c, body text, rules, outlines and focus
+        blueTint: #bfe0f5, the Business card
+        overprint: multiply, where pink and blue cross and turn violet
+    type:
+        Display is Arial Black, Helvetica Neue, Franklin Gothic Heavy,
+        Arial, sans-serif at 900 with tight tracking. Text is Courier
+        Prime, Courier New, ui-monospace, Menlo, Consolas, monospace. The
+        title is up to 168px on a 0.88 line, prices 76px, section titles
+        52px, plan names 40px, questions 20px, body 16px on a 1.6 line and
+        labels 13px bold mono capitals.
+    layout:
+        A light header with a logo of a pink circle overprinting a blue
+        square, mono capital nav with the current item on a pink
+        highlighter band and a wavy underline, and a torn zigzag strip in
+        blue. The hero sets the title in riso blue with a pink copy offset
+        slightly down and right beneath it, a tilted dark label above, a
+        mono line and a square billing switch with a dashed pink stamp for
+        2 months free. A large pink circle with halftone dots overprints a
+        tilted blue rectangle at the right. Three plan cards tilt by
+        different small angles, each with a deep outline and a pink
+        duplicate outline offset 5px, a halftone or solid spot at the top
+        corner, a pink dollar sign, a big price, an arrow list on dotted
+        rules and a button. Team is pink tinted with a dark Most popular
+        sticker, Business blue tinted. The comparison table tints the Team
+        column pink, and questions use pink number discs. Below 900px the
+        cards stack.
+    spacing: An 8px unit. 24px card padding, 28px gutters and 88px between sections.
+    density: Medium and loose, like a zine spread with tilted, staggered cards.
+    corners: Square cards and buttons. Round only for ink blobs, halftone dots and number discs.
+    borders: 2px deep outline on cards with a pink duplicate offset 5px right and 4px down, dotted 2px rules between rows and a torn zigzag strip under the header.
+    shadows: No blur. Hard pink offsets of 5px by 4px behind buttons, as a second ink layer. A fractal noise grain covers the whole page at 22 percent opacity, multiplied.
+    icons:
+        Printed glyphs only. Arrows as list marks, a filled dot for
+        included, a cross for not included, an empty and a filled circle on
+        the billing switch and a star on the sticker.
+    focus: A 3px deep outline offset 3px with a pink offset halo. A focused field gains a pink offset shadow and a blue border.
+    tone: Plain and a little handmade, such as Printed in two inks and plan by plan.

@@ -1,0 +1,53 @@
+export anchor FamilyBrightStyle:
+    number: 383
+    screen: SmartHome
+    name: Family bright
+    idea: A home screen the whole family can use, big candy bright room tiles with thick friendly icons and dark ink on a deep slate page, every touch target at least 64px and every state spelled out in plain words.
+    base: dark
+    palette:
+        page: #15182b, deep slate page
+        card: #20243d, energy and scene cards
+        card2: #2a2f4d, number chips, scene buttons, fields
+        line: #3a4068, 3px card borders
+        ink: #f6f5ff, text on dark
+        mute: #b9bcd9, helper text
+        dark: #17142b, text and badges on bright tiles, primary button
+        sun: #ffd34d, living room tile, peak bars, sheet heads
+        sky: #6fd0ff, kitchen tile, day bars, focus halo
+        berry: #ff7fa8, bedroom tile
+        lime: #9ef07a, front door tile and battery
+        grape: #c6a2ff, garden tile
+        tang: #ff9d4d, the alert card
+    type:
+        A heavy rounded stack, ui-rounded, SF Pro Rounded, Nunito,
+        Quicksand, Varela Round, Arial Rounded MT Bold. Base 17px at 600.
+        The greeting and tile figures 34px at 900, card titles 24px at 900,
+        room names 21px at 900, badges 14px at 800, button text 19px at 800.
+    layout:
+        A deep slate page. A greeting row has a 64px yellow rounded square
+        with B, Hi, family and the home name, day and time. A full width
+        tangerine alert card with a 6px darker ledge holds a 64px dark
+        circle with a garage icon, The garage door is open in heavy type
+        over It has been open for 2 hours, and a dark pill Close now 64px
+        tall. Five candy bright room tiles follow in one row, yellow living
+        room, sky kitchen, berry bedroom, lime front door and grape garden,
+        each with dark ink, a 64px round well with a thick icon, the name, a
+        big temperature where there is one, a dark pill badge with its own
+        icon and word such as Lights on, Lights off, Bedtime heat, Locked
+        and Motion, and a friendly sentence. Below, an Energy today card
+        shows a big battery drawing 64 percent full in lime, number chips
+        for used, sun and battery, and chunky rounded bars, yellow for the
+        evening peak. A Scenes card has four 96px tall buttons with coloured
+        round icon wells and a hint line, Movie turned white with On now and
+        a star. Below 1100px tiles go three across and the cards stack, and
+        at phone width tiles go two across with the living room full width.
+    spacing: An 8px unit. 16px tile gaps, 18 to 24px padding and a 64px minimum touch size.
+    density: Low. Five big tiles, then energy and four big scene buttons.
+    corners: 28px tiles and cards, 24px scene buttons, 20px fields, full pills for buttons and badges.
+    borders: Bright tiles have none. Dark cards use a 3px #3a4068 border.
+    shadows: A solid 6px drop ledge under tiles and the alert, like a toy block.
+    icons:
+        Thick 2.6 stroke rounded icons at 24 to 36px in round wells. Each
+        state badge has its own icon and a plain word.
+    focus: A 4px white outline offset 4px plus a 10px sky halo.
+    tone: Warm and plain, like talking to kids, such as Hi, family, Locked tight and Something moved out there.

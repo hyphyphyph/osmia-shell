@@ -1,0 +1,60 @@
+export anchor ScorecardStyle:
+    number: 209
+    screen: ProjectsDashboard
+    name: Scorecard
+    idea: A board report you can work from, where every figure sits on a ruled row beside its target, drawn as a bullet chart with a red target tick, so the page answers whether the team is meeting its numbers.
+    base: light
+    palette:
+        page: #f6f6f3, the page behind the report
+        paper: #ffffff, the top bar, tables and the style sheet
+        inkNavy: #14213d, text, actual bars, the primary button and heavy rules
+        sub: #4a5468, notes, column heads and dates
+        rule: #d5d6d0, row rules and field borders, never text
+        bandPoor: #c5cad3, the poor range of a bullet and last week bars
+        bandFair: #dadde3, the fair range of a bullet and initials squares
+        bandGood: #eceef1, the good range of a bullet
+        targetRed: #b42318, target ticks, the Missed result and the overdue line
+        metGreen: #166534, the Met result and positive variance
+        nearAmber: #8a4b00, the Near result
+        focusBlue: #1d4ed8, the focus outline
+    type:
+        One stack, Helvetica Neue, Helvetica, Arial, Liberation Sans,
+        sans-serif, with tabular figures everywhere. The greeting is 30px
+        bold tracked tight, actual figures 26px bold, body 15px, section
+        labels 13px bold caps tracked 0.1em and column heads 12px bold caps
+        in the sub colour.
+    layout:
+        A white top bar edged by a 2px navy rule holds a small square
+        brand mark and Brightwork, a horizontal text nav whose current item
+        has a 3px navy underline, then a square search field, a navy New
+        project button, a square bell with a red dot and Mara Okafor with
+        initials. Under it a 1216px column opens with a caps eyebrow giving
+        Weekly scorecard and the date, the greeting, a red square with 4
+        tasks are overdue, and a legend for actual bar, target tick and
+        ranges on the right. The first section is a scorecard table with
+        the columns Measure, Actual, Target, Against target, Variance and
+        Result. Its five rows are tasks completed this week 73 against 59
+        or more, overdue tasks 4 against 0, hours logged 186 against a 200
+        hour target, tasks due this week 23 against 73 or fewer, and
+        projects on track 4 against 6, each with a full width bullet chart
+        of grey ranges, a navy actual bar and a red target tick. The second
+        table lists the six projects with status, a percent bullet with the
+        target tick at 100 percent, tasks, due date, days left and tasks
+        needed per day. Last comes a two to one row with a grey and navy
+        daily column chart crossed by a dashed red line at last week's
+        average of 8.4 a day, beside a ruled activity list with initials
+        squares and times. Below 860px the nav becomes a scrolling row and
+        the search hides. Below 700px each table row becomes a stacked
+        block with small labels before each figure.
+    spacing: An 8px unit. Rows have 14px padding, sections sit 40px apart, a 24px gutter and 16px on phones.
+    density: Medium. One measure per row with actual, target, chart, variance and result side by side.
+    corners: Square everywhere, including buttons, fields, initials and status marks.
+    borders: 1px warm grey rules between rows. A 2px navy rule under the top bar and under every section label.
+    shadows: None.
+    icons:
+        Thin square capped line icons at text size. Results and statuses
+        use filled shapes, a circle for Met and On track, a triangle for
+        Near and At risk, and a square for Missed and Behind, always with
+        the word.
+    focus: A 2px focus blue outline offset 2px. A focused row gets a pale blue fill.
+    tone: Plain and numerate like a finance pack, such as Team measures this week and Needed per day.

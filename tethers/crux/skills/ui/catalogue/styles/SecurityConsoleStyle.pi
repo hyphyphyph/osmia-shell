@@ -1,0 +1,53 @@
+export anchor SecurityConsoleStyle:
+    number: 378
+    screen: SmartHome
+    name: Security console
+    idea: The home seen as a monitoring desk, a 2 by 2 camera wall with burned in captions leads, an armed status strip runs across the top, and a time stamped event log and zone list carry the rest in dense monospace.
+    base: dark
+    palette:
+        page: #08090b, page, camera wall gutter is pure black
+        panel: #111317, panels and swatch cells
+        panel2: #171a1f, buttons, mode keys, rows
+        line: #262a31, every panel border and row rule
+        ink: #e6e8eb, text and peak bars
+        mute: #9aa1ab, times, labels, low bars
+        armed: #5ee0d0, armed strip, active scene, focus and sheet heads
+        onArmed: #04201d, text on armed
+        alarm: #ff6b6b, REC, open garage outline, primary button
+        alarmBg: #2a1012, alert row in the log
+        motion: #ffc857, motion box and tags
+        ok: #8be08b, locked tags
+    type:
+        Monospace for data, ui-monospace, SF Mono, JetBrains Mono, Cascadia
+        Mono, Menlo, base 13px at 1.45. The armed word is system-ui 20 to
+        22px at 800 with 0.16em tracking. Panel heads system-ui 12px at 700
+        caps 0.14em, state tags 12px mono bold caps, the clock 22px at 600.
+    layout:
+        A near black monitoring desk with 12px gutters. A top strip holds
+        the brand with a camera icon, a wide teal armed banner with a
+        shield, ARMED and Perimeter, 4 cameras online, 1 alert, and a clock
+        box. The main area is a 2 by 2 camera wall on black with 4px gaps.
+        Each feed is a simple line drawn scene with a black caption band on
+        top naming CAM 01 to 04 and a red REC dot with the word, and a
+        bottom band with the state. The front door feed shows LOCKED with a
+        lock, the garden feed a dashed yellow motion box around a figure
+        with MOTION, the garage feed a 3px red outline, the open door, OPEN
+        2H and a red Close now, and the living room three lit lamps with the
+        room facts. A 360px side column stacks an Event log of time stamped
+        rows with icons, the open garage row on a dark red ground, and a
+        Zones table with temperature and state. Below sit a Power panel with
+        three figures and a bar strip, and a Scene panel of four joined mode
+        keys with Movie filled teal and a square mark. Below 1040px the side
+        column drops under the wall, and at phone width feeds stack one per
+        row.
+    spacing: 4px inside the camera wall, 12px between panels, 8 by 12px rows.
+    density: Very high. Four feeds, a log, a zone table, power and modes on one screen.
+    corners: Square, with 2px on buttons and fields only.
+    borders: 1px #262a31 on every panel and row. Feeds use 2 to 3px inset outlines for motion and alarm.
+    shadows: None. Captions sit on 72 to 78 percent black bands.
+    icons:
+        Line icons at 2px stroke, 16px. A lock for locked, a walking figure
+        for motion, a triangle for open, a shield for armed and a film frame
+        for the scene.
+    focus: A 2px teal outline offset 2px.
+    tone: Operator shorthand in caps, such as CAM 03, OPEN 2H, REC and Event log.

@@ -1,0 +1,57 @@
+export anchor YogaDuskStyle:
+    number: 388
+    screen: FitnessTracker
+    name: Yoga dusk
+    idea: A calm single column under a dusk sky, where the three rings become one slowly breathing circle, every figure is told in a soft sentence, and weeks and plans are strung as beads.
+    base: dark
+    palette:
+        skyHigh: #16132e, the top of the dusk gradient
+        skyMid: #2b1f47, the middle of the gradient and the page fallback
+        skyLow: #45284f, the warm horizon lower down
+        glass: #1a1530, cards at 72 percent over the sky and empty beads
+        track: #3a2f55, unfilled ring tracks
+        line: #5b4a72, hairlines, the bead string and field borders
+        ink: #fbf1ee, text and figures
+        muted: #d9c7d6, labels and gentle meta
+        peach: #ffb7a1, the move ring, today, highlights in prose, the current bead and the primary button
+        sage: #b5dfc0, the exercise ring and zone 2
+        lilac: #cbbcff, the stand ring, zone 1 and done beads
+        onPeach: #2a1420, text on peach and on zone pebbles
+    type:
+        Headings and figures use Iowan Old Style, Palatino Linotype,
+        Palatino, Book Antiqua, Georgia at 400, the greeting 40px, the ring
+        centre 44px, card titles 26px, prose 19px at 1.6. Text uses Optima,
+        Candara, Segoe UI, Gill Sans, system-ui at 16px and 1.65. The date
+        and nav are lowercase, the date 13px tracked 0.12em.
+    layout:
+        A 760px centred column on a vertical gradient from deep indigo
+        through plum to a warm horizon. A small header has brightwork move
+        in italic serif and lowercase today, week and plan pills. The date
+        and the greeting A gentle close to the day sit centred. Then a 380px
+        breathing circle with three concentric ring arcs on soft tracks,
+        peach outside, sage, lilac inside, a faint halo that slowly grows
+        and settles, and 81% of your move goal with breathe with the halo in
+        the centre. A three part legend gives a circle, diamond or rounded
+        square, the ring name, value over goal and the amount more. Below,
+        rounded glass cards. An evening run card tells the run in one serif
+        sentence with peach figures, four soft figure tiles, a row of pill
+        pebbles sized by zone minutes with zone numbers, and a lowercase
+        zone list. A This week card shows seven glowing moons sized by
+        distance with the figure and day, rest days as small dashed hollow
+        moons with rest, and today named today. Then Sleep and Half marathon
+        side by side, sleep as 7 h 12 min with a sentence on deep sleep, the
+        plan as week 6 of 12 with twelve beads on a string, five lilac, the
+        sixth larger and peach, and a line about tomorrow's long run of 14
+        km. Below 680px the pair stacks and figure tiles go two by two.
+    spacing: An 8px unit, generous. 28px between cards, 28 to 32px card padding, a 760px column.
+    density: Low. One thing at a time down a single column.
+    corners: 28px cards, pills for buttons, fields, nav and zone pebbles, round beads and moons.
+    borders: Almost none. A faint lilac edge on cards and hairlines in the style sheet.
+    shadows: Soft 50px dusk shadows under cards and warm glows around moons and the current bead.
+    icons:
+        Ring legend shapes, a circle for move, a diamond for exercise and a
+        rounded square for stand. Rest days are dashed hollow moons with the
+        word rest. A slow halo paces breathing and stops when reduced motion
+        is asked for.
+    focus: A 2px light outline offset 4px with a wide soft peach glow.
+    tone: Lowercase and gentle, such as A gentle close to the day, breathe with the halo and a long run of 14 km.

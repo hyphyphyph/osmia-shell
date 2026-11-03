@@ -1,0 +1,59 @@
+export anchor InkHeaderBandStyle:
+    number: 199
+    screen: ProjectsDashboard
+    name: Ink header band
+    idea: A strong ink-navy header band carries the navigation, the greeting and the four headline figures, and a quiet light body below holds the work.
+    base: light
+    palette:
+        ink: #142030, the header band and the primary button
+        inkRaised: #1d2b3e, the search field on the band
+        inkLine: #3a4d66, rules and outlines on the band
+        onInk: #ffffff, headings, figures and the current nav on the band
+        onInkMuted: #b9c5d4, labels, the date and idle nav on the band
+        coral: #ffab99, the overdue line and overdue figure on the band
+        page: #f4f5f7, the light body
+        surface: #ffffff, panels and the style sheet
+        line: #dce1e7, panel borders and row rules
+        text: #17202b, body text
+        muted: #535e6d, meta and table headings
+        blue: #1f5bbf, links, progress fills, this week bars and focus
+        lastWeek: #7f8a9b, last week bars
+        ok: #1a6f3f, On track with a check circle
+        risk: #8a5000, At risk with a triangle
+        behind: #b0261c, Behind with a crossed square
+    type:
+        One stack, system-ui, -apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial, sans-serif. The greeting is 40px bold at minus 0.02em
+        on the band, band figures 44px at 650 with tabular numbers, panel
+        titles 16px bold, row names 15px at 650, body 15px at 1.5, table
+        headings 12px caps at 0.06em and meta 13px.
+    layout:
+        A full width ink band runs across the top. Its first row, under a
+        thin rule, holds a white square B mark with the brand, six nav links
+        with Home underlined in white, a dark search field, a white New
+        project button, an outlined bell and the initials disc with Mara
+        Okafor. Below sit the date, a large white greeting and a coral line
+        with a clock saying 4 tasks are overdue plus a Review overdue tasks
+        link, with a small right aligned note of 78 of 170 tasks done. The
+        band ends with four figures in a row split by vertical rules, each a
+        small label, a big number and a note, the overdue one coral with a
+        clock. The light body below is a two column grid. The wide left
+        column is a white bordered panel with a five column projects table
+        of name and team, a thin progress bar with percent, tasks, due date
+        with days left and status. The narrow right column stacks a chart
+        panel with three totals over grouped bars, last week and this week
+        side by side for each weekday, and an activity panel of rows with
+        initials discs. Below 1000px the nav drops to its own row and the
+        body stacks. On phones the figures become a two by two grid and
+        table rows turn into stacked cards.
+    spacing: An 8px unit. 32px gutters, 24px between panels, 20px panel padding and 40px above the greeting.
+    density: Medium. The band is spacious and the body is a compact six row table.
+    corners: 6px on panels, buttons and fields, 3px bars, round avatars.
+    borders: 1px #dce1e7 around panels and between rows. 1px #3a4d66 rules on the band.
+    shadows: None. Depth comes only from the dark band over the light body.
+    icons:
+        Line icons at 1.8 stroke sized to the text. Status words in colour
+        with a check circle, a triangle or a crossed square, and a clock
+        for overdue.
+    focus: A 2px blue outline offset 2px in the body and a 2px white outline on the band.
+    tone: Plain and direct, such as Projects, 4 tasks are overdue and Review overdue tasks.

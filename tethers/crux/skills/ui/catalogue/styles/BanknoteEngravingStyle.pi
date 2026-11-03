@@ -1,0 +1,60 @@
+export anchor BanknoteEngravingStyle:
+    number: 373
+    screen: FinanceBudget
+    name: Banknote engraving
+    idea: The overview printed as a dark green banknote, with the everyday balance as its denomination, an engraved oval frame holding a fern emblem, a guilloche rosette ringed by the savings goal, fine line etched meters and double rules throughout.
+    base: dark
+    palette:
+        deepGreen: #08150f, the page and the style sheet
+        note: #0f2419, the banknote, mini notes, panels and fields
+        noteTwo: #163223, inside the oval frame
+        line: #2f5a43, double frames, rules, guilloche back lines and dotted dividers
+        engraving: #7fbf98, etched meter lines, the emblem, medallions, remaining status and money in
+        ink: #e4f0e1, text and figures
+        muted: #a9c6b0, labels, italics and dates
+        ochre: #d9bd7c, denomination corners, headings, the goal ring, the primary button and focus
+        rust: #f0a58c, the serial line, the owed balance and the exceeded meter and status
+        onOchre: #1d1606, text on the ochre button
+    type:
+        Baskerville, Baskerville Old Face, Hoefler Text, Libre Baskerville,
+        Garamond, Times New Roman. Base 16px at 1.55. The denomination is 64px
+        at 400 with a 32px ochre euro sign. The note title is 20px caps tracked
+        .2em in ochre, section heads 15px caps tracked .3em in ochre with a
+        double rule running to the right, body 16px and status 14px italic. The
+        serial line is 13px ui-monospace tracked .2em in rust.
+    layout:
+        A 1180px page. The header has Brightwork Money in widely tracked caps,
+        an italic line for Mara Okafor, October, in euros, and caps nav with
+        Overview underlined in ochre. The main element is one wide banknote, a
+        thin green border with wavy guilloche bands top and bottom, a 6px double
+        inner frame and 2,184 in ochre in two corners. Inside are three parts.
+        An engraved oval frame of six fine rings around a hatched oval holding a
+        fern leaf. The denomination block with Everyday account, Balance this
+        October, the large figure, the serial line MO, 31 OCT, EUR, and Held for
+        Mara Okafor in italic. A guilloche rosette of two spirograph curves
+        ringed by an ochre arc to 64 percent, with Japan trip above and 3,200 of
+        5,000 saved and the target date below. Two mini notes follow, each with
+        a spirograph medallion, Savings with Held in reserve and Credit card in
+        rust with a clock. Then October series lists each category with an
+        etched meter of fine horizontal green lines, spent of limit and an
+        italic status, Eating out switching to vertical rust lines. Register
+        lists the movements. Below 1000px the rosette drops under, below 640px
+        the note stacks centred.
+    spacing:
+        An 8px unit. 28px between the note, mini notes and panels, 24 to 28px
+        inside frames.
+    density: Medium. One ornate note, two mini notes, five series lines and five register lines.
+    corners: None. Ovals and rosettes are the only curves.
+    borders:
+        Layered. A thin engraving border, a 6px double inner frame, wavy
+        guilloche bands, double rules beside headings and dotted dividers.
+    shadows: None. Depth comes from fine line work.
+    icons:
+        Engraving as ornament, spirograph medallions and a fern in an oval
+        frame. Status uses an outline circle check, ruled square or triangle
+        beside italic words, and the exceeded meter turns from horizontal green
+        lines to vertical rust lines.
+    focus: A 2px ochre outline offset 3px with a fine green outer ring.
+    tone:
+        Formal issuing language, such as Balance this October, October series,
+        Fully issued, Exceeded by 62 and Register.

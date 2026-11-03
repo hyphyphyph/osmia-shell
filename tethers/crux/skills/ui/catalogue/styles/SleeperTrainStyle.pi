@@ -1,0 +1,53 @@
+export anchor SleeperTrainStyle:
+    number: 416
+    screen: TravelPlanner
+    name: Sleeper train
+    idea: A night train compartment, walnut panelling and brass trim around a rounded window that holds the route as lit towns along a railway, a printed timetable card with dotted leaders for the itinerary, and small punched ticket cards on a brass rack.
+    base: dark
+    palette:
+        night: #120c08, the page edge and the style sheet
+        walnut: #2a1a10, the panelled compartment wall with a faint vertical grain
+        card: #1e1510, the timetable card, ticket cards and list rows
+        line: #4a3424, row rules, double rules and card edges
+        brass: #d9b26a, the window frame, rack, corner clips, dates and the primary button
+        onBrass: #22160a, text on brass
+        cream: #f3e6cc, text and town names
+        muted: #c4b08f, italic captions and details
+        lamp: #ffd98a, lit towns and focus
+        booked: #9fd99a, Booked and punched rows
+        unbooked: #f2a27a, Not booked and To do
+    type:
+        Iowan Old Style, Palatino Linotype, Palatino, Georgia. Base 16px at
+        1.5. The timetable title 38px at 400, card titles 22px, stops 18px
+        at 600, details 15px italic, labels 15px small caps tracked 0.18em
+        in brass, dates with old style tabular numbers.
+    layout:
+        The whole screen sits on a walnut wall with a faint vertical grain.
+        A pill brass edged plate runs across the top with a ringed B crest
+        and Brightwork Trips in small caps, and Night service with the dates
+        in italic on the right. Below, two columns. On the left a rounded
+        window in a thick brass frame shows a night view, stars, a crescent
+        moon, dark hills and a brass railway linking three lit towns
+        labelled Tokyo, Kyoto and Osaka, with an italic caption under it.
+        Under the window a card holds the conductor's weather note, a 52px
+        17 degrees beside the text and a pink blossom line. On the right the
+        timetable card has brass corner clips. It reads Timetable for over
+        Japan in April and the party in italic, then six rows each with the
+        date in brass, the stop in bold with a dotted leader, the detail in
+        italic below and a small caps status at the right. Two buttons close
+        the card. A rounded brass rack bar spans the width, and under it two
+        ticket cards. Ticket checks shows each item with a punched round
+        hole when done or a dashed square when not. Fare purse shows euro
+        3,200 saved of 5,000 with a brass rail and a cream marker at 64
+        percent. Below 960px all columns stack.
+    spacing: An 8px unit. 28px between window and timetable, 24px between ticket cards and 12px timetable rows.
+    density: Medium. A full timetable of six rows beside one large window.
+    corners: A 36px brass window frame round a 26px glass, a 40px pill plate, 6px cards and 4px buttons.
+    borders: 1px dark wood edges, double rules under headings, dotted leaders from stop to detail and brass corner clips on the timetable.
+    shadows: Warm deep drops under the window, the cards and the brass rack.
+    icons:
+        Thin 1.5 stroke icons. Booked is a check circle, Not booked a dashed
+        circle and Flight a plane. A done check is a punched round hole and
+        a To do check a dashed square.
+    focus: A 2px lamp yellow outline offset 3px with a faint warm halo.
+    tone: Old railway courtesy such as Timetable for, Ticket checks, Fare purse and Conductor's weather note.

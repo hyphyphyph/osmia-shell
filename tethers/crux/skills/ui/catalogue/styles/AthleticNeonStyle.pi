@@ -1,0 +1,57 @@
+export anchor AthleticNeonStyle:
+    number: 384
+    screen: FitnessTracker
+    name: Athletic neon
+    idea: A sports poster in volt yellow on black, where the screen is built from slanted panels and every figure is a heavy italic number, so today reads like a race result.
+    base: dark
+    palette:
+        black: #0b0b0a, the page and the style sheet
+        panel: #161614, cards and the stats block
+        panel2: #20201c, empty tracks, fields and the next session strip
+        line: #3a3a33, rules between rows and track outlines
+        ink: #f6f6ef, text, week bars, done plan weeks and the secondary button
+        muted: #b0b0a2, labels and units
+        volt: #d4ff1a, the run hero, ring fill, top zone, today, current plan week, primary button and focus
+        onVolt: #0b0b0a, text on volt and on ink
+        voltDim: #7d9410, outlines of the quieter zone bars
+        rest: #8a8a7e, the Rest word and dash on empty days
+    type:
+        Figures and headings use Impact, Haettenschweiler, Franklin Gothic
+        Heavy, Arial Black, always italic at 900. Text uses Helvetica Neue,
+        Arial, system-ui at 15px and 1.45. The run distance is 176px, run
+        stats 56px, card titles 26px caps, chart figures 26 to 30px, labels
+        12px caps at 800 tracked 0.14em.
+    layout:
+        A black top bar with a volt slanted BW tile and Move, three slanted
+        tabs with Today filled white, and the date in italic caps on the
+        right, ruled below in volt. A full width hero has an 8px volt left
+        edge. Its left part is a volt panel cut on a slant holding a black
+        Done tag with a check, Today 42 min, Evening run and 8.2 km at
+        176px. Its right part lists Time 42 min 16 s, Avg pace 5 min 9 s per
+        km and Avg heart rate 152 bpm as big italic figures over rules.
+        Below, a twelve column grid. Rings takes seven columns with three
+        rows, each a caps label, a slanted volt track with a white end tick
+        at the goal, and the value over the goal with an open square and the
+        amount to go. Heart zones takes five columns as slanted columns with
+        minutes on top, zone 3 solid volt and the rest outlined, Z numbers
+        and names below and a note on the top zone. This week takes seven
+        columns as slanted white columns with today in volt, rest days as a
+        grey dash and the word Rest, day names and dates below and the total
+        of 23.7 km in the title. A right column stacks Sleep with 7 h 12 m
+        in big italic, a slanted deep sleep bar at 22 percent and a key,
+        then the Half marathon plan with Week 6 of 12 in volt, twelve
+        slanted segments with five white, one volt and six empty, and a next
+        strip reading Long run 14 km tomorrow with View plan. Below 980px
+        everything stacks and the hero panel loses its slant. At 375px the
+        distance drops to 120px and ring tracks move under their labels.
+    spacing: An 8px unit. 16px gaps between panels, 24px card padding, a 32px page gutter.
+    density: Medium low. One giant result, then five panels with a single chart each.
+    corners: None. Bars, tags, tracks, swatches and segments are skewed ten degrees instead.
+    borders: An 8px volt bar on the hero edge, a short volt slash on top of each card and 2px rules between rows.
+    shadows: None. Flat black panels.
+    icons:
+        Very few. A square check in the Done tag, an open square for rings
+        still to close, and a grey dash with Rest for empty days. Today is
+        named Today.
+    focus: A 3px volt outline offset 3px, a black gap and a 2px white ring outside it. Slanted buttons drop their slant when focused.
+    tone: Short caps labels such as Done, To go, Rest, This week and Long run 14 km.

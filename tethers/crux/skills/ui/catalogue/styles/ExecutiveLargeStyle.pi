@@ -1,0 +1,53 @@
+export anchor ExecutiveLargeStyle:
+    number: 206
+    screen: ProjectsDashboard
+    name: Executive large
+    idea: A dashboard built for a thirty second read by a manager, with 18px text, huge numbers, one idea per row and lots of air.
+    base: light
+    palette:
+        linen: #f6f5f2, the page background and resting rows
+        white: #ffffff, cards, the top bar and the style sheet
+        ink: #1a1d1c, text and big numbers
+        slate: #555b59, labels and secondary lines
+        forest: #0d5c4a, the primary button, links, progress, focus and this week bars
+        sage: #e3efeb, the current nav pill, activity avatars and a focused row
+        lichen: #b5c9c3, last week bars, never text
+        green: #1b6b3f, On track on #e6f2ea with a circle and check
+        amber: #8a4f00, At risk on #fbf0dd with a triangle and bang
+        red: #ab2328, Behind and the overdue callout on #fcecea with an octagon and bar
+    type:
+        One stack, Inter, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial, sans-serif. Base text is 18px at 1.55. The greeting is 56px
+        at weight 750 tracked minus 0.025em, the overdue number 64px extra
+        bold, KPI values 52px, project percents 44px, section titles 32px
+        bold, card titles 24px bold and labels 17px in slate.
+    layout:
+        A white top bar holds the brand with a rounded forest tile, the six
+        nav links as soft pills with Home filled sage, and on the right a
+        pill New project button, a round bell and a round dark avatar.
+        Under it a full width rounded search bar with a soft shadow. The
+        hero row has the date and name above a 56px greeting on the left
+        and a red tinted callout on the right with a huge 4 and the words
+        tasks are overdue. Next, four tall white KPI tiles in one row.
+        Then a section titled Where projects stand with the status counts
+        on the right, and six project cards in a three by two grid, each
+        with a status pill, a 24px name, the team, a 44px percent with the
+        task count, a thick round progress bar and the due date with days
+        left. Then a wide chart card with the week totals large on the
+        left, 73 with Up 14 on last week over a smaller 59, and on the
+        right fourteen rounded bars in two groups with each value printed
+        on top. Last, Recent activity as a two column list with initials
+        in sage circles. Below 1000px nav moves under the brand and grids
+        go two wide. On phones everything is one column with KPIs two by
+        two.
+    spacing: An 8px unit in large steps. 24px gaps, 28px card padding and 64px between sections.
+    density: Low. Six project cards and no table. The dashboard fits in about two screens.
+    corners: 20px cards, 14 to 16px fields and rows, full pills for buttons, nav and chips.
+    borders: Almost none. Hairlines only under the top bar and between activity rows.
+    shadows: One soft lift on cards and the search bar, 0 8px 24px at 7 percent ink.
+    icons:
+        24px outline icons at 1.75px stroke. Status pills carry a filled
+        circle with a white check, a filled triangle with a white bang, or
+        a filled octagon with a white bar, plus the word.
+    focus: A 3px forest outline offset 3px on every control, fields and rows included.
+    tone: Plain sentences a manager would say aloud, such as Where projects stand and Up 14 on last week.

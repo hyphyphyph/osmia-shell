@@ -1,0 +1,56 @@
+export anchor ChartGridStyle:
+    number: 210
+    screen: ProjectsDashboard
+    name: Chart grid
+    idea: Four equal chart cards answer the week at a glance, with tasks per day, status, completion per project and hours, framed by an icon rail on the left and a running activity column on the right.
+    base: light
+    palette:
+        mist: #eef1f4, the page and inset panels
+        white: #ffffff, cards, the rail and the activity column
+        ink: #1c2733, text and figures
+        slate: #52606d, labels, axes and times
+        line: #dde3e9, dividers and gridlines, never text
+        teal: #0f766e, the primary button, this week bars, On track and the focus ring
+        tealLight: #9fd8cf, last week bars, never text
+        tealTint: #e3f4f1, the current rail item and a focused row
+        track: #e6eaee, the empty part of bars and the gauge
+        amber: #b7791f, the At risk slice, never text
+        amberText: #8a5300, the At risk label
+        red: #c53030, the Behind slice
+        redText: #b42318, the Behind label, the overdue figure and the badge
+    type:
+        One stack, system-ui, Segoe UI, Roboto, Ubuntu, Helvetica Neue,
+        Arial. The gauge figure is 34px bold, KPI figures 24px bold, the
+        greeting 22px bold, card titles 15px bold, body 14px and meta and
+        axis text 12px in slate.
+    layout:
+        A 76px white icon rail on the left holds a teal rounded square
+        logo and six nav items stacked, each a 22px line icon with an 11px
+        label beneath, Home on a teal tint. A 300px white activity column
+        runs down the right as a vertical timeline of round initials with
+        a thin connecting line. The centre starts with a row of the
+        greeting Hello Mara, here is your week in charts with the date and
+        a red square with 4 tasks are overdue, then a pill search, a teal
+        pill New project button, a round bell with a red count badge and a
+        round avatar. One white card splits into four KPI cells by thin
+        dividers. Then a two by two grid of equal cards holds a column
+        chart of tasks per day in light and dark teal, a status donut whose
+        slices carry white circle, triangle and square marks beside a list
+        of counts, horizontal bars of done against total tasks per project
+        scaled by project size, and a half circle gauge of 186 hours
+        against a 200 hour target tick. A full width card below lists the
+        projects in a compact table with mini bars. Below 1180px the
+        activity column drops under the centre. Below 860px the charts go
+        to one column and the KPIs to two by two. Below 640px the rail
+        becomes a fixed bottom tab bar.
+    spacing: An 8px base with 20px gaps between cards and 28px page padding.
+    density: Medium. Four equal chart cards carry the page, figures share one strip.
+    corners: 16px cards, 12px rail items and swatches, 10px fields, pill buttons and search.
+    borders: Almost none. A 1px line splits the rail, the activity column and the KPI cells.
+    shadows: A soft two layer card shadow, 1px tight plus 6px 20px diffuse.
+    icons:
+        Rounded 1.8px line icons at 22px in the rail with labels below.
+        Status shapes are a filled circle, triangle and rounded square,
+        also printed in white on the donut slices.
+    focus: A 2px white gap then a 2px teal ring.
+    tone: Friendly and brief, such as Hello Mara, here is your week in charts.

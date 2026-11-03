@@ -1,0 +1,47 @@
+export anchor ConstructivistStyle:
+    number: 50
+    screen: Pricing
+    name: Constructivist
+    idea: An avant-garde propaganda poster in red, black and cream, where tilted slabs, heavy condensed capitals and solid arrows drive the eye from plan to button.
+    base: light
+    palette:
+        cream: #f2e8d5, the page ground
+        paper: #faf4e6, plan slabs, question boxes and the style sheet
+        red: #b3121b, the hero slab, plan heads, the primary button, arrows and the badge
+        black: #141414, text, frames, the top bar, the featured plan, the table band and focus
+        umber: #6b5e4e, secondary labels on cream
+        stone: #d8ccb4, large ghost numerals and the caption on black
+        oxide: #2a1416, the Team column in the black table
+    type:
+        Display is Impact, Haettenschweiler, Franklin Gothic Condensed,
+        Oswald, Barlow Condensed, Arial Narrow, DejaVu Sans Condensed,
+        sans-serif, bold and always uppercase. Text is Franklin Gothic
+        Medium, Arial Narrow, Arial, sans-serif at semibold. The title is up
+        to 210px on a 0.9 line, prices are 112px, plan names 52px, section
+        titles 72px, controls 24 to 26px and body 17px.
+    layout:
+        A black top bar with a red square logo and the current nav item on
+        a red block. The hero is a full width red slab rotated minus 6
+        degrees that carries the title, half cream and half black, crossed
+        by a black disc and a thin black diagonal bar, with a short boxed
+        line below at the right. A square billing switch is followed by a
+        bar arrow pointing to a tilted red 2 months free tag. Three plan
+        slabs sit edge to edge with 4px black frames, each stepped 48px
+        lower than the last. Each has a head cut on a diagonal, a huge
+        price, triangle bullets and a ghost numeral. The comparison sits on
+        a black band whose top edge is cut on a slant, and the questions
+        sit beside a big red title rotated to read upward. Below 900px the
+        plans stack with small sideways offsets and the title stops
+        rotating.
+    spacing: An 8px unit. 20px inside slabs and 40 to 72px between blocks.
+    density: Loud and medium. Few words, huge figures and short bold lists.
+    corners: Square, except one black disc. Plan heads and swatches are cut on a diagonal.
+    borders: 4px solid black on every box, 2px rules between list items and rows, and 6px red under the table head.
+    shadows: Only a hard 6px black offset block behind the primary button, cream on the black plan. No blur.
+    icons:
+        Solid geometric shapes. Bar and triangle arrows on buttons,
+        triangles as list bullets and included marks, a flat bar for not
+        included, a star on the badge and a triangle on the chosen billing
+        option.
+    focus: A 4px black outline offset 3px with a cream gap. A focused field turns its frame red and gains a 16px left slab.
+    tone: Short commands in capitals, such as Pick one and Plan against plan.

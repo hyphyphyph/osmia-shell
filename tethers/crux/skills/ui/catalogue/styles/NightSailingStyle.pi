@@ -1,0 +1,53 @@
+export anchor NightSailingStyle:
+    number: 419
+    screen: TravelPlanner
+    name: Night sailing
+    idea: The trip on a marine chart plotter run in red night mode, one hue only, a ruled data bar, a chart with crosshair waypoints and a dashed planned route, a waypoint table and physical softkeys on the case, with states told by filled or hollow shapes.
+    base: dark
+    palette:
+        cockpit: #0a0303, the page and the style sheet
+        case: #1a1312, the plotter housing and softkeys
+        screen: #120505, the display ground and the sea
+        land: #240a08, land on the chart and the title bar
+        line: #5a1f1a, every rule and cell divider
+        red: #ff5c4d, the route, waypoint numbers, headings, Not booked and the primary button
+        ink: #ffc9c0, text, waypoint crosshairs, Booked and focus
+        muted: #d98477, labels, captions and Flight rows
+        onRed: #1a0000, text on the red button
+    type:
+        One monospace stack, ui-monospace, SFMono-Regular, Menlo, Consolas,
+        Liberation Mono. Base 14px at 1.45, mostly caps. Readouts 20px bold
+        tabular, the title 20px bold tracked 0.14em, chart labels 15px bold,
+        headings 12px bold tracked 0.14em in red, labels 11px tracked 0.12em
+        in muted.
+    layout:
+        A dark cockpit with a faint red glow at the top. The plotter case is
+        a 22px rounded charcoal housing. Inside it the screen sits on the
+        left and a column of four softkeys on the right. The screen opens
+        with a title bar, a lit red dot with BRIGHTWORK TRIPS NIGHT, JAPAN
+        IN APRIL centred and ROUTE PLAN 01 on the right. A data bar of four
+        ruled cells follows, Dates 01 to 14 APR 2027, Crew M OKAFOR plus 1,
+        Fund 3,200 of 5,000 euro with a small red bar and 64 percent, and WX
+        Tokyo 17 degrees HI with blossom likely. The main area splits. The
+        chart on the left shows dark land and sea, depth contours, a grid, a
+        north arrow, and waypoints 02 Tokyo, 04 Kyoto and 05 Osaka as
+        crosshair circles on a solid red route with a dashed inner line and
+        a rail label. A caption line gives the weather in full. On the right
+        a Waypoints table lists WPT, Date, Leg with detail under it, and
+        State. Unbooked rows carry a faint red tint. A ruled row of four pre
+        departure checks closes the screen. Softkeys read BOOK TRAIN 03,
+        FIND STAY 05, VIEW CHECKS and VIEW ROUTE, the first ringed in red.
+        Below 980px the table drops under the chart and below 700px the
+        softkeys become a row of four.
+    spacing: 4px steps. 8 to 12px cell padding, 14px between screen and keys and 18px case padding.
+    density: High. A four cell data bar, a chart, a six row table and four checks on one screen.
+    corners: Square inside the screen. A 22px case and 10px softkeys outside it.
+    borders: 1px dark red rules split every cell, and a 2px black edge round the screen.
+    shadows: A deep inset vignette inside the screen, softkeys on a 3px black ledge.
+    icons:
+        Nautical shapes in one colour. Booked is a filled diamond, Not
+        booked a dashed hollow diamond and Flight an arrowhead. Done is a
+        filled square and To do a hollow square. Waypoints are crosshair
+        circles.
+    focus: A 3px pale red outline offset 2px.
+    tone: Instrument caps and short forms such as WPT, CREW, FUND and PRE DEPARTURE CHECKS.

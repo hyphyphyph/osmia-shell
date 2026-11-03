@@ -1,0 +1,52 @@
+export anchor MoonlitZenStyle:
+    number: 273
+    screen: CloudFiles
+    name: Moonlit zen
+    idea: An ink black garden of few things, where a moon shows how full storage is, raked sand lines separate the files and the selected file rests like a stone in a ringed pebble panel.
+    base: dark
+    palette:
+        inkBlack: #0e0e10, page and style sheet
+        stone: #18181b, the pebble details panel
+        shadowStone: #1f1e22, the unlit moon and the selected row glow
+        sand: #2e2d31, rings and tracks
+        rake: #3a383d, raked lines, outlines and nav dots
+        ink: #e7e3d9, text
+        muted: #a39f96, meta, labels and icons
+        moon: #ece6d4, moon, primary button, selected stone, current dot and upload thread
+        paleGold: #dcc98f, the Starred word and focus
+        nightInk: #1d1806, text on moon
+    type:
+        Light Mincho serif headings in Hiragino Mincho ProN, Yu Mincho,
+        Noto Serif, Source Serif Pro, Georgia, and a light sans for text in
+        Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui. Base 15.5px at
+        weight 300 and 1.7. The title is 48px serif at 300, the details
+        title 24px serif, file names 16.5px sans at 400, meta 13.5px muted
+        and the panel label 13px tracked 0.2em.
+    layout:
+        Wide 64px gutters. A quiet header has Brightwork Drive in widely
+        tracked serif and an underline search. Three columns follow. A
+        180px nav lists the five places with a small ring dot each, filled
+        moon for My files, and below it a 120px moon whose lit part, about
+        two thirds from the right, shows 64.2 GB of 100 GB. The middle has
+        the breadcrumb, the light serif title, a moon pill Upload, an
+        outline pill New folder and a List or Grid text switch marked by a
+        moon dot. Files are unboxed rows of icon, name, status word, a meta
+        line such as modified 27 Oct by Priya Nair, and size, each
+        separated by three raked wavy lines. The selected file sits on a
+        moon coloured stone ringed by two raked circles, with a faint glow.
+        A 340px pebble panel with concentric raked rings in its corner
+        holds Details, a pale preview, the serif name, facts and the three
+        pill buttons. Below 1180px the pebble moves under the files.
+        Below 760px the moon sits beside the nav and all stacks.
+    spacing: An 8px unit used generously. 64px gutters and column gaps, 14px row padding, 56px above the moon.
+    density: Sparse. One line of meta per file and nothing boxed except the pebble.
+    corners: Round and organic. 21px pill buttons, a 48 to 56px pebble and a slightly uneven stone.
+    borders: Almost none. Three raked wavy lines between files and a 1px underline on search and fields.
+    shadows: None. The selected row has a faint radial glow and its icon sits on a moon stone ringed by two raked circles.
+    icons:
+        18px line icons in muted grey, dark on the selected stone. Status
+        words pair a filled star with Starred in pale gold, two heads with
+        Shared with 4 people and an up arrow ring with Uploading 62% over
+        a 2px moon thread.
+    focus: A 1.5px pale gold outline with a 5px offset.
+    tone: Hushed and brief, such as Details and 64.2 GB of 100 GB under the moon.

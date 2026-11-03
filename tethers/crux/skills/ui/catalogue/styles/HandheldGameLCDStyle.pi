@@ -1,0 +1,54 @@
+export anchor HandheldGameLCDStyle:
+    number: 162
+    screen: ProjectsDashboard
+    name: Handheld game LCD
+    idea: A grey handheld game console held sideways, whose four shade pea green screen draws the dashboard as a role playing game, with a menu window, a stats sheet, a dialog box greeting, projects as a party with health bars and the chart built from one block per task.
+    base: light
+    palette:
+        shade0: #d0e09a, screen paper and text on dark bars
+        shade1: #a8c060, selection, highlighted party rows and the focus fill
+        shade2: #4f7a32, inner window lines and last week blocks, never text
+        shade3: #173d17, all screen text, borders, bars and this week blocks
+        shell: #cfcdc6, device plastic, with highlight #e4e2dc and edge #9c9a93
+        frame: #5d6070, the screen surround
+        keys: #3b3d4a, the D-pad and the round A and B buttons
+        print: #2f3140, labels printed on the shell
+        room: #efeee9, the page behind the device
+    type:
+        The screen uses Lucida Console, DejaVu Sans Mono, Monaco, Courier
+        New, monospace in bold caps at 0.04em with smoothing off, 18px
+        dialog, 14px project names, 13px body, 11 to 12px details and 16px
+        stat values. Shell printing uses Futura, Century Gothic, Trebuchet
+        MS, Arial, sans-serif, italic 900 for the Brightwork name and bold
+        10 to 13px tracked caps for button labels.
+    layout:
+        A wide grey shell with a big rounded swoop at the bottom left
+        holds a D-pad with Select and Start pills on the left, the screen
+        in the middle and tilted round B and A buttons over a speaker
+        grille on the right. The dark frame above the screen carries a
+        striped label line and a red battery dot, and Brightwork pocket is
+        printed under it. On the screen a dark top bar holds Find with a
+        field, an A badge New project button and a MSG count. Below, three
+        pixel windows across. The left has a MENU window with a triangle
+        cursor on Home and Player Mara Okafor, then a STATS window with
+        dotted leaders to the four values, overdue inverted. The middle
+        has a dialog box with the greeting, the date and an hourglass
+        overdue line, with a blinking style down arrow, then a PARTY
+        window of six bordered member cards with name, team and due date,
+        a status sprite and word, and a health bar with tasks and percent,
+        the at risk and behind members highlighted. The right has a LOG
+        window with triangle bullets and a TASKS CLEARED window where each
+        day is a stack of blocks, one block per task. Below 1120px the
+        right windows drop under, and below 860px the screen goes to the
+        top with the controls in a row underneath.
+    spacing: Pixel steps of 2, 4, 6 and 10px on the screen. Windows sit 10px apart.
+    density: Busy like a game menu. Three windows across, collapsing to one column.
+    corners: Windows 4px. The shell is 36px with a 90px bottom left swoop. The frame has a 40px bottom right curve.
+    borders: Each window has a 3px shade3 line, a 2px paper gap and a 2px shade2 inner line. Member cards have a 2px shade3 line.
+    shadows: None on screen. The shell has moulded highlights and keys stand on a 4px solid under edge.
+    icons:
+        Eight by eight pixel sprites. A heart means On track, a warning
+        triangle means At risk, a crossed box means Behind, an hourglass
+        marks overdue, and a solid triangle cursor marks the current item.
+    focus: A 3px shade3 outline offset 2px with a shade1 fill.
+    tone: Game speak in caps, such as Player, Party, Stats, Log and Tasks cleared.

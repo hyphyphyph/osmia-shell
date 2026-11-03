@@ -1,0 +1,56 @@
+export anchor PolaroidWallStyle:
+    number: 112
+    screen: ProjectsDashboard
+    name: Polaroid wall
+    idea: The dashboard is a wall of instant photos taped up with washi tape, where captions are written by hand in the white margins and each project photo develops from left to right as its work is done.
+    base: light
+    palette:
+        plasterWall: #f4f2ee, the page, with a fine plaster speckle
+        photoFrame: #ffffff, polaroid frames, the booth strip, fields and the sheet
+        marker: #222222, captions, text and the primary button
+        oakLedge: #dcc39c, the header picture ledge with #2a1f12 text
+        undevelopedFilm: #c9cbc4, the part of a project photo still to do
+        dateStamp: #ff8a2a, the percent and date imprint, always on a dark chip
+        photoTones: #2e4a66, photo areas, with #3d4f3a, #5a3550, #6a4528, #2b3a4a and #8a2a20, white text
+        greenMarker: #1d6b3a, On track
+        amberMarker: #8a5000, At risk
+        redMarker: #b42318, Behind, overdue and the count badge
+        pencil: #5c5650, dates, meta and times
+    type:
+        Three stacks. Captions, nav and headings use Segoe Print, Bradley
+        Hand, Marker Felt, Noteworthy, Chalkboard SE, Comic Sans MS, Comic
+        Neue, cursive. Interface text uses Helvetica Neue, Helvetica, Arial,
+        system-ui. Imprints use ui-monospace, Menlo, Consolas bold in
+        orange. The greeting is 34px hand at 1.15, numbers in photos 52px
+        Helvetica bold, caption titles 24px hand, nav 22px hand, body and
+        meta 14 to 15px.
+    layout:
+        The header is a light oak picture ledge holding a small photo logo,
+        the brand, a white search, a black New project button, a white bell
+        and a tiny tilted polaroid with MO. The nav is handwritten words on
+        the wall, Home marked with a yellow highlighter stroke. The wall is
+        a 12 column grid of tilted polaroids, each a white frame with a deep
+        caption margin and a strip of washi tape on top. The greeting is a
+        large sunset landscape photo with a 26 10 31 date imprint, captioned
+        Morning, Mara!, the date and a red star with 4 tasks are overdue.
+        Four small square shots show the numbers in white on dark tones with
+        handwritten labels. Projects are six 4 by 3 photos three across,
+        where the developed image covers the percent from the left and grey
+        undeveloped film covers the rest, with an orange percent imprint in
+        the corner, then the handwritten name, the meta with the percent,
+        and a marker status. A wide panorama photo holds the chart, pale
+        blue bars for last week and warm yellow for this week on a dusk
+        sky. A photo booth strip titled Who did what pairs six initial shots
+        with the activity text. Below 1000px items go full width, projects
+        two across, below 640px one.
+    spacing: An 8px unit. Frames pad 12px with a deep caption margin, 32 to 48px of wall between photos.
+    density: Low. Few large photos and generous wall.
+    corners: Square photos and frames. Controls 4px.
+    borders: None. The white frame is the border.
+    shadows: A soft 18px drop under each photo, which is tilted 1 to 3 degrees either way. Washi tape strips in yellow, sky, pink and mint at 65 to 70 percent opacity.
+    icons:
+        Hand drawn marker outlines at 22px. A ticked circle for On track,
+        a triangle with a mark for At risk, a square with a dash for Behind
+        and a star for overdue, beside the handwritten word.
+    focus: A 3px blue #1f5fae outline offset 3px.
+    tone: Casual notes on the back of a photo, such as Morning, Mara and Who did what.

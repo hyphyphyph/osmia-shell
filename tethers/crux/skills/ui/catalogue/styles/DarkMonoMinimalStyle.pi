@@ -1,0 +1,47 @@
+export anchor DarkMonoMinimalStyle:
+    number: 264
+    screen: CloudFiles
+    name: Dark mono minimal
+    idea: Black, white and greys only, with wide margins, hairline rules and thin type, so the files read like a quiet gallery list.
+    base: dark
+    palette:
+        black: #0a0a0a, page, panels and the style sheet
+        raise: #161616, the selected row
+        ink: #f2f2f2, text and headings
+        muted: #a3a3a3, meta, labels, file icons and inactive nav
+        line: #2a2a2a, hairline rules and meter tracks
+        strong: #6b6b6b, control outlines and field underlines
+        white: #ffffff, the primary button, current markers, meters, status icons and focus
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Base 15px at 1.6. The folder title is 44px at weight 250,
+        the details title 20px at 400, file names 15px, meta 13.5 to 14px
+        in muted grey, and column heads and panel labels 12px caps tracked
+        0.1em.
+    layout:
+        A thin header holds the Brightwork Drive wordmark, an underline
+        only Search files field and a round MO initials outline. Below it
+        three columns sit inside 56px margins. A 200px text nav lists the
+        five places with grey icons, My files current with a 1px white
+        left bar, then 64.2 GB of 100 GB used with a 2px white meter and
+        35.8 GB free. The middle column has the breadcrumb, the light 44px
+        title, a white Upload button, an outlined New folder button and a
+        List or Grid text switch with List underlined in white. Files are
+        unboxed rows on hairlines with name, modified date over the person,
+        and size. Status words follow the name. The upload shows as a 1px
+        white line along the row foot. A 300px details column shows a
+        square outlined preview, the name, facts as a two column list, a
+        white Share button, an outlined Download button and an underlined
+        Get link text button. Below 1180px details move under the list.
+        Below 760px the nav scrolls sideways and rows put meta under names.
+    spacing: An 8px unit. 56px page margins and column gaps, 18px row padding, 40px between blocks.
+    density: Airy. About eight rows fill a laptop screen and nothing is boxed.
+    corners: Square everywhere except the round initials.
+    borders: 1px #2a2a2a hairlines under rows and the header. Controls use 1px #6b6b6b.
+    shadows: None. The selected row is one step lighter with a 2px white inner left edge.
+    icons:
+        Line icons at 1.75 stroke, 18px, in grey. Starred uses a filled
+        star, Shared with 4 people two heads, Uploading 62% an up arrow in
+        a ring, each in white beside the word.
+    focus: A 2px solid white outline with a 3px offset.
+    tone: Spare and literal, such as Upload, 64.2 GB of 100 GB used and 35.8 GB free.

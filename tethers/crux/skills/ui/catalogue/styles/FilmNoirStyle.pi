@@ -1,0 +1,53 @@
+export anchor FilmNoirStyle:
+    number: 275
+    screen: CloudFiles
+    name: Film noir
+    idea: A black and white case file lit through venetian blinds, typewriter captions on every fact, the selected file printed in reverse like a lone lit window.
+    base: dark
+    palette:
+        black: #0b0b0b, the page, the style sheet and text on white
+        wall: #141414, the header wall under the blinds
+        paper: #1c1c1c, the desk behind the file table
+        dossier: #181818, the details column
+        print: #2b2b2b, the photo print frame
+        ink: #ececec, body text
+        grey: #a8a8a8, captions, column heads, meta and placeholders
+        rule: #4a4a4a, dotted and double rules
+        white: #f4f4f4, the primary button, the selected row, the pressed switch and the focus outline
+    type:
+        Titles in a high contrast serif, Bodoni 72, Didot, Big Caslon, Times
+        New Roman, bold capitals, 46px for the folder title and 24px for
+        Details. Everything else in Courier New typewriter at 15px with 1.5
+        line height. Buttons 13px bold caps tracked 0.1em, captions and
+        column heads 12px caps tracked 0.2em in grey.
+    layout:
+        A header wall with a soft light pool top right and diagonal blind
+        shadows, made of skewed translucent stripes, clipped by the header.
+        On it sit a small typed line Brightwork Drive case file, the title
+        Website redesign, a boxed typed breadcrumb with slashes, and a row
+        of trapezoid folder tabs for My files, Shared with me, Recent,
+        Starred and Trash, the current tab lighter with a white top line.
+        Below is a desk in two columns. The main column has an underlined
+        Search files field, Upload, New folder and a List or Grid switch
+        with List in white. Then a real table captioned Contents of Website
+        redesign with 8 entries, columns No., Name, Size, Modified and
+        Notes, numbered 01 to 08, rows split by dotted rules. The selected
+        row is printed in reverse, white with black text. Statuses are
+        bracketed typed words. Uploading has ten small boxes with six
+        filled. A storage ledger under the table shows a dashed bar and
+        64.2 GB of 100 GB used. A 320px details column holds a slightly
+        tilted grey photo print of the preview with a typed caption,
+        Starred, owner, size, version and shared with as typed rows, and
+        full width Share, Download and Get link. Below 960px the details
+        drop under the desk. Below 700px table rows become stacked blocks.
+    spacing: An 8px unit. 40px gutters, 12px cell padding, 24px between blocks.
+    density: Medium. A numbered ledger with dotted rules.
+    corners: Square. Folder tabs are trapezoids.
+    borders: Double rules above table heads and between sections, dotted rules between rows, 1px grey outlines on secondary controls.
+    shadows: Only a hard black offset under the tilted print.
+    icons:
+        Thin 1.4px line icons in grey and white. Status is a bracketed
+        typed word with a filled star for Starred, two heads for Shared, an
+        up arrow for Uploading and a checked box for Selected.
+    focus: A 2px white outline offset 3px.
+    tone: Typed and terse, such as case file, Contents and Notes.

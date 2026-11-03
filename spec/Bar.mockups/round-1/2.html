@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bar round 1 - variation 2</title><style>
+:root{--bg:#101215;--bar:#1e2126;--line:#33373e;--text:#d6dae0;--dim:#8a909a;--accent:#f0a35e;--accent-bg:rgba(240,163,94,.16)}
+*{box-sizing:border-box}
+html,body{margin:0;background:#0b0c0e;color:var(--text);font:12px/1 system-ui,"Inter","Segoe UI",sans-serif}
+body{min-width:1280px}
+.screen{width:1280px;height:250px;position:relative;background:linear-gradient(160deg,#171a20,#0f1114);overflow:hidden}
+.win{position:absolute;background:#1a1d22;border:1px solid #2a2e35;border-radius:6px;top:58px;height:150px}
+.win i{display:block;height:20px;border-bottom:1px solid #2a2e35;background:#1f2329;border-radius:6px 6px 0 0}
+.win p{margin:10px;height:6px;border-radius:3px;background:#262a31}
+.bar{height:30px;background:var(--bar);border-bottom:1px solid var(--line);display:flex;align-items:center;position:relative;color:var(--text)}
+.grow{flex:1}
+.item{display:flex;align-items:center;gap:5px;height:30px;padding:0 8px;position:relative;white-space:nowrap}
+.item.hover{background:#2a2e35;border-radius:4px;height:22px;margin:0 1px}
+.item b{font-weight:600}
+.dim{color:var(--dim)}
+.sep{width:1px;height:14px;background:var(--line);margin:0 4px}
+svg.ic{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;color:var(--dim)}
+.accent svg.ic,.accent{color:var(--accent)}
+.chip{display:flex;align-items:center;gap:6px;height:22px;padding:0 8px 0 4px;border-radius:4px;color:var(--dim);margin-left:4px}
+.chip.alert{background:var(--accent-bg);color:var(--text);box-shadow:inset 0 0 0 1px var(--accent)}
+.chip.icononly{padding:0 4px}
+.appic{width:16px;height:16px;border-radius:3px;display:grid;place-items:center;font-size:9px;font-weight:700;color:#14161a}
+.tray{display:flex;gap:8px;align-items:center;padding:0 8px}
+.tray span{width:14px;height:14px;display:block}
+.badge{position:absolute;top:4px;right:1px;min-width:12px;height:12px;border-radius:6px;background:var(--accent);color:#14161a;font-size:9px;font-weight:700;display:grid;place-items:center;padding:0 3px}
+.meter{position:absolute;left:8px;right:8px;bottom:3px;height:2px;background:#2d3137;border-radius:1px;overflow:hidden}
+.meter u{display:block;height:100%;background:var(--dim);text-decoration:none}
+.center{position:absolute;left:50%;transform:translateX(-50%);top:0}
+.cap{position:absolute;left:16px;bottom:12px;color:var(--dim);font-size:12px}
+.cap b{color:var(--text);font-size:13px}
+</style></head><body>
+<div class="screen">
+<div class="bar"><div class="chip alert"><span class="appic" style="background:#e8704a">F</span><span>Inbox (3) - Fastmail</span></div><div class="chip"><span class="appic" style="background:#6aa87a">T</span><span>~/osmia-shell - nvim</span></div><div class="chip"><span class="appic" style="background:#6a8fcb">D</span><span>Downloads</span></div><div class="grow"></div><div class="tray"><span style="background:#5b9bd5;border-radius:50% 50% 50% 2px"></span><span style="background:#7fbf7f;border-radius:50%"></span><span style="background:#c58be0;border-radius:3px"></span></div><span class="sep"></span><div class="item"><span class="dim">CPU</span><span>12%</span><span class="meter"><u style="width:12%"></u></span></div><div class="item"><span class="dim">RAM</span><span>41%</span><span class="meter"><u style="width:41%"></u></span></div><span class="sep"></span><div class="item"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="4.5" width="11" height="7" rx="1.5"/><path d="M14 7v2M4 7v2M6.5 7v2"/></svg><span>82%</span><span class="meter"><u style="width:82%"></u></span></div><div class="item"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6.5a8 8 0 0 1 12 0"/><path d="M4.5 9a4.5 4.5 0 0 1 7 0"/><circle cx="8" cy="12" r=".6"/></svg><span>Home</span></div><div class="item hover"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6v4h2.5L8 13V3L4.5 6z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5"/></svg><span>64%</span><span class="meter"><u style="width:64%"></u></span></div><div class="item"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1"/></svg><span>70%</span><span class="meter"><u style="width:70%"></u></span></div><div class="item"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 11V7a4 4 0 0 1 8 0v4l1 1H3z"/><path d="M6.5 14h3"/></svg><span class="badge">2</span></div><span class="sep"></span><div class="item"><span class="dim">Tue 3 Nov</span><b>14:32</b></div><div class="item"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v5"/><path d="M4.5 4.5a5 5 0 1 0 7 0"/></svg></div></div>
+<div class="win" style="left:40px;width:560px"><i></i><p style="width:70%"></p><p style="width:50%"></p><p style="width:62%"></p></div>
+<div class="win" style="left:640px;width:600px"><i></i><p style="width:55%"></p><p style="width:80%"></p></div>
+<div class="cap"><b>2 - Meter underline.</b> Same order, but each value has a thin 2 px meter under it, so levels read without reading numbers.</div>
+</div></body></html>

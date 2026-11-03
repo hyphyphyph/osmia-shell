@@ -1,0 +1,56 @@
+export anchor ChatSlateStyle:
+    number: 344
+    screen: TeamChat
+    name: Chat slate
+    idea: A professional three pane chat in blue slate, where a quiet sidebar, a roomy message list and a docked thread panel share one mint accent that only marks where you are and what you can do.
+    base: dark
+    palette:
+        page: #171c26, the message list and the style sheet
+        side: #1f2633, the sidebar and the thread panel
+        surface: #232b39, the composer, cards and the selected message
+        raised: #2c3546, hover rows, secondary buttons and the unread badge
+        line: #3a4558, every border and divider
+        ink: #e6eaf2, text
+        muted: #a3adbf, times, group labels and read channels
+        accent: #5eead4, Send, the thread link, the current channel bar and focus
+        onAccent: #062a26, text and icons on the accent
+        accentSoft: #1f3b3d, the current channel row and your own reaction chip
+        mention: #fda4af, the mention badge text on #3b2230
+        online: #6ee7a8, the online dot
+        away: #fcd34d, the away crescent
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Base 14px at 1.5. Channel title 16px at 650, names 14px at
+        650, times and group labels 12px, group labels at 600.
+    layout:
+        Three columns at 248px, flexible and 300px. The sidebar holds a
+        mint square B mark with Brightwork Chat over Mara Okafor, then
+        Channels and Direct messages lists. Unread channels are bold with a
+        grey count badge, the mention channel carries a rose @1 badge, and
+        the current channel sits on a soft teal row with a 3px mint inset
+        bar. Each person shows a dot, crescent or ring and the word online,
+        away or offline. The middle column has a ruled top bar with the
+        channel name, a muted description and a search button, a Today
+        divider, then messages with 36px rounded square initials avatars in
+        pastel tints, name and time on one line and the text below. Aiko's
+        message is selected with a surface fill, reaction chips for thumbs
+        up 3 and eyes 1, and a mint 3 replies link. The image shows a
+        280px preview card with the filename below. The composer is one
+        bordered box holding attach, the field, emoji and a mint send
+        square, with three dots and Priya is typing above. The right panel
+        shows Thread with a close button, the parent message as a card, the
+        reactions spelled out, a ruled 3 replies divider and a Reply in
+        thread box. Below 1060px the thread moves under the chat. Below
+        720px the sidebar stacks on top and its rows become wrapped
+        outlined chips.
+    spacing: An 8px unit. 8px by 12px message padding, 16px panel padding, 20px gutters.
+    density: Comfortable. Five messages, the composer and the thread fit one laptop screen.
+    corners: 8px avatars, messages, cards and composer, 6px buttons and nav rows, round chips and badges.
+    borders: 1px #3a4558 between panes and around cards. Panes step in lightness instead of heavy lines.
+    shadows: None. The current channel uses an inset mint bar instead.
+    icons:
+        Rounded line icons at 1.8 stroke, 14px to 18px, for attach, emoji,
+        send, search, close and the image. Reactions are drawn thumbs and
+        eyes icons beside the count.
+    focus: A 2px mint outline offset 2px, drawn around the whole composer when its field has focus.
+    tone: Plain workplace labels, such as Channels, Direct messages, Thread and 3 replies.

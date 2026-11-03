@@ -1,0 +1,66 @@
+export anchor BreadcrumbWebAppStyle:
+    number: 216
+    screen: ProjectsDashboard
+    name: Breadcrumb web app
+    idea: A conventional business web app with a dark top navigation bar, then a white page header with breadcrumbs, a title and its actions, then a filter bar, a sortable table and pagination, all in flat bordered boxes.
+    base: light
+    palette:
+        navbar: #1e2733, the top navigation bar, with links in #d3dae4 and its search field in #2c3746
+        navMark: #2bb3a8, the brand mark and the current link underline on the dark bar
+        page: #f7f8fa, the page background below the header
+        surface: #ffffff, the page header band, cards and table
+        head: #f3f5f7, table heads and disabled pager buttons
+        line: #dfe3e8, every box border and divider
+        text: #17202b, titles and cell text
+        muted: #56606d, labels, meta and uppercase heads
+        primary: #0b6b66, the primary button, current page number, progress bars and the this week line
+        primaryTint: #e3f2f0, the selected filter segment
+        link: #0a5f91, breadcrumbs, links and the focus ring
+        onTrack: #17703a, an outlined badge with a circle and tick
+        atRisk: #8a5600, an outlined badge with a triangle and bang
+        behind: #b3261e, an outlined badge with an octagon and cross, and overdue figures
+    type:
+        One stack, system-ui, -apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial, sans-serif. Body and cells 14px at 1.5, the page
+        title 24px bold, stat values 26px bold, card titles 16px bold,
+        breadcrumbs and meta 13px, and stat labels and column heads 12px
+        semibold uppercase tracked 0.05em.
+    layout:
+        A full width dark bar 52px tall holds the brand on the left, then
+        six text links with the current one white and underlined in teal,
+        then a 280px dark search field with a slash key hint, a bell and
+        the avatar with the name. Under it a white header band with a
+        bottom border holds the breadcrumb Brightwork then Home, and a
+        title row with the greeting, a meta line of the date and a red
+        4 tasks are overdue, and on the right a View reports secondary
+        button and a New project primary button. The body is a 1280px
+        column. First a single bordered stat strip of four cells split by
+        lines, each an uppercase label, a big value and a sub line. Then
+        the Projects card, whose header has the title with a count pill
+        and an Open Projects link, then a filter bar holding a joined
+        segmented control for All 6, On track 4, At risk 1 and Behind 1
+        with status glyphs, a Team select, a Sort select and a filter
+        field pushed right. The table has uppercase heads, a sort arrow on
+        Due, rows with the name in bold, team, a progress bar with
+        percent, tasks as 9 of 10, due with days left, an outlined status
+        badge and a row actions button. A footer says Showing 1 to 6 of 6
+        projects beside Previous, 1 and Next buttons. Below, two cards in
+        a three to two split, a line chart comparing the two weeks by
+        weekday with a small values table under it, and activity as a
+        vertical timeline with event icons in grey circles, linked project
+        names and a Showing 6 of 6 events footer. Under 760px the links
+        become a scrolling strip under the brand row, the search takes its
+        own row, the segmented filter becomes two by two, each table row
+        becomes a stacked block and the lower cards stack.
+    spacing: A 4px base. 16px cell and card padding, 20px between boxes and a 24px page gutter.
+    density: Medium. 44px table rows, 36px buttons and 32px filter controls.
+    corners: 6px on every box, button, field and pager button, 4px on status badges.
+    borders: 1px #dfe3e8 on all boxes and between header rows, #edf0f3 between table rows.
+    shadows: None. Structure comes from borders and the dark bar.
+    icons:
+        16px line icons at stroke 2. Timeline events sit in 28px grey
+        circles. Status glyphs are a circle with a tick, a triangle with a
+        bang and an octagon with a cross. This week is a solid line with
+        round dots and last week a dashed grey line with hollow squares.
+    focus: A 2px #0a5f91 outline offset 2px. On the dark bar the ring is #7fd3cb. A focused field gets a blue border plus the ring.
+    tone: Plain business labels in title case with uppercase column heads, such as Showing 1 to 6 of 6 projects and View reports.

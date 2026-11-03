@@ -1,0 +1,65 @@
+export anchor GroupedDataGridStyle:
+    number: 179
+    screen: ProjectsDashboard
+    name: Grouped data grid
+    idea: The dashboard is one hierarchical grid, projects grouped under team header rows with subtotals, a sticky column header and inline progress strips, set in cool grey with a single teal accent.
+    base: light
+    palette:
+        page: #eef1f2, the page behind panels
+        surface: #ffffff, the top bar, panels and fields
+        columnHead: #e6ebed, the sticky grid header row
+        grid: #f6f8f8, row hover, the total row and the focused row
+        ink: #1c2427, text
+        muted: #4f5e65, labels, meta and column heads
+        line: #d3dadd, panel edges and rules, with #e4e9eb for row rules
+        slate: #7c8fa0, field edges and last week bars
+        teal: #0f766e, the primary button, progress fills, this week bars, the current tab and focus
+        tealTint: #e1f1ef, team group rows
+        tealInk: #0b5c55, text on group rows and links
+        green: #1d6b3c, On track
+        amber: #8a5200, At risk
+        red: #b3261e, Behind, the overdue figure and the overdue line
+    type:
+        One stack, system-ui, -apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial, with tabular figures. KPI figures 22px at 650, the
+        greeting 20px at 650, group rows 14px bold, cells 14px regular,
+        column heads and panel titles 12 to 13px bold caps tracked 0.03
+        to 0.04em, meta 12px.
+    layout:
+        A white top bar holds a small four square teal mark with the
+        brand, a wide search field, then at right a teal New project
+        button, a square bell with a red dot and the initials disc with
+        Mara Okafor. Under it a row of text tabs, Home underlined in teal.
+        The main area opens with one line holding the greeting, the date
+        and a red clock with 4 tasks are overdue. Below sits a single
+        bordered summary strip split into four cells by thin rules, each a
+        figure beside its label, the overdue figure in red. Then two
+        columns. The wide left panel is the grid titled Projects by team,
+        with a grey sticky header row of Project, Status, Progress, Tasks,
+        Due and Days left. Each team, Design, Engineering, Marketing and
+        Research, has a teal tinted group row with a chevron, the project
+        count, a subtotal progress strip and percent, done over total tasks
+        and the next due date with its days left. Project rows are indented
+        under it with the status word and shape, a 72px progress strip and
+        percent, tasks, due date and days left. A grey All teams total row
+        ends the grid with a teal sparkline of the 14 daily values, 46
+        percent and 78 of 170. A status mix line under the grid counts 4
+        On track, 1 At risk and 1 Behind. The 320px right column stacks a
+        Tasks completed panel with 14 square bars, slate last week and teal
+        this week, and an Activity panel as a two column table of time and
+        sentence. Below 1060px the right column moves under the grid, and
+        below 760px the grid scrolls sideways inside its panel with the
+        project column pinned, the summary becomes two by two and the
+        search takes its own row.
+    spacing: An 8px unit. Cells are 7 by 12px, 16px between panels, a 24px page gutter.
+    density: High. Every team, project, subtotal and total fits in one grid at 1280px.
+    corners: 4px panels, 3px controls, square bars and strips.
+    borders: 1px #d3dadd panel edges and #e4e9eb row rules, slate field edges, a teal 2px tab underline.
+    shadows: None. Separation comes from lines and the teal tint on group rows.
+    icons:
+        Line icons at 1.8px stroke at text size in the header. Status
+        shapes are filled at 13px beside the word, a check circle for On
+        track, a triangle with a bang for At risk and a crossed square for
+        Behind, plus a clock ring for overdue.
+    focus: A 2px teal outline offset 1px. A focused field gets a teal border and outline, a focused row an inset outline on the grid grey.
+    tone: Plain data labels, caps column heads and numbers before words, such as Next 20 Nov.

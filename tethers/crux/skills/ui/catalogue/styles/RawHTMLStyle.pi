@@ -1,0 +1,43 @@
+export anchor RawHTMLStyle:
+    number: 47
+    screen: Settings
+    name: Raw HTML
+    idea: The page looks almost unstyled, like hand-written HTML from the late 1990s, with Times, blue underlined links, grey bevel buttons, rules and bordered tables.
+    base: light
+    palette:
+        white: #ffffff, the page and fields
+        black: #000000, all text and the dotted focus outline
+        linkBlue: #0000ee, unvisited links, always underlined
+        visitedPurple: #551a8b, visited links
+        buttonGrey: #c0c0c0, buttons, table header cells and bevels
+        shadowGrey: #808080, rules and bevel shade
+        darkBevel: #404040, the outer shadow edge of buttons
+        warningYellow: #ffff99, the WARNING cell in the danger table
+    type:
+        Browser default serif, Times New Roman, Times, Liberation Serif,
+        serif, 16px at 1.25. The brand is 32px bold with a small italic
+        line under it. The page title is the default h1 at 32px bold,
+        sections are h2 at 24px bold, sub sections h3 at 19px bold.
+        Controls use Arial, Helvetica, sans-serif at 13px. Captions and the
+        footer are small italic.
+    layout:
+        No layout beyond the flow. A borderless header table puts the brand
+        left and Logged in as Mara Okafor right. A grooved rule, then the
+        sections as links in square brackets split by bars, with the
+        current one bold between double arrows. Then Settings, Notifications,
+        a Changes saved line, a full width bordered table of settings with
+        columns for setting, checkbox and status, the selects on their own
+        lines, a fieldset of inline radios, two buttons, a rule, the danger
+        table and a small address footer.
+    spacing: Browser defaults. 8px body margin, normal paragraph gaps, 4px cell padding, 2px cell spacing.
+    density: Dense and long. Everything flows top to bottom.
+    corners: Square, always.
+    borders: Tables use a 2px outset border with 1px inset cells. Rules are a 1px grey line over a white line. The final rule is 4px solid black.
+    shadows: None. Buttons are bevelled with white top left edges and dark grey bottom right edges, inverted when pressed.
+    icons:
+        None. Text symbols only, a check mark before Changes saved, a
+        warning sign beside WARNING and double arrows around the current
+        section. On and off show as native checkboxes plus the words ON or
+        off in italic.
+    focus: A 2px dotted black outline offset 2px.
+    tone: Literal and a bit stiff, such as Logged in as, WARNING! and Table 1. Notifications.

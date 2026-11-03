@@ -1,0 +1,59 @@
+export anchor EmbeddedPanelStyle:
+    number: 218
+    screen: ProjectsDashboard
+    name: Embedded panel
+    idea: Brightwork as a guest, a compact 480px panel living inside someone else's page with its own small header, tabs and one quiet plum accent, so it reads clearly as a separate app without fighting the host.
+    base: light
+    palette:
+        hostBackground: #eceef1, the host page, never inside the panel
+        hostSkeleton: #d9dde2, grey placeholder bars for host content
+        panel: #ffffff, the panel body
+        panelSub: #f7f7f9, the KPI strip and panel footer
+        line: #e2e3e8, rows, tabs and section rules inside the panel
+        text: #1d1b22, names and values
+        muted: #5a5764, sub lines, caps headings and times
+        plum: #84276f, the active tab, New project button, links, progress, this week bars and focus
+        plumTint: #f6e9f2, a focused or selected row
+        onTrack: #18733a, text with a circle and tick
+        atRisk: #8c5400, text with a triangle and bang
+        behind: #b3261e, text with an octagon and cross, and the overdue banner on #fcebea
+    type:
+        One stack, system-ui, -apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial, sans-serif, small throughout. Panel base 13px at
+        1.45, the greeting 15px bold, KPI values 17px bold, row names
+        13px semibold, activity 12px, sub lines and times 11px, and
+        section heads 11px bold uppercase tracked 0.06em.
+    layout:
+        A host page frames the panel. The host has a white top bar with a
+        grey circle logo, the words Team portal and grey skeleton links,
+        and a main column of white skeleton cards. The panel sits in a
+        480px right column under a small host caption reading Embedded app
+        and 480px wide. The panel is one bordered white box. Its header
+        row has the plum mark and Brightwork, then a bell, the avatar with
+        the name and an open in new window icon. A tab row follows with
+        Home underlined in plum, Projects, Tasks, Team and a More
+        disclosure at the right holding Reports and Settings. Then a
+        search field with a small New project button, then the greeting
+        with the date in grey on one line and a slim red banner saying
+        4 tasks are overdue with a View link. A four cell KPI strip runs
+        edge to edge on the grey sub surface. Projects is a caps head with
+        a count and an All projects link over six two line rows, the name
+        over team, tasks and due date, then a 64px mini bar, the percent
+        and the status. The chart is a short 14 bar chart with last week
+        59 and this week 73 stacked beside it. Activity is a tight list
+        with 24px initials and short times like 12 min. A grey footer says
+        Powered by Brightwork with an Open full app link. Under 1000px the
+        panel moves above the host content, centred at up to 480px. Under
+        600px the mini bars hide, the search takes a full row with the
+        button below it and the week totals sit under the chart.
+    spacing: A 4px base. 12px side padding inside the panel, 5px row padding and 24px between the host column and the panel.
+    density: Very compact. Everything fits the 480px column, about 1000px tall, with no inner scrolling.
+    corners: 8px on the panel, 6px on buttons, fields and host cards, 5px on the banner, round avatars.
+    borders: 1px #d3d4db around the panel, 1px #e2e3e8 between rows and sections, 1px #d9dde2 around host cards.
+    shadows: One soft lift on the panel only, 0 1px 2px and 0 6px 18px at 8 percent, to separate it from the host.
+    icons:
+        14px line icons at stroke 2, used sparingly. Status glyphs are 13px,
+        a circle with a tick, a triangle with a bang and an octagon with a
+        cross, beside a bold 11px word.
+    focus: A 2px plum outline offset 2px. A focused row also takes the plum tint, and a focused field a plum border.
+    tone: Clipped, such as Due this week, View, All projects and 12 min, with host labels kept neutral.

@@ -1,0 +1,52 @@
+export anchor VibrantClassicStyle:
+    number: 287
+    screen: CodeRepository
+    name: Vibrant classic
+    idea: A dense, square, all-monospace review workspace on near-black, with a file tree, a dominant syntax-coloured diff and a narrow facts pane butted together by hairlines, where hot pink, lime and orange do the talking.
+    base: dark
+    palette:
+        coal: #1b1b18, the page background and the diff pane
+        slate: #26261f, the top bar, the file tree and facts panes, the style sheet cards
+        ridge: #34342c, the selected file row, chips and the disabled merge button
+        rule: #4a4a40, hairlines between panes and rows
+        chalk: #f8f8f2, text
+        smoke: #b4b4a6, meta, line numbers and pane labels
+        hotPink: #ff5c93, keywords, the current tab bar, the pull request number and pane labels markers
+        lime: #a6e22e, the primary button, passed, approved, Open and added lines
+        orange: #fd971f, requested changes, strings and attribute names
+        cyan: #66d9ef, links, JSX tags and focus
+        purple: #ae81ff, constants and counts
+        red: #ff6b6b, failing and removed lines
+        addTint: #25301a, added line rows
+        delTint: #3a1f24, removed line rows
+    type:
+        One monospace stack for everything, ui-monospace, SF Mono, Cascadia Mono,
+        DejaVu Sans Mono, Menlo, Consolas. Base 13px at 1.5, the title 20px at 700,
+        pane labels 11px caps tracked 0.12em with a pink square marker, counts 12px
+        at 700.
+    layout:
+        Full width, no outer margin. A 44px slate top bar holds the owner and
+        repository, a Private tag, watch 12, star 48 and fork 3 as inline counters,
+        and the six tabs as flat text tabs with a 2px pink top bar on Pull requests.
+        Under it one dense summary strip shows the number 214 in pink, the title,
+        Open, Sam Ortiz merging 6 commits into main from feature/push-prefs, the
+        checks score and the two review verdicts, separated by hairlines. Then three
+        panes butted together with 1px rules. A 260px file tree with folder rows and
+        each file with plus and minus counts, the current file highlighted. A wide
+        diff pane with a file tab bar, the hunk, syntax colours and the inline
+        comment. A 300px facts pane with reviewers, all twelve checks in a compact
+        list, labels, assignees, milestone, linked issue and the merge button. Below
+        1100px the facts pane drops under the diff, below 760px all three stack.
+    spacing: A 4px unit. 8px row padding, 12px pane padding, no gaps between panes.
+    density: Dense. Everything visible at once, small type, tight rows.
+    corners: Square everywhere, 2px on chips only.
+    borders:
+        1px rule hairlines between panes and rows. A 2px pink top bar on the current
+        tab and a 2px cyan left edge on the comment.
+    shadows: None.
+    icons:
+        Line icons at 1.5px stroke at 1em, square caps. Check circle for passed and
+        approved, crossed square for failing, triangle with a bang for requested
+        changes, padlock for the blocked merge, always next to the word.
+    focus: A 2px cyan outline offset 1px.
+    tone: Terse and technical, such as checks 11/12, e2e-android failing and merge blocked.

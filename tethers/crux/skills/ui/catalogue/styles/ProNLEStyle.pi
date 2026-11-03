@@ -1,0 +1,61 @@
+export anchor ProNLEStyle:
+    number: 354
+    screen: VideoEditor
+    name: Pro NLE
+    idea: A professional dark grey editing room, four tight panels butted together on a near black frame, tabbed headers, 12px type, and precise yellow timecode as the one voice that speaks loudly.
+    base: dark
+    palette:
+        frame: #0f0f10, the near black frame between panels and the page
+        panel: #232325, panel bodies, inspector and bin rows
+        header: #1c1c1e, tab strips, ruler and track lanes
+        trackHead: #2a2a2d, track header cells and transport buttons
+        rule: #38383b, row rules and field borders
+        ink: #e6e6e6, text
+        muted: #a8a8a8, labels, inactive tabs and meta
+        timecode: #ffd84d, timecode, active tab rule, Export and focus
+        value: #8fb8ff, scrubbable inspector values and media icons
+        videoClip: #35557a, video clips
+        titleClip: #6a4c93, title clips
+        audioClip: #2c6448, audio clips
+        clipEdge: #8fb0d8, the light 1px edge that outlines video clips, with lilac and green twins for titles and audio
+        playhead: #d63a2f, playhead flag and line
+        marker: #5ad1a8, the cut to logo marker flag
+    type:
+        One system sans stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial, and a mono stack, ui-monospace, SF Mono, Menlo, Consolas.
+        Base 12px at 1.45. The big timecode is mono 18px at 600 in yellow,
+        the duration mono 13px, tab labels 12px at 600, clip labels 11px,
+        ruler and bin durations mono 10px to 12px. The title card on the
+        monitor is 30px light weight.
+    layout:
+        A one line menu bar holds a yellow square B, Brightwork Cut, Launch
+        teaser with 1080p and 24 fps, then the render readout with an empty
+        circle, Render 0% and not started beside a thin bar, and a yellow
+        Export button. Below, four panels butt together on a black frame
+        with 2px gutters. The left panel is a tabbed bin table with columns
+        Name, Duration as full timecode and Type, each row led by a film or
+        bars icon. The centre is the program monitor with a dashed safe
+        area, the title card, then the yellow current timecode on the left,
+        five square transport buttons in the middle and the duration on the
+        right. The right panel is Effect controls with grouped rows Motion,
+        Opacity and Transition, values in blue mono with a dotted underline.
+        The timeline spans the full width with a 112px track header column,
+        track ids V2, V1, A1 and A2 with names and an eye or speaker icon, a
+        ruler in timecode every 10 seconds, solid clips in steel blue,
+        purple and green with a light edge, the selected title clip with a
+        white outline and the word selected, a red playhead flag reading 18s
+        and a green flag marker labelled cut to logo. Below 1080px the bin
+        moves under the monitor. At phone width the bin and inspector hide,
+        transport buttons grow to 44px, track headers shrink to the ids and
+        every other ruler label hides.
+    spacing: A 4px base. Panels touch with 2px black gutters, rows are 24px, track lanes 38px.
+    density: High. Bin, monitor, inspector and a full four track timeline share one screen.
+    corners: 2px on buttons, clips and the logo. Panels are square.
+    borders: 1px black separators, 1px #38383b row rules and a 1px light edge on every clip. No outlines on panels.
+    shadows: None. Depth comes from three grey steps.
+    icons:
+        Thin 1.4 stroke line icons at 14px. Film frame for video, vertical
+        bars for audio, eye and speaker on tracks, filled triangle for play.
+        The marker is a pentagon flag and the playhead a notched red tag.
+    focus: A 2px timecode yellow outline offset 1px on every control.
+    tone: Terse professional labels such as Program, Effect controls and 5 items.

@@ -1,0 +1,58 @@
+export anchor AnimationStudioStyle:
+    number: 361
+    screen: VideoEditor
+    name: Animation studio
+    idea: A night animation desk where the viewer sits on a round light table disc with pencil construction lines, panels are punched cel sheets with peg holes, and the timeline is turned upright into an exposure sheet read top to bottom.
+    base: dark
+    palette:
+        nightDesk: #13161d, page, peg holes and the style sheet
+        celSheet: #1d2230, punched cel panels and exposure cells
+        sheetHead: #232a3b, exposure sheet column heads
+        rule: #3a4258, sheet grid and dividers
+        lightTable: #2b2a26, the warm disc behind the viewer
+        ink: #e3e6ee, text
+        graphite: #a5adbf, labels, units and start times
+        holdLine: #8b95ad, hold lines running down a clip
+        nonPhotoBlue: #8cc0ff, construction lines, the selection, Export and focus
+        guideBlue: #4f7fb8, dashed construction guides in the viewer
+        redPencil: #ff8f8f, the playhead row rules
+        redPencilText: #ffb0b0, playhead and marker notes
+    type:
+        Headings and notes use a hand stack, Segoe Print, Bradley Hand,
+        Chalkboard SE, Comic Neue, Marker Felt. Body is system sans 14px at
+        1.5. The timecode and frame numbers use a mono stack, 20px bold and
+        13px at 600. Panel titles are hand 20px bold, cel notes hand 19px,
+        the pencil test title hand up to 28px bold.
+    layout:
+        A header holds a ruled slate with Brightwork Cut in blue hand
+        lettering and cells Prod Launch teaser, Fmt 1080p and Rate 24 fps,
+        then an empty render bar with Render 0% and not inked yet, and a
+        blue Export with a pencil icon. The desk is two columns. Every panel
+        is a cel sheet with three peg holes punched at the top, one round
+        between two oblong. The left column holds Pencil test, the viewer
+        set on an oval warm light table disc, the title card with dashed
+        blue construction lines behind it, then the timecode, round flip
+        buttons with a blue play and the duration. Under it sit two cels,
+        Scene folder listing the five files as small punched sheets with
+        duration and picture or sound, and Cel notes with Position 960 by
+        540, Scale 100 percent, Opacity 100 percent and Cross dissolve 12
+        frames handwritten on ruled lines. The right column is the Exposure
+        sheet, the timeline turned upright, a table with columns Sec,
+        Action, V2 titles, V1 video, A1 voice and A2 music and one row per 6
+        seconds from 0 to 90. A clip writes its name and start in the row
+        where it begins, a hold line runs down the rows it covers and a
+        short rule reads end and the second where it stops. The selected
+        title card is in pale blue with a star and a thicker blue hold line.
+        The row at 18 is ruled above and below in red pencil with a play
+        arrow and playhead 18 in Action, and Action at 84 reads a cross and
+        cut to logo. At phone width the folder and notes hide, the Action
+        column drops, the 84 row gets a red cross and a handwritten note
+        under the sheet explains the marker and playhead.
+    spacing: An 8px unit. 24px between cels, 34px top padding to clear the peg holes, 36px sheet rows.
+    density: Medium. A sixteen row exposure sheet beside the viewer, folder and notes.
+    corners: Cels are 4px at the top and 10px at the bottom. The light table is an oval disc.
+    borders: 1px sheet grid, 2px hold lines, 2px red rules round the playhead row.
+    shadows: A soft 20px drop under each cel and a faint warm glow around the disc.
+    icons: Few and drawn. Peg holes, a star for the selection, a cross for the marker, a play arrow on the playhead row and a pencil on Export.
+    focus: A 2px dashed non photo blue outline offset 3px.
+    tone: Studio words, such as Pencil test, Scene folder, Cel notes and not inked yet.

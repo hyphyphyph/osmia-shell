@@ -1,0 +1,54 @@
+export anchor SonarStyle:
+    number: 303
+    screen: CodeRepository
+    name: Sonar
+    idea: A submarine sonar console in deep sea green, where a round scope with a sweeping arc plots the twelve checks as contacts, the failing one pinged and labelled, and rounded instrument bezels hold the rest.
+    base: dark
+    palette:
+        abyss: #021411, the page, style sheet ground, fields and dials
+        console: #06211b, the header strip, tabs and console gradient base
+        consoleTop: #0a2c24, console gradient tops and the comment
+        bezel: #14453a, instrument rims and chips
+        grid: #1a4b3f, dividers and scope rings
+        ink: #d2f8e8, text
+        kelp: #86c7ad, labels, bearings and meta
+        sonarGreen: #3ff0a2, the sweep, contacts, passed, approved, added lines, the current tab, the primary button and focus
+        amber: #ffc862, changes requested, the ping comment and Private
+        coral: #ff8b7b, the failing contact and removed lines
+        coralShade: #2e1716, the failing row and removed line ground
+    type:
+        A wide humanist sans, Tahoma, Verdana, DejaVu Sans, for headings at
+        700, the title at 26px and figures at 26px in sonar green. Verdana
+        for text at 13.5px and 1.55 and labels at 10.5px bold caps tracked
+        0.14em. Data and the diff use Lucida Sans Typewriter or a system
+        monospace at 11.5 to 12.5px.
+    layout:
+        A pill shaped header strip holds a round badge with a green ring,
+        Brightwork Code and the repository, an amber Private label and pill
+        counters, with rounded tabs below and the current one filled
+        green. The upper band has two instruments. The scope bezel holds a
+        round sonar display with three rings, crosshairs, bearings 000 to
+        270, a green sweep wedge and a bright sweep line, and twelve
+        contacts as green dots, the seventh a coral ringed cross with a
+        dashed ping ring and the label 07 e2e-android. Beside it a contact
+        list numbers every check with a tick, the failing row tinted
+        coral, and under it 11 of 12 checks passed and the failing line.
+        The contact report bezel holds the Open pill, the title, the merge
+        sentence, two rounded reviewer dials, and a waterfall of the three
+        files, each with counts and a dotted green trail scaled to its
+        additions. The lower band holds the signal log with the diff,
+        where the comment is a Ping bubble with an amber rim and a glowing
+        ring marker, and a details bezel with assignee, pill labels,
+        milestone, linked issue and a dashed disabled merge. Below 1100px
+        the bands stack, below 700px the contact list wraps in two columns.
+    spacing: An 8px unit. 20px between instruments, 18px inside bezels, 12px between dials.
+    density: Medium. A large scope beside the contact report, then a wide signal log.
+    corners: Round. 20px bezels, 14px dials, a pill header, a circular scope and pill chips.
+    borders: 2px bezel rims with a 4px dark inner rim, 1px grid lines, a 2px amber rim on the comment.
+    shadows: Soft drop shadows under bezels and a glow ring on the ping marker.
+    icons:
+        1.9px line icons. Dots for passed contacts and a ringed cross for
+        the failing one on the scope, and in lists a tick, an octagon cross,
+        a ringed tick and a triangle, each with its word.
+    focus: A 2px sonar green outline offset 3px with a soft green halo.
+    tone: Calm sonar words, such as Scope, Contact report, Waterfall, Signal log, Ping and Holding depth until all checks pass.

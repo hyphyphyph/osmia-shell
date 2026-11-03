@@ -1,0 +1,53 @@
+export anchor MiniDashboardsStyle:
+    number: 196
+    screen: ProjectsDashboard
+    name: Mini dashboards
+    idea: Every project gets its own small dashboard tile, with a status chip, a sparkline of this week's completions and three stats in a ruled footer, so the home screen reads as a wall of six comparable instruments.
+    base: light
+    palette:
+        canvas: #f1f3f7, the page behind the tiles
+        tile: #ffffff, tiles, the rail, panels and fields
+        ink: #182033, text and figures
+        muted: #556075, labels, meta and axis text
+        line: #dfe3ea, tile borders and stat dividers, never text
+        violet: #5b3fc4, the primary button, sparklines, this week bars, progress edges and focus
+        violetTint: #efebfc, the current nav item, sparkline areas and last week bar fills
+        green: #18794e, On track with a check disc on #e3f3ea
+        amber: #8a5a00, At risk with a diamond on #fbf0d9
+        red: #c0272d, Behind with a down triangle and overdue figures on #fbe7e7
+    type:
+        One stack, system-ui, Segoe UI, Roboto, Ubuntu, Helvetica Neue,
+        Arial. The greeting is 22px bold, strip figures 22px bold tabular,
+        tile stats 20px bold with a 12px muted unit, tile names 16px bold,
+        body 14px, and stat labels 11px semibold caps tracked 0.04em.
+    layout:
+        An 80px white icon rail on the left holds a violet square logo of
+        four tiles, six nav items with an icon over a small label, Home in
+        a violet tint, and initials at the foot. The main area opens with
+        a greeting line that holds Hello, Mara, the brand, the date and a
+        red clock note for the 4 overdue tasks, with a search field, a
+        violet New project button, a bell and Mara Okafor at the right. A
+        single white strip splits the four summary numbers into cells with
+        tinted icon squares, the overdue cell red. The projects band is a
+        three by two grid of tiles in due date order. Each tile has the
+        team label, the project name and a status chip on top, then a
+        violet sparkline of tasks done per day this week beside a large
+        violet count of done this week, then a ruled three cell footer of
+        Complete, Tasks and Due with days left, and a 4px progress edge
+        along the base in violet, amber or red. Below, a two to one split
+        puts a 14 day bar chart, last week as outlined tint bars and this
+        week as solid violet split by a dashed divider with values on top,
+        beside an activity panel with coloured initial discs. Below 1100px
+        tiles go two across, and on phones the rail becomes a scrolling top
+        bar and tiles stack.
+    spacing: An 8px unit. 16px gaps between and inside tiles and 24px between bands.
+    density: Medium high. Six instruments at once, each with a chart and three numbers.
+    corners: 12px tiles and panels, 10px controls and rail items, 6px chips and 3px bars.
+    borders: A 1px cool grey border on every tile, ruled stat footers and a 4px progress edge at the base.
+    shadows: One soft pair, 0 1px 2px and 0 2px 8px at 5 to 6 percent ink.
+    icons:
+        Round line icons at 1.8px with labels in the rail. Status is a
+        solid check disc, diamond with a bang or down triangle in a tinted
+        chip with its word.
+    focus: A solid 2px violet outline offset 2px, and a violet tint on a focused list row.
+    tone: Instrument labels, such as Complete, Tasks, Due 14 Nov and 7 done this week.

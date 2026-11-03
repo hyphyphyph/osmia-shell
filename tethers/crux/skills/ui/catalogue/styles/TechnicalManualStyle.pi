@@ -1,0 +1,50 @@
+export anchor TechnicalManualStyle:
+    number: 41
+    screen: ProjectDetail
+    name: Technical manual
+    idea: The project is a section of an equipment manual, with numbered clauses like 4.4.3, boxed spec tables, symbol warning boxes and a condensed uppercase sans.
+    base: light
+    palette:
+        bench: #e9e9e4, the page behind the document sheet
+        paper: #ffffff, the document sheet
+        black: #141414, text, rules, table header rows and buttons
+        grey: #4d4d4d, captions, labels and assignees
+        tint: #ededed, table row heads, the nav bar and the log entry
+        safetyYellow: #ffd23f, the warning symbol panel and the focus halo
+        caution: #fff4cc, the warning box and a focused row
+        note: #e6eef8, the note box
+        link: #0b4a8f, task and file links
+    type:
+        A condensed sans, "Arial Narrow", "Helvetica Neue Condensed",
+        "Roboto Condensed", "Liberation Sans Narrow", Arial, sans-serif,
+        with font-stretch condensed. Sizes are 34px bold uppercase for the
+        title, 18px bold uppercase section heads led by a clause number,
+        15px body at 1.4 line height, 12px bold uppercase captions and tags
+        with wide tracking, and 13px monospace for file names.
+    layout:
+        The page is one framed document sheet with a 2px black border. A
+        header block splits into cells for the boxed B mark and Brightwork,
+        a document id strip with doc number, unit, start and due, and the
+        operator Mara Okafor. A grey nav bar holds uppercase links and a
+        Find field. The title block shows Section 4, the uppercase title
+        over a 3px rule, and the Add task and Edit project buttons. Two
+        columns follow. The left holds 4.1 Specifications as a gridded spec
+        table with a segmented gauge, 4.2 Purpose as clauses 4.2.1 and
+        4.2.2, and 4.3 Milestone sequence as a table. The right holds 4.4
+        Open tasks with a yellow warning box, 4.5 Reference documents as a
+        table, and 4.6 Operator log with a note box, the quote and a reply
+        field. A footer strip shows the doc id and page number. Below 820px
+        everything is one column.
+    spacing: A 4px base. 3 to 7px cell padding, 18px between clauses and a 28px column gap.
+    density: High. Two columns of clauses on wide screens.
+    corners: Square only.
+    borders: A 2px black frame round the document, a 1px black table grid, a 3px rule under the title and dotted rules between task rows.
+    shadows: None.
+    icons:
+        ISO style safety symbols. A yellow triangle with an exclamation
+        mark heads the warning box and a circled i heads the note box, each
+        in its own panel. Tags are boxed uppercase words with a tick for On
+        track, a solid square for Done, a triangle for Active, a hollow
+        square for Pending and a slashed circle for Blocked.
+    focus: A 3px black outline offset 2px with a 6px safety yellow halo.
+    tone: Imperative and terse, such as Do not publish the customers page until permission is received.

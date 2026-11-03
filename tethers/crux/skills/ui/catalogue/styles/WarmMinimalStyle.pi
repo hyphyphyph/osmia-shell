@@ -1,0 +1,51 @@
+export anchor WarmMinimalStyle:
+    number: 189
+    screen: ProjectsDashboard
+    name: Warm minimal
+    idea: A calm, paper-like workspace in cream and warm brown, where one terracotta accent marks what to act on, corners are a soft 6px and a humanist sans keeps the tone friendly and unhurried.
+    base: light
+    palette:
+        cream: #f7f1e6, the page and the top bar
+        paper: #fffbf4, panels, fields and the style sheet
+        ink: #2b2420, headings and body text
+        bark: #665548, meta, labels and axis text
+        sand: #e4d8c6, 1px lines and the progress track, never text
+        terracotta: #a8492a, the primary button, current nav text, this week's line, links and focus
+        clay: #f5e3d6, the tint behind the current nav, the overdue figure and avatars
+        moss: #2f6a3e, On track with a line circle and check
+        ochre: #855300, At risk with a line triangle and bar
+        brick: #962a2a, Behind and the overdue figure, with a line square and cross
+    type:
+        One humanist stack, Seravek, Gill Sans Nova, Ubuntu, Calibri,
+        Optima, Candara, DejaVu Sans, sans-serif, in weights 400 and 600.
+        The greeting is 34px semibold, KPI figures 30px semibold tabular,
+        section titles 19px semibold, body 15px at 1.55, and meta, labels
+        and chips 13px.
+    layout:
+        A cream top bar edged by one sand line holds a terracotta square
+        mark with the brand, six text nav links with Home in a clay pill,
+        and at right a search field, a terracotta New project button, a
+        bell button and the initials disc with Mara Okafor. Content sits
+        in a centred 1120px column. The hero row puts the greeting, date
+        and an overdue line with a square symbol and a Review them link at
+        left, and at right one paper strip split by thin rules into four
+        figures with a small icon and label, the overdue cell tinted clay
+        with a brick figure. Below, two columns at 7 to 5. The left panel
+        lists the six projects as rows with name, team, due date and days
+        left, then a 6px bar with percent and tasks, then the status word
+        with its line symbol. The right column stacks a line chart panel,
+        this week as a solid terracotta line over a faint area with value
+        labels and last week as a dashed bark line with square markers,
+        totals beneath, and an activity panel with clay initial discs and
+        times under each line. Below 1040px everything stacks and the
+        search fills the bar. On phones the nav wraps under the brand,
+        the New project button shows only its plus, the figures form a 2
+        by 2 grid and project bars drop under the name.
+    spacing: An 8px unit. 24px panel padding, 32px between sections and columns, 16px row padding.
+    density: Comfortable. Six project rows and six activity items without crowding.
+    corners: 6px on panels, buttons, fields, the progress bar and nav pills. Avatars are round.
+    borders: 1px sand lines around panels and between rows and figures.
+    shadows: One soft warm shadow, 0 1px 2px at 6 percent brown, on panels only.
+    icons: Thin 1.6px line icons at 15 to 18px in bark. Status symbols are line shapes in the status colour, a circle with a check, a triangle with a bar and a square with a cross.
+    focus: A 2px terracotta outline offset 2px. A focused field also takes a clay fill.
+    tone: Warm and plain in sentence case, such as Welcome back, Mara and 4 tasks are overdue.

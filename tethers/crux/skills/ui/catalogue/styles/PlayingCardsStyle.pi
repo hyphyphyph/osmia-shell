@@ -1,0 +1,50 @@
+export anchor PlayingCardsStyle:
+    number: 99
+    screen: ProjectsDashboard
+    name: Playing cards
+    idea: The dashboard dealt onto a light sage card table, with every project a playing card whose suit is its status, the totals held as a fanned hand and the fortnight stacked in chips.
+    base: light
+    palette:
+        sageFelt: #dfe8d8, the card table and the page
+        feltShade: #c9d6c0, the top rail and card lips
+        cardWhite: #fffdf8, cards, panels and fields
+        cardInk: #16130f, text and outlines
+        tableGrey: #38423a, captions and meta
+        clubGreen: #1e5b3a, the club suit for On track
+        diamondAmber: #8a4b00, the diamond suit for At risk
+        spadeRed: #9b1c1c, the spade suit for Behind, overdue and week two chips
+        chipBlue: #2c4f8a, week one chips, card back avatars, links and the primary button
+        brass: #c9a44a, the focus halo, never text
+    type:
+        Indices and names use Georgia, Cambria, Times New Roman, serif in
+        bold. Text uses Gill Sans, Gill Sans MT, Seravek, Calibri, Segoe UI,
+        sans-serif. The greeting is 32 to 48px, hand ranks 46px, section
+        heads 26px, card corner indices 18px, card names 18px, body 15px and
+        caps labels 11 to 13px tracked 0.14em.
+    layout:
+        A sage rail holds a small white card logo with a diamond, the brand,
+        nav links with an underline on the current one, a white search
+        field, the bell, a blue New project button and the user as a blue
+        card back with initials. The top is split in two, the date, greeting
+        and a white overdue slip on the left, and the four totals on the
+        right as a fanned hand of white cards turned from minus 9 to 9
+        degrees, each with a corner rank, a big number and a caps label,
+        the overdue card in red. The deal is a row of six playing cards on
+        the felt, each 5 by 7.4 with an inner hairline frame, the percent
+        and suit as corner indices top left and upside down bottom right,
+        and the team, name, a large suit pip, percent, tasks, due and status
+        in the middle. Below, Chips won stacks poker chips per day beside
+        Hand history, a list with card back avatars. Cards go three across
+        below 1100px, the hand straightens into a two by two grid on phones
+        and cards go two across.
+    spacing: An 8px unit. 20px between cards, 16px inside a card and 40 to 48px between sections.
+    density: Roomy. Six cards in one row on a wide table.
+    corners: 10px on cards and panels, 8px on buttons and fields, 5px on card back avatars, round chips.
+    borders: A 1px warm grey card edge with an inner hairline frame 6px in.
+    shadows: Cards cast 0 2px 0 felt shade plus 0 8px 18px rgba(30,50,30,0.18). Hand cards lift a little more.
+    icons:
+        The suit shapes drawn solid in SVG. Club for On track, diamond for At
+        risk and spade for Behind and overdue, each with its word. People are
+        blue card backs with diagonal stripes and initials.
+    focus: A 2px ink outline offset 2px inside a 6px brass halo.
+    tone: Card room words in plain sentences, such as The deal, Chips won, Hand history and Play those first.

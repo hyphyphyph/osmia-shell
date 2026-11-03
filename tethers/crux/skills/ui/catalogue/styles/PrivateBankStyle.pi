@@ -1,0 +1,48 @@
+export anchor PrivateBankStyle:
+    number: 49
+    screen: Pricing
+    name: Private bank
+    idea: A conservative wealth-management letterhead in navy and ivory, with engraved serif capitals, a thin gold rule and a framed schedule of fees in a formal voice.
+    base: light
+    palette:
+        ivory: #f8f4ea, the page
+        vellum: #fffdf7, the plan frame and the style sheet ground
+        navy: #13254a, text, rules, the primary button and the featured Team column
+        slate: #5a6378, captions, italic notes and meta text
+        gold: #a8843c, thin rules, the inner frame line and the focus halo, decoration only
+        goldInk: #7a5c22, small gold capital labels on ivory
+        paleGold: #c9a75a, gold accents and roman numerals on navy
+        hairline: #d9d0bc, row dividers
+        ledgerGreen: #1f5a3a, included ticks in the table
+    type:
+        Display is Didot, Bodoni 72, Bodoni MT, Baskerville, Times New Roman,
+        serif, always uppercase with wide tracking. Text is Baskerville,
+        Hoefler Text, Georgia, serif. Sizes are 52px for the page title at
+        0.14em tracking, 56px regular lining figures for prices, 26px plan
+        names at 0.24em, 17px body on a 1.6 line, 15px italic notes and
+        12px capital labels at 0.22em.
+    layout:
+        A centred letterhead with a monogram crest in a double circle, the
+        brand in spaced capitals and a small capital nav, closed by a double
+        gold rule. Below sit a small gold overline, the title, an italic
+        lede, a diamond flourish and a square two part billing switch with
+        the free months note in italic gold. The three plans share one
+        certificate frame, a navy line with a gold line inset 6px, split
+        into columns by hairlines. Team is a solid navy column with the
+        Most popular label sitting on the top frame edge. Each plan shows a
+        roman numeral, the name, a short gold rule, the price, an italic
+        billing line, a dash list and a button. Then a comparison table with
+        a tinted Team column and a centred list of questions with roman
+        numerals. Below 900px the plans stack inside the same frame.
+    spacing: An 8px unit. 36 to 40px inside plans and 72 to 88px between sections.
+    density: Sparse. Few words per line with generous leading.
+    corners: None. Every edge is square.
+    borders: A double frame of 1px navy then 1px gold. Hairlines between rows and a 1px navy rule under the table head and at its foot.
+    shadows: None. Buttons carry an inset keyline in gold 3px inside the edge.
+    icons:
+        No pictograms. A monogram crest, a diamond flourish, roman
+        numerals, em dashes as list marks, a tick and a dash in the table,
+        and plus and minus on the questions. The billing switch shows a
+        filled diamond on the chosen option.
+    focus: A 1px navy outline offset 4px with a 1px gold halo outside it. A focused field gets a 2px gold underline on white.
+    tone: Formal and measured, such as Schedule of fees, Particulars and Questions answered.

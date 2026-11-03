@@ -1,0 +1,51 @@
+export anchor CrosswordStyle:
+    number: 102
+    screen: ProjectsDashboard
+    name: Crossword
+    idea: The dashboard set as a newspaper crossword, with the brand and totals written into numbered squares, the fortnight filled in on a grid split by black squares, projects as the Across clues and activity as the Down clues.
+    base: light
+    palette:
+        newsprint: #fbfbf8, the page
+        squareWhite: #ffffff, grid squares, the header and fields
+        blackSquare: #111111, text, grid lines, the divider column and the primary button
+        pencil: #444444, clue lengths, axis labels and notes
+        deepBlue: #8db1de, filled squares this week on the grid
+        wordBlue: #bcd3ee, filled squares last week, progress squares, first answer squares and the current nav tab
+        paleBlue: #e3ebf5, the highlighted first clue in each list
+        cursorYellow: #ffe36b, the active first brand square and the focus fill
+        green: #1d6b3a, On track
+        amber: #8a5300, At risk
+        red: #b3261e, Behind and overdue
+    type:
+        Labels and grid letters use Franklin Gothic Medium, Libre Franklin,
+        Arial, sans-serif. Clues use Georgia, Times New Roman, serif. Brand
+        letters are 22px bold in 36px squares, the greeting 30 to 44px bold,
+        answer digits 30px bold in 48px squares, clue heads 16px caps, clue
+        text 16px Georgia, lengths 14px grey and square numbers 9px bold.
+    layout:
+        A white header spells BRIGHTWORK in ten squares inside a 3px frame,
+        the first square yellow with a tiny 1. At right are a Find a clue
+        labelled search field, the bell, a black New project button and the
+        user. The nav is a row of plain links, the current one a blue tab.
+        The greeting has a caps edition line and a red overdue line. The four
+        totals sit in a ruled band as answers, each written digit by digit in
+        framed squares with a clue number, then a caps clue such as 1 Across
+        and the label with its length. The puzzle below has three columns.
+        The grid is the chart, fourteen columns of squares split by a black
+        column between weeks, filled from the bottom one square per task,
+        with the count in the top filled square. Across lists the six
+        projects as numbered clues with team, tasks and due, the percent as
+        the length, and a row of ten progress squares with the status. Down
+        lists the six activity items with the time as the length. The grid
+        spans the top below 1100px and all stacks below 700px.
+    spacing: An 8px unit. Squares are 22 to 48px, 8px between clues and 32px between columns.
+    density: Dense like a puzzle page.
+    corners: Square everywhere.
+    borders: 1px black square edges, a 3px black outer frame on every grid and answer, a 2px rule under clue heads.
+    shadows: None.
+    icons:
+        Plain geometric marks in currentColor. An open circle for On track,
+        an open triangle for At risk and a solid square for Behind and
+        overdue, each with the caps word.
+    focus: A 3px black outline with the control filled cursor yellow, like the active square.
+    tone: Puzzle setter's voice, such as Find a clue, Across the projects and Solve those first.

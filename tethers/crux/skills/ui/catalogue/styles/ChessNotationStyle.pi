@@ -1,0 +1,53 @@
+export anchor ChessNotationStyle:
+    number: 101
+    screen: ProjectsDashboard
+    name: Chess notation
+    idea: The dashboard kept like a tournament scoresheet, with board files for navigation, the totals on a checkered rank, projects in a standings table with chess pieces and annotation marks, and activity written as numbered moves.
+    base: light
+    palette:
+        scoresheet: #fbfaf7, the page, tables and fields
+        ink: #161616, text, rules, week two squares and the primary button
+        graphite: #3b3b3b, meta, legends and axis labels
+        walnut: #6b4a2b, dark board squares, week one squares and file letters
+        lightSquare: #f1e9da, light board squares and header cells
+        darkSquare: #e2d4bb, empty dark squares on the chart and the focus halo
+        green: #24603e, On track
+        amber: #8a5200, At risk
+        red: #a02020, Behind and overdue
+    type:
+        Headings use Futura, Century Gothic, Avenir Next, Segoe UI,
+        sans-serif. Body uses Georgia, serif. Notation and numbers use
+        ui-monospace, SF Mono, Menlo, Consolas, monospace. The greeting is 30
+        to 44px Futura at 500, summary numbers 52px mono bold, block heads
+        18px Futura caps tracked 0.14em, project names 16px Georgia, notation
+        14px mono and legends 13px Georgia.
+    layout:
+        The header has a king glyph and the caps brand at left and a mono
+        search field, the bell and a black New project button at right. A
+        ruled scoresheet table below gives Player Mara Okafor and the date.
+        The nav is a full width row of ruled cells, each with a walnut file
+        letter a to f, the current cell filled black. The greeting sits left
+        with Check. 4 tasks are overdue at right. The four totals are one
+        checkered rank of alternating light and walnut squares in a 2px ink
+        frame. Standings is a ruled table with number, a chess piece for the
+        team, project and team, tasks as 18/25, a rank of eight squares
+        filled for progress with the percent, due date and status, with
+        striped rows. Below, Fourteen ranks, two checkered boards of seven
+        files each filled one square per task, sits beside Moves, a numbered
+        list with a short walnut mono code, the plain sentence and the time.
+        On phones the table becomes stacked rows and the nav wraps into
+        three cells across.
+    spacing: An 8px unit. 8 to 10px table cell padding and 40px between blocks.
+    density: Dense and orderly, like a scoresheet. Tables carry most of the content.
+    corners: Square everywhere.
+    borders: 1px ink rules for tables and the nav, 2px ink rules under block heads and around the totals rank.
+    shadows: None.
+    icons:
+        Unicode chess pieces for teams, a bishop for Design, a rook for
+        Engineering, a knight for Research and a queen for Marketing, and a
+        king for the brand. Annotation marks are drawn in SVG, an
+        exclamation in a circle for On track, a query and exclamation in a
+        diamond for At risk, and a double query in a solid square for Behind
+        and overdue, each with the word.
+    focus: A 3px ink outline offset 2px inside a 6px dark square halo.
+    tone: Terse tournament shorthand with a plain sentence beside it, such as Check, Standings, Fourteen ranks and Moves.

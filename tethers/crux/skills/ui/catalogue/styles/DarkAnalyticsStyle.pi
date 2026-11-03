@@ -1,0 +1,55 @@
+export anchor DarkAnalyticsStyle:
+    number: 304
+    screen: OpsMonitor
+    name: Dark analytics
+    idea: Charts lead on a dark slate canvas, a full-width requests chart over error and latency half charts, each series in its own crisp colour, with a service table and stacked lists below.
+    base: dark
+    palette:
+        canvas: #0b1017, the page and style sheet ground
+        panel: #121a24, cards and the top bar
+        raise: #18222f, the current app tab, the pressed range button and the secondary button
+        line: #243243, card borders and table rules
+        ink: #e6edf5, text and figures
+        muted: #9aa8ba, labels, axes, meta and dashed deploy markers
+        requests: #4cc9f0, the requests series and its area, links and the primary button
+        errors: #ff7a93, the error series and Firing
+        p50: #b19cff, the dashed p50 latency line
+        p95: #f2b84b, the p95 latency line, Degraded and Investigating
+        healthy: #5ad08e, Healthy and Resolved
+        recovered: #7ab8ff, Recovered
+        focus: #ffe066, the focus outline
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial, at 14px and 1.45, with ui-monospace, Menlo, Consolas at 13px
+        for service names and versions. The page title is 22px at 650,
+        figure values 28px at 650 with tabular numbers, card titles 15px at
+        650, figure labels 12px caps tracked 0.04em, axes 11px.
+    layout:
+        A panel coloured top bar holds a gradient square mark and Brightwork
+        Ops, the five suite apps as tabs with Ops current and a requests
+        coloured underline, an Environment Production pill and a 1h 6h 24h
+        7d segmented range with 24h pressed. The page has a title and the
+        description line, then four figure cards in a row, each with a caps
+        label, a big value, a 96px sparkline and a note, for requests per
+        minute, error rate, api p95 latency and the open incident. A wide
+        card holds the requests chart with a fading area, four grid lines,
+        dashed vertical deploy markers and a ringed peak point labelled
+        9,400 at 14.00, with an hour axis and a note. Error rate and latency
+        follow as two half cards, the spike marked with a small triangle.
+        Below sits a services table beside a stack of three cards, the
+        incident card with an amber border and tinted ground, then alerts
+        and deploys as ruled lists. Below 980px everything stacks and the
+        figures go two by two, at phone width one per row with the table
+        in its own sideways scroll.
+    spacing: An 8px unit. 16px card padding and gaps, 24px page padding.
+    density: Medium. Four figures, three charts and the lists over about two screens.
+    corners: 10px cards, 8px buttons, fields and range control, full round status pills.
+    borders: 1px #243243 on every card, inner rules in #1c2735, no borders inside charts.
+    shadows: None. Depth comes from the panel step and the tinted incident card.
+    icons:
+        16px status shapes in tinted pills beside the word. A ringed tick
+        for Healthy, a triangle with a bang for Degraded, a circular arrow
+        for Recovered, a bolt for Firing, a plain tick for Resolved and a
+        magnifier for Investigating.
+    focus: A 2px yellow outline offset 2px.
+    tone: Neutral analytic labels, such as Requests per minute, Signal and Production overview.

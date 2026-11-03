@@ -1,0 +1,57 @@
+export anchor IRCClassicStyle:
+    number: 347
+    screen: TeamChat
+    name: IRC classic
+    idea: A plain terminal chat client, where a topic line, a window list, a log with a fixed time and nick column, a nick list and a status bar do everything in one monospace face.
+    base: dark
+    palette:
+        bg: #0c0c0c, the log and the style sheet
+        bar: #1d1d2a, the title bar and the status bar
+        topic: #00303d, the topic line
+        sel: #103a4a, the current window row
+        rule: #3a3a3a, pane dividers
+        ink: #d0d0d0, message text
+        dim: #9a9a9a, times, brackets and event lines
+        white: #ffffff, active windows and the inverse focus block
+        hi: #5fd7ff, links, the input prompt and section labels
+        warn: #ffd75f, reactions, typing and activity
+        mention: #ff87af, the mention window
+        nick1: #d7afff, Priya's nick
+        nick2: #87d787, Mara's nick and the send key
+        nick3: #ffaf5f, Aiko's nick
+        nick4: #87afff, Jonas's nick
+    type:
+        One monospace stack, ui-monospace, Cascadia Mono, DejaVu Sans Mono,
+        Liberation Mono, Menlo, Consolas, at 14px with 1.5 leading, 13px
+        under 720px. Bold only for active and mention windows and section
+        heads at 20px.
+    layout:
+        Full width terminal. A one line title bar reads Brightwork Chat,
+        mara on the left and the channel with 5 lines and 1 thread on the
+        right. A teal topic line follows, Topic then a derived line about
+        the hero options due Monday. Three panes, a 290px window list, the
+        log and a 230px nick list, split by 1px rules. Windows are numbered
+        1 to 8, channels then queries. The current one is on the sel band,
+        mobile-release is bold white with (4 unread), billing-war-room is
+        bold pink with [@1 mention]. The log is a grid with a 7ch time in
+        brackets, a 16ch right aligned nick in angle brackets in that
+        person's colour, then the text. A day change line starts it. Under
+        Aiko's line an arrow row holds an underlined thread link with 3
+        replies and yellow [+1 x3] and [eyes x1] tags. The image is an
+        event line with a star, Priya sent an image and the filename as a
+        link. The nick list marks people with plus for online, tilde for
+        away and minus for offline plus the word. A status bar shows the
+        time, mara, 2 and the channel, and an Act field naming window 3
+        with 4 unread and window 4 with @1 mention. Then -- Priya is typing
+        in yellow and an input line with the bracketed channel prompt, the
+        field and bracketed attach, emoji and send words. Below 720px the
+        panes stack, windows wrap inline and each log line wraps with a
+        hanging indent.
+    spacing: Character cells. 1ch gaps, a 12px pane gutter, one line per message.
+    density: Dense. Fixed 7ch time and 16ch nick columns.
+    corners: Square everywhere.
+    borders: 1px #3a3a3a pane dividers. Bars are solid colour strips.
+    shadows: None.
+    icons: None. Text marks only, plus, tilde and minus for presence, an arrow for the thread and a star for events.
+    focus: Inverse video, a white block with black text.
+    tone: Terse client speak, such as Day changed, Act with window numbers, and -- Priya is typing.

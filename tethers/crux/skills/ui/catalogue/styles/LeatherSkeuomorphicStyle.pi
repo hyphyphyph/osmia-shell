@@ -1,0 +1,51 @@
+export anchor LeatherSkeuomorphicStyle:
+    number: 30
+    screen: SignIn
+    name: Leather skeuomorphic
+    idea: A 2010-era desk object, a stitched tan leather folio holding a cream ruled paper card, with embossed labels and glossy buttons you want to press.
+    base: light
+    palette:
+        desk: #e9dfcc, the page behind the folio with a fine noise grain
+        tanLeather: #c99c6b, the folio cover and the section tabs, with grain
+        deepLeather: #a97a4b, the debossed badge and the leather paper corners
+        stitch: #f6e7c8, dashed stitching
+        creamPaper: #fbf6ea, the card and the style sheet
+        ruledLine: #e7dcc4, ruled paper lines and dividers
+        ink: #2f2216, text and headings
+        embossedBrown: #3b2615, the brand and any text on leather
+        muted: #6b5640, the or divider and meta text
+        feltGreen: #2f6b3a, the glossy primary button and the checkbox tick
+        waxRed: #a3271c, error text and the error field border
+        focusBlue: #3d7bc4, the focus glow
+        link: #6a3e17, underlined links
+    type:
+        Georgia, Times New Roman, serif for the brand, headings and asides,
+        and Helvetica Neue, Helvetica, Arial, system-ui, sans-serif for
+        controls. The brand is 34px bold italic serif, the heading 26px
+        bold serif, buttons 15 to 16px bold sans, body 15px at 1.5, the
+        create account line 16px italic serif, and labels 12px bold
+        uppercase sans with 0.06em tracking. All text carries a 1px white
+        or cream emboss shadow below.
+    layout:
+        A leather folio 920px wide on a desk. The left flap, 300px wide,
+        holds a round debossed badge with a sun icon, the brand, a one
+        line motto and a stitched strap with a brass stud at the bottom.
+        The right side is a cream ruled paper card with a pink margin rule,
+        held by two stitched leather corners at the top, carrying the form.
+        Privacy and Terms sit below the folio. Below 760px the flap becomes
+        a short header row with the badge and brand, and the paper fills
+        the width.
+    spacing: An 8px base on a 28px ruled paper rhythm. 12px between sign-in buttons, 18px between fields and 36 to 40px paper padding.
+    density: Medium. Two panels with comfortable controls.
+    corners: 14px on the folio, 8px on buttons, 6px on fields and notes, 4px on the paper.
+    borders: Dashed 2px cream stitching inset 8px on all leather. 1px tan borders on buttons and wells. A pink margin rule on the paper.
+    shadows:
+        Lit from above. Inset shadows on fields and the badge, a soft drop
+        under the folio and paper, 1px white highlights on top edges, and
+        glossy buttons split by a hard highlight at the half line.
+    icons:
+        A line sun debossed into the leather badge, round letter coins G
+        and M on sign-in buttons, a filled triangle with an exclamation
+        mark in a pale red note for the error, and a tick in the checkbox.
+    focus: A 2px white gap then a 3px blue glow ring around buttons and rows. A focused field gets a blue border and a soft 3px blue glow.
+    tone: Warm and personal, a little old-fashioned, such as Projects for small teams, kept in one well-worn folio.

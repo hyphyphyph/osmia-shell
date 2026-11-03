@@ -1,0 +1,48 @@
+export anchor DarkGlassStyle:
+    number: 247
+    screen: DesignEditor
+    name: Dark glass
+    idea: The canvas sits on a deep, softly glowing colour field and every tool floats above it as translucent dark glass, so the work feels lit from behind while text stays on dark tint.
+    base: dark
+    palette:
+        base: #0a0b16, the page under the glow
+        violetGlow: #7b3fe4, a large radial blob at 75 percent top left
+        tealGlow: #1fa5c9, a radial blob at 70 percent top right
+        roseGlow: #e0457b, a radial blob at 60 percent at the bottom, also the spacing guide
+        glass: #101220, panels at 72 percent with a 28px blur and 150 percent saturation
+        edge: #ffffff, panel rims at 16 percent and a 22 percent inner top highlight
+        ink: #f3f4fb, text
+        muted: #bcc0d4, labels and idle icons
+        cyan: #7fe3ff, Share, the active tool, the selected row ring, frame selection and focus
+        cyanInk: #04222c, text and icons on cyan
+        saved: #86f0b5, the Saved chip
+        pin: #ffd27a, the comment pin
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Base 13px at 1.45. File name 13px 700, panel titles 12px 600
+        muted, values with tabular numbers and the sheet title 28px 700.
+    layout:
+        The whole editor sits on a 780px colour field made of four radial
+        glows. Three glass pills float across the top, the file pill with a
+        round gradient B, the tool pill centred with six 40px round tools,
+        Move filled cyan, and 66%, and the people pill with overlapping
+        ringed initials, Present and a cyan Share. A 248px glass layers
+        panel floats left and a 264px glass inspector floats right, both
+        hugging their content. The Hero frame floats in the middle with a
+        cyan ring, round handles and a deep shadow, and the comment bubble
+        is itself glass. The inspector holds tinted blocks for Position and
+        size, Fill, Auto layout with pill segments, Corner radius and
+        Export. A glass status pill is centred at the bottom. Below 1120px
+        the tool pill drops to its own row. Below 760px the side panels
+        hide and the tool pill floats under the canvas above the status.
+    spacing: An 8px unit. 16px gaps between floating panels, 14px panel padding, 10 to 12px inside blocks.
+    density: Medium. Three floating pills, two side panels and one status pill.
+    corners: Large. 20px panels, 14px blocks, 10px fields, pill tools, buttons and segments.
+    borders: 1px white at 16 percent around glass and 8 to 10 percent around inner blocks.
+    shadows: An inset 1px top highlight plus 0 12px 40px black at 35 percent, and 0 30px 80px under the frame.
+    icons:
+        18px rounded line icons at 1.6px stroke in 40px round tools. Saved
+        uses a check circle on a faint green chip, editing two people and the
+        version a tag, each with its words.
+    focus: A 2px cyan outline offset 2px with a 6px cyan halo at 25 percent.
+    tone: Light and calm, such as Position and size and Export.

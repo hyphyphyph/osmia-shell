@@ -1,0 +1,55 @@
+export anchor TabloidStyle:
+    number: 79
+    screen: ProjectsDashboard
+    name: Tabloid
+    idea: The dashboard shouts like a tabloid front page, with a red masthead, a giant condensed splash for the overdue count, starburst stickers and every project in a tilted cut-out photo box.
+    base: light
+    palette:
+        paper: #fbfaf7, the page and photo frames
+        ink: #0b0b0b, type, 3px borders, hard shadows and the nav strip
+        mastheadRed: #c8102e, the masthead, the primary button, this week bars, the overdue fact box and Behind
+        highlighter: #ffe100, fact boxes, starbursts, the current nav item and At risk, ink text only
+        grey: #4a4a4a, captions under photo headlines
+        halftone: #d9d6cf, the dot screen inside photo boxes
+        cutoutGrey: #9a968e, silhouettes inside photo boxes, decoration only
+        green: #0f6b33, the On track sticker
+        focusBlue: #123e9c, the 4px focus outline
+    type:
+        Shouting type uses Impact, Haettenschweiler, Arial Narrow Bold,
+        Franklin Gothic Heavy, condensed sans in caps. The splash is 132px
+        at 0.86 line height, the masthead 76px italic set on a red block
+        skewed 4 degrees, section bars 32px, photo headlines 26px, fact
+        figures 64px and nav 18px. Body uses Arial, Helvetica Neue in bold
+        at 22px for the deck and 15 to 16px for text.
+    layout:
+        A black nav strip runs across the top with caps links, Home on
+        yellow, and Signed in Mara Okafor at the right. The masthead is a
+        skewed red block with Brightwork in white italic and a small strap,
+        casting a 6px ink shadow, beside the date in caps over a thick rule,
+        a boxed FIND search, a red New project button and a yellow starburst
+        reading 3 new. The splash sits between 6px rules, a yellow tilted
+        kicker Morning, Mara, the headline 4 TASKS OVERDUE with the first
+        words red, a bold deck with Billing migration highlighted, and a big
+        rotated yellow starburst reading 73 done this week. Four yellow fact
+        boxes tilt alternately with hard shadows, the overdue box red. The
+        main area is The big six, a grid of tilted white photo boxes, each
+        with a halftone picture of a simple drawn object such as a browser,
+        phone, clipboard, card, book or envelope, a black percent flag in
+        the corner, a caps headline, a meta line and a status sticker. Team
+        gossip runs beside it with caps names and red time chips. The
+        fortnight that was is a boxed bar chart with a red hard shadow,
+        white bars last week, red bars this week and big numbers on top. At
+        375px the photos stack in one column and the burst moves under the
+        splash.
+    spacing: An 8px unit, loud and packed. 16 to 22px between boxes and 6px rules between blocks.
+    density: Medium. Few words, each one huge.
+    corners: Square boxes. Only the On track sticker is a pill. Boxes tilt by 1 to 2 degrees.
+    borders: 3px ink on boxes and fields, 4 to 6px ink rules above and below the splash.
+    shadows: Hard offset ink shadows of 4 to 8px with no blur. The chart casts a red one.
+    icons:
+        Stickers with different shapes. A green disc with a tick on a white
+        pill for On track, a yellow sign with a black triangle for At risk
+        and a red jagged burst with a cross for Behind. Starbursts hold the
+        big numbers.
+    focus: A 4px focus blue outline offset 2px.
+    tone: Exclaiming headlines, such as Morning, Mara, 4 tasks overdue, Shock as, The big six and Team gossip.

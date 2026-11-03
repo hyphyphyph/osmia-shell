@@ -1,0 +1,58 @@
+export anchor SignPainterStyle:
+    number: 153
+    screen: ProjectsDashboard
+    name: Sign painter
+    idea: The dashboard is a hand-painted shop front, with a green fascia in gold-leaf letters, the greeting arched across the window, the totals on painted show cards and the projects listed on a lettered directory board.
+    base: light
+    palette:
+        wall: #f5efe1, the page around the shop front
+        windowGlass: #fbf8f0, the window, fields and search
+        fasciaGreen: #1f3d2b, the fascia, window frame, last week bars and progress stripes
+        goldLeaf: #c9962e, drop shadows, pinstripes and card shadows, never small text
+        paleGold: #e9c96e, gold lettering and lines on green, the greeting outline and the focus halo
+        oxblood: #6e1d17, the greeting, script accents, the primary button, overdue, Behind, this week bars and focus
+        signBlack: #1c1a17, block lettering, outlines and dotted leaders
+        muted: #5a5246, meta and day labels
+        showCard: #fffaf0, show cards and boards
+        okGreen: #2d5a2a, On track
+        riskAmber: #7a5100, At risk
+        rule: #d8c9a8, hairlines between directory lines
+    type:
+        Block lettering uses Rockwell, Rockwell Nova, Roboto Slab,
+        Clarendon, Superclarendon, Georgia, serif in bold caps. Script
+        accents use Brush Script MT, Segoe Script, Apple Chancery, URW
+        Chancery L, cursive at 19 to 30px and never carry a fact alone.
+        Body uses Georgia, Times New Roman, serif. Fascia brand 44px in
+        pale gold with a gold and black drop, the window greeting 58px
+        caps set on an arc, show card figures 64px with a pale gold drop,
+        directory names 18px caps, body 15 to 16px.
+    layout:
+        A shop front up to 1240px. The fascia is a green board with a
+        double gold pinstripe inset, the brand in gilt letters with a
+        script line under it, caps nav in cream with a pale gold
+        underline on Home, a cream search, an oxblood button with a gold
+        inner line and black drop, a gold ring bell and a gold avatar. The
+        window below has a 12px green frame, a gold inner line and two
+        faint diagonal glare streaks. GOOD MORNING, MARA is painted in
+        oxblood caps with a gold shade along an arc, the date sits under
+        it in script, and 4 TASKS ARE OVERDUE sits between double rules.
+        Four show cards, each slightly tilted, have a script eyebrow such
+        as Now showing, a large figure, a rule and the caps label, with a
+        hard gold shadow. Below, a directory board lists each project as
+        a caps name, dotted leaders and a large percent, then the
+        category in script, a pinstriped progress bar, tasks, due date and
+        status. A side column holds two smaller boards, Tasks done with
+        green then oxblood bars carrying gold shade and a pale gold inner
+        line, and Lately, the activity with times in script. On phones
+        cards go two by two and boards stack.
+    spacing: An 8px unit. 24 to 32px between cards and boards, 12px between directory lines.
+    density: Medium. Big showy lettering up top and a tidy directory below.
+    corners: Square cards and boards, 3 to 6px on the fascia, buttons and fields, round bell and avatar.
+    borders: Gold pinstripes inset in the fascia, the window frame and every board, 2px black around show cards, dotted leaders and double rules.
+    shadows: Hard offset drops only, gold under black letters and cards and black under the primary button, like painted shade lines.
+    icons:
+        Solid painted shapes. Status uses a ticked circle for On track, a
+        triangle with an exclamation for At risk and a crossed square for
+        Behind, beside the caps word.
+    focus: A 3px oxblood outline offset 2 to 3px inside a 6 to 8px pale gold halo, a pale gold outline on the green fascia.
+    tone: A friendly shopkeeper, such as Now showing, the full directory and news from the workshop.

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Launcher round 1 - variation 3</title><style>
+:root{--bg:#101215;--bar:#1e2126;--line:#33373e;--text:#d6dae0;--dim:#8a909a;--accent:#f0a35e;--accent-bg:rgba(240,163,94,.16)}
+*{box-sizing:border-box}
+html,body{margin:0;background:#0b0c0e;color:var(--text);font:12px/1 system-ui,"Inter","Segoe UI",sans-serif}
+body{min-width:1280px}
+.screen{width:1280px;height:250px;position:relative;background:linear-gradient(160deg,#171a20,#0f1114);overflow:hidden}
+.win{position:absolute;background:#1a1d22;border:1px solid #2a2e35;border-radius:6px;top:58px;height:150px}
+.win i{display:block;height:20px;border-bottom:1px solid #2a2e35;background:#1f2329;border-radius:6px 6px 0 0}
+.win p{margin:10px;height:6px;border-radius:3px;background:#262a31}
+.bar{height:30px;background:var(--bar);border-bottom:1px solid var(--line);display:flex;align-items:center;position:relative;color:var(--text)}
+.grow{flex:1}
+.item{display:flex;align-items:center;gap:5px;height:30px;padding:0 8px;position:relative;white-space:nowrap}
+.item.hover{background:#2a2e35;border-radius:4px;height:22px;margin:0 1px}
+.item b{font-weight:600}
+.dim{color:var(--dim)}
+.sep{width:1px;height:14px;background:var(--line);margin:0 4px}
+svg.ic{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;color:var(--dim)}
+.accent svg.ic,.accent{color:var(--accent)}
+.chip{display:flex;align-items:center;gap:6px;height:22px;padding:0 8px 0 4px;border-radius:4px;color:var(--dim);margin-left:4px}
+.chip.alert{background:var(--accent-bg);color:var(--text);box-shadow:inset 0 0 0 1px var(--accent)}
+.chip.icononly{padding:0 4px}
+.appic{width:16px;height:16px;border-radius:3px;display:grid;place-items:center;font-size:9px;font-weight:700;color:#14161a}
+.tray{display:flex;gap:8px;align-items:center;padding:0 8px}
+.tray span{width:14px;height:14px;display:block}
+.badge{position:absolute;top:4px;right:1px;min-width:12px;height:12px;border-radius:6px;background:var(--accent);color:#14161a;font-size:9px;font-weight:700;display:grid;place-items:center;padding:0 3px}
+.meter{position:absolute;left:8px;right:8px;bottom:3px;height:2px;background:#2d3137;border-radius:1px;overflow:hidden}
+.meter u{display:block;height:100%;background:var(--dim);text-decoration:none}
+.center{position:absolute;left:50%;transform:translateX(-50%);top:0}
+.cap{position:absolute;left:16px;bottom:12px;color:var(--dim);font-size:12px}
+.cap b{color:var(--text);font-size:13px}
+
+body{min-width:1280px}
+.stage{width:1280px;height:520px;position:relative;background:#0b0c0e}
+.frame{position:absolute;top:36px;width:624px;height:440px;background:linear-gradient(160deg,#171a20,#0f1114);border:1px solid #23272d;border-radius:8px;overflow:hidden}
+.frame.a{left:12px}.frame.b{left:644px}
+.tag{position:absolute;top:10px;left:12px;font-size:12px;color:var(--dim)}
+.win{position:absolute;background:#1a1d22;border:1px solid #2a2e35;border-radius:6px;opacity:.7}
+.win i{display:block;height:20px;border-bottom:1px solid #2a2e35;background:#1f2329;border-radius:6px 6px 0 0}
+.win p{margin:10px;height:6px;border-radius:3px;background:#262a31}
+.lc{position:absolute;left:12px;top:64px;width:600px;background:#23272d;border:1px solid #3a3f47;border-radius:10px;box-shadow:0 14px 36px rgba(0,0,0,.55);padding:6px;color:var(--text)}
+.sb{display:flex;align-items:center;gap:8px;height:40px;padding:0 10px;font-size:15px;border-bottom:1px solid #30353c;margin-bottom:4px}
+.sb svg{width:16px;height:16px;fill:none;stroke:var(--dim);stroke-width:1.5;stroke-linecap:round}
+.caret{display:inline-block;width:1px;height:17px;background:var(--accent);vertical-align:-3px;margin-left:1px}
+.r{display:flex;align-items:center;gap:10px;padding:0 10px;border-radius:6px;position:relative}
+.r.sel{background:#2f343c;box-shadow:inset 2px 0 0 var(--accent)}
+.r .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.r .nm em{color:var(--accent);font-style:normal}
+.r .k{color:var(--dim);font-size:11px}
+.cap{position:absolute;left:16px;bottom:10px;color:var(--dim);font-size:12px}.cap b{color:var(--text);font-size:13px}
+.big{font-size:30px;font-weight:600}
+.copy{border:1px solid #3a3f47;border-radius:4px;padding:3px 8px;font-size:11px;background:#2b3037;color:var(--dim)}
+</style></head><body>
+<div class="stage">
+<div class="frame a"><div class="tag">Typing: fire</div><div class="win" style="left:30px;top:250px;width:340px;height:170px"><i></i><p style="width:70%"></p><p style="width:50%"></p></div><div class="win" style="left:300px;top:300px;width:300px;height:140px"><i></i><p style="width:55%"></p></div><div class="lc"><div class="sb"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg><span>fire<span class="caret"></span></span></div><div class="r sel" style="height:28px"><span class="appic" style="background:#e8704a;width:16px;height:16px;font-size:8px">F</span><span class="nm"><em>F</em><em>i</em><em>r</em><em>e</em>fox</span><span class="k">App</span><span class="copy" style="padding:1px 6px">Alt+1</span></div><div class="r" style="height:28px"><span class="appic" style="background:#e8704a;width:16px;height:16px;font-size:8px">F</span><span class="nm">Inbox (3) - <em>F</em>astma<em>i</em>l</span><span class="k">Window</span><span class="copy" style="padding:1px 6px">Alt+2</span></div><div class="r" style="height:28px"><span class="appic" style="background:#c58be0;width:16px;height:16px;font-size:8px">F</span><span class="nm"><em>F</em><em>i</em><em>r</em><em>e</em>fox Developer Edition</span><span class="k">App</span><span class="copy" style="padding:1px 6px">Alt+3</span></div><div class="r" style="height:28px"><span class="appic" style="background:#6a8fcb;width:16px;height:16px;font-size:8px">W</span><span class="nm"><em>F</em><em>i</em><em>r</em><em>e</em>wall Configuration</span><span class="k">App</span><span class="copy" style="padding:1px 6px">Alt+4</span></div><div style="display:flex;gap:14px;color:var(--dim);font-size:11px;padding:8px 10px 4px;border-top:1px solid #30353c;margin-top:4px"><span>Up/Down move</span><span>Enter run</span><span>Esc close</span><span style="margin-left:auto">&gt; command &nbsp; @ window &nbsp; : action</span></div></div></div>
+<div class="frame b"><div class="tag">Typing a sum: 18*24/3</div><div class="win" style="left:30px;top:250px;width:340px;height:170px"><i></i><p style="width:70%"></p><p style="width:50%"></p></div><div class="win" style="left:300px;top:300px;width:300px;height:140px"><i></i><p style="width:55%"></p></div><div class="lc"><div class="sb"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg><span class="copy" style="color:var(--accent);border-color:var(--accent)">Calculator</span><span>18*24/3<span class="caret"></span></span></div><div class="r sel" style="height:64px;padding:0 16px;gap:16px"><span class="big" style="color:var(--accent)">= 144</span><span class="nm"></span><span class="copy">Enter copies and closes</span></div><div style="display:flex;gap:14px;color:var(--dim);font-size:11px;padding:8px 10px 4px;border-top:1px solid #30353c;margin-top:4px"><span>Up/Down move</span><span>Enter run</span><span>Esc close</span><span style="margin-left:auto">&gt; command &nbsp; @ window &nbsp; : action</span></div></div></div>
+<div class="cap"><b>3 - Compact with hints.</b> 28 px rows with Alt+number shortcuts, a Calculator chip in the search box, and a footer that lists prefixes.</div></div></body></html>

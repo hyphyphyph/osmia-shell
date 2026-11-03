@@ -1,0 +1,62 @@
+export anchor AubergineStyle:
+    number: 235
+    screen: ProjectsDashboard
+    name: Aubergine
+    idea:
+        A plush plum workspace of rounded capsules, with a violet hero that
+        holds the greeting and four pill figures, projects as rows with
+        segmented pill meters, and rose as the single warm accent.
+    base: dark
+    palette:
+        night: #1a1020, the page and the style sheet
+        plum: #221528, the top bar
+        skin: #2a1a31, panels and project rows
+        flesh: #36223f, pill figures, the search field, empty meter segments and the current nav pill
+        heroTop: #3b2449, the top of the hero gradient
+        line: #4d3557, panel borders and row dividers
+        ink: #f3e8f5, text and figures
+        mauve: #c9b2cf, meta, labels and axis text
+        violet: #b9a0ec, last week capsules, category bubbles and secondary outlines
+        rose: #f4a3c0, the primary button, filled meter segments, this week capsules, links and focus
+        roseInk: #2b0f1d, text on rose
+        ok: #93e0c0, On track text and check circle
+        risk: #f3d27a, At risk text and triangle
+        bad: #ffab91, Behind and overdue text, crossed square and clock
+    type:
+        One geometric stack, Avenir Next, Century Gothic, Futura, URW Gothic,
+        Trebuchet MS, sans-serif. Base 14px at 1.5. The greeting is 40px at
+        700, pill figures 32px at 700 with tabular numbers, panel titles 20px
+        at 700, project names 16px at 600, meta 13px in mauve, and nav pills
+        14px at 600.
+    layout:
+        A plum top bar holds a rose round mark with the Brightwork name, the
+        six nav links as pills with Home filled, a pill search field, a round
+        bell, a rose New project pill and Mara Okafor with a round initials
+        disc. Under it a wide hero capsule with 28px corners fades from violet
+        plum at top to the panel colour. Its left side holds Hello, Mara, the
+        date and a rounded overdue pill reading 4 tasks are overdue with a
+        clock. Its right side holds the four figures as a two by two grid of
+        pill capsules, each a large number beside a short label. Below, two
+        columns. The wide left panel lists the six projects as rows with a
+        round violet category bubble showing the first letter, the name and
+        category, a status pill, a ten segment pill meter with the percent,
+        tasks done and the due date. The narrow right column holds the chart
+        as paired capsules by weekday, last week violet outlines and this week
+        rose fills with totals, then the activity as rows with round initials.
+        Below 980px the columns stack, below 640px the nav pills wrap and
+        project rows reflow into two lines.
+    spacing: An 8px unit. 24px panel padding, 16px row padding, 24px between panels.
+    density: Medium. Generous hero, compact project rows.
+    corners:
+        Very round. 28px hero, 22px panels, pills on every button, field,
+        chip, meter and bar.
+    borders: 1px line on panels and between rows. Last week capsules are 2px violet outlines.
+    shadows:
+        A soft plum glow under the hero, 0 16px 40px of near-black at 45
+        percent, none elsewhere.
+    icons:
+        Rounded line icons at 1.8px stroke. Status uses a check circle, a
+        triangle with a bang and a crossed square inside a pill with the word,
+        overdue a clock.
+    focus: A 2px rose outline offset 3px.
+    tone: Warm and personal, such as Hello, Mara and This week feels busier.

@@ -1,0 +1,54 @@
+export anchor MoroccanTilesStyle:
+    number: 147
+    screen: ProjectsDashboard
+    name: Moroccan tiles
+    idea: The dashboard is a tiled courtyard, with white plaster walls, zellige star patterns as borders and dados, the totals set in horseshoe-arched niches and progress filled with glazed tile colours.
+    base: light
+    palette:
+        plaster: #fbf7ef, the page and arch interiors
+        sand: #f2e8d6, niches, panel heads and totals
+        cobalt: #1f4e8c, the brand, frames, the current tab, this week tiles and the outer focus ring
+        emerald: #14654a, the primary button, last week tiles and On track
+        saffron: #d9a227, tile centres, heading stars and the inner focus line, never text
+        terracotta: #a84a22, the overdue banner, overdue figures and Behind
+        amberGlaze: #7a5300, At risk
+        ink: #1f2a36, text
+        muted: #4f5b66, dates, labels and meta
+        grout: #d9ccb4, hairlines and field borders
+    type:
+        Headings and figures use Hoefler Text, Iowan Old Style,
+        Constantia, Cambria, Georgia, serif. Everything else uses
+        Seravek, Avenir Next, Avenir, Segoe UI, Noto Sans, sans-serif.
+        Greeting 40px in cobalt, niche figures 58px, panel titles 22px
+        semibold, row titles 17px semibold, body 16px at 1.5, column
+        labels 13px caps.
+    layout:
+        A 20px zellige dado of cobalt eight point stars with saffron
+        centres runs across the top over a cobalt line. The header has
+        the star brand, tabs with round arched tops where Home is solid
+        cobalt, and on the right an arch topped search, an emerald New
+        project button, a round bell and a tile pattern avatar, all over
+        a cobalt rule. The courtyard row pairs a horseshoe arch doorway
+        framed in tile pattern, holding the greeting, date and a
+        terracotta overdue banner, with four tall arched niches, each with
+        an icon, a large figure, the label and a tile strip at its foot.
+        Below, a cobalt framed table of projects with a coloured star per
+        row, name with category and due date, a tile coloured progress bar
+        with percent, task count and status, beside the chart panel whose
+        bars have pointed tile filled tops, green tiles last week and blue
+        this week, plus two totals. Activity spans the width in three
+        columns with arch topped initials. A wide tile band closes the
+        page. On phones the arch goes above the niches, the niches go two
+        by two and table rows become stacked cards.
+    spacing: An 8px unit. 32px gutters, 16px between niches, 14 to 16px cell padding.
+    density: Medium. A full table beside a calm arched greeting.
+    corners: Arched. Niches, tabs, buttons, fields and initials have round tops and 4px bottoms, the greeting is a full horseshoe arch and panels are 6px.
+    borders: 2px cobalt frames, zellige bands as dado, footer and style sheet border, dashed grout lines between feed items.
+    shadows: None, except a 4px inner shade along the bottom of the primary button like a glazed tile edge.
+    icons:
+        Eight point stars as markers and the brand, line icons in cobalt
+        and emerald. Status uses an eight point star for On track, a
+        triangle with a bar for At risk and a hexagon with a dash for
+        Behind, beside the word.
+    focus: A 3px saffron outline offset 2px inside a 5px cobalt ring.
+    tone: Warm and plain, such as Good morning and Green tiles last week.

@@ -1,0 +1,56 @@
+export anchor DBAdminStyle:
+    number: 404
+    screen: DatabaseConsole
+    name: DB admin
+    idea: A professional dark console built from square ruled panes, a tree, a tabbed editor and a dense grid, where a single cyan accent marks only what runs and what is selected.
+    base: dark
+    palette:
+        page: #111418, the frame and gaps between panes
+        pane: #181c21, the schema tree, results grid, history and style sheet
+        head: #20252c, pane headers, the toolbar, grid headers and row numbers
+        well: #0c0e11, the editor, the title bar, fields and the status bar
+        line: #2c333c, every rule between panes, rows and cells
+        ink: #e2e6ea, text
+        muted: #9aa4b0, column types, line numbers, meta and pane titles
+        accent: #5cc8d6, the Run button, the active tab stripe, function names and focus
+        onAccent: #062227, text on the accent
+        accentSoft: #163037, the selected tree row and the current grid row
+        keyword: #c6a8ff, SQL keywords
+        number: #f2c879, numbers, primary key icons and the Read-only label
+        ok: #7fd9a0, Succeeded and string literals
+        bad: #ff9c94, Failed and the error message, on #2a1719
+    type:
+        System sans, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, for
+        chrome at 13px and 1.45. Data uses ui-monospace, SF Mono, Menlo,
+        Consolas. Pane titles are 11px bold caps with 0.06em tracking. The
+        editor is 13px mono at 1.6, the grid and tree 12px mono. The app
+        name is 13px at 600.
+    layout:
+        A desktop database tool. A 36px title bar holds a cyan B square,
+        Brightwork Data, a bordered production-replica chip with a cylinder
+        icon and an amber padlock Read-only on the far right. Below sits a
+        toolbar with Run in cyan with its shortcut, then Format, Save, a
+        divider and Explain. The workspace is three columns. A 240px schema
+        tree shows production-replica, then the five tables with chevrons,
+        tasks opened and tinted, and its six columns with key icons for id,
+        project_id and assignee_id and types right aligned. The centre has
+        two file tabs, the active one with a cyan top stripe, a line
+        numbered editor with coloured SQL, a green Succeeded bar with 3 rows
+        and 38 ms, then a ruled grid with row numbers, typed column headers
+        and right aligned amber counts. A 260px History pane lists three
+        runs with time, name, duration and a tick or cross line, the failed
+        one with a red edged error box. A segmented status bar closes the
+        screen. Below 1100px History drops under the grid. Below 720px every
+        pane stacks and the grid scrolls inside itself.
+    spacing: A 4px unit. 28px pane headers, 5px by 10px grid cells, 8px by 10px history rows.
+    density: High. Tree, editor, grid and history are all visible at once.
+    corners: 2px on buttons, fields and chips. Panes and the grid are square.
+    borders: 1px #2c333c rules between every pane, row and cell. The style sheet starts with a 4px cyan top rule.
+    shadows: None. Depth comes from four surface steps.
+    icons:
+        14px square capped line icons at 1.6 stroke. Cylinder for the
+        database, ruled box for tables, a key for key columns, a dash for
+        plain columns, tick for Succeeded and cross for Failed, each beside
+        its word.
+    focus: A 2px cyan outline inset 2px on controls, rows and fields, offset outward on the Run button.
+    tone: Terse tool labels, such as Run, Format, Explain, Succeeded and 3 rows.

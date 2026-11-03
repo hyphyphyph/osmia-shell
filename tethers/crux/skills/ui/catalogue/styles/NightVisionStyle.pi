@@ -1,0 +1,52 @@
+export anchor NightVisionStyle:
+    number: 302
+    screen: CodeRepository
+    name: Night vision
+    idea: The pull request seen through a night vision viewfinder, one phosphor green on black with grain, a vignette, corner readouts and a reticle on the title, so every status speaks through its shape and word.
+    base: dark
+    palette:
+        black: #000000, the page surround
+        scopeBlack: #020902, the viewfinder and style sheet ground
+        zone: #061406, zones, fields and the comment
+        phosphor: #a6ff9e, text, the primary button and the focus halo
+        bloom: #d6ffd0, headings, the failing and changes outlines and the focus outline
+        phosphorLow: #6fd06a, labels, removed lines and meta
+        phosphorDim: #2c6a2a, the reticle and control outlines
+        trace: #1f4d1e, zone borders and dashed dividers
+        addedGlow: #0b260b, added line ground
+    type:
+        One monospace family throughout, OCR A Std, OCR-A, Lucida Console,
+        ui-monospace, DejaVu Sans Mono, with a soft green text glow. Base
+        14px at 1.55. The title is 34px caps, the repository 22px, the
+        checks figure 30px, labels 11 to 12px caps tracked 0.12 to 0.16em,
+        the diff 12.5px.
+    layout:
+        The screen is one viewfinder, a black rounded rectangle with a 28px
+        radius, faint green grain behind the content and a dark vignette at
+        the edges. An on screen readout row shows a ring with Brightwork
+        code live, IR 2 and gain, and the channel PR 214. The header holds
+        the repository and a Private note, the tabs as caps with a pointer
+        before the current one, and outlined counters at the right. A
+        dashed rule leads to the target, a centred block with a framed
+        Open PR 214 tag, the title in caps and the merge sentence, behind
+        which a reticle draws crosshair lines with a gap round the title,
+        tick marks and four corner brackets. Below are three zones, 260px,
+        flexible and 260px, each a bordered box with a plus before its
+        label. Checks shows 11 of 12 and every check with a tick and ok,
+        the failing one boxed in a dashed bright outline with an octagon
+        cross and failing. The diff zone shows added lines bright on a
+        green ground and removed lines dim and struck, with the comment as
+        a bright framed Mark joined by a short line. The right zones hold
+        reviewers, files with added and removed counts, details and a
+        dashed disabled merge. Below 1100px the diff leads.
+    spacing: An 8px unit. 20px between zones, 12px zone padding, 48px around the reticle.
+    density: Medium. One centred target, then three zones of readouts.
+    corners: A 28px rounded viewfinder, 4px buttons and fields, square zones.
+    borders: 1px trace green on zones, dashed dividers, and a dashed bloom outline on whatever fails.
+    shadows: A soft green text glow and a dark vignette at the viewfinder edge, with grain behind the content.
+    icons:
+        1.8px line icons in the one green. A tick for passed, an octagon
+        cross for failing, a ringed tick for approved, a triangle for
+        changes, always with the word, since colour cannot help.
+    focus: A 2px bloom outline offset 3px with a 6px phosphor halo.
+    tone: Camera readouts, such as Live, IR 2, Gain, Mark and Locked until all checks pass.

@@ -1,0 +1,45 @@
+export anchor Pixel8BitStyle:
+    number: 29
+    screen: SignIn
+    name: Pixel 8-bit
+    idea: A light 8-bit title screen where every box is drawn in 4px pixel steps, the type is chunky monospace caps, and signing in feels like pressing start.
+    base: light
+    palette:
+        sky: #cfe8ff, the page background
+        panel: #fffdf5, the menu panel and the style sheet
+        cloud: #ffffff, fields, secondary buttons and the pixel clouds
+        ink: #1a1c2c, text, every pixel outline and the 1P tag
+        dim: #4a4e69, the Player 1 line and secondary text
+        startRed: #b4202a, the primary button and the error text and badge
+        linkBlue: #29539b, links with a 4px underline bar
+        coin: #ffcd75, the hard shadow under the brand, the Show key and the focus bar
+        grass: #38b764, the decorative ground strip
+        soil: #8a5a2b, the decorative brick ground with #9c6a37 bricks
+    type:
+        Courier New, Courier, ui-monospace, DejaVu Sans Mono, Menlo,
+        Consolas, monospace, always bold. The brand is 40px weight 900
+        uppercase with 0.06em tracking and a hard 4px coin shadow. The
+        heading is 20px uppercase. Buttons are 15px uppercase with 0.06em
+        tracking. Field text is 16px, body and errors 14px, and labels 12
+        to 13px uppercase with 0.1em tracking.
+    layout:
+        A centred title screen on a pale sky. Two pixel clouds float at the
+        top corners, then a pixel sun logo beside the brand and the line
+        Player 1 · ready. A single panel 440px wide holds a 1P tag with the
+        heading, two full width sign-in buttons, a dashed or divider, the
+        fields, the checkbox row, the red start button with a play arrow and
+        the create account line. Privacy and Terms sit below the panel, and
+        a grass and brick ground strip runs along the bottom. At 375px the
+        clouds hide and the panel fills the width.
+    spacing: A 4px pixel grid. 16 to 20px between controls and 28px panel padding.
+    density: Low. One panel, big targets and lots of sky.
+    corners: Notched pixel corners from four flat 4px box-shadows with no blur, so each box loses one pixel at every corner.
+    borders: 4px ink pixel outlines on every box. Buttons add a 4px inner bevel, lighter top left and darker bottom right. Dividers are 8px ink dashes 4px thick.
+    shadows: No soft shadows. Only the hard 4px coin shadow under the brand.
+    icons:
+        Pixel art drawn in SVG with crisp edges. A pixel sun logo, square
+        letter keys G and M on the sign-in buttons, a square badge with an
+        exclamation mark on the error, an X in the square checkbox, and a
+        play arrow on the start button and on a focused list row.
+    focus: A 4px dashed ink outline offset 8px. Buttons and rows also get a 4px coin bar along the bottom, and a focused field gets an 8px coin halo outside its pixel outline.
+    tone: Game menu words, short and upbeat, such as Player 1 · ready and a 1P tag. Labels and buttons are uppercase.

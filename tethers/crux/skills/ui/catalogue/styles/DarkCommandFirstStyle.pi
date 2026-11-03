@@ -1,0 +1,55 @@
+export anchor DarkCommandFirstStyle:
+    number: 230
+    screen: ProjectsDashboard
+    name: Dark command first
+    idea: A sparse dark home centred on one large command field with keyboard hints, where the urgent items appear as palette rows under it and the rest of the dashboard sits quietly below in small monospace-labelled lists.
+    base: dark
+    palette:
+        void: #0d0e10, the page and the style sheet
+        palette: #16181c, the command panel, fields and hover rows
+        key: #1f2328, key caps, the current nav item and the secondary button
+        line: #2b2f36, panel edges, group dividers, rules and meter tracks
+        ink: #ececee, text
+        muted: #9ca1aa, labels, hints, meta and times
+        teal: #5fd4c4, the selected row edge, meters, this week bars, the primary button and focus
+        onTeal: #062a25, text on teal
+        tealWash: #13302c, the selected palette row
+        lastWeek: #6f7580, last week bars
+        ok: #7ddc9a, the On track word and icon
+        risk: #f2c66d, the At risk word and icon
+        bad: #ff9585, the Behind word and icon and the overdue row
+    type:
+        Body in system-ui, Segoe UI, Roboto. Labels, figures, keys and times
+        in ui-monospace, SF Mono, Cascadia Code, Menlo, Consolas. The
+        command input is 18px, the greeting line 15px, rows 14px, figures
+        24px mono at 600, group labels 11px mono caps at 600 tracked 0.08em,
+        key caps 11.5px mono.
+    layout:
+        A borderless top line holds the lowercase mono wordmark in teal, six
+        small text links with Home on a key tile, then a square bell and an
+        MO tile with Mara Okafor. The first screen is mostly empty. Centred
+        at 720px sit the line Good morning, Mara · Saturday 31 October 2026
+        and then the command panel with a deep shadow. Its field reads
+        Search projects and tasks, or type a command with a Ctrl K key. Under
+        the field a Needs you group lists 4 tasks are overdue as the selected
+        row with a teal edge and an Enter key, then Billing migration with
+        Behind and Mobile app 2.0 with At risk. An Actions group holds the
+        New project button as a palette row with an N key. A row of hints
+        follows with keys for move, open, new project, 1 to 6 to jump and
+        search. Far below, the four figures sit in one mono strip ruled
+        above and below. Then two columns. Projects is a compact numbered
+        list from 1 to 6 with name, category, due, tasks, a teal meter and
+        the status. The right column holds a small Completed per day chart
+        with the totals in mono and an Activity list with mono times on the
+        left. Below 700px the nav takes its own row, only two hints show,
+        the figures go two by two and lists stack.
+    spacing: An 8px unit. 72px of air above and below the command panel, 8 to 10px palette row padding.
+    density: Sparse at the top, compact below. One field owns the first screen.
+    corners: 14px command panel, 8px rows and buttons, 5px key caps.
+    borders: 1px #2b2f36 on the panel and dividers. Key caps have a 2px bottom edge.
+    shadows: One deep shadow, 0 20px 60px black at 55 percent, under the command panel only.
+    icons:
+        Line icons at 1.75 stroke, 16px, and 20px in the field. Status is a
+        check circle, a triangle or a crossed square with the word in mono.
+    focus: A 2px teal outline offset 2px, and a 2px inset teal ring on the command field.
+    tone: Imperative and keyboard-led, such as Needs you, Actions, move, open and 1 to 6 to jump.

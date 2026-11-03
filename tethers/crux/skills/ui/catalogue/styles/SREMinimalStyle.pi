@@ -1,0 +1,47 @@
+export anchor SREMinimalStyle:
+    number: 308
+    screen: OpsMonitor
+    name: SRE minimal
+    idea: A very quiet single column in neutral greys, a plain sentence of the state at the top, hairline lists and tiny grey charts, with colour used only for the open incident.
+    base: dark
+    palette:
+        ground: #131416, the page and style sheet
+        ink: #dcdcdc, text and the primary button
+        soft: #b5b5b5, values and secondary text
+        muted: #8f8f8f, labels, times and healthy status
+        hairline: #2a2b2e, row rules and chart baselines
+        mark: #7d7d7d, chart lines
+        incident: #ff8466, the open incident, Degraded, Firing and the error spike only
+        focus: #e8e8e8, a thin focus outline
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial, at 15px and 1.6. The summary sentence is 34px at 300, the
+        incident title 20px at 500, names 15px at 500, labels, times and
+        status lines 13px in muted grey.
+    layout:
+        One left aligned column of about 760px with wide margins. A small
+        muted header line reads Brightwork Ops production 24 h with the
+        apps as plain links at right. A muted description line leads to a
+        large light sentence, One incident open in the incident colour,
+        then three services healthy, sync-worker degraded and billing back
+        after six minutes. The incident follows with a 2px incident colour
+        left line, its number, Investigating and Severity 2 in small
+        incident text, the title and the opened time and owner. Services,
+        the charts, alerts and deploys follow as quiet sections with small
+        muted headings and 64px between them. Lists are hairline rows with
+        the name, a right aligned value and a status line below. The charts
+        are three small grey line charts side by side with captions, the
+        error spike marked by a small incident diamond. At phone width the
+        charts stack.
+    spacing: An 8px unit. 12px rows, 64 to 72px between sections, 48px page padding.
+    density: Sparse. One narrow column.
+    corners: None, 2px on buttons.
+    borders: 1px #2a2b2e hairlines between rows, a 2px incident line, an underline field.
+    shadows: None.
+    icons:
+        14px status shapes in grey beside lower case words, a ringed tick
+        for healthy, a circular arrow for recovered and a tick for
+        resolved. Only the triangle for degraded, the bolt for firing and
+        the magnifier for investigating take the incident colour.
+    focus: A 1px light grey outline offset 4px.
+    tone: Lower case and plain, such as healthy, degraded and resolved, led by a summary sentence.

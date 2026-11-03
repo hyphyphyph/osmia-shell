@@ -1,0 +1,55 @@
+export anchor HotelNoirStyle:
+    number: 422
+    screen: TravelPlanner
+    name: Hotel noir
+    idea: The trip as a dim hotel lobby in black and brass, a wall of deep key boxes where booked legs hold a hanging key, unbooked legs show an empty hook and flights leave a letter, beside a guest register, a weather telegram and a deco framed map, under slanted blind shadows.
+    base: dark
+    palette:
+        lobby: #0b0b0c, the page and the style sheet
+        panel: #151515, the guest register and swatch cards
+        cubby: #1c1b19, key box interiors and list rows
+        wood: #241f18, the key box frame
+        line: #34312c, register rules and panel edges
+        ink: #f1ede4, text, flight letters and focus
+        muted: #b3ada1, captions, labels and Not booked
+        brass: #c9a45c, number plates, rules, the meter and the primary button
+        brassText: #e3c27e, section labels, keys, Booked and Done
+        onBrass: #1a1305, text on brass
+    type:
+        Display in Didot, Bodoni 72, Bodoni MT, Georgia. Body in Georgia at
+        16px, often italic. Labels in Futura, Century Gothic, Avenir Next at
+        12 to 13px caps tracked 0.3em in brass. The telegram in Courier New
+        at 15px caps. The title 96px at 400, box titles 26px.
+    layout:
+        A dark lobby with a warm glow at the top left and diagonal pale
+        bands from window blinds across the whole screen. A marquee of thin
+        and double brass rules with BRIGHTWORK TRIPS widely spaced in the
+        middle. A centred title block, The front desk presents in italic,
+        Japan in April in a large Didone face, and a spaced caps line with
+        three cities, fourteen days and the dates. Below, two columns. The
+        left is the key wall, a 3 by 2 grid of deep cubbies in a thick dark
+        wood frame, each shaded dark inside with a brass number plate 01 to
+        06 on its top edge. Inside, a drawn object sits left of the text.
+        Booked Tokyo and Kyoto hold a brass key with a tag, the train and
+        Osaka show an empty hook over a dashed square, and both flights show
+        a white letter. The text gives the date in caps, the title, the
+        detail in italic and a status tag. Two square buttons follow. The
+        right column stacks the guest register, rows Guest, Party, Stay and
+        Account in italic, a thin brass meter and Front desk checks with
+        dotted leaders, then a telegram card with a brass left bar reading
+        the weather with STOP between phrases, then a deco double framed map
+        with diamond markers for Tokyo, Kyoto and Osaka. Below 1060px the
+        register column moves under the wall, then boxes go two across and
+        one across at phone width.
+    spacing: An 8px unit. 44px round the title, 32px between the key wall and the register and a 6px wooden frame between boxes.
+    density: Medium. Six key boxes, one register, a telegram and a small framed map.
+    corners: Square throughout. Only the brass number plates round by 2px.
+    borders: A thick dark wood frame round every box, double brass rules in the marquee, dotted leaders in the checks and a brass bar on the telegram.
+    shadows: Deep inset shade at the top of each box, long drops under the key wall and the register, and diagonal light bands from blinds.
+    icons:
+        Drawn objects tell state. Booked is a brass key on its hook, Not
+        booked an empty hook over a dashed square and a flight a white
+        letter, each with a word in a tag, dashed for Not booked. Done is a
+        check and To do a dash.
+    focus: A 2px ink outline offset 3px, ringed again by a thin brass line.
+    tone: A discreet concierge, such as The front desk presents, Key boxes and Check out.

@@ -1,0 +1,58 @@
+export anchor NightSwimStyle:
+    number: 391
+    screen: FitnessTracker
+    name: Night swim
+    idea: An outdoor pool under night floodlights, seen from above, where the screen is four lanes split by bead lane ropes, numbered from the starting blocks, with a round pace clock for the run and rings filled like water levels.
+    base: dark
+    palette:
+        deck: #14191c, the tiled pool deck, page and style sheet
+        tile: #20272b, deck tile joints
+        water: #05212d, the pool and the sheet basins
+        lane: #072a39, alternate lanes and list rows
+        floor: #021118, lane floor lines, tube insides, fields and inner panels
+        ink: #eefaff, text and figures
+        muted: #a3cad6, labels, tube outlines and passed plan weeks
+        cyan: #7fe0ff, water levels, zone bars, laps, the Done tag, primary button and focus
+        onCyan: #02202a, text on cyan
+        coral: #ff8f80, rope beads, the pace hand, the top zone, today and the current week
+        ropeWhite: #f2fbff, rope beads and the secondary button edge
+        block: #e9eef0, starting blocks, lane numbers, the pool coping and sheet tabs
+        onBlock: #0c1418, numbers on blocks
+    type:
+        One geometric stack, Futura, Century Gothic, URW Gothic, Avenir
+        Next, Trebuchet MS, system-ui. Pace in the clock is 34px bold, lane
+        figures 28px, block numbers 22px, lane labels 13px caps tracked
+        0.16em, body 15px at 1.5.
+    layout:
+        A tiled deck page with a 48px tile grid. The header has a wave mark,
+        Brightwork Move, square Today, Week and Plan tabs with Today in
+        white, and the date with lights on. Four white starting blocks
+        numbered 1 to 4 sit above the pool. The pool has a 10px light
+        coping, floodlight glows at the top and four lanes side by side
+        split by bead lane ropes in coral, white and teal, with dark T
+        shaped floor lines behind. Lane 1 Rings shows three tall water tubes
+        for Move, Exercise and Stand, filled to their percent with a wavy
+        surface and a dashed goal line at the top, names, values and goals
+        below, and a note on what is left. Lane 2 Evening run has a Done
+        tag, a round pace clock with sixty ticks, a coral hand on 9 seconds
+        and 5 min 9 s per km in the centre, then four figure tiles. Lane 3
+        Zones and laps holds zone bars with zone 3 in coral, then the week
+        as seven lap rows with day, bar and km, rest days dotted with rest
+        and today in coral. Lane 4 At the wall holds Sleep 7 h 12 min with
+        deep sleep, the Half marathon at week 6 of 12 with twelve lap ticks,
+        five filled, one coral and six hollow, the next session tomorrow
+        Long run 14 km, and View plan. Below 1100px the blocks hide, lanes
+        stack and ropes run across, with lane numbers on white tiles before
+        each heading.
+    spacing: An 8px unit. Lanes with 20px padding, 14px between panels, 10px lane ropes.
+    density: Medium. Four lanes side by side, each holding one or two panels.
+    corners: 10px panels, 12px water tubes, 4px blocks, pills for buttons, fields and tags.
+    borders: A 10px light coping around the pool, bead lane ropes between lanes and 1px teal panel edges.
+    shadows: None. Floodlight glows sit in the water at the top.
+    icons:
+        A wave mark, lane numbers on blocks, a pace clock with a red hand,
+        water tubes with a dashed goal line and a check in the Done tag.
+        Rest days have a dotted line and the word rest. Passed plan weeks
+        are filled, the current one coral and future ones hollow.
+    focus: A 3px cyan outline offset 3px.
+    tone: Pool words such as water level, At the wall, laps and to the line.

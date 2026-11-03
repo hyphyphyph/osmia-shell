@@ -1,0 +1,56 @@
+export anchor GarmentLabelsStyle:
+    number: 109
+    screen: ProjectsDashboard
+    name: Garment labels
+    idea: Projects hang from a clothes rail as woven labels, numbers are size tags, the greeting is a kraft swing tag, and every status is a care symbol sewn on a satin strip.
+    base: light
+    palette:
+        closetWall: #f0eeea, the page
+        navyWeave: #1f2a44, the neck label header, navy labels, size tags, text and the chart
+        creamWeave: #f4ecd8, the nav strip, cream labels, the chart label and label text on navy
+        redWeave: #8e1f2b, the primary button, the overdue tag and the Behind label
+        satin: #fbfbf9, care strips, the activity label and the sheet
+        kraft: #d9c3a0, the greeting swing tag with #2b2117 text
+        goldThread: #c9b98f, frames around numbers on navy and the focus halo
+        green: #2e6a45, the On track care mark
+        amber: #8a5200, the At risk care mark
+        greyPrint: #4f4f52, satin label print and meta
+    type:
+        Two stacks. Labels use Avenir Next Condensed, Roboto Condensed,
+        Arial Narrow, Helvetica Neue, Arial with font-stretch condensed,
+        mostly uppercase and tracked 0.06 to 0.26em. Text uses Helvetica
+        Neue, Helvetica, Arial, system-ui. The swing tag title is 40px
+        condensed caps, size numbers 44px, label titles 18px caps, the
+        brand 26px caps tracked 0.26em, section heads 15px caps tracked
+        0.24em, body 15px at 1.5.
+    layout:
+        The header is a woven navy neck label with a gold framed spaced caps
+        brand and star, a cream search, a red New project button, a gold
+        outlined bell and a cream MO square. The nav is a cream strip of caps
+        cells split by dashed seams, the current cell navy. The top row pairs
+        a kraft swing tag with clipped left corners and a punched hole,
+        holding the date, Hello, Mara, a line about the collection and a
+        dashed Care note with an iron icon saying 4 tasks are overdue, with
+        four woven size tags, three navy and one red, each a gold framed
+        number over a caps label. On the rail shows a grey metal rod with
+        six tall narrow labels hanging from wire loops, alternating navy,
+        cream and red, each with a darker fold at the top, the caps name,
+        department, a boxed percent like a size, a woven progress bar, Tasks
+        and Due rows, and a satin care strip sewn at the bottom with the care
+        symbol and status word. Below, a cream jacquard label with stitched
+        ends holds the chart, hatched bars for last week and solid navy bars
+        for this week, and a long satin care label with a pinked bottom edge
+        lists the activity centred. Below 1100px labels go three across,
+        below 640px two.
+    spacing: An 8px unit. Labels pad 16 to 22px, 16px between labels on the rail.
+    density: Medium. Six tall narrow labels in one row on wide screens.
+    corners: Square cut fabric. The swing tag has clipped corners and a punched hole, hanger loops are round.
+    borders: 1.5px gold or cream frames around numbers, dashed seam lines where strips are sewn on, a woven weft texture on labels.
+    shadows: None, except a 1px lift on the satin label.
+    icons:
+        Laundry care style marks at about 22 by 18px. A square with a filled
+        dot for On track, an outlined triangle with a mark for At risk, a
+        filled tub with a down arrow for Behind and an iron for overdue,
+        always beside the caps word.
+    focus: A 2px navy outline offset 3px inside a 6px gold halo. On navy the outline is cream.
+    tone: Clothing label words, such as On the rail, Care note and Care and content.

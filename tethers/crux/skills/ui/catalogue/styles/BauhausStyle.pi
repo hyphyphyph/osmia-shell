@@ -1,0 +1,53 @@
+export anchor BauhausStyle:
+    number: 18
+    screen: ProjectsDashboard
+    name: Bauhaus
+    idea: Primary red, yellow and blue blocks locked together by thick black bars, with circles, squares and triangles as both structure and status.
+    base: light
+    palette:
+        paper: #f5f1e8, the page
+        white: #ffffff, fields, the chart box and the style sheet
+        black: #111111, text, the header, thick bars, progress fills and the hours block
+        red: #d1281f, the primary button, the overdue block, the Behind square and this week's bars
+        redText: #b8211a, red text on paper when needed
+        yellow: #f2c230, the date tag, the activity panel, the tasks due block and the At risk triangle
+        blue: #1f4fa0, the focus outline, the active projects block, the On track circle and last week's bars
+        track: #d9d4c7, the empty part of progress bars
+        cream: #fff8dc, a focused field and a focused row
+    type:
+        Geometric sans, Futura, Futura PT, Century Gothic, Avenir Next,
+        Avenir, Trebuchet MS, Gill Sans, sans-serif. Summary figures are
+        80px extra bold with tight tracking, the greeting 64px extra bold
+        capitals, section titles 28px extra bold capitals, project names
+        18px extra bold in sentence case, body 16px medium, and labels 13
+        to 14px extra bold capitals with 0.08em tracking.
+    layout:
+        A black header with a 12px red bar under it holds a red square logo
+        with a yellow circle, the capital wordmark, capital nav links with
+        a 4px yellow underline on Home, a search field with a yellow square
+        icon cell, a red New project button, a blue square showing the
+        notification count and a yellow initials circle. The hero is a
+        seven to five split, a yellow date tag, the huge greeting and a
+        white strip with a thick red left edge saying 4 tasks are overdue
+        on the left, and a composition of a blue circle, a yellow square, a
+        red triangle, an open black ring and crossing black bars on the
+        right. A 12px black bar tops four unequal summary blocks in blue,
+        yellow, red and black. Below, a seven to five split puts the
+        projects list on the left and a white chart box with a yellow
+        corner square above a yellow activity panel on the right. Below
+        900px the splits stack and the summary goes two by two, and below
+        560px the project rows stack.
+    spacing: An 8px unit. 20px block padding, 32 to 56px between bands and a 40px column gap.
+    density: Bold and medium. Few, large elements in an uneven grid.
+    corners: None. Only true circles are round.
+    borders: Thick black bars, 12px under the header and above the summary, 8px above each section title, 4px around boxes, fields and secondary buttons and 2px between rows.
+    shadows: None. Depth comes from flat overlapping colour.
+    icons:
+        Solid geometric glyphs only. Status is a blue circle for On track,
+        a yellow triangle with a black outline for At risk and a red square
+        for Behind, always beside the capital word, and a key under the
+        list spells this out. Summary labels and activity bullets use solid
+        white or black circles, squares, triangles and a quarter circle.
+        Progress is a 14px black bar on the track colour.
+    focus: A 4px blue outline offset 3px. Controls on the black header use a 4px yellow outline, and a focused field also takes the cream fill.
+    tone: Direct and declarative with capital labels, such as Good afternoon, Mara. and 4 tasks are overdue.

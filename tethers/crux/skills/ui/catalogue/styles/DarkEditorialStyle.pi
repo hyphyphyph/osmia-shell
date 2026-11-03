@@ -1,0 +1,47 @@
+export anchor DarkEditorialStyle:
+    number: 267
+    screen: CloudFiles
+    name: Dark editorial
+    idea: The folder is laid out like a magazine spread at night, with a serif masthead, a numbered index of files and the selected file run as the cover story.
+    base: dark
+    palette:
+        night: #12100e, page, spread and style sheet
+        paper: #1b1815, the cover frame
+        cream: #efe7d8, headlines, body and outline buttons
+        muted: #b5aa95, numerals, bylines, dek and labels
+        rule: #3d362d, column rules and double masthead rules
+        track: #2f2a24, storage and upload tracks
+        vermilion: #f0805f, kicker, primary button, Starred mark, selected numeral, storage fill and focus
+    type:
+        Serif headings in Iowan Old Style, Palatino Linotype, Palatino,
+        Book Antiqua, Georgia. The title is 80px at 400 with 0.95 leading,
+        the cover title 32px, index entries 23px, folders 30px, the dek and
+        sizes italic 17 to 20px. Labels and bylines use system-ui at 11 to
+        12px caps tracked 0.1 to 0.16em.
+    layout:
+        A centred 1200px spread. The masthead has Brightwork Drive in serif
+        with Drive in vermilion italic, the five places as caps section
+        links with My files underlined, and an italic underline search,
+        closed by a double rule. A hero has the breadcrumb as a vermilion
+        caps kicker, the huge title and an italic dek, with Upload, New
+        folder and a List or Grid caps switch at the right. Below, a seven
+        to four split divided by a column rule. The left is The index, a
+        numbered list 01 to 08 with big muted numerals, serif names, caps
+        bylines of kind, date and person, and italic sizes, the two folders
+        set larger. The right is Selected · cover story with a large
+        drawn cover, the name, a dek, caps facts, the three buttons and a
+        By the numbers box with 64.2 GB of 100 GB in big serif and a
+        vermilion bar. Below 980px the columns stack. Below 760px the
+        masthead stacks and the title drops to 52px.
+    spacing: An 8px unit. 40px gutters and a 40px column gap split by a rule, 16px between entries, 48px above the title.
+    density: Spacious and rhythmic. Eight numbered entries with the two folders set larger as features.
+    corners: Square throughout.
+    borders: 1px #3d362d rules between entries and columns, 4px double rules under the masthead and above the numbers box.
+    shadows: None. The selected entry has a warm left fade and a vermilion numeral.
+    icons:
+        16px line icons used sparingly in buttons and marks. Status marks
+        are caps words with a filled star for Starred in vermilion, two
+        heads for Shared with 4 and an up arrow ring for Uploading 62%
+        over a 3px rule bar.
+    focus: A 2px vermilion outline with a 3px offset.
+    tone: Editorial headings over plain facts, such as The index, Selected · cover story and 35.8 GB left on the shelf.

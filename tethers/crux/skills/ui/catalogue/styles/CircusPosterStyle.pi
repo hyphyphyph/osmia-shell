@@ -1,0 +1,49 @@
+export anchor CircusPosterStyle:
+    number: 97
+    screen: ProjectsDashboard
+    name: Circus poster
+    idea: The dashboard as a big-top circus bill, with a striped tent crown, figures blazing in starbursts, each project in its own ring and the ringmaster calling out the team's news.
+    base: light
+    palette:
+        canvas: #fdf6e7, the page, panel stripes and tent stripes
+        bigTopRed: #b5202e, tent stripes, progress rings, week two poles, ribbons, Behind and overdue
+        ringmasterNavy: #1e2a5e, outlines, hard shadows, headings, links and the nav bar
+        spotlightGold: #e3a51c, starbursts, pole tops, the current nav pill and the focus halo, never text
+        sawdust: #f6e7c4, ring centres and the brand banner
+        sawdustEdge: #e7d3a6, the empty ring track and dashed list rules
+        showbillInk: #1d1a17, body text
+        greasePaint: #3e3a35, meta lines and captions
+        ringGreen: #1f6b45, On track
+        lionAmber: #8a5300, At risk
+    type:
+        Display is a heavy slab, Rockwell, Roboto Slab, Clarendon, Bookman
+        Old Style, Georgia, serif at 800, often in caps. Text is system-ui,
+        Segoe UI, Roboto, sans-serif. The brand is 40 to 88px red caps, the
+        greeting 36 to 60px navy, burst numbers 40 to 64px, ribbon heads 20px
+        caps in white, project names 21px, body 15px and tags 12px caps
+        tracked 0.12em.
+    layout:
+        The top is a big-top crown, a triangle of red and cream stripes with
+        a navy edge and a gold pennant, with a sawdust banner across it cut
+        with swallowtail ends holding the brand and a caps tagline with the
+        date. A navy bar holds slab caps nav links, the current one a gold
+        pill, a round search field, the bell, a red New project button and
+        the user. The greeting is centred, with a red pill warning. The four
+        numbers sit inside starbursts, gold, pink, red for overdue and pale
+        blue, each with a hard navy shadow. Projects fill a white panel whose
+        title is a red ribbon on its top edge, three by two, each a circus
+        ring donut showing percent and tasks, with name, team and due, and a
+        status pill. Below, a striped pole chart sits beside The ringmaster
+        announces, a list with megaphone discs and a red Presenting tag.
+        Bursts go two by two below 960px. Rings go two across on phones.
+    spacing: An 8px unit. 24px panel padding and 32px between panels.
+    density: Loud and roomy. Few items per panel, each billed large.
+    corners: 16px on panels, 12px on buttons, round rings, pills and avatars, swallowtail notches on ribbons and the banner.
+    borders: 3px navy outlines on every panel, button, field and ribbon.
+    shadows: A hard 5px navy offset with no blur, like a second ink colour.
+    icons:
+        Chunky solid shapes. A pennant for On track, a diamond for At risk,
+        a stop octagon with a bar cut out for Behind and overdue, each in an
+        outlined pill with the caps word. A megaphone marks announcements.
+    focus: A 3px navy outline offset 3px inside an 8px gold halo. On the navy bar the outline is cream.
+    tone: Ringmaster patter with exclamation marks, such as Step right up, Presenting and Hold your breath.

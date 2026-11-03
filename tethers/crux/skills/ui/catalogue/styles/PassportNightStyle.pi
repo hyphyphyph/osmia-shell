@@ -1,0 +1,56 @@
+export anchor PassportNightStyle:
+    number: 417
+    screen: TravelPlanner
+    name: Passport night
+    idea: The trip kept in a dark passport, a data page with the holder, dates and a machine readable line, then a visa page where every itinerary leg is an inked stamp of its own shape and unbooked legs are dashed blanks waiting for ink.
+    base: dark
+    palette:
+        desk: #0b0f14, the page and the style sheet
+        cover: #13241f, the passport cover band
+        leaf: #16232a, passport pages, cards and rows with faint guilloche rings
+        line: #2f4a52, field rules, the photo box and page edges
+        ink: #eef2ec, text
+        muted: #a9b9b4, field labels, the machine line and blank stamp outlines
+        gold: #f0cf6a, the emblem, section labels, the flight stamp, the route and the primary button
+        stampRed: #ff9484, the Tokyo stamp
+        stampTeal: #6fe0d0, the Kyoto stamp
+        stampViolet: #c9b0ff, the flight home stamp
+        booked: #8be3a6, Booked and Done words
+        unbooked: #f6c27a, Not booked and To do words
+    type:
+        Georgia for page titles at 34px and figures at 40px. Helvetica Neue,
+        Arial for labels at 12px caps tracked 0.2em in gold and body at
+        15px. Arial Black caps for stamp text at 12 to 15px. ui-monospace
+        caps for data fields at 15px and the machine line at 14px tracked
+        0.12em.
+    layout:
+        A dark green cover band on top with a gold ringed star, BRIGHTWORK
+        TRIPS in gold spaced caps and Travel document Trip 01 on the right.
+        Then two passport spreads, each two pages side by side with a
+        shadowed spine. Page 2 is the data page. Trip over Japan in April, a
+        photo box with MO and plus 1, and fields Holder, Companions, Valid
+        and Route in monospace caps. Funds shows 3,200 of 5,000 euros saved
+        with a thin gold bar, then a machine readable line in a dark box.
+        Page 3, Visas and entries, holds the itinerary as six stamps in a
+        three column grid, each slightly rotated. The flight out is a gold
+        double oval, Tokyo a red double circle, Kyoto a teal rounded square,
+        the flight home a violet oval. Each stamp holds an icon, date,
+        place, detail and a status word under a rule. The train and Osaka
+        are dashed grey blanks with Not booked. A legend under the stamps
+        explains inked and blank. The second spread holds Page 4 Endorsement
+        Route, a sketch with contour lines, a coast and a dashed gold route
+        between three ringed points, and Page 5 Conditions of travel with
+        the checklist, a weather note with a gold left bar, and the two
+        buttons. Below 900px each spread stacks its pages and at phone width
+        stamps go two across.
+    spacing: An 8px unit. 28 to 32px page padding, 20px between stamp rows and 32px between spreads.
+    density: Medium. Two spreads of two pages and six stamps in a three column grid.
+    corners: Square pages with a soft spine. Circle, oval and 10px square stamps, 2px fields and buttons.
+    borders: Double borders on inked stamps, 2px dashed borders on blanks and dotted rules in the checklist.
+    shadows: A spine shadow inside each page where the spread folds and a deep drop under each spread.
+    icons:
+        Small line icons inside stamps. Booked carries a check under a rule,
+        Not booked a dashed circle in a dashed blank, and flights a plane.
+        Done is a ticked box and To do a dashed empty box.
+    focus: A 2px dashed gold outline offset 4px.
+    tone: Official but kind, such as Visas and entries, Conditions of travel and Endorsement.

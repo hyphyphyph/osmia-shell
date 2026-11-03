@@ -1,0 +1,53 @@
+export anchor PagerLCDStyle:
+    number: 351
+    screen: TeamChat
+    name: Pager LCD
+    idea: The chat as a stack of two way pagers, where every message is its own small backlit LCD frame counted MSG 1/5 in a moulded shell, folders replace the sidebar, and pill shaped hardware keys stand in for buttons.
+    base: dark
+    palette:
+        page: #0e1013, the desk behind the pagers and the style sheet
+        shell: #1d2126, pager housings and sheet cards
+        bezel: #05070a, the ring around each LCD
+        lcd: #0a1a26, the backlit screen ground
+        seg: #a8dcff, lit segments, the selection block and focus
+        segDim: #6f9fc0, frame headers, FR and hints
+        segOff: #17344a, unlit dashed separators only
+        key: #3a4048, rubber keys
+        label: #b5bcc6, printed shell labels
+        sendKey: #5fbde8, the Send key, with dark text #04192a
+    type:
+        LCD text in a monospace, Lucida Console, DejaVu Sans Mono,
+        ui-monospace, Menlo, Consolas, bold 14px capitals tracked 0.06em.
+        Message bodies 15px bold in normal case. Frame headers 12px.
+        Shell print in system-ui, Segoe UI, Roboto, Arial, 11px at 600 in
+        capitals tracked 0.2em.
+    layout:
+        Every region is a pager, a moulded shell with 22px top and 30px
+        bottom corners, a printed label and a small glowing LED, holding a
+        backlit LCD with a black inset bezel and faint scan lines. The top
+        row has a 280px Folders pager and a wide status pager. Folders
+        lists Channels and Direct under dashed headers. The current
+        channel is an inverse lit block with a triangle and OPEN,
+        mobile-release has an envelope and 4 NEW, billing-war-room an
+        exclamation mark and @1, people a filled, half or empty circle
+        with ON, AWAY or OFF. The status pager shows the channel name in
+        18px, then 5 MSG, battery and signal icons and the clock, a ticker
+        line Priya is typing with a block cursor, and a dim line naming
+        user Mara Okafor, the folder and 1 thread, with three small pill
+        keys below, previous, Read and next. Under it the five messages
+        tile as separate pagers in a grid of about 330px columns. Each LCD
+        has a header MSG n/5 with the time, FR and the name, then the text.
+        Mara's header adds sent. Aiko's frame ends with an inverse Thread
+        3 RE block, +1 thumbs x3 and eyes x1. Priya's image is a pixel
+        preview with IMG ATTACHED and the underlined filename. A wide
+        Reply pager holds a TX prompt field and three hardware pill keys,
+        Attach, Emoji and a blue Send, labelled underneath. Below 820px
+        all pagers stack in one column.
+    spacing: An 8px unit. 16px between pagers, 10px by 12px inside each LCD.
+    density: Low per frame. One message per screen, frames tiled three across.
+    corners: 22px top and 30px bottom on shells, 6px on LCDs, full pills on keys.
+    borders: A 2px black inset bezel on every LCD and dashed unlit lines inside.
+    shadows: A soft 10px drop under shells and 2px to 3px ledges under keys.
+    icons: LCD glyphs, a triangle for open, an envelope for new, an exclamation mark for mention, filled, half and empty circles for presence, each beside a word.
+    focus: A 2px dashed lit blue outline offset 3px.
+    tone: Clipped pager words, such as MSG 2/5, FR, 4 NEW, 3 RE, IMG ATTACHED and TX.

@@ -1,0 +1,56 @@
+export anchor StarChartStyle:
+    number: 129
+    screen: ProjectsDashboard
+    name: Star chart
+    idea: A pale celestial chart where projects are stars plotted on a dotted coordinate grid and joined by a constellation line, numbers are magnitudes in an oval cartouche and the daily chart is a light curve.
+    base: light
+    palette:
+        skyPaper: #eef1f8, the page, with a #cfd5ea dot field
+        chartField: #fbfcff, panels and fields
+        nightNavy: #1b2550, text, stars, borders and the On track star
+        dusk: #46507a, axis labels and captions
+        grid: #cdd3e6, dotted coordinate lines and the inner frame line
+        constellation: #7584bf, lines joining stars, never text
+        halo: #e3e8f7, soft discs behind stars and the avatar
+        brass: #7f5a00, the week divider and week totals
+        atRisk: #7a3e8c, the diamond
+        behind: #a2262e, the crossed circle and overdue
+        focus: #3953c9, the 2px focus ring
+    type:
+        One stack, Optima, Candara, Segoe UI, Noto Sans, Seravek, sans-serif.
+        The greeting is 46px 400 at 1.1, magnitudes 34px 400, panel titles
+        22px 400 tracked 0.06em, Greek star letters 18px bold italic, body
+        16px at 1.5, labels and the date 12 to 13px caps tracked 0.18 to
+        0.3em.
+    layout:
+        A header ruled underneath with a compass star logo, the spaced caps
+        brand, nav links in small spaced caps each led by a dot, Home led by
+        a small filled star, then a pill search, a navy pill New project
+        button, a round bell and a round avatar with the name. The intro has
+        the light greeting, the spaced caps date and a crossed circle line
+        saying 4 tasks are overdue, and on the right an oval cartouche with
+        a double line border titled Magnitudes this week, holding the four
+        numbers each beside a navy dot sized by its value, overdue as an open
+        red ring. The main panel, The project sky, has an engraved double
+        border and plots the six projects on a dotted grid, due date across
+        from 1 Nov to 15 Jan and percent complete up, each a navy mark on a
+        halo disc sized by task count, its shape showing status, labelled
+        with its Greek letter, name and percent, all joined in due date order
+        by a thin constellation line. Below, a Catalogue table lists Greek
+        letter, project, team, percent, tasks, due date and status, beside
+        an Observation log with the time in spaced caps. A wide Light curve
+        panel plots the 14 days as dots sized by value on a thin line, with
+        a brass dashed divider and week totals. Below 1060px the cartouche
+        and panels stack, below 640px both charts scroll sideways inside
+        their panels.
+    spacing: An 8px unit. 24px between panels, 20 to 24px panel padding, a 24px dot field behind.
+    density: Airy. One wide sky chart, then catalogue and log side by side, then the light curve.
+    corners: Fully round search, buttons and fields, a 120px oval cartouche and 6px panels.
+    borders: A 1px navy outer line with a 1px grid blue inner line 5px inside, like an engraved map border.
+    shadows: None. Stars sit on soft halo discs instead.
+    icons:
+        Celestial marks at 16px with the word, a five point star for On
+        track, a diamond for At risk and a crossed circle for Behind. In the
+        sky the same shapes are drawn larger, sized by task count.
+    focus: A 2px blue outline offset 3px with a 6px soft blue halo.
+    tone: Calm observatory words, such as Magnitudes this week, Catalogue, Observation log and Light curve.

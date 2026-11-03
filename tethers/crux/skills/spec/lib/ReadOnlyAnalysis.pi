@@ -1,0 +1,15 @@
+from ../../lib/PitonSkillBase import PitonSkillBase
+
+// Shared base for the crux analysis skills that are read-only by
+// default. It is abstract, so it never compiles or is emitted on its
+// own. Each analysis skill declares with the skill keyword and extends
+// this anchor instead of PitonSkillBase.
+export abstract anchor ReadOnlyAnalysis extends PitonSkillBase:
+    readOnlyByDefault:
+        This skill is read-only by default. Inspect specifications, run
+        analysis tools, produce reports, and recommend changes, but
+        never silently modify requirements, reorganize modules, resolve
+        contradictions, change interfaces, generate application code, or
+        introduce new requirements. If the user explicitly requests
+        modifications, delegate to an appropriate installed skill or
+        obtain authorization for a clearly scoped change.

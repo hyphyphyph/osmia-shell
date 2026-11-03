@@ -1,0 +1,48 @@
+export anchor NeoBrutalistStyle:
+    number: 6
+    screen: ProjectsDashboard
+    name: Neo-brutalist
+    idea: Raw web zine energy, with thick black borders, hard offset shadows and loud yellow, pink and cyan blocks stacked like stickers on off-white paper.
+    base: light
+    palette:
+        paper: #fdf8e8, the page background
+        ink: #000000, all text, borders, shadows and status shapes
+        white: #ffffff, cards, fields and the chart plate
+        yellow: #ffdd00, the header band, the chart block and the At risk stamp
+        pink: #ff70c8, the primary button, this week's bars and the Behind stamp
+        cyan: #38d9f0, the greeting block, the user tag and the On track stamp
+        lime: #b6f04a, one summary block and the style sheet tags
+        butter: #fff6b3, the focused field fill
+    type:
+        Monospace for headings, numbers, labels and buttons, ui-monospace,
+        SF Mono, Menlo, Consolas, Liberation Mono, Courier New, monospace,
+        mostly 800 weight in capitals. Body text is system-ui at 16px
+        weight 500. Sizes are 46px caps greeting, 52px summary figures with
+        minus 0.06em tracking, 40px card percentages, 30px caps section
+        titles set white on a black bar, 19px caps card titles and 13px
+        caps labels.
+    layout:
+        A full width yellow header band with a black brand block tilted
+        by 2 degrees, a wide search field, a bell, a cyan user tag and a
+        pink New project button. Under it, a band of nav tabs split by 3px
+        black borders, with the current tab inverted. A hero row pairs a
+        cyan greeting block with four summary blocks staggered at
+        different heights. Projects follow as a three column grid of
+        bordered cards, each with a header row, a hatched meter and a
+        footer of due date and status stamp. Last comes a yellow chart
+        block beside a pink activity block of numbered rows. Below 1080px
+        the rows stack and projects go to two columns, and below 640px
+        to one column with the stats in a two by two grid.
+    spacing: An 8px unit used loosely. 20 to 28px gaps so the shadows have room and 14 to 20px padding.
+    density: Medium. Big chunky blocks, about six project cards on a laptop screen.
+    corners: Zero. Every corner is sharp.
+    borders: 3px solid black on every box, field, button, divider and chart bar, and a 6px black rule above the style sheet.
+    shadows: A hard offset of 6px 6px 0 in black with no blur. A pressed button drops into its shadow.
+    icons:
+        Square cap line icons with a 3px stroke. Status is a coloured
+        stamp in caps with a solid black circle for On track, a solid
+        black triangle for At risk and a heavy black X for Behind.
+        Progress meters use black and yellow diagonal stripes. Activity
+        rows carry black number tabs 01 to 06.
+    focus: A 3px dashed black outline offset 4px. A focused field also takes the butter fill.
+    tone: Loud and blunt with caps labels, such as 4 TASKS OVERDUE. FIX THESE FIRST. and VIEW ALL with an arrow.

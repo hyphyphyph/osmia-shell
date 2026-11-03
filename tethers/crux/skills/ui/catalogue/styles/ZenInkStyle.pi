@@ -1,0 +1,44 @@
+export anchor ZenInkStyle:
+    number: 32
+    screen: SignIn
+    name: Zen ink
+    idea: Japanese ink-brush calm, one sumi stroke and one red sun above a narrow column of hairline fields, with the brand written vertically down the edge and space doing most of the work.
+    base: light
+    palette:
+        ricePaper: #fbfaf6, the page
+        sumi: #1c1b19, text, the brush stroke, field lines and the primary button
+        wash: #5e5b55, labels, small text and the or divider
+        mist: #d9d6ce, resting hairlines between rows
+        pale: #efede6, the half height wash behind a focused field
+        sun: #c0392b, the single red dot, used nowhere else
+    type:
+        A Mincho serif for almost everything, Hiragino Mincho ProN, Yu
+        Mincho, Noto Serif CJK JP, Songti SC, Georgia, Times New Roman,
+        serif, and a Gothic sans for tiny labels, Hiragino Sans, Yu Gothic
+        UI, Segoe UI, system-ui, sans-serif. The vertical brand is 26px with
+        0.5em tracking, the heading 24px light with 0.08em tracking, field
+        text 17px, body 15px weight 300 on a 1.9 line, labels 12px sans
+        with 0.3em tracking, and the button 15px with 0.5em tracking.
+    layout:
+        A wide sheet of rice paper. One rough sumi brush stroke sweeps
+        across the top left, and a red dot 44px wide sits alone near the
+        top right. The brand runs vertically down the right edge with a
+        small for small teams line beside it. The form is a narrow 340px
+        column left of centre that starts about 220px down, under a short
+        ink dash below the heading. Sign-in choices are hairline rows with
+        ringed initials and an arrow. Privacy and Terms sit far below in
+        tiny tracked sans. At 375px the stroke runs off the left edge, the
+        vertical brand stays in a narrow strip on the right and the column
+        fills the rest.
+    spacing: An 8px unit used in large steps. 32px between fields, 48px between groups, 96px above the screen and about 220px of empty paper above the heading.
+    density: Very sparse. A 340px column on a 1200px page.
+    corners: Square buttons and fields. Only the sun, the round checkbox and the ringed initials are round.
+    borders: 1px hairlines under fields and rows only. A dashed underline marks the field in error.
+    shadows: None. Depth comes from the brush stroke alone.
+    icons:
+        Almost none. A hand drawn SVG brush stroke roughened with a
+        turbulence filter, ringed letters G and M, a thin arrow on
+        sign-in rows, a cross before the error, a filled dot in the
+        round checkbox and a tick for done.
+    focus: A 1px sumi outline offset 6px. A focused field gets a 3px sumi underline and a pale wash over its lower half.
+    tone: Very few words, calm and unhurried. Labels whisper in widely tracked small type.

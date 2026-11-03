@@ -1,0 +1,53 @@
+export anchor StationeryStyle:
+    number: 23
+    screen: ProjectsDashboard
+    name: Stationery
+    idea: A tidy Japanese paper notebook, with washi and kraft tones, pale ruled lines, a red square seal and stamped circle, triangle and cross status marks in small neat type.
+    base: light
+    palette:
+        desk: #ece3d2, the background behind the notebook
+        washiPaper: #fbf8f1, pages, fields and cards
+        kraft: #d6bf98, notebook accents
+        kraftLight: #ede1c9, the index tabs
+        ruleBlue: #cfdae5, the ruled lines and the graph grid
+        line: #d8ccb6, row lines, the page edge and the stitch between pages
+        sumiInk: #2b2721, text, heading rules and this week's chart cells
+        greyInk: #615a50, labels and times, with #8f8676 for last week's cells
+        sealRed: #b3262c, the seal, the overdue figure, the Behind stamp and section numbers
+        indigo: #2c4a72, links, progress cells and the focus ring
+        matcha: #4a6b33, the On track stamp
+        amber: #855700, the At risk stamp
+    type:
+        A sans for text, Hiragino Sans, Hiragino Kaku Gothic ProN, Yu
+        Gothic UI, Yu Gothic, Meiryo, Noto Sans CJK JP, system-ui, and a
+        Mincho serif for headings and figures, Hiragino Mincho ProN, Yu
+        Mincho, Noto Serif CJK JP, Georgia, serif. Body is 13px on a 24px
+        line, project names 14px, labels 11px uppercase with 0.2em
+        tracking, section titles 17px serif with 0.1em tracking, the
+        greeting 26px serif on a 48px line and summary figures 30px serif.
+    layout:
+        A notebook on a desk. The cover row holds a tilted red square seal
+        with B, the brand with a small Project notebook line, a search, a
+        square bell and a round red hanko with the initials. Six index tabs
+        in kraft and pastel tints hang above the notebook. The notebook is
+        a two page spread with a dashed stitch between pages and washi tape
+        strips on top. The left page has a boxed date, the greeting, a note
+        with the overdue fact highlighted, section 01 This week as a ruled
+        form of four figures, and section 02 Tasks completed as a graph
+        paper chart. The right page has 03 Projects ledger, a numbered
+        table with progress, tasks, due and stamped status, a symbol key,
+        and 04 Diary of times and events. Below 980px the pages stack, and
+        below 640px each ledger row becomes a three line entry.
+    spacing: A strict 24px baseline. Every line, row and gap is 12, 24 or 48px, with 48px page padding.
+    density: Medium-high but airy. Small type and a full ledger on one page.
+    corners: 2px on buttons and fields, 3px on the seal and stamps, 4px tops on the index tabs.
+    borders: 1px hairlines, ink under headings and table heads, beige between rows, a dashed stitch between pages.
+    shadows: None. Depth comes from washi tape strips, tabs and the tilted seal.
+    icons:
+        16px thin square-cap line icons. Status stamps are tilted outlined
+        boxes in the status colour with a ring for On track, an open
+        triangle for At risk and a cross for Behind, after the Japanese
+        circle, triangle and cross marks. Progress is a strip of ten ruled
+        cells filled in indigo. The chart stacks one small cell per task.
+    focus: A 2px indigo outline offset 2px. A focused field gets a 2px indigo underline and a pale blue fill.
+    tone: Calm, tidy and brief, such as Projects ledger, Diary, come first today, and numbered sections 01 to 04.

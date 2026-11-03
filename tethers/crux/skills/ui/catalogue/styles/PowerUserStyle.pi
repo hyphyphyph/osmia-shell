@@ -1,0 +1,57 @@
+export anchor PowerUserStyle:
+    number: 401
+    screen: EmailClient
+    name: Power user
+    idea: A dense, keyboard first mail client on near black, with thirty pixel rows, a key hint beside every action and folder, a command field on top and a lime modal status line along the bottom.
+    base: dark
+    palette:
+        base: #0d0f14, the page, the list and fields
+        panel: #141720, the command bar, the folder column, column headers and the style sheet
+        zebra: #11131a, alternate list rows
+        line: #252a37, dividers
+        key: #1e2230, keycap faces
+        keyEdge: #3a4052, keycap borders
+        text: #d9dde7, body text
+        sub: #8f97ab, snippets and meta
+        lime: #c4f23a, the selection bar, the status line, the primary button and focus
+        onLime: #142000, text on lime
+        sel: #1d2614, the selected row and current folder
+        pink: #ff8ad8, the unread dot
+        amber: #ffc95c, the starred star
+        cyan: #6fd6ff, bracketed label text
+    type:
+        A sans stack, Inter, system-ui, Segoe UI, Roboto, Arial, at a 13px
+        base. The open subject is 17px at 650, the body 14px at 1.6, unread
+        rows 700 in pure white. A mono stack, JetBrains Mono, SF Mono,
+        ui-monospace, Menlo, Consolas, sets the app name, times, labels,
+        header fields, column heads at 10px caps and keycaps at 11px.
+    layout:
+        A thin command bar holds bw/mail in lime mono, a wide field led by a
+        slash keycap reading search or command with an example query, the
+        hints for commands and keys as keycaps, and mara.okafor. Three
+        panes fill the window height. A 172px folder column lists folders
+        and labels in tight rows, each with a count where needed and a two
+        letter key hint such as gi or l1. Inbox has a lime inset bar. The
+        list is a sticky headed grid with columns Flags, From, Subject,
+        Label and Time, 30px zebra rows, the subject in normal weight
+        followed by a muted snippet, labels in brackets. The selected
+        Northpass row has a lime bar and a caret. The reader has a toolbar
+        of small buttons each with its key, Reply in lime, the subject,
+        a mono key and value block for from, to, date, label and state, the
+        body and a dashed card of six more shortcuts. A full width lime
+        status line at the bottom shows NORMAL, inbox 1/6, 2 unread, hints
+        and the sync time. Below 1100px the reader spans under the list and
+        the label column hides. On a phone rows become two lines, the list
+        comes first, then the reader, then the folders two across.
+    spacing: A 4px base. 10px side padding, 30px rows, 26px buttons, 1px gaps in grids.
+    density: Very high. Five column rows, key hints, a shortcut card and a status line on one screen.
+    corners: 4px buttons and fields, 3px keycaps, square panes.
+    borders: 1px #252a37 between panes. Keycaps have a 2px bottom edge.
+    shadows: None. Selection is a 2px lime inset bar plus a caret.
+    icons:
+        No icon set, only text glyphs. A pink dot for unread, an amber star
+        for starred, a plus for an attachment, and labels in square
+        brackets, each also stated in words for screen readers and in the
+        reader state field.
+    focus: A 1px lime inset outline plus a 3px translucent lime ring.
+    tone: Terse and lowercase for data, such as yday, from, inbox 1/6 and NORMAL.

@@ -1,0 +1,50 @@
+export anchor TradingTerminalStyle:
+    number: 305
+    screen: OpsMonitor
+    name: Trading terminal
+    idea: A dense black terminal of seven numbered panels with orange title bars, a service ticker tape, function key app tabs and all caps monospace readouts.
+    base: dark
+    palette:
+        black: #000000, the page, gaps between panels and the style sheet
+        panel: #0c0c0c, panel bodies
+        rule: #3a3a3a, panel borders and dotted table rules
+        ink: #f2e9da, body text and figures
+        muted: #aaa092, labels and axes
+        orange: #ff9a1f, panel title bars, the logo block, table headers, request bars and the primary button
+        yellow: #ffd23f, times, the peak bar, Degraded, Investigating and p95
+        green: #3ddc84, Healthy and Resolved
+        cyan: #5cc8ff, Recovered and p50
+        red: #ff6161, the error line and Firing
+        focus: #ffffff, a white focus outline over an orange halo
+    type:
+        Monospace for everything, ui-monospace, SF Mono, Menlo, Consolas,
+        Liberation Mono, at 12px and 1.4. Panel titles 12px bold black on
+        orange in caps, quote figures 16px bold, the incident number 18px
+        bold yellow. Status words and the alert wire are in caps.
+    layout:
+        A command bar runs across the top over a 2px orange rule. It holds
+        an orange BRIGHTWORK OPS block, the apps as function keys F1
+        PROJECTS to F5 OPS with F5 inverted cream, a CMD prompt field
+        reading OPS PROD 24H and a PROD 24H readout. A ticker tape follows
+        with each service in caps, its status shape and short word, uptime
+        and metric, scrolling sideways inside itself on small screens. The
+        wall is a 12 column grid with 2px black gaps. Panel 1 is the
+        service board table, panel 2 the requests per minute chart as 24
+        orange hourly bars with the 14.00 bar yellow and a HI and LO quote
+        row, panel 3 the error rate line with base and spike quotes, panel
+        4 latency as stepped p50 and p95 lines, panel 5 the incident with a
+        yellow border, panel 6 the alert wire as headline rows and panel 7
+        the deploy blotter table. A footer line repeats the description.
+        Below 1000px panels pair up and at phone width they stack, with
+        tables scrolling inside their panels.
+    spacing: A 2px gap between panels, 6px panel padding, 4px by 6px table cells.
+    density: Very dense. Seven panels and a ticker on one wide screen.
+    corners: Square everywhere.
+    borders: 1px #3a3a3a panels, dotted row rules, a yellow border on the incident panel, a 2px orange rule under the command bar.
+    shadows: None.
+    icons:
+        12px status shapes before caps words, a ringed tick for HEALTHY, a
+        triangle for DEGRADED, a circular arrow for RECOVERED, a bolt for
+        FIRING, a tick for RESOLVED and a magnifier for INVESTIGATING.
+    focus: A 2px white outline with a 4px orange halo.
+    tone: Terse terminal caps, such as HI, SPIKE, ALERT WIRE, DEPLOY BLOTTER and 3 FILLS.

@@ -1,0 +1,59 @@
+export anchor Web20BetaStyle:
+    number: 159
+    screen: ProjectsDashboard
+    name: Web 2.0 beta
+    idea: A 2006 web 2.0 app, with a lowercase two tone logo and its mirror reflection, an orange Beta starburst, rounded tabs attached to a white content box, and glossy gel buttons and tiles over soft sky gradients.
+    base: light
+    palette:
+        sky: #e8f2fb, the page under a fade from #cfe4f7
+        white: #ffffff, the content box and the active tab
+        ice: #f4f9fe, zebra rows, widget fills and list rows
+        line: #b9d3ea, 1px borders, decorative
+        blue: #1f6fc0, links and the focus glow
+        blueGel: #1a5fa8, panel heads and blue gels, with a #2a72c0 top
+        deepBlue: #154f8c, the logo, headings and numbers
+        green: #2a6e0c, the primary gel with a #3a8519 top, and the logo half
+        lime: #8fd13f, progress gloss and this week bars, never text
+        orange: #ff8a1c, the Beta burst and small badges with dark text
+        rust: #b54700, the burst edge and the overdue clock
+        red: #b01822, Behind and the overdue tile, with a #d23a44 top
+        text: #2b3540, body copy, with muted #56636f
+    type:
+        The logo uses Trebuchet MS, Lucida Grande, Verdana, sans-serif in
+        bold 44px at minus 0.04em, lowercase, bright in deep blue and work
+        in green, mirrored below at 18 percent opacity under a fading
+        mask. Headings use Trebuchet MS bold, 26px page title, 16px
+        section titles, 34px stat numbers. Body uses Lucida Grande,
+        Lucida Sans Unicode, Trebuchet MS, Verdana, Arial, sans-serif at
+        13px with 1.5 line height, meta 11px.
+    layout:
+        A centred 1060px column. The header has the reflected logo with a
+        rotated orange Beta starburst on its corner, and on the right a
+        small avatar tile, Signed in as Mara Okafor, a pill Alerts button
+        with a red count and a green gel New project. Rounded gradient
+        tabs sit on top of a white content box, the current tab merging
+        into it, with a pill search and Go button at the far right. Inside
+        the box a welcome row says Welcome back, Mara! with the date and a
+        silver Customize this page gel, then a yellow alert bar with a
+        clock icon for the overdue line. Below, a main column and a 300px
+        sidebar. The main column has four glossy stat tiles, the overdue
+        tile red, then Your projects with an orange count badge over a
+        rounded zebra table with linked names, glossy green pill progress
+        bars, tasks, due dates and status pills. The sidebar has a Recent
+        activity widget with a glossy blue head, coloured initial tiles
+        and linked task names, and a Tasks completed widget with glossy
+        blue and green bars standing on a reflection. A small centred
+        footer closes the page. Below 900px the sidebar drops under and
+        the table scrolls inside its frame.
+    spacing: A compact 4px base, 8 to 12px inside widgets and 20 to 24px between blocks.
+    density: Medium. A table plus a sidebar of boxed widgets.
+    corners: Generous. 10 to 12px panels, 16px gel buttons, 10px top corners on tabs, 14px pill fields.
+    borders: 1px pale blue on everything, darker 1px edges on gels.
+    shadows: A soft blue 8px drop under the box. Gloss is a white top half on gels, tiles and panel heads. Reflections under the logo and the chart bars.
+    icons:
+        Small colourful filled icons at 14px. A green circle with a tick
+        means On track, an orange triangle with a bang means At risk, a
+        white octagon with a red cross on a red pill means Behind, and a
+        clock marks overdue.
+    focus: A 2px white ring inside a 2px blue ring with a soft blue glow.
+    tone: Friendly and exclaiming, such as Welcome back, Mara!, Heads up! and Customize this page.

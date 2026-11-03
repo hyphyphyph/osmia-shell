@@ -1,0 +1,27 @@
+# Osmia session autostart. labwc runs this when the session starts. Edit freely.
+# This file is copied to ~/.config/osmia/labwc/ on first login and is yours after that.
+
+# Tell D-Bus and systemd services where the display is.
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE >/dev/null 2>&1 &
+
+# Wallpaper (below everything).
+swaybg -i /usr/share/lxqt/wallpapers/origami-dark-labwc.png >/dev/null 2>&1 &
+
+# Output layout, from ~/.config/kanshi/config.
+kanshi >/dev/null 2>&1 &
+
+# Asks for your password when a program needs administrator rights.
+lxqt-policykit-agent >/dev/null 2>&1 &
+
+# Keep clipboard contents after the source app exits.
+wl-clip-persist --clipboard regular >/dev/null 2>&1 &
+
+# Lock screen: `loginctl lock-session` (the osmia power menu and Super+L) runs swaylock.
+# The screen timeout is set from the brightness item in the osmia bar. osmia runs swayidle itself.
+
+# Programs for the tray. Remove the # to start one.
+# nm-applet --indicator >/dev/null 2>&1 &
+# blueman-applet >/dev/null 2>&1 &
+
+# The osmia shell: bar, launcher, notifications. Restarts if it stops.
+( while true; do osmia; sleep 2; done ) >/dev/null 2>&1 &

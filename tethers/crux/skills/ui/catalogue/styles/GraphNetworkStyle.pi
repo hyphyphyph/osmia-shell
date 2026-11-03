@@ -1,0 +1,58 @@
+export anchor GraphNetworkStyle:
+    number: 409
+    screen: DatabaseConsole
+    name: Graph network
+    idea: The schema is drawn as a node and edge graph, so tables are circles, columns are diamonds, the join is a thick gold edge, result rows are gold nodes sized by their count and history is a chain whose failed link breaks.
+    base: dark
+    palette:
+        page: #0c0e19, the page
+        canvas: #11142a, the graph canvas with a 22px dot grid in #2a3060
+        card: #181c38, the inspector cards, history nodes and style sheet
+        node: #1f2550, table node fill
+        edge: #5a63a8, edges and outlines
+        ink: #eceefe, text
+        muted: #aab1da, labels, meta and section titles
+        table: #a3adff, table node rings
+        focusNode: #ff9fd2, the tasks node ring, the Run button, SQL keywords and focus
+        result: #ffd27a, the join edge, result nodes, filter rings and string literals
+        onResult: #2a1d00, numbers on result nodes
+        column: #7fe0d0, column diamonds on #14322f
+        ok: #8fe7a8, Ran
+        bad: #ff9a9a, the broken link and its error
+    type:
+        Rounded sans, ui-rounded, SF Pro Rounded, Nunito, Varela Round,
+        Segoe UI. Base 15px at 1.5. The app name is 19px bold, node labels
+        15px bold, section titles 13px caps at 0.1em, the sheet title 26px
+        at 800. Columns and SQL use ui-monospace at 13px.
+    layout:
+        A top bar with a three dot graph mark, Brightwork Data, a
+        production-replica pill with a gold ring, and three status pills on
+        the right. Below, a wide rounded canvas and a 340px inspector. The
+        canvas draws tasks as a large pink ringed circle in the middle with
+        six column diamonds around it, id key, project_id, title,
+        assignee_id, due_on and status, the last two ringed in dashed gold
+        and labelled filter. A thick gold curve labelled join on project_id
+        links tasks to projects, and three gold result circles branch from
+        projects, Billing migration largest with 2, Mobile app 2.0 and
+        Website redesign smaller with 1. Assignee_id curves to members.
+        Activity and invoices float with dashed rings as not in the query.
+        A shape key sits under the graph. The inspector stacks a Query card
+        with the SQL and Run and Show path pills, then a Result nodes card
+        listing the three rows with sized gold discs and Ran in 38 ms and
+        returned 3 rows. Under everything a History chain links three pill
+        nodes, two with a green ringed tick and Ran with duration, the last
+        joined by a dashed red link, drawn dashed itself with a crossed
+        square and the error. Below 1000px the inspector drops under the
+        canvas. On phones the graph scrolls sideways and the chain runs
+        down.
+    spacing: An 8px unit, a 22px dot grid on the canvas, 16px between cards.
+    density: Medium. One large graph and two side cards.
+    corners: Very round. 24px canvas, 20px cards, 28px style sheet, full round chips, buttons and history nodes.
+    borders: 1 to 2.5px coloured rings. Dashed rings mean not used or failed.
+    shadows: None. Rings and the dot grid carry the depth.
+    icons:
+        Shapes are the icons. Circle for a table, dashed circle for unused,
+        diamond for a column, gold disc for a result row, ringed tick for
+        Ran and crossed square for Broken, always with a word.
+    focus: A 3px pink outline offset 3px.
+    tone: Friendly graph words, such as Result nodes, Show path and History chain.

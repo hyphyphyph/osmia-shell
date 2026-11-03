@@ -1,0 +1,54 @@
+export anchor WarmCharcoalStyle:
+    number: 227
+    screen: ProjectsDashboard
+    name: Warm charcoal
+    idea: A brownish charcoal room lit by one amber lamp, with cream text, serif headings, soft rounded cards with progress rings and a journal of the day, cosy but still serious.
+    base: dark
+    palette:
+        charcoal: #1c1714, the page, the sidebar and the style sheet
+        card: #272019, cards, fields and the journal
+        ember: #322920, status chips and the top of the greeting card
+        seam: #45392d, borders, dashed dividers and ring tracks
+        cream: #f3e8d8, text and figures
+        parchment: #c4b49e, labels, meta and times
+        amber: #f0a94b, the primary button, progress rings, this week bars, journal icons and focus
+        onAmber: #2a1903, text on the amber button
+        amberGlow: #3d2e1b, the current nav item
+        lastWeek: #97836b, last week bars
+        ok: #a8d8a0, the sage On track chip
+        risk: #f5d77a, the straw At risk chip
+        bad: #ffa28c, the coral Behind chip and the overdue line
+    type:
+        Headings and figures in a serif stack, Iowan Old Style, Palatino
+        Linotype, Palatino, Book Antiqua, Georgia. Body in system-ui, Segoe
+        UI, Roboto. Base 15px at 1.55. The greeting is 34px serif at 500,
+        figures 34px serif with old style numbers, section titles 21px serif
+        at 500, project names 16px at 650, times 12px serif italic.
+    layout:
+        A 240px charcoal sidebar holds an amber flag icon and the name in
+        serif, then six nav links with icons, Home on an amber glow tile
+        with a 3px amber inner edge. The main column starts with a pill
+        search on the left and an amber pill New project, a round bell and
+        Mara Okafor on the right. A large rounded greeting card follows,
+        shaded from ember to card, with the date, Good morning, Mara in
+        serif and a coral line reading 4 tasks are overdue and need you
+        first, and on its right the four figures in serif. Below sit two
+        columns. The left holds Your projects as a grid of six rounded cards,
+        each with name, category, a 56px amber progress ring with the
+        percent inside, a status pill, then tasks and due date under a dashed
+        seam, followed by a chart card titled Tasks finished, day by day.
+        The right 340px column is Today's journal, a timeline with amber
+        icons on a thin line and italic serif times. Below 1180px the
+        journal moves under the projects. Below 760px the sidebar becomes a
+        row of icons and the figures go two by two.
+    spacing: An 8px unit. 18px card padding, 16px card gaps, 28 to 32px between areas and a 36px gutter.
+    density: Comfortable. Six project cards with rings, the chart below and the journal at the side.
+    corners: Soft. 18px greeting card, 14px cards, 10px nav items and fields, pill buttons and chips.
+    borders: 1px #45392d around cards, dashed seams inside cards, a 3px amber inner edge on the current nav item.
+    shadows: Warm and soft, 0 6px 18px black at 28 percent on cards and 0 10px 30px at 35 percent on the greeting card.
+    icons:
+        Rounded line icons at 1.8 stroke, 18px, amber in the journal. Status
+        is a check circle, a triangle or a crossed square inside a pill with
+        the word.
+    focus: A 2px amber outline offset 3px.
+    tone: Warm and personal, such as Your projects, Today's journal and 4 tasks are overdue and need you first.

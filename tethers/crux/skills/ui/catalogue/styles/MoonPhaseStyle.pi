@@ -1,0 +1,53 @@
+export anchor MoonPhaseStyle:
+    number: 382
+    screen: SmartHome
+    name: Moon phase
+    idea: A calm night sky holds the home, a pale moon and scattered stars over a horizon, the day's energy drawn as a tide with high and low marks, and scenes shown as phases of the moon.
+    base: dark
+    palette:
+        sky: #060a18, page and lower sky
+        sky2: #0b1330, top of the sky gradient
+        deep: #0d1530, secondary buttons
+        line: #253058, rules, panel and phase card edges
+        ink: #e8ecf7, text
+        mute: #a3acc8, labels, axis and notes
+        moon: #f3ecd2, the moon, lit phases, primary button, active scene edge and focus
+        onMoon: #1a1608, text on moon
+        tide: #7fb5e6, the energy tide line and motion
+        star: #cfd8f5, star dots
+        warm: #ffbf94, lights on and the alert
+        mint: #9be3c8, locked
+        rose: #f5b0c0, bedroom cooling
+    type:
+        High contrast serif for display, Didot, Bodoni 72, Bodoni MT, Big
+        Caslon, Book Antiqua, Georgia. Text in Avenir Next, Avenir, Segoe
+        UI, system-ui at 15px and 1.6. The headline is 64px with an italic
+        moon coloured Saturday, figures 40px, section titles 28px italic,
+        room names 21px, the kicker 12px caps with 0.32em tracking.
+    layout:
+        A night sky fading from deep blue at the top to near black holds
+        about ninety faint star dots in its upper half. The hero pairs a
+        kicker line with the home name, day and time, the headline A quiet
+        Saturday night and a line saying Movie is on and the bedroom cools
+        to 18, with a pale waxing gibbous moon in a soft glow on the right.
+        A pill shaped alert outlined in dusky brown has a triangle, the
+        garage sentence and a moon coloured Close now. Today's energy tide
+        follows with three serif figures and a full width tide line, a
+        smooth pale blue curve over a gradient water fill with a faint
+        dotted second wave, a horizon rule, hour labels, a filled triangle
+        for high and an outlined triangle for low, then a tide table listing
+        high, low and now ebbing. Below, Rooms tonight lists the five rooms
+        in ruled rows with a coloured icon, serif name, italic note, the
+        value and a small caps state word such as Lit, Dark, Cooling, Locked
+        and Motion. Scenes show as moon phase cards, new moon for Good
+        night, full for Movie with a check and Full now, crescent for Away
+        and first quarter for Morning. Below 900px rooms and scenes stack,
+        and at phone width the moon moves above the headline at 120px.
+    spacing: An 8px unit with wide 40 to 48px gaps between bands and 14px row padding.
+    density: Low. Hero, tide, rooms and phases read top to bottom.
+    corners: Full pills for the alert and buttons, 24px phase cards and round swatches.
+    borders: 1px #253058 rules between rooms and a moon coloured edge on the active phase.
+    shadows: None. A soft glow ring around the moon only.
+    icons: Thin 1.5 stroke line icons beside rooms, and moon phase discs for scenes, each with a phase name.
+    focus: A 2px moon outline offset 4px.
+    tone: Quiet and poetic, such as A quiet Saturday night, Today's energy tide, high and ebbing.

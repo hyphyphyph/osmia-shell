@@ -1,0 +1,50 @@
+export anchor AmbientHazeStyle:
+    number: 331
+    screen: MusicPlayer
+    name: Ambient haze
+    idea: A quiet room of soft blurred colour fog behind a single centred column, with light thin type, hairline progress and almost invisible controls, so the song and its words float and nothing asks for attention.
+    base: dark
+    palette:
+        nightAir: #0d0e13, the page, the room and the style sheet
+        fogViolet: #4b3a6b, a blurred fog bank at the top left, decorative
+        fogTeal: #24505a, a blurred fog bank at the right, decorative
+        fogRose: #5a3346, a blurred fog bank at the bottom, decorative
+        veil: #171820, frosted panels at about 72 percent over the fog
+        mistLine: #3a3b48, hairlines, the progress track and field rules
+        moon: #eeedf4, the title, the current lyric and primary text
+        dusk: #b6b4c6, artists, times, labels and the waiting lyric
+        glow: #c9b8ff, the progress dot, the liked heart, the play ring and focus
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        mostly at weight 300. Base 16px at 1.6. The title is clamp 40 to
+        60px at 200 with 0.01em tracking, the current lyric clamp 20 to
+        28px at 300, the waiting lyric up to 20px, and lowercase labels
+        13px at 400 with 0.08em tracking.
+    layout:
+        One centred column in a dark room. Three very large blurred colour
+        fogs drift slowly behind everything, violet top left, teal right
+        and rose low in the middle, clipped by the room. A faint top line
+        reads brightwork sound and now playing in lowercase. After about
+        90px of space comes from Low Tide, then Harbour Lights in thin
+        large type and the artist. A 1px progress hairline runs between the
+        elapsed and total time with a small glowing dot at just under half.
+        The controls sit in one quiet row, line icons over small words,
+        shuffle off, previous, a 64px thin glow ring with pause, next,
+        repeat off and a filled heart over liked. A volume hairline with
+        70% follows. Further down a lowercase words label sits over the
+        current line in moon behind a small glow dot and the next line
+        smaller in dusk. Two frosted panels with 24px corners close the
+        page, after this with the five queued songs on hairline rows, and
+        your library with the playlists and counts and underlined links
+        for Albums, Artists and Podcasts. Below 820px the panels stack.
+    spacing: An 8px unit used wide. About 90px above the title, 48 to 72px between groups and 28 to 32px panel padding.
+    density: Very low. One column and five quiet rows, nothing competing.
+    corners: 24px panels, a round play ring and pill buttons.
+    borders: 1px mist line hairlines at most, often none.
+    shadows: None. Depth comes from the fog and the frosted panels with a 20px backdrop blur.
+    icons:
+        Thin line icons at low emphasis with lowercase words beneath.
+        Shuffle and repeat say off in words. Liked is a filled glow heart
+        over the word liked. The current lyric has a small dot.
+    focus: A 2px glow outline offset 4px with a soft 12px glow halo.
+    tone: Soft lowercase labels, such as now playing, words, after this and your library.

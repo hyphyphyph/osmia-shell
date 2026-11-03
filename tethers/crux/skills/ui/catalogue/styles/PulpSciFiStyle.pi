@@ -1,0 +1,43 @@
+export anchor PulpSciFiStyle:
+    number: 142
+    screen: ProjectsDashboard
+    name: Pulp sci-fi
+    idea: A 1950s pulp magazine printed in two inks on yellowed paper, where the greeting is a cover headline with a starburst, projects are the contents page and progress is a little ship on a dashed flight path.
+    base: light
+    palette:
+        pulp: #f4e4c1, the page
+        page: #fbf1da, cover, panels and text on ink
+        redInk: #b5121b, masthead band, starburst, Behind and the primary button
+        navyInk: #1a2a5e, header, frames, On track and At risk
+        keyBlack: #1c1a24, body text and hard shadows
+        greyInk: #4d4a5a, small labels
+        halftone: #b5121b, red or navy dots at 16 to 18 percent as cover and chart texture
+    type:
+        Masthead and headlines use Impact, Haettenschweiler, Arial Narrow
+        Bold, Oswald in caps, slanted minus 6 to 10 degrees. Labels use
+        Franklin Gothic Medium, Arial Narrow in caps tracked 0.08em. Body
+        uses Century Schoolbook, TeX Gyre Schola, Georgia. Masthead up to
+        92px, headline up to 58px, numbers 40px, contents titles 19px bold
+        italic serif, body 16px at 1.5.
+    layout:
+        A navy header holds a slanted brand, a paper search, a red New
+        project with a raygun and hard shadow, a round bell and the user,
+        over a red nav where the current item is paper with a raygun. The
+        cover sits left in a 6px navy frame with a red masthead band, a
+        week and date price box, a navy tagline strip and a halftone scene
+        with a rocket and ringed planet, the date, a huge slanted greeting,
+        a red starburst for 4 tasks overdue and four callout boxes with hard
+        shadows. In this issue sits right as a contents list numbered 01 to
+        06 in red, with italic serif names, category and due, a dashed
+        flight path with a red trail and a ship at the percent, and tasks
+        with status. Below are Dispatches from the crew with red time tags
+        and a bar chart of rocket nosed bars, striped navy last week and
+        solid red this week.
+    spacing: An 8px unit. 12 to 18px inside panels, 28px between cover and contents.
+    density: Busy cover, orderly contents list, big type everywhere.
+    corners: Square. Curves only in planets, rockets and the starburst.
+    borders: Thick ink frames, 6px navy on the cover, 3px black on panels, 2px dotted navy between entries.
+    shadows: Hard offset 4px solid shadows in navy, red or black, like misregistered print.
+    icons: Two ink silhouettes. Rocket On track, ringed planet At risk, comet Behind, red starburst for overdue, a raygun on the primary button and current nav item.
+    focus: A 3px navy outline offset 3px, then a paper gap and a red ring.
+    tone: Breathless cover lines with exclamation marks, such as In this issue, Dispatches from the crew and Launches per day.

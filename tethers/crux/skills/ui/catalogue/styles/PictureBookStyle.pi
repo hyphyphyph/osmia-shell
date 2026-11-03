@@ -1,0 +1,52 @@
+export anchor PictureBookStyle:
+    number: 64
+    screen: Onboarding
+    name: Picture book
+    idea: The setup reads like a children's picture book, with crayon drawings, wobbly hand-cut boxes and big friendly words across a two-page spread.
+    base: light
+    palette:
+        paper: #fff8e1, the page behind the book, with a faint dotted grain
+        page: #fffdf4, the open book and the style sheet card
+        ink: #2b2118, text and every outline
+        pencil: #5c5047, field labels, hints and page numbers
+        crayonBlue: #1f4fbf, the Continue button, links and the focus outline
+        crayonRed: #c8231b, the You are here and Still writing words and the title underline
+        crayonGreen: #1e7b34, the done step and the Added sticker
+        crayonYellow: #ffd84d, the seat sticky note, heading highlights and the current star
+        orange: #f08a24, sun rays and faces, as fill only
+        sky: #cfe6ff, role tags and the Copy invite link button
+    type:
+        A rounded hand font, Comic Sans MS, Chalkboard SE, Comic Neue, Segoe
+        Print, Bradley Hand, Marker Felt, then Trebuchet MS and Verdana. The
+        heading is 52px bold at 1.05 line height. The lead line is 21px,
+        body is 18px at 1.55, buttons are 20 to 22px bold, and labels are
+        15px in pencil grey. Everything is sentence case.
+    layout:
+        A small top line with a sun logo on the left and a smiling face with
+        Hello, Mara Okafor on the right. Below it the screen is an open book
+        in a two to three column split with a soft gutter shadow in the
+        middle. The left page has a tilted yellow Step 2 of 4 label, a
+        crayon drawing of Mara on a hill waving to three stick friends, and
+        the four steps as a vertical list of stepping stones. The right page
+        has the big heading with a red crayon underline, the line, the
+        invites as hand-cut cards, the seat note as a tilted sticky note,
+        Copy invite link, then Back, a wavy underlined Skip for now and a
+        big Continue at the far right. Small page 2 and page 3 numbers sit
+        at the bottom corners. Below 900px the pages stack.
+    spacing: An 8px unit. 32px page padding, 16px between invite cards, 24px between groups.
+    density: Very loose. One idea per line, with words big enough to read aloud.
+    corners:
+        Wobbly elliptical radii, 255px 18px 225px 18px over 18px 225px 18px
+        255px, and a second mirrored set, so no two boxes match. Cards are
+        rotated by half a degree, the sticky note by about one degree.
+    borders: 3px solid ink on every box. Things not done yet use a 3px dashed ink border.
+    shadows: One flat offset of 4px 5px with no blur at 18 percent ink, on the book, the note and Continue.
+    icons:
+        Hand-drawn inline SVG passed through a turbulence displacement
+        filter for crayon wobble, with a second grain filter giving waxy
+        fills. A green tick disc marks done, a yellow star marks the
+        current step, and dashed numbered ovals mark later steps. Added
+        shows a green crayon tick and the typed row shows a yellow pencil.
+        Seats are five little people, three filled red and two dashed.
+    focus: A 4px dashed crayon blue outline offset 4px. A focused field turns its 3px underline blue.
+    tone: Cheerful and short, such as You are here, Still writing, Coming up and Done, gold star.

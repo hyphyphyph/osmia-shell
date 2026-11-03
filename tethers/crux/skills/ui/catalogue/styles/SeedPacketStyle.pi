@@ -1,0 +1,56 @@
+export anchor SeedPacketStyle:
+    number: 85
+    screen: ProjectsDashboard
+    name: Seed packet
+    idea: Every project is a vintage seed packet with a small painted vignette and its progress read as germination, while the fortnight sits in a sowing chart of growing stems.
+    base: light
+    palette:
+        cream: #f7f1e1, the page
+        packetPaper: #fffbef, packets, panels and the masthead
+        sky: #d7e7e6, the sky behind each vignette
+        ink: #2b2a22, text and frames
+        soilBrown: #5e5440, labels and notes
+        chaff: #c9bc9c, grid lines and meter ticks, never text
+        tomato: #a8331f, Design packets, the pinked edge, overdue and Behind
+        bean: #3d6b2c, Engineering packets, On track, this week stems and the primary button
+        carrot: #8f4a0c, Research packets and At risk
+        tulip: #8e2f5a, Marketing packets
+        mustard: #d9a72b, the avatar and the focus glow, never text
+    type:
+        Three stacks. Slab uses Rockwell, Roboto Slab, Clarendon, Georgia
+        at 700 for the 38px greeting, 34px contents numbers, 30px brand,
+        24px section titles and 18px germination figures. Variety names
+        use Georgia bold italic at 21px. Body is Georgia at 16px with 1.5
+        line height. Labels use Franklin Gothic Medium, Arial Narrow, Arial
+        at 700, 11 to 13px caps tracked 0.12 to 0.14em.
+    layout:
+        A paper masthead with a red pinked top edge holds a round sprout
+        badge, the brand with the line Projects grown from seed, a square
+        search field, the New project button, a bell and the user. The nav
+        is a row of caps cells split by hairlines, the current one black.
+        Two framed panels follow, each with an inset hairline frame. The
+        left is the back of a packet with the greeting, the date, a
+        sowing note with a red diamond saying 4 tasks are overdue, and a
+        packet contents grid of four cells with caps headings and slab
+        numbers. The right is the sowing chart, two week blocks of seven
+        ruled columns where each day is a stem with a pair of leaves grown
+        to its count, with day letters on top and counts below. Below, the
+        seed rack shows six portrait packets in three columns. Each packet
+        has a team colour frame, a coloured band with the number and the
+        brand, a painted vignette of sunflower, bean, carrot or tulip,
+        then the variety, the italic name, a ten tick germination meter,
+        Sprouted and Harvest facts and the status. A garden diary of six
+        dated lines sits beside the rack. Below 1000px the columns stack
+        and packets go two across, and one across on a phone.
+    spacing: An 8px unit. 24px between packets, 32px between panels, a 6px gap inside each packet frame.
+    density: Medium. Each packet carries a picture, a meter and two facts.
+    corners: Square, 2px at most. The masthead has a pinked edge.
+    borders: A 3px team colour frame plus a 1px inner frame on packets. 2px ink on panels with an inset hairline.
+    shadows: A flat 4px offset tint behind packets, like card stock on a shelf.
+    icons:
+        Small painted plant vignettes per team built from simple shapes.
+        Status boxes pair the caps word with a check in a circle for On
+        track, an exclamation in a diamond for At risk and a cross in a
+        square for Behind. Overdue uses the red diamond.
+    focus: A 2px dashed ink outline offset 3px with a 6px mustard glow. A focused field fills pale yellow #fdf3d4.
+    tone: A gardener's notes, such as Germination, Sprouted, Harvest and Sow these first.

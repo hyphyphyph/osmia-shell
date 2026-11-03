@@ -1,0 +1,57 @@
+export anchor ProgressLedStyle:
+    number: 212
+    screen: ProjectsDashboard
+    name: Progress led
+    idea: Huge pill shaped progress bars are the page, one full width row per project in order of due date, each with a large percentage, so how far along everything is reads from across the room.
+    base: light
+    palette:
+        linen: #fbfaf7, the page and control panels
+        white: #ffffff, the totals card, fields and the style sheet
+        ink: #22201c, text, big percentages and the all projects bar
+        stone: #5e5a52, team names, dates and captions
+        hairline: #e4dfd4, dividers between projects, never text
+        track: #ebe6dc, the empty part of every bar, the nav track and initials
+        indigo: #3730a3, progress fill, this week columns, the primary button and focus
+        indigoLight: #c7c4ee, last week columns, never text
+        green: #1f6f43, On track pill text and its check circle
+        greenWash: #e6f2ea, the On track pill fill
+        amber: #8a4f00, At risk pill text and its triangle
+        amberWash: #fbefdc, the At risk pill fill
+        red: #b3261e, the Behind pill, the overdue figure and the badge
+        redWash: #fbe5e3, the Behind pill and the overdue banner fill
+    type:
+        One stack, Avenir Next, Avenir, Nunito Sans, Segoe UI, system-ui,
+        sans-serif. The greeting is 44px bold tracked tight, project
+        percentages 40px bold with a 20px percent sign, figures 30px bold,
+        section titles 22px bold, project names 20px bold, body 16px and
+        captions 14px in stone.
+    layout:
+        One centred 920px column with no sidebar. The top row has a
+        progress bar shaped brand mark and Brightwork, then a pill search,
+        an indigo pill New project button, a round bell with a red dot and
+        a round avatar. Under it the nav is a pill segmented control on a
+        beige track, Home raised in white. A roomy hero gives the date, a
+        44px greeting Hi Mara, here is how far everything has come, and a
+        red pill with 4 tasks are overdue, then a strip of four figures
+        split by hairlines. The main section, Projects, soonest due first,
+        lists the six projects from Q4 customer survey to Spring catalogue,
+        each a full width row with the name and team on the left, a 40px
+        percentage on the right, a 36px tall pill bar in indigo on a beige
+        track, and a line with the status pill, tasks done, tasks to go and
+        Due date in N days. A white rounded card closes the list with an
+        ink bar for all projects together, 78 of 170 tasks, 46 percent.
+        Below, two columns hold a rounded column chart of daily pace and a
+        recent activity list with round initials. On phones the search
+        takes its own row, the figures go two by two and the nav track
+        scrolls.
+    spacing: An 8px unit, generous. 24px above and below each project and 40px between sections.
+    density: Low. One project per full width row, the bar is the hero of each row.
+    corners: Fully round. Bars, buttons, fields, pills and the nav track are pills, the totals card is 20px.
+    borders: 1px warm hairlines between projects and around the figure strip. No boxes around projects.
+    shadows: Only the selected nav pill has a 1px soft shadow.
+    icons:
+        Rounded 1.8px line icons at 20px. Status marks are a white check
+        in a circle for On track, a white bang in a triangle for At risk
+        and a white bar in a square for Behind.
+    focus: A 3px indigo outline offset 3px. A focused row gets a pale indigo fill.
+    tone: Warm and plain, such as Hi Mara, here is how far everything has come, and Due 7 Nov in 7 days.

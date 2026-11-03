@@ -1,0 +1,55 @@
+export anchor RecipeCardStyle:
+    number: 80
+    screen: ProjectsDashboard
+    name: Recipe card
+    idea: Every project is a handwritten index recipe card on a gingham-bordered counter, with tasks measured in cups, a jug that fills as work is done and a stamp for the status.
+    base: light
+    palette:
+        gingham: #c94141, the checked border at 55 percent on white
+        counter: #fbf6ea, the page inside the border
+        card: #fffdf6, index cards
+        topRule: #d0453f, the red line under card titles
+        ruledBlue: #a9cbe8, card lines, decoration only
+        pencil: #26262f, writing and outlines
+        faded: #57525c, typed field labels
+        butter: #f8e7b0, jug fill and the notification badge
+        tomato: #ac2727, the primary button, Behind, the overdue line and this week bars
+        herb: #2e6a30, the On track stamp
+        honey: #875700, the At risk stamp
+        blueInk: #1f4e9a, links, jug marks and focus
+    type:
+        Handwriting uses Segoe Print, Bradley Hand, Chalkboard SE, Comic
+        Sans MS, Comic Neue, cursive for the brand at 34px, the greeting at
+        30px, card titles at 21px on a 38px line and card lines at 16px on a
+        26px rule. Typed field labels use Courier New, Courier at 11px bold
+        caps. Body notes use Trebuchet MS, Gill Sans, Segoe UI at 13 to
+        15px.
+    layout:
+        The whole page sits inside a red gingham border with a white and red
+        double edge. The header has a basket mark with Brightwork in tomato
+        script and THE TEAM RECIPE BOX in type, a hand-cut search, a tomato
+        New project button, a round timer bell with a butter 3 badge and
+        Head cook Mara Okafor. Nav is a row of recipe-box divider tabs with
+        Home raised in front. The greeting card says Good morning, Mara,
+        the date, a tomato line that 4 tasks are overdue and to check the
+        oven first, and that everything else is simmering. Beside it an In
+        the pantry card lists the four summary numbers with a cup, spoon,
+        timer and sand glass. Recipes on the go is a grid of six tilted
+        cards, each with a ruled body, a red title rule, the title with a
+        status stamp, typed fields From, Measured as tasks in cups, Done and
+        Ready by, a jug drawing filled to the percent and a one-line method.
+        Below sit Batches baked, a bar chart with open rounded bars last
+        week and tomato bars this week, and Kitchen notes on a ruled card.
+        At 375px the border thins and cards stack.
+    spacing: Set by the 26px ruled line. 22px between cards and 18px card padding.
+    density: Medium. Four facts per card plus a jug.
+    corners: 3px card corners. Buttons and fields use uneven hand-cut corners such as 4px 16px.
+    borders: The gingham frame round the page, a 2px red title rule and blue lines on cards, and 2px pencil outlines on controls.
+    shadows: A soft paper shadow under cards and a 2px by 3px pencil offset under buttons. Cards tilt under one degree.
+    icons:
+        Kitchen line drawings, a jug, a spoon, a timer and a sand glass.
+        Stamps are rotated outlined boxes pairing the word with a ticked
+        circle for On track, a triangle for At risk and a crossed solid
+        square for Behind.
+    focus: A 3px dashed blue ink outline offset 3px.
+    tone: Warm and homely, such as Heads up, check the oven first, Recipes on the go, Kitchen notes and Ready by.

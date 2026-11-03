@@ -1,0 +1,47 @@
+export anchor MidCenturyModernStyle:
+    number: 61
+    screen: Calendar
+    name: Mid-century modern
+    idea: A 1950s hi-fi console of a calendar, with walnut, mustard and teal, starbursts and boomerangs, and each day as a long rounded lane along an hour dial.
+    base: light
+    palette:
+        cream: #f4ecd8, the page
+        card: #fffaf0, day lanes, the console band and the style sheet
+        walnut: #5a3a22, the top bar, borders, the view switch and the console ledge
+        teal: #1d6b67, the primary button, event duration bars and the today lane border
+        tealTint: #cfe6e1, the current week row in the month
+        mustard: #e2a72e, the selected nav item and view, the starburst and the focus outline
+        mustardTint: #f8e4b5, deadline chips
+        tomato: #b4432a, deadline chip borders and the starburst key
+        ink: #2a2118, text
+        muted: #6b5a48, labels, times and the hour ruler
+    type:
+        Rounded geometric sans throughout, Futura, Century Gothic, Avenir
+        Next, URW Gothic, Trebuchet MS, sans-serif. Sizes are 32px bold for the
+        week title, 34px bold day numbers, 13px bold uppercase labels with
+        0.2em tracking, 14px bold event titles and 13px body. Nav and view
+        labels are uppercase with wide tracking.
+    layout:
+        A walnut top bar with a mustard and teal starburst mark, the spaced
+        uppercase wordmark, pill nav with the current item in mustard and a
+        boomerang outline drifting off the right edge. Below come the week
+        title and the controls. The side panel becomes a console band across
+        the page in three parts, the month table, the calendar checkboxes as
+        cream pills, and an away card for Lena with a boomerang medallion. The
+        week is seven horizontal lanes, a 150px day label on the left and a
+        lane marked every hour from 09 to 17 hours under a shared ruler. All
+        day items are chips at the top of a lane. Each timed event is a teal
+        bar exactly as long as the event, with its time, title and people
+        beneath, aligned right for late events. Below 760px the console stacks
+        and each lane becomes a plain list with short bars as bullets.
+    spacing: An 8px unit. 10px between lanes, 18 to 24px inside panels and 32px between areas.
+    density: Medium. One lane per day about 104px tall.
+    corners: Full pills for controls and chips. Lanes alternate 18px and 60px corners like a boomerang, event bars use 12px and 2px.
+    borders: 2px walnut on secondary buttons, fields and the console, dotted 2px tan dividers inside the console. Deadline chips have a 2px tomato border and out of office chips a 2px dashed walnut border.
+    shadows: Hard offsets only. A 4px mustard offset under the primary button and a walnut ledge under the console.
+    icons:
+        Solid filled shapes at text size. A dot marks Team, a four point
+        starburst marks Deadline and a boomerang marks Out of office, each
+        with its word. Today in the month is a mustard starburst.
+    focus: A 3px mustard outline offset 2px with a 6px dark walnut halo.
+    tone: Breezy and period, such as The week ahead, Calendars on air and Nothing on the dial.

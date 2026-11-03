@@ -1,0 +1,53 @@
+export anchor CyberpunkNeonStyle:
+    number: 299
+    screen: CodeRepository
+    name: Cyberpunk neon
+    idea: A night city terminal in magenta and cyan neon on black, with cut corner panels, scanlines, a glitched headline and a hex grid of checks, loud in colour but strict about shape and contrast.
+    base: dark
+    palette:
+        void: #07060b, the page and style sheet ground
+        panel: #0f0c18, the terminal, shards and file rows
+        panelRaised: #171226, raised fills
+        ink: #f3eefe, text
+        haze: #b3a9cc, labels, meta and line numbers
+        grid: #3b2d5c, panel edges and tabs
+        magenta: #ff3ddc, the primary button, headings, failing, removed lines and the header glow
+        cyan: #2ef2ff, the current tab, passed, approved, added lines, links and focus
+        volt: #ffe94d, changes requested, Private and the incoming comment
+        magentaShade: #2a0c27, removed line ground
+        cyanShade: #06232a, added line ground and passed hexes
+    type:
+        A wide sans, Eurostile, Microgramma, Bank Gothic, Segoe UI, at 800
+        in caps for the title at 46px with a split magenta and cyan shadow
+        offset 2px each way, and for section titles at 13px tracked 0.24em.
+        Everything else is monospace, ui-monospace, Cascadia Mono, Menlo,
+        at 14px and 1.5, labels 12px caps tracked 0.12em, the diff 13px.
+    layout:
+        A black ticker bar with a magenta rule and glow holds the app name
+        as BRIGHTWORK//CODE, uplink stable and three outlined counters. A
+        hero band follows with the repository in cyan caps, a volt Private
+        tag, outlined tabs with the current one filled cyan and glowing,
+        then the glitched title with the number in magenta, a broken neon
+        underline in magenta and cyan, and the Open tag with the merge
+        sentence. Faint scanlines cover the page. The body has a wide
+        column and a 340px stack. The wide column holds the diff as a
+        terminal with a prompt line, neon edges on added and removed lines
+        and the comment as an incoming message box with a volt border and
+        glow, then the three files as rows with a left edge. The stack
+        holds three data shards, alternating cut corners. Checks shows
+        11/12 and the twelve checks as hexagons, cyan with ticks, the
+        failing one solid magenta with an octagon cross, then the failing
+        line. Reviewers lists both verdicts. Metadata lists assignee,
+        outlined labels, milestone and linked issue and a striped disabled
+        merge button. Below 1000px the stack drops under the terminal.
+    spacing: An 8px unit. 24px page gutters, 20px column gap, 16px shard padding.
+    density: Medium. A large headline band, then a wide terminal beside a stack of shards.
+    corners: Cut corners, 18px clipped on alternate shards, a 9px notch on the primary button, hexagon check cells.
+    borders: 1px violet grid lines, 2px neon edges on diff lines and file rows, a magenta rule under the ticker.
+    shadows: Neon glows only, magenta under the ticker and primary button, cyan on the current tab and focus, volt on the comment.
+    icons:
+        2px line icons. A tick for passed and an octagon cross for failing
+        inside hexes, a ringed tick for approved, a triangle for changes,
+        each with a caps word.
+    focus: A 2px cyan outline offset 3px with a cyan glow.
+    tone: Terminal slang kept readable, such as uplink stable, incoming and Merge locked.

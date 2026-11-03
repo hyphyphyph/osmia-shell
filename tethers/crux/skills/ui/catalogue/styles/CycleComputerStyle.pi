@@ -1,0 +1,57 @@
+export anchor CycleComputerStyle:
+    number: 389
+    screen: FitnessTracker
+    name: Cycle computer
+    idea: The day shown on two pages of a handlebar computer, a moulded housing with hardware buttons around a dark LCD split by hard lines into data fields, each with a tiny caps label, a huge digit and a unit.
+    base: dark
+    palette:
+        page: #0c0d0e, the page behind the devices and the style sheet
+        housing: #1c1e21, the moulded device body, nav pills and sheet labels
+        housingHigh: #2a2d31, the lit top of the housing and the secondary button
+        bezel: #060707, the black frame around the screen
+        lcd: #0f1612, the screen and every data field
+        cellLine: #2c3d33, the 2px lines that split the fields
+        ink: #e3f3d2, digits, bars and lit segments
+        muted: #9fb79a, field labels, units and rest days
+        dim: #3d5446, unlit segments
+        amber: #ffb648, the saved alert, the top zone, today, the current page and the primary button
+        onAmber: #231503, text on amber
+    type:
+        Digits and labels use DIN Alternate, Bahnschrift, Roboto Mono, ui-
+        monospace, Menlo, Consolas, bold with tabular numbers. The distance
+        field is 88px, standard fields 54px, small fields 40px, units 15px
+        muted, field labels 11px caps tracked 0.12em. Page text uses Segoe
+        UI, Roboto, system-ui at 14px.
+    layout:
+        A plain header with Brightwork Move, Today and the date, and Today,
+        Week and Plan as round pills with Today in amber. Below, two device
+        housings side by side, each a 36px rounded moulded body with side
+        hardware buttons, a page label and page dots at the top and three
+        key labels at the bottom. Page 1 is the Evening run. Its screen has
+        a status strip with Run saved, the date and signal bars, an amber
+        alert bar with a flag reading Run done 8.2 km saved, then a field
+        grid on six columns split by 2px lines. A full width Distance field
+        shows 8.2 km at 88px. Then Time, Avg pace, Avg HR and Avg speed in
+        half width fields, the speed of 11.6 km per h derived from distance
+        and time. Then a full width Time in zone field with five bars,
+        minutes on top, zone 3 in amber and Z labels below. Page 2 is Day
+        and week. Move, Exercise and Stand each take a third with percent,
+        value over goal, a segment gauge and the amount to go. A full width
+        Distance this week field draws seven bars with figures, rest days as
+        a dashed floor with a dash, two letter day names and a triangle on
+        Saturday. Then Sleep 7 h 12 min with deep 1 h 34 min, the Half
+        marathon at week 6 of 12 with a twelve segment gauge, and a full
+        width Next session field reading 14 km long run tomorrow. Below
+        1060px the devices stack. At 375px values shrink to 34px and half
+        width fields stay in pairs.
+    spacing: An 8px unit. Fields packed with 2px divider lines and 8 to 12px padding, 28px between devices.
+    density: High. Every figure gets its own field, the run on page 1 and the day on page 2.
+    corners: 36px on the housing, 12px on the screen, square fields, round page dots and pills.
+    borders: 2px lines between fields and a 6px black bezel around the screen.
+    shadows: A deep drop shadow under the housing, a highlight on its top edge and inset shade on the screen and hardware keys.
+    icons:
+        A flag in the saved alert, signal bars in the status strip, page
+        dots and segment gauges for rings and plan. Rest days are a dashed
+        floor with a dash and today carries a triangle.
+    focus: A 3px amber outline offset 2px.
+    tone: Device labels such as Avg pace, Time in zone, Run done and Next session.

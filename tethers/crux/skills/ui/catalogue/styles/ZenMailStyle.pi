@@ -1,0 +1,51 @@
+export anchor ZenMailStyle:
+    number: 402
+    screen: EmailClient
+    name: Zen mail
+    idea: One message at a time on sumi black, set in a large quiet serif with ink brush strokes and an enso, a short numbered queue to the side, and a single vermilion seal for the one action that matters.
+    base: dark
+    palette:
+        sumi: #121110, the page
+        stone: #1a1917, the style sheet
+        wash: #2c2a26, dividers and the enso stroke
+        paper: #ece4d4, text and the brush stroke
+        grey: #a9a193, meta and queue subjects
+        mist: #6c665c, underlines only and never text
+        seal: #e5664f, the Reply seal, new marks, the current item bar and the focus ring
+        onSeal: #1a0703, text on the seal
+        moss: #a7c08f, the starred mark
+    type:
+        A mincho serif stack, Hiragino Mincho ProN, Yu Mincho, Songti SC,
+        Noto Serif, Georgia, at a 16px base with 1.8 leading. The subject is
+        56px at 400, the letter 24px with 2.0 leading, queue senders 16px
+        and bold when unread, small section words 14px with very wide
+        tracking. A sans stack, Hiragino Sans, Yu Gothic, Noto Sans,
+        system-ui, sets meta and the small marks at 12 to 14px.
+    layout:
+        Three bands across the width. A 72px band holds Brightwork Mail
+        written vertically top to bottom with a small vermilion square
+        stamp under it. A 300px queue column, ruled off by one thin line,
+        reads Inbox, twelve, then an underlined field reading seek, then a
+        numbered list 01 to 06 with the sender, the subject and time on one
+        line and a small mark below. The current item has a short
+        vermilion brush bar to its left and a vermilion number. The folders
+        and labels sit at the very bottom as small plain links. The stage
+        fills the rest with wide margins. A large faint enso circle sits
+        behind the top right. It reads one of six in spaced letters, then
+        the subject very large, From and To with the time in small sans, a
+        tapered brush stroke, the letter in large serif and a dash before
+        Clients. Actions are a square vermilion seal for Reply, then Reply
+        all, Forward, Snooze and Archive as underlined words, and a quiet
+        line naming the next message. On a phone the brand runs across the
+        top, the queue comes first, then the message.
+    spacing: An 8px unit used generously. 96px above the message, 40px around the brush stroke, 64px before actions.
+    density: Very sparse. One message fills the stage and the queue is six quiet lines.
+    corners: None on panels. The seal has slightly uneven corners from 3 to 7px, and swatches are pebble shaped.
+    borders: One 1px wash line between queue and stage. Secondary actions are words with a thin underline.
+    shadows: None.
+    icons:
+        No icon set. The brush stroke and enso are decoration. Marks are a
+        glyph plus a word, a dot plus new, a six point star plus starred,
+        a hollow diamond plus enclosed.
+    focus: A 1px paper outline offset 6px with a vermilion ring outside it. Fields turn their underline vermilion.
+    tone: Unhurried and lowercase, such as one of six, seek, and Next, when you are ready.

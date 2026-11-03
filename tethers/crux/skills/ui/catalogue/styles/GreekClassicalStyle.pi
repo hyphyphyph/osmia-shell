@@ -1,0 +1,55 @@
+export anchor GreekClassicalStyle:
+    number: 146
+    screen: ProjectsDashboard
+    name: Greek classical
+    idea: The dashboard is painted round a black-figure vase, in stacked registers shaped like its silhouette, framed by Greek key bands, with the four totals in terracotta tondo medallions.
+    base: light
+    palette:
+        clay: #f6e7d4, the page between registers
+        lightClay: #fbf3e8, register grounds, cards and fields
+        slip: #d27a48, terracotta fills, key band grounds, medallion rings, the primary button and last week bars
+        deepTerracotta: #8e3b14, ivy marks and focus
+        blackGlaze: #1c1612, text, key lines, amphora fills, the top bar, frieze heads and this week bars
+        umber: #5c4636, dates, meta and captions
+        miltos: #8a2b1a, overdue and Behind
+        olive: #3f5320, On track
+        ochre: #7a5200, At risk
+        addedWhite: #fffaf2, text on black glaze
+    type:
+        Baskerville, Baskerville Old Face, Libre Baskerville, Hoefler Text,
+        Garamond, serif for the greeting, figures, titles and body.
+        Labels use Gill Sans, Gill Sans MT, Seravek, Trebuchet MS,
+        sans-serif in caps tracked 0.08 to 0.2em. Greeting 46px, tondo
+        figures 50px, register titles 28px, project names 19px on black,
+        labels 13 to 15px, body 15 to 16px at 1.55.
+    layout:
+        Registers stacked down the centre with widths that trace a vase,
+        a narrow neck for the header at 820px, a shoulder at 1100px for
+        the greeting and totals, the widest belly at 1240px for projects,
+        a hip at 1040px for chart and activity and a narrow foot at 640px.
+        The neck is a black bar with the brand and a small amphora mark,
+        a pill search, a terracotta pill button, a ring bell and the user,
+        then a Greek key band, the pill nav with a black current pill and
+        a row of black tongues. The shoulder opens with a dotted band, a
+        centred greeting, the date in spaced caps and a red pill naming 4
+        overdue tasks, then four round tondi, terracotta discs with black
+        rings and a clay centre holding the figure, with Overdue inverted
+        to a black centre. The belly is a six panel frieze split by black
+        lines, each panel with a black head holding category and name, an
+        amphora that fills with black glaze to its percent, the percent,
+        tasks and due date, and the status. The hip pairs the chart,
+        terracotta then black round tipped bars, with the activity list
+        led by ivy leaves. Key bands close each register. On phones the
+        frieze goes two across and tondi two by two.
+    spacing: An 8px unit. 24 to 32px register padding, 20px between registers, 24px between tondi.
+    density: Medium. Each register holds one kind of content.
+    corners: Square registers and panels. Round tondi, pill buttons, pill fields, pill nav and round tipped bars.
+    borders: 3px black lines between frieze panels, 24px Greek key bands with black edges, dotted and tongue bands as lighter dividers.
+    shadows: None.
+    icons:
+        Black-figure silhouettes. An amphora shows progress and ivy leaves
+        mark activity. Status uses a filled diamond for On track, an
+        outlined triangle with a mark for At risk and a hollow square for
+        Behind, beside the caps word.
+    focus: A 2px deep terracotta outline offset 3px, terracotta on the black bar.
+    tone: Plain and calm, with one painterly aside per register such as Each vessel fills with black glaze.

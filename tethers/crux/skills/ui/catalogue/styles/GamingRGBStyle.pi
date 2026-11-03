@@ -1,0 +1,57 @@
+export anchor GamingRGBStyle:
+    number: 314
+    screen: OpsMonitor
+    name: Gaming RGB
+    idea: A gamer HUD for the service monitor, with chamfered black panels framed by a cyan to magenta to lime gradient edge, services as a roster of cards with segmented uptime health bars, and terse caps labels.
+    base: dark
+    palette:
+        void: #07080d, the page behind a faint 32px cyan grid
+        panel: #10121b, inside every chamfered panel and the style sheet
+        panelRaised: #171a26, roster cards, readout boxes and list rows
+        ink: #eef1ff, text and figures
+        muted: #a3abcb, labels, times and axis ticks
+        line: #2a2f45, dividers, grid lines and empty health segments
+        cyan: #35e0ff, first stop of the RGB edge, the request line and its glow, links
+        magenta: #ff5fdc, middle stop of the RGB edge, the error line, panel title diamonds and the focus glow
+        lime: #a6ff5c, last stop of the RGB edge, the p50 line and version tags
+        healthy: #8dff6a, Healthy and Resolved words, filled circle and square, health segments
+        degraded: #ffc23d, Degraded and Investigating, filled triangle, the dashed p95 line and the SEV 2 tag with near black text
+        recovered: #5ee6ff, Recovered word and filled diamond
+        firing: #ff6b7d, Firing word and filled octagon
+    type:
+        Bahnschrift, DIN Alternate, Roboto Condensed, Arial Narrow for text,
+        and ui-monospace, Cascadia Mono, Menlo, Consolas for every number,
+        service name and time. Base 15px at 1.45. The incident ID is 32px
+        mono at 800, readout figures 22px mono at 700, panel titles 13px
+        caps tracked 0.2em with a small magenta diamond before them, meta
+        12px mono.
+    layout:
+        A dark top bar with a hexagon BW mark filled with the RGB gradient,
+        the Brightwork Ops wordmark in tracked caps, the suite apps Canvas,
+        Drive, Code and Ops as caps tabs with a magenta underline on Ops,
+        and chips for ENV PRODUCTION and WINDOW 24H plus a search button. A
+        2px RGB rule sits under the bar. Below, three columns. Left is a
+        300px Service roster panel with five cards, each with a 3px status
+        left edge, the service name in mono, a filled status shape and caps
+        word, a 20 segment health bar where filled segments show uptime
+        above 99 percent, and stats such as UPTIME 99.98% and P95 LATENCY
+        182 ms. The centre holds a Throughput panel with three readout boxes
+        for Peak, Night low and Now, then a large glowing area chart with a
+        cyan PEAK 9,400 tag at the afternoon peak, and beneath it two small
+        panels for Error rate and Latency. The right 320px column holds the
+        Active incident panel with a big INC-0427, a SEV 2 tag, status,
+        opened, owner and two buttons, then an Alert feed and Patch notes
+        for deploys with lime version tags. Below 1180px the right column
+        becomes a row. Below 760px everything stacks in one column.
+    spacing: An 8px unit. 24px page gutter, 16px between panels, 16px panel padding, 10px between roster cards.
+    density: Dense HUD. Roster, three charts and the incident column are visible at once on a laptop.
+    corners: No radius. Panels have 14px chamfers at top left and bottom right, roster cards a 10px chamfer at top right, the logo is a hexagon.
+    borders: Every panel has a 2px RGB gradient edge made by a gradient behind a clipped inner panel. Cards carry a 3px left status edge, lists use 1px line dividers.
+    shadows: None for depth. Only the request line glows with a 4px cyan drop shadow.
+    icons:
+        Line icons at 1.8 stroke for navigation. Filled status shapes, a
+        circle for Healthy, a triangle for Degraded, a diamond for
+        Recovered, an octagon for Firing, a square for Resolved and a
+        magnifier for Investigating, always beside the word.
+    focus: A 2px white outline offset 3px plus a 5px magenta glow ring. Buttons are never clipped so the ring always shows.
+    tone: Terse uppercase HUD labels such as Service roster, Alert feed, Patch notes and PEAK 9,400.

@@ -1,0 +1,59 @@
+export anchor DarkIconRailStyle:
+    number: 229
+    screen: ProjectsDashboard
+    name: Dark icon rail
+    idea: A dense three-pane dark work surface, with a near-black icon rail, a list pane holding the greeting, figures and projects, and a wider detail pane with Mobile app 2.0 open, stepped in cool greys with one violet accent.
+    base: dark
+    palette:
+        rail: #0b0c10, the 60px icon rail
+        listPane: #14161c, the list pane, fields and the style sheet
+        detailPane: #1a1d24, the detail pane and its top bar
+        card: #21252e, cards and the facts strip
+        line: #2e333d, borders, dividers and meter tracks
+        ink: #e4e6ec, text
+        muted: #9ea4b2, meta, labels and axis text
+        railInk: #9aa0ad, rail icons that are not current
+        violet: #b49cff, the primary button, the selected edge, meters, this week bars, tags and focus
+        onViolet: #1b1036, text on violet
+        selected: #2a2440, the selected project row and the current rail item
+        lastWeek: #7a8192, outlined last week bars
+        ok: #7fd8a6, the outlined On track tag
+        risk: #f3c56a, the outlined At risk tag
+        bad: #ff9a8f, the outlined Behind tag and the overdue line
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Ubuntu. Base 13px at
+        1.45. The detail title is 24px at 650, the greeting 18px at 650,
+        figures 20px at 650 with tabular numbers, pane labels 11px caps
+        tracked 0.08em, tags 11.5px at 650.
+    layout:
+        Three columns at full height. The 60px rail holds a violet B tile,
+        six icon-only links with names and tooltips, Home on a violet tinted
+        tile with a 3px violet edge bar, and the MO disc at the foot. The
+        340px list pane holds the date, Good morning, Mara, a red clock line
+        reading 4 tasks are overdue, the four figures as a two by two grid
+        split by 1px lines, then a Projects label with the count and six
+        rows. Each row has the name, an outlined status tag, category and
+        due date, and a 3px meter with percent and done over total. Mobile
+        app 2.0 is selected with a violet tint and a violet left edge. The
+        detail pane has a top bar with search and a slash key hint, New
+        project, a bell and Mara Okafor. Below sit a breadcrumb Projects,
+        Engineering, Mobile app 2.0, the 24px title with its At risk tag and
+        an Open project button, the line Engineering · due 2 Dec, 32 days
+        left, a four-cell facts strip for progress, tasks done, due and
+        status, then two cards side by side. The chart card shows last week
+        as outlined bars and this week as solid violet. The Team activity
+        card tags the two items about Mobile app 2.0 with This project.
+        Below 1180px the cards stack. Below 860px the rail becomes a sticky
+        top row, and the top bar, the list pane and the detail follow in
+        that order.
+    spacing: An 8px unit, tight. 16 to 20px pane padding, 9px row padding, 14px between cards.
+    density: Dense. Three panes at once, a 13px body and small figures.
+    corners: 6px panes, cards and buttons, 8px rail tiles, 4px tags, round avatars.
+    borders: 1px #2e333d between panes, rows and cells. A 3px violet edge on the selected row and the current rail item.
+    shadows: None. Panes separate by four stepped greys from #0b0c10 to #21252e.
+    icons:
+        Line icons at 1.75 stroke, 16px, and 20px in the rail. Status tags
+        are outlined in the status colour with a check circle, a triangle or
+        a crossed square and the word.
+    focus: A 2px violet outline offset 2px.
+    tone: Plain and neutral, such as Team activity, Tasks completed, Open project and This project.

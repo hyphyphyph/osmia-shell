@@ -1,0 +1,55 @@
+export anchor NightLettersStyle:
+    number: 396
+    screen: EmailClient
+    name: Night letters
+    idea: Mail as real paper post on a midnight desk under one warm lamp, with messages as envelopes sealed in wax until read and the open message laid out as a letter on dim warm paper.
+    base: dark
+    palette:
+        night: #10121c, the room behind everything
+        desk: #161926, drawers, secondary buttons and the style sheet
+        envelope: #2a2c3a, message envelopes and ribbon tags
+        envelopeEdge: #3d4052, envelope borders and the flap lines
+        paper: #2b251c, the open letter sheet
+        paperEdge: #4a3f2e, the letter border and its header rule
+        ink: #f1e7d2, text
+        dim: #c2b8a5, subjects, meta and postmarks
+        lamp: #f4c374, the glow, the open envelope edge, the Reply button and focus
+        onLamp: #2b1a02, text on lamp
+        wax: #d9675a, the seal on unread envelopes beside the words
+        blueInk: #a9c1ff, the handwritten signature
+    type:
+        A book serif, Iowan Old Style, Palatino Linotype, Palatino, Book
+        Antiqua, Georgia, for everything at a 16px base. The letter subject
+        is 30px italic, the letter body 19px at 1.8, senders 18px with
+        unread ones at 700, subjects italic. The signature Dana uses a
+        script stack, Segoe Script, Apple Chancery, URW Chancery L, cursive,
+        at 28px in blue ink.
+    layout:
+        The top of the page is lit by a soft radial lamp glow from the top
+        right, with a small drawn lampshade hanging there. The header holds
+        Brightwork in bold and Mail in italic, the folders as small drawer
+        fronts each with a round knob, Inbox 12 edged in lamp gold, and the
+        labels as notched ribbon tags with a coloured stripe. Below, a left
+        column titled The evening post, six letters stacks six envelopes,
+        each tilted half a degree the other way from the last, with two
+        faint diagonal flap lines, the sender, the subject in italic, an
+        optional quoted snippet, state words and a dashed round postmark
+        holding the time at the right. The Northpass envelope is ringed in
+        lamp gold. The right column, titled Open on the blotter, shows the
+        letter on dim warm paper turned slightly, with From, To and Sent
+        in its header, the subject in italic, the body, Thanks on its own
+        line and Dana in blue script, then a Clients ribbon. Square cornered
+        buttons sit under the sheet with Reply in lamp gold. Below 1000px
+        the letter moves under the stack, and on a phone the drawers scroll
+        sideways.
+    spacing: An 8px unit. 14px between envelopes, 48px between the stack and the letter, 48 by 56px inside the letter.
+    density: Low to medium. Six envelopes and one letter.
+    corners: 4px envelopes, 2px paper, 3px drawers and buttons, round postmarks and seals.
+    borders: 1px envelope edge, flap lines drawn as two diagonals, dashed round postmarks.
+    shadows: Long soft drop shadows under envelopes and the letter, plus the radial lamp glow.
+    icons:
+        Few. A red wax seal plus Sealed, unread. An open envelope plus
+        Opened. A clip plus Enclosure. A filled gold star plus Starred.
+        Ribbon tags carry label names beside a colour stripe.
+    focus: A 2px dashed lamp gold outline offset 4px.
+    tone: Gently old fashioned, such as The evening post, Open on the blotter and Enclosure.

@@ -1,0 +1,46 @@
+export anchor GreenPhosphorStyle:
+    number: 289
+    screen: CodeRepository
+    name: Green phosphor
+    idea: The whole review is one glowing green-on-black terminal transcript, each part of the screen printed as the output of a command, with inverse-video highlights, ruled output boxes and a blinking block cursor waiting at the end.
+    base: dark
+    palette:
+        black: #030803, the page and the style sheet background
+        well: #0a1a0d, output boxes, the comment box and fields
+        phosphor: #6dff8a, main text, prompts, glow, the inverse bar and focus
+        dim: #4cd468, secondary text, line numbers, removed lines and box titles
+        trace: #2a7a3c, box rules and the dashed separators, never text
+        inverseInk: #031a08, text on the phosphor inverse bar and the primary button
+    type:
+        One monospace stack, IBM Plex Mono, DejaVu Sans Mono, Liberation Mono,
+        ui-monospace, Menlo, Consolas, at 15px on 1.6 for everything. The title is
+        20px at 700 in caps. Prompts are 15px at 700. Box titles 13px in dim. Every
+        glyph glows with a 4px phosphor text shadow.
+    layout:
+        A single left aligned transcript column, max 1000px, on flat black with a
+        faint radial vignette. A full width inverse status line reads Brightwork
+        Code, the repository and Private. Then a series of prompts, each followed by
+        its output. bw repo view prints Watch 12, Star 48 and Fork 3 and a numbered
+        tab menu where Pull requests sits in inverse video. bw pr view 214 prints a
+        ruled box with the title, the Open state, the merge sentence and a two
+        column key and value list for reviewers, labels, assignees, milestone and
+        linked issue. bw pr checks prints all twelve checks as aligned rows with a
+        mark and a word and a twelve cell text meter. bw pr diff prints the three
+        file totals and the hunk with plus and minus signs and Tomás Ruiz's comment
+        boxed inline. bw pr merge prints the block reason and a bracketed disabled
+        Merge button. A block cursor blinks on the last prompt. At 375px the same
+        column narrows and wide output scrolls inside its own box.
+    spacing: A line based rhythm of 24px. One blank line between commands, 16px box padding.
+    density: Medium. Text only, aligned in columns, no cards.
+    corners: Square everywhere.
+    borders:
+        1px trace rules around output boxes, dashed trace separators between
+        commands, inverse video for the status line and the current tab.
+    shadows: No box shadows. Text has a 4px phosphor glow at 55 percent.
+    icons:
+        Line icons at 2px stroke drawn in phosphor at 1em with square caps, plus the
+        word. Check circle for passed and approved, crossed square for failing,
+        triangle with a bang for requested changes, padlock for the blocked merge,
+        the pull request glyph for Open.
+    focus: Inverse video, a phosphor fill with inverseInk text, plus a 2px phosphor outline offset 2px.
+    tone: Machine terse in prompts and output, such as 11/12 passed and merge blocked, 1 check failing.

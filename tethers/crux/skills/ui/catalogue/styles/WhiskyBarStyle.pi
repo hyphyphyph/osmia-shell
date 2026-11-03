@@ -1,0 +1,64 @@
+export anchor WhiskyBarStyle:
+    number: 241
+    screen: ProjectsDashboard
+    name: Whisky bar
+    idea:
+        A low lit bar of dark leather and walnut with brass rails, where the
+        projects stand on a shelf as glasses filled with amber to their
+        percent, the figures sit on engraved brass framed plaques and a warm
+        amber glow lights the greeting.
+    base: dark
+    palette:
+        leather: #1a110c, the page and the style sheet
+        walnut: #2a1a10, the header band, panels and the shelf back
+        walnutLight: #352215, plaques, fields and the current nav item
+        glow: #3d2716, the brightest point of the amber glow, the lightest surface text sits on
+        line: #5a3f27, panel borders and ledger rules
+        brass: #d1ad66, rails, frames, the primary button, links, glass outlines and focus
+        brassInk: #1d130b, text on brass
+        ink: #f2e4cc, text and figures
+        muted: #c8b293, meta, labels and axis text
+        amber: #f0a24a, the liquid in the glasses and this week bars
+        oak: #9a7448, last week bars
+        ok: #b6dd8f, On track text and check circle
+        risk: #f5cd6a, At risk text and triangle
+        bad: #ff9f86, Behind and overdue text, crossed square and clock
+    type:
+        Two stacks. Headings and body use Baskerville, Baskerville Old Face,
+        Hoefler Text, Georgia, serif, with the greeting 36px, plaque figures
+        38px with lining numbers, project names 17px at 600 and body 15px at
+        1.55. Labels and meta use engraved caps, Copperplate, Copperplate
+        Gothic Light, Engravers MT, serif, 12 to 15px tracked 0.18em.
+    layout:
+        A walnut header band with faint grain ends in a 3px brass rail. It
+        holds the Brightwork name engraved on a small brass plaque, the six
+        nav links in engraved caps with Home on a darker inset tile with a
+        brass underline, a leather search field, a bell, a brass New project
+        button and Mara Okafor. Below, a wide walnut panel carries a soft
+        amber glow behind the greeting at left, with the date and a coral line
+        reading 4 tasks are overdue with a clock, and the four figures at
+        right as brass framed plaques with a double bevel border, overdue with
+        a coral figure. The projects stand on The shelf, a walnut panel with a
+        brass shelf edge, as six tall glasses drawn in brass outline, each
+        filled with amber to its percent with the percent above, and under
+        each glass the name, category, status with its symbol, tasks and due
+        date. Below the shelf two panels sit side by side, the chart as paired
+        bars for each weekday with oak last week and glowing amber this week,
+        and the ledger of activity with ruled lines and engraved times. Below
+        1000px the glasses wrap to three per row and the panels stack, below
+        600px the glasses wrap to two per row and plaques go two by two.
+    spacing: An 8px unit. 28px panel padding, 20px between glasses, 32px between panels.
+    density: Medium. A rich shelf with room around each glass.
+    corners: Small. 4px panels, plaques, buttons and fields, glasses with rounded bases.
+    borders:
+        Brass. A 3px brass rail under the header, double bevelled brass frames
+        on plaques, 1px line on panels and ledger rules.
+    shadows:
+        A warm amber glow behind the greeting and this week bars, and inner
+        shadows that make plaques look inset.
+    icons:
+        Line icons at 1.7px stroke in brass. Status uses a check circle, a
+        triangle with a bang and a crossed square, always with the word,
+        overdue a clock.
+    focus: A 2px brass outline offset 3px with a faint amber glow.
+    tone: Warm and a little formal, such as Good morning, Mara, The shelf and The ledger.

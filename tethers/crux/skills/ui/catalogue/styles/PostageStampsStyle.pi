@@ -1,0 +1,61 @@
+export anchor PostageStampsStyle:
+    number: 118
+    screen: ProjectsDashboard
+    name: Postage stamps
+    idea: The dashboard is a page in a stamp album, where numbers are denominations, projects are a perforated souvenir sheet with an overprinted status, and the chart is a coil of one task stamps.
+    base: light
+    palette:
+        album: #f5f0e1, the page and the perforation holes
+        quadrille: #e4dccb, the 12px album grid, decorative only
+        gumPaper: #fffdf6, stamp faces and fields
+        sheetMargin: #e9e1cc, the souvenir sheet selvage
+        ink: #22201c, text, frames and the On track overprint
+        muted: #5b5348, captions and meta
+        carmine: #9e2b3a, the primary button, overdue, Behind and this week
+        ultramarine: #2b3f8f, a stamp colour and focus
+        bottleGreen: #24604a, a stamp colour
+        sepia: #6b4523, a stamp colour
+        violet: #5d3b7a, a stamp colour
+        slate: #37505e, a stamp colour and last week
+        cancel: #3a3a44, postmarks
+    type:
+        Three stacks. Caps is Copperplate, Copperplate Gothic Light,
+        Engravers MT, Felix Titling, Didot, Georgia, serif, set in caps with
+        0.1 to 0.16em tracking. Numbers are Didot, Bodoni 72, Bodoni MT,
+        Big Caslon, Georgia, serif. Body is Baskerville, Baskerville Old
+        Face, Libre Baskerville, Georgia, serif. Sizes are 52 to 56px Didone
+        denominations, 36px Didone greeting, 11 to 15px engraved caps
+        labels, 17px bold Baskerville stamp names and 15px body.
+    layout:
+        The page is an album leaf on a quadrille ground with a thin rule and
+        a double outer rule. The header has the brand in spaced caps with a
+        framed star mark and, on the right, the search, a carmine New
+        project button with an inner white line, the bell and the italic
+        user name. The navigation is a row of small perforated definitive
+        stamps, each a line icon and a caps label in its own stamp colour,
+        the current one filled carmine. The greeting and date sit left with
+        a carmine overdue line, and a round postmark reading Brightwork, 31
+        OCT, 2026 with wavy cancel lines sits right. Four perforated stamps
+        show the figures as big Didone denominations with an engraved icon
+        and a caps caption. The projects form a souvenir sheet on a tinted
+        margin with italic selvage text, six stamps in three columns. Each
+        stamp has Brightwork and the team in caps along the top, a hatched
+        vignette with a line drawing for its team, the percent as the
+        denomination, the name, tasks and due date, and a full width status
+        overprint bar along the bottom. The chart is a coil of stacked
+        blocks where one block is one task, slate last week and carmine this
+        week. Activity sits beside it, each line with a round postmark for
+        its time. The sheet goes two across below 1000px and one across
+        below 640px.
+    spacing: An 8px unit. A 9px perforated margin round every stamp, 16px between stamps and 36px before sections.
+    density: Medium. Each project is one self contained stamp, read at a glance.
+    corners: Square. Edges are perforated with holes on a 10px pitch cut into the margin.
+    borders: A 2 to 3px frame in the stamp colour inside the perforations. The album leaf has a thin rule and a double outer rule.
+    shadows: A 1px drop shadow so stamps lift off the album.
+    icons:
+        Engraved line vignettes per team. Overprint bars carry the status,
+        a filled dot on black for On track, a triangle on a white bar with a
+        dashed top for At risk and a square on carmine for Behind. A clock
+        marks overdue.
+    focus: A 3px ultramarine outline offset 4px.
+    tone: Philatelic and calm, such as The project issue, Recent post and denomination.

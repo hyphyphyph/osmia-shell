@@ -1,0 +1,54 @@
+export anchor DesertStarsStyle:
+    number: 420
+    screen: TravelPlanner
+    name: Desert stars
+    idea: The trip under a desert night sky, a full width starfield that warms to an ember horizon over dune silhouettes, a huge thin title, the route drawn as a three star constellation, the itinerary as a glowing star line, and the weather sitting on the horizon.
+    base: dark
+    palette:
+        sky: #0b0d24, the upper night sky behind the hero
+        deep: #070818, the zenith at the top of the sky gradient
+        panel: #0c0e28, the itinerary glass panel at 82 percent
+        ground: #120c16, dunes, the lower band and the page below
+        duneCard: #1a1220, style sheet cards, fields and list rows
+        ink: #f6efe4, text
+        muted: #b9b3d1, captions, labels and Not booked
+        star: #fff6d8, stars, nodes, the constellation and focus
+        ember: #ffb37a, the horizon glow, dates and the primary button
+        onEmber: #2a1206, text on ember
+        rose: #f5a8bb, the cherry blossom note and the meter start
+        gold: #ffe08a, Booked and Done stars
+    type:
+        Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial. Base 16px
+        at 1.6. The title 88px at 200 on two lines, the horizon figure 96px
+        at 200 in star white, leg titles 22px at 300, labels 13px caps
+        tracked 0.3em, dates 12px caps tracked 0.2em in ember.
+    layout:
+        A full width night hero. The sky runs from near black at the top
+        through indigo to a plum and ember band at the horizon, scattered
+        with small stars, and two dune silhouettes close it at the bottom.
+        Over it a quiet top row with a star and BRIGHTWORK TRIPS in spaced
+        caps and the dates on the right. Then two columns. On the left Mara
+        Okafor and one guest in ember caps, Japan in April as a huge thin
+        title, and below it the route as a constellation, three haloed stars
+        named Tokyo, Kyoto and Osaka in spaced caps joined by fine lines,
+        with an italic caption. On the right a 28px rounded glass panel
+        holds Itinerary as a vertical star line. Each leg has a node on the
+        line, glowing solid when booked, a dashed ring when not, small for
+        flights, then the date in ember, the title, the detail and a status
+        at the right. Two pill buttons end the panel. On the horizon itself
+        sits 17 degrees in a huge glowing figure beside a dark chip with the
+        weather sentence and the blossom note. Below the dunes, on the
+        ground colour, two quiet blocks under thin rules, Before the journey
+        with star bullets and Budget with a 56px thin 3,200 and a rose to
+        ember glowing line. Below 900px the columns stack.
+    spacing: An 8px unit with very wide gaps. 64px between title and panel and 120px of horizon below the weather.
+    density: Low. One title, one constellation, one list, a horizon figure and two quiet blocks.
+    corners: A 28px glass panel, and pill buttons, fields and rows.
+    borders: A faint star coloured edge on the glass panel and a thin vertical star line through the itinerary.
+    shadows: No drop shadows. Stars, nodes, the meter and the horizon figure glow.
+    icons:
+        Stars as states. Booked and Done are a filled gold star, Not booked
+        and To do a dashed hollow star and Flight a thin plane. Booked nodes
+        glow and unbooked nodes are dashed rings.
+    focus: A 2px star white outline offset 4px with a soft halo.
+    tone: Hushed and poetic, such as Before the journey and The route read like a constellation.

@@ -1,0 +1,59 @@
+export anchor WrittenBriefStyle:
+    number: 194
+    screen: ProjectsDashboard
+    name: Written brief
+    idea: The dashboard opens with a short written paragraph that states the week in plain sentences, then hands over to one carefully set sortable table, like a briefing memo from a good analyst.
+    base: light
+    palette:
+        paper: #faf8f4, the page behind the brief
+        surface: #ffffff, the top bar, the table body, fields and the style sheet
+        ink: #1d232b, text, progress fills and the 2px section rules
+        slate: #535d6a, meta, notes and axis labels
+        rule: #ddd7cc, hairlines between rows, never text
+        ruleStrong: #8c8477, the table header rule, field borders and last week bars
+        teal: #0d5c63, the primary button, the sorted column, this week bars and focus
+        tealTint: #e4efee, the focused or selected table row
+        green: #1b6b3a, On track with a solid dot
+        amber: #8a5100, At risk with a solid triangle
+        red: #a8261f, Behind with a solid square and the overdue phrase
+        redTint: #f8e6e3, the highlight behind the overdue phrase
+    type:
+        Two stacks. Prose and headings use Charter, Bitstream Charter,
+        Iowan Old Style, Sitka Text, Cambria, Georgia, serif. Interface text
+        uses system-ui, Segoe UI, Roboto, Helvetica Neue, Arial. The greeting
+        is 34px serif regular, the summary paragraph 21px serif at 1.6 with
+        figures in bold, fact figures 22px sans semibold tabular, table text
+        14px, and section labels 12 to 13px semibold caps tracked 0.08em.
+    layout:
+        A white top bar holds a square outline mark with the serif brand,
+        six text nav links with a 2px teal underline on Home, then a search
+        field, a teal New project button, a square bell and initials with
+        Mara Okafor. Content sits in one centred 1040px column. A caps
+        dateline and the serif greeting lead into a written paragraph that
+        opens with a red tinted clock phrase for the 4 overdue tasks and
+        names totals and the two troubled projects in sentences. Under it a
+        ruled facts line shows the four summary numbers inline, split by
+        thin vertical rules. The table follows with a caps heading, a note
+        that it is sorted by due date, and a segmented filter of All 6,
+        Needs attention 2 and On track 4. Columns are Project with team,
+        Status, Progress as a thin ink bar with percent, Tasks done, Due and
+        Days left, with sort buttons in a warm header row and Due marked
+        ascending. Troubled rows carry a 3px red or amber inset edge and a
+        footer row totals 78 of 170. Below, a 5 to 7 split puts a paired bar
+        chart of last week and this week by weekday beside an activity list
+        with times in a left column, each topped by a 2px ink rule. Below
+        1000px the nav moves to its own scrolling row and the lower band
+        stacks. On phones table rows become ruled cards with name and
+        status on top, the bar, then tasks, due and days left.
+    spacing: An 8px unit. 16px cell padding and 40 to 48px between the brief, the table and the lower band.
+    density: Medium. Prose and facts carry the headline and one table carries the detail.
+    corners: Nearly square. 3px on controls and nothing on the table, tracks or swatches.
+    borders: Warm 1px hairlines between rows, a stronger rule under the table header and a 2px ink rule over the chart and activity.
+    shadows: None. Depth comes only from paper against white.
+    icons:
+        Line icons at 1.6px and 18px for search, bell, plus and sort
+        arrows. Status uses small solid shapes beside the word, a dot for
+        On track, a triangle for At risk and a square for Behind, and the
+        overdue phrase carries a clock.
+    focus: A solid 2px teal outline offset 2px, and a teal tint plus outline on a focused table row.
+    tone: Full sentences in the brief and short nouns in the table, such as Days left and Needs attention 2.

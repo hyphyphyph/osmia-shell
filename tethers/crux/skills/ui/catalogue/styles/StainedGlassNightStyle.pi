@@ -1,0 +1,56 @@
+export anchor StainedGlassNightStyle:
+    number: 319
+    screen: OpsMonitor
+    name: Stained glass night
+    idea: The whole monitor is one leaded window seen at night, with deep jewel glass panes held in thick black lead, an arched head pane for traffic, five round arched lancets for the services, and pale glowing text on every pane.
+    base: dark
+    palette:
+        night: #08070b, the page
+        lead: #020203, the window frame, the gaps between panes, roundel rims and list rules
+        ink: #f7f1e6, text on every pane
+        pale: #d7cdbd, captions, times and axis on every pane
+        ruby: #3b0f1d, the incident pane and the sync-worker lancet
+        sapphire: #0f1f45, the head pane, the api lancet and the current app
+        emerald: #0b3424, the latency pane and the web lancet
+        amethyst: #2b1547, the error pane and the notifications lancet
+        amberGlass: #3b2608, the alerts pane, the billing lancet and list rows
+        slateGlass: #1a1a22, the deploys pane and the style sheet
+        gold: #f2d27a, the request line, p95, the primary button and focus
+        healthy: #a8f0c0, Healthy and Resolved with circle and square, and p50
+        degraded: #ffd98a, Degraded and Investigating with triangle and magnifier
+        recovered: #b8daff, Recovered with a diamond
+        firing: #ffb5bf, Firing with an octagon and the error line
+    type:
+        Iowan Old Style, Palatino Linotype, Palatino, Book Antiqua, Georgia.
+        Base 16px at 1.5. The incident ID is 32px, the brand 24px small caps
+        tracked 0.08em, pane titles 18px at 600 in small caps tracked 0.1em,
+        captions 15px italic, figures with lining numbers.
+    layout:
+        A header with a quatrefoil mark of four jewel discs and a gold
+        centre, Brightwork Ops in small caps with an italic subtitle, and
+        the suite apps at right where Ops sits on sapphire with a gold
+        underline. Below, one window in a 1200px column. A black lead frame
+        with a wide elliptical arched top holds every pane with 6px lead
+        gaps. The arched sapphire head pane shows Requests per minute with
+        an italic caption and a gold area line chart. Under it, five round
+        arched lancets in sapphire, emerald, ruby, amethyst and amber, each
+        with a leaded roundel holding the filled status shape, the service
+        name, the status word in small caps, a figure and one fact. Then a
+        row of three panes, ruby for the open incident with INC-0427, its
+        facts and two leaded buttons, amethyst for Error rate and emerald
+        for Latency. Then a row of two, amber Alerts and slate Deploys, with
+        3px lead rules between rows. A grey sill bar sits under the window.
+        Each pane carries a faint diagonal sheen. Below 1000px lancets go
+        three across, below 760px two across with billing full width, the
+        arch flattens and rows stack.
+    spacing: An 8px unit. 6px lead between panes, 20 to 22px pane padding, 56px top padding under the arch.
+    density: Medium. One head pane, five lancets, then rows of three and two panes.
+    corners: The frame and head pane share one wide elliptical arch, lancets have round arched tops, everything else is square.
+    borders: Lead does the work, a 6px black lead around and between panes, 3px lead between list rows and around buttons.
+    shadows: None inside. A faint cool glow around the whole window and a sill bar beneath it.
+    icons:
+        A quatrefoil mark. Status shapes sit in leaded roundels on the
+        lancets, circle, triangle and diamond, and beside the word in lists,
+        octagon, square and magnifier.
+    focus: A 3px gold outline, a black gap and a second thin gold ring, like a leaded border.
+    tone: Quiet and formal, small caps headings and italic captions.

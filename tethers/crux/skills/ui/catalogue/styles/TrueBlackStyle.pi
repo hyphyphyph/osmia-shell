@@ -1,0 +1,47 @@
+export anchor TrueBlackStyle:
+    number: 226
+    screen: ProjectsDashboard
+    name: True black
+    idea: Pure black for OLED screens with white type, razor-thin 1px separators and no tint anywhere, so the only colour on the screen is the status of a project.
+    base: dark
+    palette:
+        black: #000000, the page, every surface and the style sheet
+        separator: #262626, 1px rules and the progress track
+        white: #ffffff, text, figures, progress, this week bars, the primary button and focus
+        grey: #a3a3a3, labels, meta and times
+        dim: #737373, last week bars, link underlines and the secondary button edge
+        ok: #4ade80, the On track word and check circle, the only green
+        risk: #facc15, the At risk word and triangle, the only yellow
+        bad: #ff7a7a, Behind, the overdue line and figure, the only red
+    type:
+        Helvetica Neue, Helvetica, Arial, then system-ui. Base 15px at 1.5.
+        The greeting is 44px at 300 tracked minus 0.03em, the figures 52px
+        at 200, project names 18px at 400, section labels 13px at 500 in
+        grey, and status words 13px.
+    layout:
+        A slim top line ruled below holds the bold wordmark, six text links
+        with Home white and underlined, an underline-only search field, a
+        square white New project button with black text, a bare bell and an
+        outlined round MO disc with Mara Okafor. Below, two columns split by
+        a 1px rule. The 400px left column is today. It shows the date, Good
+        morning, Mara. in light 44px type, a red clock line reading 4 tasks
+        are overdue, the four figures as a two by two grid of huge thin
+        numbers over small labels split by hairlines, and the chart with
+        thin needle bars, grey for last week and white for this week, over
+        the two totals. The right column lists Projects as rows with the
+        name, category, percent with tasks, due date and the status word,
+        and under each row a full-width 1px track with a 3px white progress
+        line that doubles as the row separator. Activity follows as a ruled
+        list with times on the right. Below 860px the nav and search take
+        their own rows and the columns stack.
+    spacing: An 8px unit with generous air. 40px gutters, 18px above each row, 48 to 56px between blocks.
+    density: Low to medium. Two columns, a today column on the left and the work on the right.
+    corners: Square everywhere. Only the avatar is round.
+    borders: 1px #262626 separators between figures, columns and activity rows, nothing heavier. Fields are a single underline.
+    shadows: None. Pure black cannot carry a shadow.
+    icons:
+        Thin line icons at 1.25 stroke, 16px, used only for status, search,
+        the bell and overdue. Status is a check circle, a triangle or a
+        crossed square with the word.
+    focus: A 2px white outline offset 3px.
+    tone: Terse and calm, such as Good morning, Mara. and Projects and Activity.

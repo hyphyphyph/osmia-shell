@@ -1,0 +1,50 @@
+export anchor SportsMagazineStyle:
+    number: 52
+    screen: Pricing
+    name: Sports magazine
+    idea: An energetic sports print spread, with slanted italic condensed headlines, plans as numbered jerseys, diagonal stripes and a scoreboard of amber figures for the comparison.
+    base: light
+    palette:
+        white: #ffffff, the page
+        court: #f1f4f9, plan cards, unchosen tabs and the style sheet
+        electricBlue: #0047bb, the featured plan, the headline accent, the ticker and the chosen tab
+        flame: #c23f00, the primary button, kickers and bullets
+        ink: #111827, text, heavy rules, the masthead and the scoreboard
+        steel: #4b5563, small capital labels and meta
+        volt: #d4ff00, the badge, the current nav, the focus glow and accents on blue or black, always with ink text
+        amber: #ffd200, scoreboard figures on black
+        line: #d5dbe5, stat dividers
+    type:
+        Headlines are Oswald, Barlow Condensed, Roboto Condensed, Arial
+        Narrow, Impact, sans-serif at 800 italic in capitals. Body is
+        Helvetica Neue, Helvetica, Arial, sans-serif. Scores are
+        Bahnschrift, DIN Alternate, ui-monospace, monospace. The cover line
+        is up to 150px on a 0.84 line, section titles 56px, plan names 48px,
+        the deck 20px semibold, body 16px and kickers 12px bold capitals
+        at 0.16em.
+    layout:
+        An ink masthead with a slanted volt logo and the current nav item
+        on a volt parallelogram, then a blue ticker of plan prices. The
+        cover pairs a giant two line headline reading Pick your plan with a
+        billing block of slanted tabs and a volt 2 months free tag, then a
+        striped bar of blue and flame diagonals. Each section starts with an
+        italic title over a 6px ink rule. The roster is three plan cards
+        with thick top bars, each with a jersey number line, the name, an
+        SVG jersey whose shirt number is the price, the billing words, a
+        stat list and a slanted button. Team is the blue card with a volt
+        jersey and the badge. The comparison is a dark scoreboard with a
+        hazard stripe top and amber figures in black cells. Questions sit
+        in three columns with big blue italic numbers. Below 960px
+        everything stacks.
+    spacing: An 8px unit. 20px card padding, 24px gutters and 48px between sections.
+    density: Busy and punchy. A ticker, stat lists and a packed scoreboard.
+    corners: No round corners. Tabs, buttons, badges and the current nav are parallelograms cut 12px at each end.
+    borders: 8px ink top bars on plans, 6px ink under section titles, 2px stat dividers and a 6px slate frame on the scoreboard.
+    shadows: None. Energy comes from stripes and slants.
+    icons:
+        SVG jerseys carry the price as the shirt number. Play triangles as
+        bullets, a heavy tick and a cross on the scoreboard, a star on the
+        badge, a play triangle on the chosen tab and a double chevron on
+        every button.
+    focus: A 3px ink outline offset 2px with a 7px volt glow. Slanted buttons drop their clip shape while focused.
+    tone: Coach talk in capitals, such as The roster, The scoreboard and Post-game Q and A.

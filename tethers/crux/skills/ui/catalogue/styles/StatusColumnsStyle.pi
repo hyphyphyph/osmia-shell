@@ -1,0 +1,56 @@
+export anchor StatusColumnsStyle:
+    number: 182
+    screen: ProjectsDashboard
+    name: Status columns
+    idea: A portfolio board on white, where three status columns, On track, At risk and Behind, hold the project cards, a charcoal icon rail and charcoal type carry the structure, and soft status tints only mark the column heads.
+    base: light
+    palette:
+        white: #ffffff, the page and cards
+        well: #f5f6f7, column bodies and initials tiles
+        charcoal: #2a2c30, the rail, the primary button and progress fills
+        ink: #202124, text, heavy rules and focus
+        muted: #585c64, labels and meta
+        line: #dcdee1, card edges and rules
+        fieldEdge: #8a8e95, inputs and search
+        greyLine: #80848c, the last week line in the chart
+        onTint: #e5f2e8, the On track column head, with #1d6a37 for its text, shape and top rule
+        riskTint: #fbefd9, the At risk column head, with #875000
+        behindTint: #fbe4e2, the Behind column head, with #ad261f, also the overdue text
+    type:
+        One stack, Helvetica Neue, Helvetica, Arial, system-ui. The
+        greeting 28px at 800 with minus 0.02em tracking, KPI figures 26px
+        at 800, card titles 16px bold, column heads 15px at 800, body 14px,
+        card fact labels 11px caps tracked 0.06em.
+    layout:
+        A 76px charcoal rail at left holds a white square B mark and six
+        nav items as icons with small labels underneath, Home as a white
+        tile. The top bar on white has the bold wordmark, a square search
+        field, then at right a charcoal New project button, a square bell
+        with a red dot and a square initials tile with Mara Okafor. The
+        intro row has the greeting and the date with a red clock and 4
+        tasks are overdue at left and four figures at right split by thin
+        rules, closed by a 2px ink rule. The board is a three column grid.
+        On track spans both rows of column one. At risk and Behind sit at
+        the top of columns two and three. Each column has a 4px top rule
+        and a tinted head with the filled shape, the word and a count box,
+        a pale well holding white cards, and a footer of done over total
+        tasks. A card shows team and percent, the project name, a thin
+        charcoal bar, Tasks, Due and Left facts and the latest event for
+        that project when one exists. Under At risk sits Tasks completed as
+        a line chart by weekday, a solid line with dots for this week and a
+        dashed grey line with square markers for last week. Under Behind
+        sits Activity as rows of initials tile, sentence and time. Below
+        1080px the board is two columns, and below 760px everything stacks
+        and the rail becomes a top strip.
+    spacing: An 8px unit. 20px between columns, 10px between cards, 12 by 14px card padding, 28px page gutter.
+    density: Medium. Status is read from column position, details from small cards.
+    corners: 2px everywhere, nearly square.
+    borders: 1px #dcdee1 cards, a 4px status rule on each column top, a 2px ink rule under the intro and under the sheet.
+    shadows: Only a 1px bottom line at 4 percent black under cards.
+    icons:
+        Line icons at 1.8px stroke, 22px on the rail with labels. Filled
+        status shapes in the column heads and rows, a check circle for On
+        track, a triangle with a bang for At risk and a crossed square for
+        Behind.
+    focus: A 2px ink outline offset 2px, white on the rail.
+    tone: Direct portfolio language with short labels, such as Left 20 d.

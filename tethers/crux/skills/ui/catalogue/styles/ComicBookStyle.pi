@@ -1,0 +1,53 @@
+export anchor ComicBookStyle:
+    number: 38
+    screen: TaskBoard
+    name: Comic book
+    idea: The board as a comic page, with inked panels on white gutters, halftone dot skies, task cards spoken in speech bubbles and a starburst that shouts what is overdue.
+    base: light
+    palette:
+        paper: #fffdf5, the page and gutters
+        ink: #111111, outlines, text and points chips
+        yellow: #ffd60a, the logo panel, title fill and burst fill
+        caption: #ffe98a, caption boxes and column titles
+        red: #d1221d, the Add task button, the At risk banner and the overdue bubble outline
+        blue: #1858c4, focus and sound effects
+        yellowDots: #fff6c2, the To do panel with #f2c94c dots
+        roseDots: #ffe4e1, the In progress panel with #f4a8a0 dots
+        skyDots: #e6f0ff, the Review panel and the filter panel with #a9c8f5 dots
+        mintDots: #e3f6e3, the Done panel with #9fd59f dots
+        grey: #4a4a4a, placeholders and small notes
+    type:
+        Headings in Impact, Haettenschweiler, Arial Narrow Bold, Franklin
+        Gothic Bold, Arial Black, sans-serif, always uppercase. Lettering
+        in Comic Sans MS, Comic Neue, Chalkboard SE, Trebuchet MS,
+        sans-serif. The title is 64px Impact in yellow with a 3px ink
+        stroke and a 4px solid ink drop. Column titles are 20px Impact,
+        card titles 15px bold uppercase lettering, meta 13px lettering,
+        captions 13px bold uppercase and points 15px Impact.
+    layout:
+        A masthead row of three panels, a yellow Brightwork logo panel, a
+        dotted Task board panel and a panel with Mara Okafor and her face
+        circle. A wide title panel with radiating speed lines, a Meanwhile,
+        on the board caption box in the corner, the title and a tilted red
+        At risk banner. A dotted filter panel with a Filters caption, round
+        ink-outlined dropdowns for Assignee, Label and Due, the Search tasks
+        field and the red Add task button with a decorative POW above it.
+        Four panels on 12px gutters, each with its title in a caption box
+        hanging from the top left corner with a black count circle. Each
+        task is a white speech bubble with a tail pointing down to its
+        speaker row, a face circle with initials, the name in a small boxed
+        label and a black points chip. Below 1080px two columns, below 640px
+        one, and the POW and middle masthead panel hide.
+    spacing: 12px gutters between every panel, 26px between bubbles to fit tails and speakers, 14 to 28px panel padding.
+    density: Medium. One bubble and one speaker per task.
+    corners: Square panels, captions and buttons, 26px speech bubbles, 20px fields and round faces.
+    borders: 4px ink on panels and buttons, 3px on bubbles, captions and fields. The overdue bubble turns to a 4px red outline.
+    shadows: None on boxes. Only the title lettering gets a solid 4px ink drop.
+    icons:
+        Heavy 2.6 stroke line glyphs at text size. Overdue is a jagged
+        yellow starburst outlined in ink above the bubble, with a triangle
+        and the word Overdue in dark red. Done is an ink tag with a tick and
+        the word Done. Sound words such as POW are decoration only and
+        hidden from screen readers.
+    focus: A 4px blue outline offset 3px. A focused field turns its border blue with a 3px blue ring and a pale yellow halo.
+    tone: Comic narration in captions, such as Meanwhile, on the board, while task text stays plain in caps lettering.

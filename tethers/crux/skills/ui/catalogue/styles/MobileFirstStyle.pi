@@ -1,0 +1,60 @@
+export anchor MobileFirstStyle:
+    number: 217
+    screen: ProjectsDashboard
+    name: Mobile first
+    idea: Designed for one thumb on a phone, with big rounded cards in a single column, progress rings, 48px touch targets and a bottom tab bar with a raised New project button, which becomes a navigation rail and a three column grid of the same cards on a desktop.
+    base: light
+    palette:
+        page: #f5f4f1, the warm off white behind the cards
+        card: #ffffff, cards, the tab bar, the rail and the search pill
+        line: #e6e4df, dividers inside cards and above the tab bar
+        text: #17171c, titles and body
+        muted: #595964, meta, inactive tabs and labels
+        indigo: #3b3fc4, the raised New project button, active tab, rings, this week bars and focus
+        indigoTint: #ecebfd, the active tab pip and KPI icon tiles
+        onTrack: #157a3c, text on a #e2f4e8 pill with a circle and tick
+        atRisk: #8f5200, text on a #fcf0dc pill with a triangle and bang
+        behind: #b8202e, text on a #fde8ea pill with an octagon and cross, and the overdue card
+    type:
+        Display text uses ui-rounded, SF Pro Rounded, system-ui,
+        -apple-system, Segoe UI, Roboto, sans-serif, and body text uses
+        system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica
+        Neue, Arial, sans-serif. The greeting is 30px extra bold rounded,
+        KPI values 32px extra bold rounded, section heads 21px, card
+        titles 17px bold, body 16px and never smaller in fields, meta 14px
+        and tab labels 12px semibold.
+    layout:
+        On a phone a single column with a 16px gutter. An app bar holds
+        the mark and the name Brightwork with a round bell button and the
+        avatar at the right. Then the date over a big greeting, a full
+        width 52px search pill, and a soft red card with an octagon,
+        4 tasks are overdue in bold and a chevron. The KPIs are a two by
+        two grid of white tiles, each with a tinted icon tile, a big value
+        and a label. A Projects head with See all leads to six stacked
+        cards, each with a 56px progress ring showing the percent in its
+        centre, the name, the team and tasks, and a divided footer row
+        with the due date and days left on the left and a status pill on
+        the right. Then a chart card with two week total tiles, last week
+        59 and this week 73 up 14, over the bar chart, and an activity card
+        with round initials. The tab bar is sticky at the bottom of the
+        dashboard and sits at its end, with Home, Projects, a raised 56px
+        indigo plus button for New project, Tasks and a More menu that
+        opens upward with Team, Reports and Settings. From 900px a 96px
+        white rail replaces the tab bar on the left with the mark, the
+        raised plus button and stacked icon and label items, Settings at
+        the foot. The app bar then holds the greeting, a 380px search, the
+        bell and avatar. Content becomes a three column grid with the
+        overdue card full width, the KPIs four across, the six project
+        cards three across, and the chart card spanning two columns beside
+        the activity card.
+    spacing: A 16px phone gutter, 12px between cards and 20px between sections. On a desktop a 32px gutter and 20px gaps.
+    density: Roomy and touch sized. Every control is at least 44px, tabs are 52px and the raised button 56px.
+    corners: 20px cards, 16px tiles and fields, 18px on the raised button, full pills for search, buttons and status.
+    borders: Almost none. A 1px line inside project cards and above the tab bar.
+    shadows: A faint 0 1px 2px under cards. The raised button has a 0 4px 12px indigo glow and the More menu floats at 0 8px 28px.
+    icons:
+        22px line icons at stroke 2, inside 56 by 30px pips on tabs and
+        36px tinted tiles on KPIs. Status pills carry a circle with a
+        tick, a triangle with a bang or an octagon with a cross.
+    focus: A 3px indigo outline offset 3px on every control. A focused field also turns its border indigo.
+    tone: Short and friendly, such as See all, More, up 14 and The most urgent thing today.

@@ -1,0 +1,46 @@
+export anchor VintageTravelPosterStyle:
+    number: 140
+    screen: ProjectsDashboard
+    name: Vintage travel poster
+    idea: A 1930s railway poster wall, where the greeting sits under a sunlit flat landscape and each project is a little poster whose sun rises as its tasks are done.
+    base: light
+    palette:
+        wall: #efe3c8, the page and field fill
+        cream: #fbf3e0, poster mounts, bands and cards
+        navy: #1f2f4a, text, frames and the primary button
+        slate: #55607a, captions and meta
+        sun: #f6c453, suns and the focus halo, never text
+        apricot: #f2a65a, sky gradients and last week bars
+        rose: #d9675a, far hills and the nav underline
+        teal: #2b6f6b, middle hills and this week bars
+        sea: #1d4e5f, near hills and cypress trees
+        pineText: #22625e, the On track star
+        ochre: #8a4f00, the At risk half sun
+        terracotta: #a63d22, the Behind cloud and overdue stamp
+    type:
+        Display uses Futura, Century Gothic, Avenir Next, Gill Sans in bold
+        caps tracked 0.08 to 0.3em. Condensed lettering uses Futura
+        Condensed, Avenir Next Condensed, Arial Narrow at 800. Body uses
+        Optima, Candara, Segoe UI. Destination lettering up to 120px,
+        numbers 46px condensed, greeting 32px caps, poster titles 15px caps,
+        body 16px at 1.55, captions 11px caps tracked 0.24em.
+    layout:
+        A cream header with the spaced brand, an underlined search, a navy
+        New project, a round bell and the user name in caps, over centred
+        spaced caps nav with a rose underline, closed by a double rule. The
+        hero is a mounted poster with a flat sunset scene of hills, cypress
+        and a sailboat under huge Brightwork lettering, and a cream band
+        with the date, greeting and a tilted overdue stamp. Four mounted
+        tickets carry flat icons and the numbers. Six portrait mini posters
+        show a gradient sky, a percent, a sun whose height follows progress
+        and hills, then name, category, tasks, due and status. Below are a
+        Travel diary and an Itinerary bar chart with sunset bars for last
+        week and sea bars for this week.
+    spacing: An 8px unit. Cream mounts 8 to 12px wide, 18 to 28px gaps, 44px between sections.
+    density: Low. A big hero poster, four tickets, six small posters.
+    corners: Square everywhere, only suns and the bell are round.
+    borders: A 2px navy frame inside a cream mount, double rules under the header and above the sheet.
+    shadows: Soft hung on a wall drops, 0 8px 18px navy at 15 to 20 percent.
+    icons: Flat filled shapes. Four point star On track, half sun on the horizon At risk, cloud Behind, ringed exclamation stamp for overdue.
+    focus: A 3px navy outline offset 3px inside an 8px sun halo.
+    tone: Travel copy in spaced caps, such as Visit the week ahead, Destinations, Travel diary and Itinerary.

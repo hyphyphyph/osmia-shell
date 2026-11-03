@@ -1,0 +1,54 @@
+export anchor GraphiteNeutralStyle:
+    number: 224
+    screen: ProjectsDashboard
+    name: Graphite neutral
+    idea: The baseline professional dark, with balanced mid-dark graphite greys in three steps, quiet borders and one soft blue accent, so nothing but the work and the statuses draws the eye.
+    base: dark
+    palette:
+        page: #1b1d21, the page background and the style sheet
+        surface: #24272c, the sidebar, cards and the search field
+        raised: #2d3137, hover rows, secondary buttons and status chips
+        line: #3a3f47, every border, divider and meter track
+        ink: #e7e9ec, text
+        muted: #a4abb6, labels, meta and axis text
+        accent: #8ab4f8, the primary button, meters, this week bars and focus
+        onAccent: #0f1f3d, text on the accent
+        accentSoft: #2b3546, the current nav item
+        accentText: #b3cdfb, links and the current nav label
+        lastWeek: #7b8494, last week bars
+        ok: #7dd3a0, On track text and icon
+        risk: #f0c36b, At risk text and icon
+        bad: #f59b93, Behind and overdue text and icon
+    type:
+        One system stack, system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Base 14px at 1.5. The greeting is 24px at 650, KPI figures
+        26px at 650 with tabular numbers, card titles 14px at 650, meta and
+        table headers 12px, and status chips 12px at 600.
+    layout:
+        A classic app frame. A 224px graphite sidebar holds a blue square B
+        mark with the name, then six nav links with line icons, Home filled
+        with the soft blue tile. The main column starts with a top bar
+        ruled below, holding search on the left and New project, a square
+        bell with a red dot and Mara Okafor on the right. Then the greeting
+        Good morning, Mara over the date and a red clock line reading 4
+        tasks are overdue. Four equal KPI cards follow, the overdue figure
+        red with a clock. Below, a wide Projects card holds a table with
+        columns for project and category, a status chip, a thin blue meter
+        with percent, tasks done and due date. A narrower right column
+        stacks the Tasks completed card with paired weekly bars and a
+        legend with totals, then Recent activity with initials discs.
+        Below 1100px the right column moves under the table. Below 760px
+        the sidebar becomes a row of icons, KPIs go two by two and table
+        rows become stacked blocks.
+    spacing: An 8px unit. 16px card padding, 12px gaps between cards and KPIs, 28px page gutter.
+    density: Medium. A full table of six projects sits beside the chart and the feed.
+    corners: 8px cards, 6px buttons, fields and nav items, round chips and avatars.
+    borders: 1px #3a3f47 on every card, row and field. Surfaces step up in lightness instead of using heavy lines.
+    shadows: A faint 0 1px 2px black at 30 percent under cards only.
+    icons:
+        Rounded line icons at 1.75 stroke, 18px. Status uses a check circle
+        for On track, a warning triangle for At risk and a crossed square
+        for Behind, always beside the word inside a round chip. Overdue
+        uses a clock.
+    focus: A 2px soft blue outline offset 2px on every control, and around the whole search field.
+    tone: Plain and neutral, such as Projects, Tasks completed, Recent activity and View all.

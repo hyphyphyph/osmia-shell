@@ -1,0 +1,57 @@
+export anchor NightMarketStyle:
+    number: 353
+    screen: TeamChat
+    name: Night market
+    idea: The chat as an evening market lane, where channels are stalls under striped awnings, the current stall glows under a string of paper lanterns, and messages hang as warm wooden tags.
+    base: dark
+    palette:
+        night: #140a09, the page, fields and the style sheet
+        dusk: #1f100d, the lane and neighbour panels
+        wood: #2b1712, stall boards and sheet cards
+        wood2: #371e17, message tags and wooden keys
+        seam: #5a3326, borders, strings and tag holes
+        paper: #f6e6cc, text
+        muted: #d6b998, times, notes and offline
+        lantern: #ff6a4a, lanterns and Send, with text #2a0805
+        red: #e0523f, your tag edge and the awning stripes
+        mentionPill: #b8321f, the mention pill behind text #fff4ee
+        glow: #ffb35c, the current stall, the unread pill, the thread ticket, typing and focus
+        jade: #8fd6a8, the green button inside the image preview only
+    type:
+        A warm serif, Hoefler Text, Iowan Old Style, Constantia, Palatino
+        Linotype, Georgia, for the title at 34px weight 600 with a red
+        glow, stall names 17px and message names 16px. A humanist sans,
+        Avenir Next, Avenir, Segoe UI, system-ui, Roboto, for text at
+        15px to 16px and 12px capitals tracked 0.18em for small labels.
+    layout:
+        A header like a night sky with a dim red radial glow and a curved
+        string of eight round red paper lanterns, each with a soft halo,
+        clipped by the header. Below, a sign reads Brightwork Chat, the
+        night market, over design-crit, with Wandering as Mara Okafor on
+        the right. Channels are five stall cards in a row, each with a
+        scalloped striped awning on top and a wooden board below. The
+        current stall has a red and cream awning, a glowing amber rim and
+        You are here with a star. mobile-release shows an amber pill with
+        a dot and 4 unread, billing-war-room a deep red pill with @ 1
+        mention, the others Quiet tonight. Then two columns, the lane and
+        a 270px Neighbours panel. The lane is titled At the design-crit
+        stall with five notes hung today. Each message is a wooden tag
+        with a string hole on the left, a 3px left edge, the serif name and
+        time, then the text, and every other tag steps in 28px. Mara's tag
+        has a red edge. Aiko's tag carries dashed paper tickets for thumbs
+        up 3 and eyes 1 and an amber 3 replies ticket. The image is a warm
+        preview over Image and the filename. Typing is an italic serif
+        line with a small lantern. The composer is a counter with an
+        attach key, the field, an emoji key and a glowing lantern red
+        Send pill. Neighbours shows a lit lantern with Lantern lit,
+        online, a half lit lantern with Turned low, away and a dashed
+        unlit lantern with Unlit, offline. Below 980px stalls go three
+        across and neighbours move under, below 640px stalls go two across.
+    spacing: An 8px unit. 12px between stalls, 14px between tags, 20px lane padding.
+    density: Relaxed. Alternate tags step in so the lane meanders.
+    corners: 14px panels, tags with 4px left and 14px right corners, scalloped awnings, a pill Send.
+    borders: A 1px seam on panels and stalls, a 3px left edge on tags and dashed edges on reaction tickets.
+    shadows: Warm glows only, around lanterns, the current stall and Send.
+    icons: Paper lanterns for presence, lit, half lit or dashed unlit, each with a word. Line icons at 2 stroke for attach, emoji and reactions.
+    focus: A 2px amber glow outline offset 3px with a soft 6px amber halo.
+    tone: Warm and storybook, such as You are here, Quiet tonight, Neighbours and five notes hung today.

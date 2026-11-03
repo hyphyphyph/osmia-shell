@@ -1,0 +1,66 @@
+export anchor DesktopNativeStyle:
+    number: 214
+    screen: ProjectsDashboard
+    name: Desktop native
+    idea: A generic desktop application window, with a title bar, a toolbar of small push buttons, a grey source list on the left and a zebra striped table view, so the dashboard feels installed rather than visited.
+    base: light
+    palette:
+        desktop: #dde1e7, the backdrop behind the floating window
+        chrome: #f5f5f6, the title bar, toolbar, table column heads and status bar
+        sourceList: #e9eaed, the grey sidebar
+        pane: #ffffff, the content pane, group boxes and the style sheet
+        zebra: #f4f5f7, every second table row
+        grid: #e2e4e8, lines between every cell and around group boxes
+        text: #1c1e22, labels and values
+        secondary: #595d65, meta, column heads, counts and chart labels
+        selection: #2456c4, the selected sidebar row, push button, sidebar icons and this week bars
+        focusRing: #4b7fe2, the 3px keyboard ring
+        onTrack: #1d7436, On track text with a circle and tick
+        atRisk: #885500, At risk text with a triangle and bang
+        behind: #b02a20, Behind text and overdue figures with an octagon and cross
+    type:
+        One system stack, -apple-system, BlinkMacSystemFont, Segoe UI,
+        system-ui, Cantarell, Ubuntu, Helvetica Neue, Arial, sans-serif.
+        Base text is 13px at 1.45. The page title is 20px semibold, KPI
+        values 22px semibold with tabular figures, the toolbar title 14px
+        semibold, column heads 12px semibold grey, sidebar group headings
+        11px bold grey and the status bar 11px.
+    layout:
+        The page is a grey desktop with one window centred on it, at most
+        1232px wide with a 24px margin. A 30px title bar holds a small
+        app mark and the name Brightwork on the left, the word Home in the
+        centre and minimise, maximise and close glyph buttons on the
+        right. Below it a toolbar holds a sidebar toggle, a joined back
+        and forward pair, the bold title Home, then on the right a 240px
+        search field, a blue New project push button, a bell with a red
+        dot and the avatar with the name Mara Okafor. The body is a 216px
+        grey source list beside a white pane. The source list has a
+        Brightwork heading over the six nav rows with blue line icons, Home
+        filled blue with white text and a count of 6 on Projects, then an
+        Active projects heading listing the six projects with their
+        percent as a grey count. The pane opens with the greeting and a
+        line giving the date and a red 4 tasks are overdue. Next comes a
+        single bordered inspector strip of four cells split by hairlines,
+        each with a small icon label, a value and a note. Then a Projects
+        heading with 6 items and 78 of 170 tasks done, over a bordered
+        table with lines between all cells and zebra rows, sorted by due
+        date, with columns for name, team, a thin level bar with percent,
+        tasks as 18 / 25, due with days left, and status. Below sit two
+        group boxes side by side, the bar chart on the left slightly wider
+        and activity on the right with initials avatars and times on the
+        far right. A status bar closes the window with counts and the date.
+        Below 860px the window loses its margin and corners, the sidebar
+        becomes a scrolling row of nav items, the search moves to its own
+        toolbar row, the strip becomes two by two, the table scrolls
+        inside its box and the group boxes stack.
+    spacing: A 4px grid. Table rows are 26px, toolbar controls 28px, and the pane has 16 by 20px padding with 16px between blocks.
+    density: Compact like a utility app. All six projects, the chart and the activity fit one 1280 by 800 screen.
+    corners: 10px on the window, 6px on buttons, fields, the strip, table and group boxes, 5px on the sidebar selection.
+    borders: 1px #d2d4d8 under the title bar and toolbar and beside the sidebar. 1px #e2e4e8 between every table cell and around boxes.
+    shadows: Only the window floats, with a 1px dark ring, 0 18px 48px at 22 percent and 0 2px 6px. Everything inside is flat.
+    icons:
+        16px rounded line icons at stroke 1.7, blue in the sidebar and grey
+        in the toolbar. Status uses a circle with a tick, a triangle with a
+        bang and an octagon with a cross, always beside the coloured word.
+    focus: A 3px #4b7fe2 outline offset 1px on every control and field. A focused table row is filled blue with white text plus the ring.
+    tone: Terse system labels such as Name, Team, Due, 6 items and Latest first, with one warm greeting.

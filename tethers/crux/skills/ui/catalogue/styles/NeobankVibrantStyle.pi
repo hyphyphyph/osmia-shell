@@ -1,0 +1,56 @@
+export anchor NeobankVibrantStyle:
+    number: 365
+    screen: FinanceBudget
+    name: Neobank vibrant
+    idea: A phone first bank on pure black with one electric volt accent, a giant tabular balance, round action buttons, fat rounded cards and pill meters, where overspend flips a tile to white instead of turning red.
+    base: dark
+    palette:
+        black: #000000, the page and the style sheet
+        card: #151515, account cards, tiles, the goal and the transaction list
+        cardTwo: #222222, raised cards, action circles, chips and fields
+        line: #333333, pill tracks and the ring track
+        white: #ffffff, text, meters and the inverted over budget tile
+        muted: #a3a3a3, labels, decimals and dates
+        volt: #d4ff3a, the single accent for the euro sign, Add money, the goal ring, income, money left and focus
+        onVolt: #0b0d00, text on volt
+    type:
+        One system stack, system-ui, -apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial, heavy weights. Base 15px. The balance is 88px at 850
+        tracked minus .05em with the euro sign and decimals at 44px, the sign in
+        volt and decimals in muted. Tile figures are 30px at 850, section titles
+        22px at 850, body 15px at 700 and badges 12px at 800.
+    layout:
+        A 1200px app. The top row has a volt rounded square b mark, the name, a
+        pill tab group on the right with Home as a white pill, and an MO disc.
+        Below, a 440px left column and a wide right column. The left column
+        reads Hey Mara, here's October, then the giant everyday balance with
+        Everyday account under it, three 60px round actions Add money in volt,
+        Send and Move, two 28px rounded account cards for Savings and Credit
+        card with a small chip outline and the figure at the bottom, the card
+        one showing a clock and Due 12 Nov, then a goal card with a thick volt
+        ring at 64 percent beside Japan trip, 3,200 of 5,000 and the date. The
+        right column has October budget with 1,870 spent of 1,930, one segmented
+        pill showing each category and a volt end for the 60 left, then a three
+        by two grid of 24px tiles, one per category with a badge, the figure
+        over the limit and a pill meter, plus a volt All budgets tile with 60
+        left. Eating out is a white tile with black text, a black Over by 62
+        badge and a black hatched pill. Latest is a rounded list with initials
+        discs, the salary disc and amount in volt. Below 1100px the columns
+        stack and tiles go two across.
+    spacing:
+        An 8px unit. 32px gutter, 48px between columns, 12px between cards, 18
+        to 24px inside.
+    density: Medium low. Big numbers first, then six tiles and a short feed.
+    corners:
+        Very round. 28px cards, 24px tiles, 20px rows, pills and circles for
+        buttons, tabs and meters.
+    borders: None. Cards separate from the black by fill alone.
+    shadows: None.
+    icons:
+        Bold glyphs in circles for actions and initials discs for payees. Badges
+        pair a circle check with money left, a ruled square with Maxed and a
+        triangle with Over by 62. A clock marks the due date.
+    focus: A 3px volt outline offset 3px.
+    tone:
+        Casual second person, such as Hey Mara, here's October, 64 left, Maxed,
+        Over by 62 and Latest.

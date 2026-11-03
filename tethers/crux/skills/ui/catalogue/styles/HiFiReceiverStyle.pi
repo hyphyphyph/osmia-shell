@@ -1,0 +1,58 @@
+export anchor HiFiReceiverStyle:
+    number: 329
+    screen: MusicPlayer
+    name: Hi-fi receiver
+    idea: The player is a stack of hi-fi components in brushed dark aluminium, with a blue backlit LCD for the song and lyrics, a machined volume knob ringed by a lit arc, small LED push buttons and a tuner dial whose presets are the queue.
+    base: dark
+    palette:
+        rack: #0e0f11, the page, the gaps between components and the style sheet
+        plate: #2a2c30, brushed faceplates, striped finely with #26282b and #2d2f33
+        plateEdge: #45484e, bevels, button rims and the secondary button border
+        engraving: #d6d9de, labels and button words on the plate
+        etched: #a9aeb6, secondary labels and units on the plate
+        lcd: #071a33, the display, the dial window and text fields
+        backlight: #a6dcff, LCD text, lit LCD segments, the volume arc and the dial scale
+        backlightDim: #6e9fc9, the next lyric line and unlit segment outlines
+        ledAmber: #ffb84a, lit indicator LEDs, preset numbers and markers, and focus
+        ledOff: #3b3e43, unlit indicator LEDs
+        needle: #ff7a5c, the tuner needle marking the song now playing
+    type:
+        Two stacks. Engraved labels use Helvetica Neue and Arial, 12px at
+        700 in caps with 0.2em tracking, with etched units at 11px and
+        0.16em. The LCD uses ui-monospace, Menlo and Consolas, with the
+        title at clamp 24 to 36px at 700 in caps, lines at 15px and a soft
+        blue glow. Preset titles are 14px at 700.
+    layout:
+        A rack of three components with 8px gaps. The receiver has a 150px
+        left column with Brightwork Sound, Stereo receiver and an amber
+        Power on LED, a wide inset LCD in the middle, and a 200px volume
+        knob on the right. The LCD reads NOW PLAYING and INPUT LIBRARY in
+        small caps, then HARBOUR LIGHTS, the artist and album, a row of 32
+        outlined segments with 15 filled, the elapsed and total time, and
+        under a dashed rule the current lyric behind a play arrow with the
+        next line dimmer. The knob is a machined dark disc with fine
+        ridges and an amber dot, ringed by a blue arc lit to 70 percent,
+        labelled Volume 70. Under a groove runs a row of small square keys,
+        each with an icon cap and a word with an LED, Shuffle Off and
+        Repeat Off on the left, Prev, a wider Pause with a lit LED and
+        Next in the centre, and Liked On with a lit LED on the right. The
+        tuner component shows Presets, Up next with 5 songs beside an
+        LCD dial window with a fine blue scale, five amber preset marks
+        numbered 1 to 5 and a coral needle before the first, then five
+        raised preset buttons with an amber number, title, artist and
+        time. The input component lists the playlists with song counts and
+        Albums, Artists and Podcasts as raised selector buttons. Below
+        980px the knob sits beside the LCD and presets wrap, and below
+        620px everything stacks, the keys form a three column grid and the
+        dial scrolls sideways inside its window.
+    spacing: An 8px unit. 20 to 24px faceplate padding, 8px between components and 10px between keys.
+    density: Medium. Each component holds one function, with tiny dense labels like real gear.
+    corners: 4px plates, 2px keys and LCD windows, a round knob.
+    borders: A light 1px top bevel and dark 1px bottom bevel on every plate and key, and a 2px dark ring around each LCD window.
+    shadows: An inset shadow in each LCD window, a hard 0 2px 0 black step under keys and a soft blue glow on LCD text.
+    icons:
+        Small solid transport glyphs on key caps above engraved words.
+        State is a round LED plus the word On or Off, lit amber when on.
+        The current lyric has a play arrow.
+    focus: A 2px amber outline offset 2px, matching the LEDs.
+    tone: Engraved equipment words, such as Power on, Volume, Presets, Input and Shuffle Off.

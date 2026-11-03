@@ -1,0 +1,65 @@
+export anchor EspressoStyle:
+    number: 236
+    screen: ProjectsDashboard
+    name: Espresso
+    idea:
+        A warm coffee house menu board in dark roast browns, where projects
+        are listed like menu items with dotted leaders running to their
+        percent, figures sit under crema rules, and activity prints on a
+        narrow order ticket.
+    base: dark
+    palette:
+        roast: #1b130e, the page and the style sheet
+        bean: #241913, the header band
+        board: #2b1f17, the menu board and chart panel
+        cup: #382a20, the search field, meter tracks and the ticket
+        line: #54402f, board borders, rules and leaders
+        ink: #f3e7d8, text and figures
+        steam: #cbb59c, meta, labels, dates and axis text
+        crema: #e4b97f, the primary button, figures rules, meters, this week bars, links and focus
+        cremaInk: #241508, text on crema
+        caramel: #b8844f, last week bar outlines and hatching
+        ok: #a9d48f, On track text and check circle
+        risk: #f2c862, At risk text and triangle
+        bad: #f4977f, Behind and overdue text, crossed square and clock
+    type:
+        Three warm stacks. Headings use Iowan Old Style, Palatino Linotype,
+        Palatino, Book Antiqua, Georgia, serif, with the greeting 38px italic
+        at 500, house figures 40px, board headings 22px at 600 and menu items
+        18px at 500. Body and meta use Optima, Candara, Segoe UI, sans-serif
+        at 14px and 1.5. The order ticket uses Courier New, ui-monospace at
+        13px. Nav and small labels are 12px caps tracked 0.14em.
+    layout:
+        One centred 1080px column. A two tier bean header band holds a serif
+        Brightwork wordmark with a small cup mark at left and a search field,
+        a bell, a crema New project button and Mara Okafor at right, then
+        under a thin rule the six nav links centred as caps text with a crema
+        underline under Home. Below, the greeting is centred like a board
+        title, with the date and a line reading 4 tasks are overdue with a
+        clock in coral. The four figures sit in a row between crema top and
+        bottom rules, split by thin vertical rules, each a large serif number
+        over a caps label, overdue in coral. The main board is a bordered dark
+        panel titled The projects, a two column menu where each item is a
+        serif name, a dotted leader and the percent like a price, then
+        category, tasks and due date, a 3px crema meter and the status word
+        with its symbol. Last, two blocks side by side, a wide chart panel of
+        paired bars by weekday with last week as hatched caramel outlines and
+        this week solid crema, and a narrow order ticket on a cup surface with
+        a zigzag top and bottom edge, listing activity with mono times. Below
+        820px the menu becomes one column, figures go two by two and the
+        ticket drops under the chart.
+    spacing: An 8px unit. 32px board padding, 20px between menu items, 40px between blocks.
+    density: Medium. Menu items are roomy, the ticket is tight.
+    corners: Mostly square with gentle 6px corners on the board, fields and buttons.
+    borders:
+        1px line around the board and chart, crema 2px rules above and below
+        the figures, dotted leaders in line colour.
+    shadows:
+        An inset 0 0 0 4px roast band inside the board border, like a frame,
+        and no drop shadows.
+    icons:
+        Line icons at 1.6px stroke sized to the text. Status uses a check
+        circle, a triangle with a bang and a crossed square, always with the
+        word, overdue a clock.
+    focus: A 2px crema outline offset 3px.
+    tone: Warm and unhurried, such as Good morning, Mara, The projects and Today's ticket.

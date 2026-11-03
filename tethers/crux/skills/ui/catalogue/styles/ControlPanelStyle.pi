@@ -1,0 +1,58 @@
+export anchor ControlPanelStyle:
+    number: 44
+    screen: Settings
+    name: Control panel
+    idea: Settings laid out like an industrial equipment panel in light brushed metal, with rocker switches, engraved labels, rivets and shaped indicator lamps.
+    base: light
+    palette:
+        housing: #c3c8cd, the page behind the plates with faint horizontal lines
+        plate: #dde0e3, brushed module plates as a gradient from #e5e8eb to #d5d9dd with fine vertical streaks
+        plateHigh: #eceef0, the nameplate tag, raised keys and demo rows
+        edge: #8a9198, borders on plates, keys and tab buttons
+        engrave: #2b3035, labels, body text and the primary button
+        label: #454c53, secondary engraving and the OFF lamp word
+        lampOn: #155f29, the round lit ON lamp and its word
+        pointerAmber: #9a5b00, the triangle above the selected tab and the selected digest key
+        lcd: #cdd5c0, readout windows and the saved status, with ink #1e2a14
+        danger: #a3221b, the Leave workspace button
+        hazard: #f2c400, the danger stripe band in diagonals with #1f2326, decoration only
+        focus: #0b57d0, the focus outline
+    type:
+        A condensed technical sans, Bahnschrift, DIN Alternate, D-DIN, Roboto
+        Condensed, Arial Narrow, Arial, sans-serif. The page title is 26px
+        bold in capitals with 0.06em tracking. The brand is 22px bold
+        capitals with wide 0.28em tracking. Engraved labels are 12px bold
+        capitals with 0.12em tracking and a white 1px text shadow below.
+        Row text is 15px semibold, hints 13px regular. Readouts and lamp
+        words use Consolas, Menlo or another monospace, 18px bold in the
+        readout and 12px bold beside lamps.
+    layout:
+        A nameplate plate across the top with the brand, a small Settings
+        tag and Operator Mara Okafor on the right. Next a plate with the
+        Settings title and five tab push buttons in a row. Below, a grid
+        with a wide Notifications plate on the left and a narrower stack on
+        the right holding Time and language, a Commit plate with the
+        buttons and saved readout, and the Danger zone plate. Under 860px
+        everything stacks, and under 520px the tab buttons wrap three to a
+        row.
+    spacing: An 8px unit. 16px between plates, 24px plate padding, 14px vertical padding on each row.
+    density: Medium. One control per row with a groove line between rows.
+    corners: 6px plates, 4px keys, rockers and buttons, 3px fields and readout windows.
+    borders:
+        1px #8a9198 on every metal part. Section titles run into a groove
+        made of a dark line over a light line. Each plate has a small
+        domed rivet in all four corners.
+    shadows:
+        Raised parts carry a solid 3px bottom edge in a darker grey and a
+        white inner top highlight. Pressed parts drop 2px and use an inset
+        shadow. Readouts and fields are recessed with an inset shadow.
+    icons:
+        Indicator lamps carry meaning by shape. A round glowing lamp with
+        the word ON means on, a hollow square with the word OFF means off.
+        A solid amber triangle marks the selected tab and digest key while
+        other keys show a hollow circle. Saved shows a filled circle tick.
+        The danger zone shows a yellow warning triangle and a door exit
+        icon on its button. Switches are two-half rockers printed On and
+        Off, with the active half raised and pale.
+    focus: A 3px #0b57d0 outline offset 3px around the button, rocker, key or field.
+    tone: Terse panel labels in capitals, such as Operator, Commit and Changes saved.

@@ -1,0 +1,49 @@
+export anchor SpaceAge1960sStyle:
+    number: 141
+    screen: ProjectsDashboard
+    name: Space age 1960s
+    idea: The dashboard is a filled in mission control form on white paper, with numbered fields, embroidered style patches, T minus countdown clocks for due dates and GO, HOLD, SCRUB status.
+    base: light
+    palette:
+        paper: #f7f5ef, the page
+        form: #ffffff, the form sheet and fields
+        ink: #141414, text, form rules and patches
+        graphite: #555149, field labels
+        rule: #b9b4a8, inner rules and the planned path
+        grid: #e6e1d4, graph paper
+        orange: #e8590c, top stripe, trajectories and this week bars, never small text
+        burntOrange: #b33f00, field numbers, the primary button and times
+        console: #161a1d, countdown clock faces
+        digit: #ff8a3d, clock digits and the focus halo
+        earthBlue: #2a5d8f, the insignia globe only
+        goGreen: #1d6b3a, On track
+        holdAmber: #8a5300, At risk
+        scrubRed: #b3261e, Behind and overdue
+    type:
+        Extended head type uses Eurostile, Microgramma, Michroma, Bank
+        Gothic, Helvetica Neue at 800. Body uses Helvetica Neue, Helvetica,
+        Arial. Mono uses SF Mono, Menlo, Consolas. Readouts 48px, greeting
+        30px, mission names 17px, clocks 18px mono, body 14px, field labels
+        10px caps tracked 0.16em with a burnt orange field number.
+    layout:
+        An orange stripe tops a white header with a round orbit insignia,
+        Program office over the spaced brand, a boxed search with a ruled
+        label cell, a burnt orange New project, a square bell and Flight
+        director Mara Okafor, over ruled nav cells with the current one
+        black with an orange base. A Mission status report title with a
+        form number leads into one ruled form sheet. Its first row holds
+        field 01 with the greeting, date and a red Hold box, then fields 02
+        to 05 as big readouts. Six mission cells follow in three columns,
+        each with a round patch and initials, numbered category, name, an
+        orange trajectory arc over a dashed planned path, a field grid of
+        tasks and percent with a black T minus clock, and a status row. The
+        last row holds a Communications transcript and Fig. 1, a graph paper
+        bar chart with outline bars for last week and orange bars for this.
+    spacing: An 8px unit. 14 to 16px inside form cells, cells abut on shared rules.
+    density: Dense like paperwork. One form sheet holds every section.
+    corners: Square forms and buttons, round patches and insignia, 4px clocks.
+    borders: A 1px ink form grid, a 4px orange top rule, 1px light rules inside mission fields.
+    shadows: None.
+    icons: Filled circle with check On track GO, framed pause bars At risk HOLD, solid cross Behind SCRUB, each with the word and a boxed code.
+    focus: A 2px ink outline offset 2px inside a 6px digit orange halo.
+    tone: Program office formal, such as Mission status report, Flight director, Communications transcript, Fig. 1 and Hold.

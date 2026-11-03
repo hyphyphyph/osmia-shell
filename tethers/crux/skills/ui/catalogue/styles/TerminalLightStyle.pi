@@ -1,0 +1,59 @@
+export anchor TerminalLightStyle:
+    number: 14
+    screen: ProjectsDashboard
+    name: Terminal light
+    idea: A light terminal session on warm cream, where everything is monospace, panels are drawn with box lines and progress is a row of hash marks.
+    base: light
+    palette:
+        cream: #fdf6e3, the page
+        bar: #eee8d5, the top status line and the bottom key bar
+        ink: #2b2a26, text, box lines, the primary button fill and the cursor block
+        dim: #5c5a50, meta text, column headers and the hollow cells of last week's chart
+        rule: #a59f8c, dot leaders and dashed rules
+        blue: #1d4f91, links and the filled cells of this week's chart
+        plum: #8a2f6b, key hints in brackets, user handles and heading markers
+        ok: #2f6a00, the [+] ON TRACK code and the user at host part of the prompt
+        warn: #8a5200, the [!] AT RISK code
+        bad: #b0221c, the [x] BEHIND code and the overdue count
+        sel: #f5e7b8, the selected row and the focus fill
+    type:
+        One monospace stack for everything, ui-monospace, SF Mono,
+        JetBrains Mono, Menlo, Consolas, DejaVu Sans Mono, Liberation Mono,
+        monospace, with tabular figures. Body is 14px at 1.5 line height,
+        13px on phones. Panel titles and status codes are 14px bold.
+        Column headers are 14px regular capitals in the dim colour. The
+        style sheet title is 20px bold. There are no other sizes.
+    layout:
+        A tmux style status line runs across the top with a plum square
+        and the lowercase wordmark, the nav as numbered windows such as
+        0 home and 1 projects with the current one bold, underlined and
+        starred, and the user name on the right. Below it sits the prompt
+        line mara at brightwork ~ $ dashboard with a solid block cursor,
+        then a row with the search box, the new project button and the
+        notify(3) button, each showing its key hint. A double lined
+        greeting box holds the greeting and the overdue warning. Then a
+        two column grid holds the summary box beside the chart box, and the
+        projects table and the activity log each span the full width. A key
+        bar of shortcuts closes the page. Content is capped at 1240px.
+        Below 860px everything is one column, and the table scrolls inside
+        its box.
+    spacing: Character grid. A 1ch horizontal unit, an 8px vertical unit, 16px between panels and 20px top padding inside a box.
+    density: Medium high. One record per line, with no cards.
+    corners: None anywhere. Everything is square.
+    borders:
+        Every panel is a 1px ink box with its lowercase title cut into the
+        top edge between box drawing tees, and an optional dim hint or
+        link cut into the top right edge. The greeting box uses a 3px
+        double line. Table headers sit over a dashed ink line, and the
+        summary uses dotted leaders between each label and its value.
+    shadows: None.
+    icons:
+        No pictograms at all. Status is a bracket code and a capital word,
+        [+] ON TRACK, [!] AT RISK and [x] BEHIND. Progress is ten
+        characters of hash marks and dashes in brackets followed by the
+        percent. Key hints such as [n], [/] and [o] appear in plum. The
+        chart is columns of small cells, hollow for last week and filled
+        blue for this week, with the value above each column and the day
+        letter below.
+    focus: A 2px dashed ink outline offset 2px with the sel fill. The primary button keeps its ink fill and takes the outline offset 3px.
+    tone: Lowercase command words, such as tail -f activity, ls -a, notify(3) and grep. Full sentences appear only in the greeting.

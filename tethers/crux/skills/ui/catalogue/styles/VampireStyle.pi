@@ -1,0 +1,50 @@
+export anchor VampireStyle:
+    number: 285
+    screen: CodeRepository
+    name: Vampire
+    idea: A dark purple bento board where every tile is labelled like a code comment, the title reads like a keyword, labels are string tokens, and pink, green and cyan carry the syntax colours of the whole page.
+    base: dark
+    palette:
+        crypt: #1d1928, the page background and the diff code area
+        velvet: #272235, tiles and the style sheet cards
+        dusk: #342d48, chips, fields, hunk header and the disabled merge button
+        seam: #4d4468, tile borders and dividers
+        moon: #f5f2fb, text
+        haze: #bbb2d4, meta and line numbers
+        pink: #ff79c6, keywords, the title number, the primary button, the current tab and focus
+        cyan: #8be9fd, links, owner name and JSX tags
+        violet: #c6a8ff, comment style tile labels and attribute names
+        green: #5af78e, passed, approved, added lines and function names
+        lemon: #f1fa8c, requested changes and strings
+        blood: #ff6e6e, failing and removed lines
+        addTint: #1f3329, added line rows
+        delTint: #3d1f2c, removed line rows
+    type:
+        System sans, system-ui, Segoe UI, Roboto, Arial, for prose at 15px on 1.5,
+        and a monospace stack, ui-monospace, Cascadia Code, JetBrains Mono, Menlo,
+        Consolas, for every label, token, number and code line. Title 30px at 700
+        with the number 214 in pink mono. Tile labels are 13px mono lowercase
+        written as // checks in violet.
+    layout:
+        A 1200px bento grid of twelve columns. A slim top bar shows the owner in
+        cyan, a slash and the repository name in pink, a Private token, and Watch
+        12, Star 48 and Fork 3 written as small call style chips. Tabs sit beneath
+        as a flat row with a 3px pink bar under Pull requests. The first tile spans
+        the width and holds the title, the Open chip, the merge sentence with branch
+        tokens, and the labels as quoted string tokens. The second row has three
+        tiles, checks with a twelve segment donut and 11 of 12 in the middle,
+        reviewers, and details with assignees, milestone, linked issue and the
+        disabled merge button. The third row has a four column files tile and an
+        eight column diff tile with syntax colours and the inline comment. Below
+        980px tiles take half or full width, below 640px all stack.
+    spacing: An 8px unit. 16px gaps between tiles, 24px tile padding, 8px between tokens.
+    density: Medium. Many small tiles, each with one job.
+    corners: Rounded. 16px tiles, 10px buttons and fields, 999px tokens.
+    borders: 1px seam border on every tile. The comment and the hunk header have a 3px pink left edge.
+    shadows: A soft 0 8px 24px black shadow under tiles and a faint pink glow under the primary button.
+    icons:
+        Line icons at 2px stroke sized at 1.1em in the colour of their word. Check
+        circle for passed and approved, crossed square for failing, triangle with a
+        bang for requested changes, padlock for the blocked merge.
+    focus: A 2px pink outline offset 2px with a 6px soft pink glow.
+    tone: Playful developer voice in labels, such as // checks and // reviewers, plain sentences in content.

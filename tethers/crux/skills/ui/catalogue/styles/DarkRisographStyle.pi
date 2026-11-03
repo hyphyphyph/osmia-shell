@@ -1,0 +1,52 @@
+export anchor DarkRisographStyle:
+    number: 252
+    screen: DesignEditor
+    name: Dark risograph
+    idea: The editor is printed like a two colour zine on dark paper, fluorescent pink and teal overprinting each other with a slight misregistration, halftone dots and grain.
+    base: dark
+    palette:
+        paper: #1c1a22, the page with a grain of cream and black dots
+        card: #25222d, panels and the status stub
+        deep: #141218, the canvas behind teal halftone dots, and fields
+        cream: #f3ebe0, text as white ink
+        dim: #c4b9ad, labels and dotted leaders
+        pink: #ff5cb8, headings, the active tool, the selected layer, Share and the frame outline
+        teal: #2ad0c2, the misregistered offset, Saved, secondary buttons, numbers and focus
+        pinkInk: #2a0b1c, text on pink
+        tealInk: #04201d, text on teal
+    type:
+        Avenir Next Condensed, Roboto Condensed, Arial Narrow for headings,
+        tools and buttons in 800 caps, ui-rounded, Segoe UI, system-ui for
+        body, and ui-monospace for small labels. Body 14px at 1.5. The file
+        title 44px condensed caps in pink with a 2px teal offset shadow,
+        panel titles 22px the same way, buttons 15px, labels 11 to 12px
+        mono, and the sheet title 46px.
+    layout:
+        A masthead over a dotted teal rule holds a pink HOME V3 with a teal
+        ghost and a mono line Brightwork Canvas, Website redesign, 2 colour
+        print, then three overprinted initials discs, an outlined teal
+        Present and a pink Share. A row of pill tools follows with icon and
+        caps word, idle tools dashed cream, Move filled pink with a teal
+        offset, and a teal 66% at the right. The work row puts a 250px
+        Print spec card left, the canvas in the middle and a 300px layers
+        card right. Print spec shows X, Y, W and H as four pink and teal ink
+        blocks with big condensed values, then a dashed ruled list for
+        Frame, Fill, Auto layout, Gap, Padding, Corner radius and Export.
+        Layers are a numbered zine index with dotted leaders to a type word,
+        Hero filled pink with selected. The canvas has teal halftone dots,
+        two overlapping pink and teal circles in screen blend at the corner,
+        the white frame with a pink outline and teal offset, and a teal
+        bordered comment tilted slightly. A ticket stub with dashed
+        perforations carries the status. Below 760px the cards and tool row
+        hide and a three by two grid of pill tools sits under the canvas.
+    spacing: An 8px unit. 16px between panels, 14px inside, 10px between tools.
+    density: Medium. Inspector left, canvas centre, layers right and tools as a row.
+    corners: Uneven cut corners of 14 6 16 8px on cards, 12 4px on ink blocks and rows, pill tools and buttons.
+    borders: Dashed cream on idle tools, a dotted teal rule under the masthead, dashed rules in the spec list and dotted leaders.
+    shadows: Only misregistration, a hard 3px 2px teal offset behind pink shapes and a 2px teal text shadow on pink headings.
+    icons:
+        18px round line icons at 2px stroke, always beside a word. Saved
+        uses a check circle in teal, editing two people in pink and the
+        version a tag in cream, each with condensed caps words.
+    focus: A 3px teal outline offset 3px plus a 7px pink halo at 35 percent.
+    tone: Playful zine words, such as Print spec, plain elsewhere.

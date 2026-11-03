@@ -1,0 +1,61 @@
+export anchor QuietOpsStyle:
+    number: 219
+    screen: ProjectsDashboard
+    name: Quiet ops
+    idea: A calm operations console in low chroma greys with hairline rules and tabular figures, where the only colour on screen belongs to status, so anything green, amber or red is news.
+    base: light
+    palette:
+        page: #f3f3f2, the page behind panels
+        surface: #ffffff, panels, the header and fields
+        sunken: #ebebea, table heads and the avatar
+        line: #d6d6d3, hairline rules, panel edges and KPI cell dividers
+        edge: #8a8c88, field and secondary button borders
+        ink: #1d1e20, text and figures
+        ink2: #4f5155, secondary text and chart values
+        muted: #63666b, labels, meta and timestamps
+        graphite: #2f3134, the primary button, this week bars, progress fills and focus
+        bar: #8b8d91, last week bars, never text
+        green: #1d6a3c, On track with an outlined circle and check
+        amber: #8a5200, At risk with an outlined triangle and bang
+        red: #b0261c, Behind with an outlined square and down arrow, and every overdue mark
+    type:
+        Two stacks. Text uses system-ui, Segoe UI, Roboto, Helvetica Neue,
+        Arial. Figures, timestamps and task counts use ui-monospace, SF
+        Mono, Menlo, Consolas. The greeting is 18px 600, KPI figures 26px
+        500 mono, panel titles and column heads 11 to 12px caps tracked
+        0.06em, row names 13px 600, body 13px and timestamps 11px mono.
+    layout:
+        One white header bar 48px tall with a hairline below. It holds a
+        small outlined square mark and the brand, then the six nav items
+        as text tabs with small grey icons, the current tab underlined in
+        graphite. At right sit a 240px search field, a graphite New
+        project button, a bell with an outlined count and the avatar with
+        Mara Okafor after a hairline. Below, a status line reads Hello,
+        Mara and the date at left with 4 tasks are overdue in red with a
+        clock at the far right, over a hairline. The four KPIs are one
+        white strip split into four cells by hairlines, each a caps label
+        over a mono figure and a short grey note, the overdue cell red. The
+        body is two columns, a wide left and a 360px right. Left holds the
+        projects table with columns for project and department, status,
+        a thin 4px progress bar with percent, tasks as 18/25 and due date
+        with days left, then the chart panel with fourteen thin bars, grey
+        last week and graphite this week, split by a dashed line, values
+        printed above and day letter and date below, and a legend with
+        the week totals and the change. Right holds a status mix panel
+        with a thin three part bar and the counts 4, 1 and 1, then an
+        activity log with a mono time column beside each entry. Below
+        800px the tabs drop to their own scrolling row and KPIs become two
+        by two. Below 640px table rows become small grids and the chart
+        scrolls sideways.
+    spacing: An 8px unit. 4px inside controls, 8 to 12px cell padding, 16px between panels.
+    density: High. 40px table rows and many facts on one screen.
+    corners: Square panels. 3px on buttons and fields, and only the avatar is round.
+    borders: 1px hairlines around panels, between rows and between KPI cells.
+    shadows: None. Depth comes only from grey page against white panels.
+    icons:
+        16px line icons at 1.8px stroke in grey for nav and tools. Status
+        icons are 14px outlined shapes in their status colour, a circle
+        with a check, a triangle with a bang, a square with a down arrow,
+        and a clock ring for overdue.
+    focus: A 2px graphite outline offset 2px on every control.
+    tone: Terse and factual, such as Activity log, Status mix and 4 tasks are overdue.

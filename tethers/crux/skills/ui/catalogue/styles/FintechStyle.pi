@@ -1,0 +1,62 @@
+export anchor FintechStyle:
+    number: 184
+    screen: ProjectsDashboard
+    name: Fintech
+    idea: A crisp banking grade ledger, deep green and white with precise tabular figures, hairline dividers and nothing decorative, so every number reads as trustworthy.
+    base: light
+    palette:
+        deepGreen: #0b4d3a, the 3px header top rule, the full width summary band, the primary button, the this week line and focus
+        green2: #0f6a4f, links and the thin progress fills
+        mint: #cfe8dd, labels and captions on the green band and the focus halo
+        white: #ffffff, the header, panels, fields and the overdue chip on the band
+        page: #f6f8f7, the page background
+        ink: #0f1d17, text and figures
+        muted: #4a5a53, column heads, meta, axis labels and timestamps
+        rule: #dfe5e2, row and panel hairlines and empty bar tracks
+        ruleStrong: #c3ccc8, table head rules, field borders and the chart baseline
+        onTrack: #0b6b45, the On track word with a filled circle
+        atRisk: #8a5300, the At risk word with a filled triangle
+        behind: #b42318, the Behind word with a filled square and the overdue chip
+    type:
+        One stack, system-ui, apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial, with tabular lining numerals on the whole page. KPI
+        figures are 32px at 600 and minus 0.02em, the greeting 26px at 650,
+        panel titles 15px at 650, table and activity text 13px, column
+        heads and band labels 11 to 12px caps at 600 tracked 0.04 to
+        0.06em.
+    layout:
+        A white header with a 3px deep green top rule holds the brand mark
+        and name, the six nav links inline with a 2px green underline on
+        Home, then at the right a search field, a green New project button,
+        a square bell with a red dot and the initials disc with Mara Okafor.
+        Under it a full width deep green band carries a caps dateline, the
+        greeting and a small white chip reading 4 tasks are overdue with a
+        red square, then a row of four KPI figures in white split by thin
+        translucent vertical dividers, each with a mint caps label above
+        and a small caption below, such as 78 of 170 tasks done. The main
+        area is a two to one grid. The wide left panel is a projects ledger
+        table sorted by due date with columns Project with team below,
+        Progress as a thin bar and percent, Tasks as 18 / 25, Due, Days
+        left and Status, closed by a Total row of 46 percent and 78 / 170.
+        The right panel is an activity ledger with the action on one line,
+        the project below in muted text and the time right aligned. Below
+        both, a full width chart panel has a stats column at left with This
+        week 73, Last week 59, Change plus 14 at plus 23.7 percent in green
+        and Daily average 10.4 against 8.4, and at right a line chart that
+        overlays the two weeks on a Sunday to Saturday axis, last week as a
+        dashed grey line and this week as a solid green line with hollow
+        points and a faint green area. Below 1000px the grid stacks. Below
+        720px the nav wraps onto its own row under the brand, the search
+        hides, KPIs go two by two, the stats sit in two columns above the
+        chart, and the table and chart scroll sideways inside their panels.
+    spacing: An 8px unit. 24px page gutters and gaps, 16px panel padding, table cells 10px by 12px.
+    density: Medium high. Projects are a ledger table rather than cards.
+    corners: 4px on panels, buttons, fields and chips. Bars 2px. The avatar is round.
+    borders: 1px hairlines between every row and around panels, a stronger line under table heads, and a 3px deep green rule on top of the header.
+    shadows: None. Structure comes from rules alone.
+    icons:
+        16px line icons at 1.6 stroke for search, plus and bell. Status
+        uses solid 10px shapes, a circle for On track, a triangle for At
+        risk and a square for Behind, always beside the word.
+    focus: A 2px deep green outline offset 2px with a 4px mint halo. A focused field gets a deep green border and outline.
+    tone: Exact and neutral, figures first, such as Due this week, Days left and Change plus 14.

@@ -1,0 +1,62 @@
+export anchor AsymmetricFeatureStyle:
+    number: 198
+    screen: ProjectsDashboard
+    name: Asymmetric feature
+    idea: A 12 column asymmetric grid gives one project the stage, a large navy feature card with a progress ring and its key figures, while a tall watch card, four small project cards, a chart and the activity feed support it at smaller sizes.
+    base: light
+    palette:
+        page: #f4f4f1, the warm grey behind the cards
+        card: #ffffff, cards, the sidebar and fields
+        ink: #1c2333, text and figures
+        muted: #5b6170, labels, meta and axis text
+        navy: #14213d, the feature card, the current nav item and the this week line
+        navySoft: #e8ebf2, bar tracks, the this week chart band and initials
+        onNavyMuted: #b9c2d6, labels on the feature card
+        coral: #c2410c, the New project button and the focus ring
+        coralLight: #ffb38a, the ring arc and focus on navy
+        series: #6f7fa3, the dashed last week line
+        green: #1d7a4a, On track with a solid dot on #e6f4ec
+        amber: #8d5000, At risk with a solid triangle on #fdf1dc
+        red: #b3261e, Behind with a solid square and overdue on #fdecea
+        redOnNavy: #ffb4ab, the outlined Behind tag inside the feature
+    type:
+        Display figures and headings use Avenir Next, Avenir, Segoe UI
+        Variable Display, Segoe UI, system-ui. Text uses system-ui, Segoe
+        UI, Roboto, Helvetica Neue, Arial. The ring figure is 56px bold at
+        minus 0.04em, the greeting 44px bold at minus 0.03em, the feature
+        title 36px bold, card figures 26 to 28px bold, body 15px, and
+        eyebrows 12px bold caps tracked 0.08em.
+    layout:
+        A floating white sidebar card with 20px corners holds the brand
+        with a navy rounded mark, six nav items with icons where Home is a
+        filled navy pill, and Mara Okafor with initials in a coral disc at
+        the foot. The main column has a pill search, a round bell and a
+        coral pill New project button. Then a 12 column grid with 20px
+        gutters. Row one gives 8 columns to the date, a 44px greeting and a
+        red clock line for the 4 overdue tasks, and 4 columns to a two by
+        two summary card. Row two gives 8 columns to the navy feature card
+        for Billing migration, with a Featured project kicker and an
+        outlined Behind tag, a 180px coral ring showing 30 percent at left,
+        and at right the title, team and due date, a two by two grid of
+        tasks done, to go, days left and target pace, a tinted note of the
+        latest activity and white and outlined pill buttons. The other 4
+        columns hold a tall Also watching card for Mobile app 2.0 with a
+        large percent, an amber bar, ruled facts and an outlined Open
+        button. Row three is four 3 column cards for the healthy projects,
+        each with a status chip, name, team, a large percent, a bar and
+        tasks and due. Row four gives 7 columns to an area line chart with
+        the this week half on a tinted band and 5 columns to activity.
+        Below 1180px the feature and watch cards go full width and project
+        cards go two across. On phones the sidebar becomes a top card with
+        a scrolling pill nav and everything stacks.
+    spacing: An 8px unit. 20px card padding, 28 to 32px inside the feature and 20px gutters.
+    density: Low at the top, rising toward the small cards and the feed.
+    corners: 20px on the feature and sidebar, 14px on cards, pills for buttons, search and chips, and 12px fields.
+    borders: Almost none. 1px warm lines divide the summary cells and the watch facts.
+    shadows: A soft lift on cards of 0 1px 2px and 0 8px 24px at low navy. The feature has a deep 0 20px 48px navy shadow.
+    icons:
+        Round line icons at 1.7px in the sidebar and header. Status chips
+        use a solid dot, triangle or square with the word, and overdue uses
+        a clock.
+    focus: A solid 3px coral outline offset 3px, light coral on the navy feature.
+    tone: Editorial and warm, such as Featured project, Also watching and Plan catch-up.

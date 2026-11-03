@@ -1,0 +1,60 @@
+export anchor HealthcareSaaSStyle:
+    number: 185
+    screen: ProjectsDashboard
+    name: Healthcare SaaS
+    idea: A calm, reassuring workspace in soft teal with 8px corners, roomy spacing and plain sentences, so the busiest day still feels under control.
+    base: light
+    palette:
+        teal: #0f766e, the primary button, progress fills, this week bars, timeline rings and focus
+        deepTeal: #115e59, current nav text, links, the avatar and style sheet headings
+        tealTint: #e3f2f0, the current nav item, KPI icon discs and last week bars
+        calm: #eef6f5, progress bar tracks
+        page: #f3f7f7, the page background
+        white: #ffffff, the side rail, cards and fields
+        ink: #1d2b2e, text
+        muted: #4f6266, plain sentences, meta and axis labels
+        line: #dbe6e5, card, row and timeline lines
+        onTrack: #1a7a43, On track on #e6f4ec with a check in a circle
+        atRisk: #8f5200, At risk on #fdf1de with a triangle and bang, also the overdue notice
+        behind: #b42318, Behind on #fdecea with a cross in a diamond
+    type:
+        One stack, system-ui, apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial. KPI figures 40px at 650, the greeting 30px at 650,
+        card titles 20px at 650, project names 17px at 650, body 16px at
+        1.6, meta 14px and status pills 14px at 600.
+    layout:
+        A white left rail 248px wide holds the brand with a teal rounded
+        square mark, then six nav items with 20px line icons, Home filled
+        teal tint. The main area starts with a roomy row of a wide search
+        field, a teal New project button, a bell and the avatar with Mara
+        Okafor. A white welcome card has Hello, Mara and the date at left
+        and a soft amber notice at right with a triangle, 4 tasks are
+        overdue in bold and a gentle line to open Tasks when ready. Next is
+        one wide white card split into four KPI cells by thin dividers,
+        each with an icon in a teal tint disc, the label, a 40px figure and
+        a short plain caption such as tasks are past their date, the
+        overdue disc amber. Below sits a grid of 1.7 to 1. The left card,
+        Your projects, lists each project as a bordered row with name and
+        team, a status pill at right, a 10px full width bar and a sentence
+        such as 72% done. 18 of 25 tasks finished. Due 14 Nov, in 14 days.
+        The right card, What happened recently, is a vertical timeline of
+        teal ring dots joined by a grey line, each entry with the time
+        below. A full width chart card closes the dashboard, with the title,
+        the two week totals and a plain sentence at left and fourteen
+        rounded bars at right, last week outlined in teal over tint and
+        this week solid teal. Below 1100px the grid stacks and KPIs go two
+        by two. Below 820px the rail turns into a wrapped row of nav pills
+        without icons on top, cards lose padding, and the chart scrolls
+        sideways inside its card.
+    spacing: An 8px unit used generously. 32px between sections, 28px card padding, 48px tall controls, 40px page gutter.
+    density: Low. One project per full width row, each with a sentence.
+    corners: 8px on cards, rows, buttons, fields and nav items. Pills for status. Circles for icon discs and timeline dots.
+    borders: 1px soft teal grey lines on cards and rows. Fields use a firmer 1px grey teal line.
+    shadows: None. Calm comes from space and soft tints.
+    icons:
+        20px rounded line icons at 1.75 stroke, shown in teal tint discs on
+        KPIs. Status icons are filled 18px shapes with a white mark, a
+        circle with a check, a triangle with a bang and a diamond with a
+        cross, inside tinted pills with the word.
+    focus: A 3px teal outline offset 3px on every control. A focused field also turns its border teal.
+    tone: Warm, plain and reassuring, full sentences such as 18 of 25 tasks finished and What happened recently.

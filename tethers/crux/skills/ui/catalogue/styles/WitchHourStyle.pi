@@ -1,0 +1,55 @@
+export anchor WitchHourStyle:
+    number: 317
+    screen: OpsMonitor
+    name: Witch hour
+    idea: A deep purple night watch where services stand as potion bottles on a shelf filled to their uptime, charts sit in arched windows under a thin moon, and green glows only where things are well.
+    base: dark
+    palette:
+        midnight: #150c21, the page under a faint violet glow at top right
+        robe: #20132e, arched windows, cards, bottle tags and the style sheet
+        robeRaised: #2a1a3c, the incident card, the current tab and list rows
+        ink: #f4edff, text
+        mist: #c2b3da, captions, times and axis
+        line: #4b3668, borders, rules and the log thread
+        shelf: #3a2752, the shelf plank under the bottles
+        potionGreen: #7cf0a8, healthy potion, the glowing request line, p50, the primary button, focus, Healthy and Resolved
+        violet: #c7a2ff, the moon mark, stars, p95, log beads and the secondary button border
+        amber: #ffcb6b, degraded potion, Degraded and Investigating with triangle and magnifier
+        moonblue: #8fd3ff, recovered potion, Recovered with a diamond
+        rose: #ff94a7, Firing with an octagon, the error line
+    type:
+        Headings in Palatino Linotype, Book Antiqua, Palatino, Georgia at
+        600, body in Gill Sans, Segoe UI, Calibri. Base 16px at 1.5. The
+        incident ID is 30px serif, the brand 26px serif with an italic 15px
+        subtitle, section titles 21px serif, uptime figures 22px serif with
+        old style numbers, captions 14 to 15px italic serif.
+    layout:
+        A centred 1120px column. The header holds a violet crescent moon
+        with a small green star, Brightwork Ops with the italic line The
+        night watch over production, last 24 hours, and the suite apps with
+        a green underline on Ops. The first section, The shelf of services,
+        shows five flask bottles standing on a purple plank. Each flask is
+        filled to its uptime on a 99 to 100 percent scale, green for
+        healthy, amber for degraded with bubbles, pale blue for recovered
+        with a small crack. A string hangs from each bottle to a tag card
+        with the service name, status shape and word, the figure and one
+        fact. A caption says how the fill is read and that billing shows its
+        outage. Next, two columns. The left is an arched window with stars
+        and a moon holding Requests per minute as a glowing green area
+        chart with an italic 9,400 note. The right holds the incident card
+        with a double rule, INC-0427, its facts and two pill buttons, then
+        The night log, a thread of alerts with violet beads. Last, three
+        small arched windows for Error rate, Latency and Fresh brews, the
+        deploys. Below 900px columns stack, below 760px bottles sit left of
+        their tags in rows with a plank under each.
+    spacing: An 8px unit. 24px gutters and gaps, 22px card padding, bottles on a 16px grid.
+    density: Airy. Five bottles across, one big arched chart, then three small arches.
+    corners: Arched tops on chart windows using 260 by 120px elliptical corners with 12px at the foot. 12px cards, 20px pill buttons, 10px fields.
+    borders: 1px violet grey lines. The incident card has a double rule made by an inset outline.
+    shadows: No drop shadows. The request line glows green and the shelf has a hard 6px dark edge below it.
+    icons:
+        Flask bottles filled to uptime and a crescent moon mark. Status
+        pairs the word with a filled circle, triangle, diamond, octagon,
+        square or a magnifier.
+    focus: A 2px potion green outline offset 3px with a soft green halo.
+    tone: Lightly storybook headings such as The shelf of services, The night log and Fresh brews, with plain facts underneath.

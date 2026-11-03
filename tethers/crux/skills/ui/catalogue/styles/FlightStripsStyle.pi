@@ -1,0 +1,47 @@
+export anchor FlightStripsStyle:
+    number: 135
+    screen: ProjectsDashboard
+    name: Flight strips
+    idea: Projects are paper flight progress strips slotted into a grey bay, read left to right in tidy columns of callsign, route, progress boxes, due time and a status code.
+    base: light
+    palette:
+        console: #e6ebe5, the page
+        bay: #c9d1c9, strip bays and the side rack
+        rail: #5d665f, bay headers, holder edges and borders
+        ink: #1b2420, text, filled progress boxes, this week bars and the primary button
+        muted: #4b5650, column keys and task counts
+        buffStrip: #f5e7ae, Design and Research strips and last week bars
+        blueStrip: #d4e5f4, Engineering strips
+        pinkStrip: #f3d8de, Marketing strips
+        normal: #1e6b3a, On track with a ring
+        caution: #8a5100, At risk with a solid triangle
+        alert: #a3191f, Behind with a barred square, overdue text
+        focus: #0b57a8, the focus outline only
+    type:
+        Mono for data uses IBM Plex Mono, SF Mono, Menlo, Consolas,
+        monospace. Sans for names and prose uses Helvetica Neue, Helvetica,
+        Arial. Board digits 34px mono bold, greeting 28px sans bold,
+        callsigns 18px mono bold, project names 16px sans bold, body 14px,
+        keys 10px bold caps tracked 0.12em.
+    layout:
+        A 168px left side rack holds the brand in mono and nav as stacked
+        strips with a 6px rail edge and a three letter code, the current
+        one dark with a buff edge. A pale top bar holds a framed search, New
+        project, a square bell and On position Mara Okafor. A status line
+        has the mono date, the greeting and a red Attention line with a
+        triangle, and on the right a boxed board of four mono numbers. The
+        Active bay lists six strips under column keys, each strip a grid of
+        callsign with category, name with task count, ten progress boxes
+        with a percent, due date and status with a short code, sorted by
+        due date and coloured by department. A right column has a Radio log
+        of small strips and a Movements chart with outline bars for last
+        week and solid bars for this week. Below 820px the rack becomes a
+        top row and strips wrap into two rows.
+    spacing: A 4px base. 6px between strips, 10px inside cells, 24px between bays.
+    density: High. One strip per project about 58px tall, every fact in its own column.
+    corners: Strips square, bays and buttons 2 to 3px.
+    borders: A 10px rail holder edge on the left of each strip, 1px grey around, hairline column dividers.
+    shadows: A hard 2px drop under each strip so it sits in the bay. Nothing else.
+    icons: Ring for On track, solid triangle for At risk, solid square with a white bar for Behind, beside the word and codes NML, RISK, BHND.
+    focus: A 3px blue outline offset 2px.
+    tone: Terse controller speech, such as Active bay, Radio log, Movements and On position.

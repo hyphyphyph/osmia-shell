@@ -1,0 +1,52 @@
+export anchor GlossyAquaStyle:
+    number: 31
+    screen: SignIn
+    name: Glossy aqua
+    idea: An early-2000s desktop window, brushed metal chrome on a pinstripe backdrop, with blue jelly buttons that look wet enough to press.
+    base: light
+    palette:
+        pinstripe: #f7f7f7 and #ececec, the page in alternating 2px stripes
+        brushedMetal: #e9ebee to #c9ccd1, the title bar and toolbar with fine vertical streaks
+        window: #f4f5f7, the window body
+        text: #1d1d1f, body text
+        muted: #4f545c, sub lines and the status bar
+        bevelLine: #a7acb4, group borders and section tabs
+        jellyBlue: #2a6bc2, the primary gel button and the selected row
+        jellyDeep: #0e4a9c, the lower half of the gel
+        jellyGlow: #8cc0f4, the inner glow at the bottom of the gel
+        focusRing: #6fa8eb, the focus halo
+        link: #0b4fae, links
+        error: #b3141b, error text and the error field border
+        done: #23733a, On track text
+    type:
+        Lucida Grande, Lucida Sans Unicode, Lucida Sans, Helvetica Neue,
+        Verdana, Tahoma, system-ui, sans-serif. The brand is 22px bold with
+        a white emboss, the heading 17px bold, labels 13px bold and right
+        aligned with a trailing colon, field text 14px, body 13px at 1.45,
+        and the status bar 11px.
+    layout:
+        A single desktop window 640px wide floating on the pinstripe. A
+        brushed metal title bar with one grey glossy orb at the left and
+        the word Brightwork centred. A toolbar band with a glossy blue app
+        orb holding a tick, the brand and a sub line. The body has the
+        heading, two pill sign-in buttons side by side, an etched or
+        divider, then a sunken group box with a two column form of right
+        aligned labels and fields. The bottom of the group holds the create
+        account line on the left and the jelly Sign in button on the right.
+        A status bar closes the window with Privacy and Terms. At 375px the
+        pills and labels stack and Sign in goes full width.
+    spacing: Tight, a 4px base. 12px between form rows and 24 to 28px window padding.
+    density: Compact desktop density, 13px type and 30px controls.
+    corners: Fully round pill buttons, 10px top window corners, 6px group boxes and 4px fields.
+    borders: 1px grey bevels, darker on top for sunken fields. Dividers are a grey line over a white line.
+    shadows:
+        A deep soft window shadow, inset field shadows, and gel buttons
+        with a white reflection over the top half and a light blue inner
+        glow at the bottom.
+    icons:
+        Glossy orbs and gel balls with a white reflection. Grey letter
+        orbs G and M on sign-in buttons, a red octagon with a cross for the
+        error, a tick inside the app orb, and a small triangle on the
+        selected list row.
+    focus: A 1px blue line and a 3px light blue halo around any control. A focused field gets a blue border and the same halo.
+    tone: Plain desktop dialog words with a colon after each label, such as Email and Password followed by a colon.

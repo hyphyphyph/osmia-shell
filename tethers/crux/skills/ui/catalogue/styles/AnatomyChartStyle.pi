@@ -1,0 +1,55 @@
+export anchor AnatomyChartStyle:
+    number: 128
+    screen: ProjectsDashboard
+    name: Anatomy chart
+    idea: The dashboard as an antique scientific plate in sepia, where projects are segments of a sectioned specimen with lettered leader lines, numbers are labelled measurements and activity reads as numbered field notes.
+    base: light
+    palette:
+        agedPaper: #e9dcbf, the page around the plate
+        plate: #f6edd8, the plate, the figure centre and label discs
+        ironGallInk: #33241a, text, outlines and leader lines
+        sepia: #5f4730, captions, key details and stipple
+        redOchre: #8e3b22, label letters, overdue, the Behind square and focus
+        hairline: #b49c78, dotted rules and grid lines, never text
+        washes: #d9b98f #b9c4d6 #c4d3b0 #d8b4a6 #cdbfd4 #bccfcf, figure segments a to f
+        onTrack: #2f5d34, the ring with a dot
+        atRisk: #80500a, the open triangle
+    type:
+        One stack, Baskerville, Baskerville Old Face, Libre Baskerville,
+        Hoefler Text, Garamond, Times New Roman, serif. The greeting is 46px
+        400 at 1.1, measurements 52px with old-style numerals, section
+        titles 20px small caps tracked 0.14em over a rule, figure captions
+        15px small caps then italic, body 17px at 1.55, label letters 20px
+        bold italic in red ochre.
+    layout:
+        A plate up to 1240px with a 1px ink edge doubled 8px outside and a
+        soft drop shadow. A centred masthead reads A systematic chart of the
+        working week, then BRIGHTWORK in widely spaced caps and with figures
+        drawn from life, over a double rule. A ruled bar holds the nav as
+        roman numbered small caps links and the tools, a ruled italic search,
+        a dark New project button, a round bell and a line drawn avatar with
+        the name. The title block has a boxed Plate XXXI, the greeting with
+        the date in italic, and an Observation note with a red ochre edge
+        saying 4 tasks are overdue. Two columns follow. On the left, Fig. 1
+        is a sectioned ring of six segments sized by task count, each in its
+        own wash with the completed part hatched outward from the centre,
+        170 tasks in all in the middle, and leader lines ending in lettered
+        discs a to f. A Key to Fig. 1 lists each letter with the name, team,
+        percent, tasks and due date, and the status. On the right, Fig. 2
+        shows the four numbers as large numerals over caliper rules with
+        lettered italic captions, Fig. 3 is an engraved line chart with a
+        stippled area, values on each point and a dashed week divider, and
+        Notes from the field is a numbered list of activity. A double rule
+        and an italic credit line close the plate. Below 960px the columns
+        stack.
+    spacing: An 8px unit. 24px between sections, 40px between columns, 28px plate margins.
+    density: Moderate, like a printed plate. One large figure and a key, then smaller figures and notes.
+    corners: Square frames and boxes. Round only for label letters, the bell and the figure.
+    borders: A 1px ink plate edge doubled 8px out, double rules at top and foot, dotted hairlines between key rows.
+    shadows: One soft drop under the plate, as if pinned to a wall. Nothing else.
+    icons:
+        Engraved line marks at 15px with the small caps word, a ring with a
+        dot for On track, an open triangle for At risk and a solid square
+        for Behind. Leader lines end in small ink dots.
+    focus: A 2px red ochre outline offset 3px.
+    tone: Victorian naturalist, such as Plate XXXI, Observation, Notes from the field and drawn from life.

@@ -1,0 +1,53 @@
+export anchor DarkConcreteStyle:
+    number: 258
+    screen: DesignEditor
+    name: Dark concrete
+    idea: A brutalist editor cast in raw dark concrete slabs with deep seams, form tie holes and spray stencilled labels, where safety yellow marks the active tool, the selection and the one action that matters.
+    base: dark
+    palette:
+        seam: #111213, the page and the 8px gaps between slabs
+        slab: #2a2b2c, header, layers, inspector, status and the style sheet with a faint noise grain
+        cast: #232425, the canvas well and the zoom block
+        aggregate: #3a3b3d, avatar squares
+        pit: #18191a, recessed fields and layer tiles
+        ink: #e6e4df, text and outlines
+        dust: #a9a7a1, meta and field captions
+        safetyYellow: #f2c230, the active tool, the selected tile, Share, handles, focus and hazard tape
+        safetyOrange: #c24e00, the 32 px guide with white text
+    type:
+        Three stacks. Labels and figures use Stencil Std, Impact,
+        Haettenschweiler, Arial Narrow Bold in caps tracked 0.06 to 0.14em.
+        Text uses Helvetica Neue, Arial, system-ui. Captions and status use
+        ui-monospace. The file name is 24px stencil, panel titles 22px,
+        inspector values 26px stencil, layer names 14px 700, status 13px mono
+        caps and captions 11 to 12px mono.
+    layout:
+        Everything is a concrete slab separated by 8px dark seams, and big
+        slabs carry two form tie holes at the top corners. The header slab
+        holds a yellow BW block, CANVAS / WEBSITE REDESIGN over HOME V3,
+        square outlined avatars, an outlined Present and a yellow Share. A
+        full width row of seven blocks follows, the six tools as 64px slabs
+        with icon, stencil name and key letter, Move solid yellow, and a 66%
+        zoom block. Below sit two columns, the wide left and a 340px
+        inspector. The left holds the canvas well with a faint 48px grid and
+        the white Hero frame outlined 3px in yellow with square yellow
+        handles, and under it the layers as a grid of 150px tiles, each with a
+        number and kind, a kind icon, the name and note, the Hero tile solid
+        yellow with Selected and the Features tile with Collapsed. The
+        inspector stacks blocks with yellow stencil headings and sunk fields
+        holding 26px figures, X 0, W 1440, #FFFFFF, Gap 32, Padding 96, R 0,
+        PNG and 2x, then an outlined Export Hero. The status slab has a yellow
+        and black hazard tape top edge and mono caps items. Below 860px slabs
+        stack with the canvas first and the tool row becomes a sticky bottom
+        row.
+    spacing: An 8px unit. 8px seams between slabs, 24px slab padding, 8px between tiles and fields.
+    density: Chunky. 64px tool blocks, 104px layer tiles and 26px figures.
+    corners: None. Every slab, tile, field and button is square.
+    borders: Seams instead of borders, 2px ink outlines on secondary buttons and avatars, a hazard stripe tape over the status slab.
+    shadows: Inset shadows sink fields and tie holes. Slabs are flat with a noise grain.
+    icons:
+        Line icons at 2.4px stroke with square ends, 20px. Selected is a
+        circled check, Collapsed a right chevron, Saved a cloud with a check,
+        always with the word.
+    focus: A 4px solid safety yellow outline, ink on yellow fills.
+    tone: Site signage in stencil caps such as POSITION / SIZE, EXPORT HERO and SAVED 2 MINUTES AGO.

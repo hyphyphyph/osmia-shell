@@ -1,0 +1,63 @@
+export anchor TonalBlocksStyle:
+    number: 203
+    screen: ProjectsDashboard
+    name: Tonal blocks
+    idea: Each section is a soft block of its own muted colour, sand, sage, sky, rose and lilac, separated only by space, with no outlines or shadows anywhere.
+    base: light
+    palette:
+        page: #f8f6f1, the warm page between blocks
+        deep: #2e3f3a, the header block
+        deepRaised: #415550, the search field and bell on the header
+        onDeepMuted: #cfdcd7, idle nav and the placeholder on the header
+        sand: #ede4d4, the greeting block, current nav, header button and fields
+        sage: #dde7da, the chart block and the active projects block
+        sageBand: #ccdac8, the last week band inside the chart
+        sky: #dce6ef, the projects block and the tasks due block
+        skyRow: #eaf0f6, project rows inside the sky block
+        lilac: #e7e1ef, the activity block and the hours block
+        rose: #f3dedb, the overdue block and the overdue line
+        text: #1e2522, text
+        muted: #4a524e, labels and meta on every tone
+        accent: #2b5a4d, the primary button and this week bars
+        lastWeek: #5e7560, last week bars on the sage band
+        skyInk: #284f78, progress fill on the sky track
+        ok: #21613c, On track on #d4e6d5 with a check circle
+        risk: #774800, At risk on #f2e2c4 with a triangle
+        behind: #9e261d, Behind on #f3d6d2 with a crossed square and overdue
+    type:
+        Body uses system-ui, -apple-system, Segoe UI, Roboto, Helvetica
+        Neue, Arial, sans-serif. Headings and figures use Charter,
+        Bitstream Charter, Sitka Text, Cambria, Georgia, serif. The
+        greeting is 38px serif at 600, KPI figures 44px serif, block titles
+        22px serif, row names 15px sans at 650, body 15px at 1.55 and meta
+        13px.
+    layout:
+        A deep green header block with rounded corners holds a sand B tile
+        with the serif brand, six pill nav links with Home on a sand pill,
+        a darker pill search, a sand New project pill, a round bell and
+        the initials disc. The first row splits five to seven. On the left
+        a tall sand greeting block has the date and a serif greeting at
+        top and a rose inner block at the bottom with a clock, 4 tasks are
+        overdue and a Review them link. On the right four KPI blocks sit
+        two by two, sage, sky, rose and lilac, each a small icon label over
+        a big serif figure, overdue in red with a clock. The second row
+        splits eight to four. A sky projects block lists six lighter sky
+        rows, each with name and team, percent and tasks over a tonal
+        progress bar, due date with days left and a tinted status tag. A
+        lilac activity block lists entries with lilac initial discs. The
+        last row is a full width sage chart block with serif totals 73, 59
+        and +14 on the left and two tonal week bands on the right, last
+        week bars in muted green and this week bars in deep green. Below
+        1100px the rows stack. On phones project rows wrap and the week
+        bands stack.
+    spacing: An 8px unit. 16px between blocks, 24 to 32px inside blocks and 8px between rows inside a block.
+    density: Comfortable and calm. Large serif figures and one subject per block.
+    corners: 14px blocks, 10px inner rows and bands, full pills for nav, search and buttons.
+    borders: None at all. Blocks and rows are told apart by tone and space only.
+    shadows: None. Depth is only a step lighter or darker in tone.
+    icons:
+        Line icons at 1.8 stroke beside block labels. Status tags are
+        tinted with a check circle, a triangle or a crossed square and the
+        word.
+    focus: A 2px deep green outline offset 3px, white on the header block.
+    tone: Warm and plain, such as Review them, All activity and more than last week.

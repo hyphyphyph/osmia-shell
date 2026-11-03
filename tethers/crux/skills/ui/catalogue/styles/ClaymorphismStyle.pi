@@ -1,0 +1,55 @@
+export anchor ClaymorphismStyle:
+    number: 37
+    screen: TaskBoard
+    name: Claymorphism
+    idea: Everything is a puffy piece of soft candy clay, pressed out of a lilac surface with fat rounded corners, an inner highlight and a soft coloured drop shadow.
+    base: light
+    palette:
+        lilacPage: #f3eefc, the page with soft pink and sky glows in two corners
+        cloud: #fbf9ff, the top bar, the hero, fields, counts and points chips
+        tray: #ebe3fb, the pressed-in column trays
+        sky: #cfe6ff, Engineering cards
+        peach: #ffdcc9, Design cards
+        mint: #c9f2df, Done cards
+        lemon: #fff1b8, the At risk pill with #6e4a00 text
+        ink: #2b2340, text
+        muted: #5e5675, field labels and the eyebrow
+        grape: #6a3fd1, the primary button gradient and focus
+        cherry: #b4233c, the Overdue pill text on #ffd9de and the dashed overdue ring
+        forest: #1e6b45, the Done pill text on white
+    type:
+        ui-rounded, SF Pro Rounded, Nunito, Varela Round, Quicksand, Arial
+        Rounded MT Bold, system-ui, sans-serif. The title is 40px weight
+        900 with tight tracking, column titles 19px weight 900, card titles
+        17px weight 800, body 15px weight 500, meta 13px weight 700, label
+        chips 12px weight 800 uppercase and pills 14px weight 800.
+    layout:
+        A floating pill top bar with a glossy grape B ball, Brightwork, and
+        Mara Okafor with a peach clay avatar ball. Then a big clay hero
+        panel with a small Task board eyebrow, the title Mobile app 2.0 and
+        the At risk pill, and the grape Add task button on the right. A row
+        of pressed-in pill fields for Assignee, Label, Due and Search tasks.
+        Four pressed-in trays each start with a round count bubble and the
+        column name, then puffy candy cards coloured by label. Each card has
+        a label chip and a points chip on top, the title, the due date with
+        a calendar and an avatar ball with the name. Below 1080px two
+        columns, below 640px one, with the hero stacking and the button full
+        width.
+    spacing: An 8px unit. 20px between cards, 28px between trays, 18px card padding, 24 to 40px between sections.
+    density: Low. Big soft shapes with lots of air.
+    corners: 36px trays, 32px panels, 28px cards, and fully round buttons, fields, chips, counts and avatars.
+    borders: None on clay. Fields get a 1.5px #c9bdea ring so they read as wells.
+    shadows:
+        Raised clay has an outer shadow of 10px 12px 24px in grape at 18
+        percent, a dark inner shadow bottom right at 8 percent and a white
+        inner highlight top left. Trays and fields are pressed in, with only
+        the inner shadows, reversed. The primary button has a deeper grape
+        glow.
+    icons:
+        Chunky filled rounded glyphs at text size. Overdue is a filled
+        triangle with the word Overdue in a cherry pill, and the card gets a
+        3px dashed cherry ring. Done is a filled circle tick with the word
+        Done. No due date is a circle with a dash. Avatars are glossy clay
+        balls with initials.
+    focus: A 4px grape outline at 55 percent offset 4px. A focused field gets a 3px grape ring and a soft 4px halo outside it.
+    tone: Warm and plain sentence case, such as Find a task, Add task, 5 pt.

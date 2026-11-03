@@ -1,0 +1,58 @@
+export anchor FarmersMarketStyle:
+    number: 84
+    screen: ProjectsDashboard
+    name: Farmers market
+    idea: A Saturday market stall where projects sit in wooden crates filled with produce to their progress, the week's numbers hang as price tags on twine, and every sign looks hand painted.
+    base: light
+    palette:
+        canvas: #f5eedf, the page
+        pine: #ecd3a2, the header board, crates and section signs
+        pineShade: #c9a46a, slat lines and last week bars, never text
+        kraft: #e2c99a, nav slats and slip edges
+        tagCard: #fffaf0, price tags, activity slips, crate feet and fields
+        ink: #2a1f14, text and outlines
+        soil: #5a4632, crate frames and small notes
+        twine: #9b7b4f, strings and tag cords, never text
+        leaf: #2f5d2a, the brand, the current nav slat, On track, this week bars and focus
+        carrot: #9a4a08, At risk and Marketing produce
+        tomato: #a3261b, the New project button, overdue and Behind
+        plum: #5b2a5e, Research produce
+    type:
+        Three stacks. Signs use Cooper Black, Bookman Old Style, Rockwell
+        Extra Bold, Georgia, serif at 400 for the 46px greeting, 52px price
+        tag numbers, 34px brand, 24px section signs, 26px crate percentages
+        and 20px crate names in caps. Handwriting uses Segoe Print, Bradley
+        Hand, Chalkboard SE, Comic Sans MS, cursive at 15 to 20px for dates,
+        tag captions, due dates and times. Body uses Trebuchet MS, Gill
+        Sans, Segoe UI, sans-serif at 16px with 1.5 line height, and status
+        words at 14px bold.
+    layout:
+        A striped green and cream awning with a scalloped edge runs across
+        the top. Under it a pine header board with plank lines holds a
+        tomato brand mark, the brand, a tag shaped search field, the New
+        project button, a round bell and the user. A dark rail carries the
+        nav as small kraft slats hung on two twine strings each. The
+        greeting is a big painted line with the date in handwriting, and a
+        red tag tilted 2 degrees on the right says 4 tasks are overdue. The
+        four numbers are price tags with a pointed left end and a punched
+        hole, hung from a sagging twine line and alternately tilted. Below,
+        a wide column titled On the stall holds six crates in a three
+        column grid. Each crate has a painted end board with the name and
+        team, a slatted strip filled from the left with produce dots in the
+        team colour to the percentage, and a cream foot with percentage,
+        due date, task count and status. The side column has a stall board
+        of slightly tilted paper slips for activity and a framed bar chart
+        whose bars are drawn as stacked crate slats. Below 960px the side
+        column moves under the crates and tags go two by two.
+    spacing: An 8px unit. 24px between crates and tags, 40px between the two columns, 56px below the stall.
+    density: Medium and chunky. Six big crates, four big tags and short slips.
+    corners: 4 to 6px on boards and crates. Tags have a pointed end. Status chips are pills.
+    borders: 2 to 3px soil or ink outlines on everything, slat lines inside wood, and a dashed ink edge where the produce stops.
+    shadows: A flat 3px ink drop under buttons and tags, as if propped up. No blur.
+    icons:
+        Chunky filled shapes with ink outlines and a tomato brand mark.
+        Status pills pair the word with a filled circle for On track, a
+        filled triangle for At risk and a filled square for Behind.
+        Overdue adds an exclamation octagon.
+    focus: A 3px leaf outline offset 3px, then a canvas gap and a 2px ink ring out to 9px. A focused field turns its border leaf green.
+    tone: A friendly stallholder, such as On the stall, Picked each day, ready to pick and pick these first.

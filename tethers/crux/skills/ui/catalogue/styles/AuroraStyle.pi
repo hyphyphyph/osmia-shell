@@ -1,0 +1,50 @@
+export anchor AuroraStyle:
+    number: 269
+    screen: CloudFiles
+    name: Aurora
+    idea: Green and violet northern lights ribbon across a deep night sky header, and the files sit below in calm dark panels lit by one thin aurora edge.
+    base: dark
+    palette:
+        sky: #080d1c, page and the foot of the header sky
+        panel: #0f1730, file and details panels
+        row: #131d3a, folder cards
+        selected: #18244a, the selected file row
+        ink: #eef2ff, text
+        muted: #a9b4d0, meta, labels and inactive tabs
+        line: #24305a, panel borders and dividers
+        auroraGreen: #62e8a6, primary button, current tab edge, Starred, folder icons, selected edge and focus
+        auroraViolet: #b9a2ff, file icons, Shared, the view switch edge and the ribbon blend
+        greenInk: #04281a, text on green
+    type:
+        One stack, Avenir Next, Segoe UI Variable Display, Segoe UI,
+        system-ui. Base 15px. The title is 46px at 600, the details title
+        19px at 600, file names 15px at 500, meta 14px muted, chips 12.5px
+        at 600 and labels 12px caps tracked 0.06em.
+    layout:
+        A full width sky header fades from near black to deep navy, with
+        small stars and three blurred green and violet ribbon strokes kept
+        to the right of the title. It holds the aurora B mark with
+        Brightwork Drive, a dark pill Search files field and an MO disc,
+        then the five places as pill tabs with My files ringed in green,
+        then the breadcrumb and title on the left and a dark storage card
+        with 64.2 GB of 100 GB used and a green to violet bar on the right.
+        Below, a wide panel and a 340px details panel, each with a 2px
+        gradient line on its top edge. The wide panel has Upload, New
+        folder and a List or Grid switch, two folder cards side by side,
+        then column heads and six file rows with status chips. The
+        selected row is lighter with a green left edge. Details shows a
+        preview, the name, a Starred chip, facts and the three buttons.
+        Below 1100px details stack under files. Below 760px the tabs scroll
+        sideways and the ribbons shrink to the top band.
+    spacing: An 8px unit. 32px page gutters, 24px between panels, 16 to 18px panel padding.
+    density: Medium. A tall sky header, two folder cards, then six file rows.
+    corners: 16px panels, 12px cards and preview, 10px buttons and chips, pill tabs and search.
+    borders: 1px #24305a panel borders with a 2px green to violet gradient line across each panel top.
+    shadows: None on panels. The ribbons are blurred strokes at 45 to 62 percent opacity kept away from text.
+    icons:
+        18px line icons in violet, green for folders. Status chips pair a
+        filled star with Starred in green, two heads with Shared with 4
+        people in violet and an up arrow ring with Uploading 62% over a
+        gradient bar.
+    focus: A 2px green outline with a 3px offset and a soft green halo.
+    tone: Calm and plain, such as Details and 64.2 GB of 100 GB used.

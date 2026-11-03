@@ -1,0 +1,56 @@
+export anchor TelegraphOfficeStyle:
+    number: 399
+    screen: EmailClient
+    name: Telegraph office
+    idea: Mail as a sepia telegraph counter, with folders as brass plaques carrying morse marks, the inbox as a numbered received book, and the open message typed onto a telegram form.
+    base: dark
+    palette:
+        umber: #1c150f, the page and fields
+        counter: #261d15, the header sign, the ledger and the style sheet
+        form: #2f241a, the telegram and the open ledger entry
+        groove: #47372a, ruled lines and borders
+        cream: #f0e3c9, text
+        sepia: #c3ae8c, subjects, box labels and meta
+        brass: #d6aa5c, plaques, morse lines, the primary key and the open entry bar
+        brassHigh: #f0cd88, the lit plaque top, focus and Starred
+        brassLow: #8a6a33, the telegram frame and key edges
+        onBrass: #241703, text on brass
+        oxblood: #e48a76, the New mark with its filled dot
+        wire: #9fc4b8, the Encl. mark
+    type:
+        A slab stack, Rockwell, Rockwell Nova, Roboto Slab, DejaVu Serif,
+        Georgia, at a 15px base for names and headings. The sign is 26px
+        caps tracked wide, the telegram subject 24px at 700, senders 16px,
+        bold when unread. A typewriter stack, American Typewriter, Courier
+        Prime, Courier New, sets subjects, times, marks and the telegram
+        body at 17px with 1.8 leading on faint ruled lines.
+    layout:
+        A sign across the top holds a small drawn brass telegraph key on a
+        wooden base, Brightwork Mail in wide caps over Telegraph office,
+        Mara Okafor, and a boxed field reading Search the book, all above a
+        double rule. Three columns follow. The left, Pigeon rack, stacks
+        the folders as small brass toned plaques, each with the name, the
+        count for Inbox 12 and Drafts 2, and a line of decorative morse
+        marks under it. Inbox is lit in bright brass. Labels follow in the
+        same plaques. The middle, Received book, Inbox, is a framed ledger
+        with three ruled columns, the entry number, the time and a cell with
+        the sender, the subject with its quoted snippet in typewriter, and
+        boxed marks. Entry 1 is shaded with a brass bar. The right column
+        is a telegram form in a brass frame with an offset outline, a band
+        reading TELEGRAM with No. 1, received, Clients, three boxes for
+        From, To and Time sent, the subject in slab, the body typed with a
+        small STOP after each sentence, a line of decorative morse, and
+        pill shaped brass keys with a hard shadow, Reply lit. Below 1100px
+        the telegram moves under the book. On a phone the book comes first,
+        then the telegram, then the plaques two by two.
+    spacing: An 8px unit. 24px between the columns, 10px ledger cells, 18px telegram padding.
+    density: Medium. A ruled six entry book beside a full telegram.
+    corners: Nearly square at 2 to 3px. Only the brass keys are pill shaped.
+    borders: 2px groove frames, 1px ruled cells, a 4px double rule under the sign, a brass frame with an offset outline on the telegram.
+    shadows: A hard 3px dark drop under each key so it looks pressable, and gradients on brass.
+    icons:
+        A drawn brass key in the sign. Marks are typographic in thin boxes,
+        a filled dot plus New, a star plus Starred, a plus sign plus Encl.,
+        and a dotted box for labels. Morse lines are decoration only.
+    focus: A 2px bright brass outline offset 3px plus a soft brass halo.
+    tone: Period office words, such as Received book, Pigeon rack, Time sent and STOP.

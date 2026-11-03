@@ -1,0 +1,49 @@
+export anchor DarkSwissStyle:
+    number: 250
+    screen: DesignEditor
+    name: Dark Swiss
+    idea: A strict twelve column grid on black set in one grotesque, with flush left numbered lists, heavy top rules and a single signal red that marks only what is active.
+    base: dark
+    palette:
+        black: #0a0a0a, the page and panels
+        column: #161616, the canvas stage
+        ink: #f5f5f5, text and heavy rules
+        grey: #a6a6a6, labels and list numbers
+        rule: #3d3d3d, hairlines between rows
+        signalRed: #ff3d2e, the active tool, the selected layer, frame selection, Share under black text and focus
+    type:
+        One stack, Helvetica Neue, Helvetica, Arial, Liberation Sans. Body
+        14px at 1.4. The file title is 64px 700 at 0.92 line height and
+        minus 0.035em tracking, status figures 36px 700, names and tools
+        15px 700, labels 11px 700 tracked 0.04em in grey, and the sheet
+        title 44px.
+    layout:
+        Everything sits on a twelve column grid with 24px gutters and 32px
+        margins. The masthead under a 1px ink rule has a small path label
+        over a huge Home v3 with a grey dash Hero across seven columns, and
+        the initials with full names, Present and a red Share across five.
+        The tool row lists 01 Move to 06 Hand as numbered words, Move red
+        with a 3px red underline, and Zoom 66% set large at the right. The
+        work row gives the layers three columns, the canvas six and the
+        inspector three, each headed by a 3px ink rule and a small grey
+        label. Layers are a numbered index with names over type words,
+        children indented by a hairline, Hero red with a red square and
+        Selected. The canvas stage shows faint red column guides behind the
+        white frame with small square red handles. The inspector is a
+        typographic table grouped under Frame, Auto layout and Export.
+        Status runs as three grid thirds, each a small label and a large
+        figure, Saved 2 minutes ago, 3 people editing and Version 41.
+        Below 1100px the inspector moves under the canvas. Below 760px a
+        four column grid, the canvas alone and a three by two grid of
+        numbered tools.
+    spacing: An 8px unit. 24px gutters, 32px margins, 8px list row padding.
+    density: Medium. Layers three columns, canvas six and inspector three.
+    corners: Square everywhere. Avatars are initials only.
+    borders: A 3px ink rule over each section, 1px ink under the masthead and table groups, 1px #3d3d3d hairlines between rows.
+    shadows: None. The canvas shows faint red column guides instead.
+    icons:
+        16px line icons at 2px stroke with butt caps, used sparingly at row
+        ends. Saved uses a check circle in red, editing two people and the
+        version a tag, each beside its label.
+    focus: A 2px red outline offset 2px, and a 3px red underline on fields.
+    tone: Numbered and factual, such as 01 Move and Inspector, Hero.

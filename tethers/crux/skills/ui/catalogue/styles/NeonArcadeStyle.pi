@@ -1,0 +1,55 @@
+export anchor NeonArcadeStyle:
+    number: 352
+    screen: TeamChat
+    name: Neon arcade
+    idea: The chat as an arcade cabinet, with a glowing marquee, a black bezelled screen where channels are stages and people are players with pixel faces, and a control panel of big round coloured buttons for attach, emoji and send.
+    base: dark
+    palette:
+        void: #07040d, the room behind the cabinet and the style sheet
+        cabinet: #140b24, cabinet sides and sheet cards
+        screen: #05030a, the game screen ground
+        trim: #3a1f5c, dashed dividers and card rims
+        ink: #f5f0ff, message text
+        muted: #b9a8d9, labels and offline
+        magenta: #ff4fd8, the marquee tube, the channel title, Send and the mention badge
+        cyan: #3ff5ff, section heads, Attach and the thread token
+        yellow: #ffe94f, scores, times, the current stage and focus
+        lime: #9dff57, the NEW badge, ready and typing
+        orange: #ff9a3c, the fourth player colour
+    type:
+        Labels in a monospace, Press Start 2P, ui-monospace, DejaVu Sans
+        Mono, Menlo, Consolas, bold. Message text in system-ui, Segoe UI,
+        Roboto, Arial at 16px. Marquee 30px at 900 with a two layer
+        glow, names 13px at 800 in each player's colour, times 12px
+        yellow, section heads 12px capitals tracked 0.16em in cyan.
+    layout:
+        A 1120px cabinet. The marquee is a purple box with a 3px magenta
+        neon rim and glow, BRIGHTWORK CHAT in glowing pale tube letters
+        with WORK in cyan, and a yellow coin slot with Player Mara Okafor
+        and Insert coin. The cabinet body frames a black bezel with 26px
+        corners around the screen. The screen splits into a 300px side and
+        the feed, divided by a dashed trim line. Select stage lists
+        channels, the current one in a yellow box with a triangle,
+        mobile-release with a lime 4 NEW badge and billing-war-room with a
+        magenta @1 YOU badge. Players lists people with an 8 by 8 pixel
+        face and a state line, triangle READY online in lime, bars PAUSE
+        away in yellow and a cross OUT offline in muted. A HUD row shows
+        the channel title in magenta and Stage 2, Msgs 5 and Threads 1 as
+        yellow scores. Messages have a 40px pixel face, the name in the
+        player colour and a yellow time, then the text. Mara is labelled
+        1P. Aiko's message adds tokens with a pixel thumb x3, pixel eyes x1
+        and a cyan 3 replies, continue token. The image is a pixel preview
+        in a glowing cyan frame with IMG and the filename. Typing is a lime
+        caps line. Below the screen a control panel with a cyan top edge
+        holds a drawn joystick, the Enter message field and three round
+        arcade buttons, cyan Attach, yellow Emoji and magenta Send, each
+        glowing with its word below. Below 860px the screen stacks, the
+        joystick hides and the buttons spread across.
+    spacing: An 8px unit. 22px cabinet padding, 14px bezel, 12px between messages.
+    density: Medium. A full feed on one screen and big targets on the panel.
+    corners: 18px marquee top, 26px bezel, 16px screen, 4px tokens and badges, round arcade buttons.
+    borders: A 3px neon marquee rim, 2px dashed trim dividers on the screen and 2px token rims.
+    shadows: Coloured glows of 8px to 18px on neon text, buttons and the current stage, and inset shading under the buttons.
+    icons: 8 by 8 pixel art, faces, a thumb and eyes. States use a triangle, bars or a cross beside the word.
+    focus: A 3px yellow outline offset 3px with a yellow glow.
+    tone: Coin op playful, such as Select stage, Players, 4 NEW, @1 YOU, 1P and continue.

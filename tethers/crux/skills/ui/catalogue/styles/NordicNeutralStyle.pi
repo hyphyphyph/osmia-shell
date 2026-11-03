@@ -1,0 +1,52 @@
+export anchor NordicNeutralStyle:
+    number: 193
+    screen: ProjectsDashboard
+    name: Nordic neutral
+    idea: An airy, Scandinavian workspace of warm stone greys and hairlines, light large numerals and wide margins, with one forest green accent and a quiet due-date timeline that lets the week breathe.
+    base: light
+    palette:
+        stone: #f5f4f1, the page, a warm pale grey
+        snow: #fcfcfa, the sidebar, fields and the style sheet
+        granite: #262624, headings, figures and body text
+        slate: #5d5b56, labels, meta, axis text and last week's rings
+        lichen: #d8d5ce, every 1px hairline, timeline tracks and the empty progress line, never text
+        forest: #2d5a44, the one accent, the primary button, current nav, progress, due markers, this week's dots and stems, links, On track and focus
+        moss: #e6ede8, the focused field fill
+        umber: #7b5400, At risk with a line triangle and bar
+        rust: #9a3223, Behind and overdue, with a line square and cross
+    type:
+        One stack, Avenir Next, Helvetica Neue, Segoe UI, system-ui,
+        Cantarell, sans-serif. The greeting is 44px light, KPI figures
+        48px light tabular, section titles 13px medium caps tracked
+        0.14em, project names 16px medium, body 15px at 1.65, and meta
+        13px.
+    layout:
+        A pale snow sidebar 220px wide, edged by one hairline, holds a
+        forest dot with the brand, six text nav links with Home marked by
+        a 2px forest left line, and Mara Okafor at the bottom over a
+        hairline. The main column, with 48px side margins, opens with a
+        slim row of the date at left and at right a hairline search box,
+        a square bell and a forest New project button, closed by a
+        hairline. A light 44px Hello Mara follows, then the overdue line
+        with a square symbol and a link. Four light figures sit in a row
+        between hairlines, split by vertical hairlines, the overdue figure
+        in rust with a square symbol. Projects form a hairline list of four
+        columns, name with team, percent beside a 2px progress line over
+        tasks, a due-date timeline track from 31 Oct to 15 Jan with month
+        ticks and a forest dot at the due date over the date and days left,
+        and the status word. An axis of dates sits above the timeline
+        column. The last band splits 3 to 2, a lollipop chart pairing
+        last week's hollow slate ring and this week's forest dot on thin
+        stems per weekday with three light totals below, beside an activity
+        list with times in a left column. Below 1100px the last band
+        stacks. Below 820px the sidebar becomes a top strip with wrapped
+        nav, figures form a 2 by 2 grid, project rows stack with status at
+        top right, and the chart scrolls inside its section.
+    spacing: An 8px unit, airy. 56px between sections, 20px project row padding, 48px side margins.
+    density: Low to medium. One line per project with plenty of air.
+    corners: 4px on buttons, fields and the bell, square everywhere else.
+    borders: 1px lichen hairlines between rows, sections, figures and along the sidebar. No boxes.
+    shadows: None.
+    icons: Sparse 1.25px line icons at 18px for search, bell and plus only. Status uses thin line shapes, a circle with a check, a triangle with a bar and a square with a cross.
+    focus: A 2px forest outline offset 3px. A focused field also takes a moss fill.
+    tone: Calm and understated in short sentences, such as Hello Mara and 4 tasks are overdue.

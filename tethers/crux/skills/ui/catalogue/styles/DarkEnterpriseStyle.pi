@@ -1,0 +1,65 @@
+export anchor DarkEnterpriseStyle:
+    number: 237
+    screen: ProjectsDashboard
+    name: Dark enterprise
+    idea:
+        A formal dark suite shell with an app switcher bar, a tree navigation
+        that opens Projects into its six projects, breadcrumbs and a command
+        bar, square live tiles and a dense sortable data grid, all square and
+        quietly blue.
+    base: dark
+    palette:
+        base: #101317, the page behind the content and the style sheet
+        shell: #181c21, the suite bar, the tree pane and the command bar
+        panel: #1d2228, tiles, the grid and panels
+        header: #242a31, grid header rows, panel title bars, the search box and the current tree item
+        line: #343c45, every border, grid rule and tree guide
+        ink: #e6e9ed, text and figures
+        muted: #a2acb8, labels, meta, column headers and axis text
+        blue: #5aa6f7, links, the current tree edge, this week columns, meters and focus
+        action: #2a68b5, the primary button fill behind white text
+        slate: #6f7c8b, last week columns
+        ok: #6fd08c, On track text and check circle
+        risk: #f0c24e, At risk text and triangle
+        bad: #ff8f85, Behind and overdue text, crossed square and clock
+    type:
+        One system UI stack, Segoe UI, system-ui, Roboto, Helvetica Neue,
+        Arial, sans-serif. Base 13px at 1.4. The page title greeting is 24px
+        at 600, tile figures 40px at 300 light with tabular numbers, panel
+        title bars 14px at 600, grid cells and tree items 13px, breadcrumbs
+        and meta 12px, and column headers 11px caps at 600 tracked 0.06em.
+    layout:
+        A full shell. A 44px suite bar holds a square app grid button, the
+        Brightwork name, an app switcher of Tracker, Canvas, Drive, Code and
+        Ops with Tracker underlined, a centred square search box, a bell and
+        Mara Okafor with a square initials tile. Under it a 248px tree pane
+        lists Home as current with a blue left edge, Projects open with tree
+        guides to its six projects, each with a small status shape, then
+        Tasks, Team, Reports and Settings. The content area starts with a
+        command bar holding a blue New project button, Export, Refresh and a
+        view label, then breadcrumbs Brightwork, Home, Overview. The greeting
+        is the page title with the date beside it, then a message bar with a
+        4px coral left edge reading 4 tasks are overdue with a clock and a
+        Review link. Four square tiles sit in a row, each a caps label, a 40px
+        light figure and an icon, overdue with a coral edge. The projects are
+        a dense data grid with a title bar, column headers with sort marks,
+        and columns for project, department, status, progress, tasks and due.
+        Last, two panels with grey title bars side by side, a column chart of
+        all fourteen days in sequence with a dashed divider between the weeks,
+        slate last week and blue this week, and an activity grid with time,
+        person and event columns. Below 960px the tree pane collapses to a row
+        of nav buttons, tiles go two by two and the grid scrolls inside its
+        panel.
+    spacing: A 4px unit. 12px panel padding, 8px by 12px grid cells, 16px between blocks.
+    density: Dense. Many rows and small type, everything visible at once on a laptop.
+    corners: Square everywhere, 0px on tiles, panels, buttons and fields.
+    borders:
+        1px line around every pane, panel and grid row. A 3px blue edge marks
+        the current tree item and a 4px coral edge marks the message bar.
+    shadows: None. Depth comes from four flat greys stepping from base to header.
+    icons:
+        Fine line icons at 1.5px stroke, 16px. Status uses a check circle, a
+        triangle with a bang and a crossed square, always with the word,
+        overdue a clock.
+    focus: A 2px blue outline inset by 1px inside grid rows and offset 2px elsewhere.
+    tone: Formal and exact, such as Overview, Projects, 6 items and Activity, last 24 hours.

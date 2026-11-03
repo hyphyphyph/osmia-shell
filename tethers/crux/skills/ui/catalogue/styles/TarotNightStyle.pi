@@ -1,0 +1,54 @@
+export anchor TarotNightStyle:
+    number: 282
+    screen: CloudFiles
+    name: Tarot night
+    idea: A tarot spread laid out on a starry indigo cloth, three framed cards with fine gold line art, corner stars and crescent moons, the selected file drawn as its own card.
+    base: dark
+    palette:
+        night: #0e0b1e, the page cloth, fields and the preview ground
+        card: #18132e, the three cards and the style sheet
+        cardTwo: #211a3d, the current nav and the pressed switch
+        selected: #2b2252, the selected row inside a gold line
+        gold: #e0c171, line art, corner stars, headings, the primary button with dark text #1a1430, medallions and Starred
+        goldLine: #8e7a48, frames and dotted rules, never text
+        ink: #f1eadb, text
+        muted: #bfb7d2, meta, labels and italics
+        moon: #a9c8ff, Shared and focus
+        rose: #f3a9c6, Uploading and its moon phase dots
+    type:
+        One book serif, Baskerville, Libre Baskerville, Garamond, Times New
+        Roman. The folder title is 44px small caps tracked 0.1em, card
+        headings 18px gold small caps tracked 0.18em between dashes, file
+        names 17px, body 16px. Meta, kinds and statuses are italic, 13 to
+        14px.
+    layout:
+        A deep indigo cloth with a scattered star field. A centred header
+        has a gold crescent moon with a small star, Brightwork Drive in
+        gold small caps, the title Website redesign and an italic
+        breadcrumb with star separators. Below lies a spread of three
+        cards. Each card has a 14px radius, a dull gold outer line, an
+        inner frame 7px in and a small four point gold star at each
+        corner. The left card, Drive, lists the five links with My files
+        ringed in gold, then a gold storage ring with a moon inside and
+        64.2 GB of 100 GB used. The middle card, The files, has a pill
+        search, Upload, New folder and a pill List or Grid switch, then
+        eight rows split by dotted gold rules. Each row has a round gold
+        medallion with the type icon, the name over an italic kind, the
+        size, and date and person with italic statuses. The selected row is
+        a violet band in a gold line. Uploading adds five moon phase dots
+        with three filled. The right card, Details, shows the preview
+        inside a sun and moon line drawing, the name on a ruled banner,
+        Starred, facts on dotted rules and full width Share, Download and
+        Get link. Below 1100px Details moves under the others. Below 740px
+        the cards stack.
+    spacing: An 8px unit. 28px between cards, 26px card padding, 12px rows.
+    density: Relaxed. Three cards with generous margins.
+    corners: 14px cards with a 9px inner frame, pills for controls, round medallions.
+    borders: 1px dull gold outer and inner frames, dotted gold rules between rows.
+    shadows: A soft long drop under each card, nothing else.
+    icons:
+        1.3px fine line icons in gold medallions. Status is an italic word
+        with a star for Starred, two heads for Shared, an up arrow for
+        Uploading and a checked box for Selected.
+    focus: A 2px pale moon blue outline offset 3px with a faint halo.
+    tone: Hushed and a little mystical in headings, such as The files and Drive, and plain in data.

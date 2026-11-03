@@ -1,0 +1,56 @@
+export anchor MeritBadgesStyle:
+    number: 131
+    screen: ProjectsDashboard
+    name: Merit badges
+    idea: The dashboard as an earned badge sash, with the four numbers sewn on a khaki sash, each project a round embroidered badge whose stitched ring fills with progress, and woven name tapes for navigation.
+    base: light
+    palette:
+        canvas: #f4eedf, the page, with a fine weave
+        felt: #fffaf0, panels, badge discs and fields
+        khaki: #c9b88a, the sash, edged #8c7a4b
+        threadBrown: #3b3020, text and 2px outlines
+        fadedBrown: #5e5139, meta and times
+        nameTape: #fbf7ec, nav tabs, banners and labels
+        scarlet: #b23a2e, the primary button, the tape stitch and overdue
+        navy: #24406b, the current tab, this week bars and focus
+        forest: #2f6b3a, last week bars and the On track round patch
+        goldThread: #d7a531, inner badge rings and avatars, never text
+        atRisk: #8a5200, the triangle patch
+        behind: #a8322a, the square patch
+    type:
+        Headings and labels use Arial Rounded MT Bold, Nunito, Varela Round,
+        Helvetica Rounded, Trebuchet MS, sans-serif. Text uses Trebuchet MS,
+        Lucida Grande, Verdana, sans-serif. The greeting is 38px 700 at 1.1,
+        sash numbers 34px 700, section titles 22px 700, banners 15px 700,
+        body 15px at 1.5, meta 13px.
+    layout:
+        A 240px khaki sash runs down the left with darker edges and a dashed
+        stitch line inside. It carries a gold star burst logo with the brand,
+        a woven name tape reading MARA OKAFOR with a red stitch, and four
+        round felt badges with thick coloured borders and a gold inner ring
+        for the numbers, each with a tape label below. The right side starts
+        with woven name tape tabs for the nav, Home in navy with a white
+        stitch, then a pill search, a scarlet pill New project button with an
+        inner white stitch, a round bell and a gold avatar with the name. A
+        felt panel with a dashed stitch inside holds the greeting with an
+        exclamation mark, the date and a pink patch saying 4 tasks are
+        overdue. Badges in progress shows six round badges three across, each
+        a coloured edge with a white running stitch, a pale face, a thick
+        ring in the thread colour filled to the percent, a line icon and the
+        percent, a notched banner with the name, a meta line with team, tasks
+        and due date, and the status patch. Below sit two felt panels,
+        Stitch count with bars filled with cross stitch, green then navy,
+        and Troop log with gold initials badges. Below 1100px badges go two
+        across, below 820px the sash becomes a band under the header with
+        badges two by two.
+    spacing: An 8px unit. 18px between sash badges and 24px between project badges and panels.
+    density: Roomy and proud. Big round badges three across with plenty of canvas between.
+    corners: Round badges and pill controls, 14px felt panels and 4 to 6px tapes.
+    borders: A 2px brown outline plus a dashed stitch line 5 or 6px inside every panel, tape and badge.
+    shadows: A small drop under sewn badges and the sash so they sit on the fabric.
+    icons:
+        Chunky 3px line pictures inside badges. Status patches at 20px carry
+        a stitch edge and the word, a round patch with a tick for On track,
+        a triangle with a bar for At risk and a square with a bar for Behind.
+    focus: A 3px dashed navy outline offset 3px.
+    tone: Warm and encouraging like a troop leader, such as Good afternoon, Mara!, Badges in progress and Troop log.
