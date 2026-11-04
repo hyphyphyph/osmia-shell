@@ -14,6 +14,7 @@ enum Page {
     Bar,
     Notifications,
     Launcher,
+    DefaultApps,
     Capture,
     Power,
     Shortcuts,
@@ -21,11 +22,12 @@ enum Page {
     About,
 }
 
-const PAGES: [(Page, &str); 9] = [
+const PAGES: [(Page, &str); 10] = [
     (Page::Appearance, "Appearance"),
     (Page::Bar, "Bar"),
     (Page::Notifications, "Notifications"),
     (Page::Launcher, "Launcher"),
+    (Page::DefaultApps, "Default applications"),
     (Page::Capture, "Screenshots and video"),
     (Page::Power, "Power and screen"),
     (Page::Shortcuts, "Keyboard shortcuts"),
@@ -64,6 +66,7 @@ pub struct Env<'a> {
     pub binds_error: Option<&'a str>,
     /// The key the shortcut recorder heard. Empty means it was cancelled.
     pub captured: Option<&'a str>,
+    pub defaults: &'a crate::defaults::DefaultApps,
 }
 
 pub fn window(ui: &mut Ui, cfg: &Config, env: &Env, actions: &mut Vec<Action>) {
@@ -117,6 +120,7 @@ pub fn window(ui: &mut Ui, cfg: &Config, env: &Env, actions: &mut Vec<Action>) {
             Page::Bar => bar(ui, cfg, actions),
             Page::Notifications => notifications(ui, cfg, actions),
             Page::Launcher => launcher(ui, cfg, actions),
+            Page::DefaultApps => default_apps(ui, cfg, env, actions),
             Page::Capture => capture(ui, cfg, actions),
             Page::Power => power(ui, env, actions),
             Page::Shortcuts => shortcuts(ui, env, actions),
@@ -255,6 +259,32 @@ fn launcher(ui: &mut Ui, cfg: &Config, actions: &mut Vec<Action>) {
             -1 if v > 4 => actions.push(set("launcher.max_rows", ConfValue::Int(v - 1))),
             1 if v < 14 => actions.push(set("launcher.max_rows", ConfValue::Int(v + 1))),
             _ => {}
+        }
+    });
+}
+
+fn default_apps(ui: &mut Ui, cfg: &Config, env: &Env, actions: &mut Vec<Action>) {
+    for (i, cat) in crate::defaults::CATEGORIES.iter().enumerate() {
+        let Some(r) = env.defaults.rows.get(i) else { continue };
+        row(ui, cat.label, cat.help, |ui| {
+            let label = r.current.as_ref().map(|c| c.name.clone()).unwrap_or_else(|| "Not set".to_owned());
+            egui::ComboBox::from_id_salt(("default-app", i)).selected_text(crate::ui::popups::clip(&label, 28)).width(220.0).height(320.0).show_ui(ui, |ui| {
+                ui.spacing_mut().item_spacing.y = 2.0;
+                if r.apps.is_empty() {
+                    ui.label("No installed app says it opens these.");
+                }
+                for a in &r.apps {
+                    let on = r.current.as_ref().is_some_and(|c| c.id == a.id);
+                    if ui.selectable_label(on, &a.name).clicked() && !on {
+                        actions.push(Action::SetDefaultApp(i, a.id.clone()));
+                    }
+                }
+            });
+        });
+    }
+    row(ui, "Terminal", "Apps that need a terminal run in this one. Leave it empty to use the TERMINAL variable.", |ui| {
+        if let Some(v) = text_input(ui, "terminal", &cfg.launcher.terminal, 160.0) {
+            actions.push(set("launcher.terminal", s(&v)));
         }
     });
 }

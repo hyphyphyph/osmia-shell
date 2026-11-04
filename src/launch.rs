@@ -146,7 +146,7 @@ impl Data {
     }
 }
 
-fn data_dirs() -> Vec<PathBuf> {
+pub(crate) fn data_dirs() -> Vec<PathBuf> {
     let mut v = Vec::new();
     if let Some(h) = std::env::var_os("XDG_DATA_HOME") {
         v.push(PathBuf::from(h).join("applications"));

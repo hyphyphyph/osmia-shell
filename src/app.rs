@@ -108,6 +108,7 @@ pub struct Shared {
     pub procs: sys::ProcList,
     pub proc_sampler: sys::ProcSampler,
     pub limits: crate::limits::Limits,
+    pub default_apps: crate::defaults::DefaultApps,
 }
 
 pub struct App {
@@ -234,6 +235,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
             procs: Default::default(),
             proc_sampler: Default::default(),
             limits: crate::limits::Limits::load(),
+            default_apps: Default::default(),
             workspaces: Vec::new(),
             binds: Vec::new(),
             binds_error: None,
@@ -808,6 +810,7 @@ impl App {
 
     fn open_settings(&mut self, qh: &QueueHandle<App>) {
         self.load_binds();
+        self.shared.default_apps = crate::defaults::load();
         if self.wins.iter().any(|w| w.kind == Kind::Settings) {
             self.mark_kind(Kind::Settings);
             return;
@@ -1435,6 +1438,7 @@ impl App {
                     binds: &shared.binds,
                     binds_error: shared.binds_error.as_deref(),
                     captured: shared.captured_key.as_deref(),
+                    defaults: &shared.default_apps,
                 };
                 ui::settings::window(ui, &shared.cfg, &env, &mut actions);
             }
@@ -1722,6 +1726,14 @@ impl App {
             Action::OpenSettings => {
                 self.close_overlay();
                 self.open_settings(qh);
+            }
+            Action::SetDefaultApp(cat, id) => {
+                crate::defaults::set(cat, &id);
+                // Show the choice at once. The next time settings opens it is read again.
+                if let Some(row) = self.shared.default_apps.rows.get_mut(cat) {
+                    row.current = row.apps.iter().find(|a| a.id == id).cloned();
+                }
+                self.mark_kind(Kind::Settings);
             }
             Action::OpenConfigFile => {
                 config::ensure_file();

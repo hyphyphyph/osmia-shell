@@ -6,6 +6,7 @@ from crux export *
 // The osmia shell specification.
 from ./Bar export *
 from ./Control export *
+from ./DefaultApps export *
 from ./FirstVersion export *
 from ./Launcher export *
 from ./Notifications export *

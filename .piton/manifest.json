@@ -2,6 +2,7 @@
   "generated": [
     ".claude/reference/Bar.md",
     ".claude/reference/Control.md",
+    ".claude/reference/DefaultApps.md",
     ".claude/reference/FirstVersion.md",
     ".claude/reference/Launcher.md",
     ".claude/reference/Notifications.md",

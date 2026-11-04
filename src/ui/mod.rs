@@ -33,6 +33,8 @@ pub enum Action {
     SetConfig(String, ConfValue),
     OpenConfigFile,
     OpenSettings,
+    /// Make this desktop file the default for category N of the Default applications page.
+    SetDefaultApp(usize, String),
     CaptureCancel,
     CaptureOpen,
     /// (player bus name)

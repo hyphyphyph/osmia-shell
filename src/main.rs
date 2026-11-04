@@ -3,6 +3,7 @@ mod capture;
 mod appicon;
 mod config;
 mod control;
+mod defaults;
 mod gfx;
 mod calc;
 mod icons;

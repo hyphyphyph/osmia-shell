@@ -140,6 +140,13 @@ alerts), `wpctl` and `pactl` (volume), `nmcli` (network), `wl-copy` (calculator 
 
 Visual tests run in a headless `labwc` on a private D-Bus. See `spec/` for what each part must do.
 
+## Default applications
+
+Settings has a Default applications page for the web browser, email, file manager, text editor,
+documents, images, video and music, plus the terminal. It reads the standard `mimeapps.list` files and
+sets a choice with `xdg-mime default`, so every program sees it. `osmia settings default` opens it.
+See `spec/DefaultApps.pi`.
+
 ## Process limits
 
 Click CPU or RAM in the bar to see which programs use the most. The gauge button on a row sets a limit
