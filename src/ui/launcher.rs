@@ -45,16 +45,16 @@ pub fn card(ui: &mut Ui, st: &mut State, data: &Data, windows: &[WinInfo], width
                 ui.set_width(width - 12.0);
                 // Search box.
                 let (sb, _) = ui.allocate_exact_size(vec2(ui.available_width(), 40.0), Sense::hover());
-                icons::draw(ui.painter(), Icon::Search, Rect::from_center_size(pos2(sb.min.x + 18.0, sb.center().y), vec2(16.0, 16.0)), theme::DIM);
+                icons::draw(ui.painter(), Icon::Search, Rect::from_center_size(pos2(sb.min.x + 16.0, sb.center().y), vec2(16.0, 16.0)), theme::DIM);
                 let calc_active = crate::calc::answer(st.query.trim()).is_some();
-                let mut x = sb.min.x + 36.0;
+                let mut x = sb.min.x + 34.0;
                 if calc_active {
                     let r = Rect::from_min_size(pos2(x, sb.center().y - 10.0), vec2(74.0, 20.0));
                     ui.painter().rect(r, 4, theme::BTN, egui::Stroke::new(1.0, theme::accent()), egui::StrokeKind::Inside);
                     ui.painter().text(r.center(), Align2::CENTER_CENTER, "Calculator", crate::theme::fid(11.0), theme::accent());
                     x += 82.0;
                 }
-                let edit_rect = Rect::from_min_max(pos2(x, sb.min.y + 4.0), pos2(sb.max.x - 8.0, sb.max.y - 4.0));
+                let edit_rect = Rect::from_min_max(pos2(x, sb.min.y + 7.0), pos2(sb.max.x - 8.0, sb.max.y - 1.0));
                 let mut child = ui.new_child(egui::UiBuilder::new().max_rect(edit_rect).layout(egui::Layout::left_to_right(egui::Align::Center)));
                 let te = egui::TextEdit::singleline(&mut st.query)
                     .frame(egui::Frame::NONE)
