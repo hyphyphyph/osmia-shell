@@ -144,8 +144,7 @@ Visual tests run in a headless `labwc` on a private D-Bus. See `spec/` for what 
 ## Overview
 
 The overview and the launcher are one screen, as in GNOME. Press Super, or rest the pointer in the top left
-corner (the bar must be on top), to see every open window as a card, with the search box above and your most
-used apps below. Click a card to switch to it, or middle-click it (or use the x) to close that window. Start
+corner (the bar must be on top), to see every open window as a card, with the search box above. Click a card to switch to it, or middle-click it (or use the x) to close that window. Start
 typing and the cards give way to search results for apps, windows, actions and sums. The first Escape clears
 the text, the next leaves. Turn the corner off under Launcher in settings (`overview.corner = "off"`).
 `osmia overview toggle` and `osmia launcher toggle` do the same thing. See `spec/Overview.pi`.

@@ -63,7 +63,10 @@ pub fn card(ui: &mut Ui, st: &mut State, data: &Data, windows: &[WinInfo], width
                     .hint_text("Type to search apps, windows, actions");
                 let resp = child.add(te);
                 resp.request_focus();
-                ui.painter().line_segment([sb.left_bottom(), sb.right_bottom()], egui::Stroke::new(1.0, theme::LINE));
+                // The line under the box only separates it from results. Alone, the box has none.
+                if !st.query.is_empty() {
+                    ui.painter().line_segment([sb.left_bottom(), sb.right_bottom()], egui::Stroke::new(1.0, theme::LINE));
+                }
 
                 if st.query != before {
                     st.selected = 0;

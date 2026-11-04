@@ -3,7 +3,7 @@
 
 use egui::{pos2, vec2, Align2, Color32, Key, Rect, Sense, Ui};
 
-use crate::launch::{Data, Kind, WinInfo};
+use crate::launch::{Data, WinInfo};
 use crate::overview::{self, Thumb};
 use crate::theme::{self, fid};
 use crate::ui::{launcher, Action, WinEntry};
@@ -24,8 +24,8 @@ pub struct Ctx<'a> {
     pub max_rows: usize,
 }
 
-/// The overview and the launcher in one: a search box on top, the windows below,
-/// and a row of the most used apps at the bottom. Typing swaps the windows for results.
+/// The overview and the launcher in one: a search box on top and the windows below.
+/// Typing swaps the windows for results.
 pub fn show(ui: &mut Ui, c: Ctx, actions: &mut Vec<Action>) {
     let Ctx { st, data, infos, wins, thumbs, width, max_rows } = c;
     let full = ui.max_rect();
@@ -89,15 +89,12 @@ pub fn show(ui: &mut Ui, c: Ctx, actions: &mut Vec<Action>) {
         ui.painter().text(full.center(), Align2::CENTER_CENTER, "No open windows", fid(14.0), theme::DIM);
     }
 
-    // The most used apps, along the bottom.
-    let dash_h = dash(ui, full, data, actions);
-
     if n == 0 {
         ui.data_mut(|d| d.insert_temp(sel_id, 0usize));
         return;
     }
     let ptop = card_rect.max.y.max(full.min.y + 90.0) + 28.0;
-    let area = Rect::from_min_max(pos2(full.min.x + 56.0, ptop), pos2(full.max.x - 56.0, (full.max.y - dash_h - 28.0).max(ptop + 80.0)));
+    let area = Rect::from_min_max(pos2(full.min.x + 56.0, ptop), pos2(full.max.x - 56.0, (full.max.y - 56.0).max(ptop + 80.0)));
     let g = overview::grid(n, area.width(), area.height(), GAP, LABEL_H, MAX_CARD_W);
     let card_h = g.card_w * overview::ASPECT + LABEL_H;
 
@@ -156,42 +153,6 @@ pub fn show(ui: &mut Ui, c: Ctx, actions: &mut Vec<Action>) {
     }
 
     ui.data_mut(|d| d.insert_temp(sel_id, sel));
-}
-
-const DASH_ICON: f32 = 44.0;
-const DASH_APPS: usize = 8;
-
-/// The most used apps in a row at the bottom. Returns the height it takes.
-fn dash(ui: &mut Ui, full: Rect, data: &Data, actions: &mut Vec<Action>) -> f32 {
-    let items = data.top(DASH_APPS);
-    if items.is_empty() {
-        return 0.0;
-    }
-    let pad = 12.0;
-    let w = items.len() as f32 * (DASH_ICON + pad) + pad;
-    let h = DASH_ICON + pad * 2.0;
-    let bar = Rect::from_center_size(pos2(full.center().x, full.max.y - h / 2.0 - 20.0), vec2(w, h));
-    ui.painter().rect(bar, 14, Color32::from_black_alpha(120), egui::Stroke::new(1.0, theme::CARD_LINE), egui::StrokeKind::Inside);
-    let mut hover_name: Option<(String, Rect)> = None;
-    for (i, item) in items.iter().enumerate() {
-        let Kind::App(a) = &item.kind else { continue };
-        let c = pos2(bar.min.x + pad + DASH_ICON / 2.0 + i as f32 * (DASH_ICON + pad), bar.center().y);
-        let r = Rect::from_center_size(c, vec2(DASH_ICON, DASH_ICON));
-        let resp = ui.interact(r, crate::ui::widgets::id(("ov-dash", &a.id)), Sense::click());
-        if resp.hovered() {
-            ui.painter().rect_filled(r.expand(4.0), 10, theme::PLATE_SEL);
-            hover_name = Some((a.name.clone(), r));
-        }
-        let key = format!("{}\n{}\n{}", a.id, a.name, a.exec.split_whitespace().next().unwrap_or(""));
-        crate::ui::widgets::tile(ui.painter(), c, DASH_ICON * 0.82, &key);
-        if resp.clicked() {
-            actions.push(Action::RunApp(a.id.clone()));
-        }
-    }
-    if let Some((name, r)) = hover_name {
-        ui.painter().text(pos2(r.center().x, bar.min.y - 12.0), Align2::CENTER_CENTER, name, fid(12.0), theme::TEXT);
-    }
-    h + 20.0
 }
 
 fn card(ui: &mut Ui, r: Rect, w: &WinEntry, thumb: Option<&Thumb>, marked: bool, hover: bool, actions: &mut Vec<Action>) {

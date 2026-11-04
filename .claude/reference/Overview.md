@@ -6,7 +6,7 @@ Show every open window at once, as a card with a picture of it, so the user can 
 
 ## One Screen
 
-The overview and the launcher are one screen, as in GNOME. There is no separate launcher card. A search box is at the top, taken from the launcher, with the dimmed screen behind it. With nothing typed, the windows show below it as cards, and a row of the most used apps sits along the bottom. Typing swaps the cards and the row of apps for the launcher's results list, under the search box. Windows are among the results, with apps, actions, commands, and sums. Clearing the box brings the cards back. The Super key, the hot corner, and the commands osmia launcher toggle and osmia overview toggle all open this one screen.
+The overview and the launcher are one screen, as in GNOME. There is no separate launcher card. A search box is at the top, taken from the launcher, with the dimmed screen behind it. With nothing typed, the windows show below it as cards. Typing swaps the cards for the launcher's results list, under the search box. Windows are among the results, with apps, actions, commands, and sums. Clearing the box brings the cards back. The Super key, the hot corner, and the commands osmia launcher toggle and osmia overview toggle all open this one screen.
 
 ## Opening
 
@@ -14,11 +14,11 @@ The Super key opens it, as it opened the launcher before. The session binds Supe
 
 ## Look
 
-The screen is dimmed with a dark layer over everything. Each card is a picture of the window, with a line below it that holds the app icon and the window title. The title is cut by its width on screen, with an ellipsis. The picture keeps the shape of the window and is at most 16:10. It sits on a plate, with a thin outline. The window that has focus has a soft accent outline. The marked card has a strong accent outline. A minimized window shows its picture dimmed, with the word Minimized in the corner. The row of apps is a dark rounded strip, centred along the bottom, with up to eight of the most used apps as icons. Hovering one shows its name above the strip. Clicking one starts it. With no windows, the middle of the screen says No open windows. The search box and the row of apps still show.
+The screen is dimmed with a dark layer over everything. Each card is a picture of the window, with a line below it that holds the app icon and the window title. The title is cut by its width on screen, with an ellipsis. The picture keeps the shape of the window and is at most 16:10. It sits on a plate, with a thin outline. The window that has focus has a soft accent outline. The marked card has a strong accent outline. A minimized window shows its picture dimmed, with the word Minimized in the corner. With no windows, the middle of the screen says No open windows. The search box still shows. The search box alone is a plain card with no line under it. The line shows only when results are listed.
 
 ## Layout
 
-The cards are in a grid that is centred between the search box and the row of apps, with the most columns and rows that make the cards as big as they can be. A card is at most 480 px wide, so a single window does not fill the screen. The cards never overflow the area. With very many windows they get small. The last row is centred.
+The cards are in a grid that is centred below the search box, with the most columns and rows that make the cards as big as they can be. A card is at most 480 px wide, so a single window does not fill the screen. The cards never overflow the area. With very many windows they get small. The last row is centred.
 
 ## Pictures
 
@@ -47,5 +47,4 @@ Unit tests cover the grid sizes, including that the cards never overflow, and th
 
 - Whether to group the cards by workspace, from the focus history the shell already keeps.
 - Whether a bottom bar should get a small surface of its own, so the hot corner works there.
-- Whether the row of apps should show favourites the user picks, and not the most used.
 - Whether a typed word should also keep the matching window cards on screen under the results.

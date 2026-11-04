@@ -51,7 +51,7 @@ export anchor Launcher:
         The launcher is a floating card with the same look as the bar panels.
         It has 10 px rounded corners, a shadow, and the dark grey of the other cards.
         It is 600 px wide and sits at the top of the screen, 36 px down, so there is room for the windows under it.
-        The search box is at the top, with a magnifier icon, and a line under it. Its hint reads Type to search apps, windows, actions.
+        The search box is at the top, with a magnifier icon. A line under it shows only when results are listed. Its hint reads Type to search apps, windows, actions.
         Each result is a compact row, 28 px tall.
         A row shows a small app icon, the name, a source label, and a shortcut.
         The letters that match the typed text are shown in the accent color.
