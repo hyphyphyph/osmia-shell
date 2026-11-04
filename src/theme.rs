@@ -266,7 +266,8 @@ mod startup_tests {
         // This is what the first frame of a shell with a window titled "◑ x" does.
         assert!(!super::ensure_glyphs(&ctx, ["\u{25d1} title"].into_iter()) || true);
         // After a frame has run, the check works and finds a font for a missing symbol.
-        let _ = ctx.run_ui(egui::RawInput::default(), |_| {});
+        let mut out = ctx.run_ui(egui::RawInput::default(), |_| {});
         let _ = super::ensure_glyphs(&ctx, ["\u{2733}"].into_iter());
+        out.textures_delta.clear();
     }
 }
