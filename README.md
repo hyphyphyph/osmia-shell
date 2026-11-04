@@ -143,7 +143,7 @@ Visual tests run in a headless `labwc` on a private D-Bus. See `spec/` for what 
 
 Click CPU or RAM in the bar to see which programs use the most. The gauge button on a row sets a limit
 for that program: CPU is a share of the whole processor, memory is in MB. Limits use cgroup v2 in your
-user session (no root) and are kept in `~/.local/state/osmia/proc-limits`. Memory is a soft limit
+user session (no root) and are kept in `$XDG_RUNTIME_DIR/osmia/proc-limits` (so they are lost at reboot, like the cgroups). Memory is a soft limit
 (`memory.high`): the program slows down, it is not killed. See `spec/Processes.pi`.
 
     cargo test -- --ignored      # also runs the CPU limit test (needs a systemd session)

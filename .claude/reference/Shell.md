@@ -36,7 +36,7 @@ egui draws on the GPU by default. If no GPU is available, the shell falls back t
 - The bar shows on every monitor on a wlroots-style compositor.
 - A notification from any app using the standard D-Bus API appears as a popup.
 - A key bound in the compositor opens the launcher through the control client.
-- With nothing changing on screen, the shell does no drawing and no polling. The only timers are the clock minute and the 2-second CPU and RAM readout.
+- With nothing changing on screen, the shell does no drawing and no polling. The only timers are the clock minute and the 2-second CPU and RAM readout. While a program limit exists, a process check about every 10 seconds is added, to catch new processes of limited programs.
 
 ## Non Goals
 

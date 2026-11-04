@@ -30,11 +30,34 @@ pub struct Limits {
     root: Option<PathBuf>,
 }
 
-fn state_file() -> Option<PathBuf> {
-    let base = std::env::var_os("XDG_STATE_HOME")
-        .map(PathBuf::from)
-        .or_else(|| std::env::var_os("HOME").map(|h| PathBuf::from(h).join(".local/state")))?;
-    Some(base.join("osmia/proc-limits"))
+/// The runtime folder is cleared at reboot, as the cgroups are, so a saved
+/// limit never outlives the group that enforces it.
+fn state_file(name: &str) -> Option<PathBuf> {
+    let base = std::env::var_os("XDG_RUNTIME_DIR").map(PathBuf::from)?;
+    Some(base.join("osmia").join(name))
+}
+
+fn limits_to_text(set: &HashMap<String, Limit>) -> String {
+    let mut out = String::new();
+    for (n, l) in set {
+        let c = l.cpu.map(|c| c.to_string()).unwrap_or_default();
+        let m = l.mem_mb.map(|m| m.to_string()).unwrap_or_default();
+        out.push_str(&format!("{n}\t{c}\t{m}\n"));
+    }
+    out
+}
+
+fn limits_from_text(t: &str) -> HashMap<String, Limit> {
+    let mut set = HashMap::new();
+    for line in t.lines() {
+        let mut it = line.split('\t');
+        let (Some(name), Some(c), Some(m)) = (it.next(), it.next(), it.next()) else { continue };
+        let lim = Limit { cpu: c.parse().ok().filter(|c: &f32| *c > 0.0), mem_mb: m.parse().ok() };
+        if !name.is_empty() && !lim.is_none() {
+            set.insert(name.to_owned(), lim);
+        }
+    }
+    set
 }
 
 /// The `cpu.max` text for a share of the whole processor: quota per 100 ms period.
@@ -64,13 +87,15 @@ fn user_service_dir() -> Option<PathBuf> {
 impl Limits {
     pub fn load() -> Self {
         let mut l = Limits::default();
-        if let Some(t) = state_file().and_then(|f| fs::read_to_string(f).ok()) {
+        if let Some(t) = state_file("proc-limits").and_then(|f| fs::read_to_string(f).ok()) {
+            l.set = limits_from_text(&t);
+        }
+        if let Some(t) = state_file("proc-origins").and_then(|f| fs::read_to_string(f).ok()) {
             for line in t.lines() {
-                let mut it = line.split('\t');
-                let (Some(name), Some(c), Some(m)) = (it.next(), it.next(), it.next()) else { continue };
-                let lim = Limit { cpu: c.parse().ok(), mem_mb: m.parse().ok() };
-                if !name.is_empty() && !lim.is_none() {
-                    l.set.insert(name.to_owned(), lim);
+                if let Some((pid, cg)) = line.split_once('\t') {
+                    if let Ok(pid) = pid.parse::<u32>() {
+                        l.origin.insert(pid, cg.to_owned());
+                    }
                 }
             }
         }
@@ -78,17 +103,21 @@ impl Limits {
     }
 
     fn save(&self) {
-        let Some(f) = state_file() else { return };
+        self.write_state("proc-limits", limits_to_text(&self.set));
+    }
+
+    /// Where each moved process came from, so a restart can still put it back.
+    fn save_origins(&self) {
+        let t: String = self.origin.iter().map(|(p, c)| format!("{p}\t{c}\n")).collect();
+        self.write_state("proc-origins", t);
+    }
+
+    fn write_state(&self, name: &str, text: String) {
+        let Some(f) = state_file(name) else { return };
         if let Some(d) = f.parent() {
             let _ = fs::create_dir_all(d);
         }
-        let mut out = String::new();
-        for (n, l) in &self.set {
-            let f = |v: Option<u64>| v.map(|v| v.to_string()).unwrap_or_default();
-            let c = l.cpu.map(|c| c.to_string()).unwrap_or_default();
-            out.push_str(&format!("{n}\t{c}\t{}\n", f(l.mem_mb)));
-        }
-        let _ = fs::write(f, out);
+        let _ = fs::write(f, text);
     }
 
     /// The group directory root, made on first use.
@@ -139,6 +168,7 @@ impl Limits {
         for pid in procs.lines().filter_map(|l| l.parse::<u32>().ok()) {
             self.restore(pid, &root);
         }
+        self.save_origins();
         let _ = fs::remove_dir(&dir);
     }
 
@@ -152,6 +182,7 @@ impl Limits {
     fn enforce_one(&mut self, name: &str, pids: &[u32]) -> usize {
         let Ok(root) = self.root() else { return pids.len() };
         let mut failed = 0;
+        let mut moved = false;
         let dir = root.join(safe(name));
         let have = fs::read_to_string(dir.join("cgroup.procs")).unwrap_or_default();
         for &pid in pids {
@@ -160,18 +191,22 @@ impl Limits {
             }
             if let Some(cg) = fs::read_to_string(format!("/proc/{pid}/cgroup")).ok().and_then(|t| t.lines().find_map(|l| l.strip_prefix("0::").map(str::to_owned))) {
                 self.origin.insert(pid, cg);
+                moved = true;
             }
             // A process that exited meanwhile is not a failure.
             if fs::write(dir.join("cgroup.procs"), pid.to_string()).is_err() && std::path::Path::new(&format!("/proc/{pid}")).exists() {
                 failed += 1;
             }
         }
+        if moved {
+            self.save_origins();
+        }
         failed
     }
 
     /// Remove groups with no limit and no processes left behind.
     fn remove_stale(&mut self) {
-        let Some(root) = self.root.clone() else { return };
+        let Some(root) = self.root.clone().or_else(|| user_service_dir().map(|d| d.join("osmia-limits")).filter(|d| d.is_dir())) else { return };
         let keep: Vec<String> = self.set.keys().map(|n| safe(n)).collect();
         let Ok(rd) = fs::read_dir(&root) else { return };
         for e in rd.flatten() {
@@ -195,7 +230,11 @@ impl Limits {
                 self.enforce_one(&n, &pids);
             }
         }
+        let before = self.origin.len();
         self.origin.retain(|pid, _| std::path::Path::new(&format!("/proc/{pid}")).exists());
+        if self.origin.len() != before {
+            self.save_origins();
+        }
     }
 }
 
@@ -215,6 +254,22 @@ mod tests {
         let full = cpu_max(100.0);
         assert_eq!(full, format!("{} 100000", cores() * 100_000));
         assert!(cpu_max(0.0).starts_with("1000 "), "never below the kernel minimum");
+    }
+
+    #[test]
+    fn limits_file_round_trips() {
+        let mut set = HashMap::new();
+        set.insert("firefox".to_owned(), Limit { cpu: Some(12.5), mem_mb: Some(2048) });
+        set.insert("code".to_owned(), Limit { cpu: None, mem_mb: Some(512) });
+        set.insert("make".to_owned(), Limit { cpu: Some(0.5), mem_mb: None });
+        assert_eq!(limits_from_text(&limits_to_text(&set)), set);
+    }
+
+    #[test]
+    fn limits_file_ignores_bad_lines() {
+        let set = limits_from_text("junk\n\t1\t2\nok\t\t\nzero\t0\t\nfine\t5\t\n");
+        assert_eq!(set.len(), 1);
+        assert_eq!(set["fine"].cpu, Some(5.0));
     }
 
     #[test]

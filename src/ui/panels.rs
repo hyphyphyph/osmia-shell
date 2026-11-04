@@ -1250,7 +1250,7 @@ fn proc_panel(ui: &mut Ui, list: &crate::sys::ProcList, cpu: bool, actions: &mut
     for p in rows.iter().map(|r| r.as_ref()) {
         let label = if p.count > 1 { format!("{} \u{00d7}{}", p.name, p.count) } else if p.members.is_empty() { format!("{} (not running)", p.name) } else { p.name.clone() };
         let cur = list.limits.get(&p.name).and_then(|l| if cpu { l.cpu.map(f64::from) } else { l.mem_mb.map(|m| m as f64) });
-        let mut value = if cpu { cpu_text(p.cpu / list.cores.max(1) as f32) } else { mem_text(p.mem_kb) };
+        let mut value = if cpu { cpu_text((p.cpu / list.cores.max(1) as f32).min(100.0)) } else { mem_text(p.mem_kb) };
         if let Some(c) = cur {
             value = format!("{value} / {}", limit_text(cpu, c));
         }
@@ -1273,7 +1273,7 @@ fn proc_panel(ui: &mut Ui, list: &crate::sys::ProcList, cpu: bool, actions: &mut
             for m in mem.into_iter().take(30) {
                 let cmd = crate::sys::cmdline(m.0);
                 let label = format!("{}  {}", m.0, if cmd.is_empty() { p.name.clone() } else { cmd });
-                let value = if cpu { cpu_text(m.1 / list.cores.max(1) as f32) } else { mem_text(m.2) };
+                let value = if cpu { cpu_text((m.1 / list.cores.max(1) as f32).min(100.0)) } else { mem_text(m.2) };
                 proc_row(ui, &format!("#{}", m.0), &label, &value, mk(m) / top, false, false, 18.0, &[m.0], &mut confirm, None, actions);
             }
         }
@@ -1483,9 +1483,10 @@ fn proc_row(
     let bar = Rect::from_min_max(pos2(r.min.x + 14.0 + indent, r.max.y - 11.0), pos2(r.max.x - 14.0, r.max.y - 7.0));
     ui.painter().rect_filled(bar, 2, theme::BTN);
     ui.painter().rect_filled(Rect::from_min_max(bar.min, pos2(bar.min.x + bar.width() * frac.clamp(0.02, 1.0), bar.max.y)), 2, theme::accent());
+    // A program that is not running has nothing to stop, so no x.
     let x = Rect::from_center_size(pos2(r.max.x - 22.0, ty), vec2(20.0, 20.0));
-    let xr = ui.interact(x, crate::ui::widgets::id(("proc-x", key)), Sense::click());
-    if hover || xr.hovered() {
+    let xr = ui.interact(x, crate::ui::widgets::id(("proc-x", key)), if pids.is_empty() { Sense::hover() } else { Sense::click() });
+    if !pids.is_empty() && (hover || xr.hovered()) {
         ui.painter().rect_filled(x, 4, if xr.hovered() { theme::PLATE_SEL } else { theme::BTN });
         crate::icons::draw(ui.painter(), crate::icons::Icon::Close, x.shrink(5.0), if xr.hovered() { theme::accent() } else { theme::DIM });
     }
@@ -1529,4 +1530,39 @@ fn proc_scroll_h(rows: &[std::borrow::Cow<crate::sys::Proc>], open: Option<&str>
         .map(|p| 38.0 + if p.count > 1 && open == Some(p.name.as_str()) { p.members.len().min(30) as f32 * 30.0 } else { 0.0 })
         .sum();
     h.min(avail.max(120.0))
+}
+
+#[cfg(test)]
+mod limit_input_tests {
+    use super::*;
+
+    #[test]
+    fn cpu_input_is_a_share_of_the_processor() {
+        assert_eq!(parse_limit("12.5", true), Some(12.5));
+        assert_eq!(parse_limit(" 5% ", true), Some(5.0));
+        assert_eq!(parse_limit("100", true), Some(100.0));
+        assert_eq!(parse_limit("0", true), None);
+        assert_eq!(parse_limit("101", true), None);
+        assert_eq!(parse_limit("abc", true), None);
+        assert_eq!(parse_limit("", true), None);
+    }
+
+    #[test]
+    fn memory_input_is_megabytes_of_at_least_16() {
+        assert_eq!(parse_limit("512", false), Some(512.0));
+        assert_eq!(parse_limit("16", false), Some(16.0));
+        assert_eq!(parse_limit("15", false), None);
+        assert_eq!(parse_limit("-1", false), None);
+    }
+
+    #[test]
+    fn numbers_and_limits_read_well() {
+        assert_eq!(fmt_num(25.0), "25");
+        assert_eq!(fmt_num(0.5), "0.5");
+        assert_eq!(limit_text(true, 2.0), "2%");
+        assert_eq!(limit_text(false, 512.0), "512 MB");
+        assert_eq!(limit_text(false, 2048.0), "2.0 GB");
+        assert_eq!(cpu_text(2.44), "2.4%");
+        assert_eq!(cpu_text(35.4), "35%");
+    }
 }

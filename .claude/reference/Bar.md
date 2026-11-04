@@ -32,7 +32,7 @@ Shows tray icons from apps that use the StatusNotifierItem protocol on D-Bus. Cl
 
 ## Cpu And Ram Monitors
 
-Show how much CPU and memory are in use. They read from the kernel and need no outside service. Each shows a short number, such as 12%. They update every 2 seconds. Clicking one opens the Processor or Memory card, described in Processes.
+Show how much CPU and memory are in use. They read from the kernel and need no outside service. Each shows a short number, such as 12%. They update every 2 seconds. While their card is open, the card refreshes every second. Clicking one opens the Processor or Memory card, described in Processes.
 
 ## Status
 
