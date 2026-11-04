@@ -96,7 +96,7 @@ pub fn show(
             ui.ctx().data_mut(|d| d.insert_temp(wid, w));
             (w, place.anchor_x)
         }
-        Overlay::Launcher => return,
+        Overlay::Launcher | Overlay::Overview => return,
     };
     // Centred under the item that opened it, kept on screen.
     let left = (pivot_x - width / 2.0).min(full.max.x - 8.0 - width).max(8.0);
@@ -136,7 +136,7 @@ pub fn show(
                     Overlay::Windows => windows_panel(ui, windows, actions),
                     Overlay::Cpu => proc_panel(ui, procs, true, actions),
                     Overlay::Ram => proc_panel(ui, procs, false, actions),
-                    Overlay::Launcher => {}
+                    Overlay::Launcher | Overlay::Overview => {}
                 }
             });
         });
@@ -1355,7 +1355,7 @@ fn proc_width(ui: &Ui, list: &crate::sys::ProcList, cpu: bool, open: Option<&str
 
 /// Cut text to fit a width in points, ending in an ellipsis. Only used when the
 /// card is at its widest and a name is still longer.
-fn clip_px(ui: &Ui, text: &str, size: f32, max_w: f32) -> String {
+pub(crate) fn clip_px(ui: &Ui, text: &str, size: f32, max_w: f32) -> String {
     let w = |t: &str| ui.painter().layout_no_wrap(t.to_owned(), crate::theme::fid(size), theme::TEXT).size().x;
     if w(text) <= max_w {
         return text.to_owned();

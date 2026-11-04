@@ -1,5 +1,6 @@
 pub mod bar;
 pub mod launcher;
+pub mod overview;
 pub mod panels;
 pub mod popups;
 pub mod settings;
@@ -68,6 +69,8 @@ pub enum Action {
     /// (is_input, device name, port)
     AudioSelect(bool, String, Option<String>),
     FocusWindow(usize),
+    /// Ask a window to close, by its index in the window list.
+    CloseWindow(usize),
     NetConnect(String, bool),
     /// Join a network that needs a password: (name, password).
     NetJoin(String, String),
@@ -138,6 +141,8 @@ pub enum Overlay {
     Windows,
     Cpu,
     Ram,
+    /// Every open window as a card.
+    Overview,
 }
 
 impl Overlay {

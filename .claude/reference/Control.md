@@ -6,7 +6,7 @@ Let a compositor key binding, or a script, tell the running shell what to do. Wa
 
 ## How
 
-The shell binary also works as a command line client. The client sends the request over a Unix socket to the running shell. The binary is named osmia. A command is written as osmia, then the part, then the action. Examples are osmia launcher toggle, osmia dnd on, and osmia history toggle. osmia settings opens the settings window, or brings it forward if it is already open. An optional page name opens that page.
+The shell binary also works as a command line client. The client sends the request over a Unix socket to the running shell. The binary is named osmia. A command is written as osmia, then the part, then the action. Examples are osmia launcher toggle, osmia dnd on, and osmia history toggle. osmia overview toggles the window overview. Its actions are toggle, show, and hide. osmia settings opens the settings window, or brings it forward if it is already open. An optional page name opens that page.
 
 ## Socket
 

@@ -10,6 +10,7 @@ from ./DefaultApps export *
 from ./FirstVersion export *
 from ./Launcher export *
 from ./Notifications export *
+from ./Overview export *
 from ./ProposedDefaults export *
 from ./Processes export *
 from ./Shell export *

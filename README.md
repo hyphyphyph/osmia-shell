@@ -86,6 +86,7 @@ right-click skips), the same controls inside the tray panel of the app that owns
     osmia capture pick screen|area X Y W H|window N     # choose in the open overlay, for scripts
     osmia launcher toggle|show|hide
     osmia history toggle|show|hide|clear
+    osmia overview toggle|show|hide
     osmia settings [page]                # opens settings (Super+Comma in the session)
     osmia dnd on|off|toggle|status
     osmia popups clear
@@ -139,6 +140,13 @@ alerts), `wpctl` and `pactl` (volume), `nmcli` (network), `wl-copy` (calculator 
     cargo test
 
 Visual tests run in a headless `labwc` on a private D-Bus. See `spec/` for what each part must do.
+
+## Overview
+
+Rest the pointer in the top left corner of the screen (the bar must be on top) to see every open window as a
+card. Click one to switch to it, type to filter, middle-click or use the x to close a window, Escape to leave.
+Turn the corner off under Launcher in settings (`overview.corner = "off"`). `osmia overview toggle` opens it
+from a key. See `spec/Overview.pi`.
 
 ## Default applications
 

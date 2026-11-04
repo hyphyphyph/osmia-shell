@@ -58,6 +58,10 @@ use crate::ui::{self, bar, launcher, panels, popups, Action, Overlay, PowerActio
 use crate::win::{Kind, Surf, Win};
 
 const SLOW_TICK: Duration = Duration::from_secs(2);
+/// How long the pointer must rest in the hot corner. Short, so a sweep to the bar does not trigger it.
+const CORNER_DWELL: Duration = Duration::from_millis(150);
+/// The hot corner is this many logical pixels square.
+const CORNER_SIZE: f64 = 4.0;
 
 /// A recording in progress, or being saved.
 pub struct RecState {
@@ -109,6 +113,8 @@ pub struct Shared {
     pub proc_sampler: sys::ProcSampler,
     pub limits: crate::limits::Limits,
     pub default_apps: crate::defaults::DefaultApps,
+    /// Pictures of windows, filled in while the overview is open.
+    pub overview: Vec<crate::overview::Thumb>,
 }
 
 pub struct App {
@@ -146,6 +152,9 @@ pub struct App {
     cursor_dev: Option<WpCursorShapeDeviceV1>,
     /// The surface the pointer is over, the serial of its enter event, and the shape last set.
     pointer_on: Option<(wl_surface::WlSurface, u32)>,
+    /// When the pointer entered the hot corner, and whether it already opened the overview.
+    corner_since: Option<Instant>,
+    corner_fired: bool,
     cursor_shape: Option<Shape>,
     frac_mgr: Option<WpFractionalScaleManagerV1>,
     viewporter: Option<WpViewporter>,
@@ -236,6 +245,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
             proc_sampler: Default::default(),
             limits: crate::limits::Limits::load(),
             default_apps: Default::default(),
+            overview: Vec::new(),
             workspaces: Vec::new(),
             binds: Vec::new(),
             binds_error: None,
@@ -275,6 +285,8 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
         cursor_mgr: globals.bind::<WpCursorShapeManagerV1, _, _>(&qh, 1..=1, ()).ok(),
         cursor_dev: None,
         pointer_on: None,
+        corner_since: None,
+        corner_fired: false,
         cursor_shape: None,
         frac_mgr: globals.bind::<WpFractionalScaleManagerV1, _, _>(&qh, 1..=1, ()).ok(),
         viewporter: globals.bind::<WpViewporter, _, _>(&qh, 1..=1, ()).ok(),
@@ -514,6 +526,15 @@ impl App {
     fn after_dispatch(&mut self, qh: &QueueHandle<App>) {
         let now = Instant::now();
         self.expire_popups(now);
+        // The pointer has rested in the hot corner long enough.
+        if let Some(t) = self.corner_since {
+            if !self.corner_fired && now.duration_since(t) >= CORNER_DWELL {
+                self.corner_fired = true;
+                if !matches!(self.shared.overlay, Some(Overlay::Overview)) {
+                    self.open_overlay(qh, Overlay::Overview, f32::NAN);
+                }
+            }
+        }
         if now >= self.next_tick {
             // A clock that shows seconds needs a faster tick.
             let f = &self.shared.cfg.bar.clock_format;
@@ -693,7 +714,7 @@ impl App {
 
     pub fn on_toplevels_changed(&mut self) {
         self.mark_kind(Kind::Bar);
-        if matches!(self.shared.overlay, Some(Overlay::Launcher)) {
+        if matches!(self.shared.overlay, Some(Overlay::Launcher | Overlay::Overview)) {
             self.mark_kind(Kind::Overlay);
         }
     }
@@ -875,6 +896,12 @@ impl App {
                     sys::scan_wifi(tx.clone());
                 }
             }
+            Overlay::Overview => {
+                self.shared.overview.clear();
+                if let Some(tx) = self.cap_tx.clone() {
+                    crate::overview::gather(tx);
+                }
+            }
             Overlay::Launcher => {
                 // Use the app list we already have. Refresh it in the background.
                 if let Some(tx) = self.launch_tx.clone() {
@@ -896,6 +923,7 @@ impl App {
 
     fn close_overlay(&mut self) {
         self.shared.overlay = None;
+        self.shared.overview.clear();
         self.wins.retain(|w| w.kind != Kind::Overlay);
         self.kb_focus = None;
         self.mark_kind(Kind::Bar);
@@ -1118,6 +1146,15 @@ impl App {
                 match (*act, open) {
                     ("toggle", true) | ("hide", true) => self.close_overlay(),
                     ("toggle", false) | ("show", false) => self.open_overlay(&qh, Overlay::Launcher, f32::NAN),
+                    _ => {}
+                }
+                "ok".into()
+            }
+            ["overview", act @ ("toggle" | "show" | "hide")] => {
+                let open = has(&Overlay::Overview);
+                match (*act, open) {
+                    ("toggle", true) | ("hide", true) => self.close_overlay(),
+                    ("toggle", false) | ("show", false) => self.open_overlay(&qh, Overlay::Overview, f32::NAN),
                     _ => {}
                 }
                 "ok".into()
@@ -1454,6 +1491,10 @@ impl App {
                             .collect();
                         launcher::show(ui, &mut shared.launcher, data, &infos, shared.cfg.launcher.width as f32, shared.cfg.launcher.max_rows.clamp(3, 20) as usize, &mut actions);
                     }
+                }
+                Some(Overlay::Overview) => {
+                    let wins = window_list(shared).wins;
+                    ui::overview::show(ui, &wins, &shared.overview, &mut actions);
                 }
                 Some(ov) => {
                     let place = panels::Placement {
@@ -1844,6 +1885,11 @@ impl App {
                 }
                 sys::toggle_mute()
             }
+            Action::CloseWindow(i) => {
+                if let Some(t) = self.shared.toplevels.get(i) {
+                    t.handle.close();
+                }
+            }
             Action::FocusWindow(i) => {
                 self.focus_toplevel(i);
                 self.close_overlay();
@@ -2182,6 +2228,12 @@ impl App {
                         let w = self.new_win(&qh, Kind::Capture, Surf::Layer(layer), Some(o));
                         self.wins.push(w);
                     }
+                }
+            }
+            CapMsg::OverviewThumb(t) => {
+                if matches!(self.shared.overlay, Some(Overlay::Overview)) {
+                    self.shared.overview.push(t);
+                    self.mark_kind(Kind::Overlay);
                 }
             }
             CapMsg::Windows(list) => {
@@ -2627,6 +2679,25 @@ impl PointerHandler for App {
             if matches!(ev.kind, PointerEventKind::Enter { .. }) {
                 if let Some(o) = self.wins[i].output.clone() {
                     self.shared.last_output = Some(o);
+                }
+            }
+            // The hot corner is the top left of the bar, when the bar is on top.
+            if self.wins[i].kind == Kind::Bar && self.shared.cfg.overview.corner == "top-left" && self.bar_on_top() {
+                let inside = ev.position.0 < CORNER_SIZE && ev.position.1 < CORNER_SIZE;
+                match ev.kind {
+                    PointerEventKind::Enter { .. } | PointerEventKind::Motion { .. } if inside => {
+                        if self.corner_since.is_none() {
+                            self.corner_since = Some(Instant::now());
+                            self.next_tick = self.next_tick.min(Instant::now() + CORNER_DWELL + Duration::from_millis(10));
+                        }
+                    }
+                    PointerEventKind::Motion { .. } => {
+                        // Out of the corner. It can fire again next time.
+                        self.corner_since = None;
+                        self.corner_fired = false;
+                    }
+                    PointerEventKind::Leave { .. } => self.corner_since = None,
+                    _ => {}
                 }
             }
             let mods = self.mods;

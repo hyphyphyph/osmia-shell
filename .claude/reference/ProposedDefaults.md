@@ -6,7 +6,7 @@ These are proposals, not confirmed decisions. They fill gaps left by the intervi
 
 ## Control
 
-- Commands are launcher toggle, show, hide. history toggle, show, hide, clear. settings with an optional page. dnd on, off, toggle, status. popups clear. config reload, check. status.
+- Commands are launcher toggle, show, hide. history toggle, show, hide, clear. settings with an optional page. overview toggle, show, hide. dnd on, off, toggle, status. popups clear. config reload, check. status.
 - Running osmia with no arguments starts the shell. Running it with a part and action acts as the client.
 - Starting a second shell prints a message and exits, because one is already running.
 - Exit codes are 0 for done, 1 for a bad command or failure, and 2 when no shell is running.

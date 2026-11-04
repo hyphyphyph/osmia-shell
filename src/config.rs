@@ -16,6 +16,7 @@ pub struct Config {
     pub launcher: LauncherCfg,
     pub session: SessionCfg,
     pub capture: CaptureCfg,
+    pub overview: OverviewCfg,
     /// Optional map from a notification app name to a window app id.
     pub alerts: HashMap<String, String>,
 }
@@ -66,6 +67,19 @@ pub struct LauncherCfg {
     pub width: u32,
     /// How many result rows show before the list scrolls.
     pub max_rows: u32,
+}
+
+#[derive(Deserialize, Clone, Debug)]
+#[serde(default)]
+pub struct OverviewCfg {
+    /// "top-left" or "off". Moving the pointer into this corner opens the overview.
+    pub corner: String,
+}
+
+impl Default for OverviewCfg {
+    fn default() -> Self {
+        OverviewCfg { corner: "top-left".into() }
+    }
 }
 
 #[derive(Deserialize, Clone, Debug)]
@@ -122,6 +136,7 @@ impl Default for Config {
             launcher: LauncherCfg::default(),
             session: SessionCfg::default(),
             capture: CaptureCfg::default(),
+            overview: OverviewCfg::default(),
             alerts: HashMap::new(),
         }
     }
@@ -197,12 +212,13 @@ pub fn path() -> PathBuf {
 }
 
 const KNOWN: &[(&str, &[&str])] = &[
-    ("", &["bar", "theme", "notifications", "launcher", "session", "capture", "alerts"]),
+    ("", &["bar", "theme", "notifications", "launcher", "session", "capture", "overview", "alerts"]),
     ("capture", &["pictures_dir", "videos_dir", "copy", "cursor", "fps", "encoder", "quality", "audio", "export", "delay"]),
     ("bar", &["edge", "height", "layout", "clock_format", "date_format"]),
     ("theme", &["accent", "font_size", "corner_radius", "icon_theme"]),
     ("notifications", &["corner", "default_timeout_ms", "history_size", "dnd_on_start"]),
     ("launcher", &["terminal", "width", "max_rows"]),
+    ("overview", &["corner"]),
     ("session", &["lock", "logout"]),
 ];
 

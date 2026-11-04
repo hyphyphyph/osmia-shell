@@ -245,6 +245,8 @@ fn notifications(ui: &mut Ui, cfg: &Config, actions: &mut Vec<Action>) {
 }
 
 fn launcher(ui: &mut Ui, cfg: &Config, actions: &mut Vec<Action>) {
+    overview_rows(ui, cfg, actions);
+    subhead(ui, "Launcher", "The search box that opens with the Super key.");
     row(ui, "Width", "In pixels.", |ui| {
         let v = cfg.launcher.width as i64;
         match stepper(ui, "launch-w", &format!("{v} px")) {
@@ -259,6 +261,17 @@ fn launcher(ui: &mut Ui, cfg: &Config, actions: &mut Vec<Action>) {
             -1 if v > 4 => actions.push(set("launcher.max_rows", ConfValue::Int(v - 1))),
             1 if v < 14 => actions.push(set("launcher.max_rows", ConfValue::Int(v + 1))),
             _ => {}
+        }
+    });
+}
+
+fn overview_rows(ui: &mut Ui, cfg: &Config, actions: &mut Vec<Action>) {
+    subhead(ui, "Overview", "Every open window as a card. Type to filter, click to switch, Escape to close.");
+    row(ui, "Hot corner", "Rest the pointer in the top left corner of the screen to open it. Needs the bar on top. `osmia overview toggle` works from a key.", |ui| {
+        let opts = ["Top left", "Off"];
+        let cur = if cfg.overview.corner == "top-left" { 0 } else { 1 };
+        if let Some(i) = segmented(ui, "ov-corner", &opts, Some(cur)) {
+            actions.push(set("overview.corner", s(if i == 0 { "top-left" } else { "off" })));
         }
     });
 }

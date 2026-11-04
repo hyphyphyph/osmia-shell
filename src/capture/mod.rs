@@ -14,6 +14,8 @@ use smithay_client_toolkit::reexports::calloop::channel::Sender;
 
 /// What the capture threads tell the shell.
 pub enum CapMsg {
+    /// A picture of a window for the overview.
+    OverviewThumb(crate::overview::Thumb),
     /// The screens are captured; show the overlay.
     Ready { shots: Vec<ui::Shot>, mode: ui::Mode, kind: ui::Kind },
     /// Pictures of the windows, which take a little longer.

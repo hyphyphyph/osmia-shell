@@ -13,6 +13,7 @@ mod idle;
 mod launch;
 mod limits;
 mod notif;
+mod overview;
 mod sys;
 mod theme;
 mod toplevel;
