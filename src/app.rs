@@ -530,8 +530,8 @@ impl App {
         if let Some(t) = self.corner_since {
             if !self.corner_fired && now.duration_since(t) >= CORNER_DWELL {
                 self.corner_fired = true;
-                if !matches!(self.shared.overlay, Some(Overlay::Overview)) {
-                    self.open_overlay(qh, Overlay::Overview, f32::NAN);
+                if !matches!(self.shared.overlay, Some(Overlay::Launcher)) {
+                    self.open_overlay(qh, Overlay::Launcher, f32::NAN);
                 }
             }
         }
@@ -714,7 +714,7 @@ impl App {
 
     pub fn on_toplevels_changed(&mut self) {
         self.mark_kind(Kind::Bar);
-        if matches!(self.shared.overlay, Some(Overlay::Launcher | Overlay::Overview)) {
+        if matches!(self.shared.overlay, Some(Overlay::Launcher)) {
             self.mark_kind(Kind::Overlay);
         }
     }
@@ -896,13 +896,12 @@ impl App {
                     sys::scan_wifi(tx.clone());
                 }
             }
-            Overlay::Overview => {
+            Overlay::Launcher => {
+                // Pictures of the windows, for the cards.
                 self.shared.overview.clear();
                 if let Some(tx) = self.cap_tx.clone() {
                     crate::overview::gather(tx);
                 }
-            }
-            Overlay::Launcher => {
                 // Use the app list we already have. Refresh it in the background.
                 if let Some(tx) = self.launch_tx.clone() {
                     std::thread::spawn(move || {
@@ -1141,20 +1140,11 @@ impl App {
         let parts: Vec<&str> = parts.into_iter().filter(|p| *p != "--json").collect();
         let has = |o: &Overlay| self.shared.overlay.as_ref().is_some_and(|c| c.same_kind(o));
         match parts.as_slice() {
-            ["launcher", act @ ("toggle" | "show" | "hide")] => {
+            ["launcher" | "overview", act @ ("toggle" | "show" | "hide")] => {
                 let open = has(&Overlay::Launcher);
                 match (*act, open) {
                     ("toggle", true) | ("hide", true) => self.close_overlay(),
                     ("toggle", false) | ("show", false) => self.open_overlay(&qh, Overlay::Launcher, f32::NAN),
-                    _ => {}
-                }
-                "ok".into()
-            }
-            ["overview", act @ ("toggle" | "show" | "hide")] => {
-                let open = has(&Overlay::Overview);
-                match (*act, open) {
-                    ("toggle", true) | ("hide", true) => self.close_overlay(),
-                    ("toggle", false) | ("show", false) => self.open_overlay(&qh, Overlay::Overview, f32::NAN),
                     _ => {}
                 }
                 "ok".into()
@@ -1489,12 +1479,18 @@ impl App {
                             .filter(|(_, t)| t.ready)
                             .map(|(index, t)| launch::WinInfo { index, title: t.title.clone(), app_id: t.app_id.clone() })
                             .collect();
-                        launcher::show(ui, &mut shared.launcher, data, &infos, shared.cfg.launcher.width as f32, shared.cfg.launcher.max_rows.clamp(3, 20) as usize, &mut actions);
+                        let wins = window_list(shared).wins;
+                        let c = ui::overview::Ctx {
+                            st: &mut shared.launcher,
+                            data,
+                            infos: &infos,
+                            wins: &wins,
+                            thumbs: &shared.overview,
+                            width: shared.cfg.launcher.width as f32,
+                            max_rows: shared.cfg.launcher.max_rows.clamp(3, 20) as usize,
+                        };
+                        ui::overview::show(ui, c, &mut actions);
                     }
-                }
-                Some(Overlay::Overview) => {
-                    let wins = window_list(shared).wins;
-                    ui::overview::show(ui, &wins, &shared.overview, &mut actions);
                 }
                 Some(ov) => {
                     let place = panels::Placement {
@@ -2231,7 +2227,7 @@ impl App {
                 }
             }
             CapMsg::OverviewThumb(t) => {
-                if matches!(self.shared.overlay, Some(Overlay::Overview)) {
+                if matches!(self.shared.overlay, Some(Overlay::Launcher)) {
                     self.shared.overview.push(t);
                     self.mark_kind(Kind::Overlay);
                 }

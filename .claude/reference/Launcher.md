@@ -38,15 +38,15 @@ All sources show in one list, ranked by how well they match the typed text. A su
 
 ## Input
 
-The launcher is driven by the keyboard first. The user types to search and moves with Up and Down, or Ctrl+N and Ctrl+P. Enter runs the picked result and Escape closes the launcher. The mouse also works. A click picks a result.
+The launcher is driven by the keyboard first. The user types to search and moves with Up and Down, or Ctrl+N and Ctrl+P. Enter runs the picked result. The first Escape clears the typed text and the next closes the launcher. The mouse also works. A click picks a result.
 
 ## Behavior
 
-The launcher shows on the monitor that has focus. It opens when the control client asks for it. It closes after the user runs something or presses Escape. It is hidden when not in use, and then it costs nothing to keep.
+The launcher shows on the monitor that has focus. It opens when the control client asks for it, or when the Overview opens, since they are one screen. With nothing typed, the search box stands alone over the dimmed screen and the Overview shows the windows. The results list shows once something is typed, and it replaces the windows. It closes after the user runs something or presses Escape. It is hidden when not in use, and then it costs nothing to keep.
 
 ## Look
 
-The launcher is a floating card with the same look as the bar panels. It has 10 px rounded corners, a shadow, and the dark grey of the other cards. It is 600 px wide and sits in the upper part of the screen. The search box is at the top, with a magnifier icon, and a line under it. Each result is a compact row, 28 px tall. A row shows a small app icon, the name, a source label, and a shortcut. The letters that match the typed text are shown in the accent color. The picked row has a lighter plate and a 2 px accent edge on its left. The first four results have the shortcuts Alt+1 to Alt+4. Each runs that result at once. When the text is a sum, a Calculator chip shows in the search box. The answer shows as a large number, in the accent color, on a row of its own. The answer row says that Enter copies the answer and closes the launcher. A footer lists the keys, which are Up and Down to move, Enter to run, and Escape to close. The footer also lists the prefixes for commands, windows, and actions.
+The launcher is a floating card with the same look as the bar panels. It has 10 px rounded corners, a shadow, and the dark grey of the other cards. It is 600 px wide and sits at the top of the screen, 36 px down, so there is room for the windows under it. The search box is at the top, with a magnifier icon, and a line under it. Its hint reads Type to search apps, windows, actions. Each result is a compact row, 28 px tall. A row shows a small app icon, the name, a source label, and a shortcut. The letters that match the typed text are shown in the accent color. The picked row has a lighter plate and a 2 px accent edge on its left. The first four results have the shortcuts Alt+1 to Alt+4. Each runs that result at once. When the text is a sum, a Calculator chip shows in the search box. The answer shows as a large number, in the accent color, on a row of its own. The answer row says that Enter copies the answer and closes the launcher. A footer lists the keys, which are Up and Down to move, Enter to run, and Escape to close. The footer also lists the prefixes for commands, windows, and actions.
 
 ## Mockups
 

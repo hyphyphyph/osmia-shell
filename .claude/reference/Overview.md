@@ -2,19 +2,23 @@
 
 ## Purpose
 
-Show every open window at once, as a card with a picture of it, so the user can see them all and jump to one.
+Show every open window at once, as a card with a picture of it, so the user can see them all and jump to one. The launcher's search sits on the same screen, so one gesture finds anything.
+
+## One Screen
+
+The overview and the launcher are one screen, as in GNOME. There is no separate launcher card. A search box is at the top, taken from the launcher, with the dimmed screen behind it. With nothing typed, the windows show below it as cards, and a row of the most used apps sits along the bottom. Typing swaps the cards and the row of apps for the launcher's results list, under the search box. Windows are among the results, with apps, actions, commands, and sums. Clearing the box brings the cards back. The Super key, the hot corner, and the commands osmia launcher toggle and osmia overview toggle all open this one screen.
 
 ## Opening
 
-Resting the pointer in the top left corner of the screen opens it. This is the hot corner. The pointer must stay in the corner, a square 4 px on a side, for 150 ms. A quick sweep to the bar does not open it. After it opens, it does not open again until the pointer has left the corner and moved on. The hot corner is part of the bar, so it works when the bar is on the top edge. With the bar at the bottom there is no hot corner, and a key binding is the way in. The command osmia overview toggle, show or hide does the same from a key binding or a script. The setting is overview.corner in the config, either top-left or off, and there is a Hot corner row for it in settings. The overview opens on the monitor that has focus, and shows the windows of every monitor.
+The Super key opens it, as it opened the launcher before. The session binds Super to osmia launcher toggle. Resting the pointer in the top left corner of the screen opens it. This is the hot corner. The pointer must stay in the corner, a square 4 px on a side, for 150 ms. A quick sweep to the bar does not open it. After it opens, it does not open again until the pointer has left the corner and moved on. The hot corner is part of the bar, so it works when the bar is on the top edge. With the bar at the bottom there is no hot corner, and the Super key is the way in. The commands osmia overview and osmia launcher both take toggle, show and hide, and do the same thing. The setting is overview.corner in the config, either top-left or off, and there is a Hot corner row for it in settings. It opens on the monitor that has focus, and shows the windows of every monitor.
 
 ## Look
 
-The screen is dimmed with a dark layer over everything, and the cards sit on it. Each card is a picture of the window, with a line below it that holds the app icon and the window title. The title is cut by its width on screen, with an ellipsis. The picture keeps the shape of the window and is at most 16:10. It sits on a plate, with a thin outline. The window that has focus has a soft accent outline. The marked card has a strong accent outline. A minimized window shows its picture dimmed, with the word Minimized in the corner. At the top is a line that shows what the user has typed, or Type to filter windows, and a count of the windows shown. With no windows, it says No open windows. With a filter that matches nothing, it says No window matches.
+The screen is dimmed with a dark layer over everything. Each card is a picture of the window, with a line below it that holds the app icon and the window title. The title is cut by its width on screen, with an ellipsis. The picture keeps the shape of the window and is at most 16:10. It sits on a plate, with a thin outline. The window that has focus has a soft accent outline. The marked card has a strong accent outline. A minimized window shows its picture dimmed, with the word Minimized in the corner. The row of apps is a dark rounded strip, centred along the bottom, with up to eight of the most used apps as icons. Hovering one shows its name above the strip. Clicking one starts it. With no windows, the middle of the screen says No open windows. The search box and the row of apps still show.
 
 ## Layout
 
-The cards are in a grid that is centred on the screen, with the most columns and rows that make the cards as big as they can be. A card is at most 480 px wide, so a single window does not fill the screen. The cards never overflow the screen. With very many windows they get small. The last row is centred.
+The cards are in a grid that is centred between the search box and the row of apps, with the most columns and rows that make the cards as big as they can be. A card is at most 480 px wide, so a single window does not fill the screen. The cards never overflow the area. With very many windows they get small. The last row is centred.
 
 ## Pictures
 
@@ -22,7 +26,7 @@ The pictures come from the compositor through ext-image-copy-capture, one per wi
 
 ## Using
 
-Clicking a card brings that window forward and closes the overview. A minimized window is restored first. Clicking the empty screen closes the overview. Middle-clicking a card, or clicking the x that shows on the hovered card, asks that window to close. It does not force it. Typing filters the cards. A window stays when every typed word is in its title or its app name, in any case. Backspace removes a letter. The arrow keys move the mark, and Enter brings the marked window forward. The pointer moves the mark when it moves. When it is still, the keys own the mark. Escape clears the filter first, and closes the overview when there is no filter. The list stays current. A window that opens or closes while the overview is showing is added or removed.
+Clicking a card brings that window forward and closes the screen. A minimized window is restored first. Clicking the empty screen closes it. Middle-clicking a card, or clicking the x that shows on the hovered card, asks that window to close. It does not force it. With nothing typed, the arrow keys move the mark between cards, and Enter brings the marked window forward. The pointer moves the mark when it moves. When it is still, the keys own the mark. Once something is typed, the keys work as they do in the launcher. Up and Down move in the results, Enter runs one, and Alt+1 to Alt+4 run the first four. The first Escape clears the typed text. The next one closes the screen. The list stays current. A window that opens or closes while the screen is showing is added or removed.
 
 ## Cost
 
@@ -30,7 +34,7 @@ The overview adds no timer and no polling. When it is closed, the only work is t
 
 ## Tests
 
-Unit tests cover the grid sizes, including that the cards never overflow, the filter, and the matching of pictures to windows, including windows that look the same. One test is run by hand with cargo test -- --ignored. It needs a running compositor, takes a picture of every open window, and checks that none is blank.
+Unit tests cover the grid sizes, including that the cards never overflow, and the matching of pictures to windows, including windows that look the same. One test is run by hand with cargo test -- --ignored. It needs a running compositor, takes a picture of every open window, and checks that none is blank.
 
 ## Out Of Scope
 
@@ -43,5 +47,5 @@ Unit tests cover the grid sizes, including that the cards never overflow, the fi
 
 - Whether to group the cards by workspace, from the focus history the shell already keeps.
 - Whether a bottom bar should get a small surface of its own, so the hot corner works there.
-- A key binding for it in the session. None is set yet.
-- Whether Super+Tab, or another key, is the right one.
+- Whether the row of apps should show favourites the user picks, and not the most used.
+- Whether a typed word should also keep the matching window cards on screen under the results.

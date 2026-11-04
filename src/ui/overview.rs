@@ -1,22 +1,37 @@
 //! The overview: a card for every open window, over a dimmed screen.
-//! Click a card to bring that window forward. Type to filter. Escape closes.
+//! Also the launcher: the search box is on top, and typing swaps the cards for results.
 
 use egui::{pos2, vec2, Align2, Color32, Key, Rect, Sense, Ui};
 
+use crate::launch::{Data, Kind, WinInfo};
 use crate::overview::{self, Thumb};
 use crate::theme::{self, fid};
-use crate::ui::{Action, WinEntry};
+use crate::ui::{launcher, Action, WinEntry};
 
 const GAP: f32 = 22.0;
 const LABEL_H: f32 = 34.0;
 const MAX_CARD_W: f32 = 480.0;
 
-pub fn show(ui: &mut Ui, wins: &[WinEntry], thumbs: &[Thumb], actions: &mut Vec<Action>) {
+/// Everything the overview needs to draw: the search state and data of the
+/// launcher, the windows and their pictures, and the sizes from the config.
+pub struct Ctx<'a> {
+    pub st: &'a mut launcher::State,
+    pub data: &'a Data,
+    pub infos: &'a [WinInfo],
+    pub wins: &'a [WinEntry],
+    pub thumbs: &'a [Thumb],
+    pub width: f32,
+    pub max_rows: usize,
+}
+
+/// The overview and the launcher in one: a search box on top, the windows below,
+/// and a row of the most used apps at the bottom. Typing swaps the windows for results.
+pub fn show(ui: &mut Ui, c: Ctx, actions: &mut Vec<Action>) {
+    let Ctx { st, data, infos, wins, thumbs, width, max_rows } = c;
     let full = ui.max_rect();
-    let query_id = crate::ui::widgets::id("ov-query");
     let sel_id = crate::ui::widgets::id("ov-sel");
-    let mut query: String = ui.data(|d| d.get_temp(query_id)).unwrap_or_default();
     let mut sel: usize = ui.data(|d| d.get_temp(sel_id)).unwrap_or(0);
+    let searching = !st.query.is_empty();
 
     // A click on the empty screen closes. Cards are added after, so they win.
     let bg = ui.interact(full, crate::ui::widgets::id("ov-bg"), Sense::click());
@@ -25,54 +40,64 @@ pub fn show(ui: &mut Ui, wins: &[WinEntry], thumbs: &[Thumb], actions: &mut Vec<
         actions.push(Action::CloseOverlay);
     }
 
-    // Keys: typing filters, arrows move, Enter picks, Escape closes.
-    let (mut left, mut right, mut up, mut down, mut enter, mut esc, mut back) = (false, false, false, false, false, false, false);
+    // Keys first, so the text box does not see them. With nothing typed the arrows
+    // and Enter belong to the window cards. Once something is typed they belong to
+    // the results.
+    let (mut left, mut right, mut up, mut down, mut enter, mut esc) = (false, false, false, false, false, false);
+    let mut keys = launcher::Keys::default();
     ui.input_mut(|i| {
-        left = i.consume_key(egui::Modifiers::NONE, Key::ArrowLeft);
-        right = i.consume_key(egui::Modifiers::NONE, Key::ArrowRight);
-        up = i.consume_key(egui::Modifiers::NONE, Key::ArrowUp);
-        down = i.consume_key(egui::Modifiers::NONE, Key::ArrowDown);
-        enter = i.consume_key(egui::Modifiers::NONE, Key::Enter);
         esc = i.consume_key(egui::Modifiers::NONE, Key::Escape);
-        back = i.consume_key(egui::Modifiers::NONE, Key::Backspace);
-        for e in &i.events {
-            if let egui::Event::Text(t) = e {
-                query.extend(t.chars().filter(|c| !c.is_control()));
+        enter = i.consume_key(egui::Modifiers::NONE, Key::Enter);
+        if searching {
+            keys.enter = enter;
+            keys.down = i.consume_key(egui::Modifiers::NONE, Key::ArrowDown) || i.consume_key(egui::Modifiers::CTRL, Key::N);
+            keys.up = i.consume_key(egui::Modifiers::NONE, Key::ArrowUp) || i.consume_key(egui::Modifiers::CTRL, Key::P);
+            for (n, key) in [Key::Num1, Key::Num2, Key::Num3, Key::Num4].into_iter().enumerate() {
+                if i.consume_key(egui::Modifiers::ALT, key) {
+                    keys.alt_pick = Some(n);
+                }
             }
+        } else {
+            left = i.consume_key(egui::Modifiers::NONE, Key::ArrowLeft);
+            right = i.consume_key(egui::Modifiers::NONE, Key::ArrowRight);
+            up = i.consume_key(egui::Modifiers::NONE, Key::ArrowUp);
+            down = i.consume_key(egui::Modifiers::NONE, Key::ArrowDown);
         }
     });
-    if back {
-        query.pop();
-    }
     if esc {
-        if query.is_empty() {
-            actions.push(Action::CloseOverlay);
+        // The first Escape clears what was typed. The next closes.
+        if searching {
+            st.query.clear();
+            st.selected = 0;
         } else {
-            query.clear();
+            actions.push(Action::CloseOverlay);
         }
     }
 
-    let shown: Vec<&WinEntry> = wins.iter().filter(|w| overview::passes(&query, &w.title, &w.app_name)).collect();
-    let n = shown.len();
-
-    // The search line.
-    let line = if query.is_empty() { "Type to filter windows".to_owned() } else { query.clone() };
-    let col = if query.is_empty() { theme::DIM } else { theme::TEXT };
-    ui.painter().text(pos2(full.center().x, full.min.y + 44.0), Align2::CENTER_CENTER, line, fid(15.0), col);
-    let count = if n == 1 { "1 window".to_owned() } else { format!("{n} windows") };
-    ui.painter().text(pos2(full.center().x, full.min.y + 68.0), Align2::CENTER_CENTER, count, fid(11.0), theme::DIM);
-
-    if n == 0 {
-        let msg = if wins.is_empty() { "No open windows" } else { "No window matches" };
-        ui.painter().text(full.center(), Align2::CENTER_CENTER, msg, fid(14.0), theme::DIM);
-        ui.data_mut(|d| {
-            d.insert_temp(query_id, query);
-            d.insert_temp(sel_id, 0usize);
-        });
+    // The search box, and the results under it while something is typed.
+    let card_rect = launcher::card(ui, st, data, infos, width, max_rows, &keys, actions);
+    if searching == st.query.is_empty() {
+        // Typing began or the box was cleared: draw the other view next frame.
+        ui.ctx().request_repaint();
+    }
+    if !st.query.is_empty() {
         return;
     }
 
-    let area = Rect::from_min_max(pos2(full.min.x + 56.0, full.min.y + 96.0), pos2(full.max.x - 56.0, full.max.y - 56.0));
+    let n = wins.len();
+    if n == 0 {
+        ui.painter().text(full.center(), Align2::CENTER_CENTER, "No open windows", fid(14.0), theme::DIM);
+    }
+
+    // The most used apps, along the bottom.
+    let dash_h = dash(ui, full, data, actions);
+
+    if n == 0 {
+        ui.data_mut(|d| d.insert_temp(sel_id, 0usize));
+        return;
+    }
+    let ptop = card_rect.max.y.max(full.min.y + 90.0) + 28.0;
+    let area = Rect::from_min_max(pos2(full.min.x + 56.0, ptop), pos2(full.max.x - 56.0, (full.max.y - dash_h - 28.0).max(ptop + 80.0)));
     let g = overview::grid(n, area.width(), area.height(), GAP, LABEL_H, MAX_CARD_W);
     let card_h = g.card_w * overview::ASPECT + LABEL_H;
 
@@ -91,14 +116,11 @@ pub fn show(ui: &mut Ui, wins: &[WinEntry], thumbs: &[Thumb], actions: &mut Vec<
         sel += g.cols;
     }
     if enter {
-        actions.push(Action::FocusWindow(shown[sel].index));
+        actions.push(Action::FocusWindow(wins[sel].index));
     }
 
-    // Pictures belong to windows by title and app id, over all windows, so a hidden
-    // twin keeps its own picture.
-    let all_keys: Vec<(&str, &str)> = wins.iter().map(|w| (w.title.as_str(), w.app_id.as_str())).collect();
-    let all_pics = overview::match_thumbs(&all_keys, thumbs);
-    let pics: Vec<Option<usize>> = shown.iter().map(|w| wins.iter().position(|x| x.index == w.index).and_then(|p| all_pics[p])).collect();
+    let keys: Vec<(&str, &str)> = wins.iter().map(|w| (w.title.as_str(), w.app_id.as_str())).collect();
+    let pics = overview::match_thumbs(&keys, thumbs);
 
     let grid_w = g.cols as f32 * g.card_w + GAP * (g.cols as f32 - 1.0);
     let grid_h = g.rows as f32 * card_h + GAP * (g.rows as f32 - 1.0);
@@ -121,7 +143,7 @@ pub fn show(ui: &mut Ui, wins: &[WinEntry], thumbs: &[Thumb], actions: &mut Vec<
     if let (Some(h), true) = (hovered, moved) {
         sel = h;
     }
-    for (i, w) in shown.iter().enumerate() {
+    for (i, w) in wins.iter().enumerate() {
         let r = rects[i];
         let resp = ui.interact(r, crate::ui::widgets::id(("ov-card", w.index)), Sense::click());
         card(ui, r, w, pics[i].map(|p| &thumbs[p]), sel == i, hovered == Some(i), actions);
@@ -133,10 +155,43 @@ pub fn show(ui: &mut Ui, wins: &[WinEntry], thumbs: &[Thumb], actions: &mut Vec<
         }
     }
 
-    ui.data_mut(|d| {
-        d.insert_temp(query_id, query);
-        d.insert_temp(sel_id, sel);
-    });
+    ui.data_mut(|d| d.insert_temp(sel_id, sel));
+}
+
+const DASH_ICON: f32 = 44.0;
+const DASH_APPS: usize = 8;
+
+/// The most used apps in a row at the bottom. Returns the height it takes.
+fn dash(ui: &mut Ui, full: Rect, data: &Data, actions: &mut Vec<Action>) -> f32 {
+    let items = data.top(DASH_APPS);
+    if items.is_empty() {
+        return 0.0;
+    }
+    let pad = 12.0;
+    let w = items.len() as f32 * (DASH_ICON + pad) + pad;
+    let h = DASH_ICON + pad * 2.0;
+    let bar = Rect::from_center_size(pos2(full.center().x, full.max.y - h / 2.0 - 20.0), vec2(w, h));
+    ui.painter().rect(bar, 14, Color32::from_black_alpha(120), egui::Stroke::new(1.0, theme::CARD_LINE), egui::StrokeKind::Inside);
+    let mut hover_name: Option<(String, Rect)> = None;
+    for (i, item) in items.iter().enumerate() {
+        let Kind::App(a) = &item.kind else { continue };
+        let c = pos2(bar.min.x + pad + DASH_ICON / 2.0 + i as f32 * (DASH_ICON + pad), bar.center().y);
+        let r = Rect::from_center_size(c, vec2(DASH_ICON, DASH_ICON));
+        let resp = ui.interact(r, crate::ui::widgets::id(("ov-dash", &a.id)), Sense::click());
+        if resp.hovered() {
+            ui.painter().rect_filled(r.expand(4.0), 10, theme::PLATE_SEL);
+            hover_name = Some((a.name.clone(), r));
+        }
+        let key = format!("{}\n{}\n{}", a.id, a.name, a.exec.split_whitespace().next().unwrap_or(""));
+        crate::ui::widgets::tile(ui.painter(), c, DASH_ICON * 0.82, &key);
+        if resp.clicked() {
+            actions.push(Action::RunApp(a.id.clone()));
+        }
+    }
+    if let Some((name, r)) = hover_name {
+        ui.painter().text(pos2(r.center().x, bar.min.y - 12.0), Align2::CENTER_CENTER, name, fid(12.0), theme::TEXT);
+    }
+    h + 20.0
 }
 
 fn card(ui: &mut Ui, r: Rect, w: &WinEntry, thumb: Option<&Thumb>, marked: bool, hover: bool, actions: &mut Vec<Action>) {

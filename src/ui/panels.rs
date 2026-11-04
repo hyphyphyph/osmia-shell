@@ -96,7 +96,7 @@ pub fn show(
             ui.ctx().data_mut(|d| d.insert_temp(wid, w));
             (w, place.anchor_x)
         }
-        Overlay::Launcher | Overlay::Overview => return,
+        Overlay::Launcher => return,
     };
     // Centred under the item that opened it, kept on screen.
     let left = (pivot_x - width / 2.0).min(full.max.x - 8.0 - width).max(8.0);
@@ -136,7 +136,7 @@ pub fn show(
                     Overlay::Windows => windows_panel(ui, windows, actions),
                     Overlay::Cpu => proc_panel(ui, procs, true, actions),
                     Overlay::Ram => proc_panel(ui, procs, false, actions),
-                    Overlay::Launcher | Overlay::Overview => {}
+                    Overlay::Launcher => {}
                 }
             });
         });

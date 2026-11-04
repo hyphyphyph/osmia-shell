@@ -2,7 +2,7 @@
 //! and a footer that lists the keys and prefixes (Launcher.mockups round 1, variation 3).
 
 use egui::text::{LayoutJob, TextFormat};
-use egui::{pos2, vec2, Align2, Key, Modifiers, Rect, Sense, Ui};
+use egui::{pos2, vec2, Align2, Rect, Sense, Ui};
 
 use crate::icons::{self, Icon};
 use crate::launch::{self, Data, Item, Kind, Source, WinInfo};
@@ -18,36 +18,26 @@ pub struct State {
 
 const ROW_H: f32 = 28.0;
 
-pub fn show(ui: &mut Ui, st: &mut State, data: &Data, windows: &[WinInfo], width: f32, max_rows: usize, actions: &mut Vec<Action>) {
+/// The keys the search card acts on, read by whoever owns the screen.
+#[derive(Default, Clone, Copy)]
+pub struct Keys {
+    pub down: bool,
+    pub up: bool,
+    pub enter: bool,
+    /// Alt+1 to Alt+4: pick that result.
+    pub alt_pick: Option<usize>,
+}
+
+/// The search card: a box, and under it the results while something is typed.
+/// With nothing typed it is the box alone, and the screen shows windows instead.
+/// Returns the card's rectangle.
+#[allow(clippy::too_many_arguments)]
+pub fn card(ui: &mut Ui, st: &mut State, data: &Data, windows: &[WinInfo], width: f32, max_rows: usize, k: &Keys, actions: &mut Vec<Action>) -> Rect {
     let full = ui.max_rect();
-    let bg = ui.interact(full, crate::ui::widgets::id("launcher-bg"), Sense::click());
-    if bg.clicked() {
-        actions.push(Action::CloseOverlay);
-    }
-
-    // Keys first, so the text box does not see them.
-    let (down, up, enter, esc) = ui.input_mut(|i| {
-        let down = i.consume_key(Modifiers::NONE, Key::ArrowDown) || i.consume_key(Modifiers::CTRL, Key::N);
-        let up = i.consume_key(Modifiers::NONE, Key::ArrowUp) || i.consume_key(Modifiers::CTRL, Key::P);
-        let enter = i.consume_key(Modifiers::NONE, Key::Enter);
-        let esc = i.consume_key(Modifiers::NONE, Key::Escape);
-        (down, up, enter, esc)
-    });
-    let mut alt_pick = None;
-    ui.input_mut(|i| {
-        for (n, key) in [Key::Num1, Key::Num2, Key::Num3, Key::Num4].into_iter().enumerate() {
-            if i.consume_key(Modifiers::ALT, key) {
-                alt_pick = Some(n);
-            }
-        }
-    });
-    if esc {
-        actions.push(Action::CloseOverlay);
-    }
-
+    let (down, up, enter, alt_pick) = (k.down, k.up, k.enter, k.alt_pick);
     let before = st.query.clone();
-    egui::Area::new(crate::ui::widgets::id("launcher"))
-        .fixed_pos(pos2(full.center().x, full.height() * 0.18))
+    let shown = egui::Area::new(crate::ui::widgets::id("launcher"))
+        .fixed_pos(pos2(full.center().x, 36.0))
         .pivot(Align2::CENTER_TOP)
         .order(egui::Order::Foreground)
         .show(ui.ctx(), |ui| {
@@ -70,13 +60,17 @@ pub fn show(ui: &mut Ui, st: &mut State, data: &Data, windows: &[WinInfo], width
                     .frame(egui::Frame::NONE)
                     .desired_width(edit_rect.width())
                     .font(crate::theme::fid(15.0))
-                    .hint_text("Search apps, windows, actions");
+                    .hint_text("Type to search apps, windows, actions");
                 let resp = child.add(te);
                 resp.request_focus();
                 ui.painter().line_segment([sb.left_bottom(), sb.right_bottom()], egui::Stroke::new(1.0, theme::LINE));
 
                 if st.query != before {
                     st.selected = 0;
+                }
+                if st.query.is_empty() {
+                    // Nothing typed: the box alone. The screen shows the windows.
+                    return;
                 }
                 let items = launch::search(data, windows, &st.query, 24);
                 if !items.is_empty() {
@@ -127,6 +121,7 @@ pub fn show(ui: &mut Ui, st: &mut State, data: &Data, windows: &[WinInfo], width
                 }
             });
         });
+    shown.response.rect
 }
 
 fn non_calc_rank(items: &[Item], idx: usize) -> Option<usize> {

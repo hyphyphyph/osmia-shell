@@ -10,7 +10,7 @@ export anchor Control:
         The binary is named osmia.
         A command is written as osmia, then the part, then the action.
         Examples are osmia launcher toggle, osmia dnd on, and osmia history toggle.
-        osmia overview toggles the window overview. Its actions are toggle, show, and hide.
+        osmia overview and osmia launcher are the same screen, the window overview with the launcher search. Their actions are toggle, show, and hide.
         osmia settings opens the settings window, or brings it forward if it is already open. An optional page name opens that page.
 
     socket:

@@ -266,7 +266,7 @@ fn launcher(ui: &mut Ui, cfg: &Config, actions: &mut Vec<Action>) {
 }
 
 fn overview_rows(ui: &mut Ui, cfg: &Config, actions: &mut Vec<Action>) {
-    subhead(ui, "Overview", "Every open window as a card. Type to filter, click to switch, Escape to close.");
+    subhead(ui, "Overview", "Every open window as a card, with the launcher search on top. The Super key opens it too.");
     row(ui, "Hot corner", "Rest the pointer in the top left corner of the screen to open it. Needs the bar on top. `osmia overview toggle` works from a key.", |ui| {
         let opts = ["Top left", "Off"];
         let cur = if cfg.overview.corner == "top-left" { 0 } else { 1 };

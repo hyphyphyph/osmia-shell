@@ -141,8 +141,6 @@ pub enum Overlay {
     Windows,
     Cpu,
     Ram,
-    /// Every open window as a card.
-    Overview,
 }
 
 impl Overlay {

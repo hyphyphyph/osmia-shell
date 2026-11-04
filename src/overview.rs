@@ -51,12 +51,6 @@ pub fn match_thumbs(wins: &[(&str, &str)], thumbs: &[Thumb]) -> Vec<Option<usize
         .collect()
 }
 
-/// Whether a window passes the typed filter: every word is in the title or app name.
-pub fn passes(query: &str, title: &str, app_name: &str) -> bool {
-    let hay = format!("{title} {app_name}").to_lowercase();
-    query.to_lowercase().split_whitespace().all(|w| hay.contains(w))
-}
-
 /// How the cards are laid out.
 #[derive(Debug, PartialEq, Clone, Copy)]
 pub struct Grid {
@@ -104,14 +98,6 @@ mod tests {
     fn twin_windows_take_pictures_in_order() {
         let thumbs = [thumb("t", "x"), thumb("t", "x")];
         assert_eq!(match_thumbs(&[("t", "x"), ("t", "x"), ("t", "x")], &thumbs), [Some(0), Some(1), None]);
-    }
-
-    #[test]
-    fn filter_wants_every_word() {
-        assert!(passes("", "anything", ""));
-        assert!(passes("fire doc", "Docs - Mozilla", "Firefox"));
-        assert!(passes("FIRE", "x", "Firefox"));
-        assert!(!passes("fire zzz", "Docs", "Firefox"));
     }
 
     #[test]

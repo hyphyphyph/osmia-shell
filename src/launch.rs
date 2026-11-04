@@ -125,7 +125,7 @@ impl Data {
     }
 
     /// The most used apps, for an empty search box.
-    fn top(&self, n: usize) -> Vec<Item> {
+    pub fn top(&self, n: usize) -> Vec<Item> {
         let mut apps: Vec<&DesktopApp> = self.apps.iter().collect();
         apps.sort_by(|a, b| {
             self.boost(&b.id)
