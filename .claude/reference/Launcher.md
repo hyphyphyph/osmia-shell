@@ -30,7 +30,7 @@ If the typed text is a sum, the launcher shows the answer.
 
 ## Quick Actions
 
-Includes lock, suspend, and power off. Lock runs an outside locker. The shell does not draw a lock screen.
+Includes lock, suspend, hibernate when the machine can, and power off. Lock runs an outside locker. The shell does not draw a lock screen.
 
 ## Results
 

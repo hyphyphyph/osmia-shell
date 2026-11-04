@@ -151,6 +151,7 @@ pub enum PowerAction {
     Lock,
     Logout,
     Suspend,
+    Hibernate,
     Reboot,
     PowerOff,
 }
@@ -161,6 +162,7 @@ impl PowerAction {
             PowerAction::Lock => "Lock",
             PowerAction::Logout => "Log out",
             PowerAction::Suspend => "Suspend",
+            PowerAction::Hibernate => "Hibernate",
             PowerAction::Reboot => "Reboot",
             PowerAction::PowerOff => "Power off",
         }

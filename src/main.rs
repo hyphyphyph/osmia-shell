@@ -35,6 +35,8 @@ fn main() {
         }
         std::process::exit(control::client(&args));
     }
+    // Ask logind in the background, so the power menu knows whether to offer Hibernate.
+    sys::can_hibernate();
     if let Err(e) = app::run() {
         eprintln!("osmia: {e}");
         std::process::exit(1);

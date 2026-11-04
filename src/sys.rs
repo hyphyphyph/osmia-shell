@@ -352,6 +352,31 @@ pub fn logind_call(method: &str) {
     });
 }
 
+/// Whether logind says this machine can hibernate (it needs enough swap and kernel
+/// support). Asked once in the background at startup, so it is false until that
+/// answer arrives.
+pub fn can_hibernate() -> bool {
+    static ANSWER: std::sync::OnceLock<bool> = std::sync::OnceLock::new();
+    static ASKED: std::sync::Once = std::sync::Once::new();
+    if let Some(a) = ANSWER.get() {
+        return *a;
+    }
+    ASKED.call_once(|| {
+        std::thread::spawn(|| {
+            let ask = async {
+                let conn = zbus::Connection::system().await?;
+                let r = conn
+                    .call_method(Some("org.freedesktop.login1"), "/org/freedesktop/login1", Some("org.freedesktop.login1.Manager"), "CanHibernate", &())
+                    .await?;
+                zbus::Result::Ok(r.body().deserialize::<String>()?)
+            };
+            let yes = pollster::block_on(ask).map(|s| s == "yes" || s == "challenge").unwrap_or(false);
+            let _ = ANSWER.set(yes);
+        });
+    });
+    false
+}
+
 pub struct Slow {
     pub volume: Option<Volume>,
     pub network: Option<Net>,
@@ -959,4 +984,19 @@ pub fn cmdline(pid: u32) -> String {
     let raw = fs::read(format!("/proc/{pid}/cmdline")).unwrap_or_default();
     let text: Vec<String> = raw.split(|b| *b == 0).filter(|a| !a.is_empty()).map(|a| String::from_utf8_lossy(a).into_owned()).collect();
     text.join(" ")
+}
+
+#[cfg(test)]
+mod hibernate_tests {
+    /// Asks the real logind: `cargo test -- --ignored hibernate`.
+    #[test]
+    #[ignore]
+    fn asks_logind() {
+        super::can_hibernate();
+        std::thread::sleep(std::time::Duration::from_millis(800));
+        let yes = super::can_hibernate();
+        let out = std::process::Command::new("busctl").args(["call", "org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", "CanHibernate"]).output().unwrap();
+        let want = String::from_utf8_lossy(&out.stdout).contains("\"yes\"");
+        assert_eq!(yes, want);
+    }
 }

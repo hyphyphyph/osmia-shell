@@ -65,8 +65,9 @@ export anchor Bar:
         Joining a new network that needs a password is left to an outside tool.
 
     powerButton:
-        Opens a menu with five actions, lock, log out, suspend, reboot, and power off.
-        Lock and suspend run at once.
+        Opens a menu with up to six actions, lock, suspend, hibernate, log out, reboot, and power off.
+        Hibernate shows only when logind says the machine can hibernate, and it comes right after suspend.
+        Lock, suspend, and hibernate run at once.
         Log out, reboot, and power off ask the user to confirm first.
         A lock action runs an outside locker. The shell does not draw a lock screen.
 

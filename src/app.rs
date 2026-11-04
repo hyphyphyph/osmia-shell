@@ -1624,6 +1624,7 @@ impl App {
                     PowerAction::Lock => launch::spawn(&self.shared.cfg.session.lock.clone()),
                     PowerAction::Logout => launch::spawn(&self.shared.cfg.session.logout.clone()),
                     PowerAction::Suspend => sys::logind_call("Suspend"),
+                    PowerAction::Hibernate => sys::logind_call("Hibernate"),
                     PowerAction::Reboot => sys::logind_call("Reboot"),
                     PowerAction::PowerOff => sys::logind_call("PowerOff"),
                 }

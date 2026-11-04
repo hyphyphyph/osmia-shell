@@ -303,8 +303,14 @@ fn calendar(ui: &mut Ui, offset: i32, actions: &mut Vec<Action>, overlay: &Overl
 
 fn power(ui: &mut Ui, confirm: Option<PowerAction>, actions: &mut Vec<Action>) {
     ui.add_space(6.0);
-    for (i, a) in [PowerAction::Lock, PowerAction::Suspend, PowerAction::Logout, PowerAction::Reboot, PowerAction::PowerOff].into_iter().enumerate() {
-        if i == 2 {
+    let mut list = vec![PowerAction::Lock, PowerAction::Suspend];
+    if crate::sys::can_hibernate() {
+        list.push(PowerAction::Hibernate);
+    }
+    let split = list.len();
+    list.extend([PowerAction::Logout, PowerAction::Reboot, PowerAction::PowerOff]);
+    for (i, a) in list.into_iter().enumerate() {
+        if i == split {
             let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 9.0), Sense::hover());
             ui.painter().line_segment([pos2(r.min.x + 8.0, r.center().y), pos2(r.max.x - 8.0, r.center().y)], egui::Stroke::new(1.0, theme::LINE));
         }

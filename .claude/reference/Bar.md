@@ -44,7 +44,7 @@ Scrolling on volume changes the volume. Clicking it mutes. Scrolling on brightne
 
 ## Power Button
 
-Opens a menu with five actions, lock, log out, suspend, reboot, and power off. Lock and suspend run at once. Log out, reboot, and power off ask the user to confirm first. A lock action runs an outside locker. The shell does not draw a lock screen.
+Opens a menu with up to six actions, lock, suspend, hibernate, log out, reboot, and power off. Hibernate shows only when logind says the machine can hibernate, and it comes right after suspend. Lock, suspend, and hibernate run at once. Log out, reboot, and power off ask the user to confirm first. A lock action runs an outside locker. The shell does not draw a lock screen.
 
 ## Notification Entry
 

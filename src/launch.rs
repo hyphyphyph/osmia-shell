@@ -353,7 +353,11 @@ pub fn search(data: &Data, windows: &[WinInfo], raw: &str, max: usize) -> Vec<It
         }
     }
     if prefix.is_none() || prefix == Some(':') {
-        for a in [PowerAction::Lock, PowerAction::Logout, PowerAction::Suspend, PowerAction::Reboot, PowerAction::PowerOff] {
+        let mut actions = vec![PowerAction::Lock, PowerAction::Logout, PowerAction::Suspend, PowerAction::Reboot, PowerAction::PowerOff];
+        if crate::sys::can_hibernate() {
+            actions.insert(3, PowerAction::Hibernate);
+        }
+        for a in actions {
             if let Some((s, m)) = if query.is_empty() { Some((0.0, vec![])) } else { fuzzy(query, a.label()) } {
                 items.push(Item { name: a.label().to_owned(), source: Source::Action, score: s, matches: m, kind: Kind::Action(a) });
             }

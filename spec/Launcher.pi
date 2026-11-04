@@ -25,7 +25,7 @@ export anchor Launcher:
         If the typed text is a sum, the launcher shows the answer.
 
     quickActions:
-        Includes lock, suspend, and power off.
+        Includes lock, suspend, hibernate when the machine can, and power off.
         Lock runs an outside locker. The shell does not draw a lock screen.
 
     results:

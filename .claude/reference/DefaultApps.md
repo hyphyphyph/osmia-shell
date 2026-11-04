@@ -24,7 +24,7 @@ A choice covers every type listed for the row, so choosing a browser sets web li
 
 ## Candidates
 
-The list holds the installed apps whose desktop file says it opens the row's main type, sorted by name. Apps that are hidden, or are not applications, are left out. The current default always appears in the list, even when its desktop file does not name the type. A row with no candidates says that no installed app opens these.
+The list holds the installed apps whose desktop file says it opens the row's main type, sorted by name. Apps marked Hidden, and entries that are not applications, are left out. Apps marked NoDisplay stay, since chooser apps are often hidden from menus on purpose. The current default always appears in the list, even when its desktop file does not name the type. A row with no candidates says that no installed app opens these.
 
 ## Reading
 

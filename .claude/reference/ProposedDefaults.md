@@ -19,7 +19,8 @@ These are proposals, not confirmed decisions. They fill gaps left by the intervi
 - An unknown key is ignored and a warning notification names it. The rest of the file still applies.
 - The lock command is loginctl lock-session by default, and the user can change it.
 - The log out command ends the current session through loginctl by default, and the user can change it.
-- Suspend, reboot, and power off go through logind on D-Bus, so no root rights are needed.
+- Suspend, hibernate, reboot, and power off go through logind on D-Bus, so no root rights are needed.
+- Hibernate is offered only when logind answers yes to CanHibernate. The shell asks once, in the background, when it starts. Until the answer arrives, Hibernate is hidden.
 - The popup corner can be set to any of the four corners. The default is bottom right.
 - The alerts table is optional and empty by default. It maps a notification app name to a window app id.
 - The default theme is dark. A built-in light theme can be picked by name. There is no automatic switch.
