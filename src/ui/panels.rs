@@ -86,7 +86,16 @@ pub fn show(
         Overlay::Battery => (300.0, place.anchor_x),
         Overlay::Media => (340.0, place.anchor_x),
         Overlay::Windows => (360.0, place.anchor_x),
-        Overlay::Cpu | Overlay::Ram => (320.0, place.anchor_x),
+        Overlay::Cpu | Overlay::Ram => {
+            // Wide enough for the longest name. It only grows while the card is open,
+            // so the card does not shrink and grow as the numbers change.
+            let wid = crate::ui::widgets::id("proc-width");
+            let open: Option<String> = ui.ctx().data(|d| d.get_temp(crate::ui::widgets::id("proc-open"))).flatten();
+            let need = proc_width(ui, procs, matches!(overlay, Overlay::Cpu), open.as_deref(), (full.width() - 16.0).min(PROC_MAX_W));
+            let w = ui.ctx().data(|d| d.get_temp::<f32>(wid)).unwrap_or(0.0).max(need).min(full.width() - 16.0);
+            ui.ctx().data_mut(|d| d.insert_temp(wid, w));
+            (w, place.anchor_x)
+        }
         Overlay::Launcher => return,
     };
     // Centred under the item that opened it, kept on screen.
@@ -103,7 +112,7 @@ pub fn show(
         Overlay::Cpu | Overlay::Ram => {
             let cpu = matches!(overlay, Overlay::Cpu);
             let open: Option<String> = ui.ctx().data(|d| d.get_temp(crate::ui::widgets::id("proc-open"))).flatten();
-            (proc_scroll_h(&proc_rows(procs, cpu), open.as_deref(), avail - PROC_CHROME) as usize, procs.ready, procs.lock.is_some() as usize)
+            (proc_scroll_h(&proc_rows(procs, cpu), open.as_deref(), avail - PROC_CHROME) as usize, procs.ready, procs.lock.is_some() as usize + 2 * width as usize)
         }
         _ => (0, true, 0),
     };
@@ -1248,12 +1257,9 @@ fn proc_panel(ui: &mut Ui, list: &crate::sys::ProcList, cpu: bool, actions: &mut
     let sh = proc_scroll_h(&rows, open.as_deref(), panel_avail(ui) - PROC_CHROME);
     egui::ScrollArea::vertical().min_scrolled_height(sh).max_height(sh).auto_shrink([false, false]).show(ui, |ui| {
     for p in rows.iter().map(|r| r.as_ref()) {
-        let label = if p.count > 1 { format!("{} \u{00d7}{}", p.name, p.count) } else if p.members.is_empty() { format!("{} (not running)", p.name) } else { p.name.clone() };
+        let label = proc_label(p);
         let cur = list.limits.get(&p.name).and_then(|l| if cpu { l.cpu.map(f64::from) } else { l.mem_mb.map(|m| m as f64) });
-        let mut value = if cpu { cpu_text((p.cpu / list.cores.max(1) as f32).min(100.0)) } else { mem_text(p.mem_kb) };
-        if let Some(c) = cur {
-            value = format!("{value} / {}", limit_text(cpu, c));
-        }
+        let value = proc_value(list, p, cpu);
         let is_open = p.count > 1 && open.as_deref() == Some(p.name.as_str());
         let pids: Vec<u32> = p.members.iter().map(|m| m.0).collect();
         let lim = LimitCtx { cpu, cur, all: list.limits.get(&p.name).copied().unwrap_or_default(), name: &p.name };
@@ -1272,7 +1278,7 @@ fn proc_panel(ui: &mut Ui, list: &crate::sys::ProcList, cpu: bool, actions: &mut
             let top = mem.iter().map(|m| mk(m)).fold(1.0, f32::max);
             for m in mem.into_iter().take(30) {
                 let cmd = crate::sys::cmdline(m.0);
-                let label = format!("{}  {}", m.0, if cmd.is_empty() { p.name.clone() } else { cmd });
+                let label = member_label(m.0, &cmd, &p.name);
                 let value = if cpu { cpu_text((m.1 / list.cores.max(1) as f32).min(100.0)) } else { mem_text(m.2) };
                 proc_row(ui, &format!("#{}", m.0), &label, &value, mk(m) / top, false, false, 18.0, &[m.0], &mut confirm, None, actions);
             }
@@ -1297,6 +1303,67 @@ fn panel_avail(ui: &Ui) -> f32 {
 }
 
 /// What the + and - buttons step through. Any value can also be typed.
+/// The widest the process card gets, when a name is very long.
+const PROC_MAX_W: f32 = 760.0;
+
+fn proc_label(p: &crate::sys::Proc) -> String {
+    if p.count > 1 {
+        format!("{} \u{00d7}{}", p.name, p.count)
+    } else if p.members.is_empty() {
+        format!("{} (not running)", p.name)
+    } else {
+        p.name.clone()
+    }
+}
+
+fn member_label(pid: u32, cmd: &str, name: &str) -> String {
+    format!("{pid}  {}", if cmd.is_empty() { name } else { cmd })
+}
+
+/// The figure on a program row, with its limit when it has one.
+fn proc_value(list: &crate::sys::ProcList, p: &crate::sys::Proc, cpu: bool) -> String {
+    let value = if cpu { cpu_text((p.cpu / list.cores.max(1) as f32).min(100.0)) } else { mem_text(p.mem_kb) };
+    let cur = list.limits.get(&p.name).and_then(|l| if cpu { l.cpu.map(f64::from) } else { l.mem_mb.map(|m| m as f64) });
+    match cur {
+        Some(c) => format!("{value} / {}", limit_text(cpu, c)),
+        None => value,
+    }
+}
+
+/// Width that shows every name in full, between the usual 320 and `max`.
+fn proc_width(ui: &Ui, list: &crate::sys::ProcList, cpu: bool, open: Option<&str>, max: f32) -> f32 {
+    let text_w = |t: &str, size: f32| ui.painter().layout_no_wrap(t.to_owned(), crate::theme::fid(size), theme::TEXT).size().x;
+    let mut need = 320.0f32;
+    for p in proc_rows(list, cpu).iter().map(|r| r.as_ref()) {
+        // Pad, triangle, label, gap, value, then the limit and stop buttons.
+        need = need.max(14.0 + 14.0 + text_w(&proc_label(p), 12.0) + 16.0 + text_w(&proc_value(list, p, cpu), 12.0) + 66.0);
+        if p.count > 1 && open == Some(p.name.as_str()) {
+            for m in p.members.iter().take(30) {
+                let v = if cpu { cpu_text((m.1 / list.cores.max(1) as f32).min(100.0)) } else { mem_text(m.2) };
+                need = need.max(18.0 + 14.0 + text_w(&member_label(m.0, &crate::sys::cmdline(m.0), &p.name), 11.0) + 16.0 + text_w(&v, 12.0) + 40.0);
+            }
+        }
+    }
+    need.min(max).ceil()
+}
+
+/// Cut text to fit a width in points, ending in an ellipsis. Only used when the
+/// card is at its widest and a name is still longer.
+fn clip_px(ui: &Ui, text: &str, size: f32, max_w: f32) -> String {
+    let w = |t: &str| ui.painter().layout_no_wrap(t.to_owned(), crate::theme::fid(size), theme::TEXT).size().x;
+    if w(text) <= max_w {
+        return text.to_owned();
+    }
+    let chars: Vec<char> = text.chars().collect();
+    let (mut lo, mut hi) = (0usize, chars.len());
+    while lo < hi {
+        let mid = (lo + hi).div_ceil(2);
+        let t: String = chars[..mid].iter().collect::<String>() + "\u{2026}";
+        if w(&t) <= max_w { lo = mid } else { hi = mid - 1 }
+    }
+    chars[..lo].iter().collect::<String>() + "\u{2026}"
+}
+
 const CPU_STEPS: [f64; 12] = [0.5, 1.0, 2.0, 3.0, 5.0, 10.0, 15.0, 25.0, 40.0, 50.0, 75.0, 100.0];
 const MEM_STEPS: [f64; 11] = [128.0, 256.0, 512.0, 1024.0, 2048.0, 3072.0, 4096.0, 6144.0, 8192.0, 12288.0, 16384.0];
 
@@ -1462,8 +1529,11 @@ fn proc_row(
         ui.painter().add(egui::Shape::convex_polygon(pts, theme::DIM, egui::Stroke::NONE));
         tx += 14.0;
     }
-    ui.painter().text(pos2(tx, ty), Align2::LEFT_CENTER, crate::ui::popups::clip(label, if indent > 0.0 { 34 } else { 26 }), crate::theme::fid(if indent > 0.0 { 11.0 } else { 12.0 }), if indent > 0.0 { theme::DIM } else { theme::TEXT });
     let vx = if limit.is_some() { 66.0 } else { 40.0 };
+    let vw = ui.painter().layout_no_wrap(value.to_owned(), crate::theme::fid(12.0), theme::DIM).size().x;
+    let size = if indent > 0.0 { 11.0 } else { 12.0 };
+    let label = clip_px(ui, label, size, r.max.x - vx - vw - 12.0 - tx);
+    ui.painter().text(pos2(tx, ty), Align2::LEFT_CENTER, label, crate::theme::fid(size), if indent > 0.0 { theme::DIM } else { theme::TEXT });
     ui.painter().text(pos2(r.max.x - vx, ty), Align2::RIGHT_CENTER, value, crate::theme::fid(12.0), if limit.as_ref().is_some_and(|(c, _)| c.cur.is_some()) { theme::accent() } else { theme::DIM });
     if let Some((ctx, edit)) = limit.as_mut() {
         let g = Rect::from_center_size(pos2(r.max.x - 46.0, ty), vec2(20.0, 20.0));

@@ -32,6 +32,10 @@ The shell uses cgroup v2 in the user's own part of the tree, so it needs no root
 
 Limits are kept in a small file named proc-limits in the osmia folder of the user runtime folder, beside a file named proc-origins that records where each moved process came from. The runtime folder is cleared at reboot, as the control groups are, so limits are lost at reboot. This is intended. A saved limit never outlives the group that enforces it. Limits survive a restart of the shell, and are applied again when a limited program starts. A limit follows the program name, so it applies to the next run of that program.
 
+## Width
+
+The card is at least 320 px wide, and widens so that no program name, process command line, or figure is cut. It is measured from the rows, including the open group's processes, and it never gets narrower while the card is open, so it does not shrink and grow as the numbers change. It stops at 760 px or the screen width less 8 px each side, whichever is smaller. Only a name longer than that is cut, with an ellipsis, by its width on screen and not by a count of characters.
+
 ## Sizing
 
 Cards that hold a list take as much height as the list needs, up to the space between the bar and the screen edge, and then scroll. This holds for the notification history, the window list, the tray menu, and this card.

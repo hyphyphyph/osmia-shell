@@ -108,7 +108,7 @@ export anchor Bar:
         The tray menu, the calendar, the network list, the power menu, and the Processor and Memory lists are floating cards.
         A card floats 6 px below the bar. It does not touch the bar.
         A card has 10 px rounded corners, a soft shadow, and a grey a little lighter than the bar.
-        A card is about 250 px wide, with 6 px of padding.
+        A card is about 250 px wide, with 6 px of padding. The history, the Processor and Memory lists, and long tray menus are wider when their content needs it.
         Rows are 32 px tall and have 6 px rounded corners. A hovered row gets a plate.
         Cards with a title show it in bold above the rows.
         The tray menu shows a check mark in front of the chosen item.
