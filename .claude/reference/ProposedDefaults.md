@@ -6,7 +6,7 @@ These are proposals, not confirmed decisions. They fill gaps left by the intervi
 
 ## Control
 
-- Commands are launcher toggle, show, hide. history toggle, show, hide, clear. dnd on, off, toggle, status. popups clear. config reload, check. status.
+- Commands are launcher toggle, show, hide. history toggle, show, hide, clear. settings with an optional page. dnd on, off, toggle, status. popups clear. config reload, check. status.
 - Running osmia with no arguments starts the shell. Running it with a part and action acts as the client.
 - Starting a second shell prints a message and exits, because one is already running.
 - Exit codes are 0 for done, 1 for a bad command or failure, and 2 when no shell is running.
@@ -26,6 +26,10 @@ These are proposals, not confirmed decisions. They fill gaps left by the intervi
 - The font is the system sans-serif font from fontconfig, with a small bundled font as fallback.
 - The default bar height is 32 logical pixels.
 - Apps that need a terminal run in the terminal named in the launcher table, which defaults to the TERMINAL variable.
+
+## Keys
+
+- The session binds Super+Comma to osmia settings. Super alone still opens the launcher.
 
 ## Bar
 

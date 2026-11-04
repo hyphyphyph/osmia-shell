@@ -26,7 +26,7 @@ An "Osmia" entry for the login screen: labwc plus the shell, with its own compos
 
 It installs `/usr/local/bin/osmia`, `/usr/local/bin/osmia-session`,
 `/usr/share/wayland-sessions/osmia.desktop`, and default config in `/usr/local/share/osmia/labwc`.
-Super opens the launcher. Click the brightness item in the bar to set the screen timeout (osmia runs `swayidle` for this and keeps the choice in `~/.local/state/osmia/screen-timeout`). Run the install again after you rebuild, to update the binary.
+Super opens the launcher. Super+Comma opens Osmia settings. Click the brightness item in the bar to set the screen timeout (osmia runs `swayidle` for this and keeps the choice in `~/.local/state/osmia/screen-timeout`). Run the install again after you rebuild, to update the binary.
 
 ## Screenshots and video
 
@@ -86,6 +86,7 @@ right-click skips), the same controls inside the tray panel of the app that owns
     osmia capture pick screen|area X Y W H|window N     # choose in the open overlay, for scripts
     osmia launcher toggle|show|hide
     osmia history toggle|show|hide|clear
+    osmia settings [page]                # opens settings (Super+Comma in the session)
     osmia dnd on|off|toggle|status
     osmia popups clear
     osmia config reload|check

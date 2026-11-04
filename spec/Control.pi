@@ -10,6 +10,7 @@ export anchor Control:
         The binary is named osmia.
         A command is written as osmia, then the part, then the action.
         Examples are osmia launcher toggle, osmia dnd on, and osmia history toggle.
+        osmia settings opens the settings window, or brings it forward if it is already open. An optional page name opens that page.
 
     socket:
         The socket is in the user runtime folder, for example XDG_RUNTIME_DIR.

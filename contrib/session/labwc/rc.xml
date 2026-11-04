@@ -276,6 +276,9 @@
     <keybind key="W-l">
       <action name="Execute" command="loginctl lock-session" />
     </keybind>
+    <keybind key="W-comma">
+      <action name="Execute" command="osmia settings" />
+    </keybind>
     <!-- For qterminal dropdown -->
     <keybind key="F12">
       <action name="Execute" command="qterminal -d" />
