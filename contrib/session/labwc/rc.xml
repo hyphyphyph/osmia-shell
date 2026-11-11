@@ -308,6 +308,13 @@
     <keybind key="A-S-Tab">
       <action name="PreviousWindow" />
     </keybind>
+    <!-- Cycle windows of the focused application only -->
+    <keybind key="A-grave">
+      <action name="NextWindow" identifier="current" />
+    </keybind>
+    <keybind key="A-S-grave">
+      <action name="PreviousWindow" identifier="current" />
+    </keybind>
     <keybind key="A-F4">
       <action name="Close" />
     </keybind>
