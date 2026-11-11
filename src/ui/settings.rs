@@ -20,10 +20,11 @@ enum Page {
     Power,
     Shortcuts,
     Session,
+    Integrations,
     About,
 }
 
-const PAGES: [(Page, &str); 11] = [
+const PAGES: [(Page, &str); 12] = [
     (Page::Appearance, "Appearance"),
     (Page::Bar, "Bar"),
     (Page::Notifications, "Notifications"),
@@ -34,6 +35,7 @@ const PAGES: [(Page, &str); 11] = [
     (Page::Power, "Power and screen"),
     (Page::Shortcuts, "Keyboard shortcuts"),
     (Page::Session, "Session"),
+    (Page::Integrations, "Integrations"),
     (Page::About, "About"),
 ];
 
@@ -72,6 +74,7 @@ pub struct Env<'a> {
     pub captured: Option<&'a str>,
     pub defaults: &'a crate::defaults::DefaultApps,
     pub dialogs: &'a crate::portal::FileDialogs,
+    pub spotify: &'a crate::spotify::Likes,
 }
 
 pub fn window(ui: &mut Ui, cfg: &Config, env: &Env, actions: &mut Vec<Action>) {
@@ -131,6 +134,7 @@ pub fn window(ui: &mut Ui, cfg: &Config, env: &Env, actions: &mut Vec<Action>) {
             Page::Power => power(ui, env, actions),
             Page::Shortcuts => shortcuts(ui, env, actions),
             Page::Session => session(ui, cfg, actions),
+            Page::Integrations => integrations(ui, cfg, env, actions),
             Page::About => about(ui, actions),
         });
     });
@@ -463,6 +467,68 @@ fn session(ui: &mut Ui, cfg: &Config, actions: &mut Vec<Action>) {
             actions.push(set("session.logout", s(&v)));
         }
     });
+}
+
+fn integrations(ui: &mut Ui, cfg: &Config, env: &Env, actions: &mut Vec<Action>) {
+    let sp = env.spotify;
+    let client_id = cfg.spotify.client_id.trim();
+    subhead(ui, "Spotify", "Like the song Spotify is playing from the heart in the media card.");
+    row(ui, "Account", spotify_status(client_id, sp), |ui| {
+        if client_id.is_empty() {
+            ui.label(egui::RichText::new("Add a Client ID first").size(theme::scaled(12.0)).color(theme::DIM));
+        } else if sp.signed_in {
+            if pill(ui, "Sign out", false) {
+                actions.push(Action::SpotifyLogout);
+            }
+        } else if sp.signing_in {
+            if pill(ui, "Cancel", false) {
+                actions.push(Action::SpotifyCancelLogin);
+            }
+            ui.add_space(8.0);
+            ui.label(egui::RichText::new("Waiting for the browser\u{2026}").size(theme::scaled(12.0)).color(theme::DIM));
+        } else if pill(ui, "Sign in", true) {
+            actions.push(Action::SpotifyLogin);
+        }
+    });
+    row(ui, "Client ID", "From your app at developer.spotify.com. Changing it needs a new sign-in.", |ui| {
+        if let Some(v) = text_input(ui, "spotify-id", client_id, 280.0) {
+            if v != client_id {
+                if sp.signed_in {
+                    actions.push(Action::SpotifyLogout);
+                }
+                actions.push(set("spotify.client_id", s(&v)));
+            }
+        }
+    });
+    let uri = crate::spotify::redirect_uri();
+    row(ui, "Redirect URI", &format!("Add {uri} to the app's redirect URIs, exactly as shown."), |ui| {
+        if pill(ui, "Copy", false) {
+            actions.push(Action::CopyText(uri.clone()));
+        }
+    });
+    row(
+        ui,
+        "Make an app",
+        "Create an app, tick Web API, and add the redirect URI. Spotify needs the app's owner to have Premium. Other accounts go under the app's User Management.",
+        |ui| {
+            if pill(ui, "Open Spotify for Developers", false) {
+                actions.push(Action::OpenUrl("https://developer.spotify.com/dashboard".to_owned()));
+            }
+        },
+    );
+    ui.add_space(20.0);
+}
+
+fn spotify_status(client_id: &str, sp: &crate::spotify::Likes) -> &'static str {
+    if client_id.is_empty() {
+        "Not set up. Make an app below and paste its Client ID."
+    } else if sp.signed_in {
+        "Signed in. The heart in the media card saves songs to your Liked Songs."
+    } else if sp.signing_in {
+        "Finish signing in on the page that opened in your browser."
+    } else {
+        "Not signed in. Signing in opens Spotify in your browser."
+    }
 }
 
 fn shortcuts(ui: &mut Ui, env: &Env, actions: &mut Vec<Action>) {

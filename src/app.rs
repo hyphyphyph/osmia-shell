@@ -168,6 +168,8 @@ pub struct App {
     idle: Option<crate::idle::Idle>,
     audio_tx: Option<channel::Sender<sys::AudioInfo>>,
     cap_tx: Option<channel::Sender<crate::capture::CapMsg>>,
+    /// Pasted text, read off the main loop, with the surface that asked for it.
+    paste_tx: Option<channel::Sender<(wl_surface::WlSurface, String)>>,
     n_tx: Option<channel::Sender<notif::Event>>,
     mpris_cmd: Option<std::sync::mpsc::Sender<crate::mpris::Cmd>>,
     gpu_cmd: Option<std::sync::mpsc::Sender<crate::gpu::Cmd>>,
@@ -315,6 +317,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
         idle: None,
         audio_tx: None,
         cap_tx: None,
+        paste_tx: None,
         n_tx: None,
         mpris_cmd: None,
         gpu_cmd: None,
@@ -478,6 +481,18 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     event_loop.handle().insert_source(c_rx, |ev, _, app| {
         if let channel::Event::Msg(m) = ev {
             app.on_cap_msg(m);
+        }
+    })?;
+
+    // Ctrl+V: the clipboard is read on a thread and comes back here as a paste.
+    let (v_tx, v_rx) = channel::channel::<(wl_surface::WlSurface, String)>();
+    app.paste_tx = Some(v_tx);
+    event_loop.handle().insert_source(v_rx, |ev, _, app| {
+        if let channel::Event::Msg((surf, text)) = ev {
+            if let Some(i) = app.win_index(&surf) {
+                app.wins[i].events.push(egui::Event::Paste(text));
+                app.wins[i].dirty = true;
+            }
         }
     })?;
 
@@ -1162,6 +1177,7 @@ impl App {
             }
         }
         self.mark_kind(Kind::Overlay);
+        self.mark_kind(Kind::Settings);
     }
 
     fn spotify_send(&mut self, c: crate::spotify::Cmd) {
@@ -1176,10 +1192,7 @@ impl App {
         if id.is_empty() {
             self.notify_self(
                 "Spotify is not set up",
-                &format!(
-                    "Make an app at developer.spotify.com with the redirect URI {} and the Web API, then put its Client ID in config.toml under [spotify] client_id.",
-                    crate::spotify::redirect_uri()
-                ),
+                "Open Settings, then Integrations, to connect your Spotify account. `osmia settings integrations` opens it.",
             );
             return;
         }
@@ -1666,7 +1679,7 @@ impl App {
             },
             ["spotify", "login"] => {
                 if self.shared.cfg.spotify.client_id.trim().is_empty() {
-                    return format!("error: set [spotify] client_id in config.toml first. The app's redirect URI must be {}", crate::spotify::redirect_uri());
+                    return format!("error: no Spotify Client ID. Add one in Settings, Integrations (osmia settings integrations), or under [spotify] client_id in config.toml. The app's redirect URI must be {}", crate::spotify::redirect_uri());
                 }
                 self.spotify_login();
                 "ok: finish the sign-in in the browser".into()
@@ -1700,7 +1713,7 @@ impl App {
                     _ => !self.shared.spotify.get(&uri).unwrap_or(false),
                 };
                 if self.shared.cfg.spotify.client_id.trim().is_empty() {
-                    return format!("error: set [spotify] client_id in config.toml first. The app's redirect URI must be {}", crate::spotify::redirect_uri());
+                    return format!("error: no Spotify Client ID. Add one in Settings, Integrations (osmia settings integrations), or under [spotify] client_id in config.toml. The app's redirect URI must be {}", crate::spotify::redirect_uri());
                 }
                 let signed_in = self.shared.spotify.signed_in;
                 self.spotify_set(uri, like);
@@ -2056,6 +2069,7 @@ impl App {
                     captured: shared.captured_key.as_deref(),
                     defaults: &shared.default_apps,
                     dialogs: &shared.file_dialogs,
+                    spotify: &shared.spotify,
                 };
                 ui::settings::window(ui, &shared.cfg, &env, &mut actions);
             }
@@ -2097,6 +2111,13 @@ impl App {
             },
         });
         let wanted_cursor = out.platform_output.cursor_icon;
+        for cmd in &out.platform_output.commands {
+            if let egui::OutputCommand::CopyText(t) = cmd {
+                if !t.is_empty() {
+                    copy_to_clipboard(t);
+                }
+            }
+        }
         let over_this = self.pointer_on.as_ref().is_some_and(|(s, _)| s == w.surf.wl_surface());
         if kind == Kind::Popups && hovered != shared.popup_hover {
             shared.popup_hover = hovered;
@@ -2426,6 +2447,31 @@ impl App {
             Action::OpenConfigFile => {
                 config::ensure_file();
                 launch::spawn(&format!("xdg-open '{}'", config::path().display()));
+            }
+            Action::OpenUrl(url) => {
+                // Not through a shell: the URL is passed as one argument.
+                if let Err(e) = std::process::Command::new("xdg-open").arg(&url).spawn() {
+                    log::warn!("xdg-open {url}: {e}");
+                }
+            }
+            Action::CopyText(text) => copy_to_clipboard(&text),
+            Action::SpotifyLogin => {
+                if !self.shared.cfg.spotify.client_id.trim().is_empty() {
+                    self.spotify_login();
+                    self.mark_kind(Kind::Settings);
+                }
+            }
+            Action::SpotifyCancelLogin => {
+                if self.shared.spotify.signing_in {
+                    crate::spotify::cancel_login();
+                    self.shared.spotify.signing_in = false;
+                    self.shared.spotify.after_login = None;
+                    self.mark_kind(Kind::Settings);
+                    self.mark_kind(Kind::Overlay);
+                }
+            }
+            Action::SpotifyLogout => {
+                self.spotify_send(crate::spotify::Cmd::Logout);
             }
             Action::Gpu(cmd) => {
                 let g = &mut self.shared.gpu;
@@ -3109,6 +3155,25 @@ fn copy_to_clipboard(text: &str) {
     }
 }
 
+/// Read the clipboard's text with wl-paste on a thread, so a slow source cannot
+/// stall the shell, and send it back for the surface that asked.
+fn read_clipboard(surf: wl_surface::WlSurface, tx: channel::Sender<(wl_surface::WlSurface, String)>) {
+    std::thread::spawn(move || {
+        let out = std::process::Command::new("wl-paste")
+            .args(["--no-newline", "--type", "text"])
+            .stdin(std::process::Stdio::null())
+            .stderr(std::process::Stdio::null())
+            .output();
+        match out {
+            Ok(o) if o.status.success() && !o.stdout.is_empty() => {
+                let _ = tx.send((surf, String::from_utf8_lossy(&o.stdout).into_owned()));
+            }
+            Ok(_) => {}
+            Err(e) => log::warn!("wl-paste is not available: {e}"),
+        }
+    });
+}
+
 // ---------- Wayland handlers ----------
 
 impl wayland_client::Dispatch<WpFractionalScaleManagerV1, ()> for App {
@@ -3335,6 +3400,29 @@ impl App {
             return;
         }
         let mods = self.mods;
+        // Clipboard shortcuts become the events egui's text fields act on.
+        if pressed {
+            let paste = (mods.ctrl && !mods.alt && matches!(ev.keysym, Keysym::v | Keysym::V))
+                || (mods.shift && !mods.ctrl && ev.keysym == Keysym::Insert);
+            if paste {
+                if let Some(tx) = self.paste_tx.clone() {
+                    read_clipboard(focus, tx);
+                }
+                return;
+            }
+            if mods.ctrl && !mods.alt && !mods.shift {
+                let ev = match ev.keysym {
+                    Keysym::c | Keysym::C => Some(egui::Event::Copy),
+                    Keysym::x | Keysym::X => Some(egui::Event::Cut),
+                    _ => None,
+                };
+                if let Some(e) = ev {
+                    self.wins[i].events.push(e);
+                    self.wins[i].dirty = true;
+                    return;
+                }
+            }
+        }
         let w = &mut self.wins[i];
         if let Some(key) = keysym_to_key(ev.keysym) {
             w.events.push(egui::Event::Key { key, physical_key: Some(key), pressed, repeat, modifiers: mods });

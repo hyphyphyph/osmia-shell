@@ -11,6 +11,7 @@ use std::io::{Read, Write};
 use std::net::{TcpListener, TcpStream};
 use std::path::PathBuf;
 use std::process::{Command, Stdio};
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::mpsc;
 use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
@@ -28,6 +29,17 @@ const API: &str = "https://api.spotify.com/v1";
 const TOKEN_URL: &str = "https://accounts.spotify.com/api/token";
 /// How long the browser sign-in may take.
 const LOGIN_WAIT: Duration = Duration::from_secs(300);
+
+/// Set to stop a sign-in that is waiting for the browser.
+static CANCEL_LOGIN: AtomicBool = AtomicBool::new(false);
+/// What `login` returns when the user stopped it. Not an error to show.
+const CANCELLED: &str = "cancelled";
+
+/// Stop waiting for the browser. The sign-in ends without a message.
+/// Read by the worker thread, so it works while that thread is busy waiting.
+pub fn cancel_login() {
+    CANCEL_LOGIN.store(true, Ordering::SeqCst);
+}
 
 pub enum Cmd {
     /// Sign in through the browser with this Client ID.
@@ -96,6 +108,9 @@ pub fn start(tx: Sender<Msg>) -> mpsc::Sender<Cmd> {
                         Ok(()) => {
                             let _ = tx.send(Msg::SignedIn(true));
                         }
+                        // The shell already shows it as stopped. Saying more could
+                        // land on a sign-in started again since.
+                        Err(e) if e == CANCELLED => continue,
                         Err(e) => {
                             let _ = tx.send(Msg::Failed(None, e));
                             let _ = tx.send(Msg::SignedIn(has_tokens()));
@@ -363,6 +378,7 @@ fn login(client_id: &str) -> Result<(), String> {
     }
     let listener = TcpListener::bind(("127.0.0.1", REDIRECT_PORT)).map_err(|e| format!("cannot listen on port {REDIRECT_PORT} for the sign-in: {e}"))?;
     listener.set_nonblocking(true).map_err(|e| e.to_string())?;
+    CANCEL_LOGIN.store(false, Ordering::SeqCst);
     let verifier = random_string(96);
     let state = random_string(24);
     let url = format!(
@@ -376,6 +392,9 @@ fn login(client_id: &str) -> Result<(), String> {
     Command::new("xdg-open").arg(&url).stdin(Stdio::null()).stdout(Stdio::null()).stderr(Stdio::null()).spawn().map_err(|e| format!("cannot open the browser: {e}"))?;
     let deadline = Instant::now() + LOGIN_WAIT;
     let code = loop {
+        if CANCEL_LOGIN.swap(false, Ordering::SeqCst) {
+            return Err(CANCELLED.into());
+        }
         if Instant::now() > deadline {
             return Err("the Spotify sign-in timed out".into());
         }

@@ -10,7 +10,18 @@ A heart sits at the right of the play buttons, in the media card and in the Spot
 
 ## Setup
 
-Spotify lets only registered apps use the Web API. The user makes their own app at developer.spotify.com, with the Web API ticked and the redirect URI http://127.0.0.1:8898/callback. Spotify requires the owner of such an app to have Premium. Other Spotify accounts must be added to the app's User Management. The user puts the app's Client ID in config.toml under [spotify] client_id. There is no client secret. With no Client ID, the heart and the commands say how to set it up instead.
+Spotify lets only registered apps use the Web API. The user makes their own app at developer.spotify.com, with the Web API ticked and the redirect URI http://127.0.0.1:8898/callback. Spotify requires the owner of such an app to have Premium. Other Spotify accounts must be added to the app's User Management. The user puts the app's Client ID in the Integrations page of settings, which writes config.toml [spotify] client_id. There is no client secret. With no Client ID, the heart and the commands point to the Integrations page instead.
+
+## Settings Page
+
+Settings has a page named Integrations, between Session and About. osmia settings integrations opens it. Its Spotify section has these rows:
+
+- Account: whether the user is signed in, waiting for the browser, or not set up. A Sign in button starts the sign-in, and a Sign out button forgets the tokens. While the shell waits for the browser, a Cancel button stops the wait at once, quietly, and drops the like that was waiting on it, so Sign in can be pressed again. With no Client ID there is no button, only the words Add a Client ID first.
+- Client ID: a text box for the app's Client ID, saved when the user presses Enter or clicks away. Changing it while signed in signs out, since the old tokens belong to the old app.
+- Redirect URI: shows http://127.0.0.1:8898/callback, with a Copy button.
+- Make an app: the setup steps, with a button that opens developer.spotify.com/dashboard in the browser.
+
+Later integrations get their own section on the same page.
 
 ## Sign In
 
@@ -31,4 +42,3 @@ Liking is PUT /me/library and unliking is DELETE /me/library, with the track's s
 
 - Liking in other players.
 - Adding songs to playlists.
-- Settings page fields for the Client ID.

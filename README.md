@@ -20,13 +20,16 @@ without notifications and the bar shows a "Blocked" item.
 An "Osmia" entry for the login screen: labwc plus the shell, with its own compositor config in
 `~/.config/osmia/labwc/` (copied on first login, yours after that). Your LXQt session is not touched.
 
-    cargo build --release
-    sudo sh contrib/session/install.sh      # installs the entry and makes Osmia the SDDM default
-    sudo sh contrib/session/uninstall.sh    # removes it and restores the old default
+    cargo xtask install                     # builds, installs with sudo, restarts the running shell
+    cargo xtask install --no-restart        # the same, but leaves the running shell alone
+    cargo xtask uninstall                   # removes it and restores the old default
+
+`cargo xtask install` runs `cargo build --release` and then `sudo sh contrib/session/install.sh`,
+which installs the entry and makes Osmia the SDDM default. You can run those two by hand instead.
 
 It installs `/usr/local/bin/osmia`, `/usr/local/bin/osmia-session`,
 `/usr/share/wayland-sessions/osmia.desktop`, and default config in `/usr/local/share/osmia/labwc`.
-Super opens the launcher. Super+Comma opens Osmia settings. Click the brightness item in the bar to set the screen timeout (osmia runs `swayidle` for this and keeps the choice in `~/.local/state/osmia/screen-timeout`). Run the install again after you rebuild, to update the binary.
+Super opens the launcher. Super+Comma opens Osmia settings. Click the brightness item in the bar to set the screen timeout (osmia runs `swayidle` for this and keeps the choice in `~/.local/state/osmia/screen-timeout`). Run `cargo xtask install` again after a change, to update the binary.
 
 ## Screenshots and video
 

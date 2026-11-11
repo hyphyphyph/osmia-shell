@@ -39,6 +39,16 @@ pub enum Action {
     /// (dotted key such as "bar.height", value)
     SetConfig(String, ConfValue),
     OpenConfigFile,
+    /// Open a web page in the browser.
+    OpenUrl(String),
+    /// Put text on the clipboard.
+    CopyText(String),
+    /// Start the Spotify sign-in in the browser.
+    SpotifyLogin,
+    /// Stop a sign-in that is waiting for the browser.
+    SpotifyCancelLogin,
+    /// Forget the Spotify tokens.
+    SpotifyLogout,
     OpenSettings,
     /// Make this desktop file the default for category N of the Default applications page.
     SetDefaultApp(usize, String),
