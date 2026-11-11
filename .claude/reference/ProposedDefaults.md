@@ -31,6 +31,8 @@ These are proposals, not confirmed decisions. They fill gaps left by the intervi
 ## Keys
 
 - The session binds Super+Comma to osmia settings. Super alone still opens the launcher.
+- The session binds Super+E to open the home folder with xdg-open, so it opens in the file manager chosen under Default applications.
+- The session binds Alt+` (grave) to cycle through windows of the focused application only, and Alt+Shift+` to cycle backwards.
 
 ## Bar
 
