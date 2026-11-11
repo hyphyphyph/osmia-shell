@@ -264,6 +264,10 @@
     <keybind key="W-p">
       <action name="Execute" command="pcmanfm-qt" />
     </keybind>
+    <!-- Open the home folder in the default file manager -->
+    <keybind key="W-e">
+      <action name="Execute" command="xdg-open ~" />
+    </keybind>
     <keybind key="W-Return">
       <action name="Execute" command="qterminal" />
     </keybind>
