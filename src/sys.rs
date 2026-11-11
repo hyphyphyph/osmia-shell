@@ -39,6 +39,8 @@ pub struct Sampler {
     tick: u64,
     last: Stats,
     brightness_set: Option<(u32, std::time::Instant)>,
+    /// A volume the user just set. Reads from before it landed must not undo it.
+    volume_set: Option<(u32, std::time::Instant)>,
 }
 
 impl Sampler {
@@ -50,13 +52,14 @@ impl Sampler {
             tick: 0,
             last: Stats::default(),
             brightness_set: None,
+            volume_set: None,
         }
     }
 
     /// Read the cheap sources: files in /proc and /sys only.
     /// Volume and network come from a background thread. Keep the latest.
     pub fn set_slow(&mut self, volume: Option<Volume>, network: Option<Net>) {
-        self.last.volume = volume;
+        self.set_volume(volume);
         self.last.network = network;
     }
 
@@ -65,8 +68,24 @@ impl Sampler {
         self.last.brightness_percent = Some(percent);
     }
 
+    /// A volume read from the system. A failed read keeps the last value, and
+    /// for a moment after a change the level the user set wins over stale reads.
     pub fn set_volume(&mut self, volume: Option<Volume>) {
-        self.last.volume = volume;
+        let Some(mut v) = volume else { return };
+        if let Some((p, at)) = self.volume_set {
+            if at.elapsed() < std::time::Duration::from_millis(1000) {
+                v.percent = p;
+            } else {
+                self.volume_set = None;
+            }
+        }
+        self.last.volume = Some(v);
+    }
+
+    /// The user changed the volume. Show it now and hold it until the system catches up.
+    pub fn hold_volume(&mut self, v: Volume) {
+        self.volume_set = Some((v.percent, std::time::Instant::now()));
+        self.last.volume = Some(v);
     }
 
     pub fn sample(&mut self) -> Stats {
@@ -161,7 +180,58 @@ fn read_brightness() -> Option<u32> {
     Some((100.0 * cur / max).round() as u32)
 }
 
-fn read_volume() -> Option<Volume> {
+/// The keyboard backlight, such as asus::kbd_backlight: its LED name, level and top level.
+pub struct KbdLight {
+    pub name: String,
+    pub level: u32,
+    pub max: u32,
+}
+
+pub fn read_kbd_light() -> Option<KbdLight> {
+    let mut entries: Vec<_> = fs::read_dir("/sys/class/leds").ok()?.flatten().filter(|e| e.file_name().to_string_lossy().ends_with("::kbd_backlight")).collect();
+    entries.sort_by_key(|e| e.file_name());
+    let e = entries.into_iter().next()?;
+    let p = e.path();
+    let max: u32 = fs::read_to_string(p.join("max_brightness")).ok()?.trim().parse().ok()?;
+    let level: u32 = fs::read_to_string(p.join("brightness")).ok()?.trim().parse().ok()?;
+    (max > 0).then(|| KbdLight { name: e.file_name().to_string_lossy().into_owned(), level: level.min(max), max })
+}
+
+/// The level a keyboard light command asks for: up, down, cycle (up, then back to off), off, on, or a number.
+pub fn kbd_light_target(k: &KbdLight, cmd: &str) -> Option<u32> {
+    Some(match cmd {
+        "up" => (k.level + 1).min(k.max),
+        "down" => k.level.saturating_sub(1),
+        "cycle" | "toggle" => (k.level + 1) % (k.max + 1),
+        "off" => 0,
+        "on" => k.max,
+        n => n.parse::<u32>().ok()?.min(k.max),
+    })
+}
+
+/// Set the keyboard light through logind, which lets the session user do it without root.
+pub fn set_kbd_light(name: &str, level: u32) {
+    let name = name.to_owned();
+    std::thread::spawn(move || {
+        let call = async {
+            let conn = zbus::Connection::system().await?;
+            conn.call_method(
+                Some("org.freedesktop.login1"),
+                "/org/freedesktop/login1/session/auto",
+                Some("org.freedesktop.login1.Session"),
+                "SetBrightness",
+                &("leds", name.as_str(), level),
+            )
+            .await
+            .map(|_| ())
+        };
+        if let Err(e) = pollster::block_on(call) {
+            log::warn!("cannot set the keyboard light: {e}");
+        }
+    });
+}
+
+pub fn read_volume() -> Option<Volume> {
     let out = Command::new("wpctl")
         .args(["get-volume", "@DEFAULT_AUDIO_SINK@"])
         .output()
@@ -185,18 +255,29 @@ fn poke_volume() {
     }
 }
 
-pub fn set_volume_step(delta_percent: i32) {
-    let arg = if delta_percent >= 0 {
-        format!("{}%+", delta_percent)
-    } else {
-        format!("{}%-", -delta_percent)
-    };
-    std::thread::spawn(move || {
-        let _ = Command::new("wpctl")
-            .args(["set-volume", "-l", "1.0", "@DEFAULT_AUDIO_SINK@", &arg])
-            .status();
-        poke_volume();
+static VOLUME_TX: std::sync::OnceLock<std::sync::Mutex<std::sync::mpsc::Sender<u32>>> = std::sync::OnceLock::new();
+
+/// Set the default output to a percentage. One worker applies only the newest
+/// value. Relative steps run at once raced each other in WirePlumber and lost steps.
+pub fn set_volume_percent(percent: u32) {
+    let tx = VOLUME_TX.get_or_init(|| {
+        let (tx, rx) = std::sync::mpsc::channel::<u32>();
+        std::thread::spawn(move || {
+            while let Ok(mut p) = rx.recv() {
+                while let Ok(newer) = rx.try_recv() {
+                    p = newer;
+                }
+                let _ = Command::new("wpctl")
+                    .args(["set-volume", "@DEFAULT_AUDIO_SINK@", &format!("{}%", p.min(100))])
+                    .status();
+                poke_volume();
+            }
+        });
+        std::sync::Mutex::new(tx)
     });
+    if let Ok(t) = tx.lock() {
+        let _ = t.send(percent);
+    }
 }
 
 pub fn toggle_mute() {
@@ -295,39 +376,6 @@ fn set_brightness_to(percent: u32) {
     if let Err(e) = pollster::block_on(call) {
         log::warn!("cannot set brightness: {e}");
     }
-}
-
-pub fn set_brightness_step(delta_percent: i32) {
-    let Some(entry) = fs::read_dir("/sys/class/backlight").ok().and_then(|mut d| d.next()).and_then(|e| e.ok()) else {
-        return;
-    };
-    let p = entry.path();
-    let name = entry.file_name().to_string_lossy().into_owned();
-    let cur: i64 = fs::read_to_string(p.join("brightness")).ok().and_then(|s| s.trim().parse().ok()).unwrap_or(0);
-    let max: i64 = fs::read_to_string(p.join("max_brightness")).ok().and_then(|s| s.trim().parse().ok()).unwrap_or(0);
-    if max <= 0 {
-        return;
-    }
-    let step = (max * delta_percent as i64 / 100).abs().max(1) * delta_percent.signum() as i64;
-    // Never go fully dark.
-    let new = (cur + step).clamp((max / 100).max(1), max) as u32;
-    let call = async move {
-        let conn = zbus::Connection::system().await?;
-        conn.call_method(
-            Some("org.freedesktop.login1"),
-            "/org/freedesktop/login1/session/auto",
-            Some("org.freedesktop.login1.Session"),
-            "SetBrightness",
-            &("backlight", name.as_str(), new),
-        )
-        .await
-        .map(|_| ())
-    };
-    std::thread::spawn(move || {
-        if let Err(e) = pollster::block_on(call) {
-            log::warn!("cannot set brightness: {e}");
-        }
-    });
 }
 
 /// Suspend, reboot and power off go through logind on D-Bus.

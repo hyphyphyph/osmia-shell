@@ -42,7 +42,6 @@ egui draws on the GPU by default. If no GPU is available, the shell falls back t
 
 - Lock screen. The launcher quick action runs an outside locker.
 - Wallpaper. Use an outside tool.
-- On-screen display for volume and brightness changes.
 - Clipboard history and screenshots.
 - Plugins. Users cannot load code into the shell.
 - Workspace display in the bar for the first version.

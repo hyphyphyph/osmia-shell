@@ -5,12 +5,19 @@ from crux export *
 
 // The osmia shell specification.
 from ./Bar export *
+from ./Bluetooth export *
+from ./Clipboard export *
 from ./Control export *
 from ./DefaultApps export *
+from ./Emoji export *
+from ./FileDialogs export *
 from ./FirstVersion export *
+from ./GraphicsCard export *
 from ./Launcher export *
 from ./Notifications export *
+from ./Osd export *
 from ./Overview export *
 from ./ProposedDefaults export *
 from ./Processes export *
 from ./Shell export *
+from ./Spotify export *

@@ -23,6 +23,10 @@ The client can also ask the shell for its state. An example is osmia dnd status,
 - Turn do-not-disturb on, off, or toggle it
 - Reload the config
 - Ask for the state of a part
+- Open the graphics card, or ask its state, as described in GraphicsCard
+- Open the Bluetooth card, ask its state, or turn it on or off, as described in Bluetooth
+- Step the volume, brightness, or keyboard light, mute, or ask their state, as described in Osd
+- Sign in to Spotify, and like or unlike the playing song, as described in Spotify
 
 ## Failure
 

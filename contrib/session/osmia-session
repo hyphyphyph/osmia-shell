@@ -40,6 +40,33 @@ if type systemd-detect-virt >/dev/null 2>&1 && systemd-detect-virt --quiet; then
     export WLR_NO_HARDWARE_CURSORS=1
 fi
 
+# A machine that hands its discrete card to VMs (gpu-vfio-control) keeps the
+# desktop off that card, or the card can never be handed over: labwc does not
+# drive it, EGL uses only Mesa, and Vulkan does not load the NVIDIA driver.
+# Every program in the session inherits this. osmia-dgpu runs one program on
+# the card on purpose. Set OSMIA_KEEP_DGPU=1 to leave the card to the desktop.
+if [ -r /etc/gpu-vfio-control.toml ] && [ -z "${OSMIA_KEEP_DGPU:-}" ]; then
+    mesa=/usr/share/glvnd/egl_vendor.d/50_mesa.json
+    if [ -r "$mesa" ]; then
+        export __EGL_VENDOR_LIBRARY_FILENAMES="$mesa"
+    fi
+    export VK_LOADER_DRIVERS_DISABLE='*nvidia*'
+    # labwc gets every card but the one the service hands over. The list is
+    # colon separated, so use /dev/dri/cardN, not the by-path names.
+    dgpu=$(sed -n 's/^[[:space:]]*video_pci[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' /etc/gpu-vfio-control.toml | head -1)
+    cards=""
+    for c in /sys/class/drm/card[0-9]*; do
+        case "${c##*/}" in *-*) continue ;; esac
+        if [ "$(basename "$(readlink -f "$c/device")")" = "$dgpu" ]; then
+            continue
+        fi
+        cards="${cards:+$cards:}/dev/dri/${c##*/}"
+    done
+    if [ -n "$dgpu" ] && [ -n "$cards" ]; then
+        export WLR_DRM_DEVICES="$cards"
+    fi
+fi
+
 # First login: copy the default compositor config. After that it is yours.
 cfg="$XDG_CONFIG_HOME/osmia/labwc"
 if [ ! -d "$cfg" ]; then

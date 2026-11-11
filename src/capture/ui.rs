@@ -9,7 +9,7 @@ use super::grab::Image;
 use super::video::Audio;
 use crate::theme::{self, fid};
 use crate::ui::settings::segmented;
-use crate::ui::widgets::{card_frame, id, pill, switch, tile};
+use crate::ui::widgets::{id, pill, switch, tile};
 use crate::ui::{Action, Target};
 
 #[derive(Clone, Copy, PartialEq, Debug)]
@@ -367,69 +367,64 @@ fn windows(ui: &mut Ui, st: &mut CaptureUi, full: Rect, actions: &mut Vec<Action
 
 fn toolbar(ui: &mut Ui, st: &mut CaptureUi, full: Rect, actions: &mut Vec<Action>) {
     let pos = pos2(full.center().x, full.max.y - 36.0);
-    egui::Area::new(id("capture-toolbar"))
-        .fixed_pos(pos)
-        .pivot(Align2::CENTER_BOTTOM)
-        .order(egui::Order::Foreground)
+    crate::ui::popdown::Popdown::new(id("capture-toolbar"), pos, Align2::CENTER_BOTTOM)
         .show(ui.ctx(), |ui| {
-            card_frame().show(ui, |ui| {
-                ui.horizontal(|ui| {
-                    ui.add_space(12.0);
-                    ui.set_height(48.0);
-                    let modes = [Mode::Region, Mode::Window, Mode::Screen];
-                    if let Some(i) = segmented(ui, "cap-mode", &["Area", "Window", "Screen"], modes.iter().position(|m| *m == st.mode)) {
-                        st.mode = modes[i];
-                    }
-                    ui.add_space(14.0);
-                    if let Some(i) = segmented(ui, "cap-kind", &["Photo", "Video"], Some(st.kind as usize)) {
-                        st.kind = [Kind::Photo, Kind::Video][i];
-                    }
-                    ui.add_space(14.0);
-                    if st.kind == Kind::Video {
-                        let audios = [Audio::None, Audio::System, Audio::Mic, Audio::Both];
-                        ui.label(egui::RichText::new("Sound").size(theme::scaled(12.0)).color(theme::DIM));
-                        ui.add_space(6.0);
-                        if let Some(i) = segmented(ui, "cap-audio", &["Off", "System", "Mic", "Both"], audios.iter().position(|a| *a == st.audio)) {
-                            st.audio = audios[i];
-                        }
-                        ui.add_space(14.0);
-                    }
-                    ui.label(egui::RichText::new("Cursor").size(theme::scaled(12.0)).color(theme::DIM));
+            ui.horizontal(|ui| {
+                ui.add_space(12.0);
+                ui.set_height(48.0);
+                let modes = [Mode::Region, Mode::Window, Mode::Screen];
+                if let Some(i) = segmented(ui, "cap-mode", &["Area", "Window", "Screen"], modes.iter().position(|m| *m == st.mode)) {
+                    st.mode = modes[i];
+                }
+                ui.add_space(14.0);
+                if let Some(i) = segmented(ui, "cap-kind", &["Photo", "Video"], Some(st.kind as usize)) {
+                    st.kind = [Kind::Photo, Kind::Video][i];
+                }
+                ui.add_space(14.0);
+                if st.kind == Kind::Video {
+                    let audios = [Audio::None, Audio::System, Audio::Mic, Audio::Both];
+                    ui.label(egui::RichText::new("Sound").size(theme::scaled(12.0)).color(theme::DIM));
                     ui.add_space(6.0);
-                    if switch(ui, st.cursor) {
-                        st.cursor = !st.cursor;
+                    if let Some(i) = segmented(ui, "cap-audio", &["Off", "System", "Mic", "Both"], audios.iter().position(|a| *a == st.audio)) {
+                        st.audio = audios[i];
                     }
                     ui.add_space(14.0);
-                    let delays = [0u32, 3, 5, 10];
-                    ui.label(egui::RichText::new("Delay").size(theme::scaled(12.0)).color(theme::DIM));
-                    ui.add_space(6.0);
-                    if let Some(i) = segmented(ui, "cap-delay", &["0", "3 s", "5 s", "10 s"], delays.iter().position(|d| *d == st.delay)) {
-                        st.delay = delays[i];
-                    }
-                    ui.add_space(18.0);
-                    if pill(ui, "Cancel", false) {
-                        actions.push(Action::CaptureCancel);
-                    }
-                    ui.add_space(8.0);
-                    let verb = if st.kind == Kind::Photo { "Capture" } else { "Record" };
-                    match (st.mode, st.sel) {
-                        (Mode::Region, Some((o, r))) => {
-                            if pill(ui, verb, true) {
-                                actions.push(Action::CaptureGo(Target::Region(o, r)));
-                            }
-                        }
-                        (Mode::Region, None) => {
-                            ui.label(egui::RichText::new("Select an area").size(theme::scaled(12.0)).color(theme::DIM));
-                        }
-                        (Mode::Window, _) => {
-                            ui.label(egui::RichText::new("Pick a window").size(theme::scaled(12.0)).color(theme::DIM));
-                        }
-                        (Mode::Screen, _) => {
-                            ui.label(egui::RichText::new("Click a screen").size(theme::scaled(12.0)).color(theme::DIM));
+                }
+                ui.label(egui::RichText::new("Cursor").size(theme::scaled(12.0)).color(theme::DIM));
+                ui.add_space(6.0);
+                if switch(ui, st.cursor) {
+                    st.cursor = !st.cursor;
+                }
+                ui.add_space(14.0);
+                let delays = [0u32, 3, 5, 10];
+                ui.label(egui::RichText::new("Delay").size(theme::scaled(12.0)).color(theme::DIM));
+                ui.add_space(6.0);
+                if let Some(i) = segmented(ui, "cap-delay", &["0", "3 s", "5 s", "10 s"], delays.iter().position(|d| *d == st.delay)) {
+                    st.delay = delays[i];
+                }
+                ui.add_space(18.0);
+                if pill(ui, "Cancel", false) {
+                    actions.push(Action::CaptureCancel);
+                }
+                ui.add_space(8.0);
+                let verb = if st.kind == Kind::Photo { "Capture" } else { "Record" };
+                match (st.mode, st.sel) {
+                    (Mode::Region, Some((o, r))) => {
+                        if pill(ui, verb, true) {
+                            actions.push(Action::CaptureGo(Target::Region(o, r)));
                         }
                     }
-                    ui.add_space(12.0);
-                });
+                    (Mode::Region, None) => {
+                        ui.label(egui::RichText::new("Select an area").size(theme::scaled(12.0)).color(theme::DIM));
+                    }
+                    (Mode::Window, _) => {
+                        ui.label(egui::RichText::new("Pick a window").size(theme::scaled(12.0)).color(theme::DIM));
+                    }
+                    (Mode::Screen, _) => {
+                        ui.label(egui::RichText::new("Click a screen").size(theme::scaled(12.0)).color(theme::DIM));
+                    }
+                }
+                ui.add_space(12.0);
             });
-        });
+            });
 }

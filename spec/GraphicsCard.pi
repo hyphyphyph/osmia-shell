@@ -1,0 +1,70 @@
+// The discrete graphics card, moved between the desktop and virtual machines.
+export anchor GraphicsCard:
+    purpose:
+        Let the user hand the discrete graphics card to a virtual machine and take it back, from the bar, with no reboot and no logout.
+
+    service:
+        The shell does no driver binding itself. A separate root service, gpu-vfio-control, owns the card and every safety check.
+        The shell talks to it as org.local.GpuVfioControl on the system bus. It reads the state with GetStatus and listens for StateChanged.
+        It asks for changes with AttachLinux, AttachVfio, StartVm, StopVm and SetPreferredState. polkit decides whether the user may, and may ask for a password.
+        Every reply is one JSON text. The shell reads the fields it shows and ignores the rest, so a newer service still works.
+        The shell never sends the force flag, except for Force off, which the user confirms first.
+        If the service is not installed or not running, the bar item is hidden and nothing is an error on screen. The shell tries again every minute.
+
+    states:
+        - Host: the card is on its own driver, such as nvidia, and desktop programs can use it.
+        - Ready for VMs: the card is on vfio-pci, and no virtual machine has it yet.
+        - In use by the VM: the virtual machine named in the service config is running with the card.
+        - Switching: the service is moving the card.
+        - Error: the two parts of the card disagree, or something else is wrong. The service's message is shown.
+
+    barItem:
+        The bar item is named gpu in the layout and Graphics card in settings. It is in the default layout after RAM.
+        It reads GPU, then a short state: Host, VFIO, the VM name, or a dots sign while switching.
+        It uses the accent color while a hand-over is waiting or the last request failed.
+        Clicking it opens the Graphics card card.
+
+    card:
+        The card is titled Graphics card.
+        It shows the state in words, the driver of the card, and the virtual machine with its state.
+        On the host, when programs hold the card, it lists them by name and process number. A program that only opened the card to look at it is not listed, since it does not stop a hand-over.
+        The buttons depend on the state.
+        - Host: Give to VMs and Start, with the VM name.
+        - Ready for VMs: Return to host and Start.
+        - In use by the VM: Shut down, and Force off. Force off asks for a second click to confirm, as it cuts the power to the VM.
+        - Switching: no buttons.
+        Give to VMs on a card that is in use does not take it away. The service refuses, and the card shows who holds it.
+        A switch named Hand over when free asks the service to give the card to VMs as soon as nothing holds it, including at the next login or boot. While it waits the card says so.
+        A button that is waiting for an answer shows a dots sign and does nothing on a second click.
+
+    feedback:
+        A request that finishes says what happened in a notification, such as Ready for VMs or Back on the host.
+        A request that fails says why, with the programs that hold the card when that is the reason.
+        A change the shell did not ask for, such as the VM shutting itself down, also gets a notification. A change the shell asked for gets only one.
+
+    desktopOffTheCard:
+        The card can only be handed over when no desktop program uses it, so on a machine set up for this the desktop stays off it.
+        The session does this when /etc/gpu-vfio-control.toml exists, unless OSMIA_KEEP_DGPU is set.
+        labwc is given only the boot graphics card with WLR_DRM_DEVICES. The HDMI port, which is wired to the discrete card on this laptop, does not work on the desktop.
+        EGL programs use only Mesa, and Vulkan programs do not load the NVIDIA driver. This covers labwc, Xwayland, the shell and every program started in the session.
+        The command osmia-dgpu runs one program on the discrete card while it is on the host, for a game or a renderer.
+        The login screen's X server is kept off the card by an X config that turns off AutoAddGPU.
+
+    systemSetup:
+        A setup script in contrib/gpu, run once with sudo, prepares the machine.
+        It removes the nvidia lines from the GPU blacklist, so the card starts on the host at boot. It keeps the nouveau line.
+        It turns off the vfio-pci ids option, which would claim the card at boot. vfio-pci is still loaded, and the service binds it when asked.
+        It adds the X config above, turns on the NVIDIA suspend, resume and hibernate services, and rebuilds the initramfs.
+        It keeps a copy of each file it changes, ending in .pre-osmia.
+
+    commands:
+        osmia gpu opens or closes the card. osmia gpu status prints the state in one word: host, vfio, vm, switching, error, or unavailable.
+
+    outOfScope:
+        - Binding drivers, checking safety, or starting Looking Glass in the shell. The service does these.
+        - More than one discrete card.
+        - Moving the HDMI port to the integrated card. The wiring is fixed.
+
+    openQuestions:
+        - Whether the NVIDIA suspend services stop the failed resumes seen on this laptop, where the card fell off the bus after a long sleep.
+        - Whether the card should show the Looking Glass state.

@@ -15,6 +15,7 @@ enum Page {
     Notifications,
     Launcher,
     DefaultApps,
+    FileDialogs,
     Capture,
     Power,
     Shortcuts,
@@ -22,12 +23,13 @@ enum Page {
     About,
 }
 
-const PAGES: [(Page, &str); 10] = [
+const PAGES: [(Page, &str); 11] = [
     (Page::Appearance, "Appearance"),
     (Page::Bar, "Bar"),
     (Page::Notifications, "Notifications"),
     (Page::Launcher, "Launcher"),
     (Page::DefaultApps, "Default applications"),
+    (Page::FileDialogs, "File dialogs"),
     (Page::Capture, "Screenshots and video"),
     (Page::Power, "Power and screen"),
     (Page::Shortcuts, "Keyboard shortcuts"),
@@ -38,13 +40,15 @@ const PAGES: [(Page, &str); 10] = [
 const ACCENTS: [&str; 6] = ["#f0a35e", "#6cb6ff", "#7ee787", "#d2a8ff", "#ff7b72", "#e3b341"];
 
 /// Bar items that can be placed, with the names shown in the editor.
-const BAR_ITEMS: [(&str, &str); 16] = [
+const BAR_ITEMS: [(&str, &str); 18] = [
     ("windows", "Window menu"),
     ("attention", "Minimized windows"),
     ("media", "Now playing"),
     ("tray", "System tray"),
     ("cpu", "CPU"),
     ("ram", "Memory"),
+    ("gpu", "Graphics card"),
+    ("bluetooth", "Bluetooth"),
     ("battery", "Battery"),
     ("network", "Wi-Fi"),
     ("volume", "Volume"),
@@ -67,6 +71,7 @@ pub struct Env<'a> {
     /// The key the shortcut recorder heard. Empty means it was cancelled.
     pub captured: Option<&'a str>,
     pub defaults: &'a crate::defaults::DefaultApps,
+    pub dialogs: &'a crate::portal::FileDialogs,
 }
 
 pub fn window(ui: &mut Ui, cfg: &Config, env: &Env, actions: &mut Vec<Action>) {
@@ -121,6 +126,7 @@ pub fn window(ui: &mut Ui, cfg: &Config, env: &Env, actions: &mut Vec<Action>) {
             Page::Notifications => notifications(ui, cfg, actions),
             Page::Launcher => launcher(ui, cfg, actions),
             Page::DefaultApps => default_apps(ui, cfg, env, actions),
+            Page::FileDialogs => file_dialogs(ui, env, actions),
             Page::Capture => capture(ui, cfg, actions),
             Page::Power => power(ui, env, actions),
             Page::Shortcuts => shortcuts(ui, env, actions),
@@ -302,6 +308,60 @@ fn default_apps(ui: &mut Ui, cfg: &Config, env: &Env, actions: &mut Vec<Action>)
     });
 }
 
+fn file_dialogs(ui: &mut Ui, env: &Env, actions: &mut Vec<Action>) {
+    let d = env.dialogs;
+    row(ui, "File picker", "Shown when an app opens or saves a file through the portal. Changing it closes any file dialog open now.", |ui| {
+        egui::ComboBox::from_id_salt("file-picker").selected_text(d.current_label()).width(220.0).height(320.0).show_ui(ui, |ui| {
+            ui.spacing_mut().item_spacing.y = 2.0;
+            if ui.selectable_label(d.current.is_none(), "Automatic").clicked() && d.current.is_some() {
+                actions.push(Action::SetFilePicker(None));
+            }
+            if d.pickers.is_empty() {
+                ui.label("No installed portal offers a file picker.");
+            }
+            for p in &d.pickers {
+                let on = d.current.as_deref() == Some(p.id.as_str());
+                let label = if p.setup.is_some() { format!("{} (set up when chosen)", p.name) } else { p.name.clone() };
+                if ui.selectable_label(on, label).clicked() && !on {
+                    actions.push(Action::SetFilePicker(Some(p.id.clone())));
+                }
+            }
+        });
+    });
+    row(ui, "Try it", "Opens a file dialog now. Nothing is done with the file you pick.", |ui| {
+        if pill(ui, "Open a file dialog", false) {
+            actions.push(Action::TryFilePicker);
+        }
+    });
+    if d.offers().next().is_some() {
+        let how = if d.aur_helper.is_some() {
+            "Install opens a terminal. Type your password there, and review AUR packages before they build."
+        } else {
+            "Install opens a terminal. Type your password there. AUR packages need paru or yay."
+        };
+        subhead(ui, "More pickers", how);
+        for o in d.offers() {
+            let name = crate::portal::friendly_name(o.id);
+            let help = format!("{} {} package {}.", o.about, if o.aur { "AUR" } else { "Arch" }, o.pkg);
+            row(ui, &name, &help, |ui| {
+                if d.installing.as_deref() == Some(o.id) {
+                    ui.label(egui::RichText::new("Installing\u{2026}").size(crate::theme::scaled(12.0)).color(theme::DIM));
+                } else if o.aur && d.aur_helper.is_none() {
+                    ui.label(egui::RichText::new("Needs paru or yay").size(crate::theme::scaled(12.0)).color(theme::DIM));
+                } else if pill(ui, "Install", false) && d.installing.is_none() {
+                    actions.push(Action::InstallPicker(o.id.to_owned()));
+                }
+            });
+        }
+        subhead(ui, "GTK apps", "Apps outside a sandbox.");
+    }
+    row(ui, "GTK apps use it too", "GTK apps outside a sandbox draw their own dialog unless this is on. Applies from the next login.", |ui| {
+        if switch(ui, d.gtk) {
+            actions.push(Action::SetGtkPortal(!d.gtk));
+        }
+    });
+}
+
 fn capture(ui: &mut Ui, cfg: &Config, actions: &mut Vec<Action>) {
     let c = &cfg.capture;
     subhead(ui, "Screenshots", "Print opens the capture toolbar. Alt+Print captures the focused window, Ctrl+Print the whole screen.");
@@ -413,11 +473,9 @@ fn shortcuts(ui: &mut Ui, env: &Env, actions: &mut Vec<Action>) {
     let find_id = id("sc-find");
     let mut find: String = ui.data(|d| d.get_temp(find_id)).unwrap_or_default();
     let newkey_id = id("sc-newkey");
-    let newcmd_id = id("sc-newcmd");
     let confirm_id = id("sc-confirm");
     let mut rec: Option<usize> = ui.data(|d| d.get_temp(rec_id)).flatten();
     let mut new_key: String = ui.data(|d| d.get_temp(newkey_id)).unwrap_or_default();
-    let mut new_cmd: String = ui.data(|d| d.get_temp(newcmd_id)).unwrap_or_default();
     let mut confirm: bool = ui.data(|d| d.get_temp(confirm_id)).unwrap_or(false);
 
     // The recorder heard a key.
@@ -447,7 +505,7 @@ fn shortcuts(ui: &mut Ui, env: &Env, actions: &mut Vec<Action>) {
     ui.painter().text(
         pos2(r.min.x + 28.0, r.center().y),
         Align2::LEFT_CENTER,
-        "Click a row to type the keys or edit the command. Keys already in use must be typed.",
+        "Click a row to change its keys or what it does. Keys already in use must be typed.",
         fid(11.0),
         theme::DIM,
     );
@@ -511,29 +569,53 @@ fn shortcuts(ui: &mut Ui, env: &Env, actions: &mut Vec<Action>) {
         }
     }
 
+    // The open row's unsaved actions. Reset when another row opens or the file
+    // changes under it.
+    let draft_id = id("sc-draft");
+    let mut draft: Option<Draft> = ui.data(|d| d.get_temp(draft_id)).flatten();
+
     if open == Some(NEW) || rec == Some(NEW) {
+        if draft.as_ref().is_none_or(|d| d.index != NEW) {
+            draft = Some(Draft::new(NEW, "", vec![crate::keybinds::new_step("Execute")], ""));
+        }
+        let d = draft.as_mut().unwrap();
         let chip = if rec == Some(NEW) { "Press keys\u{2026}".to_owned() } else if new_key.is_empty() { "Record keys".to_owned() } else { new_key.clone() };
-        let mut ed = |ui: &mut Ui, w: f32| {
-            if let Some(v) = text_input(ui, "sc-new-key", &new_key, 130.0) {
-                new_key = v;
-            }
-            let cw = (w - 130.0 - 8.0 - 64.0 - 8.0).max(80.0);
-            if let Some(v) = text_input(ui, "sc-new-cmd", &new_cmd, cw) {
-                new_cmd = v;
-            }
-            let ok = crate::keybinds::valid_key(&new_key) && !new_cmd.trim().is_empty();
-            if pill(ui, "Add", ok) && ok {
-                actions.push(Action::ShortcutAdd(new_key.clone(), new_cmd.clone()));
-                new_key.clear();
-                new_cmd.clear();
-                added = true;
-            }
+        let mut ed = |ui: &mut Ui, _w: f32| {
+            ui.horizontal(|ui| {
+                ui.spacing_mut().item_spacing.x = 8.0;
+                ui.label(egui::RichText::new("Keys").font(fid(11.0)).color(theme::DIM));
+                if let Some(v) = text_input(ui, "sc-new-key", &new_key, 130.0) {
+                    new_key = v;
+                }
+            });
+            steps_editor(ui, "new", &mut d.steps);
+            let check = if crate::keybinds::valid_key(&new_key) {
+                crate::keybinds::check_steps(&d.steps)
+            } else {
+                Err("Record or type the keys.".to_owned())
+            };
+            ui.horizontal(|ui| {
+                ui.spacing_mut().item_spacing.x = 8.0;
+                if pill(ui, "+ Add action", false) {
+                    d.steps.push(crate::keybinds::new_step("Execute"));
+                }
+                ui.with_layout(Layout::right_to_left(Align::Center), |ui| {
+                    if pill(ui, "Add shortcut", check.is_ok()) && check.is_ok() {
+                        actions.push(Action::ShortcutAdd(new_key.clone(), d.steps.clone()));
+                        new_key.clear();
+                        added = true;
+                    }
+                    if let Err(e) = &check {
+                        ui.label(egui::RichText::new(e).font(fid(11.0)).color(theme::DIM));
+                    }
+                });
+            });
         };
         let (chip_click, _) = sc_card(
             ui,
             "new",
             "New shortcut",
-            "Record the keys, then type the command to run.",
+            "Record the keys, then choose what they do.",
             false,
             &chip,
             rec == Some(NEW),
@@ -541,6 +623,7 @@ fn shortcuts(ui: &mut Ui, env: &Env, actions: &mut Vec<Action>) {
         );
         if added {
             open = None;
+            draft = None;
         }
         if chip_click {
             if rec == Some(NEW) {
@@ -567,37 +650,98 @@ fn shortcuts(ui: &mut Ui, env: &Env, actions: &mut Vec<Action>) {
             if !hay.contains(&q) && !(qn.len() > 1 && b.key.to_lowercase() == qn) {
                 continue;
             }
-            shown += 1;
-        } else {
-            shown += 1;
         }
+        shown += 1;
         let warn = clash[i].is_some();
         if let Some(j) = clash[i] {
             sub = format!("Same keys as \u{201c}{}\u{201d} above, which wins.", env.binds[j].key);
         }
         let chip = if rec == Some(i) { "Press keys\u{2026}".to_owned() } else { b.key.clone() };
         let is_open = open == Some(i);
+        if is_open && draft.as_ref().is_none_or(|d| d.index != i || d.base != b.body) {
+            let xml = crate::keybinds::dedent(&b.body);
+            draft = Some(Draft::new(i, &b.body, b.steps.clone().unwrap_or_default(), &xml));
+        }
         let mut removed = false;
-        let mut ed = |ui: &mut Ui, w: f32| {
-            if let Some(v) = text_input(ui, &format!("sc-key-{i}"), &b.key, 130.0) {
-                if v != b.key {
-                    actions.push(Action::ShortcutSetKey(i, v));
-                }
-            }
-            let cw = (w - 130.0 - 8.0 - 72.0 - 8.0).max(80.0);
-            if let Act::Exec(c) = &b.act {
-                if let Some(v) = text_input(ui, &format!("sc-cmd-{i}"), c, cw) {
-                    if v != *c {
-                        actions.push(Action::ShortcutSetCommand(i, v));
+        let mut ed = |ui: &mut Ui, _w: f32| {
+            let Some(d) = draft.as_mut() else { return };
+            let plain = b.steps.is_some();
+            ui.horizontal(|ui| {
+                ui.spacing_mut().item_spacing.x = 8.0;
+                ui.label(egui::RichText::new("Keys").font(fid(11.0)).color(theme::DIM));
+                if let Some(v) = text_input(ui, &format!("sc-key-{i}"), &b.key, 130.0) {
+                    if v != b.key {
+                        actions.push(Action::ShortcutSetKey(i, v));
                     }
                 }
+                if plain {
+                    if let Some(m) = segmented(ui, &format!("sc-mode-{i}"), &["Actions", "XML"], Some(d.as_xml as usize)) {
+                        d.as_xml = m == 1;
+                        // Carry edits across: the XML shows the actions as they stand.
+                        if d.as_xml {
+                            d.xml = crate::keybinds::steps_xml(&d.steps);
+                        } else if let Some(st) = crate::keybinds::parse_steps(&d.xml) {
+                            d.steps = st;
+                        }
+                    }
+                }
+                ui.with_layout(Layout::right_to_left(Align::Center), |ui| {
+                    if pill(ui, "Remove shortcut", false) {
+                        actions.push(Action::ShortcutDelete(i));
+                        removed = true;
+                    }
+                });
+            });
+            let as_xml = d.as_xml || !plain;
+            if !plain {
+                ui.label(egui::RichText::new("This shortcut uses conditions or nested settings, so it is edited as XML.").font(fid(11.0)).color(theme::DIM));
+            }
+            // XML the step reader cannot follow is checked when it is saved.
+            let check = if as_xml {
+                crate::keybinds::parse_steps(&d.xml).map(|st| crate::keybinds::check_steps(&st)).unwrap_or(Ok(()))
             } else {
-                ui.add_space(cw + 8.0);
+                crate::keybinds::check_steps(&d.steps)
+            };
+            if as_xml {
+                let w = ui.available_width();
+                egui::Frame::NONE
+                    .fill(theme::BTN)
+                    .stroke(egui::Stroke::new(1.0, theme::CARD_LINE))
+                    .corner_radius(4)
+                    .inner_margin(egui::Margin::symmetric(8, 6))
+                    .show(ui, |ui| {
+                        ui.add(
+                            egui::TextEdit::multiline(&mut d.xml)
+                                .id(id(("sc-xml", i)))
+                                .code_editor()
+                                .frame(egui::Frame::NONE)
+                                .desired_width(w - 16.0)
+                                .desired_rows(3),
+                        );
+                    });
+            } else {
+                steps_editor(ui, &format!("b{i}"), &mut d.steps);
             }
-            if pill(ui, "Remove", false) {
-                actions.push(Action::ShortcutDelete(i));
-                removed = true;
-            }
+            let changed = if as_xml { d.xml.trim() != crate::keybinds::dedent(&b.body).trim() } else { Some(&d.steps) != b.steps.as_ref() };
+            ui.horizontal(|ui| {
+                ui.spacing_mut().item_spacing.x = 8.0;
+                if !as_xml && pill(ui, "+ Add action", false) {
+                    d.steps.push(crate::keybinds::new_step("Execute"));
+                }
+                ui.with_layout(Layout::right_to_left(Align::Center), |ui| {
+                    let ok = changed && check.is_ok();
+                    if pill(ui, "Save", ok) && ok {
+                        actions.push(if as_xml { Action::ShortcutSetXml(i, d.xml.clone()) } else { Action::ShortcutSetSteps(i, d.steps.clone()) });
+                    }
+                    if changed && pill(ui, "Undo changes", false) {
+                        d.steps = b.steps.clone().unwrap_or_default();
+                        d.xml = crate::keybinds::dedent(&b.body);
+                    }
+                    if let (true, Err(e)) = (changed, &check) {
+                        ui.label(egui::RichText::new(e).font(fid(11.0)).color(theme::DIM));
+                    }
+                });
+            });
         };
         let (chip_click, row_click) = sc_card(
             ui,
@@ -649,7 +793,7 @@ fn shortcuts(ui: &mut Ui, env: &Env, actions: &mut Vec<Action>) {
         d.insert_temp(rec_id, rec);
         d.insert_temp(find_id, find);
         d.insert_temp(newkey_id, new_key);
-        d.insert_temp(newcmd_id, new_cmd);
+        d.insert_temp(draft_id, draft);
         d.insert_temp(confirm_id, confirm);
         d.insert_temp(open_id, open);
     });
@@ -773,6 +917,124 @@ fn index_of(options: &[&str], current: &str) -> Option<usize> {
     options.iter().position(|o| *o == current)
 }
 
+/// Unsaved edits to the open shortcut.
+#[derive(Clone)]
+struct Draft {
+    index: usize,
+    /// The body the draft started from, to notice the file changing.
+    base: String,
+    steps: Vec<crate::keybinds::Step>,
+    xml: String,
+    as_xml: bool,
+}
+
+impl Draft {
+    fn new(index: usize, base: &str, steps: Vec<crate::keybinds::Step>, xml: &str) -> Self {
+        Draft { index, base: base.to_owned(), steps, xml: xml.to_owned(), as_xml: false }
+    }
+}
+
+fn small_label(ui: &mut Ui, text: &str) {
+    ui.label(egui::RichText::new(text).font(fid(11.0)).color(theme::DIM));
+}
+
+/// A framed one-line text box bound straight to a value.
+fn field(ui: &mut Ui, key: impl std::hash::Hash + std::fmt::Debug, value: &mut String, width: f32, hint: &str) {
+    let (r, _) = ui.allocate_exact_size(vec2(width, 26.0), Sense::hover());
+    ui.painter().rect(r, 4, theme::BTN, egui::Stroke::new(1.0, theme::CARD_LINE), egui::StrokeKind::Inside);
+    let mut child = ui.new_child(egui::UiBuilder::new().max_rect(r.shrink2(vec2(8.0, 2.0))).layout(Layout::left_to_right(Align::Center)));
+    child.add(
+        egui::TextEdit::singleline(value)
+            .id(id(("sc-field", key)))
+            .hint_text(hint)
+            .frame(egui::Frame::NONE)
+            .desired_width(r.width() - 16.0)
+            .font(fid(12.0)),
+    );
+}
+
+/// The actions of one shortcut, one line each: what it does, then its settings.
+fn steps_editor(ui: &mut Ui, key: &str, steps: &mut Vec<crate::keybinds::Step>) {
+    use crate::keybinds::{new_step, spec, Arg, ACTIONS};
+    let n = steps.len();
+    let mut remove = None;
+    let mut raise = None;
+    for (j, st) in steps.iter_mut().enumerate() {
+        ui.horizontal_wrapped(|ui| {
+            ui.spacing_mut().item_spacing = vec2(8.0, 6.0);
+            if n > 1 {
+                small_label(ui, &format!("{}.", j + 1));
+            }
+            let label = spec(&st.name).map(|s| s.label.to_owned()).unwrap_or_else(|| st.name.clone());
+            let mut pick = None;
+            egui::ComboBox::from_id_salt(("sc-act", key, j)).selected_text(label).width(230.0).height(360.0).show_ui(ui, |ui| {
+                ui.spacing_mut().item_spacing.y = 2.0;
+                for s in ACTIONS {
+                    if ui.selectable_label(s.name == st.name, s.label).on_hover_text(s.name).clicked() {
+                        pick = Some(s.name);
+                    }
+                }
+            });
+            if let Some(p) = pick.filter(|p| *p != st.name) {
+                // Keep the settings the new action shares with the old one.
+                let old = std::mem::replace(st, new_step(p));
+                for (k, v) in old.args {
+                    if st.args.iter().any(|(n, _)| *n == k) {
+                        st.set_arg(&k, v);
+                    }
+                }
+            }
+            let mut fields: Vec<(String, Arg)> = spec(&st.name).map(|s| s.args.iter().map(|(k, a)| ((*k).to_owned(), *a)).collect()).unwrap_or_default();
+            for (k, _) in &st.args {
+                if !fields.iter().any(|(f, _)| f == k) {
+                    fields.push((k.clone(), Arg::Text("")));
+                }
+            }
+            let buttons = if n > 1 { 70.0 } else { 0.0 };
+            for (k, kind) in fields {
+                let mut v = st.arg(&k).to_owned();
+                match kind {
+                    Arg::Choice(opts) => {
+                        small_label(ui, &k);
+                        let shown = if v.is_empty() { "default" } else { v.as_str() }.to_owned();
+                        egui::ComboBox::from_id_salt(("sc-arg", key, j, &k)).selected_text(shown).width(110.0).show_ui(ui, |ui| {
+                            ui.selectable_value(&mut v, String::new(), "default");
+                            for o in opts {
+                                ui.selectable_value(&mut v, (*o).to_owned(), *o);
+                            }
+                        });
+                    }
+                    Arg::Text(hint) => {
+                        let wide = st.name == "Execute" && k == "command";
+                        if !wide {
+                            small_label(ui, &k);
+                        }
+                        let w = if wide { (ui.available_width() - buttons).max(200.0) } else { 120.0 };
+                        field(ui, (key, j, &k), &mut v, w, hint);
+                    }
+                }
+                if v != st.arg(&k) {
+                    st.set_arg(&k, v);
+                }
+            }
+            if n > 1 {
+                if j > 0 && pill(ui, "\u{2191}", false) {
+                    raise = Some(j);
+                }
+                if pill(ui, "\u{d7}", false) {
+                    remove = Some(j);
+                }
+            }
+        });
+    }
+    if let Some(j) = raise {
+        steps.swap(j - 1, j);
+    }
+    if let Some(j) = remove {
+        steps.remove(j);
+    }
+}
+
 fn subhead(ui: &mut Ui, title: &str, desc: &str) {
     ui.add_space(14.0);
     let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 44.0), Sense::hover());
@@ -844,10 +1106,13 @@ fn sc_card(
     ui.painter().rect(chip_r, 4, fill, egui::Stroke::new(1.0, stroke), egui::StrokeKind::Inside);
     ui.painter().text(chip_r.center(), Align2::CENTER_CENTER, chip, fid(12.0), col);
     if let Some(ed) = editor {
-        let (er, _) = ui.allocate_exact_size(vec2(w, 48.0), Sense::hover());
-        let area = Rect::from_min_max(pos2(er.min.x + pad, er.min.y), pos2(er.max.x - pad, er.max.y - 4.0));
-        let mut c = ui.new_child(egui::UiBuilder::new().max_rect(area).layout(Layout::left_to_right(Align::Center)));
+        let top = ui.cursor().min.y;
+        let area = Rect::from_min_max(pos2(r.min.x + pad, top), pos2(r.max.x - pad, top + 10_000.0));
+        let mut c = ui.new_child(egui::UiBuilder::new().max_rect(area).layout(Layout::top_down(Align::Min)));
+        c.spacing_mut().item_spacing.y = 8.0;
         ed(&mut c, area.width());
+        let used = c.min_rect().height();
+        ui.allocate_exact_size(vec2(w, used + 12.0), Sense::hover());
     }
     ui.painter().line_segment([pos2(r.min.x + pad, ui.cursor().min.y), pos2(r.max.x - pad, ui.cursor().min.y)], egui::Stroke::new(1.0, theme::LINE));
     (chip_resp.clicked(), resp.clicked() && !chip_resp.hovered())

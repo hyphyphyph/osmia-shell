@@ -1,0 +1,15 @@
+#!/bin/sh
+# Run one program on the discrete NVIDIA card, while the rest of the osmia
+# desktop stays off it (see osmia-session). The card must be on the host:
+# the Graphics card item in the bar says Host.
+#   osmia-dgpu blender
+set -eu
+if [ $# -eq 0 ]; then
+    echo "usage: osmia-dgpu <program> [args...]" >&2
+    exit 2
+fi
+unset __EGL_VENDOR_LIBRARY_FILENAMES VK_LOADER_DRIVERS_DISABLE
+export __NV_PRIME_RENDER_OFFLOAD=1
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export __VK_LAYER_NV_optimus=NVIDIA_only
+exec "$@"

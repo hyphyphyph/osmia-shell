@@ -17,6 +17,7 @@ pub struct Config {
     pub session: SessionCfg,
     pub capture: CaptureCfg,
     pub overview: OverviewCfg,
+    pub spotify: SpotifyCfg,
     /// Optional map from a notification app name to a window app id.
     pub alerts: HashMap<String, String>,
 }
@@ -67,6 +68,14 @@ pub struct LauncherCfg {
     pub width: u32,
     /// How many result rows show before the list scrolls.
     pub max_rows: u32,
+}
+
+#[derive(Deserialize, Clone, Debug, Default)]
+#[serde(default)]
+pub struct SpotifyCfg {
+    /// The Client ID of the user's own app at developer.spotify.com, for liking songs.
+    /// Empty turns the Like button into a hint to set it.
+    pub client_id: String,
 }
 
 #[derive(Deserialize, Clone, Debug)]
@@ -137,6 +146,7 @@ impl Default for Config {
             session: SessionCfg::default(),
             capture: CaptureCfg::default(),
             overview: OverviewCfg::default(),
+            spotify: SpotifyCfg::default(),
             alerts: HashMap::new(),
         }
     }
@@ -159,7 +169,7 @@ impl Default for Layout {
             left: v(&["windows", "attention"]),
             center: v(&[]),
             right: v(&[
-                "media", "tray", "|", "cpu", "ram", "|", "battery", "network", "volume", "brightness",
+                "media", "tray", "|", "cpu", "ram", "gpu", "|", "battery", "network", "bluetooth", "volume", "brightness",
                 "notifications", "|", "clock", "capture", "settings", "power",
             ]),
         }
@@ -212,13 +222,14 @@ pub fn path() -> PathBuf {
 }
 
 const KNOWN: &[(&str, &[&str])] = &[
-    ("", &["bar", "theme", "notifications", "launcher", "session", "capture", "overview", "alerts"]),
+    ("", &["bar", "theme", "notifications", "launcher", "session", "capture", "overview", "spotify", "alerts"]),
     ("capture", &["pictures_dir", "videos_dir", "copy", "cursor", "fps", "encoder", "quality", "audio", "export", "delay"]),
     ("bar", &["edge", "height", "layout", "clock_format", "date_format"]),
     ("theme", &["accent", "font_size", "corner_radius", "icon_theme"]),
     ("notifications", &["corner", "default_timeout_ms", "history_size", "dnd_on_start"]),
     ("launcher", &["terminal", "width", "max_rows"]),
     ("overview", &["corner"]),
+    ("spotify", &["client_id"]),
     ("session", &["lock", "logout"]),
 ];
 

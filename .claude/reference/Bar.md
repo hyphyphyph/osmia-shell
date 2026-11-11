@@ -11,8 +11,10 @@ Show the windows that need the user, and the state of the machine, at a glance.
 - System tray
 - CPU monitor
 - RAM monitor
+- Graphics card, described in GraphicsCard. It shows only on a machine with the gpu-vfio-control service.
 - Battery
 - Network
+- Bluetooth, described in Bluetooth. It shows only on a machine with a Bluetooth adapter.
 - Volume
 - Brightness
 - Notification history control
@@ -28,7 +30,7 @@ Shows the current time and date. Clicking it opens a small calendar popup.
 
 ## System Tray
 
-Shows tray icons from apps that use the StatusNotifierItem protocol on D-Bus. Clicking an icon activates the app. The shell reads the app menu over D-Bus and draws it with egui in a popup under the icon.
+Shows tray icons from apps that use the StatusNotifierItem protocol on D-Bus. Clicking an icon activates the app. The shell reads the app menu over D-Bus and draws it with egui in a popup under the icon. The tray menu always ends with a Quit row for the app. Quit clicks the app's own Quit or Exit menu item when it has one, so the app can save and clean up. Otherwise the shell sends SIGTERM to the process that owns the tray icon on D-Bus. The shell never signals itself, init, or a D-Bus proxy that stands in for a sandboxed app. When it cannot quit the app, it says so in a notification.
 
 ## Cpu And Ram Monitors
 
@@ -36,11 +38,11 @@ Show how much CPU and memory are in use. They read from the kernel and need no o
 
 ## Status
 
-Battery level comes from UPower. Network state comes from NetworkManager. Volume comes from PipeWire. Brightness comes from the kernel backlight. A missing source hides its item. It is never an error on screen.
+Battery level comes from UPower. Network state comes from NetworkManager. Volume comes from PipeWire. Brightness comes from the kernel backlight. The brightness card also has a Keyboard light slider when the laptop has a keyboard backlight (a kbd_backlight LED). It snaps to the light's few levels, shows Off or the level, such as 2/3, and is set through logind. The keyboard's own backlight keys run osmia keyboard-light up, down and cycle. osmia brightness opens or closes the brightness card. The volume and screen brightness keys run osmia volume and osmia brightness commands, which show the display described in Osd. A missing source hides its item. It is never an error on screen.
 
 ## Input
 
-Scrolling on volume changes the volume. Clicking it mutes. Scrolling on brightness changes the brightness. Clicking network opens a list of connections. The list shows saved networks and nearby networks. One click connects to a saved network. Joining a new network that needs a password is left to an outside tool.
+Scrolling on volume changes the volume. Clicking it mutes. Scrolling on brightness changes the brightness. In the volume and brightness cards, the percent at the end of a slider row can be typed. A click turns it into a small field. Enter, or a click elsewhere in the card, sets the typed value, kept between 0 and 100 for volume and 1 and 100 for brightness. Escape leaves the field without closing the card. An empty field changes nothing. Clicking network opens a list of connections. The list shows saved networks and nearby networks. One click connects to a saved network. Joining a new network that needs a password is left to an outside tool.
 
 ## Power Button
 
@@ -65,6 +67,10 @@ The bar is slim and dense, about 28 to 32 px tall. The bar is a flat strip. Item
 ## Panels
 
 The tray menu, the calendar, the network list, the power menu, and the Processor and Memory lists are floating cards. A card floats 6 px below the bar. It does not touch the bar. A card has 10 px rounded corners, a soft shadow, and a grey a little lighter than the bar. A card is about 250 px wide, with 6 px of padding. The Processor and Memory lists, and long tray menus, are wider when their content needs it. Rows are 32 px tall and have 6 px rounded corners. A hovered row gets a plate. Cards with a title show it in bold above the rows. The tray menu shows a check mark in front of the chosen item. The tray menu shows a chevron at the end of an item that opens a submenu. A disabled item is dimmed. A line separates groups of items. The calendar shows the month name with previous and next buttons, and a Monday-first grid. Today is filled with the accent color. The network list has a Saved group and a Nearby group. Each network shows its signal strength, and a lock mark when it needs a password. The connected network has a check mark. The network list ends with a note that new password networks need an outside tool. When the user picks log out, reboot, or power off, a confirm strip replaces the row. The strip is in the accent color and holds a Cancel button and a confirm button. Only one card is open at a time. A card that holds a list grows to fit it, up to the space on screen, and then scrolls.
+
+## Popdown
+
+Every floating card is drawn by one popdown component: the bar's cards, the launcher, the clipboard and emoji pickers, and the capture toolbar. A card's size follows its content alone. Moving or resting the pointer never changes it. When the content changes, such as a device appearing in the Bluetooth list, the card takes its new size at once, with no input needed. The room a card's content gets is its width by the most height the screen allows. It never comes from the card's size in an earlier frame, since egui's own areas do that and so let a card creep a few pixels larger on each mouse move. The popdown draws frames until its size holds still. Two tests guard this. One gives the Bluetooth card six more rows with no input and checks it grows by all six at once. The other moves the pointer over the card and checks it keeps its size.
 
 ## Mockups
 

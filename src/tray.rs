@@ -54,6 +54,8 @@ pub enum Msg {
     Menu(String, Vec<MenuNode>),
     /// The app refused the Activate call.
     ActivateFailed(String),
+    /// Neither the app's menu nor a signal could quit it.
+    QuitFailed(String),
 }
 
 pub enum Cmd {
@@ -64,6 +66,8 @@ pub enum Cmd {
     /// The icon theme changed: read every item again.
     Refresh,
     ClickMenu(String, i32),
+    /// Quit the app: its own Quit menu item first, else SIGTERM to its process.
+    Quit(String),
 }
 
 type Items = Arc<Mutex<HashMap<String, Item>>>;
@@ -377,24 +381,8 @@ async fn handle_cmd(conn: &Connection, items: &Items, tx: &Sender<Msg>, cmd: Cmd
                     .await;
                 return;
             };
-            let _ = conn
-                .call_method(Some(it.bus.as_str()), menu.as_str(), Some("com.canonical.dbusmenu"), "AboutToShow", &(0i32,))
-                .await;
-            let reply = conn
-                .call_method(
-                    Some(it.bus.as_str()),
-                    menu.as_str(),
-                    Some("com.canonical.dbusmenu"),
-                    "GetLayout",
-                    &(0i32, -1i32, Vec::<&str>::new()),
-                )
-                .await;
-            if let Ok(reply) = reply {
-                let body = reply.body();
-                if let Ok((_rev, root)) = body.deserialize::<(u32, (i32, HashMap<String, OwnedValue>, Vec<OwnedValue>))>() {
-                    let nodes = root.2.iter().filter_map(|c| parse_node(&c)).collect();
-                    let _ = tx.send(Msg::Menu(id, nodes));
-                }
+            if let Some(nodes) = fetch_menu(conn, &it.bus, &menu).await {
+                let _ = tx.send(Msg::Menu(id, nodes));
             }
         }
         Cmd::ClickMenu(id, menu_id) => {
@@ -410,8 +398,65 @@ async fn handle_cmd(conn: &Connection, items: &Items, tx: &Sender<Msg>, cmd: Cmd
                 )
                 .await;
         }
+        Cmd::Quit(id) => {
+            let Some(it) = get(&id) else { return };
+            // The app's own Quit lets it save and clean up.
+            if let Some(menu) = it.menu.clone() {
+                if let Some(q) = fetch_menu(conn, &it.bus, &menu).await.and_then(|n| find_quit(&n)) {
+                    let r = conn
+                        .call_method(Some(it.bus.as_str()), menu.as_str(), Some("com.canonical.dbusmenu"), "Event", &(q, "clicked", Value::from(0i32), 0u32))
+                        .await;
+                    if r.is_ok() {
+                        return;
+                    }
+                }
+            }
+            // Otherwise ask the process that owns the icon to end.
+            let pid = match (zbus::fdo::DBusProxy::new(conn).await, zbus::names::BusName::try_from(it.bus.as_str())) {
+                (Ok(d), Ok(name)) => d.get_connection_unix_process_id(name).await.ok(),
+                _ => None,
+            };
+            match pid.filter(|p| killable(*p)) {
+                Some(p) => unsafe {
+                    libc::kill(p as i32, libc::SIGTERM);
+                },
+                None => {
+                    let _ = tx.send(Msg::QuitFailed(id));
+                }
+            }
+        }
         _ => {}
     }
+}
+
+async fn fetch_menu(conn: &Connection, bus: &str, menu: &str) -> Option<Vec<MenuNode>> {
+    let _ = conn.call_method(Some(bus), menu, Some("com.canonical.dbusmenu"), "AboutToShow", &(0i32,)).await;
+    let reply = conn
+        .call_method(Some(bus), menu, Some("com.canonical.dbusmenu"), "GetLayout", &(0i32, -1i32, Vec::<&str>::new()))
+        .await
+        .ok()?;
+    let body = reply.body();
+    let (_rev, root) = body.deserialize::<(u32, (i32, HashMap<String, OwnedValue>, Vec<OwnedValue>))>().ok()?;
+    Some(root.2.iter().filter_map(|c| parse_node(c)).collect())
+}
+
+/// The menu item that quits the app, such as "Quit", "Exit" or "Quit Discord".
+fn find_quit(nodes: &[MenuNode]) -> Option<i32> {
+    nodes.iter().find_map(|n| {
+        let label = n.label.trim().trim_end_matches(['.', '\u{2026}']).to_lowercase();
+        let first = label.split_whitespace().next().unwrap_or("");
+        let hit = n.enabled && !n.separator && n.children.is_empty() && (first == "quit" || first == "exit" || label == "close");
+        if hit { Some(n.id) } else { find_quit(&n.children) }
+    })
+}
+
+/// Never signal ourselves, init, or a D-Bus proxy that stands in for a sandboxed app.
+fn killable(pid: u32) -> bool {
+    if pid <= 1 || pid == std::process::id() {
+        return false;
+    }
+    let comm = std::fs::read_to_string(format!("/proc/{pid}/comm")).unwrap_or_default();
+    !matches!(comm.trim(), "" | "xdg-dbus-proxy" | "dbus-daemon" | "dbus-broker")
 }
 
 fn parse_node(v: &Value<'_>) -> Option<MenuNode> {
@@ -500,4 +545,25 @@ fn texture_for(ctx: &egui::Context, it: &Item) -> Option<egui::TextureHandle> {
     let tex = ctx.load_texture(format!("tray-{}-{}", it.id, it.version), img, egui::TextureOptions::LINEAR);
     ctx.data_mut(|d| d.insert_temp(key, tex.clone()));
     Some(tex)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn n(id: i32, label: &str) -> MenuNode {
+        MenuNode { id, label: label.into(), enabled: true, ..Default::default() }
+    }
+
+    #[test]
+    fn finds_the_quit_item() {
+        assert_eq!(find_quit(&[n(1, "Show"), n(2, "Quit Discord")]), Some(2));
+        assert_eq!(find_quit(&[n(1, "Exit…")]), Some(1));
+        let mut sub = n(3, "More");
+        sub.children = vec![n(4, "Quit")];
+        assert_eq!(find_quit(&[sub]), Some(4));
+        let mut off = n(5, "Quit");
+        off.enabled = false;
+        assert_eq!(find_quit(&[off, n(6, "Quitting tips")]), None);
+    }
 }

@@ -1,0 +1,59 @@
+// Bluetooth: turning it on and off, connecting devices, and pairing new ones.
+export anchor Bluetooth:
+    purpose:
+        Let the user connect, pair and forget Bluetooth devices from the bar, with no separate applet such as blueman.
+
+    service:
+        The shell talks to BlueZ (org.bluez) on the system bus. It reads adapters and devices from BlueZ's object manager and follows its signals, so the card changes as devices come and go.
+        Only the first adapter is used.
+        If BlueZ is not running or there is no adapter, the bar item is hidden and nothing is an error on screen. The shell tries again every 30 seconds, and reads everything again when bluetoothd restarts.
+        OSMIA_NO_BLUETOOTH turns the whole part off, for a machine where another program should do this.
+
+    pairingAgent:
+        The shell is the Bluetooth pairing agent for the session, so pairing prompts come to it and not to a separate program.
+        It registers with BlueZ as a KeyboardDisplay agent and asks to be the default agent, taking over from blueman or bluetoothctl.
+        Each question opens the Bluetooth card if it is closed, and is answered there.
+        - Confirm a number: Pair with the device? Check that it shows this six-digit number. Pair or Cancel.
+        - A device with no screen or keys: Pair with the device? Pair or Cancel.
+        - A device that asks to use a service, such as playing audio: Allow or Deny.
+        - Type a PIN, for older devices, or the six-digit number the device shows: a text field, Pair and Cancel.
+        - Type a number on the device, such as a keyboard: the card shows the number and how many keys are typed so far, and Cancel.
+        When BlueZ gives up waiting, the question goes away.
+        Only bluetoothd may ask: the system bus refuses agent calls from other programs.
+
+    barItem:
+        The bar item is named bluetooth in the layout and Bluetooth in settings. It is in the default layout after Network.
+        It shows a Bluetooth sign. When one device is connected it shows its name, when more are connected it shows how many, and when Bluetooth is off it says Off.
+        The sign uses the accent color while a pairing question waits or the last request failed.
+        Clicking it opens the Bluetooth card.
+
+    card:
+        The card is titled Bluetooth, with a switch that turns the adapter on and off.
+        If the radio is switched off at rfkill, turning it on lifts that first.
+        While the card is open and Bluetooth is on, the shell looks for devices. The scan it started stops when the card closes.
+        My devices lists paired devices, connected first. A connected device has a check mark. The right side shows the battery when the device reports one, else the kind of device, such as Mouse or Headphones.
+        Clicking a paired device connects or disconnects it.
+        Hovering a paired device shows Forget at the right. Forget asks for a second click, then removes the pairing.
+        Nearby lists unpaired devices that give a name, nearest first, at most twelve. Devices with only an address are not listed.
+        Clicking a nearby device pairs it, marks it trusted so it reconnects by itself, then connects it.
+        A device waiting for an answer says what is happening, such as Connecting or Pairing, and ignores more clicks.
+        The last failure is shown at the bottom of the card in words, such as The device did not answer.
+
+    feedback:
+        Pairing that works gets a notification: Paired with the device.
+        A request that fails gets a notification saying what failed and why.
+        Connecting and disconnecting that work get no notification, since the card and the bar show it.
+
+    commands:
+        osmia bluetooth opens or closes the card.
+        osmia bluetooth status prints off, on, or the names of the connected devices, one per line, or unavailable. With --json it prints the state and the paired devices with their battery.
+        osmia bluetooth on and osmia bluetooth off turn the adapter on and off.
+
+    outOfScope:
+        - More than one adapter.
+        - Making this computer visible to others, sending files, and sharing a network over Bluetooth.
+        - Renaming devices, and choosing an audio profile. The audio card chooses the output.
+
+    openQuestions:
+        - Whether a phone that starts pairing from its own side should be supported, which needs the computer to be visible.
+        - Whether the bar should show the battery of connected earbuds.

@@ -1,7 +1,11 @@
 pub mod bar;
+pub mod clipboard;
+pub mod emoji;
 pub mod launcher;
+pub mod osd;
 pub mod overview;
 pub mod panels;
+pub mod popdown;
 pub mod popups;
 pub mod settings;
 pub mod widgets;
@@ -29,6 +33,8 @@ pub enum Action {
     BrightnessScroll(i32),
     SetScreenTimeout(u32),
     SetBrightness(u32),
+    /// Set the keyboard backlight to this level.
+    SetKbdLight(u32),
     SetPowerProfile(String),
     /// (dotted key such as "bar.height", value)
     SetConfig(String, ConfValue),
@@ -36,6 +42,14 @@ pub enum Action {
     OpenSettings,
     /// Make this desktop file the default for category N of the Default applications page.
     SetDefaultApp(usize, String),
+    /// Choose the file picker backend by its portal name. None is Automatic.
+    SetFilePicker(Option<String>),
+    /// Ask the portal for a file dialog, to see the picker.
+    TryFilePicker,
+    /// Make GTK apps use the portal's file dialog.
+    SetGtkPortal(bool),
+    /// Install the picker with this portal name, in a terminal.
+    InstallPicker(String),
     CaptureCancel,
     CaptureOpen,
     /// (player bus name)
@@ -43,6 +57,10 @@ pub enum Action {
     MediaNext(String),
     MediaPrev(String),
     MediaRaise(String),
+    /// Like (true) or unlike a Spotify track, by its spotify:track: URI.
+    MediaLike(String, bool),
+    /// Ask Spotify whether a track is liked, unless already known.
+    MediaLikeCheck(String),
     /// (player bus name, position in microseconds)
     MediaSeek(String, i64),
     CaptureGo(Target),
@@ -57,9 +75,12 @@ pub enum Action {
     /// The recorded key was used; stop holding it.
     ShortcutTaken,
     ShortcutSetKey(usize, String),
-    ShortcutSetCommand(usize, String),
+    /// Replace a shortcut's actions.
+    ShortcutSetSteps(usize, Vec<crate::keybinds::Step>),
+    /// Replace a shortcut's actions with XML typed by hand.
+    ShortcutSetXml(usize, String),
     ShortcutDelete(usize),
-    ShortcutAdd(String, String),
+    ShortcutAdd(String, Vec<crate::keybinds::Step>),
     ShortcutsRestore,
     ToggleMute,
     /// (is_input, device name, percent)
@@ -79,9 +100,27 @@ pub enum Action {
     TrayMenuOpen(String, f32),
     TrayMenuClick(String, i32),
     TrayNativeMenu(String),
+    /// Quit the app behind a tray item.
+    TrayQuit(String),
     RunApp(String),
     RunCommand(String),
     CopyAndClose(String),
+    /// Copy this entry of the clipboard history again and close.
+    ClipPick(usize),
+    ClipDelete(usize),
+    ClipClear,
+    /// Copy this emoji (an index into the emoji list) in the chosen skin tone and close.
+    EmojiPick(usize),
+    /// Choose the skin tone, 0 to 4, or None for plain.
+    EmojiTone(Option<usize>),
+    /// Ask the graphics card service for something.
+    Gpu(crate::gpu::Cmd),
+    /// Show or hide the second click that confirms Force off.
+    GpuConfirmForce(bool),
+    /// Ask BlueZ for something.
+    Bt(crate::bt::Cmd),
+    /// Answer what the pairing agent asked, by request id.
+    BtAnswer(u64, crate::bt::Answer),
 }
 
 /// What the user picked to capture. Indexes point into the capture state.
@@ -132,6 +171,8 @@ pub enum Overlay {
     Calendar(i32),
     Power(Option<PowerAction>),
     Launcher,
+    Clipboard,
+    Emoji,
     TrayMenu(String),
     Network,
     Screen,
@@ -141,6 +182,8 @@ pub enum Overlay {
     Windows,
     Cpu,
     Ram,
+    Gpu,
+    Bluetooth,
 }
 
 impl Overlay {

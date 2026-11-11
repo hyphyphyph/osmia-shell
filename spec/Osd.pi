@@ -1,0 +1,44 @@
+// The on-screen display for volume, brightness and keyboard light changes.
+export anchor Osd:
+    purpose:
+        Show the new level when the user changes volume, brightness or the keyboard light from a key, so the user does not need to look at the bar.
+
+    trigger:
+        The session binds the volume keys to osmia volume up, down and mute, and the screen brightness keys to osmia brightness up and down. The keyboard light keys already run osmia keyboard-light up, down and cycle.
+        Each of these commands makes the change and shows the display.
+        One step is 5 percent, up or down from the current level, so 42 percent goes up to 47 and down to 37. It does not snap to multiples of 5. Scrolling on the bar's volume item steps the same way. Volume stops at 0 and 100 percent. Brightness never goes below 1 percent, so the screen never goes fully dark.
+        Brightness steps from the last value set, not from the backlight file, so fast key repeats do not lose steps while logind applies them.
+        Scrolling on the bar's volume or brightness item does not show the display. The bar already shows the value there.
+        A change made by another program, such as a mixer, does not show the display.
+
+    look:
+        One card, 280 by 52 px, centered near the bottom of the screen, 72 px above the bottom of the usable area. It has the card look of the other cards.
+        From left to right: an icon, a level bar, and the value.
+        The icon is the speaker for volume, the crossed-out speaker when muted, and the sun for brightness. The keyboard light uses a smaller sun.
+        The level bar fills with the accent color. For the keyboard light it is split into one segment per level.
+        The value is a percent, such as 65%. For the keyboard light it is the level, such as 2/3, or Off.
+        While muted, the icon, the bar and the value are dimmed, and the value still shows the volume level.
+        The display follows the real value. When PipeWire reports the volume a moment later, the card shows that.
+
+    timing:
+        It shows on the monitor that has focus, above windows and the bar.
+        It goes away 1.5 seconds after the last change. Another change while it shows keeps it up and updates it.
+        There is no fade.
+
+    input:
+        It takes no clicks or keys. Clicks pass through to whatever is under it.
+
+    commands:
+        - osmia volume up, down and mute. Each prints the new level, or muted.
+        - osmia volume status prints the volume, or muted. With --json it prints the percent and whether it is muted.
+        - osmia brightness up and down. Each prints the new percent.
+        - osmia brightness status prints the percent, or JSON with --json.
+        - With no audio output or no backlight, the command prints an error and shows nothing.
+
+    cost:
+        The display is its own small surface, made when it shows and removed when it hides. It draws only when the value changes. Its only timer is the hide time.
+
+    outOfScope:
+        - Showing the display for changes made by other programs.
+        - A display for media, microphone mute, or other keys.
+        - Settings for the position, the size, or how long it stays.

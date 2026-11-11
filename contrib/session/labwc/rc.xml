@@ -279,9 +279,11 @@
     <keybind key="W-comma">
       <action name="Execute" command="osmia settings" />
     </keybind>
-    <!-- For qterminal dropdown -->
-    <keybind key="F12">
-      <action name="Execute" command="qterminal -d" />
+    <keybind key="W-v">
+      <action name="Execute" command="osmia clipboard toggle" />
+    </keybind>
+    <keybind key="W-period">
+      <action name="Execute" command="osmia emoji toggle" />
     </keybind>
     <!-- Powerbuttons-->
     <keybind key="W-D">
@@ -324,19 +326,28 @@
       <action name="ShowMenu" menu="client-menu" atCursor="no" />
     </keybind>
     <keybind key="XF86_AudioLowerVolume">
-      <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-" />
+      <action name="Execute" command="osmia volume down" />
     </keybind>
     <keybind key="XF86_AudioRaiseVolume">
-      <action name="Execute" command="wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+" />
+      <action name="Execute" command="osmia volume up" />
     </keybind>
     <keybind key="XF86_AudioMute">
-      <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" />
+      <action name="Execute" command="osmia volume mute" />
     </keybind>
     <keybind key="XF86_MonBrightnessUp">
-      <action name="Execute" command="brightnessctl set 5%+" />
+      <action name="Execute" command="osmia brightness up" />
     </keybind>
     <keybind key="XF86_MonBrightnessDown">
-      <action name="Execute" command="brightnessctl set 5%-" />
+      <action name="Execute" command="osmia brightness down" />
+    </keybind>
+    <keybind key="XF86_KbdBrightnessUp">
+      <action name="Execute" command="osmia keyboard-light up" />
+    </keybind>
+    <keybind key="XF86_KbdBrightnessDown">
+      <action name="Execute" command="osmia keyboard-light down" />
+    </keybind>
+    <keybind key="XF86_KbdLightOnOff">
+      <action name="Execute" command="osmia keyboard-light cycle" />
     </keybind>
     <!-- SnapToRegion via W-Numpad -->
     <!--

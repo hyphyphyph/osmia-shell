@@ -7,6 +7,7 @@ pub enum Icon {
     Battery,
     BatteryCharging,
     Wifi,
+    Bluetooth,
     Volume,
     VolumeMuted,
     Sun,
@@ -27,6 +28,8 @@ pub enum Icon {
     Pause,
     Next,
     Prev,
+    Heart,
+    HeartFilled,
 }
 
 pub const SIZE: f32 = 14.0;
@@ -61,6 +64,9 @@ pub fn draw(p: &Painter, icon: Icon, rect: Rect, color: egui::Color32) {
             arc(p, pt(8.0, 13.5), 7.0 * u, -2.35, -0.79, s);
             p.circle_filled(pt(8.0, 12.0), 0.9 * u, color);
         }
+        Icon::Bluetooth => {
+            path(vec![pt(4.5, 5.0), pt(11.5, 11.0), pt(8.0, 14.0), pt(8.0, 2.0), pt(11.5, 5.0), pt(4.5, 11.0)]);
+        }
         Icon::Volume | Icon::VolumeMuted => {
             path(vec![
                 pt(2.0, 6.0),
@@ -84,6 +90,29 @@ pub fn draw(p: &Painter, icon: Icon, rect: Rect, color: egui::Color32) {
                 let a = k as f32 * std::f32::consts::FRAC_PI_4;
                 let d = vec2(a.cos(), a.sin());
                 p.line_segment([pt(8.0, 8.0) + d * 4.6 * u, pt(8.0, 8.0) + d * 6.4 * u], s);
+            }
+        }
+        Icon::Heart | Icon::HeartFilled => {
+            // Two arcs meeting at a point at the bottom.
+            let mut pts = Vec::new();
+            for k in 0..=10 {
+                let a = std::f32::consts::PI * (0.8 + 1.2 * k as f32 / 10.0);
+                pts.push(pt(5.0 + 3.0 * a.cos(), 6.0 + 3.0 * a.sin()));
+            }
+            for k in 0..=10 {
+                let a = std::f32::consts::PI * (1.0 + 1.2 * k as f32 / 10.0);
+                pts.push(pt(11.0 + 3.0 * a.cos(), 6.0 + 3.0 * a.sin()));
+            }
+            pts.push(pt(8.0, 13.5));
+            if icon == Icon::HeartFilled {
+                // Not convex, so fill the two lobes and the point separately.
+                p.circle_filled(pt(5.0, 6.0), 3.0 * u, color);
+                p.circle_filled(pt(11.0, 6.0), 3.0 * u, color);
+                p.add(Shape::convex_polygon(vec![pt(2.15, 7.0), pt(13.85, 7.0), pt(8.0, 13.5)], color, Stroke::NONE));
+                p.add(Shape::convex_polygon(vec![pt(5.0, 6.0), pt(11.0, 6.0), pt(13.85, 7.0), pt(2.15, 7.0)], color, Stroke::NONE));
+            } else {
+                pts.push(pts[0]);
+                path(pts);
             }
         }
         Icon::BellFilled => {

@@ -20,6 +20,8 @@ pub enum Kind {
     Settings,
     /// The screenshot overlay, one per output.
     Capture,
+    /// The volume and brightness display. It takes no input.
+    Osd,
 }
 
 /// What a window is drawn on.

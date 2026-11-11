@@ -32,6 +32,8 @@ pub struct Input<'a> {
     pub media: Option<(String, bool, String)>,
     pub layout: &'a BarLayout,
     pub tray: &'a [crate::tray::Item],
+    pub gpu: &'a crate::gpu::State,
+    pub bt: &'a crate::bt::State,
     pub top: bool,
 }
 
@@ -145,6 +147,27 @@ fn render(ui: &mut Ui, id: &str, inp: &Input, actions: &mut Vec<Action>, rects: 
                 actions.push(Action::ToggleOverlay(Overlay::Ram, r.rect.center().x));
             }
         }
+        "gpu" => {
+            // Hidden on a machine without the service, as other missing sources are.
+            let Some(s) = &inp.gpu.status else { return };
+            use crate::gpu::Phase;
+            let text = match s.state {
+                _ if inp.gpu.pending.is_some() => "\u{2026}".to_owned(),
+                Phase::Host => "Host".to_owned(),
+                Phase::Vfio => "VFIO".to_owned(),
+                Phase::VmRunning => clip(if s.vm_name.is_empty() { "VM" } else { &s.vm_name }, 12),
+                Phase::Switching => "\u{2026}".to_owned(),
+                Phase::Error => "Error".to_owned(),
+                Phase::Unknown => "?".to_owned(),
+            };
+            let alert = s.preference_pending || inp.gpu.error.is_some() || s.state == Phase::Error;
+            let col = if alert { theme::accent() } else { theme::TEXT };
+            let r = item(ui, None, &[("GPU", theme::DIM), (&text, col)], Sense::click());
+            record(rects, "gpu", r.rect, measuring);
+            if r.clicked() {
+                actions.push(Action::ToggleOverlay(Overlay::Gpu, r.rect.center().x));
+            }
+        }
         "battery" => {
             if let Some(b) = &st.battery {
                 let charging = b.charging && b.percent < 100;
@@ -169,6 +192,27 @@ fn render(ui: &mut Ui, id: &str, inp: &Input, actions: &mut Vec<Action>, rects: 
             record(rects, "network", r.rect, measuring);
             if r.clicked() {
                 actions.push(Action::ToggleOverlay(Overlay::Network, r.rect.center().x));
+            }
+        }
+        "bluetooth" => {
+            // Hidden with no adapter, as other missing sources are.
+            let b = inp.bt;
+            let Some(a) = &b.adapter else { return };
+            let connected = b.connected();
+            let text = match connected.as_slice() {
+                _ if !a.powered => "Off".to_owned(),
+                [] => String::new(),
+                [one] => clip(&one.alias, 14),
+                many => format!("{}", many.len()),
+            };
+            let alert = !b.asks.is_empty() || b.error.is_some();
+            let ic = if alert { theme::accent() } else { theme::DIM };
+            let col = if a.powered { theme::TEXT } else { theme::DIM };
+            let parts: Vec<(&str, egui::Color32)> = if text.is_empty() { vec![] } else { vec![(&text, col)] };
+            let r = item(ui, Some((Icon::Bluetooth, ic)), &parts, Sense::click());
+            record(rects, "bluetooth", r.rect, measuring);
+            if r.clicked() {
+                actions.push(Action::ToggleOverlay(Overlay::Bluetooth, r.rect.center().x));
             }
         }
         "volume" => {

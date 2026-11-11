@@ -5,7 +5,7 @@ if [ "$(id -u)" -ne 0 ]; then
     echo "Run this with sudo." >&2
     exit 1
 fi
-rm -f /usr/share/wayland-sessions/osmia.desktop /usr/local/bin/osmia-session
+rm -f /usr/share/wayland-sessions/osmia.desktop /usr/local/bin/osmia-session /usr/local/bin/osmia-dgpu
 rm -rf /usr/local/share/osmia
 # Keep /usr/local/bin/osmia if you still run it from a shell; remove it with: rm /usr/local/bin/osmia
 state=/var/lib/sddm/state.conf

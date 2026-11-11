@@ -22,6 +22,7 @@ fi
 echo "Installing files"
 install -Dm755 "$bin" /usr/local/bin/osmia
 install -Dm755 "$here/osmia-session" /usr/local/bin/osmia-session
+install -Dm755 "$here/osmia-dgpu" /usr/local/bin/osmia-dgpu
 install -Dm644 "$here/osmia.desktop" /usr/share/wayland-sessions/osmia.desktop
 install -d /usr/local/share/osmia/labwc
 install -m644 "$here"/labwc/* /usr/local/share/osmia/labwc/

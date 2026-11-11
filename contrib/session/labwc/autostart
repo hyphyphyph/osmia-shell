@@ -21,7 +21,7 @@ wl-clip-persist --clipboard regular >/dev/null 2>&1 &
 
 # Programs for the tray. Remove the # to start one.
 # nm-applet --indicator >/dev/null 2>&1 &
-# blueman-applet >/dev/null 2>&1 &
+# Bluetooth needs no applet: the osmia bar has a Bluetooth card and handles pairing.
 
 # The osmia shell: bar, launcher, notifications. Restarts if it stops.
 ( while true; do osmia; sleep 2; done ) >/dev/null 2>&1 &

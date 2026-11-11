@@ -1,0 +1,62 @@
+// The File dialogs page in settings.
+export anchor FileDialogs:
+    purpose:
+        Let the user choose which file picker apps show when they open or save a file, and try it, without editing portal files by hand.
+
+    background:
+        Apps that ask xdg-desktop-portal for a file dialog get one from a portal backend, such as GTK, KDE, GNOME, LXQt, COSMIC or Pikeru.
+        The portal picks the backend from a config file named after the desktop. The session's desktop names are Osmia, labwc and wlroots, in that order, so a file named osmia-portals.conf in the user's config folder wins over the system's labwc file.
+        Without a choice the system labwc file says any backend will do, and the portal takes the first it finds.
+
+    page:
+        Settings has a page named File dialogs, between Default applications and Screenshots and video.
+        Rows have a name, one line of help, and a control on the right, like every other page. Choices take effect at once, with no Apply button.
+
+    rows:
+        - File picker: a drop-down. It lists Automatic, then each installed backend that offers a file chooser, by name. Automatic means the shell makes no choice.
+        - Try it: a button that asks the portal for an open-file dialog, so the user sees the picker at once. Nothing is done with the file chosen.
+          The shell keeps its bus connection open until the dialog answers. The portal closes a request whose caller has left the bus, so a one-shot call made some pickers, Strata among them, close at once. If the picker reports it could not show a dialog, a notification says so.
+        - More pickers: a section with one row per known picker that is not installed, each with an Install button. It is hidden when every one is installed.
+        - GTK apps use it too: a switch. GTK apps only ask the portal when they run in a sandbox, so without this they draw their own dialog. It applies to apps started after the next login.
+
+    candidates:
+        The list holds the .portal files in the xdg-desktop-portal portals folder of each data folder whose Interfaces name org.freedesktop.impl.portal.FileChooser.
+        The folders are the user's data folder first, then the system data folders, as the portal reads them. A picker set up for one user, such as Strata, is found there.
+        Some apps carry their own picker and set its portal up per user on request. The list holds them when their command is installed, even before setup, marked set up when chosen. Strata is one: strata --install-portal writes its portal file and service in the user's data folder.
+        Known backends get friendly names: GTK, KDE, GNOME, LXQt, COSMIC, Pikeru, Strata, Terminal file manager for termfilechooser, Shana, Terminal browser for tui, Libadwaita for adw, GTK 4, Phosh and Deepin. Others show their file name.
+        A choice whose backend is no longer installed still shows, marked not installed.
+
+    writing:
+        Choosing a picker sets org.freedesktop.impl.portal.FileChooser under [preferred] in osmia-portals.conf in the user's xdg-desktop-portal config folder. Other lines in the file are kept.
+        When the file does not exist yet, it starts as a copy of the file the portal used until then: the first labwc or wlroots portals file in the user, system config and data folders, or else portals.conf. This keeps every other portal working as before. With none found it starts with default=*.
+        The line names the choice, then the previous choice as a fallback, such as strata;lxqt. The portal uses the fallback when the choice cannot start. The page shows the first name.
+        Choosing a picker that is not set up runs its setup command first, away from the drawing thread, then writes the line. A failed setup sends a notification with the command's last error line.
+        Choosing Automatic removes the FileChooser line and leaves the rest of the file.
+        The shell then restarts the xdg-desktop-portal user service, so the choice applies at once. A file dialog open at that moment closes.
+        The GTK switch writes GTK_USE_PORTAL=1 for GTK 3 and adds portals to GDK_DEBUG for GTK 4, in the labwc environment file in the shell's config folder. Turning it off removes them and keeps any other GDK_DEBUG flags.
+
+    installing:
+        The page knows these pickers and their Arch packages. From the official repos: GTK, KDE, GNOME, LXQt and COSMIC. From the AUR: Strata (strata-bin), Pikeru, termfilechooser, Shana, tui and adw.
+        Install opens a terminal running pacman with sudo, or paru or yay for the AUR, with --needed. The user types the password and reviews AUR build files there. The shell never runs a package manager without a terminal, and never as root itself.
+        The terminal is the launcher terminal setting if it is installed, else the first installed of alacritty, foot, kitty, wezterm, konsole, qterminal, xfce4-terminal and xterm. With none, a notification says so.
+        The window stays open at the end, saying Done or that it failed, until the user presses Enter.
+        While it is open the row says Installing, and other Install buttons do nothing. When it closes the page reads the pickers again, so the new one shows in the File picker list. Installing does not choose it.
+        With no paru or yay, AUR rows say they need one instead of offering Install.
+
+    reading:
+        The page reads the files each time settings opens, and shows a new choice at once without reading them again.
+
+    tests:
+        One test opens a real dialog and is run by hand with cargo test try_dialog -- --ignored.
+        Unit tests cover the install commands and which pickers are offered, reading a .portal file, setting and removing the FileChooser line, the seed file, and adding and removing the environment lines.
+
+    outOfScope:
+        - Choosing backends for other portals, such as screenshots or screen sharing.
+        - A file picker drawn by the shell itself.
+        - Settings inside a picker, such as hidden files or the start folder.
+
+    openQuestions:
+        - Whether to add settings for termfilechooser (the file manager and the terminal) and Shana (the picker for open and for save). The page installs them, but each needs its own config to be useful.
+        - Whether installing should support distributions other than Arch.
+        - Whether to also offer the portal to Qt apps. That needs QT_QPA_PLATFORMTHEME set to xdgdesktopportal, which drops the LXQt look the session gives them.
+        - Whether to install osmia-portals.conf system-wide with the session, rather than making it on first use.

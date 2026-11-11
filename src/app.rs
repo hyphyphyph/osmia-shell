@@ -58,6 +58,17 @@ use crate::ui::{self, bar, launcher, panels, popups, Action, Overlay, PowerActio
 use crate::win::{Kind, Surf, Win};
 
 const SLOW_TICK: Duration = Duration::from_secs(2);
+/// How long the volume and brightness display stays after the last change.
+const OSD_TIME: Duration = Duration::from_millis(1500);
+
+/// What the volume and brightness display shows. Volume and brightness are read
+/// from the live stats when drawn, so the display follows the real value.
+pub struct Osd {
+    pub what: ui::osd::What,
+    /// The keyboard light's level and its highest level.
+    pub steps: (u32, u32),
+    pub until: Instant,
+}
 /// How long the pointer must rest in the hot corner. Short, so a sweep to the bar does not trigger it.
 const CORNER_DWELL: Duration = Duration::from_millis(150);
 /// The hot corner is this many logical pixels square.
@@ -95,6 +106,8 @@ pub struct Shared {
     pub last_output: Option<wl_output::WlOutput>,
     pub toplevels: Vec<Toplevel>,
     pub popup_hover: bool,
+    /// The volume or brightness display, while it shows.
+    pub osd: Option<Osd>,
     pub tray: Vec<crate::tray::Item>,
     pub tray_menu: Vec<crate::tray::MenuNode>,
     pub tray_menu_loaded: bool,
@@ -113,8 +126,19 @@ pub struct Shared {
     pub proc_sampler: sys::ProcSampler,
     pub limits: crate::limits::Limits,
     pub default_apps: crate::defaults::DefaultApps,
+    pub file_dialogs: crate::portal::FileDialogs,
     /// Pictures of windows, filled in while the overview is open.
     pub overview: Vec<crate::overview::Thumb>,
+    pub clipboard: crate::clipboard::History,
+    /// Recent emoji and the skin tone, kept on disk.
+    pub emoji: crate::emoji::Memory,
+    pub emoji_ui: ui::emoji::State,
+    /// The discrete graphics card, as the gpu-vfio-control service reports it.
+    pub gpu: crate::gpu::State,
+    /// Bluetooth adapter, devices, and what the pairing agent is asking.
+    pub bt: crate::bt::State,
+    /// Liked songs on Spotify, for the media card.
+    pub spotify: crate::spotify::Likes,
 }
 
 pub struct App {
@@ -146,6 +170,9 @@ pub struct App {
     cap_tx: Option<channel::Sender<crate::capture::CapMsg>>,
     n_tx: Option<channel::Sender<notif::Event>>,
     mpris_cmd: Option<std::sync::mpsc::Sender<crate::mpris::Cmd>>,
+    gpu_cmd: Option<std::sync::mpsc::Sender<crate::gpu::Cmd>>,
+    bt: Option<crate::bt::Handle>,
+    spotify_cmd: Option<std::sync::mpsc::Sender<crate::spotify::Cmd>>,
     tick_count: u64,
     prof_tx: Option<channel::Sender<sys::PowerProfiles>>,
     cursor_mgr: Option<WpCursorShapeManagerV1>,
@@ -160,6 +187,8 @@ pub struct App {
     viewporter: Option<WpViewporter>,
     wifi_tx: Option<channel::Sender<Vec<sys::WifiNet>>>,
     launch_tx: Option<channel::Sender<launch::Data>>,
+    /// An install terminal for a file picker closed.
+    picker_tx: Option<channel::Sender<()>>,
     next_tick: Instant,
     pub exit: bool,
 }
@@ -235,6 +264,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
             last_output: None,
             toplevels: Vec::new(),
             popup_hover: false,
+            osd: None,
             tray: Vec::new(),
             tray_menu: Vec::new(),
             tray_menu_loaded: false,
@@ -245,7 +275,14 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
             proc_sampler: Default::default(),
             limits: crate::limits::Limits::load(),
             default_apps: Default::default(),
+            file_dialogs: Default::default(),
             overview: Vec::new(),
+            clipboard: Default::default(),
+            emoji: crate::emoji::Memory::load(),
+            emoji_ui: Default::default(),
+            gpu: Default::default(),
+            bt: Default::default(),
+            spotify: Default::default(),
             workspaces: Vec::new(),
             binds: Vec::new(),
             binds_error: None,
@@ -280,6 +317,9 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
         cap_tx: None,
         n_tx: None,
         mpris_cmd: None,
+        gpu_cmd: None,
+        bt: None,
+        spotify_cmd: None,
         tick_count: 0,
         prof_tx: None,
         cursor_mgr: globals.bind::<WpCursorShapeManagerV1, _, _>(&qh, 1..=1, ()).ok(),
@@ -291,6 +331,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
         frac_mgr: globals.bind::<WpFractionalScaleManagerV1, _, _>(&qh, 1..=1, ()).ok(),
         viewporter: globals.bind::<WpViewporter, _, _>(&qh, 1..=1, ()).ok(),
         wifi_tx: None,
+        picker_tx: None,
         launch_tx: None,
         next_tick: Instant::now() + SLOW_TICK,
         exit: false,
@@ -378,9 +419,24 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
             let stats = app.shared.sampler.sample();
             app.shared.stats = stats;
             app.mark_kind(Kind::Bar);
+            app.mark_kind(Kind::Osd);
             if matches!(app.shared.overlay, Some(Overlay::Audio)) {
                 app.refresh_audio();
             }
+        }
+    })?;
+
+    let (pk_tx, pk_rx) = channel::channel::<()>();
+    app.picker_tx = Some(pk_tx);
+    event_loop.handle().insert_source(pk_rx, |ev, _, app| {
+        if let channel::Event::Msg(()) = ev {
+            // Read the pickers again, so a new one shows in the list.
+            let current = std::mem::take(&mut app.shared.file_dialogs);
+            app.shared.file_dialogs = crate::portal::load();
+            if app.shared.file_dialogs.current.is_none() {
+                app.shared.file_dialogs.current = current.current;
+            }
+            app.mark_kind(Kind::Settings);
         }
     })?;
 
@@ -405,6 +461,17 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
             }
         }
     })?;
+
+    // Clipboard history: every text copy arrives here.
+    let (clip_tx, clip_rx) = channel::channel::<String>();
+    event_loop.handle().insert_source(clip_rx, |ev, _, app| {
+        if let channel::Event::Msg(text) = ev {
+            if app.shared.clipboard.add(text) && matches!(app.shared.overlay, Some(Overlay::Clipboard)) {
+                app.mark_kind(Kind::Overlay);
+            }
+        }
+    })?;
+    crate::clipboard::watch(clip_tx);
 
     let (c_tx, c_rx) = channel::channel::<crate::capture::CapMsg>();
     app.cap_tx = Some(c_tx);
@@ -441,6 +508,37 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
         }
     })?;
 
+    // Liking Spotify songs through the Web API.
+    let (sp_tx, sp_rx) = channel::channel::<crate::spotify::Msg>();
+    app.spotify_cmd = Some(crate::spotify::start(sp_tx));
+    event_loop.handle().insert_source(sp_rx, |ev, _, app| {
+        if let channel::Event::Msg(m) = ev {
+            app.on_spotify_msg(m);
+        }
+    })?;
+
+    // The discrete graphics card, through the gpu-vfio-control service.
+    let (g_tx, g_rx) = channel::channel::<crate::gpu::Msg>();
+    if std::env::var_os("OSMIA_NESTED").is_none() {
+        app.gpu_cmd = Some(crate::gpu::start(g_tx));
+    }
+    event_loop.handle().insert_source(g_rx, |ev, _, app| {
+        if let channel::Event::Msg(m) = ev {
+            app.on_gpu_msg(m);
+        }
+    })?;
+
+    // Bluetooth, through BlueZ. The shell is also the pairing agent.
+    let (b_tx, b_rx) = channel::channel::<crate::bt::Msg>();
+    if std::env::var_os("OSMIA_NESTED").is_none() && std::env::var_os("OSMIA_NO_BLUETOOTH").is_none() {
+        app.bt = Some(crate::bt::start(b_tx));
+    }
+    event_loop.handle().insert_source(b_rx, |ev, _, app| {
+        if let channel::Event::Msg(m) = ev {
+            app.on_bt_msg(m);
+        }
+    })?;
+
     // System tray.
     let (t_tx, t_rx) = channel::channel::<crate::tray::Msg>();
     if std::env::var_os("OSMIA_NESTED").is_none() {
@@ -470,6 +568,9 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
             if let Some(d) = w.deadline() {
                 wake = wake.min(d);
             }
+        }
+        if let Some(o) = &app.shared.osd {
+            wake = wake.min(o.until);
         }
         if !app.shared.popup_hover {
             if let Some(t) = app.shared.notifs.next_expiry() {
@@ -553,6 +654,7 @@ impl App {
             if s != self.shared.stats {
                 self.shared.stats = s;
                 self.mark_kind(Kind::Bar);
+                self.mark_kind(Kind::Osd);
                 if matches!(self.shared.overlay, Some(Overlay::Screen)) {
                     self.mark_kind(Kind::Overlay);
                 }
@@ -579,7 +681,11 @@ impl App {
             self.check_clock();
             self.check_config(qh);
         }
+        if self.shared.osd.as_ref().is_some_and(|o| now >= o.until) {
+            self.shared.osd = None;
+        }
         self.sync_popups(qh);
+        self.sync_osd(qh);
         for i in 0..self.wins.len() {
             if self.wins[i].wants_draw(now) {
                 let t0 = Instant::now();
@@ -765,6 +871,73 @@ impl App {
             .or_else(|| self.output_state.outputs().next())
     }
 
+    /// Show the volume and brightness display while it has something to show.
+    fn sync_osd(&mut self, qh: &QueueHandle<App>) {
+        let want = self.shared.osd.is_some();
+        let has = self.wins.iter().any(|w| w.kind == Kind::Osd);
+        if want && !has {
+            let output = self.focused_output();
+            let surface = self.compositor.create_surface(qh);
+            let layer = self.layer_shell.create_layer_surface(qh, surface, Layer::Overlay, Some("osmia-osd"), output.as_ref());
+            layer.set_anchor(Anchor::BOTTOM);
+            let (w, h) = ui::osd::surface_size();
+            layer.set_size(w, h);
+            layer.set_margin(0, 0, ui::osd::BOTTOM_GAP - ui::osd::PAD as i32, 0);
+            layer.set_exclusive_zone(0);
+            layer.set_keyboard_interactivity(KeyboardInteractivity::None);
+            layer.commit();
+            self.wins.push(self.new_win(qh, Kind::Osd, Surf::Layer(layer), output));
+        } else if !want && has {
+            self.wins.retain(|w| w.kind != Kind::Osd);
+        }
+    }
+
+    /// Show the display for a change just made, or keep it up longer.
+    fn show_osd(&mut self, what: ui::osd::What, steps: (u32, u32)) {
+        self.shared.osd = Some(Osd { what, steps, until: Instant::now() + OSD_TIME });
+        self.mark_kind(Kind::Osd);
+    }
+
+    /// Step the volume from the last level set, so fast key repeats add up.
+    /// The bar shows the new value at once. Returns false with no audio output.
+    fn step_volume(&mut self, d: i32) -> bool {
+        let Some(mut v) = self.shared.stats.volume.clone().or_else(sys::read_volume) else {
+            return false;
+        };
+        // Plain steps from the current level: 42 goes to 47 or 37.
+        v.percent = (v.percent as i32 + d).clamp(0, 100) as u32;
+        sys::set_volume_percent(v.percent);
+        self.shared.sampler.hold_volume(v.clone());
+        self.shared.stats.volume = Some(v);
+        self.mark_kind(Kind::Bar);
+        true
+    }
+
+    fn toggle_mute(&mut self) {
+        if let Some(v) = &mut self.shared.stats.volume {
+            v.muted = !v.muted;
+            let v = v.clone();
+            self.shared.sampler.set_volume(Some(v));
+            self.mark_kind(Kind::Bar);
+        }
+        sys::toggle_mute()
+    }
+
+    /// Step the backlight from the last value set, not from the file, so fast
+    /// key repeats do not lose steps while logind catches up. Returns the new percent.
+    fn step_brightness(&mut self, d: i32) -> Option<u32> {
+        let cur = self.shared.stats.brightness_percent?;
+        let new = (cur as i32 + d).clamp(1, 100) as u32;
+        self.shared.sampler.set_brightness(new);
+        self.shared.stats.brightness_percent = Some(new);
+        sys::set_brightness_percent(new);
+        self.mark_kind(Kind::Bar);
+        if matches!(self.shared.overlay, Some(Overlay::Screen)) {
+            self.mark_kind(Kind::Overlay);
+        }
+        Some(new)
+    }
+
     /// Show the popup surface while there are popups. Remove it when empty.
     fn sync_popups(&mut self, qh: &QueueHandle<App>) {
         let want = !self.shared.notifs.popups.is_empty();
@@ -832,6 +1005,7 @@ impl App {
     fn open_settings(&mut self, qh: &QueueHandle<App>) {
         self.load_binds();
         self.shared.default_apps = crate::defaults::load();
+        self.shared.file_dialogs = crate::portal::load();
         if self.wins.iter().any(|w| w.kind == Kind::Settings) {
             self.mark_kind(Kind::Settings);
             return;
@@ -910,6 +1084,9 @@ impl App {
                 }
                 self.shared.launcher = launcher::State::default();
             }
+            Overlay::Emoji => {
+                self.shared.emoji_ui = ui::emoji::State { fresh: true, ..Default::default() };
+            }
             _ => {}
         }
         if !anchor.is_nan() {
@@ -918,6 +1095,7 @@ impl App {
         self.shared.overlay = Some(ov);
         self.ensure_overlay(qh);
         self.mark_kind(Kind::Bar);
+        self.sync_bt_scan();
     }
 
     fn close_overlay(&mut self) {
@@ -926,6 +1104,217 @@ impl App {
         self.wins.retain(|w| w.kind != Kind::Overlay);
         self.kb_focus = None;
         self.mark_kind(Kind::Bar);
+        self.sync_bt_scan();
+    }
+
+    /// Look for devices while the Bluetooth card is open and the adapter is on.
+    /// The scan the card started stops when it closes.
+    fn sync_bt_scan(&mut self) {
+        let Some(h) = &self.bt else { return };
+        let b = &mut self.shared.bt;
+        let open = matches!(self.shared.overlay, Some(Overlay::Bluetooth));
+        let want = open && b.adapter.as_ref().is_some_and(|a| a.powered);
+        if want && !b.scan_ours {
+            b.scan_ours = true;
+            h.send(crate::bt::Cmd::Scan(true));
+        } else if !want && b.scan_ours {
+            b.scan_ours = false;
+            h.send(crate::bt::Cmd::Scan(false));
+        }
+    }
+
+    fn on_spotify_msg(&mut self, m: crate::spotify::Msg) {
+        use crate::spotify::Msg;
+        let sp = &mut self.shared.spotify;
+        match m {
+            Msg::SignedIn(yes) => {
+                let was = sp.signed_in;
+                sp.signed_in = yes;
+                sp.failed.clear();
+                if !yes {
+                    sp.liked.clear();
+                    sp.pending.clear();
+                }
+                if yes && !was && sp.signing_in {
+                    sp.signing_in = false;
+                    self.notify_self("Signed in to Spotify", "The heart in the media card now likes songs.");
+                    if let Some((uri, like)) = self.shared.spotify.after_login.take() {
+                        self.spotify_set(uri, like);
+                    }
+                } else if !yes {
+                    sp.signing_in = false;
+                }
+            }
+            Msg::Liked(uri, liked) => {
+                sp.pending.remove(&uri);
+                sp.failed.remove(&uri);
+                sp.liked.insert(uri, liked);
+            }
+            Msg::Failed(uri, why) => {
+                if let Some(u) = &uri {
+                    sp.pending.remove(u);
+                    sp.failed.insert(u.clone());
+                    // Forget the guess, so the heart shows what Spotify says next time.
+                    sp.liked.remove(u);
+                }
+                sp.signing_in = false;
+                self.notify_self("Spotify", &why);
+            }
+        }
+        self.mark_kind(Kind::Overlay);
+    }
+
+    fn spotify_send(&mut self, c: crate::spotify::Cmd) {
+        if let Some(tx) = &self.spotify_cmd {
+            let _ = tx.send(c);
+        }
+    }
+
+    /// Like or unlike a track. Before sign-in this starts the sign-in, and the like follows it.
+    fn spotify_set(&mut self, uri: String, like: bool) {
+        let id = self.shared.cfg.spotify.client_id.trim().to_owned();
+        if id.is_empty() {
+            self.notify_self(
+                "Spotify is not set up",
+                &format!(
+                    "Make an app at developer.spotify.com with the redirect URI {} and the Web API, then put its Client ID in config.toml under [spotify] client_id.",
+                    crate::spotify::redirect_uri()
+                ),
+            );
+            return;
+        }
+        if !self.shared.spotify.signed_in {
+            self.shared.spotify.after_login = Some((uri, like));
+            self.spotify_login();
+            return;
+        }
+        // Show it at once. A failure puts it back.
+        self.shared.spotify.liked.insert(uri.clone(), like);
+        self.shared.spotify.pending.insert(uri.clone());
+        self.spotify_send(crate::spotify::Cmd::Set(id, uri, like));
+        self.mark_kind(Kind::Overlay);
+    }
+
+    fn spotify_login(&mut self) {
+        let id = self.shared.cfg.spotify.client_id.trim().to_owned();
+        if self.shared.spotify.signing_in {
+            return;
+        }
+        self.shared.spotify.signing_in = true;
+        self.notify_self("Sign in to Spotify", "Your browser opened Spotify's sign-in page. Allow osmia there.");
+        self.spotify_send(crate::spotify::Cmd::Login(id));
+    }
+
+    /// The Spotify track of the media card, if one is playing.
+    fn spotify_current(&self) -> Option<String> {
+        self.shared.media.players.iter().find_map(|p| crate::spotify::track_uri(&p.bus, &p.track_id))
+    }
+
+    fn on_bt_msg(&mut self, m: crate::bt::Msg) {
+        use crate::bt::{Cmd, Msg};
+        let b = &mut self.shared.bt;
+        match m {
+            Msg::State(a, d) => {
+                if a.is_none() {
+                    b.scan_ours = false;
+                }
+                b.adapter = a;
+                b.devices = d;
+                self.sync_bt_scan();
+            }
+            Msg::Ask(req) => {
+                // A shown code is updated as keys are typed on the device: replace it.
+                b.asks.retain(|r| !(r.device == req.device && r.ask.shown_only()));
+                b.asks.push(req);
+                if !matches!(self.shared.overlay, Some(Overlay::Bluetooth)) {
+                    let qh = self.qh();
+                    let anchor = self.anchor_for("bluetooth");
+                    self.open_overlay(&qh, Overlay::Bluetooth, anchor);
+                }
+            }
+            Msg::AskEnd(None) => b.asks.clear(),
+            Msg::AskEnd(Some(id)) => b.asks.retain(|r| r.id != id),
+            Msg::Done(cmd, r) => {
+                b.pending.retain(|c| *c != cmd);
+                let name = cmd.device().and_then(|p| b.device(p)).map(|d| d.alias.clone()).unwrap_or_else(|| "the device".into());
+                if let Cmd::Pair(p) = &cmd {
+                    b.asks.retain(|r| r.device != *p);
+                }
+                match r {
+                    Ok(()) => {
+                        if matches!(cmd, Cmd::Pair(_)) {
+                            self.notify_self("Bluetooth", &format!("Paired with {name}."));
+                        }
+                    }
+                    // Stopping a scan, or a scan that the adapter refused while off, is not worth a word.
+                    Err(_) if matches!(cmd, Cmd::Scan(_)) => {}
+                    Err(why) => {
+                        let what = match &cmd {
+                            Cmd::Power(true) => "Could not turn Bluetooth on".to_owned(),
+                            Cmd::Power(false) => "Could not turn Bluetooth off".to_owned(),
+                            Cmd::Connect(_) => format!("Could not connect {name}"),
+                            Cmd::Disconnect(_) => format!("Could not disconnect {name}"),
+                            Cmd::Pair(_) => format!("Could not pair with {name}"),
+                            Cmd::Forget(_) => format!("Could not forget {name}"),
+                            Cmd::CancelPair(_) => return self.mark_kind(Kind::Overlay),
+                            Cmd::Scan(_) => unreachable!(),
+                        };
+                        b.error = Some(format!("{what}. {why}"));
+                        self.notify_self(&what, &why);
+                    }
+                }
+            }
+        }
+        self.mark_kind(Kind::Bar);
+        self.mark_kind(Kind::Overlay);
+    }
+
+    fn on_gpu_msg(&mut self, m: crate::gpu::Msg) {
+        use crate::gpu::{Msg, Phase};
+        let g = &mut self.shared.gpu;
+        match m {
+            Msg::Status(s) => {
+                // Tell the user about a change nobody here asked for, such as the
+                // VM shutting itself down or a waiting hand-over taking place.
+                let before = g.status.as_ref().map(|o| o.state);
+                let settled = |p: Phase| matches!(p, Phase::Host | Phase::Vfio | Phase::VmRunning);
+                let note = match before {
+                    Some(b) if g.pending.is_none() && b != s.state && settled(s.state) && b != Phase::Unknown => Some(match s.state {
+                        Phase::Host => "Back on the host.".to_owned(),
+                        Phase::Vfio => "Ready for VMs. The card is on vfio-pci.".to_owned(),
+                        _ => format!("{} is running with the card.", s.vm_name),
+                    }),
+                    _ => None,
+                };
+                if s.state != Phase::VmRunning {
+                    g.confirm_force = false;
+                }
+                g.status = Some(s);
+                if let Some(n) = note {
+                    self.notify_self("Graphics card", &n);
+                }
+            }
+            Msg::Gone => g.status = None,
+            Msg::Done(cmd, reply) => {
+                if g.pending == Some(cmd) {
+                    g.pending = None;
+                }
+                if let Some(s) = reply.status.clone() {
+                    g.status = Some(s);
+                }
+                let vm = g.status.as_ref().map(|s| s.vm_name.clone()).filter(|n| !n.is_empty()).unwrap_or_else(|| "The VM".into());
+                if reply.success {
+                    g.error = None;
+                    self.notify_self("Graphics card", &cmd.done_text(&vm));
+                } else {
+                    let why = reply.error_text();
+                    g.error = Some(why.clone());
+                    self.notify_self("Graphics card not switched", &why);
+                }
+            }
+        }
+        self.mark_kind(Kind::Bar);
+        self.mark_kind(Kind::Overlay);
     }
 
     fn on_tray_msg(&mut self, m: crate::tray::Msg) {
@@ -943,6 +1332,11 @@ impl App {
                 self.mark_kind(Kind::Bar);
             }
             Msg::ActivateFailed(id) => self.launch_tray_app(&id),
+            Msg::QuitFailed(id) => {
+                let title = self.shared.tray.iter().find(|i| i.id == id).map(|i| i.title.clone()).unwrap_or_default();
+                self.notify_self("Cannot quit", &format!("{title} has no Quit item and its process could not be found."));
+                self.mark_kind(Kind::Popups);
+            }
             Msg::Menu(_id, nodes) => {
                 self.shared.tray_menu = nodes;
                 self.shared.tray_menu_loaded = true;
@@ -1149,6 +1543,24 @@ impl App {
                 }
                 "ok".into()
             }
+            ["clipboard", act @ ("toggle" | "show" | "hide")] => {
+                let open = has(&Overlay::Clipboard);
+                match (*act, open) {
+                    ("toggle", true) | ("hide", true) => self.close_overlay(),
+                    ("toggle", false) | ("show", false) => self.open_overlay(&qh, Overlay::Clipboard, f32::NAN),
+                    _ => {}
+                }
+                "ok".into()
+            }
+            ["emoji", act @ ("toggle" | "show" | "hide")] => {
+                let open = has(&Overlay::Emoji);
+                match (*act, open) {
+                    ("toggle", true) | ("hide", true) => self.close_overlay(),
+                    ("toggle", false) | ("show", false) => self.open_overlay(&qh, Overlay::Emoji, f32::NAN),
+                    _ => {}
+                }
+                "ok".into()
+            }
             ["network"] => {
                 if has(&Overlay::Network) {
                     self.close_overlay();
@@ -1157,6 +1569,165 @@ impl App {
                     self.open_overlay(&qh, Overlay::Network, anchor);
                 }
                 "ok".into()
+            }
+            ["gpu"] => {
+                if has(&Overlay::Gpu) {
+                    self.close_overlay();
+                } else if self.shared.gpu.status.is_none() {
+                    return "error: the graphics card service is not running".into();
+                } else {
+                    let anchor = self.anchor_for("gpu");
+                    self.open_overlay(&qh, Overlay::Gpu, anchor);
+                }
+                "ok".into()
+            }
+            ["bluetooth"] => {
+                if has(&Overlay::Bluetooth) {
+                    self.close_overlay();
+                } else if self.shared.bt.adapter.is_none() {
+                    return "error: there is no Bluetooth adapter, or bluetoothd is not running".into();
+                } else {
+                    let anchor = self.anchor_for("bluetooth");
+                    self.open_overlay(&qh, Overlay::Bluetooth, anchor);
+                }
+                "ok".into()
+            }
+            ["bluetooth", "status"] => {
+                let b = &self.shared.bt;
+                if json {
+                    let devs: Vec<serde_json::Value> = b
+                        .devices
+                        .iter()
+                        .filter(|d| d.paired || d.connected)
+                        .map(|d| serde_json::json!({"name": d.alias, "address": d.address, "connected": d.connected, "battery": d.battery}))
+                        .collect();
+                    let state = match &b.adapter {
+                        None => "unavailable",
+                        Some(a) if a.powered => "on",
+                        Some(_) => "off",
+                    };
+                    serde_json::json!({"state": state, "devices": devs}).to_string()
+                } else {
+                    b.word()
+                }
+            }
+            ["bluetooth", act @ ("on" | "off")] => {
+                let Some(h) = &self.bt else { return "error: Bluetooth is not running".into() };
+                h.send(crate::bt::Cmd::Power(*act == "on"));
+                "ok".into()
+            }
+            ["brightness"] => {
+                if has(&Overlay::Screen) {
+                    self.close_overlay();
+                } else {
+                    let anchor = self.anchor_for("brightness");
+                    self.open_overlay(&qh, Overlay::Screen, anchor);
+                }
+                "ok".into()
+            }
+            ["volume", act @ ("up" | "down" | "mute")] => {
+                if self.shared.stats.volume.is_none() {
+                    // The last read failed. Ask the system once more before giving up.
+                    self.shared.stats.volume = sys::read_volume();
+                    if self.shared.stats.volume.is_none() {
+                        return "error: there is no audio output".into();
+                    }
+                }
+                match *act {
+                    "up" => {
+                        self.step_volume(5);
+                    }
+                    "down" => {
+                        self.step_volume(-5);
+                    }
+                    _ => self.toggle_mute(),
+                }
+                self.show_osd(ui::osd::What::Volume, (0, 0));
+                let v = self.shared.stats.volume.as_ref().expect("checked above");
+                if v.muted { "muted".into() } else { format!("{}%", v.percent) }
+            }
+            ["volume"] | ["volume", "status"] => match &self.shared.stats.volume {
+                Some(v) if json => format!("{{\"percent\":{},\"muted\":{}}}", v.percent, v.muted),
+                Some(v) if v.muted => "muted".into(),
+                Some(v) => format!("{}%", v.percent),
+                None => "error: there is no audio output".into(),
+            },
+            ["brightness", act @ ("up" | "down")] => {
+                let Some(p) = self.step_brightness(if *act == "up" { 5 } else { -5 }) else {
+                    return "error: there is no backlight".into();
+                };
+                self.show_osd(ui::osd::What::Brightness, (0, 0));
+                format!("{p}%")
+            }
+            ["brightness", "status"] => match self.shared.stats.brightness_percent {
+                Some(p) if json => format!("{{\"percent\":{p}}}"),
+                Some(p) => format!("{p}%"),
+                None => "error: there is no backlight".into(),
+            },
+            ["spotify", "login"] => {
+                if self.shared.cfg.spotify.client_id.trim().is_empty() {
+                    return format!("error: set [spotify] client_id in config.toml first. The app's redirect URI must be {}", crate::spotify::redirect_uri());
+                }
+                self.spotify_login();
+                "ok: finish the sign-in in the browser".into()
+            }
+            ["spotify", "logout"] => {
+                self.spotify_send(crate::spotify::Cmd::Logout);
+                "ok".into()
+            }
+            ["spotify"] | ["spotify", "status"] => {
+                let sp = &self.shared.spotify;
+                let cur = self.spotify_current();
+                let liked = cur.as_ref().and_then(|u| sp.get(u));
+                if json {
+                    serde_json::json!({"signed_in": sp.signed_in, "track": cur, "liked": liked}).to_string()
+                } else if !sp.signed_in {
+                    "signed out".into()
+                } else {
+                    match (cur, liked) {
+                        (None, _) => "signed in, no Spotify track".into(),
+                        (Some(u), Some(l)) => format!("{u} {}", if l { "liked" } else { "not liked" }),
+                        (Some(u), None) => format!("{u} unknown"),
+                    }
+                }
+            }
+            ["spotify", act @ ("like" | "unlike" | "toggle-like")] => {
+                let Some(uri) = self.spotify_current() else { return "error: no Spotify track is playing".into() };
+                let like = match *act {
+                    "like" => true,
+                    "unlike" => false,
+                    // Not known yet counts as not liked: liking twice is harmless, unliking by guess is not.
+                    _ => !self.shared.spotify.get(&uri).unwrap_or(false),
+                };
+                if self.shared.cfg.spotify.client_id.trim().is_empty() {
+                    return format!("error: set [spotify] client_id in config.toml first. The app's redirect URI must be {}", crate::spotify::redirect_uri());
+                }
+                let signed_in = self.shared.spotify.signed_in;
+                self.spotify_set(uri, like);
+                match (signed_in, like) {
+                    (false, _) => "ok: finish the sign-in in the browser, then it is done".into(),
+                    (true, true) => "liked".into(),
+                    (true, false) => "unliked".into(),
+                }
+            }
+            ["keyboard-light"] | ["keyboard-light", "status"] => match sys::read_kbd_light() {
+                Some(k) if json => format!("{{\"level\":{},\"max\":{}}}", k.level, k.max),
+                Some(k) => format!("{}/{}", k.level, k.max),
+                None => "error: there is no keyboard backlight".into(),
+            },
+            ["keyboard-light", what] => {
+                let Some(k) = sys::read_kbd_light() else { return "error: there is no keyboard backlight".into() };
+                let Some(level) = sys::kbd_light_target(&k, what) else {
+                    return "error: use up, down, cycle, on, off, or a level".into();
+                };
+                sys::set_kbd_light(&k.name, level);
+                self.mark_kind(Kind::Overlay);
+                self.show_osd(ui::osd::What::KeyboardLight, (level, k.max));
+                format!("{level}/{}", k.max)
+            }
+            ["gpu", "status"] => {
+                let word = self.shared.gpu.word();
+                if json { format!("{{\"state\":\"{word}\"}}") } else { word.into() }
             }
             ["cpu"] => {
                 if has(&Overlay::Cpu) {
@@ -1438,6 +2009,8 @@ impl App {
                         media: shared.media.current().map(|p| (p.line(), p.status == crate::mpris::Status::Playing, p.bus.clone())),
                         layout: &shared.cfg.bar.layout,
                         tray: &shared.tray,
+                        gpu: &shared.gpu,
+                        bt: &shared.bt,
                         top: bar_top,
                     },
                     &mut actions,
@@ -1450,6 +2023,22 @@ impl App {
                 let o = popups::show(ui, &shared.notifs.popups, out_h, bottom_up, &mut actions);
                 hovered = o.hovered;
                 input_rects = Some(o.input_rects);
+            }
+            Kind::Osd => {
+                // It takes no clicks: an empty input region lets them through.
+                input_rects = Some(Vec::new());
+                if let Some(o) = &shared.osd {
+                    use ui::osd::{Level, View, What};
+                    let (level, muted) = match o.what {
+                        What::Volume => match &shared.stats.volume {
+                            Some(v) => (Level::Percent(v.percent), v.muted),
+                            None => (Level::Percent(0), false),
+                        },
+                        What::Brightness => (Level::Percent(shared.stats.brightness_percent.unwrap_or(0)), false),
+                        What::KeyboardLight => (Level::Steps(o.steps.0, o.steps.1), false),
+                    };
+                    ui::osd::show(ui, &View { what: o.what, level, muted });
+                }
             }
             Kind::Capture => {
                 if let (Some(st), Some(i)) = (shared.capture.as_mut(), cap_idx) {
@@ -1466,6 +2055,7 @@ impl App {
                     binds_error: shared.binds_error.as_deref(),
                     captured: shared.captured_key.as_deref(),
                     defaults: &shared.default_apps,
+                    dialogs: &shared.file_dialogs,
                 };
                 ui::settings::window(ui, &shared.cfg, &env, &mut actions);
             }
@@ -1492,6 +2082,8 @@ impl App {
                         ui::overview::show(ui, c, &mut actions);
                     }
                 }
+                Some(Overlay::Clipboard) => ui::clipboard::show(ui, &shared.clipboard, &mut actions),
+                Some(Overlay::Emoji) => ui::emoji::show(ui, &mut shared.emoji_ui, &shared.emoji, &mut actions),
                 Some(ov) => {
                     let place = panels::Placement {
                         anchor_x: shared.overlay_anchor,
@@ -1499,7 +2091,7 @@ impl App {
                         bar_on_top: bar_top,
                     };
                     let win_list = if matches!(ov, Overlay::Windows) { window_list(shared) } else { ui::WinList::default() };
-                    panels::show(ui, &ov, &place, &shared.notifs, &shared.tray, &shared.tray_menu, shared.tray_menu_loaded, &shared.wifi, shared.wifi_scanning, shared.screen_timeout, shared.stats.brightness_percent, &shared.audio, shared.battery.as_ref(), &shared.profiles, &shared.media, &win_list, &shared.procs, &mut actions);
+                    panels::show(ui, &ov, &place, &shared.notifs, &shared.tray, &shared.tray_menu, shared.tray_menu_loaded, &shared.wifi, shared.wifi_scanning, shared.screen_timeout, shared.stats.brightness_percent, &shared.audio, shared.battery.as_ref(), &shared.profiles, &shared.media, &win_list, &shared.procs, &shared.gpu, &shared.bt, &shared.spotify, &mut actions);
                 }
                 None => {}
             },
@@ -1667,14 +2259,7 @@ impl App {
                 }
             }
             Action::VolumeScroll(d) => {
-                // Show the new value now. The real one follows from the system.
-                if let Some(v) = &mut self.shared.stats.volume {
-                    v.percent = (v.percent as i32 + d).clamp(0, 100) as u32;
-                    let v = v.clone();
-                    self.shared.sampler.set_volume(Some(v));
-                    self.mark_kind(Kind::Bar);
-                }
-                sys::set_volume_step(d)
+                self.step_volume(d);
             }
             Action::AudioVolume(input, name, pct) => {
                 self.shared.audio_set_at = Instant::now();
@@ -1736,6 +2321,15 @@ impl App {
             },
             Action::MediaPlayPause(b) => self.media_cmd(crate::mpris::Cmd::PlayPause(b)),
             Action::MediaNext(b) => self.media_cmd(crate::mpris::Cmd::Next(b)),
+            Action::MediaLike(uri, like) => self.spotify_set(uri, like),
+            Action::MediaLikeCheck(uri) => {
+                let sp = &mut self.shared.spotify;
+                if sp.signed_in && !sp.pending.contains(&uri) && !sp.failed.contains(&uri) && !sp.liked.contains_key(&uri) {
+                    sp.pending.insert(uri.clone());
+                    let id = self.shared.cfg.spotify.client_id.trim().to_owned();
+                    self.spotify_send(crate::spotify::Cmd::Check(id, vec![uri]));
+                }
+            }
             Action::MediaPrev(b) => self.media_cmd(crate::mpris::Cmd::Previous(b)),
             Action::MediaRaise(b) => {
                 self.open_player(&b);
@@ -1773,15 +2367,115 @@ impl App {
                 }
                 self.mark_kind(Kind::Settings);
             }
+            Action::SetFilePicker(id) => {
+                let setup = id.as_ref().and_then(|i| self.shared.file_dialogs.pickers.iter().find(|p| &p.id == i)).and_then(|p| p.setup.clone());
+                if setup.is_some() {
+                    // Setting a picker up runs its own command, which restarts the portal. Not on this thread.
+                    let name = id.clone().unwrap_or_default();
+                    std::thread::spawn(move || {
+                        if let Err(e) = crate::portal::set_picker(Some(&name), setup.as_deref()) {
+                            log::warn!("file picker {name}: {e}");
+                            let _ = std::process::Command::new("notify-send").args(["-a", "Osmia", "File picker not set", &e]).spawn();
+                        }
+                    });
+                    if let Some(p) = self.shared.file_dialogs.pickers.iter_mut().find(|p| Some(&p.id) == id.as_ref()) {
+                        p.setup = None;
+                    }
+                    self.shared.file_dialogs.current = id;
+                } else {
+                    match crate::portal::set_picker(id.as_deref(), None) {
+                        Ok(()) => self.shared.file_dialogs.current = id,
+                        Err(e) => self.notify_self("File picker not set", &e),
+                    }
+                }
+                self.mark_kind(Kind::Settings);
+            }
+            Action::TryFilePicker => crate::portal::try_picker(),
+            Action::InstallPicker(id) => {
+                let fd = &self.shared.file_dialogs;
+                let Some(offer) = crate::portal::OFFERS.iter().find(|o| o.id == id) else { return };
+                let Some(cmd) = crate::portal::install_command(offer, fd.aur_helper.as_deref()) else {
+                    self.notify_self("Cannot install", "This picker comes from the AUR. Install paru or yay first.");
+                    return;
+                };
+                let Some(term) = crate::portal::pick_terminal(&self.shared.cfg.launcher.terminal) else {
+                    self.notify_self("Cannot install", "No terminal found. Set one under Default applications.");
+                    return;
+                };
+                self.shared.file_dialogs.installing = Some(id.clone());
+                let tx = self.picker_tx.clone();
+                let title = format!("Installing {}", offer.pkg);
+                std::thread::spawn(move || {
+                    if let Err(e) = crate::portal::run_in_terminal(&term, &title, &cmd) {
+                        log::warn!("install {id}: {e}");
+                        let _ = std::process::Command::new("notify-send").args(["-a", "Osmia", "Cannot install", &e]).spawn();
+                    }
+                    if let Some(tx) = tx {
+                        let _ = tx.send(());
+                    }
+                });
+                self.mark_kind(Kind::Settings);
+            }
+            Action::SetGtkPortal(on) => {
+                match crate::portal::set_gtk(on) {
+                    Ok(()) => self.shared.file_dialogs.gtk = on,
+                    Err(e) => self.notify_self("GTK setting not saved", &e),
+                }
+                self.mark_kind(Kind::Settings);
+            }
             Action::OpenConfigFile => {
                 config::ensure_file();
                 launch::spawn(&format!("xdg-open '{}'", config::path().display()));
+            }
+            Action::Gpu(cmd) => {
+                let g = &mut self.shared.gpu;
+                if g.pending.is_none() {
+                    if let Some(tx) = &self.gpu_cmd {
+                        g.pending = Some(cmd);
+                        g.error = None;
+                        g.confirm_force = false;
+                        let _ = tx.send(cmd);
+                    }
+                }
+                self.mark_kind(Kind::Bar);
+                self.mark_kind(Kind::Overlay);
+            }
+            Action::Bt(cmd) => {
+                let b = &mut self.shared.bt;
+                let busy = cmd.device().is_some_and(|p| b.busy(p).is_some());
+                if let (Some(h), false) = (&self.bt, busy) {
+                    b.error = None;
+                    if cmd.device().is_some() {
+                        b.pending.push(cmd.clone());
+                    }
+                    h.send(cmd);
+                }
+                self.mark_kind(Kind::Bar);
+                self.mark_kind(Kind::Overlay);
+            }
+            Action::BtAnswer(id, a) => {
+                if let Some(h) = &self.bt {
+                    h.answer(id, a);
+                }
+                self.shared.bt.asks.retain(|r| r.id != id);
+                self.mark_kind(Kind::Overlay);
+            }
+            Action::GpuConfirmForce(on) => {
+                self.shared.gpu.confirm_force = on;
+                self.mark_kind(Kind::Overlay);
             }
             Action::SetPowerProfile(name) => {
                 self.shared.profiles.active = name.clone();
                 if let Some(tx) = self.prof_tx.clone() {
                     sys::profiles_run(Some(name), tx);
                 }
+                self.mark_kind(Kind::Overlay);
+            }
+            Action::SetKbdLight(level) => {
+                if let Some(k) = sys::read_kbd_light() {
+                    sys::set_kbd_light(&k.name, level);
+                }
+                // The new level is read from sysfs on the next frames.
                 self.mark_kind(Kind::Overlay);
             }
             Action::SetBrightness(p) => {
@@ -1835,15 +2529,18 @@ impl App {
                 let k = k.trim().to_owned();
                 self.edit_binds(|t| crate::keybinds::set_key(t, i, &k));
             }
-            Action::ShortcutSetCommand(i, c) => {
-                self.edit_binds(|t| crate::keybinds::set_command(t, i, &c));
+            Action::ShortcutSetSteps(i, steps) => {
+                self.edit_binds(|t| crate::keybinds::set_steps(t, i, &steps));
+            }
+            Action::ShortcutSetXml(i, xml) => {
+                self.edit_binds(|t| crate::keybinds::set_body(t, i, &xml));
             }
             Action::ShortcutDelete(i) => {
                 self.edit_binds(|t| crate::keybinds::delete(t, i));
             }
-            Action::ShortcutAdd(k, c) => {
+            Action::ShortcutAdd(k, steps) => {
                 let k = k.trim().to_owned();
-                self.edit_binds(|t| crate::keybinds::add(t, &k, &c));
+                self.edit_binds(|t| crate::keybinds::add(t, &k, &steps));
             }
             Action::ShortcutsRestore => {
                 let shipped = crate::keybinds::shipped();
@@ -1869,18 +2566,9 @@ impl App {
                 self.mark_kind(Kind::Settings);
             }
             Action::BrightnessScroll(d) => {
-                sys::set_brightness_step(d);
-                // The new value shows on the next 2-second sample.
+                self.step_brightness(d);
             }
-            Action::ToggleMute => {
-                if let Some(v) = &mut self.shared.stats.volume {
-                    v.muted = !v.muted;
-                    let v = v.clone();
-                    self.shared.sampler.set_volume(Some(v));
-                    self.mark_kind(Kind::Bar);
-                }
-                sys::toggle_mute()
-            }
+            Action::ToggleMute => self.toggle_mute(),
             Action::CloseWindow(i) => {
                 if let Some(t) = self.shared.toplevels.get(i) {
                     t.handle.close();
@@ -1938,6 +2626,12 @@ impl App {
                 self.shared.tray_menu = Vec::new();
                 self.open_overlay(qh, Overlay::TrayMenu(id), anchor);
             }
+            Action::TrayQuit(id) => {
+                if let Some(tx) = &self.tray_cmd {
+                    let _ = tx.send(crate::tray::Cmd::Quit(id));
+                }
+                self.close_overlay();
+            }
             Action::TrayMenuClick(id, menu_id) => {
                 if let Some(tx) = &self.tray_cmd {
                     let _ = tx.send(crate::tray::Cmd::ClickMenu(id, menu_id));
@@ -1961,6 +2655,33 @@ impl App {
             Action::CopyAndClose(text) => {
                 copy_to_clipboard(&text);
                 self.close_overlay();
+            }
+            Action::ClipPick(i) => {
+                if let Some(e) = self.shared.clipboard.entries.get(i) {
+                    copy_to_clipboard(&e.text);
+                }
+                self.close_overlay();
+            }
+            Action::ClipDelete(i) => {
+                self.shared.clipboard.remove(i);
+                self.mark_kind(Kind::Overlay);
+            }
+            Action::EmojiPick(i) => {
+                if let Some(e) = crate::emoji::list().emoji.get(i) {
+                    copy_to_clipboard(e.with_tone(self.shared.emoji.tone));
+                    self.shared.emoji.picked(i);
+                    self.shared.emoji.save();
+                }
+                self.close_overlay();
+            }
+            Action::EmojiTone(t) => {
+                self.shared.emoji.tone = t;
+                self.shared.emoji.save();
+                self.mark_kind(Kind::Overlay);
+            }
+            Action::ClipClear => {
+                self.shared.clipboard.clear();
+                self.mark_kind(Kind::Overlay);
             }
         }
     }

@@ -1,0 +1,34 @@
+# Spotify
+
+## Purpose
+
+Let the user like the song Spotify is playing, or unlike it, from the shell, and have it saved to their Liked Songs on Spotify. Spotify's desktop app offers no Like over MPRIS, so the shell talks to Spotify's Web API itself.
+
+## Button
+
+A heart sits at the right of the play buttons, in the media card and in the Spotify tray menu's player. It shows only for a Spotify track. A Spotify ad, a local file, or another player has no heart. A filled accent heart means the song is liked. An outline heart means it is not. A dim outline means it is not known yet, or the user is not signed in. Clicking it likes the song, or unlikes a liked song. The heart changes at once. If Spotify refuses, it goes back and a notification says why. Its tooltip says Save to Liked Songs, Remove from Liked Songs, or Sign in to Spotify to like songs. While the card shows a Spotify track whose state is not known, the shell asks Spotify once. A failed ask is not repeated by itself.
+
+## Setup
+
+Spotify lets only registered apps use the Web API. The user makes their own app at developer.spotify.com, with the Web API ticked and the redirect URI http://127.0.0.1:8898/callback. Spotify requires the owner of such an app to have Premium. Other Spotify accounts must be added to the app's User Management. The user puts the app's Client ID in config.toml under [spotify] client_id. There is no client secret. With no Client ID, the heart and the commands say how to set it up instead.
+
+## Sign In
+
+It uses Spotify's Authorization Code flow with PKCE, asking for user-library-read and user-library-modify. The first click on the heart, or osmia spotify login, opens Spotify's sign-in page in the browser. The shell waits up to 5 minutes for the browser to come back to 127.0.0.1 port 8898, then the like the user asked for is done. The tokens are kept in ~/.local/state/osmia/spotify.json, readable only by the user. The access token is refreshed before it runs out. If the refresh is refused, the file is removed and the user signs in again. Calls go through curl, with the token on curl's standard input, never on its command line.
+
+## Api
+
+Liking is PUT /me/library and unliking is DELETE /me/library, with the track's spotify:track: URI. Asking is GET /me/library/contains. These are the endpoints Spotify gives Development Mode apps since February 2026.
+
+## Commands
+
+- osmia spotify login starts the sign-in.
+- osmia spotify logout forgets the tokens.
+- osmia spotify status says signed out, or the playing track and whether it is liked. --json gives signed_in, track and liked.
+- osmia spotify like, unlike and toggle-like act on the Spotify track playing now. toggle-like treats a song not known yet as not liked, so it never unlikes by guess. These can be bound to keys.
+
+## Out Of Scope
+
+- Liking in other players.
+- Adding songs to playlists.
+- Settings page fields for the Client ID.

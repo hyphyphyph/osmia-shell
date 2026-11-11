@@ -8,7 +8,7 @@ use crate::icons::{self, Icon};
 use crate::notif::{strip_markup, Notification, Notifs, URGENCY_CRITICAL};
 use crate::theme;
 use crate::ui::popups::clip;
-use crate::ui::widgets::{age, card_frame, pill, switch, tile};
+use crate::ui::widgets::{age, pill, switch, tile};
 use crate::ui::{Action, Overlay, PowerAction};
 
 pub struct Placement {
@@ -36,6 +36,9 @@ pub fn show(
     media: &crate::mpris::State,
     windows: &crate::ui::WinList,
     procs: &crate::sys::ProcList,
+    gpu: &crate::gpu::State,
+    bt: &crate::bt::State,
+    spotify: &crate::spotify::Likes,
     actions: &mut Vec<Action>,
 ) {
     let full = ui.max_rect();
@@ -44,24 +47,11 @@ pub fn show(
     if bg.clicked() {
         actions.push(Action::CloseOverlay);
     }
-    if ui.input(|i| i.key_pressed(egui::Key::Escape)) {
+    // Escape in a value field only leaves the field. The field sets this flag each frame it is open.
+    let editing_id = crate::ui::widgets::id("value-editing");
+    let editing = ui.data_mut(|d| d.remove_temp::<bool>(editing_id)).unwrap_or(false);
+    if !editing && ui.input(|i| i.key_pressed(egui::Key::Escape)) {
         actions.push(Action::CloseOverlay);
-    }
-    // egui sizes scroll areas and new windows from the previous frame, so a
-    // panel that has just opened or just got its content is drawn too small until
-    // something else triggers a redraw. Draw a few extra frames to let it settle.
-    {
-        let key = (format!("{overlay:?}"), tray_menu.len(), tray_menu_loaded, notifs.history.len());
-        let sid = crate::ui::widgets::id("panel-settle");
-        let prev: Option<((String, usize, bool, usize), u8)> = ui.data(|d| d.get_temp(sid));
-        let left = match prev {
-            Some((last, left)) if last == key => left,
-            _ => 4,
-        };
-        if left > 0 {
-            ui.ctx().request_repaint();
-        }
-        ui.data_mut(|d| d.insert_temp(sid, (key, left.saturating_sub(1))));
     }
     // A long tray menu gets more columns, then scrolls. See tray_layout.
     let tray_cols = match overlay {
@@ -84,6 +74,8 @@ pub fn show(
         Overlay::Screen => (230.0, place.anchor_x),
         Overlay::Audio => (320.0, place.anchor_x),
         Overlay::Battery => (300.0, place.anchor_x),
+        Overlay::Gpu => (320.0, place.anchor_x),
+        Overlay::Bluetooth => (300.0, place.anchor_x),
         Overlay::Media => (340.0, place.anchor_x),
         Overlay::Windows => (360.0, place.anchor_x),
         Overlay::Cpu | Overlay::Ram => {
@@ -96,7 +88,7 @@ pub fn show(
             ui.ctx().data_mut(|d| d.insert_temp(wid, w));
             (w, place.anchor_x)
         }
-        Overlay::Launcher => return,
+        Overlay::Launcher | Overlay::Clipboard | Overlay::Emoji => return,
     };
     // Centred under the item that opened it, kept on screen.
     let left = (pivot_x - width / 2.0).min(full.max.x - 8.0 - width).max(8.0);
@@ -105,40 +97,29 @@ pub fn show(
     } else {
         (pos2(left, full.max.y - place.bar_height - 6.0), Align2::LEFT_BOTTOM)
     };
-    // A tray panel changes size when its menu arrives. A fresh Area per shape
-    // lets egui place it from its real size instead of the old one.
-    let shape = match overlay {
-        Overlay::TrayMenu(_) => (tray_cols.map(|t| t.0).unwrap_or(1), tray_menu_loaded, tray_menu.len()),
-        Overlay::Cpu | Overlay::Ram => {
-            let cpu = matches!(overlay, Overlay::Cpu);
-            let open: Option<String> = ui.ctx().data(|d| d.get_temp(crate::ui::widgets::id("proc-open"))).flatten();
-            (proc_scroll_h(&proc_rows(procs, cpu), open.as_deref(), avail - PROC_CHROME) as usize, procs.ready, procs.lock.is_some() as usize + 2 * width as usize)
-        }
-        _ => (0, true, 0),
-    };
-    egui::Area::new(crate::ui::widgets::id(("panel", shape)))
-        .fixed_pos(pos)
-        .pivot(pivot)
-        .order(egui::Order::Foreground)
-        .show(ui.ctx(), |ui| {
-            card_frame().show(ui, |ui| {
-                ui.set_width(width);
-                match overlay {
-                    Overlay::History => history(ui, notifs, actions),
-                    Overlay::Calendar(off) => calendar(ui, *off, actions, overlay),
-                    Overlay::Power(confirm) => power(ui, *confirm, actions),
-                    Overlay::TrayMenu(id) => tray_panel(ui, id, tray, tray_menu, tray_menu_loaded, tray_cols.unwrap_or((1, 400.0)), media, actions),
-                    Overlay::Network => network_panel(ui, wifi, wifi_scanning, actions),
-                    Overlay::Screen => screen_panel(ui, screen_timeout, brightness, actions),
-                    Overlay::Audio => audio_panel(ui, audio, actions),
-                    Overlay::Battery => battery_panel(ui, battery, profiles, actions),
-                    Overlay::Media => media_panel(ui, media, actions),
-                    Overlay::Windows => windows_panel(ui, windows, actions),
-                    Overlay::Cpu => proc_panel(ui, procs, true, actions),
-                    Overlay::Ram => proc_panel(ui, procs, false, actions),
-                    Overlay::Launcher => {}
-                }
-            });
+    // One card per kind of panel. The popdown keeps its size honest; see popdown.rs.
+    let kind = format!("{overlay:?}");
+    let kind = kind.split('(').next().unwrap_or("").to_owned();
+    let max_h = full.height() - place.bar_height - 6.0 - 8.0;
+    crate::ui::popdown::Popdown::new(crate::ui::widgets::id(("panel", kind)), pos, pivot)
+        .width(width)
+        .max_height(max_h)
+        .show(ui.ctx(), |ui| match overlay {
+                Overlay::History => history(ui, notifs, actions),
+                Overlay::Calendar(off) => calendar(ui, *off, actions, overlay),
+                Overlay::Power(confirm) => power(ui, *confirm, actions),
+                Overlay::TrayMenu(id) => tray_panel(ui, id, tray, tray_menu, tray_menu_loaded, tray_cols.unwrap_or((1, 400.0)), media, spotify, actions),
+                Overlay::Network => network_panel(ui, wifi, wifi_scanning, actions),
+                Overlay::Screen => screen_panel(ui, screen_timeout, brightness, actions),
+                Overlay::Audio => audio_panel(ui, audio, actions),
+                Overlay::Battery => battery_panel(ui, battery, profiles, actions),
+                Overlay::Gpu => gpu_panel(ui, gpu, actions),
+                Overlay::Bluetooth => bt_panel(ui, bt, actions),
+                Overlay::Media => media_panel(ui, media, spotify, actions),
+                Overlay::Windows => windows_panel(ui, windows, actions),
+                Overlay::Cpu => proc_panel(ui, procs, true, actions),
+                Overlay::Ram => proc_panel(ui, procs, false, actions),
+                Overlay::Launcher | Overlay::Clipboard | Overlay::Emoji => {}
         });
 }
 
@@ -359,6 +340,7 @@ fn tray_panel(
     loaded: bool,
     (cols, rows_h): (usize, f32),
     media: &crate::mpris::State,
+    spotify: &crate::spotify::Likes,
     actions: &mut Vec<Action>,
 ) {
     let Some(item) = items.iter().find(|i| i.id == id) else {
@@ -412,7 +394,7 @@ fn tray_panel(
         .map(str::to_owned)
         .collect();
     if let Some(p) = media.for_app(&names) {
-        media_card(ui, p, media.art.get(&p.art_url).map(|a| a.as_ref()), actions);
+        media_card(ui, p, media.art.get(&p.art_url).map(|a| a.as_ref()), spotify, actions);
         let (s, _) = ui.allocate_exact_size(vec2(ui.available_width(), 1.0), Sense::hover());
         ui.painter().line_segment([s.left_center(), s.right_center()], egui::Stroke::new(1.0, theme::LINE));
     }
@@ -454,6 +436,18 @@ fn tray_panel(
         if resp.clicked() {
             actions.push(Action::TrayNativeMenu(item.id.clone()));
         }
+    }
+    // Quit, always last, for every app.
+    let (s, _) = ui.allocate_exact_size(vec2(ui.available_width(), 9.0), Sense::hover());
+    ui.painter().line_segment([pos2(s.min.x + 8.0, s.center().y), pos2(s.max.x - 8.0, s.center().y)], egui::Stroke::new(1.0, theme::LINE));
+    let (r, resp) = ui.allocate_exact_size(vec2(ui.available_width() - 12.0, 32.0), Sense::click());
+    let r = r.translate(vec2(6.0, 0.0));
+    if resp.hovered() {
+        ui.painter().rect_filled(r, 4, theme::PLATE);
+    }
+    ui.painter().text(pos2(r.min.x + 12.0, r.center().y), Align2::LEFT_CENTER, format!("Quit {}", clip(&item.title, 22)), crate::theme::fid(12.0), theme::TEXT);
+    if resp.clicked() {
+        actions.push(Action::TrayQuit(item.id.clone()));
     }
     ui.add_space(6.0);
 }
@@ -509,9 +503,9 @@ fn split_columns<'a, 'b>(rows: &'b [FlatRow<'a>], cols: usize) -> Vec<&'b [FlatR
 fn tray_layout(full: Rect, place: &Placement, item: Option<&crate::tray::Item>, nodes: &[crate::tray::MenuNode]) -> (usize, f32) {
     let mut flat = Vec::new();
     flatten(nodes, 0, &mut flat);
-    // Header, open row, footer, and the card's margins.
+    // Header, open row, footer, quit row, and the card's margins.
     let tip_lines = item.map(|i| usize::from(!i.tip_text.is_empty()) + usize::from(!i.tip_title.is_empty() && i.tip_title != i.title)).unwrap_or(0);
-    let fixed = 56.0 + 18.0 * tip_lines as f32 + 6.0 + ROW_H + SEP_H + 28.0 + 6.0 + 16.0;
+    let fixed = 56.0 + 18.0 * tip_lines as f32 + 6.0 + ROW_H + SEP_H + 28.0 + SEP_H + ROW_H + 6.0 + 16.0;
     let avail = (full.height() - place.bar_height - 6.0 - 16.0 - fixed).max(120.0);
     let max_cols = (((full.width() - 16.0) / MENU_COL_W).floor() as usize).clamp(1, 4);
     let total: f32 = flat.iter().map(FlatRow::height).sum();
@@ -694,7 +688,7 @@ fn clock(us: i64) -> String {
     }
 }
 
-fn media_panel(ui: &mut Ui, media: &crate::mpris::State, actions: &mut Vec<Action>) {
+fn media_panel(ui: &mut Ui, media: &crate::mpris::State, spotify: &crate::spotify::Likes, actions: &mut Vec<Action>) {
     let (hr, _) = ui.allocate_exact_size(vec2(ui.available_width(), 38.0), Sense::hover());
     ui.painter().text(pos2(hr.min.x + 14.0, hr.center().y), Align2::LEFT_CENTER, "Now playing", crate::theme::fid(13.0), theme::TEXT);
     ui.painter().line_segment([hr.left_bottom(), hr.right_bottom()], egui::Stroke::new(1.0, theme::LINE));
@@ -715,13 +709,13 @@ fn media_panel(ui: &mut Ui, media: &crate::mpris::State, actions: &mut Vec<Actio
         if resp.clicked() {
             actions.push(Action::MediaRaise(p.bus.clone()));
         }
-        media_card(ui, p, media.art.get(&p.art_url).map(|a| a.as_ref()), actions);
+        media_card(ui, p, media.art.get(&p.art_url).map(|a| a.as_ref()), spotify, actions);
     }
     ui.add_space(4.0);
 }
 
 /// Cover, title, a bar to seek with, and the three buttons.
-fn media_card(ui: &mut Ui, p: &crate::mpris::Player, art: Option<&crate::capture::grab::Image>, actions: &mut Vec<Action>) {
+fn media_card(ui: &mut Ui, p: &crate::mpris::Player, art: Option<&crate::capture::grab::Image>, spotify: &crate::spotify::Likes, actions: &mut Vec<Action>) {
     use crate::mpris::Status;
     let w = ui.available_width();
     let (r, _) = ui.allocate_exact_size(vec2(w, 164.0), Sense::hover());
@@ -801,6 +795,33 @@ fn media_card(ui: &mut Ui, p: &crate::mpris::Player, art: Option<&crate::capture
             });
         }
     }
+    // Like, for Spotify tracks: a heart at the right of the buttons.
+    if let Some(uri) = crate::spotify::track_uri(&p.bus, &p.track_id) {
+        let liked = spotify.get(&uri);
+        if spotify.signed_in && liked.is_none() {
+            actions.push(Action::MediaLikeCheck(uri.clone()));
+        }
+        let b = Rect::from_center_size(pos2(r.max.x - 32.0, cy), vec2(32.0, 28.0));
+        let resp = ui.interact(b, crate::ui::widgets::id(("mpris-like", &p.bus)), Sense::click());
+        if resp.hovered() {
+            ui.painter().rect_filled(b, 4, theme::PLATE_SEL);
+        }
+        let (icon, col) = match liked {
+            Some(true) => (Icon::HeartFilled, theme::accent()),
+            Some(false) => (Icon::Heart, theme::TEXT),
+            None => (Icon::Heart, theme::DIM),
+        };
+        icons::draw(ui.painter(), icon, Rect::from_center_size(b.center(), vec2(16.0, 16.0)), col);
+        let tip = match (spotify.signed_in, liked) {
+            (false, _) => "Sign in to Spotify to like songs",
+            (true, Some(true)) => "Remove from Liked Songs",
+            _ => "Save to Liked Songs",
+        };
+        let resp = resp.on_hover_text(tip);
+        if resp.clicked() {
+            actions.push(Action::MediaLike(uri, liked != Some(true)));
+        }
+    }
     if playing {
         // Keep the bar moving between reads.
         ui.ctx().request_repaint_after(std::time::Duration::from_millis(500));
@@ -827,6 +848,337 @@ fn profile_label(name: &str) -> String {
         "balanced" => "Balanced".into(),
         "performance" => "Performance".into(),
         other => other.replace('-', " "),
+    }
+}
+
+/// The Graphics card card. See spec/GraphicsCard.pi.
+fn gpu_panel(ui: &mut Ui, g: &crate::gpu::State, actions: &mut Vec<Action>) {
+    use crate::gpu::{Cmd, Phase};
+    let (hr, _) = ui.allocate_exact_size(vec2(ui.available_width(), 38.0), Sense::hover());
+    ui.painter().text(pos2(hr.min.x + 14.0, hr.center().y), Align2::LEFT_CENTER, "Graphics card", crate::theme::fid(13.0), theme::TEXT);
+    ui.painter().line_segment([hr.left_bottom(), hr.right_bottom()], egui::Stroke::new(1.0, theme::LINE));
+    let Some(s) = &g.status else {
+        let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 50.0), Sense::hover());
+        ui.painter().text(r.center(), Align2::CENTER_CENTER, "The graphics card service is not running", crate::theme::fid(12.0), theme::DIM);
+        return;
+    };
+    let vm = if s.vm_name.is_empty() { "the VM" } else { s.vm_name.as_str() };
+
+    // The state in words.
+    let (headline, sub) = match s.state {
+        Phase::Host => ("On the host", "Desktop programs can use it.".to_owned()),
+        Phase::Vfio => ("Ready for VMs", "No VM has it yet.".to_owned()),
+        Phase::VmRunning => ("In use by the VM", format!("{vm} has the card.")),
+        Phase::Switching => ("Switching", "The service is moving the card.".to_owned()),
+        Phase::Error => ("Something is wrong", s.message.clone().unwrap_or_default()),
+        Phase::Unknown => ("Unknown state", "This shell does not know the state the service reports.".to_owned()),
+    };
+    let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 50.0), Sense::hover());
+    ui.painter().text(pos2(r.min.x + 14.0, r.min.y + 17.0), Align2::LEFT_CENTER, headline, crate::theme::fid(18.0), theme::TEXT);
+    ui.painter().text(pos2(r.min.x + 14.0, r.min.y + 38.0), Align2::LEFT_CENTER, clip(&sub, 46), crate::theme::fid(11.0), theme::DIM);
+    kv_row(ui, "Driver", s.gpu_driver.as_deref().unwrap_or("none"));
+    let vm_state = if s.vm_state.is_empty() { "unknown".to_owned() } else { s.vm_state.replace('_', " ") };
+    kv_row(ui, "VM", &format!("{}  ({vm_state})", clip(vm, 18)));
+
+    // Who holds it, when that would stop a hand-over.
+    let holders = crate::gpu::holders_text(&s.processes);
+    if s.state == Phase::Host && !holders.is_empty() {
+        ui.add_space(4.0);
+        ui.horizontal(|ui| {
+            ui.add_space(14.0);
+            ui.add(egui::Label::new(egui::RichText::new(format!("In use by {holders}")).size(crate::theme::scaled(11.0)).color(theme::DIM)).wrap());
+        });
+    }
+    if let Some(e) = &g.error {
+        ui.add_space(4.0);
+        ui.horizontal(|ui| {
+            ui.add_space(14.0);
+            ui.add(egui::Label::new(egui::RichText::new(e).size(crate::theme::scaled(11.0)).color(theme::accent())).wrap());
+        });
+    }
+    ui.add_space(8.0);
+
+    // The buttons for this state. A dots sign marks the one waiting for an answer.
+    let label = |cmd: Cmd, text: &str| if g.pending == Some(cmd) { format!("{text} \u{2026}") } else { text.to_owned() };
+    let start = format!("Start {}", clip(vm, 14));
+    let buttons: Vec<(Cmd, String, bool)> = match s.state {
+        Phase::Host => vec![(Cmd::ToVms, label(Cmd::ToVms, "Give to VMs"), true), (Cmd::StartVm, label(Cmd::StartVm, &start), false)],
+        Phase::Vfio => vec![(Cmd::ToHost, label(Cmd::ToHost, "Return to host"), true), (Cmd::StartVm, label(Cmd::StartVm, &start), false)],
+        Phase::VmRunning => {
+            let force = if g.confirm_force { "Confirm force off" } else { "Force off" };
+            vec![(Cmd::StopVm, label(Cmd::StopVm, "Shut down"), true), (Cmd::ForceOff, label(Cmd::ForceOff, force), g.confirm_force)]
+        }
+        _ => vec![],
+    };
+    if !buttons.is_empty() {
+        let (br, _) = ui.allocate_exact_size(vec2(ui.available_width(), 34.0), Sense::hover());
+        let mut row = ui.new_child(egui::UiBuilder::new().max_rect(br.shrink2(vec2(14.0, 0.0))).layout(egui::Layout::left_to_right(egui::Align::Center)));
+        for (cmd, text, accent) in buttons {
+            if pill(&mut row, &text, accent) && g.pending.is_none() {
+                if cmd == Cmd::ForceOff && !g.confirm_force {
+                    actions.push(Action::GpuConfirmForce(true));
+                } else {
+                    actions.push(Action::Gpu(cmd));
+                }
+            }
+            row.add_space(6.0);
+        }
+    }
+
+    // Hand over when free: the service acts as soon as nothing holds the card.
+    if matches!(s.state, Phase::Host | Phase::Vfio) {
+        let (sr, _) = ui.allocate_exact_size(vec2(ui.available_width(), 1.0), Sense::hover());
+        ui.painter().line_segment([sr.left_center(), sr.right_center()], egui::Stroke::new(1.0, theme::LINE));
+        let on = s.preferred_state.as_deref() == Some("vfio");
+        let (fr, _) = ui.allocate_exact_size(vec2(ui.available_width(), 40.0), Sense::hover());
+        let mut left = ui.new_child(egui::UiBuilder::new().max_rect(fr.shrink2(vec2(14.0, 0.0))).layout(egui::Layout::left_to_right(egui::Align::Center)));
+        if switch(&mut left, on) && g.pending.is_none() {
+            actions.push(Action::Gpu(if on { Cmd::PreferNone } else { Cmd::PreferVfio }));
+        }
+        left.add_space(8.0);
+        left.label(egui::RichText::new("Hand over when free").size(crate::theme::scaled(12.0)).color(theme::TEXT));
+        if on && s.preference_pending {
+            let mut right = ui.new_child(egui::UiBuilder::new().max_rect(fr.shrink2(vec2(14.0, 0.0))).layout(egui::Layout::right_to_left(egui::Align::Center)));
+            right.label(egui::RichText::new("Waiting").size(crate::theme::scaled(11.0)).color(theme::accent()));
+        }
+    }
+    ui.add_space(4.0);
+}
+
+/// A few service names for a device that asks to use one.
+fn bt_service(uuid: &str) -> &'static str {
+    match uuid.get(4..8).unwrap_or("") {
+        "110a" | "110b" | "110d" => "play audio",
+        "110c" | "110e" | "110f" => "use media controls",
+        "1108" | "1112" | "111e" | "111f" => "make calls through this computer",
+        "1124" | "1812" => "act as an input device",
+        "1105" | "1106" => "send files",
+        "1115" | "1116" | "1117" => "use the network",
+        "112f" | "1130" => "share contacts",
+        "1132" | "1133" | "1134" => "share messages",
+        _ => "use a service",
+    }
+}
+
+fn bt_panel(ui: &mut Ui, b: &crate::bt::State, actions: &mut Vec<Action>) {
+    use crate::bt::{Answer, Ask, Cmd};
+    let (hr, _) = ui.allocate_exact_size(vec2(ui.available_width(), 38.0), Sense::hover());
+    ui.painter().text(pos2(hr.min.x + 14.0, hr.center().y), Align2::LEFT_CENTER, "Bluetooth", crate::theme::fid(13.0), theme::TEXT);
+    ui.painter().line_segment([hr.left_bottom(), hr.right_bottom()], egui::Stroke::new(1.0, theme::LINE));
+    let Some(a) = &b.adapter else {
+        let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 50.0), Sense::hover());
+        ui.painter().text(r.center(), Align2::CENTER_CENTER, "No Bluetooth adapter", crate::theme::fid(12.0), theme::DIM);
+        return;
+    };
+    // The power switch, at the right of the title.
+    {
+        let sw = Rect::from_center_size(pos2(hr.max.x - 28.0, hr.center().y), vec2(28.0, 16.0));
+        let mut c = ui.new_child(egui::UiBuilder::new().max_rect(sw));
+        if switch(&mut c, a.powered) {
+            actions.push(Action::Bt(Cmd::Power(!a.powered)));
+        }
+    }
+
+    // What the pairing agent asks, newest first. Answered here, so it stays in view.
+    if let Some(req) = b.asks.last() {
+        let name = clip(&req.name, 26);
+        let (title, sub) = match &req.ask {
+            Ask::Confirm(n) => (format!("Pair with {name}?"), format!("Check that it shows {n:06}.")),
+            Ask::Authorize => (format!("Pair with {name}?"), "It has no code to check.".to_owned()),
+            Ask::Service(u) => (format!("{name} asks to connect"), format!("It wants to {}.", bt_service(u))),
+            Ask::Pin => (format!("PIN for {name}"), "Type the PIN it shows, or 0000 if it has none.".to_owned()),
+            Ask::Passkey => (format!("Code for {name}"), "Type the six-digit number it shows.".to_owned()),
+            Ask::ShowPin(p) => (format!("Type {p} on {name}"), "Then press Enter on it.".to_owned()),
+            Ask::ShowPasskey(n, typed) => (
+                format!("Type {n:06} on {name}"),
+                if *typed > 0 { format!("Then press Enter on it. {typed} typed so far.") } else { "Then press Enter on it.".to_owned() },
+            ),
+        };
+        ui.add_space(6.0);
+        egui::Frame::NONE.fill(theme::PLATE).corner_radius(6).inner_margin(egui::Margin::same(10)).outer_margin(egui::Margin::symmetric(8, 0)).show(ui, |ui| {
+            ui.set_width(ui.available_width());
+            ui.label(egui::RichText::new(&title).size(crate::theme::scaled(14.0)).color(theme::TEXT));
+            ui.add(egui::Label::new(egui::RichText::new(&sub).size(crate::theme::scaled(11.0)).color(theme::DIM)).wrap());
+            ui.add_space(8.0);
+            let typed_id = crate::ui::widgets::id(("bt-typed", req.id));
+            let mut typed: String = ui.data(|d| d.get_temp(typed_id)).unwrap_or_default();
+            let mut enter = false;
+            if matches!(req.ask, Ask::Pin | Ask::Passkey) {
+                let te = ui.add(
+                    egui::TextEdit::singleline(&mut typed)
+                        .id(crate::ui::widgets::id(("bt-field", req.id)))
+                        .hint_text(if req.ask == Ask::Pin { "PIN" } else { "Six digits" })
+                        .desired_width(ui.available_width())
+                        .font(crate::theme::fid(13.0)),
+                );
+                if !te.has_focus() && ui.data(|d| d.get_temp::<u64>(crate::ui::widgets::id("bt-focused"))) != Some(req.id) {
+                    te.request_focus();
+                    ui.data_mut(|d| d.insert_temp(crate::ui::widgets::id("bt-focused"), req.id));
+                }
+                if req.ask == Ask::Passkey {
+                    typed.retain(|c| c.is_ascii_digit());
+                    typed.truncate(6);
+                } else {
+                    typed.truncate(16);
+                }
+                enter = te.lost_focus() && ui.input(|i| i.key_pressed(egui::Key::Enter));
+                ui.data_mut(|d| d.insert_temp(typed_id, typed.clone()));
+                ui.add_space(8.0);
+            }
+            ui.horizontal(|ui| match &req.ask {
+                Ask::ShowPin(_) | Ask::ShowPasskey(..) => {
+                    if pill(ui, "Cancel", false) {
+                        actions.push(Action::Bt(Cmd::CancelPair(req.device.clone())));
+                        actions.push(Action::BtAnswer(req.id, Answer::No));
+                    }
+                }
+                Ask::Pin | Ask::Passkey => {
+                    let ready = !typed.is_empty();
+                    if (pill(ui, "Pair", ready) || enter) && ready {
+                        actions.push(Action::BtAnswer(req.id, Answer::Text(typed.clone())));
+                    }
+                    ui.add_space(6.0);
+                    if pill(ui, "Cancel", false) {
+                        actions.push(Action::BtAnswer(req.id, Answer::No));
+                    }
+                }
+                Ask::Service(_) => {
+                    if pill(ui, "Allow", true) {
+                        actions.push(Action::BtAnswer(req.id, Answer::Yes));
+                    }
+                    ui.add_space(6.0);
+                    if pill(ui, "Deny", false) {
+                        actions.push(Action::BtAnswer(req.id, Answer::No));
+                    }
+                }
+                Ask::Confirm(_) | Ask::Authorize => {
+                    if pill(ui, "Pair", true) {
+                        actions.push(Action::BtAnswer(req.id, Answer::Yes));
+                    }
+                    ui.add_space(6.0);
+                    if pill(ui, "Cancel", false) {
+                        actions.push(Action::BtAnswer(req.id, Answer::No));
+                    }
+                }
+            });
+        });
+        ui.add_space(4.0);
+    }
+
+    if !a.powered {
+        let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 56.0), Sense::hover());
+        let msg = if a.blocked { "Off at the radio switch. Turning it on lifts that." } else { "Bluetooth is off" };
+        ui.painter().text(r.center(), Align2::CENTER_CENTER, msg, crate::theme::fid(12.0), theme::DIM);
+        bt_error(ui, b);
+        return;
+    }
+
+    let mine: Vec<_> = b.devices.iter().filter(|d| d.paired).collect();
+    let nearby: Vec<_> = b.devices.iter().filter(|d| !d.paired && d.named()).take(12).collect();
+    let forget_id = crate::ui::widgets::id("bt-forget");
+    let mut forget: Option<String> = ui.data(|d| d.get_temp(forget_id));
+    let max_h = (panel_avail(ui) - 140.0).max(160.0);
+    egui::ScrollArea::vertical().max_height(max_h).auto_shrink([false, true]).show(ui, |ui| {
+        if !mine.is_empty() {
+            bt_label(ui, "My devices", "");
+        }
+        for d in &mine {
+            let (r, resp) = ui.allocate_exact_size(vec2(ui.available_width() - 12.0, 34.0), Sense::click());
+            let r = r.translate(vec2(6.0, 0.0));
+            let busy = b.busy(&d.path);
+            if resp.hovered() {
+                ui.painter().rect_filled(r, 4, theme::PLATE);
+            }
+            if d.connected {
+                icons::draw(ui.painter(), Icon::Check, Rect::from_center_size(pos2(r.min.x + 14.0, r.center().y), vec2(12.0, 12.0)), theme::accent());
+            }
+            ui.painter().text(pos2(r.min.x + 28.0, r.center().y), Align2::LEFT_CENTER, clip(&d.alias, 22), crate::theme::fid(12.0), theme::TEXT);
+            // The right side: Forget on hover, else what is happening, else the battery.
+            let fr = Rect::from_min_max(pos2(r.max.x - 70.0, r.min.y + 6.0), pos2(r.max.x - 6.0, r.max.y - 6.0));
+            let confirming = forget.as_deref() == Some(d.path.as_str());
+            let fresp = ui.interact(fr, crate::ui::widgets::id(("bt-forget-btn", &d.path)), Sense::click());
+            let right = |t: &str, c| {
+                ui.painter().text(pos2(r.max.x - 12.0, r.center().y), Align2::RIGHT_CENTER, t, crate::theme::fid(11.0), c);
+            };
+            if busy.is_none() && (resp.hovered() || fresp.hovered() || confirming) {
+                if fresp.hovered() {
+                    ui.painter().rect_filled(fr, 4, theme::PLATE_SEL);
+                }
+                right(if confirming { "Forget?" } else { "Forget" }, if confirming { theme::accent() } else { theme::DIM });
+            } else {
+                match busy {
+                    Some(Cmd::Connect(_)) => right("Connecting\u{2026}", theme::DIM),
+                    Some(Cmd::Disconnect(_)) => right("Disconnecting\u{2026}", theme::DIM),
+                    Some(Cmd::Forget(_)) => right("Forgetting\u{2026}", theme::DIM),
+                    Some(_) => right("\u{2026}", theme::DIM),
+                    None => match d.battery {
+                        Some(p) => right(&format!("{p}%"), if p < 15 { theme::accent() } else { theme::DIM }),
+                        None => right(d.kind(), theme::DIM),
+                    },
+                }
+            }
+            if fresp.clicked() && busy.is_none() {
+                if confirming {
+                    actions.push(Action::Bt(Cmd::Forget(d.path.clone())));
+                    forget = None;
+                } else {
+                    forget = Some(d.path.clone());
+                }
+            } else if resp.clicked() && busy.is_none() {
+                forget = None;
+                actions.push(Action::Bt(if d.connected { Cmd::Disconnect(d.path.clone()) } else { Cmd::Connect(d.path.clone()) }));
+            }
+        }
+        bt_label(ui, "Nearby", if a.discovering { "Looking" } else { "" });
+        if nearby.is_empty() {
+            let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 40.0), Sense::hover());
+            let msg = if a.discovering { "Put the device in pairing mode" } else { "No devices found" };
+            ui.painter().text(r.center(), Align2::CENTER_CENTER, msg, crate::theme::fid(11.0), theme::DIM);
+        }
+        for d in &nearby {
+            let (r, resp) = ui.allocate_exact_size(vec2(ui.available_width() - 12.0, 32.0), Sense::click());
+            let r = r.translate(vec2(6.0, 0.0));
+            let busy = b.busy(&d.path).is_some();
+            if resp.hovered() {
+                ui.painter().rect_filled(r, 4, theme::PLATE);
+            }
+            ui.painter().text(pos2(r.min.x + 28.0, r.center().y), Align2::LEFT_CENTER, clip(&d.alias, 24), crate::theme::fid(12.0), theme::TEXT);
+            let right = if busy {
+                "Pairing\u{2026}"
+            } else if resp.hovered() {
+                "Pair"
+            } else {
+                d.kind()
+            };
+            ui.painter().text(pos2(r.max.x - 12.0, r.center().y), Align2::RIGHT_CENTER, right, crate::theme::fid(11.0), if busy || resp.hovered() { theme::accent() } else { theme::DIM });
+            if resp.clicked() && !busy {
+                actions.push(Action::Bt(Cmd::Pair(d.path.clone())));
+            }
+        }
+    });
+    match &forget {
+        Some(f) => ui.data_mut(|d| {
+            d.insert_temp(forget_id, f.clone());
+        }),
+        None => ui.data_mut(|d| d.remove::<String>(forget_id)),
+    }
+    bt_error(ui, b);
+    ui.add_space(4.0);
+}
+
+fn bt_label(ui: &mut Ui, title: &str, right: &str) {
+    let (lr, _) = ui.allocate_exact_size(vec2(ui.available_width(), 24.0), Sense::hover());
+    ui.painter().text(pos2(lr.min.x + 14.0, lr.center().y + 4.0), Align2::LEFT_CENTER, title, crate::theme::fid(11.0), theme::DIM);
+    ui.painter().text(pos2(lr.max.x - 14.0, lr.center().y + 4.0), Align2::RIGHT_CENTER, right, crate::theme::fid(11.0), theme::DIM);
+}
+
+fn bt_error(ui: &mut Ui, b: &crate::bt::State) {
+    if let Some(e) = &b.error {
+        ui.add_space(4.0);
+        ui.horizontal(|ui| {
+            ui.add_space(14.0);
+            ui.add(egui::Label::new(egui::RichText::new(e).size(crate::theme::scaled(11.0)).color(theme::accent())).wrap());
+        });
     }
 }
 
@@ -946,18 +1298,12 @@ fn audio_section(ui: &mut Ui, title: &str, input: bool, devs: &[crate::sys::Audi
         actions.push(Action::AudioMute(input, cur.name.clone()));
     }
     let track = Rect::from_min_max(pos2(row.min.x + 44.0, row.center().y - 10.0), pos2(row.max.x - 52.0, row.center().y + 10.0));
-    if let Some(p) = slider(ui, track, cur.percent, cur.muted, crate::ui::widgets::id(("avol", input))) {
+    let typed = value_field(ui, row, cur.percent, 0, crate::ui::widgets::id(("avol-value", input)));
+    if let Some(p) = slider(ui, track, cur.percent, cur.muted, crate::ui::widgets::id(("avol", input))).or(typed) {
         if p != cur.percent {
             actions.push(Action::AudioVolume(input, cur.name.clone(), p));
         }
     }
-    ui.painter().text(
-        pos2(row.max.x - 14.0, row.center().y),
-        Align2::RIGHT_CENTER,
-        format!("{}%", cur.percent),
-        crate::theme::fid(11.0),
-        theme::DIM,
-    );
     ui.add_space(6.0);
     // Devices and their ports.
     for d in devs {
@@ -992,6 +1338,56 @@ fn audio_section(ui: &mut Ui, title: &str, input: bool, devs: &[crate::sys::Audi
     ui.add_space(6.0);
 }
 
+/// The percent at the end of a slider row. A click turns it into a field to type a
+/// number into, from `min` to 100. Enter or a click elsewhere sets it, Escape cancels.
+fn value_field(ui: &mut Ui, row: Rect, value: u32, min: u32, id: egui::Id) -> Option<u32> {
+    let rect = Rect::from_min_max(pos2(row.max.x - 50.0, row.center().y - 11.0), pos2(row.max.x - 6.0, row.center().y + 11.0));
+    let text_id = id.with("text");
+    let field_id = id.with("field");
+    let font = crate::theme::fid(11.0);
+    let Some(mut text) = ui.data(|d| d.get_temp::<String>(text_id)) else {
+        let r = ui.interact(rect, id, Sense::click()).on_hover_cursor(egui::CursorIcon::Text);
+        if r.hovered() {
+            ui.painter().rect_filled(rect, 4, theme::PLATE);
+        }
+        let col = if r.hovered() { theme::TEXT } else { theme::DIM };
+        ui.painter().text(pos2(row.max.x - 14.0, row.center().y), Align2::RIGHT_CENTER, format!("{value}%"), font, col);
+        if r.clicked() {
+            ui.data_mut(|d| d.insert_temp(text_id, String::new()));
+            ui.memory_mut(|m| m.request_focus(field_id));
+            ui.ctx().request_repaint();
+        }
+        return None;
+    };
+    ui.painter().rect(rect, 4, theme::BTN, egui::Stroke::new(1.0, theme::accent()), egui::StrokeKind::Inside);
+    ui.painter().text(pos2(row.max.x - 14.0, row.center().y), Align2::RIGHT_CENTER, "%", font.clone(), theme::DIM);
+    let inner = Rect::from_min_max(pos2(rect.min.x + 4.0, rect.min.y), pos2(row.max.x - 22.0, rect.max.y));
+    let mut child = ui.new_child(egui::UiBuilder::new().max_rect(inner).layout(egui::Layout::right_to_left(egui::Align::Center)));
+    let te = child.add(
+        egui::TextEdit::singleline(&mut text)
+            .id(field_id)
+            .hint_text(value.to_string())
+            .char_limit(3)
+            .frame(egui::Frame::NONE)
+            .align(egui::Align2::RIGHT_CENTER)
+            .desired_width(inner.width())
+            .font(font),
+    );
+    text.retain(|c| c.is_ascii_digit());
+    ui.data_mut(|d| d.insert_temp(crate::ui::widgets::id("value-editing"), true));
+    // A click elsewhere also ends it, in case the field never got the keyboard.
+    let clicked_away = !te.has_focus() && ui.input(|i| i.pointer.any_pressed() && i.pointer.interact_pos().is_some_and(|p| !rect.contains(p)));
+    if te.lost_focus() || clicked_away {
+        ui.data_mut(|d| d.remove_temp::<String>(text_id));
+        if ui.input(|i| i.key_pressed(egui::Key::Escape)) {
+            return None;
+        }
+        return text.parse::<u32>().ok().map(|n| n.clamp(min, 100));
+    }
+    ui.data_mut(|d| d.insert_temp(text_id, text));
+    None
+}
+
 /// A horizontal slider drawn into `track`. Returns the new percent while the user drags or clicks.
 fn slider(ui: &mut Ui, track: Rect, percent: u32, dim: bool, id: egui::Id) -> Option<u32> {
     let resp = ui.interact(track, id, Sense::click_and_drag());
@@ -1021,14 +1417,38 @@ fn screen_panel(ui: &mut Ui, current: u32, brightness: Option<u32>, actions: &mu
         let (row, _) = ui.allocate_exact_size(vec2(ui.available_width(), 30.0), Sense::hover());
         icons::draw(ui.painter(), Icon::Sun, Rect::from_center_size(pos2(row.min.x + 24.0, row.center().y), vec2(16.0, 16.0)), theme::DIM);
         let track = Rect::from_min_max(pos2(row.min.x + 44.0, row.center().y - 10.0), pos2(row.max.x - 52.0, row.center().y + 10.0));
-        if let Some(p) = slider(ui, track, b, false, crate::ui::widgets::id("bright")) {
+        // The backlight never goes fully dark.
+        let typed = value_field(ui, row, b, 1, crate::ui::widgets::id("bright-value"));
+        if let Some(p) = slider(ui, track, b, false, crate::ui::widgets::id("bright")).or(typed) {
             if p != b {
-                // The backlight never goes fully dark.
                 actions.push(Action::SetBrightness(p.max(1)));
             }
         }
-        ui.painter().text(pos2(row.max.x - 14.0, row.center().y), Align2::RIGHT_CENTER, format!("{b}%"), crate::theme::fid(11.0), theme::DIM);
         ui.add_space(6.0);
+    }
+    // The keyboard light: a slider that snaps to its few steps (off, then 1 to the top).
+    if let Some(k) = crate::sys::read_kbd_light() {
+        let (hr, _) = ui.allocate_exact_size(vec2(ui.available_width(), 30.0), Sense::hover());
+        ui.painter().text(pos2(hr.min.x + 14.0, hr.center().y + 2.0), Align2::LEFT_CENTER, "Keyboard light", crate::theme::fid(13.0), theme::TEXT);
+        let (row, _) = ui.allocate_exact_size(vec2(ui.available_width(), 30.0), Sense::hover());
+        icons::draw(ui.painter(), Icon::Sun, Rect::from_center_size(pos2(row.min.x + 24.0, row.center().y), vec2(12.0, 12.0)), theme::DIM);
+        let track = Rect::from_min_max(pos2(row.min.x + 44.0, row.center().y - 10.0), pos2(row.max.x - 52.0, row.center().y + 10.0));
+        let percent = k.level * 100 / k.max;
+        if let Some(p) = slider(ui, track, percent, false, crate::ui::widgets::id("kbd-light")) {
+            let lv = ((p as f32 / 100.0) * k.max as f32).round() as u32;
+            // The level on disk lags the request a little; ask once per new level.
+            let sent_id = crate::ui::widgets::id("kbd-light-sent");
+            let sent: Option<u32> = ui.data(|d| d.get_temp(sent_id));
+            if lv != k.level && sent != Some(lv) {
+                actions.push(Action::SetKbdLight(lv.min(k.max)));
+                ui.data_mut(|d| d.insert_temp(sent_id, lv));
+            }
+        }
+        let value = if k.level == 0 { "Off".to_owned() } else { format!("{}/{}", k.level, k.max) };
+        ui.painter().text(pos2(row.max.x - 14.0, row.center().y), Align2::RIGHT_CENTER, value, crate::theme::fid(11.0), theme::DIM);
+        ui.add_space(6.0);
+        // Keys on the keyboard change it too, so look again while the card is open.
+        ui.ctx().request_repaint_after(std::time::Duration::from_millis(500));
     }
     let (hr, _) = ui.allocate_exact_size(vec2(ui.available_width(), 38.0), Sense::hover());
     ui.painter().text(pos2(hr.min.x + 14.0, hr.center().y), Align2::LEFT_CENTER, "Turn screen off after", crate::theme::fid(13.0), theme::TEXT);
@@ -1640,5 +2060,187 @@ mod limit_input_tests {
         assert_eq!(limit_text(false, 2048.0), "2.0 GB");
         assert_eq!(cpu_text(2.44), "2.4%");
         assert_eq!(cpu_text(35.4), "35%");
+    }
+}
+
+#[cfg(test)]
+mod popdown_tests {
+    //! The popdown must reach its full size without input, and hold it under the pointer.
+    use super::*;
+
+    fn device(path: &str, name: &str, paired: bool) -> crate::bt::Device {
+        crate::bt::Device { path: path.into(), alias: name.into(), name: Some(name.into()), paired, connected: paired, battery: paired.then_some(80), ..Default::default() }
+    }
+
+    fn bt_state(nearby: usize) -> crate::bt::State {
+        let mut s = crate::bt::State::default();
+        s.adapter = Some(crate::bt::Adapter { path: "/a".into(), powered: true, discovering: true, ..Default::default() });
+        for (i, n) in ["CadMouse Compact Wireless", "Keychron Q6 Max", "MX Master 4", "WF-1000XM5"].iter().enumerate() {
+            s.devices.push(device(&format!("/d{i}"), n, true));
+        }
+        for i in 0..nearby {
+            s.devices.push(device(&format!("/n{i}"), &format!("Nearby {i}"), false));
+        }
+        s
+    }
+
+    struct Frame {
+        size: egui::Vec2,
+        /// egui asked for another frame at once.
+        again: bool,
+    }
+
+    /// One frame of the Bluetooth card at 1.5 scale, with the pointer at `at` if given.
+    fn frame(ctx: &egui::Context, bt: &crate::bt::State, n: usize, at: Option<egui::Pos2>) -> Frame {
+        let notifs = Notifs::new(10);
+        let place = Placement { anchor_x: 1700.0, bar_height: 32.0, bar_on_top: true };
+        let raw = egui::RawInput {
+            time: Some(n as f64 * 0.05),
+            screen_rect: Some(Rect::from_min_size(egui::Pos2::ZERO, vec2(2000.0, 1250.0))),
+            viewports: std::iter::once((egui::ViewportId::ROOT, egui::ViewportInfo { native_pixels_per_point: Some(1.5), ..Default::default() })).collect(),
+            events: at.map(egui::Event::PointerMoved).into_iter().collect(),
+            ..Default::default()
+        };
+        let out = ctx.run_ui(raw, |ui| {
+            let mut a = Vec::new();
+            show(ui, &Overlay::Bluetooth, &place, &notifs, &[], &[], true, &[], false, 0, None, &Default::default(), None, &Default::default(), &Default::default(), &Default::default(), &Default::default(), &Default::default(), bt, &Default::default(), &mut a);
+        });
+        let size = ctx.memory(|m| m.area_rect(crate::ui::widgets::id(("panel", "Bluetooth".to_owned())))).map(|r| r.size()).unwrap_or_default();
+        let again = out.viewport_output.get(&egui::ViewportId::ROOT).is_some_and(|v| v.repaint_delay.is_zero());
+        Frame { size, again }
+    }
+
+    /// Runs frames while egui asks for them, as the app does, and returns the last size.
+    fn settle(ctx: &egui::Context, bt: &crate::bt::State, n: &mut usize) -> egui::Vec2 {
+        for _ in 0..20 {
+            *n += 1;
+            let f = frame(ctx, bt, *n, None);
+            if !f.again {
+                return f.size;
+            }
+        }
+        panic!("the card never settled");
+    }
+
+    #[test]
+    fn grows_in_full_without_input() {
+        let ctx = egui::Context::default();
+        crate::theme::apply(&ctx);
+        let mut n = 0;
+        let small = settle(&ctx, &bt_state(1), &mut n);
+        let big_bt = bt_state(7);
+        let big = settle(&ctx, &big_bt, &mut n);
+        // Six more rows of 32 px, all at once.
+        assert!((big.y - small.y - 6.0 * 32.0).abs() < 1.0, "{small:?} -> {big:?}");
+        // A fresh card drawn straight at that content gets the same size.
+        let fresh = egui::Context::default();
+        crate::theme::apply(&fresh);
+        let mut m = 0;
+        assert_eq!(settle(&fresh, &big_bt, &mut m), big);
+    }
+
+    #[test]
+    fn holds_its_size_under_the_pointer() {
+        let ctx = egui::Context::default();
+        crate::theme::apply(&ctx);
+        let bt = bt_state(3);
+        let mut n = 0;
+        let start = settle(&ctx, &bt, &mut n);
+        for pass in 0..4 {
+            for y in (50..450).step_by(6) {
+                n += 1;
+                let f = frame(&ctx, &bt, n, Some(pos2(1640.0 + pass as f32 * 20.0, y as f32)));
+                assert_eq!(f.size, start, "frame {n}, pointer at y {y}");
+            }
+        }
+    }
+}
+
+#[cfg(test)]
+mod value_field_tests {
+    //! Typing a value into a slider row's field.
+    use super::*;
+
+    const ROW: Rect = Rect { min: pos2(0.0, 0.0), max: pos2(300.0, 30.0) };
+    /// The field sits at the right end of the row.
+    const AT: egui::Pos2 = pos2(280.0, 15.0);
+
+    fn frame(ctx: &egui::Context, n: &mut usize, events: Vec<egui::Event>) -> Option<u32> {
+        *n += 1;
+        let raw = egui::RawInput {
+            time: Some(*n as f64 * 0.05),
+            screen_rect: Some(Rect::from_min_size(egui::Pos2::ZERO, vec2(400.0, 100.0))),
+            events,
+            ..Default::default()
+        };
+        let mut got = None;
+        let _ = ctx.run_ui(raw, |ui| {
+            got = value_field(ui, ROW, 50, 1, egui::Id::new("v"));
+        });
+        got
+    }
+
+    fn click(at: egui::Pos2) -> Vec<egui::Event> {
+        let b = |pressed| egui::Event::PointerButton { pos: at, button: egui::PointerButton::Primary, pressed, modifiers: Default::default() };
+        vec![egui::Event::PointerMoved(at), b(true), b(false)]
+    }
+
+    fn key(k: egui::Key) -> Vec<egui::Event> {
+        let e = |pressed| egui::Event::Key { key: k, physical_key: None, pressed, repeat: false, modifiers: Default::default() };
+        vec![e(true), e(false)]
+    }
+
+    /// Clicks the value and runs frames until the field has the keyboard.
+    fn open(ctx: &egui::Context, n: &mut usize) {
+        frame(ctx, n, vec![egui::Event::PointerMoved(AT)]);
+        frame(ctx, n, click(AT));
+        frame(ctx, n, vec![]);
+        frame(ctx, n, vec![]);
+        assert!(ctx.memory(|m| m.focused().is_some()), "the field did not take the keyboard");
+    }
+
+    fn typed(ctx: &egui::Context, n: &mut usize, text: &str, end: Vec<egui::Event>) -> Option<u32> {
+        open(ctx, n);
+        assert_eq!(frame(ctx, n, vec![egui::Event::Text(text.into())]), None);
+        let mut got = frame(ctx, n, end);
+        for _ in 0..3 {
+            got = got.or(frame(ctx, n, vec![]));
+        }
+        got
+    }
+
+    #[test]
+    fn enter_sets_the_typed_value() {
+        let (ctx, mut n) = (egui::Context::default(), 0);
+        assert_eq!(typed(&ctx, &mut n, "37", key(egui::Key::Enter)), Some(37));
+    }
+
+    #[test]
+    fn values_are_kept_in_range_and_letters_dropped() {
+        let (ctx, mut n) = (egui::Context::default(), 0);
+        assert_eq!(typed(&ctx, &mut n, "250", key(egui::Key::Enter)), Some(100));
+        let (ctx, mut n) = (egui::Context::default(), 0);
+        assert_eq!(typed(&ctx, &mut n, "0", key(egui::Key::Enter)), Some(1));
+        let (ctx, mut n) = (egui::Context::default(), 0);
+        assert_eq!(typed(&ctx, &mut n, "4x2", key(egui::Key::Enter)), Some(42));
+    }
+
+    #[test]
+    fn escape_cancels_and_closes_the_field() {
+        let (ctx, mut n) = (egui::Context::default(), 0);
+        assert_eq!(typed(&ctx, &mut n, "20", key(egui::Key::Escape)), None);
+        assert!(ctx.data(|d| d.get_temp::<String>(egui::Id::new("v").with("text"))).is_none());
+    }
+
+    #[test]
+    fn clicking_away_sets_it() {
+        let (ctx, mut n) = (egui::Context::default(), 0);
+        assert_eq!(typed(&ctx, &mut n, "64", click(pos2(20.0, 80.0))), Some(64));
+    }
+
+    #[test]
+    fn empty_field_changes_nothing() {
+        let (ctx, mut n) = (egui::Context::default(), 0);
+        assert_eq!(typed(&ctx, &mut n, "", key(egui::Key::Enter)), None);
     }
 }

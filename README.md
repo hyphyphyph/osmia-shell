@@ -86,6 +86,8 @@ right-click skips), the same controls inside the tray panel of the app that owns
     osmia capture pick screen|area X Y W H|window N     # choose in the open overlay, for scripts
     osmia launcher toggle|show|hide
     osmia history toggle|show|hide|clear
+    osmia clipboard toggle|show|hide     # clipboard history (Super+V in the session)
+    osmia emoji toggle|show|hide         # emoji picker (Super+. in the session)
     osmia overview toggle|show|hide
     osmia settings [page]                # opens settings (Super+Comma in the session)
     osmia dnd on|off|toggle|status
@@ -164,3 +166,30 @@ user session (no root) and are kept in `$XDG_RUNTIME_DIR/osmia/proc-limits` (so 
 (`memory.high`): the program slows down, it is not killed. See `spec/Processes.pi`.
 
     cargo test -- --ignored      # also runs the CPU limit test (needs a systemd session)
+
+## Bluetooth
+
+The bar has a Bluetooth item. Its card turns Bluetooth on and off, connects and
+forgets paired devices, and pairs new ones; it looks for devices while it is open.
+osmia is also the pairing agent, so codes to confirm or type show up in that card,
+and blueman-applet is not needed. Do not run another agent beside it, or it may
+take the prompts. `osmia bluetooth`, `osmia bluetooth status` and
+`osmia bluetooth on|off` drive it from a script. `OSMIA_NO_BLUETOOTH=1` turns it off.
+
+## Graphics card for VMs
+
+On a machine with the `gpu-vfio-control` service, the bar shows a **GPU** item
+(Host, VFIO, or the VM's name). Its card hands the NVIDIA card to VMs and takes
+it back, starts and stops the VM, and can wait to hand the card over until
+nothing holds it. The service does the binding and the safety checks; osmia only
+talks to it over D-Bus, and polkit decides who may.
+
+The card can only move while the desktop is off it, so `osmia-session` keeps
+labwc, EGL and Vulkan away from it when `/etc/gpu-vfio-control.toml` exists
+(set `OSMIA_KEEP_DGPU=1` to opt out). The HDMI port is wired to that card, so it
+does not work on the desktop. Run one program on the card with `osmia-dgpu <program>`.
+
+Set up the machine once with `sudo sh contrib/gpu/setup.sh`. It unblacklists
+nvidia, stops vfio-pci claiming the card at boot, keeps the login screen's X
+server off the card, enables the NVIDIA suspend services, and rebuilds the
+initramfs. `osmia gpu` opens the card; `osmia gpu status` prints the state.

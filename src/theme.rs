@@ -50,6 +50,33 @@ fn system_font() -> &'static Option<(Vec<u8>, u32)> {
     })
 }
 
+/// The color emoji font fontconfig names for emoji. Read once and kept for the life of
+/// the shell, so every window shares the one copy. None when there is no such font.
+fn emoji_font() -> Option<(&'static [u8], u32)> {
+    static FONT: std::sync::OnceLock<Option<(&'static [u8], u32)>> = std::sync::OnceLock::new();
+    *FONT.get_or_init(|| {
+        let out = std::process::Command::new("fc-match")
+            .args(["-f", "%{file}\n%{index}\n%{color}", "emoji:color=true"])
+            .output()
+            .ok()?;
+        let text = String::from_utf8_lossy(&out.stdout).into_owned();
+        let mut it = text.lines();
+        let path = it.next()?.trim();
+        let index = it.next().and_then(|i| i.trim().parse().ok()).unwrap_or(0);
+        // fc-match always answers. Only take a font that really is in color.
+        if it.next().map(str::trim) != Some("True") {
+            return None;
+        }
+        let bytes = std::fs::read(path).ok()?;
+        Some((&*Box::leak(bytes.into_boxed_slice()), index))
+    })
+}
+
+/// The font family for drawing emoji: the color emoji font, then the usual fonts.
+pub fn emoji_family() -> egui::FontFamily {
+    egui::FontFamily::Name("emoji".into())
+}
+
 /// Fonts found on demand for characters the main fonts lack, such as symbols,
 /// braille and CJK. Window titles and notifications can contain anything.
 struct Fallbacks {
@@ -89,6 +116,14 @@ fn install_fonts(ctx: &egui::Context) {
         }
         fb.generation
     });
+    let mut emoji_list = fonts.families.get(&egui::FontFamily::Proportional).cloned().unwrap_or_default();
+    if let Some((bytes, index)) = emoji_font() {
+        let mut data = egui::FontData::from_static(bytes);
+        data.index = index;
+        fonts.font_data.insert("color-emoji".into(), std::sync::Arc::new(data));
+        emoji_list.insert(0, "color-emoji".into());
+    }
+    fonts.families.insert(emoji_family(), emoji_list);
     ctx.set_fonts(fonts);
     ctx.data_mut(|d| d.insert_temp(crate::ui::widgets::id("osmia-font-gen"), generation));
 }
@@ -268,6 +303,22 @@ mod startup_tests {
         // After a frame has run, the check works and finds a font for a missing symbol.
         let mut out = ctx.run_ui(egui::RawInput::default(), |_| {});
         let _ = super::ensure_glyphs(&ctx, ["\u{2733}"].into_iter());
+        out.textures_delta.clear();
+    }
+}
+
+#[cfg(test)]
+mod emoji_font_tests {
+    /// Needs epaint's color_fonts feature; without it the glyphs lay out but draw nothing.
+    #[test]
+    fn emoji_family_draws_emoji() {
+        let ctx = egui::Context::default();
+        super::install_fonts(&ctx);
+        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+            let g = ui.painter().layout_no_wrap("😀".into(), egui::FontId::new(26.0, super::emoji_family()), egui::Color32::WHITE);
+            let glyph = &g.rows[0].row.glyphs[0];
+            assert!(glyph.uv_rect.size.x > 0.0, "the emoji was not drawn");
+        });
         out.textures_delta.clear();
     }
 }

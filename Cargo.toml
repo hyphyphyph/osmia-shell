@@ -9,6 +9,8 @@ calloop = "0.14.5"
 chrono = "0.4.45"
 egui = { version = "0.37.0", features = ["default_fonts"] }
 egui-wgpu = "0.37.0"
+# Color emoji (CBDT, sbix, COLR) for the emoji picker. egui does not pass this feature on.
+epaint = { version = "0.37.0", features = ["color_fonts"] }
 env_logger = "0.11.11"
 futures-lite = "2.6.1"
 jpeg-decoder = "0.3.2"
@@ -22,12 +24,15 @@ serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.154"
 smithay-client-toolkit = { version = "0.21.1", features = ["system"] }
 toml = "1.1.8"
+# Only for a one-shot channel in the Bluetooth agent. zbus already builds tokio.
+tokio = { version = "1.54.1", default-features = false, features = ["sync"] }
 wayland-backend = { version = "0.3.17", features = ["client_system"] }
 wayland-client = "0.31.15"
 wayland-protocols = { version = "0.32.13", features = ["client", "staging", "unstable"] }
 wayland-protocols-wlr = "0.3.12"
 wgpu = "30.0.1"
 zbus = "6.2.1"
+sha2 = "0.10"
 
 [profile.release]
 strip = true

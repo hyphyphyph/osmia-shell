@@ -1,0 +1,53 @@
+// The emoji picker, a searchable grid of every emoji.
+export anchor Emoji:
+    purpose:
+        Let the user find an emoji by name and put it on the clipboard, from any app.
+
+    opening:
+        Super+. opens it. The session binds Super+. to osmia emoji toggle.
+        The commands osmia emoji toggle, show and hide work from any key.
+        It opens on the monitor that has focus, and the same key closes it.
+
+    emojiList:
+        Every fully-qualified emoji of Unicode Emoji 18.0, in the Unicode order and groups.
+        The list is built into the shell, from the Unicode emoji-test.txt and the English CLDR annotations. It is made by a script and is not edited by hand.
+        Skin tone variants are not separate cells. One skin tone setting applies to every emoji that has them.
+        Emoji are drawn with the color emoji font that fontconfig names for emoji, which is Noto Color Emoji on most systems. Without one, the monochrome emoji font bundled with egui is used.
+
+    look:
+        A card at the top of the screen, 36 px down, over the same dimmed screen as the overview. It has the look of the launcher card.
+        A search box is on top, with the hint Search emoji.
+        Under it, a row of group tabs, one emoji for each group, and a clock for Recent. A click on a tab scrolls the grid to that group. The tab of the group in view is marked.
+        The grid has ten columns of 40 px cells, with the group name above each group. It scrolls, and is at most ten rows tall or the screen.
+        The marked cell has a lighter plate and an accent ring.
+        A footer shows the marked emoji larger, with its name, and the skin tone choice on the right: a raised hand in the plain yellow and in each of the five tones. The chosen one has an accent ring.
+
+    searching:
+        Typing filters the grid to one flat list of matches, with no group names.
+        Each typed word must start a word of the emoji's name or of one of its keywords. Matches on the name come first, then matches on keywords, each in the Unicode order.
+        With no matches the card says No emoji found.
+
+    recent:
+        The last 30 emoji picked are shown first, under Recent, newest first.
+        The recent list and the skin tone are kept in ~/.local/state/osmia/emoji, so they survive a restart.
+
+    using:
+        Clicking a cell, or Enter on the marked cell, puts that emoji on the clipboard and closes the card. The user then pastes with the usual key. The shell does not type into other windows.
+        The arrow keys move the mark through the grid. The pointer moves it when it moves.
+        Escape clears the search. With nothing typed, Escape, a click on the empty screen, or Super+. again closes it.
+        The search starts empty and the mark starts on the first cell each time it opens.
+
+    cost:
+        No timer and no polling. Only the rows in view are drawn.
+
+    tests:
+        Unit tests cover reading the built-in list, word-start matching, name matches ranked before keyword matches, applying a skin tone, and the recent list moving a repeat to the front and dropping past 30.
+
+    outOfScope:
+        - Typing the emoji into the focused window.
+        - Picking several emoji before closing.
+        - Mixed skin tones in emoji with two people.
+        - Languages other than English for names and keywords.
+
+    openQuestions:
+        - Whether picking should also type the emoji into the focused window, with wtype, when it is installed.
